@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Bible Link",
+    "slug": "bible-link",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"]
+  }
+}

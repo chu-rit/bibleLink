@@ -1,0 +1,902 @@
+[
+  {
+    "id": "adam",
+    "word": "아담",
+    "definition": "하느님이 처음 창조하신 사람으로, 에덴동산에서 살았다",
+    "difficulty": 1,
+    "references": ["창세기 2-3장"],
+    "insightEntry": "아담",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=아담"
+  },
+  {
+    "id": "eve",
+    "word": "하와",
+    "definition": "아담의 아내이자 처음으로 창조된 여자로, 에덴동산에서 살았다",
+    "difficulty": 1,
+    "references": ["창세기 2-3장"],
+    "insightEntry": "하와",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=하와"
+  },
+  {
+    "id": "noah",
+    "word": "노아",
+    "definition": "대홍수 전에 하느님의 지시에 따라 방주를 만들고 가족을 구한 사람",
+    "difficulty": 1,
+    "references": ["창세기 6-9장"],
+    "insightEntry": "노아",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=노아"
+  },
+  {
+    "id": "ark",
+    "word": "방주",
+    "definition": "노아의 가족과 동물들이 대홍수를 피하도록 만들어진 큰 배",
+    "difficulty": 1,
+    "references": ["창세기 6:14-22"],
+    "insightEntry": "방주",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=방주"
+  },
+  {
+    "id": "abraham",
+    "word": "아브라함",
+    "definition": "하느님을 믿고 그분의 약속에 따라 고향을 떠난 충실한 사람",
+    "difficulty": 1,
+    "references": ["창세기 12-22장"],
+    "insightEntry": "아브라함",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=아브라함"
+  },
+  {
+    "id": "sarah",
+    "word": "사라",
+    "definition": "아브라함의 아내로, 늦은 나이에 아들 이삭을 낳았다",
+    "difficulty": 1,
+    "references": ["창세기 17-21장"],
+    "insightEntry": "사라",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사라"
+  },
+  {
+    "id": "isaac",
+    "word": "이삭",
+    "definition": "아브라함과 사라 사이에서 태어난 아들로, 야곱의 아버지가 되었다",
+    "difficulty": 1,
+    "references": ["창세기 21-28장"],
+    "insightEntry": "이삭",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=이삭"
+  },
+  {
+    "id": "jacob",
+    "word": "야곱",
+    "definition": "이스라엘이라는 이름을 받은 사람으로, 열두 지파의 조상이 되었다",
+    "difficulty": 1,
+    "references": ["창세기 27-35장"],
+    "insightEntry": "야곱",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=야곱"
+  },
+  {
+    "id": "joseph",
+    "word": "요셉",
+    "definition": "형들에게 팔렸지만 이집트에서 높은 지위에 올라 가족을 구한 사람",
+    "difficulty": 1,
+    "references": ["창세기 37-50장"],
+    "insightEntry": "요셉",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=요셉"
+  },
+  {
+    "id": "moses",
+    "word": "모세",
+    "definition": "이스라엘 백성을 이집트에서 이끌어 내고 하느님의 율법을 받은 지도자",
+    "difficulty": 1,
+    "references": ["출애굽기 3-20장"],
+    "insightEntry": "모세",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=모세"
+  },
+  {
+    "id": "manna",
+    "word": "만나",
+    "definition": "이스라엘 백성이 광야에서 먹도록 하느님이 마련해 주신 양식",
+    "difficulty": 1,
+    "references": ["출애굽기 16장"],
+    "insightEntry": "만나",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=만나"
+  },
+  {
+    "id": "joshua",
+    "word": "여호수아",
+    "definition": "모세의 뒤를 이어 이스라엘 백성을 약속의 땅으로 이끈 지도자",
+    "difficulty": 1,
+    "references": ["여호수아 1장"],
+    "insightEntry": "여호수아",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=여호수아"
+  },
+  {
+    "id": "david",
+    "word": "다윗",
+    "definition": "골리앗을 물리쳤으며 후에 이스라엘의 왕이 된 사람",
+    "difficulty": 1,
+    "references": ["사무엘상 17장"],
+    "insightEntry": "다윗",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=다윗"
+  },
+  {
+    "id": "goliath",
+    "word": "골리앗",
+    "definition": "이스라엘 군대를 위협했지만 다윗에게 패배한 거인 전사",
+    "difficulty": 1,
+    "references": ["사무엘상 17장"],
+    "insightEntry": "골리앗",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=골리앗"
+  },
+  {
+    "id": "solomon",
+    "word": "솔로몬",
+    "definition": "지혜로 유명했으며 예루살렘에 성전을 지은 왕",
+    "difficulty": 1,
+    "references": ["열왕기상 3-8장"],
+    "insightEntry": "솔로몬",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=솔로몬"
+  },
+  {
+    "id": "jesus",
+    "word": "예수",
+    "definition": "하느님의 아들로, 사람들에게 하느님의 뜻과 구원의 소식을 가르친 분",
+    "difficulty": 1,
+    "references": ["마태복음 4-28장"],
+    "insightEntry": "예수 그리스도",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=예수%20그리스도"
+  },
+  {
+    "id": "peter",
+    "word": "베드로",
+    "definition": "예수의 열두 사도 가운데 한 사람으로, 초기 그리스도인 회중에서 중요한 역할을 한 사람",
+    "difficulty": 1,
+    "references": ["마태복음 4:18-20","사도행전 2장"],
+    "insightEntry": "베드로",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=베드로"
+  },
+  {
+    "id": "paul",
+    "word": "바울",
+    "definition": "예수의 제자가 된 뒤 여러 지역에서 좋은 소식을 전한 사도",
+    "difficulty": 1,
+    "references": ["사도행전 9-28장"],
+    "insightEntry": "바울",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=바울"
+  },
+  {
+    "id": "angel",
+    "word": "천사",
+    "definition": "하느님을 섬기며 그분의 뜻을 전달하는 영적 존재",
+    "difficulty": 1,
+    "references": ["히브리서 1:7, 14"],
+    "insightEntry": "천사",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=천사"
+  },
+  {
+    "id": "baptism",
+    "word": "침례",
+    "definition": "하느님께 헌신한 사람이 물에 잠겼다가 나오는 의식",
+    "difficulty": 1,
+    "references": ["마태복음 28:19","사도행전 2:38"],
+    "insightEntry": "침례",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=침례"
+  },
+  {
+    "id": "prophet",
+    "word": "예언자",
+    "definition": "하느님의 말씀을 받아 사람들에게 전달한 사람",
+    "difficulty": 1,
+    "references": ["신명기 18:18-22"],
+    "insightEntry": "예언자",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=예언자"
+  },
+  {
+    "id": "apostle",
+    "word": "사도",
+    "definition": "예수를 대표하도록 특별히 선택되어 좋은 소식을 전한 사람",
+    "difficulty": 1,
+    "references": ["마가복음 3:14","사도행전 1:8"],
+    "insightEntry": "사도",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사도"
+  },
+  {
+    "id": "disciple",
+    "word": "제자",
+    "definition": "스승의 가르침을 배우고 그 가르침에 따라 행동하는 사람",
+    "difficulty": 1,
+    "references": ["마태복음 28:19, 20"],
+    "insightEntry": "제자",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=제자"
+  },
+  {
+    "id": "congregation",
+    "word": "회중",
+    "definition": "같은 믿음을 가진 사람들이 함께 모여 하느님을 숭배하는 모임",
+    "difficulty": 1,
+    "references": ["사도행전 2:42-47"],
+    "insightEntry": "회중",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=회중"
+  },
+  {
+    "id": "temple",
+    "word": "성전",
+    "definition": "고대 예루살렘에서 하느님을 숭배하기 위해 사용된 건물",
+    "difficulty": 1,
+    "references": ["열왕기상 8장"],
+    "insightEntry": "성전",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=성전"
+  },
+  {
+    "id": "altar",
+    "word": "제단",
+    "definition": "하느님께 희생 제물을 바치기 위해 만든 구조물",
+    "difficulty": 1,
+    "references": ["창세기 8:20"],
+    "insightEntry": "제단",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=제단"
+  },
+  {
+    "id": "law",
+    "word": "율법",
+    "definition": "하느님이 자신의 백성이 지켜야 할 생활과 숭배의 기준으로 주신 법",
+    "difficulty": 1,
+    "references": ["출애굽기 20장"],
+    "insightEntry": "율법",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=율법"
+  },
+  {
+    "id": "covenant",
+    "word": "언약",
+    "definition": "하느님과 사람 또는 사람들 사이에 맺어진 특별한 약속",
+    "difficulty": 1,
+    "references": ["창세기 9:8-17"],
+    "insightEntry": "언약",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=언약"
+  },
+  {
+    "id": "prayer",
+    "word": "기도",
+    "definition": "하느님께 말하며 찬양과 감사와 요청을 표현하는 것",
+    "difficulty": 1,
+    "references": ["빌립보서 4:6"],
+    "insightEntry": "기도",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=기도"
+  },
+  {
+    "id": "faith",
+    "word": "믿음",
+    "definition": "하느님과 그분의 약속을 확신하고 그에 따라 행동하는 마음",
+    "difficulty": 1,
+    "references": ["히브리서 11:1"],
+    "insightEntry": "믿음",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=믿음"
+  },
+  {
+    "id": "love",
+    "word": "사랑",
+    "definition": "다른 사람의 유익을 진심으로 바라며 행동하게 하는 마음",
+    "difficulty": 1,
+    "references": ["고린도 전서 13:4-7"],
+    "insightEntry": "사랑",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사랑"
+  },
+  {
+    "id": "god",
+    "word": "하느님",
+    "definition": "하늘과 땅을 창조하고 자신의 목적을 이루는 전능한 영적 존재",
+    "difficulty": 1,
+    "references": ["창세기 1:1","시편 90:2"],
+    "insightEntry": "하느님",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=하느님"
+  },
+  {
+    "id": "salvation",
+    "word": "구원",
+    "definition": "위험과 죄와 죽음에서 벗어나 생명을 얻는 것",
+    "difficulty": 1,
+    "references": ["로마서 6:23"],
+    "insightEntry": "구원",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=구원"
+  },
+  {
+    "id": "jehovah",
+    "word": "여호와",
+    "definition": "성경에서 알려 주는 하느님의 고유한 이름",
+    "difficulty": 1,
+    "references": ["출애굽기 3:15","시편 83:18"],
+    "insightEntry": "여호와",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=여호와"
+  },
+  {
+    "id": "priest",
+    "word": "제사장",
+    "definition": "고대 이스라엘에서 백성을 대신해 하느님께 제물을 바치고 숭배를 인도한 사람",
+    "difficulty": 1,
+    "references": ["레위기 8장"],
+    "insightEntry": "제사장",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=제사장"
+  },
+  {
+    "id": "holyspirit",
+    "word": "성령",
+    "definition": "하느님이 자신의 목적을 이루고 사람들에게 힘을 주기 위해 사용하는 활동력",
+    "difficulty": 1,
+    "references": ["사도행전 1:8"],
+    "insightEntry": "성령",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=성령"
+  },
+  {
+    "id": "gospel",
+    "word": "복음",
+    "definition": "하느님의 왕국과 예수에 관한 좋은 소식",
+    "difficulty": 1,
+    "references": ["마가복음 1:14, 15"],
+    "insightEntry": "복음",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=복음"
+  },
+  {
+    "id": "resurrection",
+    "word": "부활",
+    "definition": "죽은 사람이 하느님의 능력으로 다시 살아나는 일",
+    "difficulty": 1,
+    "references": ["요한복음 5:28, 29"],
+    "insightEntry": "부활",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=부활"
+  },
+  {
+    "id": "paradise",
+    "word": "낙원",
+    "definition": "하느님의 뜻이 이루어져 평화와 행복이 가득한 아름다운 환경",
+    "difficulty": 1,
+    "references": ["누가복음 23:43"],
+    "insightEntry": "낙원",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=낙원"
+  },
+  {
+    "id": "eden",
+    "word": "에덴",
+    "definition": "하느님이 아담과 하와를 살게 하신 아름다운 동산",
+    "difficulty": 1,
+    "references": ["창세기 2:8-15"],
+    "insightEntry": "에덴",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=에덴"
+  },
+  {
+    "id": "egypt",
+    "word": "이집트",
+    "definition": "이스라엘 백성이 한동안 노예 생활을 했으며 모세가 그들을 이끌어 낸 나라",
+    "difficulty": 1,
+    "references": ["출애굽기 1-14장"],
+    "insightEntry": "이집트",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=이집트"
+  },
+  {
+    "id": "canaan",
+    "word": "가나안",
+    "definition": "하느님이 아브라함의 후손에게 주겠다고 약속하신 땅",
+    "difficulty": 1,
+    "references": ["창세기 12:5-7"],
+    "insightEntry": "가나안",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=가나안"
+  },
+  {
+    "id": "jerusalem",
+    "word": "예루살렘",
+    "definition": "이스라엘의 중심 도시로 성전이 있었던 곳",
+    "difficulty": 1,
+    "references": ["열왕기상 8장"],
+    "insightEntry": "예루살렘",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=예루살렘"
+  },
+  {
+    "id": "bethlehem",
+    "word": "베들레헴",
+    "definition": "다윗 왕의 고향이며 예수가 태어난 유다의 도시",
+    "difficulty": 1,
+    "references": ["사무엘상 16:1","마태복음 2:1"],
+    "insightEntry": "베들레헴",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=베들레헴"
+  },
+  {
+    "id": "galilee",
+    "word": "갈릴리",
+    "definition": "예수가 많은 활동을 했던 이스라엘 북부 지역",
+    "difficulty": 1,
+    "references": ["마태복음 4:12-23"],
+    "insightEntry": "갈릴리",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=갈릴리"
+  },
+  {
+    "id": "jordan",
+    "word": "요단강",
+    "definition": "이스라엘 땅을 흐르며 예수가 침례를 받은 강",
+    "difficulty": 1,
+    "references": ["마태복음 3:13-17"],
+    "insightEntry": "요르단 강",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=요르단%20강"
+  },
+  {
+    "id": "redsea",
+    "word": "홍해",
+    "definition": "이스라엘 백성이 모세의 인도로 마른 땅처럼 건넌 바다",
+    "difficulty": 1,
+    "references": ["출애굽기 14장"],
+    "insightEntry": "홍해",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=홍해"
+  },
+  {
+    "id": "tencommandments",
+    "word": "십계명",
+    "definition": "하느님이 이스라엘 백성에게 주신 열 가지 기본 계명",
+    "difficulty": 1,
+    "references": ["출애굽기 20:1-17"],
+    "insightEntry": "십계명",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=십계명"
+  },
+  {
+    "id": "rainbow",
+    "word": "무지개",
+    "definition": "대홍수 후 하느님이 다시는 온 땅을 홍수로 멸망시키지 않겠다는 약속의 표",
+    "difficulty": 1,
+    "references": ["창세기 9:12-17"],
+    "insightEntry": "무지개",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=무지개"
+  },
+  {
+    "id": "cloudpillar",
+    "word": "구름기둥",
+    "definition": "이스라엘 백성이 광야를 이동할 때 하느님이 인도하신다는 것을 보여 준 구름 기둥",
+    "difficulty": 1,
+    "references": ["출애굽기 13:21, 22"],
+    "insightEntry": "구름기둥",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=구름기둥"
+  },
+  {
+    "id": "mary",
+    "word": "마리아",
+    "definition": "예수의 어머니로, 하느님의 뜻에 따라 예수를 낳은 여자",
+    "difficulty": 1,
+    "references": ["누가복음 1:26-38"],
+    "insightEntry": "마리아",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=마리아"
+  },
+  {
+    "id": "martha",
+    "word": "마르다",
+    "definition": "베다니에 살았으며 예수와 가까이 지낸 여자",
+    "difficulty": 1,
+    "references": ["누가복음 10:38-42"],
+    "insightEntry": "마르다",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=마르다"
+  },
+  {
+    "id": "lazarus",
+    "word": "나사로",
+    "definition": "예수가 죽은 뒤 다시 살린 베다니의 남자",
+    "difficulty": 1,
+    "references": ["요한복음 11장"],
+    "insightEntry": "나사로",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=나사로"
+  },
+  {
+    "id": "john",
+    "word": "요한",
+    "definition": "예수의 사도이며 성경의 여러 책을 기록한 사람",
+    "difficulty": 1,
+    "references": ["마가복음 1:19, 20"],
+    "insightEntry": "요한",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=요한"
+  },
+  {
+    "id": "james",
+    "word": "야고보",
+    "definition": "예수의 사도 가운데 한 사람으로, 요한의 형제",
+    "difficulty": 1,
+    "references": ["마태복음 4:21, 22"],
+    "insightEntry": "야고보",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=야고보"
+  },
+  {
+    "id": "andrew",
+    "word": "안드레",
+    "definition": "베드로의 형제이며 예수의 열두 사도 중 한 사람",
+    "difficulty": 1,
+    "references": ["요한복음 1:40-42"],
+    "insightEntry": "안드레",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=안드레"
+  },
+  {
+    "id": "matthew",
+    "word": "마태",
+    "definition": "세금 징수원이었지만 예수의 부름을 받고 사도가 된 사람",
+    "difficulty": 1,
+    "references": ["마태복음 9:9"],
+    "insightEntry": "마태",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=마태"
+  },
+  {
+    "id": "thomas",
+    "word": "도마",
+    "definition": "예수의 부활을 직접 확인하고 믿게 된 사도",
+    "difficulty": 1,
+    "references": ["요한복음 20:24-29"],
+    "insightEntry": "도마",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=도마"
+  },
+  {
+    "id": "stephen",
+    "word": "스데반",
+    "definition": "초기 회중에서 봉사했으며 믿음 때문에 순교한 그리스도인",
+    "difficulty": 1,
+    "references": ["사도행전 6-7장"],
+    "insightEntry": "스데반",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=스데반"
+  },
+  {
+    "id": "timothy",
+    "word": "디모데",
+    "definition": "바울과 함께 좋은 소식을 전한 젊은 그리스도인",
+    "difficulty": 1,
+    "references": ["사도행전 16:1-3"],
+    "insightEntry": "디모데",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=디모데"
+  },
+  {
+    "id": "titus",
+    "word": "디도",
+    "definition": "바울의 동료로서 회중을 돕는 일을 맡았던 그리스도인",
+    "difficulty": 1,
+    "references": ["디도서 1:4, 5"],
+    "insightEntry": "디도",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=디도"
+  },
+  {
+    "id": "naomi",
+    "word": "나오미",
+    "definition": "남편과 두 아들을 잃었지만 며느리 룻의 충성스러운 도움을 받은 여자",
+    "difficulty": 1,
+    "references": ["룻기 1-4장"],
+    "insightEntry": "나오미",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=나오미"
+  },
+  {
+    "id": "esther",
+    "word": "에스더",
+    "definition": "유대인을 위험에서 구하는 데 용기를 낸 페르시아의 왕비",
+    "difficulty": 1,
+    "references": ["에스더 4-8장"],
+    "insightEntry": "에스더",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=에스더"
+  },
+  {
+    "id": "elijah",
+    "word": "엘리야",
+    "definition": "바알 숭배에 맞서 여호와를 섬기도록 이스라엘을 촉구한 예언자",
+    "difficulty": 1,
+    "references": ["열왕기상 18장"],
+    "insightEntry": "엘리야",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=엘리야"
+  },
+  {
+    "id": "elisha",
+    "word": "엘리사",
+    "definition": "엘리야의 뒤를 이어 예언자로 활동한 사람",
+    "difficulty": 1,
+    "references": ["열왕기상 19:16-21"],
+    "insightEntry": "엘리사",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=엘리사"
+  },
+  {
+    "id": "samuel",
+    "word": "사무엘",
+    "definition": "이스라엘에서 예언자와 사사로 일했으며 왕을 기름부은 사람",
+    "difficulty": 1,
+    "references": ["사무엘상 3장", "사무엘상 16:1-13"],
+    "insightEntry": "사무엘",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사무엘"
+  },
+  {
+    "id": "saul",
+    "word": "사울",
+    "definition": "이스라엘의 첫 왕이었으나 하느님께 불순종한 사람",
+    "difficulty": 1,
+    "references": ["사무엘상 9-15장"],
+    "insightEntry": "사울",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사울"
+  },
+  {
+    "id": "jericho",
+    "word": "여리고",
+    "definition": "이스라엘 백성이 약속의 땅에 들어갈 때 정복한 성읍",
+    "difficulty": 1,
+    "references": ["여호수아 6장"],
+    "insightEntry": "여리고",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=여리고"
+  },
+  {
+    "id": "samaria",
+    "word": "사마리아",
+    "definition": "이스라엘 왕국의 수도였으며 주변 지역을 가리키기도 한 이름",
+    "difficulty": 1,
+    "references": ["열왕기상 16:24"],
+    "insightEntry": "사마리아",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사마리아"
+  },
+  {
+    "id": "bethel",
+    "word": "벧엘",
+    "definition": "야곱이 하느님의 약속을 확인한 곳으로, 이스라엘의 중요한 장소가 된 도시",
+    "difficulty": 1,
+    "references": ["창세기 28:10-19"],
+    "insightEntry": "벧엘",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=벧엘"
+  },
+  {
+    "id": "hebron",
+    "word": "헤브론",
+    "definition": "아브라함이 머물렀고 다윗이 처음 왕으로 다스린 고대 도시",
+    "difficulty": 1,
+    "references": ["창세기 13:18", "사무엘하 2:1-4"],
+    "insightEntry": "헤브론",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=헤브론"
+  },
+  {
+    "id": "sinai",
+    "word": "시내산",
+    "definition": "모세가 하느님의 율법을 받은 산",
+    "difficulty": 1,
+    "references": ["출애굽기 19-20장"],
+    "insightEntry": "시내 산",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=시내산"
+  },
+  {
+    "id": "ararat",
+    "word": "아라라트산",
+    "definition": "대홍수 후 노아의 방주가 머문 산악 지역",
+    "difficulty": 1,
+    "references": ["창세기 8:4"],
+    "insightEntry": "아라라트",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=아라라트"
+  },
+  {
+    "id": "carmel",
+    "word": "갈멜산",
+    "definition": "엘리야가 바알의 예언자들과 대결한 산",
+    "difficulty": 1,
+    "references": ["열왕기상 18장"],
+    "insightEntry": "갈멜",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=갈멜"
+  },
+  {
+    "id": "olivesmount",
+    "word": "올리브산",
+    "definition": "예루살렘 동쪽에 있으며 예수가 자주 가르치고 기도한 산",
+    "difficulty": 1,
+    "references": ["마태복음 24:3", "누가복음 22:39"],
+    "insightEntry": "올리브 산",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=올리브산"
+  },
+  {
+    "id": "nazareth",
+    "word": "나사렛",
+    "definition": "예수가 어린 시절과 청년기를 보낸 갈릴리의 도시",
+    "difficulty": 1,
+    "references": ["마태복음 2:23"],
+    "insightEntry": "나사렛",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=나사렛"
+  },
+  {
+    "id": "capernaum",
+    "word": "가버나움",
+    "definition": "예수가 갈릴리에서 전파하고 많은 기적을 행한 도시",
+    "difficulty": 1,
+    "references": ["마태복음 4:13-17"],
+    "insightEntry": "가버나움",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=가버나움"
+  },
+  {
+    "id": "damascus",
+    "word": "다마스쿠스",
+    "definition": "바울이 예수의 제자가 되는 계기를 맞은 시리아의 도시",
+    "difficulty": 1,
+    "references": ["사도행전 9:1-19"],
+    "insightEntry": "다마스쿠스",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=다마스쿠스"
+  },
+  {
+    "id": "antioch",
+    "word": "안디옥",
+    "definition": "초기 그리스도인들이 활발히 전파 활동을 벌인 도시",
+    "difficulty": 1,
+    "references": ["사도행전 11:19-26"],
+    "insightEntry": "안디옥",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=안디옥"
+  },
+  {
+    "id": "corinth",
+    "word": "고린도",
+    "definition": "바울이 회중을 세우고 편지를 보낸 고대 그리스의 도시",
+    "difficulty": 1,
+    "references": ["사도행전 18:1-11"],
+    "insightEntry": "고린도",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=고린도"
+  },
+  {
+    "id": "ephesus",
+    "word": "에베소",
+    "definition": "바울이 오랫동안 전파 활동을 한 소아시아의 도시",
+    "difficulty": 1,
+    "references": ["사도행전 19:1-10"],
+    "insightEntry": "에베소",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=에베소"
+  },
+  {
+    "id": "rome",
+    "word": "로마",
+    "definition": "바울이 죄수로 도착해 좋은 소식을 전한 제국의 수도",
+    "difficulty": 1,
+    "references": ["사도행전 28:16-31"],
+    "insightEntry": "로마",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=로마"
+  },
+  {
+    "id": "babylon",
+    "word": "바빌론",
+    "definition": "유다를 정복하고 많은 유대인을 유배시킨 고대 제국의 수도",
+    "difficulty": 1,
+    "references": ["열왕기하 24-25장"],
+    "insightEntry": "바빌론",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=바빌론"
+  },
+  {
+    "id": "persia",
+    "word": "페르시아",
+    "definition": "유대인들이 바빌론 유배 후 돌아갈 수 있도록 허락한 제국",
+    "difficulty": 1,
+    "references": ["에스라 1:1-4"],
+    "insightEntry": "페르시아",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=페르시아"
+  },
+  {
+    "id": "israel",
+    "word": "이스라엘",
+    "definition": "야곱의 후손으로 이루어진 민족이며 그들이 살던 땅을 가리키는 이름",
+    "difficulty": 1,
+    "references": ["창세기 32:28"],
+    "insightEntry": "이스라엘",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=이스라엘"
+  },
+  {
+    "id": "judah",
+    "word": "유다",
+    "definition": "야곱의 아들이며 이스라엘의 한 지파와 남쪽 왕국의 이름이 된 사람",
+    "difficulty": 1,
+    "references": ["창세기 29:35", "열왕기상 12:20"],
+    "insightEntry": "유다",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=유다"
+  },
+  {
+    "id": "levi",
+    "word": "레위",
+    "definition": "야곱의 아들로, 그의 후손은 성전 봉사와 관련된 일을 맡았다",
+    "difficulty": 1,
+    "references": ["창세기 29:34", "민수기 3:5-13"],
+    "insightEntry": "레위",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=레위"
+  },
+  {
+    "id": "benjamin",
+    "word": "베냐민",
+    "definition": "야곱의 막내아들이며 이스라엘의 한 지파의 이름이 된 사람",
+    "difficulty": 1,
+    "references": ["창세기 35:16-19"],
+    "insightEntry": "베냐민",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=베냐민"
+  },
+  {
+    "id": "philistines",
+    "word": "블레셋",
+    "definition": "이스라엘과 자주 전쟁을 벌인 지중해 연안의 민족",
+    "difficulty": 1,
+    "references": ["사무엘상 17장"],
+    "insightEntry": "블레셋",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=블레셋"
+  },
+  {
+    "id": "samaritan",
+    "word": "사마리아인",
+    "definition": "사마리아 지역에 살던 사람으로, 유대인과 다른 배경을 가진 민족",
+    "difficulty": 1,
+    "references": ["요한복음 4:7-9"],
+    "insightEntry": "사마리아인",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=사마리아인"
+  },
+  {
+    "id": "jews",
+    "word": "유대인",
+    "definition": "유다 지파 또는 유다 왕국의 후손에서 유래한 민족을 가리키는 말",
+    "difficulty": 1,
+    "references": ["열왕기하 16:6"],
+    "insightEntry": "유대인",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=유대인"
+  },
+  {
+    "id": "aramaic",
+    "word": "아람어",
+    "definition": "성경 일부와 고대 중동 지역에서 사용된 언어",
+    "difficulty": 1,
+    "references": ["다니엘 2:4"],
+    "insightEntry": "아람어",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=아람어"
+  },
+  {
+    "id": "tent",
+    "word": "천막",
+    "definition": "천이나 가죽으로 만들어 이동하며 거주할 수 있게 한 집",
+    "difficulty": 1,
+    "references": ["창세기 18:1-10"],
+    "insightEntry": "천막",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=천막"
+  },
+  {
+    "id": "lamp",
+    "word": "등불",
+    "definition": "기름 등을 태워 어두운 곳을 밝히는 도구",
+    "difficulty": 1,
+    "references": ["마태복음 25:1-13"],
+    "insightEntry": "등불",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=등불"
+  },
+  {
+    "id": "wine",
+    "word": "포도주",
+    "definition": "포도를 발효시켜 만든 음료로 성경 시대에 널리 사용되었다",
+    "difficulty": 1,
+    "references": ["요한복음 2:1-11"],
+    "insightEntry": "포도주",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=포도주"
+  },
+  {
+    "id": "vine",
+    "word": "포도나무",
+    "definition": "포도를 맺는 나무로, 성경에서 비유에도 자주 사용되었다",
+    "difficulty": 1,
+    "references": ["요한복음 15:1-5"],
+    "insightEntry": "포도나무",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=포도나무"
+  },
+  {
+    "id": "mustardseed",
+    "word": "겨자씨",
+    "definition": "매우 작은 씨로, 예수는 믿음과 하느님의 왕국을 설명하는 데 사용했다",
+    "difficulty": 1,
+    "references": ["마태복음 13:31, 32"],
+    "insightEntry": "겨자씨",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=겨자씨"
+  },
+  {
+    "id": "flock",
+    "word": "양떼",
+    "definition": "함께 길러지는 여러 마리의 양으로, 성경에서는 하느님의 백성을 상징하기도 한다",
+    "difficulty": 1,
+    "references": ["요한복음 10:14-16"],
+    "insightEntry": "양",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=양"
+  },
+  {
+    "id": "shepherd",
+    "word": "목자",
+    "definition": "양을 돌보고 이끄는 사람으로, 성경에서는 인도자를 가리키기도 한다",
+    "difficulty": 1,
+    "references": ["시편 23:1"],
+    "insightEntry": "목자",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=목자"
+  },
+  {
+    "id": "fisherman",
+    "word": "어부",
+    "definition": "물고기를 잡는 일을 하는 사람으로, 예수의 몇몇 사도들의 직업이었다",
+    "difficulty": 1,
+    "references": ["마태복음 4:18-22"],
+    "insightEntry": "어부",
+    "sourceUrl": "https://wol.jw.org/ko/wol/s/r8/lp-ko?q=어부"
+  }
+]
