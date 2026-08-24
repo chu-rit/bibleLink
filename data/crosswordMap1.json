@@ -6,217 +6,157 @@
   "height": 10,
   "sourceData": "./bibleWordsDifficulty1.json",
   "grid": [
-    "하느님##사라###",
-    "와####랑####",
-    "##마태###예수#",
-    "##리####언##",
-    "아담아#####사울",
-    "##람#####마#",
-    "유다어##에덴#리#",
-    "대####스##아#",
-    "인성전##더#제자#",
-    "#령#####단##"
+    "########도마",
+    "#########르",
+    "########유다",
+    "####나###대#",
+    "##포#사마리아인#",
+    "고린도#렛##람##",
+    "##나####어부#",
+    "#사무엘####활#",
+    "#라#리######",
+    "###사######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "하느님",
+      "answer": "사마리아인",
       "direction": "across",
-      "row": 0,
-      "col": 0,
-      "length": 3,
-      "wordId": "god",
-      "clue": "하늘과 땅을 창조하고 자신의 목적을 이루는 전능한 영적 존재"
-    },
-    {
-      "number": 1,
-      "answer": "하와",
-      "direction": "down",
-      "row": 0,
-      "col": 0,
-      "length": 2,
-      "wordId": "eve",
-      "clue": "아담의 아내이자 처음으로 창조된 여자로, 에덴동산에서 살았다"
+      "row": 4,
+      "col": 4,
+      "length": 5,
+      "wordId": "samaritan",
+      "clue": "사마리아 지역에 살던 사람으로, 유대인과 다른 배경을 가진 민족"
     },
     {
       "number": 2,
-      "answer": "사라",
-      "direction": "across",
-      "row": 0,
-      "col": 5,
-      "length": 2,
-      "wordId": "sarah",
-      "clue": "아브라함의 아내로, 늦은 나이에 아들 이삭을 낳았다"
-    },
-    {
-      "number": 2,
-      "answer": "사랑",
+      "answer": "나사렛",
       "direction": "down",
-      "row": 0,
-      "col": 5,
-      "length": 2,
-      "wordId": "love",
-      "clue": "다른 사람의 유익을 진심으로 바라며 행동하게 하는 마음"
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "nazareth",
+      "clue": "예수가 어린 시절과 청년기를 보낸 갈릴리의 도시"
     },
     {
       "number": 3,
-      "answer": "마태",
-      "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 2,
-      "wordId": "matthew",
-      "clue": "세금 징수원이었지만 예수의 부름을 받고 사도가 된 사람"
-    },
-    {
-      "number": 3,
-      "answer": "마리아",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "mary",
-      "clue": "예수의 어머니로, 하느님의 뜻에 따라 예수를 낳은 여자"
-    },
-    {
-      "number": 4,
-      "answer": "예수",
-      "direction": "across",
-      "row": 2,
-      "col": 7,
-      "length": 2,
-      "wordId": "jesus",
-      "clue": "하느님의 아들로, 사람들에게 하느님의 뜻과 구원의 소식을 가르친 분"
-    },
-    {
-      "number": 4,
-      "answer": "예언자",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "prophet",
-      "clue": "하느님의 말씀을 받아 사람들에게 전달한 사람"
-    },
-    {
-      "number": 5,
-      "answer": "아담",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 2,
-      "wordId": "adam",
-      "clue": "하느님이 처음 창조하신 사람으로, 에덴동산에서 살았다"
-    },
-    {
-      "number": 5,
-      "answer": "아람어",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "aramaic",
-      "clue": "성경 일부와 고대 중동 지역에서 사용된 언어"
-    },
-    {
-      "number": 6,
-      "answer": "사울",
-      "direction": "across",
-      "row": 4,
-      "col": 8,
-      "length": 2,
-      "wordId": "saul",
-      "clue": "이스라엘의 첫 왕이었으나 하느님께 불순종한 사람"
-    },
-    {
-      "number": 6,
-      "answer": "사마리아",
-      "direction": "down",
-      "row": 4,
-      "col": 8,
-      "length": 4,
-      "wordId": "samaria",
-      "clue": "이스라엘 왕국의 수도였으며 주변 지역을 가리키기도 한 이름"
-    },
-    {
-      "number": 7,
-      "answer": "유다",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 2,
-      "wordId": "judah",
-      "clue": "야곱의 아들이며 이스라엘의 한 지파와 남쪽 왕국의 이름이 된 사람"
-    },
-    {
-      "number": 7,
       "answer": "유대인",
       "direction": "down",
-      "row": 6,
-      "col": 0,
+      "row": 2,
+      "col": 8,
       "length": 3,
       "wordId": "jews",
       "clue": "유다 지파 또는 유다 왕국의 후손에서 유래한 민족을 가리키는 말"
     },
     {
-      "number": 8,
-      "answer": "에덴",
-      "direction": "across",
-      "row": 6,
-      "col": 5,
-      "length": 2,
-      "wordId": "eden",
-      "clue": "하느님이 아담과 하와를 살게 하신 아름다운 동산"
-    },
-    {
-      "number": 8,
-      "answer": "에스더",
+      "number": 4,
+      "answer": "아람어",
       "direction": "down",
-      "row": 6,
-      "col": 5,
+      "row": 4,
+      "col": 7,
       "length": 3,
-      "wordId": "esther",
-      "clue": "유대인을 위험에서 구하는 데 용기를 낸 페르시아의 왕비"
+      "wordId": "aramaic",
+      "clue": "성경 일부와 고대 중동 지역에서 사용된 언어"
+    },
+    {
+      "number": 5,
+      "answer": "어부",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 2,
+      "wordId": "fisherman",
+      "clue": "물고기를 잡는 일을 하는 사람"
+    },
+    {
+      "number": 6,
+      "answer": "부활",
+      "direction": "down",
+      "row": 6,
+      "col": 8,
+      "length": 2,
+      "wordId": "resurrection",
+      "clue": "죽은 사람이 하느님의 능력으로 다시 살아나는 일"
+    },
+    {
+      "number": 7,
+      "answer": "유다",
+      "direction": "across",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "judah",
+      "clue": "야곱의 아들이며 이스라엘의 한 지파와 남쪽 왕국의 이름이 된 사람"
+    },
+    {
+      "number": 8,
+      "answer": "마르다",
+      "direction": "down",
+      "row": 0,
+      "col": 9,
+      "length": 3,
+      "wordId": "martha",
+      "clue": "베다니에 살았으며 예수와 가까이 지낸 여자"
     },
     {
       "number": 9,
-      "answer": "성전",
+      "answer": "도마",
       "direction": "across",
-      "row": 8,
-      "col": 1,
+      "row": 0,
+      "col": 8,
       "length": 2,
-      "wordId": "temple",
-      "clue": "고대 예루살렘에서 하느님을 숭배하기 위해 사용된 건물"
-    },
-    {
-      "number": 9,
-      "answer": "성령",
-      "direction": "down",
-      "row": 8,
-      "col": 1,
-      "length": 2,
-      "wordId": "holyspirit",
-      "clue": "하느님이 자신의 목적을 이루고 사람들에게 힘을 주기 위해 사용하는 활동력"
+      "wordId": "thomas",
+      "clue": "예수의 부활을 직접 확인하고 믿게 된 사도"
     },
     {
       "number": 10,
-      "answer": "제자",
-      "direction": "across",
-      "row": 8,
-      "col": 7,
-      "length": 2,
-      "wordId": "disciple",
-      "clue": "스승의 가르침을 배우고 그 가르침에 따라 행동하는 사람"
+      "answer": "엘리사",
+      "direction": "down",
+      "row": 7,
+      "col": 3,
+      "length": 3,
+      "wordId": "elisha",
+      "clue": "엘리야의 뒤를 이어 예언자로 활동한 사람"
     },
     {
-      "number": 10,
-      "answer": "제단",
+      "number": 11,
+      "answer": "사무엘",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "samuel",
+      "clue": "이스라엘에서 예언자와 사사로 일했으며 왕을 기름부은 사람"
+    },
+    {
+      "number": 12,
+      "answer": "포도나무",
       "direction": "down",
-      "row": 8,
-      "col": 7,
+      "row": 4,
+      "col": 2,
+      "length": 4,
+      "wordId": "vine",
+      "clue": "포도를 맺는 나무로, 성경에서 비유에도 자주 사용된 나무"
+    },
+    {
+      "number": 13,
+      "answer": "사라",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
       "length": 2,
-      "wordId": "altar",
-      "clue": "하느님께 희생 제물을 바치기 위해 만든 구조물"
+      "wordId": "sarah",
+      "clue": "아브라함의 아내로, 늦은 나이에 아들 이삭을 낳았다"
+    },
+    {
+      "number": 14,
+      "answer": "고린도",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "corinth",
+      "clue": "바울이 회중을 세우고 편지를 보낸 고대 그리스의 도시"
     }
   ]
 }

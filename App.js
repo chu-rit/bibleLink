@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  Switch,
   StyleSheet,
   Text,
   TextInput,
@@ -19,6 +20,7 @@ export default function App() {
   const [answers, setAnswers] = useState({});
   const [input, setInput] = useState('');
   const [message, setMessage] = useState('문제를 선택하고 정답을 입력해 보세요.');
+  const [autoFill, setAutoFill] = useState(false);
   const { width: screenWidth } = useWindowDimensions();
   const cellSize = Math.max(22, Math.min(36, Math.floor((screenWidth - 76) / crosswordMap.width)));
 
@@ -60,6 +62,12 @@ export default function App() {
     chooseSlot(nextSlot.index);
   };
 
+  const toggleAutoFill = (enabled) => {
+    setAutoFill(enabled);
+    setAnswers(enabled ? Object.fromEntries(crosswordMap.cells.map((item, index) => [index, item.answer])) : {});
+    setMessage(enabled ? '테스트 모드: 정답을 모두 표시했습니다.' : '정답을 숨겼습니다.');
+  };
+
   const submitAnswer = () => {
     if (!slot || !input) {
       setMessage('정답을 입력해 주세요.');
@@ -79,6 +87,7 @@ export default function App() {
 
   const resetGame = () => {
     setAnswers({});
+    setAutoFill(false);
     setSelectedSlot(null);
     setInput('');
     setMessage('문제를 선택하고 정답을 입력해 보세요.');
@@ -123,6 +132,20 @@ export default function App() {
           <View style={styles.badge}>
             <Text style={styles.badgeText}>난이도 1</Text>
           </View>
+        </View>
+
+        <View style={styles.testModeCard}>
+          <View style={styles.testModeCopy}>
+            <Text style={styles.testModeTitle}>정답 자동 채우기</Text>
+            <Text style={styles.testModeDescription}>테스트할 때 퍼즐 답을 모두 표시합니다.</Text>
+          </View>
+          <Switch
+            value={autoFill}
+            onValueChange={toggleAutoFill}
+            trackColor={{ false: '#d8e1e8', true: '#9cc8e4' }}
+            thumbColor={autoFill ? '#315d7f' : '#f7fafc'}
+            accessibilityLabel="정답 자동 채우기"
+          />
         </View>
 
         <View style={styles.progressCard}>
@@ -215,6 +238,10 @@ const styles = StyleSheet.create({
   title: { color: '#172536', fontSize: 28, fontWeight: '800', marginTop: 4 },
   badge: { backgroundColor: '#e2edf6', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
   badgeText: { color: '#315d7f', fontSize: 12, fontWeight: '700' },
+  testModeCard: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#fff8e8', borderRadius: 16, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: '#f0dfb2' },
+  testModeCopy: { flex: 1, paddingRight: 12 },
+  testModeTitle: { color: '#735a22', fontSize: 14, fontWeight: '800' },
+  testModeDescription: { color: '#927842', fontSize: 12, marginTop: 4 },
   progressCard: { backgroundColor: '#fff', borderRadius: 18, padding: 16, marginBottom: 18, shadowColor: '#17324d', shadowOpacity: 0.06, shadowRadius: 12, elevation: 2 },
   progressRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
   progressLabel: { color: '#647487', fontSize: 13, fontWeight: '600' },
