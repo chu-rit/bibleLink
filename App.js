@@ -12,8 +12,10 @@ import {
   View,
 } from 'react-native';
 import crosswordMap from './data/crosswordMap1.json';
+import bibleWords from './data/bibleWordsDifficulty1.json';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
+const wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
 
 export default function App() {
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -25,6 +27,7 @@ export default function App() {
   const cellSize = Math.max(22, Math.min(36, Math.floor((screenWidth - 76) / crosswordMap.width)));
 
   const slot = crosswordMap.cells[selectedSlot];
+  const clue = slot?.clue || wordDataById[slot?.wordId]?.definition || '';
   const solvedCount = Object.keys(answers).filter((key) => answers[key]).length;
   const progress = Math.round((solvedCount / crosswordMap.cells.length) * 100);
 
@@ -188,7 +191,7 @@ export default function App() {
               <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
               {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
             </View>
-            <Text style={styles.clue}>{slot.clue}</Text>
+            <Text style={styles.clue}>{clue}</Text>
             <Text style={styles.answerLabel}>정답 입력</Text>
             <TextInput
               value={input}
