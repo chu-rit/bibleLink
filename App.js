@@ -40,20 +40,19 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
-  const [boardArea, setBoardArea] = useState({ width: 0, height: 0 });
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
-  const availableWidth = boardArea.width || Math.min(windowWidth - 32, windowHeight * 0.5);
-  const availableHeight = boardArea.height || Math.min(windowWidth - 32, windowHeight * 0.5);
-  const cellSize = Math.min(
-    Math.floor((availableWidth - 2) / crosswordMap.width),
-    Math.floor((availableHeight - 2) / crosswordMap.height),
+  const boardWidth = Math.max(0, windowWidth - 32);
+  const boardHeight = Math.max(0, Math.min(boardWidth, windowHeight * 0.5));
+  const cellSize = Math.max(8, Math.min(
+    Math.floor(boardWidth / crosswordMap.width),
+    Math.floor(boardHeight / crosswordMap.height),
     56
-  );
+  ));
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
@@ -223,11 +222,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </View>
 
           <View
-            style={[styles.boardArea, { minHeight: Math.min(windowWidth - 32, windowHeight * 0.5) }]}
-            onLayout={(event) => {
-              const { width, height } = event.nativeEvent.layout;
-              setBoardArea({ width, height });
-            }}
+            style={[styles.boardArea, { width: boardWidth, height: boardHeight }]}
           >
             {cellSize > 0 && (
               <View style={styles.board}>
@@ -482,7 +477,7 @@ const styles = StyleSheet.create({
   progressTrack: { height: 8, backgroundColor: '#e9eef3', borderRadius: 8, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: '#4d8cba', borderRadius: 8 },
   boardCard: { backgroundColor: '#fff', borderRadius: 20, padding: 18, marginBottom: 22, alignItems: 'center', shadowColor: '#17324d', shadowOpacity: 0.06, shadowRadius: 12, elevation: 2 },
-  boardArea: { flex: 1, minHeight: 0, alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
+  boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
   sectionTitle: { color: '#26384b', fontSize: 17, fontWeight: '800', marginBottom: 12 },
   board: { borderWidth: 1, borderColor: '#d9e1e8', backgroundColor: '#fff' },
   gridRow: { flexDirection: 'row' },
