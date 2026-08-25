@@ -11,6 +11,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -40,14 +41,17 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
   const [boardArea, setBoardArea] = useState({ width: 0, height: 0 });
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
+  const availableWidth = boardArea.width || Math.min(windowWidth - 32, windowHeight * 0.5);
+  const availableHeight = boardArea.height || Math.min(windowWidth - 32, windowHeight * 0.5);
   const cellSize = Math.min(
-    Math.floor((boardArea.width - 2) / crosswordMap.width),
-    Math.floor((boardArea.height - 2) / crosswordMap.height),
+    Math.floor((availableWidth - 2) / crosswordMap.width),
+    Math.floor((availableHeight - 2) / crosswordMap.height),
     56
   );
 
@@ -219,7 +223,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </View>
 
           <View
-            style={styles.boardArea}
+            style={[styles.boardArea, { minHeight: Math.min(windowWidth - 32, windowHeight * 0.5) }]}
             onLayout={(event) => {
               const { width, height } = event.nativeEvent.layout;
               setBoardArea({ width, height });

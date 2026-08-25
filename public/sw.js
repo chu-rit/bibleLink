@@ -1,14 +1,6 @@
 const CACHE_NAME = 'bible-link-v1';
-const ASSETS = [
-  '/bibleLink/',
-  '/bibleLink/manifest.json',
-  '/bibleLink/favicon.svg',
-];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS).catch(() => {}))
-  );
   self.skipWaiting();
 });
 
@@ -23,15 +15,17 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  if (!event.request.url.startsWith(self.location.origin)) return;
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
       return fetch(event.request)
         .then((response) => {
-          if (response.ok && event.request.url.startsWith(self.location.origin)) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone)).catch(() => {});
+          if (response.ok && response.headers.get('content-type')?.includes('text/html')) {
+            return response;
           }
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone)).catch(() => {});
           return response;
         })
         .catch(() => cached);
