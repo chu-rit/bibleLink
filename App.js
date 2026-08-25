@@ -46,13 +46,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
-  const boardWidth = Math.max(0, windowWidth - 32);
-  const boardHeight = Math.max(0, Math.min(boardWidth, windowHeight * 0.5));
-  const cellSize = Math.max(8, Math.min(
-    Math.floor(boardWidth / crosswordMap.width),
-    Math.floor(boardHeight / crosswordMap.height),
+  const boardWidth = Math.max(200, (windowWidth || 0) - 32);
+  const boardHeight = Math.max(200, Math.min(boardWidth, (windowHeight || 0) * 0.5));
+  const rawCellSize = Math.min(
+    Math.floor(boardWidth / (crosswordMap.width || 1)),
+    Math.floor(boardHeight / (crosswordMap.height || 1)),
     56
-  ));
+  );
+  const cellSize = Number.isFinite(rawCellSize) ? Math.max(8, rawCellSize) : 20;
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
