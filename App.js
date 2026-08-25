@@ -225,32 +225,30 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           <View
             style={[styles.boardArea, { width: boardWidth, height: boardHeight }]}
           >
-            {cellSize > 0 && (
-              <View style={styles.board}>
-                {crosswordMap.grid.map((row, rowIndex) => (
-                  <View style={styles.gridRow} key={`row-${rowIndex}`}>
-                    {[...row].map((value, colIndex) => {
-                      const isOpen = openCells[`${rowIndex}-${colIndex}`];
-                      const selected = isOpen && isSelectedCell(rowIndex, colIndex);
-                      return (
-                        <Pressable
-                          key={`${rowIndex}-${colIndex}`}
-                          disabled={!isOpen}
-                          onPress={() => selectCell(rowIndex, colIndex)}
-                          style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
-                        >
-                          {isOpen && (
-                            <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }]}>
-                              {getCellText(rowIndex, colIndex)}
-                            </Text>
-                          )}
-                        </Pressable>
-                      );
-                    })}
-                  </View>
-                ))}
-              </View>
-            )}
+            <View style={styles.board}>
+              {crosswordMap.grid.map((row, rowIndex) => (
+                <View style={styles.gridRow} key={`row-${rowIndex}`}>
+                  {[...row].map((value, colIndex) => {
+                    const isOpen = openCells[`${rowIndex}-${colIndex}`];
+                    const selected = isOpen && isSelectedCell(rowIndex, colIndex);
+                    return (
+                      <Pressable
+                        key={`${rowIndex}-${colIndex}`}
+                        disabled={!isOpen}
+                        onPress={() => selectCell(rowIndex, colIndex)}
+                        style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
+                      >
+                        {isOpen && (
+                          <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }]}>
+                            {getCellText(rowIndex, colIndex)}
+                          </Text>
+                        )}
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              ))}
+            </View>
           </View>
 
           <View style={styles.hintPointBar}>
