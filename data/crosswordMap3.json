@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-003",
+  "title": "성경 단어 퍼즐 3",
+  "difficulty": 1,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#######마",
+    "마가#베드로#리",
+    "#나#들#마리아",
+    "#안드레###막",
+    "###헴###달",
+    "#######레",
+    "######요나",
+    "######한#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "마리아막달레나",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 7,
+      "wordId": "magdalenemary"
+    },
+    {
+      "number": 2,
+      "answer": "마가",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "mark"
+    },
+    {
+      "number": 3,
+      "answer": "가나안",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 3,
+      "wordId": "canaan"
+    },
+    {
+      "number": 4,
+      "answer": "베들레헴",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "bethlehem"
+    },
+    {
+      "number": 5,
+      "answer": "베드로",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 3,
+      "wordId": "peter"
+    },
+    {
+      "number": 6,
+      "answer": "로마",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "rome"
+    },
+    {
+      "number": 7,
+      "answer": "마리아",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "mary"
+    },
+    {
+      "number": 8,
+      "answer": "안드레",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "andrew"
+    },
+    {
+      "number": 9,
+      "answer": "요나",
+      "direction": "across",
+      "row": 6,
+      "col": 6,
+      "length": 2,
+      "wordId": "jonah"
+    },
+    {
+      "number": 10,
+      "answer": "요한",
+      "direction": "down",
+      "row": 6,
+      "col": 6,
+      "length": 2,
+      "wordId": "john"
+    }
+  ]
+}

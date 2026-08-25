@@ -2,20 +2,18 @@
   "id": "crossword-map-001",
   "title": "성경 단어 퍼즐 1",
   "difficulty": 1,
-  "width": 10,
-  "height": 10,
-  "sourceData": "./bibleWordsDifficulty1.json",
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########도마",
-    "#########르",
-    "########유다",
-    "####나###대#",
-    "##포#사마리아인#",
-    "고린도#렛##람##",
-    "##나####어부#",
-    "#사무엘####활#",
-    "#라#리######",
-    "###사######"
+    "######도마",
+    "#######르",
+    "######유다",
+    "#만나###대#",
+    "##사마리아인#",
+    "##렛##람##",
+    "#####어부#",
+    "######활#"
   ],
   "cells": [
     {
@@ -23,7 +21,7 @@
       "answer": "사마리아인",
       "direction": "across",
       "row": 4,
-      "col": 4,
+      "col": 2,
       "length": 5,
       "wordId": "samaritan",
       "clue": "유대 사회에서 배척받았지만, 예수의 비유에서는 강도 만난 사람을 도운 인물로 OOOO인"
@@ -33,7 +31,7 @@
       "answer": "나사렛",
       "direction": "down",
       "row": 3,
-      "col": 4,
+      "col": 2,
       "length": 3,
       "wordId": "nazareth"
     },
@@ -42,7 +40,7 @@
       "answer": "유대인",
       "direction": "down",
       "row": 2,
-      "col": 8,
+      "col": 6,
       "length": 3,
       "wordId": "jews",
       "clue": "예루살렘 성전과 율법을 중심으로 정체성을 지켜 온 백성을 가리키는 말"
@@ -52,7 +50,7 @@
       "answer": "아람어",
       "direction": "down",
       "row": 4,
-      "col": 7,
+      "col": 5,
       "length": 3,
       "wordId": "aramaic",
       "clue": "예수 시대 팔레스타인에서 일상적으로 널리 쓰였고 다니엘서 일부에도 기록된 언어"
@@ -62,7 +60,7 @@
       "answer": "어부",
       "direction": "across",
       "row": 6,
-      "col": 7,
+      "col": 5,
       "length": 2,
       "wordId": "fisherman",
       "clue": "갈릴리 호수에서 생업으로 그물을 던졌으며 예수의 제자로 부름받은 이들이 많았던 직업"
@@ -72,7 +70,7 @@
       "answer": "부활",
       "direction": "down",
       "row": 6,
-      "col": 8,
+      "col": 6,
       "length": 2,
       "wordId": "resurrection",
       "clue": "이 땅에서 이루어질 “의로운 사람들과 불의한 사람들”의 OO은 하느님의 목적에 있어 매우 중요하다."
@@ -82,7 +80,7 @@
       "answer": "유다",
       "direction": "across",
       "row": 2,
-      "col": 8,
+      "col": 6,
       "length": 2,
       "wordId": "judah"
     },
@@ -91,7 +89,7 @@
       "answer": "마르다",
       "direction": "down",
       "row": 0,
-      "col": 9,
+      "col": 7,
       "length": 3,
       "wordId": "martha",
       "clue": "베다니에서 동생과 함께 예수를 맞이했으며 손님 접대에 마음을 쓴 인물"
@@ -101,57 +99,20 @@
       "answer": "도마",
       "direction": "across",
       "row": 0,
-      "col": 8,
+      "col": 6,
       "length": 2,
       "wordId": "thomas",
       "clue": "다른 제자들의 증언만으로 믿지 않고 직접 확인하려 했던 열두 제자 중 한 사람"
     },
     {
       "number": 10,
-      "answer": "엘리사",
-      "direction": "down",
-      "row": 7,
-      "col": 3,
-      "length": 3,
-      "wordId": "elisha"
-    },
-    {
-      "number": 11,
-      "answer": "사무엘",
+      "answer": "만나",
       "direction": "across",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "samuel",
-      "clue": "한나의 기도로 태어나 사울과 다윗에게 왕의 기름을 부은 인물"
-    },
-    {
-      "number": 12,
-      "answer": "포도나무",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 4,
-      "wordId": "vine",
-      "clue": "요한 15장에서 예수와 제자의 관계를 설명하는 비유의 중심이 되는 나무"
-    },
-    {
-      "number": 13,
-      "answer": "사라",
-      "direction": "down",
-      "row": 7,
+      "row": 3,
       "col": 1,
       "length": 2,
-      "wordId": "sarah"
-    },
-    {
-      "number": 14,
-      "answer": "고린도",
-      "direction": "across",
-      "row": 5,
-      "col": 0,
-      "length": 3,
-      "wordId": "corinth"
+      "wordId": "manna",
+      "clue": "광야를 지나는 40년 동안 이스라엘 백성이 아침마다 거두어 먹은 양식"
     }
   ]
 }
