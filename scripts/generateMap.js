@@ -115,7 +115,7 @@ const shuffle = (items, random) => {
 
 function build(seed) {
   const random = createRandom(seed);
-  const starters = pool.filter((item) => item.letters.length >= 3 && item.uses === 0 && item.difficulty === 1);
+  const starters = pool.filter((item) => item.letters.length >= 3 && item.uses === 0);
   if (!starters.length) return null;
 
   const first = shuffle(starters, random)[0];
@@ -132,6 +132,8 @@ function build(seed) {
   while (list.length < targetWords) {
     const total = list.reduce((sum, item) => sum + item.difficulty, 0);
     const longCount = list.filter((item) => item.letters.length >= longLength).length;
+    const currentAvg = list.length ? total / list.length : 0;
+    const needHigher = currentAvg < targetDifficulty;
     const candidates = shuffle(
       pool.filter(
         (item) =>
@@ -140,7 +142,10 @@ function build(seed) {
           (item.letters.length < longLength || longCount < longLimit)
       ),
       random
-    ).sort((a, b) => a.uses - b.uses);
+    ).sort((a, b) => {
+      if (a.uses !== b.uses) return a.uses - b.uses;
+      return needHigher ? b.difficulty - a.difficulty : a.difficulty - b.difficulty;
+    });
 
     let placed = null;
     for (const candidate of candidates) {
@@ -199,7 +204,7 @@ const ordered = [...best.list].sort((a, b) => a.row - b.row || a.col - b.col);
 const map = {
   id: `crossword-map-${String(mapNumber).padStart(3, '0')}`,
   title: `성경 단어 퍼즐 ${mapNumber}`,
-  difficulty: Math.max(1, Math.round(best.average)),
+  difficulty: Math.max(1, Math.round(best.average * 10) / 10),
   width: size,
   height: size,
   sourceData: './bibleWordsLib1.json',

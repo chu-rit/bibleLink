@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-006",
+  "title": "성경 단어 퍼즐 6",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##이세벨#####",
+    "##스##벨####",
+    "아굴라##사####",
+    "도#엘르아살####",
+    "니###사#####",
+    "야#아달랴##겟##",
+    "##몬###벳세메스",
+    "#열왕기하##마#랍",
+    "####느부갓네살#",
+    "####님#####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "이스라엘",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 4,
+      "wordId": "israel"
+    },
+    {
+      "number": 2,
+      "answer": "이세벨",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "jezebel"
+    },
+    {
+      "number": 3,
+      "answer": "벨사살",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "belshazzar"
+    },
+    {
+      "number": 4,
+      "answer": "아굴라",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "aquila"
+    },
+    {
+      "number": 5,
+      "answer": "아도니야",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 4,
+      "wordId": "adonijah"
+    },
+    {
+      "number": 6,
+      "answer": "엘르아살",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "eleazar"
+    },
+    {
+      "number": 7,
+      "answer": "아사랴",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "azariah"
+    },
+    {
+      "number": 8,
+      "answer": "아몬왕",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "amonking"
+    },
+    {
+      "number": 9,
+      "answer": "아달랴",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "athaliah"
+    },
+    {
+      "number": 10,
+      "answer": "겟세마네",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 4,
+      "wordId": "gethsemane"
+    },
+    {
+      "number": 11,
+      "answer": "벳세메스",
+      "direction": "across",
+      "row": 6,
+      "col": 6,
+      "length": 4,
+      "wordId": "bethshemesh"
+    },
+    {
+      "number": 12,
+      "answer": "스랍",
+      "direction": "down",
+      "row": 6,
+      "col": 9,
+      "length": 2,
+      "wordId": "seraph"
+    },
+    {
+      "number": 13,
+      "answer": "열왕기하",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 4,
+      "wordId": "secondkings"
+    },
+    {
+      "number": 14,
+      "answer": "하느님",
+      "direction": "down",
+      "row": 7,
+      "col": 4,
+      "length": 3,
+      "wordId": "god"
+    },
+    {
+      "number": 15,
+      "answer": "느부갓네살",
+      "direction": "across",
+      "row": 8,
+      "col": 4,
+      "length": 5,
+      "wordId": "nebuchadnezzar"
+    }
+  ]
+}

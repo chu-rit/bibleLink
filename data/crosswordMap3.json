@@ -1,110 +1,110 @@
 {
   "id": "crossword-map-003",
   "title": "성경 단어 퍼즐 3",
-  "difficulty": 1,
+  "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######마",
-    "마가#베드로#리",
-    "#나#들#마리아",
-    "#안드레###막",
-    "###헴###달",
-    "#######레",
-    "######요나",
-    "######한#"
+    "######창조",
+    "######세#",
+    "####역대기하",
+    "##예#대##와",
+    "지#레위기###",
+    "팡#미#상###",
+    "이사야#####",
+    "#도######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "마리아막달레나",
+      "answer": "창세기",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 7,
-      "wordId": "magdalenemary"
+      "col": 6,
+      "length": 3,
+      "wordId": "genesis"
     },
     {
       "number": 2,
-      "answer": "마가",
+      "answer": "창조",
       "direction": "across",
-      "row": 1,
-      "col": 0,
+      "row": 0,
+      "col": 6,
       "length": 2,
-      "wordId": "mark"
+      "wordId": "creation"
     },
     {
       "number": 3,
-      "answer": "가나안",
+      "answer": "역대기상",
       "direction": "down",
-      "row": 1,
-      "col": 1,
-      "length": 3,
-      "wordId": "canaan"
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "firstchronicles"
     },
     {
       "number": 4,
-      "answer": "베들레헴",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
+      "answer": "역대기하",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
       "length": 4,
-      "wordId": "bethlehem"
+      "wordId": "secondchronicles"
     },
     {
       "number": 5,
-      "answer": "베드로",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 3,
-      "wordId": "peter"
+      "answer": "하와",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 2,
+      "wordId": "eve"
     },
     {
       "number": 6,
-      "answer": "로마",
+      "answer": "예레미야",
       "direction": "down",
-      "row": 1,
-      "col": 5,
-      "length": 2,
-      "wordId": "rome"
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "jeremiah"
     },
     {
       "number": 7,
-      "answer": "마리아",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
+      "answer": "지팡이",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
       "length": 3,
-      "wordId": "mary"
+      "wordId": "staff"
     },
     {
       "number": 8,
-      "answer": "안드레",
+      "answer": "레위기",
       "direction": "across",
-      "row": 3,
-      "col": 1,
+      "row": 4,
+      "col": 2,
       "length": 3,
-      "wordId": "andrew"
+      "wordId": "leviticus"
     },
     {
       "number": 9,
-      "answer": "요나",
+      "answer": "이사야",
       "direction": "across",
       "row": 6,
-      "col": 6,
-      "length": 2,
-      "wordId": "jonah"
+      "col": 0,
+      "length": 3,
+      "wordId": "isaiah"
     },
     {
       "number": 10,
-      "answer": "요한",
+      "answer": "사도",
       "direction": "down",
       "row": 6,
-      "col": 6,
+      "col": 1,
       "length": 2,
-      "wordId": "john"
+      "wordId": "apostle"
     }
   ]
 }

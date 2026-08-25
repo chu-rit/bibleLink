@@ -1,7 +1,7 @@
 {
   "id": "crossword-map-002",
   "title": "성경 단어 퍼즐 2",
-  "difficulty": 1,
+  "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",

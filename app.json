@@ -7,7 +7,9 @@
     "userInterfaceStyle": "light",
     "assetBundlePatterns": ["**/*"],
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "output": "single",
+      "pwa": true
     },
     "experiments": {
       "baseUrl": "/bibleLink"

@@ -1,0 +1,17 @@
+{
+  "name": "Bible Link",
+  "short_name": "Bible Link",
+  "start_url": "/bibleLink",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f8fb",
+  "theme_color": "#315d7f",
+  "icons": [
+    {
+      "src": "/bibleLink/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

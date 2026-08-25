@@ -1,0 +1,17 @@
+Add maps 7-10, hint system, PWA support, and spelling fixes
+
+- Add maps 7-10 with difficulty-based sections (EASY/NORMAL/HARD)
+- Map 9-10: 12x12 size, 20 words, HARD section
+- Add hint system: 3 hints per map, shows Bible references
+- Add PWA support: manifest, service worker, favicon, meta tags
+- Fix word spellings: 벧세메스→벳세메스, 아사 왕→아사, 아몬 왕→아몬
+- Remove 마리아 막달레나 (not in WOL Insight, 마리아 exists)
+- Fix definitions that revealed answers (포도나무, 유스도)
+- Improve map generator: remove difficulty 1 starter constraint,
+  prioritize higher difficulty words when below target
+- Store difficulty as decimal in map data
+- Simplify map section titles
+
+Generated with [Devin](https://devin.ai)
+
+Co-Authored-By: Devin <158243242+devin-ai-integration[bot]@users.noreply.github.com>

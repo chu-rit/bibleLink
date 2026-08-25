@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-005",
+  "title": "성경 단어 퍼즐 5",
+  "difficulty": 1.9,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####요시야",
+    "##하갈###고",
+    "###라###보",
+    "###디모데전서",
+    "아합#아####",
+    "라#에서####",
+    "비#스#####",
+    "아브라함####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "요시야",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "josiah"
+    },
+    {
+      "number": 2,
+      "answer": "야고보서",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "jamesletter"
+    },
+    {
+      "number": 3,
+      "answer": "하갈",
+      "direction": "across",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "hagar"
+    },
+    {
+      "number": 4,
+      "answer": "갈라디아서",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 5,
+      "wordId": "galatians"
+    },
+    {
+      "number": 5,
+      "answer": "디모데전서",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 5,
+      "wordId": "firsttimothy"
+    },
+    {
+      "number": 6,
+      "answer": "아라비아",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "arabia"
+    },
+    {
+      "number": 7,
+      "answer": "아합",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 2,
+      "wordId": "ahab"
+    },
+    {
+      "number": 8,
+      "answer": "에스라",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "ezra"
+    },
+    {
+      "number": 9,
+      "answer": "에서",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "esau"
+    },
+    {
+      "number": 10,
+      "answer": "아브라함",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "abraham"
+    }
+  ]
+}

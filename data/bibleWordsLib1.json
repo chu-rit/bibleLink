@@ -762,7 +762,7 @@
   {
     "id": "vine",
     "word": "포도나무",
-    "definition": "포도를 맺는 나무로, 성경에서 비유에도 자주 사용되었다",
+    "definition": "성경에서 예수님이 자신을 비유해 언급하신 식물로, 열매를 맺지 못하면 불태워지는 존재로 묘사되기도 한다",
     "difficulty": 1,
     "references": ["요한복음 15:1-5"],
     "insightEntry": "포도나무"
@@ -1681,7 +1681,7 @@
   },
   {
     "id": "asa",
-    "word": "아사 왕",
+    "word": "아사",
     "definition": "우상 숭배를 없애고 여호와를 의지하려고 한 유다 왕",
     "difficulty": 2,
     "references": ["역대기하 14-16장"],
@@ -1721,7 +1721,7 @@
   },
   {
     "id": "amonking",
-    "word": "아몬 왕",
+    "word": "아몬",
     "definition": "아버지의 악한 행로를 따르다가 신하들에게 살해된 유다 왕",
     "difficulty": 3,
     "references": ["열왕기하 21:19-24"],
@@ -2054,14 +2054,6 @@
     "difficulty": 2,
     "references": ["마태복음 26:14-16, 47-50"],
     "insightEntry": "가룟 유다"
-  },
-  {
-    "id": "magdalenemary",
-    "word": "마리아 막달레나",
-    "definition": "예수의 죽음과 부활을 가까이서 목격한 여자 제자",
-    "difficulty": 2,
-    "references": ["누가복음 8:1-3","요한복음 20:1-18"],
-    "insightEntry": "마리아 막달레나"
   },
   {
     "id": "salome",
@@ -2954,7 +2946,7 @@
   {
     "id": "justus",
     "word": "유스도",
-    "definition": "바울과 함께 고린도에서 전파 활동을 했던 티티우스 유스도",
+    "definition": "바울과 함께 고린도에서 전파 활동을 했던 로마 출신의 충실한 그리스도인으로, 그의 집이 모임 장소로 쓰였다",
     "difficulty": 3,
     "references": ["사도행전 18:7, 8"],
     "insightEntry": "유스도"
@@ -3746,11 +3738,11 @@
   },
   {
     "id": "bethshemesh",
-    "word": "벧세메스",
+    "word": "벳세메스",
     "definition": "블레셋 사람들이 돌려보낸 계약의 궤가 도착한 이스라엘의 도시",
     "difficulty": 2,
     "references": ["사무엘상 6:9-15"],
-    "insightEntry": "벧세메스"
+    "insightEntry": "벳-세메스"
   },
   {
     "id": "lachish",
