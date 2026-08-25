@@ -54,8 +54,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const hardStartIndex = easyMaps.length + normalMaps.length;
 
   const renderTile = (map, number) => {
-    const progress = progressByMap?.[map.id] || { solved: 0, total: map.cells.length };
-    const percent = progress.total ? Math.round((progress.solved / progress.total) * 100) : 0;
+    const progress = progressByMap?.[map.id] || { filled: 0, total: map.cells.length };
+    const percent = progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
     const isComplete = percent === 100;
     return (
       <Pressable

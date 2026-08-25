@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Animated,
   Easing,
-  KeyboardAvoidingView,
+  Keyboard,
+  Modal,
   Platform,
   Pressable,
   SafeAreaView,
@@ -33,6 +34,25 @@ const averageDifficulty = (map) => {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 };
 
+const getFilledCellCount = (map, answers) => {
+  const filledCells = new Set();
+  map.cells.forEach((item, index) => {
+    const answer = answers?.[index];
+    if (!answer) return;
+    [...normalize(answer)].forEach((_, offset) => {
+      const row = item.direction === 'across' ? item.row : item.row + offset;
+      const col = item.direction === 'across' ? item.col + offset : item.col;
+      filledCells.add(`${row}-${col}`);
+    });
+  });
+  return filledCells.size;
+};
+
+const getOpenCellCount = (map) => map.grid.reduce(
+  (count, row) => count + [...row].filter((value) => value !== '#').length,
+  0
+);
+
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint }) {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [answers, setAnswers] = useState(initialAnswers || {});
@@ -40,7 +60,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isCorrect, setIsCorrect] = useState(false);
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [showClearModal, setShowClearModal] = useState(false);
+  const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const inputRef = useRef(null);
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const translateYAnim = useRef(new Animated.Value(0)).current;
@@ -59,6 +83,24 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     onAnswersChange?.(crosswordMap.id, answers);
   }, [answers]);
 
+  useEffect(() => {
+    if (selectedSlot !== null) {
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [selectedSlot]);
+
+  useEffect(() => {
+    const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow';
+    const hideEvent = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide';
+    const showSubscription = Keyboard.addListener(showEvent, () => setIsKeyboardVisible(true));
+    const hideSubscription = Keyboard.addListener(hideEvent, () => setIsKeyboardVisible(false));
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
+
   useEffect(() => () => {
     if (wrongTimerRef.current) clearTimeout(wrongTimerRef.current);
     if (fadeTimerRef.current) clearTimeout(fadeTimerRef.current);
@@ -66,26 +108,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
   const triggerWrong = () => {
     setIsWrong(true);
-    fadeAnim.setValue(1);
-    translateYAnim.setValue(0);
     Animated.loop(
       Animated.sequence([
         Animated.timing(shakeAnim, { toValue: 1, duration: 50, easing: Easing.linear, useNativeDriver: true }),
         Animated.timing(shakeAnim, { toValue: -1, duration: 50, easing: Easing.linear, useNativeDriver: true }),
       ]),
-      { iterations: 10 }
-    ).start(() => {
-      shakeAnim.setValue(0);
-      Animated.parallel([
-        Animated.timing(fadeAnim, { toValue: 0, duration: 800, easing: Easing.ease, useNativeDriver: true }),
-        Animated.timing(translateYAnim, { toValue: -20, duration: 800, easing: Easing.ease, useNativeDriver: true }),
-      ]).start(() => {
-        setInput('');
-        fadeAnim.setValue(1);
-        translateYAnim.setValue(0);
-        setIsWrong(false);
-      });
-    });
+      { iterations: 5 }
+    ).start(() => shakeAnim.setValue(0));
   };
 
   const slot = crosswordMap.cells[selectedSlot];
@@ -93,8 +122,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const isHinted = Boolean(hintedSlots?.[selectedSlot]) && !answers[selectedSlot];
   const clue = slot?.clue || wordData?.definition || '';
   const hintReferences = wordData?.references?.join(', ') || '';
-  const solvedCount = Object.keys(answers).filter((key) => answers[key]).length;
-  const progress = Math.round((solvedCount / crosswordMap.cells.length) * 100);
 
   const openCells = useMemo(() => {
     const cells = {};
@@ -144,6 +171,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       setInput(slot.answer);
       setIsCorrect(true);
       setIsWrong(false);
+      inputRef.current?.blur();
     } else {
       triggerWrong();
     }
@@ -183,10 +211,37 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     );
   };
 
+  const filledCellCount = getFilledCellCount(crosswordMap, answers);
+  const totalCellCount = Object.keys(openCells).length;
+  const progress = totalCellCount ? Math.round((filledCellCount / totalCellCount) * 100) : 0;
+  const activeSpanHeight = slot?.direction === 'down' ? slot.length * cellSize : cellSize;
+  const boardViewportHeight = isKeyboardVisible
+    ? Math.min(boardHeight, Math.max(cellSize * 3, activeSpanHeight + cellSize * 2))
+    : boardHeight;
+  const activeStartY = (slot?.row || 0) * cellSize;
+  const activeEndY = activeStartY + activeSpanHeight;
+  const maxBoardOffset = Math.max(0, crosswordMap.grid.length * cellSize - boardViewportHeight);
+  const boardOffsetY = isKeyboardVisible
+    ? -Math.min(maxBoardOffset, Math.max(0, ((activeStartY + activeEndY) / 2) - boardViewportHeight / 2))
+    : 0;
+
+  useEffect(() => {
+    if (filledCellCount < totalCellCount) {
+      hasShownClearRef.current = false;
+      return;
+    }
+
+    if (totalCellCount > 0 && !hasShownClearRef.current) {
+      hasShownClearRef.current = true;
+      Keyboard.dismiss();
+      setShowClearModal(true);
+    }
+  }, [filledCellCount, totalCellCount]);
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <View style={styles.flex}>
         <View style={styles.container}>
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
@@ -202,7 +257,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             <View style={styles.progressColumn}>
               <View style={styles.progressRow}>
                 <Text style={styles.progressLabel}>퍼즐 진행도</Text>
-                <Text style={styles.progressValue}>{solvedCount}/{crosswordMap.cells.length}</Text>
+                <Text style={styles.progressValue}>{filledCellCount}/{totalCellCount}</Text>
               </View>
               <View style={styles.progressTrack}>
                 <View style={[styles.progressFill, { width: `${progress}%` }]} />
@@ -223,33 +278,40 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </View>
 
           <View
-            style={[styles.boardArea, { width: boardWidth, height: boardHeight }]}
+            style={[
+              styles.boardArea,
+              {
+                width: boardWidth,
+                height: boardViewportHeight,
+                justifyContent: isKeyboardVisible ? 'flex-start' : 'center',
+              },
+            ]}
           >
-            <View style={styles.board}>
-              {crosswordMap.grid.map((row, rowIndex) => (
-                <View style={styles.gridRow} key={`row-${rowIndex}`}>
-                  {[...row].map((value, colIndex) => {
-                    const isOpen = openCells[`${rowIndex}-${colIndex}`];
-                    const selected = isOpen && isSelectedCell(rowIndex, colIndex);
-                    return (
-                      <Pressable
-                        key={`${rowIndex}-${colIndex}`}
-                        disabled={!isOpen}
-                        onPress={() => selectCell(rowIndex, colIndex)}
-                        style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
-                      >
-                        {isOpen && (
-                          <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }]}>
-                            {getCellText(rowIndex, colIndex)}
-                          </Text>
-                        )}
-                      </Pressable>
-                    );
-                  })}
-                </View>
-              ))}
+            <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
+                {crosswordMap.grid.map((row, rowIndex) => (
+                  <View style={styles.gridRow} key={`row-${rowIndex}`}>
+                    {[...row].map((value, colIndex) => {
+                      const isOpen = openCells[`${rowIndex}-${colIndex}`];
+                      const selected = isOpen && isSelectedCell(rowIndex, colIndex);
+                      return (
+                        <Pressable
+                          key={`${rowIndex}-${colIndex}`}
+                          disabled={!isOpen}
+                          onPress={() => selectCell(rowIndex, colIndex)}
+                          style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
+                        >
+                          {isOpen && (
+                            <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }]}>
+                              {getCellText(rowIndex, colIndex)}
+                            </Text>
+                          )}
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                ))}
+              </View>
             </View>
-          </View>
 
           <View style={styles.hintPointBar}>
             <Text style={styles.hintPointText}>힌트 {hintPoints}</Text>
@@ -291,6 +353,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                     ]}
                   >
                     <TextInput
+                      ref={inputRef}
                       value={input}
                       onChangeText={(text) => {
                         setInput(text);
@@ -303,14 +366,36 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       maxLength={slot.length}
                       style={[
                         styles.answerInput,
+                        input && styles.answerInputWithClear,
                         isCorrect && styles.answerInputCorrect,
                         isWrong && styles.answerInputWrong,
                         isWrong && styles.answerInputHidden,
                       ]}
                       returnKeyType="done"
                       blurOnSubmit={false}
+                      onFocus={() => setIsKeyboardVisible(true)}
+                      onBlur={() => setIsKeyboardVisible(false)}
                       onSubmitEditing={submitAnswer}
                     />
+                    {input && (
+                      <Pressable
+                        onPress={() => {
+                          setAnswers((current) => {
+                            const next = { ...current };
+                            delete next[selectedSlot];
+                            return next;
+                          });
+                          setInput('');
+                          setIsCorrect(false);
+                          setIsWrong(false);
+                          inputRef.current?.focus();
+                        }}
+                        accessibilityLabel="입력 내용 지우기"
+                        style={styles.clearInputButton}
+                      >
+                        <Text style={styles.clearInputButtonText}>×</Text>
+                      </Pressable>
+                    )}
                     {isWrong && (
                       <Animated.View
                         pointerEvents="none"
@@ -350,8 +435,31 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             )}
           </View>
+
+          <Modal
+            visible={showClearModal}
+            transparent
+            animationType="fade"
+            onRequestClose={() => setShowClearModal(false)}
+          >
+            <View style={styles.clearModalOverlay}>
+              <View style={styles.clearModalCard}>
+                <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
+                <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
+                <Pressable
+                  onPress={() => {
+                    setShowClearModal(false);
+                    onBack();
+                  }}
+                  style={styles.clearModalButton}
+                >
+                  <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
+                </Pressable>
+              </View>
+            </View>
+          </Modal>
         </View>
-      </KeyboardAvoidingView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -407,8 +515,8 @@ export default function App() {
       Object.fromEntries(
         crosswordMaps.map((map) => {
           const answers = answersByMap[map.id] || {};
-          const solved = Object.keys(answers).filter((key) => answers[key]).length;
-          return [map.id, { solved, total: map.cells.length }];
+          const filled = getFilledCellCount(map, answers);
+          return [map.id, { filled, total: getOpenCellCount(map) }];
         })
       ),
     [answersByMap]
@@ -476,7 +584,7 @@ const styles = StyleSheet.create({
   progressTrack: { height: 8, backgroundColor: '#e9eef3', borderRadius: 8, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: '#4d8cba', borderRadius: 8 },
   boardCard: { backgroundColor: '#fff', borderRadius: 20, padding: 18, marginBottom: 22, alignItems: 'center', shadowColor: '#17324d', shadowOpacity: 0.06, shadowRadius: 12, elevation: 2 },
-  boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
+  boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10, overflow: 'hidden' },
   sectionTitle: { color: '#26384b', fontSize: 17, fontWeight: '800', marginBottom: 12 },
   board: { borderWidth: 1, borderColor: '#d9e1e8', backgroundColor: '#fff' },
   gridRow: { flexDirection: 'row' },
@@ -493,6 +601,12 @@ const styles = StyleSheet.create({
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   answerCard: { backgroundColor: '#fff', borderRadius: 20, padding: 14, borderWidth: 1, borderColor: '#e7edf2', position: 'relative' },
+  clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
+  clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fff', borderRadius: 20, padding: 24, alignItems: 'center' },
+  clearModalTitle: { color: '#315d7f', fontSize: 22, fontWeight: '800' },
+  clearModalText: { color: '#647487', fontSize: 14, marginTop: 8, marginBottom: 20 },
+  clearModalButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },
+  clearModalButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
   selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
   selectedDirection: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   emptySelection: { alignItems: 'center' },
@@ -501,6 +615,9 @@ const styles = StyleSheet.create({
   answerLabel: { color: '#26384b', fontSize: 14, fontWeight: '800', marginBottom: 9 },
   answerInputWrap: { flex: 1, position: 'relative' },
   answerInput: { borderWidth: 1, borderColor: '#cbd8e2', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#20384d', fontSize: 16, backgroundColor: '#fbfdff' },
+  answerInputWithClear: { paddingRight: 36 },
+  clearInputButton: { position: 'absolute', top: 1, right: 1, width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
+  clearInputButtonText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
   answerInputHidden: { color: 'transparent' },
   answerInputCorrect: { borderColor: '#3c9a72', backgroundColor: '#e7f6ee' },
   answerInputWrong: { borderColor: '#d64545', backgroundColor: '#fdeaea' },
