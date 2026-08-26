@@ -104,8 +104,10 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     if (Platform.OS !== 'web' || typeof window === 'undefined' || !window.visualViewport) return undefined;
 
     const viewport = window.visualViewport;
+    const initialViewportHeight = window.innerHeight;
     const updateViewport = () => {
       setWebViewportHeight(viewport.height);
+      setIsKeyboardVisible(viewport.height < initialViewportHeight - 100);
       window.scrollTo(0, 0);
     };
 
@@ -427,7 +429,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                           setTimeout(resetScroll, 500);
                         }
                       }}
-                      onBlur={() => setIsKeyboardVisible(false)}
+                      onBlur={() => {
+                        if (Platform.OS !== 'web') setIsKeyboardVisible(false);
+                      }}
                       onSubmitEditing={submitAnswer}
                     />
                     {input && (
