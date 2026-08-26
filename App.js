@@ -80,11 +80,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const fadeTimerRef = useRef(null);
   const boardWidth = Math.max(200, (windowWidth || 0) - 32);
   const boardHeight = Math.max(200, Math.min(boardWidth, (windowHeight || 0) * (isKeyboardVisible ? 0.65 : 0.5)));
-  const rawCellSize = Math.min(
-    Math.floor(boardWidth / (crosswordMap.width || 1)),
-    Math.floor(boardHeight / (crosswordMap.height || 1)),
-    56
-  );
+  const rawCellSize = isKeyboardVisible
+    ? Math.min(Math.floor(boardWidth / (crosswordMap.width || 1)), 56)
+    : Math.min(
+      Math.floor(boardWidth / (crosswordMap.width || 1)),
+      Math.floor(boardHeight / (crosswordMap.height || 1)),
+      56
+    );
   const cellSize = Number.isFinite(rawCellSize) ? Math.max(8, rawCellSize) : 20;
 
   useEffect(() => {
