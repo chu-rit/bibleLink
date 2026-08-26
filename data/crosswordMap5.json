@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-005",
+  "id": "crossword-map-005-v2",
   "title": "성경 단어 퍼즐 5",
-  "difficulty": 1.9,
-  "width": 8,
-  "height": 8,
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####요시야",
-    "##하갈###고",
-    "###라###보",
-    "###디모데전서",
-    "아합#아####",
-    "라#에서####",
-    "비#스#####",
-    "아브라함####"
+    "###요한#####",
+    "####나아만###",
+    "#####볼##에녹",
+    "#####로마#베#",
+    "######지성소#",
+    "######막###",
+    "##하느님의날###",
+    "##박##로####",
+    "#천국##움####",
+    "성막########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "요시야",
+      "answer": "요한",
       "direction": "across",
       "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "josiah"
+      "col": 3,
+      "length": 2,
+      "wordId": "john"
     },
     {
       "number": 2,
-      "answer": "야고보서",
+      "answer": "한나",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 4,
-      "wordId": "jamesletter"
+      "col": 4,
+      "length": 2,
+      "wordId": "hannah"
     },
     {
       "number": 3,
-      "answer": "하갈",
+      "answer": "나아만",
       "direction": "across",
       "row": 1,
-      "col": 2,
-      "length": 2,
-      "wordId": "hagar"
+      "col": 4,
+      "length": 3,
+      "wordId": "naaman"
     },
     {
       "number": 4,
-      "answer": "갈라디아서",
+      "answer": "아볼로",
       "direction": "down",
       "row": 1,
-      "col": 3,
-      "length": 5,
-      "wordId": "galatians"
+      "col": 5,
+      "length": 3,
+      "wordId": "apollos"
     },
     {
       "number": 5,
-      "answer": "디모데전서",
-      "direction": "across",
-      "row": 3,
-      "col": 3,
-      "length": 5,
-      "wordId": "firsttimothy"
+      "answer": "에베소",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 3,
+      "wordId": "ephesus"
     },
     {
       "number": 6,
-      "answer": "아라비아",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "arabia"
+      "answer": "에녹",
+      "direction": "across",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "enoch"
     },
     {
       "number": 7,
-      "answer": "아합",
+      "answer": "로마",
       "direction": "across",
-      "row": 4,
-      "col": 0,
+      "row": 3,
+      "col": 5,
       "length": 2,
-      "wordId": "ahab"
+      "wordId": "rome"
     },
     {
       "number": 8,
-      "answer": "에스라",
+      "answer": "마지막날",
       "direction": "down",
-      "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "ezra"
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "lastdays"
     },
     {
       "number": 9,
-      "answer": "에서",
+      "answer": "지성소",
       "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 2,
-      "wordId": "esau"
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "mostholy"
     },
     {
       "number": 10,
-      "answer": "아브라함",
+      "answer": "하느님의날",
       "direction": "across",
-      "row": 7,
+      "row": 6,
+      "col": 2,
+      "length": 5,
+      "wordId": "dayofjehovah"
+    },
+    {
+      "number": 11,
+      "answer": "하박국",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "habakkuk"
+    },
+    {
+      "number": 12,
+      "answer": "의로움",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "righteousness"
+    },
+    {
+      "number": 13,
+      "answer": "천국",
+      "direction": "across",
+      "row": 8,
+      "col": 1,
+      "length": 2,
+      "wordId": "heaven"
+    },
+    {
+      "number": 14,
+      "answer": "천막",
+      "direction": "down",
+      "row": 8,
+      "col": 1,
+      "length": 2,
+      "wordId": "tent"
+    },
+    {
+      "number": 15,
+      "answer": "성막",
+      "direction": "across",
+      "row": 9,
       "col": 0,
-      "length": 4,
-      "wordId": "abraham"
+      "length": 2,
+      "wordId": "tabernacle"
     }
   ]
 }

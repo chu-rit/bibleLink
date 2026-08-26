@@ -46,8 +46,8 @@ function Gauge({ percent, number, isComplete }) {
 }
 
 export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch }) {
-  const easyMaps = maps.filter((m) => m.difficulty < 2);
-  const normalMaps = maps.filter((m) => m.difficulty >= 2 && m.difficulty < 2.6);
+  const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
+  const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
   const hardMaps = maps.filter((m) => m.difficulty >= 2.6);
   const easyStartIndex = 0;
   const normalStartIndex = easyMaps.length;
@@ -87,7 +87,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={[styles.container, styles.containerGrow]}
+      >
         <View style={styles.header}>
           <Text style={styles.eyebrow}>BIBLE LINK</Text>
           <Text style={styles.title}>맵 선택</Text>
@@ -113,8 +116,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
-  container: { padding: 20, paddingBottom: 40 },
+  safeArea: { flex: 1, minHeight: '100%', backgroundColor: '#f6f8fb' },
+  scrollView: { flex: 1, backgroundColor: '#f6f8fb' },
+  container: { padding: 20, paddingBottom: 40, backgroundColor: '#f6f8fb' },
+  containerGrow: { flexGrow: 1 },
   header: { marginBottom: 20 },
   eyebrow: { color: '#53708d', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
   title: { color: '#172536', fontSize: 28, fontWeight: '800', marginTop: 4 },

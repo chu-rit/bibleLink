@@ -28,6 +28,11 @@ const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
+const isWordSearchPath = Platform.OS === 'web' &&
+  typeof window !== 'undefined' &&
+  window.location.pathname.endsWith('/word') ||
+  window.location.pathname.endsWith('/word/');
+
 const averageDifficulty = (map) => {
   const values = map.cells.map((cell) => wordDataById[cell.wordId]?.difficulty).filter(Boolean);
   if (!values.length) return map.difficulty;
@@ -280,7 +285,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
             </Pressable>
-            <Text style={styles.title} numberOfLines={1}>{crosswordMap.title}</Text>
             <View style={styles.badge}>
               <Text style={styles.badgeText}>난이도 {averageDifficulty(crosswordMap).toFixed(1)}</Text>
             </View>
@@ -488,6 +492,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           >
             <View style={styles.clearModalOverlay}>
               <View style={styles.clearModalCard}>
+                <Pressable
+                  onPress={() => setShowClearModal(false)}
+                  accessibilityLabel="클리어 팝업 닫기"
+                  style={styles.clearModalCloseButton}
+                >
+                  <Text style={styles.clearModalCloseText}>×</Text>
+                </Pressable>
                 <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
                 <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
                 <Pressable
@@ -509,7 +520,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 }
 
 export default function App() {
-  const [screen, setScreen] = useState('mapSelect');
+  const [screen, setScreen] = useState(isWordSearchPath ? 'wordSearch' : 'mapSelect');
   const [selectedMap, setSelectedMap] = useState(null);
   const [answersByMap, setAnswersByMap] = useState({});
   const [hintPointsByMap, setHintPointsByMap] = useState({});
@@ -569,7 +580,17 @@ export default function App() {
   if (!loaded) return null;
 
   if (screen === 'wordSearch') {
-    return <WordSearchScreen onBack={() => setScreen('mapSelect')} />;
+    return (
+      <WordSearchScreen
+        onBack={() => {
+          if (Platform.OS === 'web') {
+            window.location.assign(window.location.pathname.replace(/\/word\/?$/, '') || '/');
+            return;
+          }
+          setScreen('mapSelect');
+        }}
+      />
+    );
   }
 
   if (screen !== 'puzzle' || !selectedMap) {
@@ -581,7 +602,10 @@ export default function App() {
           setSelectedMap(map);
           setScreen('puzzle');
         }}
-        onWordSearch={isLocalhost ? () => setScreen('wordSearch') : undefined}
+        onWordSearch={Platform.OS === 'web' ? () => {
+          const basePath = window.location.pathname.replace(/\/?$/, '');
+          window.location.assign(`${basePath}/word/`);
+        } : undefined}
       />
     );
   }
@@ -648,6 +672,8 @@ const styles = StyleSheet.create({
   answerCard: { backgroundColor: '#fff', borderRadius: 20, padding: 14, borderWidth: 1, borderColor: '#e7edf2', position: 'relative' },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fff', borderRadius: 20, padding: 24, alignItems: 'center' },
+  clearModalCloseButton: { position: 'absolute', top: 8, right: 8, width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
+  clearModalCloseText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
   clearModalTitle: { color: '#315d7f', fontSize: 22, fontWeight: '800' },
   clearModalText: { color: '#647487', fontSize: 14, marginTop: 8, marginBottom: 20 },
   clearModalButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },

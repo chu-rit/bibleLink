@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-016",
+  "title": "성경 단어 퍼즐 16",
+  "difficulty": 1.5,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####요셉##",
+    "##영#한##벧",
+    "##원#이스마엘",
+    "#요한삼서#가#",
+    "##생###복#",
+    "십계명##믿음#",
+    "#시######",
+    "#록######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "요한이서",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "secondjohn"
+    },
+    {
+      "number": 2,
+      "answer": "요셉",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "joseph"
+    },
+    {
+      "number": 3,
+      "answer": "영원한생명",
+      "direction": "down",
+      "row": 1,
+      "col": 2,
+      "length": 5,
+      "wordId": "everlastinglife"
+    },
+    {
+      "number": 4,
+      "answer": "벧엘",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "bethel"
+    },
+    {
+      "number": 5,
+      "answer": "이스마엘",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "ishmael"
+    },
+    {
+      "number": 6,
+      "answer": "마가복음",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "marksgospel"
+    },
+    {
+      "number": 7,
+      "answer": "요한삼서",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 4,
+      "wordId": "thirdjohn"
+    },
+    {
+      "number": 8,
+      "answer": "십계명",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "tencommandments"
+    },
+    {
+      "number": 9,
+      "answer": "계시록",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "revelationbook"
+    },
+    {
+      "number": 10,
+      "answer": "믿음",
+      "direction": "across",
+      "row": 5,
+      "col": 5,
+      "length": 2,
+      "wordId": "faith"
+    }
+  ]
+}

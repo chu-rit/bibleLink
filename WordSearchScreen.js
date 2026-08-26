@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
-  FlatList,
   Keyboard,
+  Platform,
+  ScrollView,
   Pressable,
   SafeAreaView,
   StatusBar,
@@ -26,14 +27,49 @@ const usageCount = (() => {
 })();
 
 const getUsage = (id) => usageCount.get(id) || 0;
+const getMapTitles = (wordId) => crosswordMaps
+  .map((map, index) => ({ map, index }))
+  .filter(({ map }) => map.cells.some((cell) => cell.wordId === wordId))
+  .map(({ index }) => `맵 ${index + 1}`);
 
 export default function WordSearchScreen({ onBack }) {
   const [query, setQuery] = useState('');
 
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return undefined;
+
+    const body = document.body;
+    const root = document.getElementById('root');
+    const previous = {
+      bodyPosition: body.style.position,
+      bodyOverflow: body.style.overflow,
+      bodyHeight: body.style.height,
+      rootHeight: root?.style.height || '',
+      rootOverflow: root?.style.overflow || '',
+    };
+    body.style.position = 'static';
+    body.style.overflow = 'auto';
+    body.style.height = 'auto';
+    if (root) {
+      root.style.height = 'auto';
+      root.style.overflow = 'visible';
+    }
+
+    return () => {
+      body.style.position = previous.bodyPosition;
+      body.style.overflow = previous.bodyOverflow;
+      body.style.height = previous.bodyHeight;
+      if (root) {
+        root.style.height = previous.rootHeight;
+        root.style.overflow = previous.rootOverflow;
+      }
+    };
+  }, []);
+
   const results = useMemo(() => {
     const keyword = normalize(query);
     const list = bibleWords
-      .map((item) => ({ ...item, usage: getUsage(item.id) }))
+      .map((item) => ({ ...item, usage: getUsage(item.id), mapTitles: getMapTitles(item.id) }))
       .filter((item) => {
         if (!keyword) return true;
         return normalize(item.word).includes(keyword);
@@ -62,6 +98,12 @@ export default function WordSearchScreen({ onBack }) {
           )}
         </View>
         <Text style={styles.definition} numberOfLines={2}>{item.definition}</Text>
+        <View style={styles.mapUsageRow}>
+          <Text style={styles.mapUsageLabel}>등장 맵</Text>
+          <Text style={styles.mapUsageText} numberOfLines={2}>
+            {item.mapTitles.length > 0 ? item.mapTitles.join(' · ') : '아직 맵에 사용되지 않음'}
+          </Text>
+        </View>
         <View style={styles.metaRow}>
           <Text style={styles.metaText}>난이도 {item.difficulty}</Text>
           {item.references?.length > 0 && (
@@ -73,7 +115,7 @@ export default function WordSearchScreen({ onBack }) {
   );
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
         <View style={styles.header}>
@@ -107,14 +149,15 @@ export default function WordSearchScreen({ onBack }) {
 
         <Text style={styles.resultCount}>검색 결과 {results.length}개</Text>
 
-        <FlatList
-          data={results}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
+        <ScrollView
+          style={styles.list}
           contentContainerStyle={styles.listContent}
           keyboardShouldPersistTaps="handled"
-          initialNumToRender={20}
-        />
+        >
+          {results.map((item) => (
+            <View key={item.id}>{renderItem({ item })}</View>
+          ))}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -122,6 +165,7 @@ export default function WordSearchScreen({ onBack }) {
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  webSafeArea: { height: '100vh' },
   container: { flex: 1, padding: 16 },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
@@ -134,6 +178,7 @@ const styles = StyleSheet.create({
   clearButton: { paddingHorizontal: 8, paddingVertical: 6 },
   clearButtonText: { color: '#6b7c8d', fontSize: 12, fontWeight: '700' },
   resultCount: { color: '#647487', fontSize: 12, fontWeight: '700', marginBottom: 8 },
+  list: { flex: 1, minHeight: 0, overflow: 'scroll' },
   listContent: { paddingBottom: 24 },
   wordCard: { backgroundColor: '#fff', borderRadius: 16, padding: 14, marginBottom: 10, borderWidth: 1, borderColor: '#e7edf2' },
   usedWordCard: { borderColor: '#c9dcec', backgroundColor: '#f3f8fc' },
@@ -143,6 +188,9 @@ const styles = StyleSheet.create({
   usageBadge: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 8, paddingVertical: 3 },
   usageBadgeText: { color: '#fff', fontSize: 11, fontWeight: '800' },
   definition: { color: '#34485d', fontSize: 13, lineHeight: 19 },
+  mapUsageRow: { flexDirection: 'row', alignItems: 'flex-start', marginTop: 8 },
+  mapUsageLabel: { color: '#5d89a7', fontSize: 11, fontWeight: '800', marginRight: 8 },
+  mapUsageText: { flex: 1, color: '#647487', fontSize: 11, lineHeight: 16 },
   metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
   metaText: { color: '#8a99a8', fontSize: 11, fontWeight: '600' },
 });

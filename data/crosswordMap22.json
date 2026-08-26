@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-022",
+  "title": "성경 단어 퍼즐 22",
+  "difficulty": 2.3,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######말고##",
+    "######라###",
+    "#####멜기세덱#",
+    "#####리####",
+    "##데##데살로니가",
+    "#갈라디아##이#나",
+    "####비느하스#안",
+    "#히스기야#란###",
+    "##바#######",
+    "하나냐#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "말라기",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "malachi"
+    },
+    {
+      "number": 2,
+      "answer": "말고",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "malchus"
+    },
+    {
+      "number": 3,
+      "answer": "멜리데",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "malta"
+    },
+    {
+      "number": 4,
+      "answer": "멜기세덱",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 4,
+      "wordId": "melchizedek"
+    },
+    {
+      "number": 5,
+      "answer": "데라",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "terah"
+    },
+    {
+      "number": 6,
+      "answer": "데살로니가",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 5,
+      "wordId": "thessalonica"
+    },
+    {
+      "number": 7,
+      "answer": "로이스",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "lois"
+    },
+    {
+      "number": 8,
+      "answer": "가나안",
+      "direction": "down",
+      "row": 4,
+      "col": 9,
+      "length": 3,
+      "wordId": "canaan"
+    },
+    {
+      "number": 9,
+      "answer": "갈라디아",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 4,
+      "wordId": "galatia"
+    },
+    {
+      "number": 10,
+      "answer": "아비야",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "abijah"
+    },
+    {
+      "number": 11,
+      "answer": "비느하스",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 4,
+      "wordId": "phinehas"
+    },
+    {
+      "number": 12,
+      "answer": "하란",
+      "direction": "down",
+      "row": 6,
+      "col": 6,
+      "length": 2,
+      "wordId": "haran"
+    },
+    {
+      "number": 13,
+      "answer": "히스기야",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 4,
+      "wordId": "hezekiah"
+    },
+    {
+      "number": 14,
+      "answer": "스바냐",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "zephaniah"
+    },
+    {
+      "number": 15,
+      "answer": "하나냐",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "hananiah"
+    }
+  ]
+}

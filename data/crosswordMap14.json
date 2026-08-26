@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-014",
+  "title": "성경 단어 퍼즐 14",
+  "difficulty": 1.6,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######펠#",
+    "######릭#",
+    "#####베스도",
+    "요#헤롯#드##",
+    "나사로##로##",
+    "##디모데전서#",
+    "메시아##서##",
+    "#편######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "펠릭스",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "felix"
+    },
+    {
+      "number": 2,
+      "answer": "베드로전서",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 5,
+      "wordId": "firstpeter"
+    },
+    {
+      "number": 3,
+      "answer": "베스도",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "festus"
+    },
+    {
+      "number": 4,
+      "answer": "요나",
+      "direction": "down",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "jonah"
+    },
+    {
+      "number": 5,
+      "answer": "헤로디아",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "herodias"
+    },
+    {
+      "number": 6,
+      "answer": "헤롯",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "herod"
+    },
+    {
+      "number": 7,
+      "answer": "나사로",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "lazarus"
+    },
+    {
+      "number": 8,
+      "answer": "디모데전서",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 5,
+      "wordId": "firsttimothy"
+    },
+    {
+      "number": 9,
+      "answer": "메시아",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "messiah"
+    },
+    {
+      "number": 10,
+      "answer": "시편",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "psalms"
+    }
+  ]
+}

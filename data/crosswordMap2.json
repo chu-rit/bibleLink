@@ -1,120 +1,110 @@
 {
-  "id": "crossword-map-002",
+  "id": "crossword-map-002-v2",
   "title": "성경 단어 퍼즐 2",
   "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####여리고#",
-    "####호###",
-    "###예수#열#",
-    "####아사왕#",
-    "######기#",
-    "###사무엘상#",
-    "##천사#리##",
-    "###기도###"
+    "####그###",
+    "####리#에덴",
+    "##다마스쿠스#",
+    "천#니#도#더#",
+    "사무엘상####",
+    "#지######",
+    "회개######",
+    "당#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "여리고",
-      "direction": "across",
+      "answer": "그리스도",
+      "direction": "down",
       "row": 0,
       "col": 4,
-      "length": 3,
-      "wordId": "jericho",
-      "clue": "이스라엘 백성이 약속의 땅에 들어가 성벽이 무너지는 것을 목격한 첫 성읍"
+      "length": 4,
+      "wordId": "christ"
     },
     {
       "number": 2,
-      "answer": "여호수아",
+      "answer": "에스더",
       "direction": "down",
-      "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "joshua",
-      "clue": "모세의 뒤를 이어 백성을 요르단 강 건너로 이끈 지도자"
+      "row": 1,
+      "col": 6,
+      "length": 3,
+      "wordId": "esther"
     },
     {
       "number": 3,
-      "answer": "예수",
+      "answer": "에덴",
       "direction": "across",
-      "row": 2,
-      "col": 3,
+      "row": 1,
+      "col": 6,
       "length": 2,
-      "wordId": "jesus",
-      "clue": "하느님의 아들로 땅에 와서 왕국의 좋은 소식을 가르친 분"
+      "wordId": "eden"
     },
     {
       "number": 4,
-      "answer": "열왕기상",
+      "answer": "다니엘",
       "direction": "down",
       "row": 2,
-      "col": 6,
-      "length": 4,
-      "wordId": "firstkings",
-      "clue": "솔로몬의 통치와 왕국이 둘로 갈라지는 과정을 기록한 성경 책"
+      "col": 2,
+      "length": 3,
+      "wordId": "daniel"
     },
     {
       "number": 5,
-      "answer": "아사왕",
+      "answer": "다마스쿠스",
       "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 3,
-      "wordId": "asa",
-      "clue": "우상 숭배를 없애고 여호와를 의지하려 한 유다의 통치자"
+      "row": 2,
+      "col": 2,
+      "length": 5,
+      "wordId": "damascus"
     },
     {
       "number": 6,
-      "answer": "사무엘상",
-      "direction": "across",
-      "row": 5,
-      "col": 3,
-      "length": 4,
-      "wordId": "firstsamuel",
-      "clue": "한나의 기도로 시작해 사울의 즉위와 다윗의 등장을 기록한 성경 책"
+      "answer": "천사",
+      "direction": "down",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "angel"
     },
     {
       "number": 7,
-      "answer": "사사기",
-      "direction": "down",
-      "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "judgesbook",
-      "clue": "재판관들이 이스라엘을 구원했던 시대를 기록한 성경 책"
+      "answer": "사무엘상",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "firstsamuel"
     },
     {
       "number": 8,
-      "answer": "엘리",
+      "answer": "무지개",
       "direction": "down",
-      "row": 5,
-      "col": 5,
-      "length": 2,
-      "wordId": "eli",
-      "clue": "성막에서 봉사하며 어린 사무엘을 돌본 대제사장"
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "rainbow"
     },
     {
       "number": 9,
-      "answer": "천사",
+      "answer": "회개",
       "direction": "across",
       "row": 6,
-      "col": 2,
+      "col": 0,
       "length": 2,
-      "wordId": "angel",
-      "clue": "하느님을 섬기며 그분의 소식을 사람에게 전하는 영적 존재"
+      "wordId": "repentance"
     },
     {
       "number": 10,
-      "answer": "기도",
-      "direction": "across",
-      "row": 7,
-      "col": 3,
+      "answer": "회당",
+      "direction": "down",
+      "row": 6,
+      "col": 0,
       "length": 2,
-      "wordId": "prayer",
-      "clue": "하느님께 감사와 요청을 아뢰며 말씀드리는 것"
+      "wordId": "synagogue"
     }
   ]
 }
