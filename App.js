@@ -84,9 +84,10 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [answers]);
 
   useEffect(() => {
-    if (selectedSlot !== null) {
-      requestAnimationFrame(() => inputRef.current?.focus());
-    }
+    if (selectedSlot === null) return undefined;
+
+    const focusTimer = setTimeout(() => inputRef.current?.focus(), 100);
+    return () => clearTimeout(focusTimer);
   }, [selectedSlot]);
 
   useEffect(() => {
@@ -362,6 +363,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       }}
                       placeholder="정답을 입력하세요"
                       placeholderTextColor="#9aa3ad"
+                      autoFocus
                       autoCapitalize="none"
                       maxLength={slot.length}
                       style={[
