@@ -22,6 +22,7 @@ import MapSelectScreen from './MapSelectScreen';
 import WordSearchScreen from './WordSearchScreen';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
+const formatReferenceByChapter = (reference) => reference.replace(/(\d+):\d+(?:-\d+)?(?:,\s*\d+)*/g, '$1장');
 const wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
 
 const isLocalhost = Platform.OS === 'web' &&
@@ -78,7 +79,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
   const boardWidth = Math.max(200, (windowWidth || 0) - 32);
-  const boardHeight = Math.max(200, Math.min(boardWidth, (windowHeight || 0) * 0.5));
+  const boardHeight = Math.max(200, Math.min(boardWidth, (windowHeight || 0) * (isKeyboardVisible ? 0.65 : 0.5)));
   const rawCellSize = Math.min(
     Math.floor(boardWidth / (crosswordMap.width || 1)),
     Math.floor(boardHeight / (crosswordMap.height || 1)),
@@ -147,7 +148,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const wordData = wordDataById[slot?.wordId];
   const isHinted = Boolean(hintedSlots?.[selectedSlot]) && !answers[selectedSlot];
   const clue = slot?.clue || wordData?.definition || '';
-  const hintReferences = wordData?.references?.join(', ') || '';
+  const hintReferences = wordData?.references?.map(formatReferenceByChapter).join(', ') || '';
 
   const openCells = useMemo(() => {
     const cells = {};
@@ -248,7 +249,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const progress = totalCellCount ? Math.round((filledCellCount / totalCellCount) * 100) : 0;
   const activeSpanHeight = slot?.direction === 'down' ? slot.length * cellSize : cellSize;
   const boardViewportHeight = isKeyboardVisible
-    ? Math.min(boardHeight, Math.max(cellSize * 3, activeSpanHeight + cellSize * 2))
+    ? Math.min(boardHeight, Math.max(cellSize * 5, activeSpanHeight + cellSize * 4))
     : boardHeight;
   const activeStartY = (slot?.row || 0) * cellSize;
   const activeEndY = activeStartY + activeSpanHeight;
@@ -290,29 +291,31 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             </View>
           </View>
 
-          <View style={styles.statusRow}>
-            <View style={styles.progressColumn}>
-              <View style={styles.progressRow}>
-                <Text style={styles.progressLabel}>퍼즐 진행도</Text>
-                <Text style={styles.progressValue}>{filledCellCount}/{totalCellCount}</Text>
+          {!isKeyboardVisible && (
+            <View style={styles.statusRow}>
+              <View style={styles.progressColumn}>
+                <View style={styles.progressRow}>
+                  <Text style={styles.progressLabel}>퍼즐 진행도</Text>
+                  <Text style={styles.progressValue}>{filledCellCount}/{totalCellCount}</Text>
+                </View>
+                <View style={styles.progressTrack}>
+                  <View style={[styles.progressFill, { width: `${progress}%` }]} />
+                </View>
               </View>
-              <View style={styles.progressTrack}>
-                <View style={[styles.progressFill, { width: `${progress}%` }]} />
-              </View>
+              {isLocalhost && (
+                <View style={styles.autoFillBox}>
+                  <Text style={styles.autoFillLabel}>정답 보기</Text>
+                  <Switch
+                    value={autoFill}
+                    onValueChange={toggleAutoFill}
+                    trackColor={{ false: '#d8e1e8', true: '#9cc8e4' }}
+                    thumbColor={autoFill ? '#315d7f' : '#f7fafc'}
+                    accessibilityLabel="정답 자동 채우기"
+                  />
+                </View>
+              )}
             </View>
-            {isLocalhost && (
-              <View style={styles.autoFillBox}>
-                <Text style={styles.autoFillLabel}>정답 보기</Text>
-                <Switch
-                  value={autoFill}
-                  onValueChange={toggleAutoFill}
-                  trackColor={{ false: '#d8e1e8', true: '#9cc8e4' }}
-                  thumbColor={autoFill ? '#315d7f' : '#f7fafc'}
-                  accessibilityLabel="정답 자동 채우기"
-                />
-              </View>
-            )}
-          </View>
+          )}
 
           <View
             style={[
