@@ -61,6 +61,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [inputKey, setInputKey] = useState(0);
   const [webViewportHeight, setWebViewportHeight] = useState(null);
   const [showClearModal, setShowClearModal] = useState(false);
   const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
@@ -155,6 +156,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
   const chooseSlot = (index) => {
     setSelectedSlot(index);
+    setInputKey((current) => current + 1);
     setInput(answers[index] || '');
     setIsCorrect(Boolean(answers[index]));
     setIsWrong(false);
@@ -384,6 +386,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                     ]}
                   >
                     <TextInput
+                      key={inputKey}
                       ref={inputRef}
                       value={input}
                       onChangeText={(text) => {
