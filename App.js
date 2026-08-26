@@ -61,6 +61,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [webViewportHeight, setWebViewportHeight] = useState(null);
   const [showClearModal, setShowClearModal] = useState(false);
   const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -89,6 +90,24 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     const focusTimer = setTimeout(() => inputRef.current?.focus(), 100);
     return () => clearTimeout(focusTimer);
   }, [selectedSlot]);
+
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof window === 'undefined' || !window.visualViewport) return undefined;
+
+    const viewport = window.visualViewport;
+    const updateViewport = () => {
+      setWebViewportHeight(viewport.height);
+      window.scrollTo(0, 0);
+    };
+
+    updateViewport();
+    viewport.addEventListener('resize', updateViewport);
+    viewport.addEventListener('scroll', updateViewport);
+    return () => {
+      viewport.removeEventListener('resize', updateViewport);
+      viewport.removeEventListener('scroll', updateViewport);
+    };
+  }, []);
 
   useEffect(() => {
     const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow';
@@ -139,6 +158,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     setInput(answers[index] || '');
     setIsCorrect(Boolean(answers[index]));
     setIsWrong(false);
+
+    if (inputRef.current) {
+      inputRef.current.blur();
+      inputRef.current.focus();
+    }
   };
 
   const selectCell = (rowIndex, colIndex) => {
@@ -240,7 +264,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [filledCellCount, totalCellCount]);
 
   return (
-    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webFixedScreen]}>
+    <SafeAreaView
+      style={[
+        styles.safeArea,
+        Platform.OS === 'web' && styles.webFixedScreen,
+        Platform.OS === 'web' && webViewportHeight && { height: webViewportHeight },
+      ]}
+    >
       <StatusBar barStyle="dark-content" />
       <View style={styles.flex}>
         <View style={styles.container}>
@@ -378,7 +408,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       onFocus={() => {
                         setIsKeyboardVisible(true);
                         if (Platform.OS === 'web') {
-                          setTimeout(() => window.scrollTo(0, 0), 0);
+                          const resetScroll = () => window.scrollTo(0, 0);
+                          resetScroll();
+                          setTimeout(resetScroll, 100);
+                          setTimeout(resetScroll, 300);
+                          setTimeout(resetScroll, 500);
                         }
                       }}
                       onBlur={() => setIsKeyboardVisible(false)}
