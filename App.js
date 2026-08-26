@@ -240,7 +240,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [filledCellCount, totalCellCount]);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webFixedScreen]}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.flex}>
         <View style={styles.container}>
@@ -375,7 +375,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       ]}
                       returnKeyType="done"
                       blurOnSubmit={false}
-                      onFocus={() => setIsKeyboardVisible(true)}
+                      onFocus={() => {
+                        setIsKeyboardVisible(true);
+                        if (Platform.OS === 'web') {
+                          setTimeout(() => window.scrollTo(0, 0), 0);
+                        }
+                      }}
                       onBlur={() => setIsKeyboardVisible(false)}
                       onSubmitEditing={submitAnswer}
                     />
@@ -562,6 +567,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  webFixedScreen: { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 },
   flex: { flex: 1 },
   container: { flex: 1, padding: 16 },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
