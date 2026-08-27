@@ -1,0 +1,2729 @@
+[
+  {
+    "id": "cana",
+    "word": "가나",
+    "definition": "갈릴리에 있던 성읍으로 예수께서 결혼 잔치에서 물을 포도주로 바꾸는 첫 기적을 행하신 곳",
+    "difficulty": 1,
+    "references": [
+      "요한 2:1-12",
+      "요한 4:46-54",
+      "요한 21:2"
+    ]
+  },
+  {
+    "id": "canaan",
+    "word": "가나안",
+    "definition": "하느님이 아브라함의 후손에게 주겠다고 약속하신 땅",
+    "difficulty": 1,
+    "references": [
+      "창세기 12:5-7"
+    ]
+  },
+  {
+    "id": "gatam",
+    "word": "가담",
+    "definition": "에서의 맏아들 엘리바스의 아들로 에서 자손의 족장 가운데 한 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:10-16",
+      "역대기상 1:36"
+    ]
+  },
+  {
+    "id": "kadesh",
+    "word": "가데스",
+    "definition": "이스라엘 사람들이 광야에서 진을 쳤던 곳으로 정탐꾼들이 파송되고 40년 방랑의 출발점이 된 장소",
+    "difficulty": 1,
+    "references": [
+      "민수기 13:26",
+      "신명기 1:2",
+      "민수기 20:1"
+    ]
+  },
+  {
+    "id": "gath",
+    "word": "가드",
+    "definition": "블레셋 다섯 추축 성주 도시 가운데 하나로 골리앗의 출생지",
+    "difficulty": 1,
+    "references": [
+      "사무엘상 6:17",
+      "사무엘상 17:4",
+      "사무엘상 21:10-15"
+    ]
+  },
+  {
+    "id": "gadi",
+    "word": "가디",
+    "definition": "이스라엘 왕 므나헴의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 15:14, 17"
+    ]
+  },
+  {
+    "id": "kareah",
+    "word": "가레아",
+    "definition": "유다 사람으로 군대 대장들인 요하난과 요나단의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 25:21-23",
+      "예레미야 40:7, 8"
+    ]
+  },
+  {
+    "id": "gareb",
+    "word": "가렙",
+    "definition": "다윗의 용사들 중 한 사람으로 유다 지파에 속한 이델 사람",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:38",
+      "역대기상 11:40"
+    ]
+  },
+  {
+    "id": "judasiscariot",
+    "word": "가룟 유다",
+    "definition": "예수를 배반해 종교 지도자들에게 넘긴 열두 사도 중 한 사람",
+    "difficulty": 2,
+    "references": [
+      "마태복음 26:14-16, 47-50"
+    ]
+  },
+  {
+    "id": "carkas",
+    "word": "가르가스",
+    "definition": "아하수에로 왕이 와스디를 부르기 위해 보낸 일곱 궁정 관리 가운데 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 1:10-12"
+    ]
+  },
+  {
+    "id": "karkor",
+    "word": "가르골",
+    "definition": "요르단 강 동쪽에 있던 곳으로 기드온의 군대가 미디안 잔여군을 패주시킨 장소",
+    "difficulty": 3,
+    "references": [
+      "사사기 8:10, 11"
+    ]
+  },
+  {
+    "id": "kartah",
+    "word": "가르다",
+    "definition": "스불론 상속지에서 므라리 레위 사람들에게 주어진 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 21:34",
+      "여호수아 19:15"
+    ]
+  },
+  {
+    "id": "kartan",
+    "word": "가르단",
+    "definition": "게르손 레위 사람들에게 주어진 납달리의 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 21:27, 32"
+    ]
+  },
+  {
+    "id": "carpus",
+    "word": "가르보",
+    "definition": "트로아스에 거주하던 그리스도인으로 바울이 자신의 외투를 남겨 둔 사람",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 4:13"
+    ]
+  },
+  {
+    "id": "carshena",
+    "word": "가르스나",
+    "definition": "와스디의 불순종 사건 때 아하수에로가 조언을 구한 메디아·페르시아 일곱 방백 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 1:13, 14"
+    ]
+  },
+  {
+    "id": "cormorant",
+    "word": "가마우지",
+    "definition": "물에 잠수하여 물고기를 잡는 물새로 부정한 새로 분류된 동물",
+    "difficulty": 1,
+    "references": [
+      "레위기 11:17",
+      "신명기 14:17"
+    ]
+  },
+  {
+    "id": "gamaliel",
+    "word": "가말리엘",
+    "definition": "사도들을 신중하게 다루도록 산헤드린에 조언한 율법 교사",
+    "difficulty": 3,
+    "references": [
+      "사도행전 5:34-40"
+    ]
+  },
+  {
+    "id": "gamon",
+    "word": "가몬",
+    "definition": "느디님 가족의 우두머리로 그 자손 일부가 바빌론 유배에서 돌아온 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 7:48"
+    ]
+  },
+  {
+    "id": "gamul",
+    "word": "가물",
+    "definition": "아론의 아들 이다말 계통의 제사장 가운데 한 사람으로 22번째 차례의 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:17, 22"
+    ]
+  },
+  {
+    "id": "gabbatha",
+    "word": "가바다",
+    "definition": "빌라도가 예수를 재판하기 위해 판석이라 불리는 자리에 앉았던 곳",
+    "difficulty": 2,
+    "references": [
+      "요한 19:13"
+    ]
+  },
+  {
+    "id": "capernaum",
+    "word": "가버나움",
+    "definition": "예수가 갈릴리에서 전파하고 많은 기적을 행한 도시",
+    "difficulty": 2,
+    "references": [
+      "마태복음 4:13-17"
+    ]
+  },
+  {
+    "id": "gabul",
+    "word": "가불",
+    "definition": "아셀 지파에게 배당된 성읍으로 지정된 도피성",
+    "difficulty": 3,
+    "references": [
+      "여호수아 21:32"
+    ]
+  },
+  {
+    "id": "gabriel",
+    "word": "가브리엘",
+    "definition": "하느님 앞에 서 있는 천사로 마리아에게 예수의 탄생을 알린 존재",
+    "difficulty": 1,
+    "references": [
+      "누가 1:19, 26",
+      "다니엘 8:16",
+      "다니엘 9:21"
+    ]
+  },
+  {
+    "id": "gases",
+    "word": "가세스",
+    "definition": "바빌론 유배에서 돌아온 느디님의 자손으로 돌아온 사람의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:47",
+      "느헤미야 7:49"
+    ]
+  },
+  {
+    "id": "casluhim",
+    "word": "가슬루힘",
+    "definition": "함의 아들 미스라임의 아들로 블레셋 사람이 나온 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:13, 14",
+      "역대기상 1:11, 12"
+    ]
+  },
+  {
+    "id": "breastband",
+    "word": "가슴띠",
+    "definition": "신부가 결혼식 날에 두르던 장식 띠로 결혼한 여자임을 나타낸 것",
+    "difficulty": 2,
+    "references": [
+      "예레미야 2:32",
+      "이사야 3:20"
+    ]
+  },
+  {
+    "id": "breastpiece-pouch",
+    "word": "가슴받이",
+    "definition": "대제사장이 성소에 들어갈 때 가슴에 달던 수놓은 주머니로 우림과 둠밈이 들어 있었음",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 28:15-30",
+      "출애굽기 39:8-14"
+    ]
+  },
+  {
+    "id": "casiphia",
+    "word": "가시뱌",
+    "definition": "바빌로니아에 있던 곳으로 에스라가 유배자들을 집결시키고 레위 사람들을 소집한 지점",
+    "difficulty": 3,
+    "references": [
+      "에스라 8:17-20"
+    ]
+  },
+  {
+    "id": "gaash",
+    "word": "가아스",
+    "definition": "에브라임 산간 지방에 있던 언덕으로 여호수아가 묻힌 딤낫-헤레스 남쪽의 산",
+    "difficulty": 3,
+    "references": [
+      "여호수아 24:30",
+      "사사기 2:9"
+    ]
+  },
+  {
+    "id": "gaal",
+    "word": "가알",
+    "definition": "에벳의 아들로 세겜에서 아비멜렉에 대항하여 반란을 일으킨 사람",
+    "difficulty": 3,
+    "references": [
+      "사사기 9:26-41"
+    ]
+  },
+  {
+    "id": "caiaphas",
+    "word": "가야바",
+    "definition": "예수가 처형되던 해에 대제사장으로 있던 사람",
+    "difficulty": 2,
+    "references": [
+      "요한복음 11:49-53",
+      "마태복음 26:57-68"
+    ]
+  },
+  {
+    "id": "cauda",
+    "word": "가우다",
+    "definition": "크레타 남서부 해안 앞바다의 섬으로 바울이 로마로 가는 항해 중에 지나간 곳",
+    "difficulty": 3,
+    "references": [
+      "사도행전 27:13-17"
+    ]
+  },
+  {
+    "id": "cainan",
+    "word": "가이난",
+    "definition": "에노스의 아들이며 예수의 지상 어머니 마리아의 조상",
+    "difficulty": 3,
+    "references": [
+      "누가 3:37",
+      "창세기 5:9-14"
+    ]
+  },
+  {
+    "id": "gaius",
+    "word": "가이오",
+    "definition": "사도 바울과 동행했던 마케도니아 사람으로 에베소 소요 때 붙잡힌 그리스도인",
+    "difficulty": 2,
+    "references": [
+      "사도행전 19:29",
+      "로마서 16:23",
+      "고린도전서 1:14"
+    ]
+  },
+  {
+    "id": "kaiwan",
+    "word": "가이완",
+    "definition": "아모스 예언에 언급된 별의 신으로 사투르누스와 관련된 우상",
+    "difficulty": 3,
+    "references": [
+      "아모스 5:26",
+      "사도행전 7:43"
+    ]
+  },
+  {
+    "id": "gaza",
+    "word": "가자",
+    "definition": "가나안 사람의 경계에 언급된 고대 도시로 블레셋 추축 성주 도시 가운데 하나",
+    "difficulty": 1,
+    "references": [
+      "창세기 10:19",
+      "사사기 16:1-3",
+      "사도행전 8:26"
+    ]
+  },
+  {
+    "id": "tutor",
+    "word": "가정교사",
+    "definition": "성서 시대에 아이를 학교에 데리고 다니며 지켜 주던 사람으로 율법의 역할을 상징하기도 함",
+    "difficulty": 2,
+    "references": [
+      "갈라디아 3:24, 25"
+    ]
+  },
+  {
+    "id": "gazelle",
+    "word": "가젤",
+    "definition": "빠르고 우아한 소형 영양으로 성경에서 깨끗한 동물로 분류된 짐승",
+    "difficulty": 2,
+    "references": [
+      "신명기 12:15, 22",
+      "아가 2:9",
+      "사무엘하 2:18"
+    ]
+  },
+  {
+    "id": "gahar",
+    "word": "가할",
+    "definition": "느디님 가족의 우두머리로 그 자손이 바빌론 유배에서 스룹바벨과 함께 돌아온 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:47",
+      "느헤미야 7:49"
+    ]
+  },
+  {
+    "id": "gaham",
+    "word": "가함",
+    "definition": "아브라함의 형제 나홀이 첩 르우마를 통해 얻은 아들",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:23, 24"
+    ]
+  },
+  {
+    "id": "gnat",
+    "word": "각다귀",
+    "definition": "이집트 셋째 재앙과 관련된 작은 흡혈 곤충으로 예수가 바리새인들을 책망할 때 언급한 것",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 8:16-18",
+      "마태 23:23, 24"
+    ]
+  },
+  {
+    "id": "canneh",
+    "word": "간네",
+    "definition": "티레와 무역하는 곳 가운데 하나로 하란·에덴과 함께 언급된 장소",
+    "difficulty": 3,
+    "references": [
+      "에스겔 27:23"
+    ]
+  },
+  {
+    "id": "candace",
+    "word": "간다게",
+    "definition": "에티오피아 여왕의 칭호로 그 여왕의 보물 관리인이 그리스도인이 됨",
+    "difficulty": 2,
+    "references": [
+      "사도행전 8:27"
+    ]
+  },
+  {
+    "id": "adultery",
+    "word": "간음",
+    "definition": "결혼한 사람이 배우자가 아닌 이성과 자발적으로 성 관계를 갖는 것으로 율법이 금한 행위",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 20:14",
+      "마태 5:27, 28",
+      "히브리서 13:4"
+    ]
+  },
+  {
+    "id": "karka",
+    "word": "갈가",
+    "definition": "유다 남쪽 경계에 있던 지점으로 앗달과 아스몬 사이에 위치한 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:1-4"
+    ]
+  },
+  {
+    "id": "hook",
+    "word": "갈고리",
+    "definition": "금속 등으로 만든 휘어진 물품으로 성막 덮개를 연결하거나 낚시용으로 쓰임",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 26:6, 11",
+      "이사야 19:8",
+      "마태 17:24-27"
+    ]
+  },
+  {
+    "id": "calcol",
+    "word": "갈골",
+    "definition": "뛰어난 지혜를 가진 사람이었으나 솔로몬의 지혜에는 미치지 못한 유다 자손",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:31",
+      "역대기상 2:6"
+    ]
+  },
+  {
+    "id": "carchemish",
+    "word": "갈그미스",
+    "definition": "유프라테스 강 상류에 있던 중요한 무역 중심지로 바빌론과 이집트 군대가 전투를 벌인 곳",
+    "difficulty": 1,
+    "references": [
+      "예레미야 46:2",
+      "역대기하 35:20-24"
+    ]
+  },
+  {
+    "id": "calneh",
+    "word": "갈네",
+    "definition": "니므롯이 시날 땅에 창건한 도시로 메소포타미아 남부에 자리잡은 곳",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:10",
+      "아모스 6:2"
+    ]
+  },
+  {
+    "id": "galatia",
+    "word": "갈라디아",
+    "definition": "바울이 여러 회중을 방문하고 편지를 보낸 소아시아의 지역",
+    "difficulty": 2,
+    "references": [
+      "사도행전 16:6",
+      "갈라디아서 1:2"
+    ]
+  },
+  {
+    "id": "galatians",
+    "word": "갈라디아서",
+    "definition": "그리스도인의 자유와 믿음으로 의롭게 되는 일을 설명한 바울의 편지",
+    "difficulty": 2,
+    "references": [
+      "갈라디아서 1:1-5",
+      "갈라디아서 5:1-6"
+    ]
+  },
+  {
+    "id": "galal",
+    "word": "갈랄",
+    "definition": "바빌론 유배에서 돌아온 레위 사람으로 예배에서 섬긴 자",
+    "difficulty": 3,
+    "references": [
+      "역대기상 9:14, 15",
+      "느헤미야 11:17"
+    ]
+  },
+  {
+    "id": "caleb",
+    "word": "갈렙",
+    "definition": "약속의 땅을 정탐한 뒤 믿음으로 좋은 보고를 한 사람",
+    "difficulty": 2,
+    "references": [
+      "민수기 13:6, 30",
+      "여호수아 14:6-13"
+    ]
+  },
+  {
+    "id": "calno",
+    "word": "갈로",
+    "definition": "이사야 예언에 언급된 도시로 아시리아가 정복한 곳 가운데 하나",
+    "difficulty": 3,
+    "references": [
+      "이사야 10:9-11",
+      "아모스 6:2"
+    ]
+  },
+  {
+    "id": "galeed",
+    "word": "갈르엣",
+    "definition": "야곱과 라반이 계약을 맺은 요르단 강 동쪽 길르앗 산간 지방의 장소",
+    "difficulty": 3,
+    "references": [
+      "창세기 31:43-48"
+    ]
+  },
+  {
+    "id": "gallio",
+    "word": "갈리오",
+    "definition": "아카이아 속주 총독으로 바울에 대한 유대인의 고발을 로마법 위반 사실이 없다며 기각한 사람",
+    "difficulty": 1,
+    "references": [
+      "사도행전 18:12-17"
+    ]
+  },
+  {
+    "id": "galilee",
+    "word": "갈릴리",
+    "definition": "예수가 많은 활동을 했던 이스라엘 북부 지역",
+    "difficulty": 1,
+    "references": [
+      "마태복음 4:12-23"
+    ]
+  },
+  {
+    "id": "gallim",
+    "word": "갈림",
+    "definition": "사울이 딸 미갈을 준 발디의 고향으로 아시리아 군대 진격 때 애곡한 곳일 가능성이 있는 마을",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 25:44",
+      "이사야 10:24, 30"
+    ]
+  },
+  {
+    "id": "gull",
+    "word": "갈매기",
+    "definition": "이스라엘 율법에서 부정한 새로 분류되어 식용이 금지된 바닷새",
+    "difficulty": 1,
+    "references": [
+      "레위기 11:13, 16",
+      "신명기 14:12, 15"
+    ]
+  },
+  {
+    "id": "carmel-2",
+    "word": "갈멜",
+    "definition": "산맥과 도시 양쪽에 쓰이는 이름으로 엘리야가 바알 예언자들과 대결한 산",
+    "difficulty": 1,
+    "references": [
+      "여호수아 12:22",
+      "여호수아 19:24-26",
+      "이사야 35:2"
+    ]
+  },
+  {
+    "id": "carmel",
+    "word": "갈멜산",
+    "definition": "엘리야가 바알의 예언자들과 대결한 산",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 18장"
+    ]
+  },
+  {
+    "id": "carmi",
+    "word": "갈미",
+    "definition": "르우벤의 아들로 야곱 집안과 함께 이집트로 간 사람이자 아간의 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:9",
+      "출애굽기 6:14",
+      "여호수아 7:1, 18"
+    ]
+  },
+  {
+    "id": "rib",
+    "word": "갈빗대",
+    "definition": "흉곽을 형성하는 휘어진 뼈로 하와가 만들어질 때 사용된 것으로 기록된 부위",
+    "difficulty": 1,
+    "references": [
+      "창세기 2:21-23"
+    ]
+  },
+  {
+    "id": "overseer",
+    "word": "감독자",
+    "definition": "회중의 영적 필요를 돌보고 가르치는 책임을 맡은 그리스도인 남자",
+    "difficulty": 1,
+    "references": [
+      "디모데전서 3:1",
+      "베드로전서 2:12",
+      "사도행전 20:28"
+    ]
+  },
+  {
+    "id": "thanksgiving",
+    "word": "감사",
+    "definition": "받은 은혜와 마련에 대해 고마움을 표현하는 마음과 행동",
+    "difficulty": 2,
+    "references": [
+      "시편 100:4; 데살로니가 전서 5:18"
+    ]
+  },
+  {
+    "id": "spikenard",
+    "word": "감송",
+    "definition": "히말라야 산맥에서 자라는 방향성 식물로 값비싼 향유의 원료가 된 것",
+    "difficulty": 3,
+    "references": [
+      "아가 1:12",
+      "아가 4:13, 14",
+      "마가 14:3"
+    ]
+  },
+  {
+    "id": "prison",
+    "word": "감옥",
+    "definition": "재판을 기다리거나 유죄 판결을 받은 사람을 감금하는 장소",
+    "difficulty": 1,
+    "references": [
+      "창세기 39:20",
+      "사사기 16:21",
+      "마태 11:2"
+    ]
+  },
+  {
+    "id": "caphtor",
+    "word": "갑돌",
+    "definition": "블레셋 사람들이 가나안으로 이주하기 전 살았던 섬 혹은 연안 지대",
+    "difficulty": 2,
+    "references": [
+      "창세기 10:13, 14",
+      "신명기 2:23",
+      "예레미야 47:4"
+    ]
+  },
+  {
+    "id": "gabbai",
+    "word": "갑배",
+    "definition": "느헤미야 시대에 예루살렘에 살던 베냐민 사람으로 관할 지역 우두머리 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 11:3, 7, 8"
+    ]
+  },
+  {
+    "id": "cabbon",
+    "word": "갑본",
+    "definition": "세펠라에 있던 유다 도시로 라기스 근처에 위치한 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:40"
+    ]
+  },
+  {
+    "id": "kabzeel",
+    "word": "갑스엘",
+    "definition": "유다 남부에 있던 도시로 뛰어난 전사 브나야의 출신지",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21",
+      "사무엘하 23:20",
+      "역대기상 11:22"
+    ]
+  },
+  {
+    "id": "armor",
+    "word": "갑옷",
+    "definition": "전사가 싸울 때 몸을 보호하기 위해 입는 장비",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 17:38, 39; 에베소서 6:11"
+    ]
+  },
+  {
+    "id": "kattath",
+    "word": "갓닷",
+    "definition": "스불론의 도시로 종종 기트론과 동일한 곳으로 여겨짐",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:10, 15",
+      "사사기 1:30"
+    ]
+  },
+  {
+    "id": "gaddi",
+    "word": "갓디",
+    "definition": "므낫세 지파 수시의 아들로 가나안 땅을 정탐하기 위해 보내진 12명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:2, 3, 11"
+    ]
+  },
+  {
+    "id": "gaddiel",
+    "word": "갓디엘",
+    "definition": "스불론 지파 소디의 아들로 가나안 땅을 정탐하기 위해 보내진 12명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:2, 3, 10"
+    ]
+  },
+  {
+    "id": "kadmiel",
+    "word": "갓미엘",
+    "definition": "스룹바벨과 함께 예루살렘으로 돌아온 레위 사람으로 성전 재건을 감독한 자",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:40",
+      "에스라 3:9",
+      "느헤미야 12:24"
+    ]
+  },
+  {
+    "id": "gazzam",
+    "word": "갓삼",
+    "definition": "스룹바벨과 함께 바빌론 유배에서 돌아온 느디님의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:48",
+      "느헤미야 7:51"
+    ]
+  },
+  {
+    "id": "frog",
+    "word": "개구리",
+    "definition": "이집트에 내린 두 번째 재앙과 관련된 양서류로 여신 헥트의 상징이었던 동물",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 8:1-14",
+      "시편 78:45",
+      "계시록 16:13"
+    ]
+  },
+  {
+    "id": "spelt",
+    "word": "개밀",
+    "definition": "질이 낮은 밀로 이집트에서 재배되었고 밭의 경계 울타리로도 심어진 곡물",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 9:32",
+      "에스겔 4:9",
+      "이사야 28:25"
+    ]
+  },
+  {
+    "id": "proselyte",
+    "word": "개종자",
+    "definition": "유대교를 받아들여 할례를 받은 이방인으로 회중의 일원이 된 사람",
+    "difficulty": 2,
+    "references": [
+      "마태 23:15",
+      "출애굽기 12:48, 49"
+    ]
+  },
+  {
+    "id": "galley",
+    "word": "갤리선",
+    "definition": "노를 저어 움직이는 길고 낮은 배로 주로 해전에 사용된 선박",
+    "difficulty": 3,
+    "references": [
+      "이사야 33:21, 22",
+      "나훔 3:8"
+    ]
+  },
+  {
+    "id": "holiness",
+    "word": "거룩함",
+    "definition": "하느님께 속해 있고 도덕적으로 깨끗하며 특별한 목적을 위해 구별된 상태",
+    "difficulty": 3,
+    "references": [
+      "레위기 19:2; 베드로 전서 1:15, 16"
+    ]
+  },
+  {
+    "id": "leech",
+    "word": "거머리",
+    "definition": "피를 빨아 먹는 납작한 벌레로 잠언에서 탐욕의 비유로 언급된 동물",
+    "difficulty": 1,
+    "references": [
+      "잠언 30:15"
+    ]
+  },
+  {
+    "id": "giant",
+    "word": "거인",
+    "definition": "성서에 기록된 몸집이 유난히 큰 사람들로 바산 왕 옥과 골리앗 등이 속함",
+    "difficulty": 1,
+    "references": [
+      "신명기 3:11",
+      "사무엘상 17:4-7",
+      "사무엘하 21:16-20"
+    ]
+  },
+  {
+    "id": "lie",
+    "word": "거짓말",
+    "definition": "진리의 반대로 진실을 알 권리가 있는 사람을 속이기 위해 하는 말이나 행동",
+    "difficulty": 1,
+    "references": [
+      "레위기 19:11, 12",
+      "잠언 14:5",
+      "신명기 5:20"
+    ]
+  },
+  {
+    "id": "entry-검은뽕나무",
+    "word": "검은뽕나무",
+    "definition": "예수께서 사도들에게 믿음에 대해 말씀하실 때 언급된 튼튼한 과수나무",
+    "difficulty": 2,
+    "references": [
+      "누가 17:5, 6"
+    ]
+  },
+  {
+    "id": "kenan",
+    "word": "게난",
+    "definition": "아담의 계보에 나오는 셋의 후손",
+    "difficulty": 3,
+    "references": [
+      "창세기 5:9-14"
+    ]
+  },
+  {
+    "id": "gennesaret",
+    "word": "게네사렛",
+    "definition": "갈릴리 바다 북서쪽 연안의 비옥한 평야로 예수께서 기적으로 병을 고치신 지역",
+    "difficulty": 1,
+    "references": [
+      "마태 14:34-36",
+      "마가 6:53-56",
+      "누가 5:1"
+    ]
+  },
+  {
+    "id": "kedar",
+    "word": "게달",
+    "definition": "이스마엘의 아들로 이스마엘 열두 수장 가운데 한 사람이자 아라비아 부족의 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 25:13-15",
+      "예레미야 49:28, 29",
+      "이사야 60:7"
+    ]
+  },
+  {
+    "id": "geder",
+    "word": "게델",
+    "definition": "가나안의 한 성읍으로 여호수아가 정복한 31명의 왕 가운데 한 왕이 다스린 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 12:13",
+      "역대기상 27:28"
+    ]
+  },
+  {
+    "id": "kedemah",
+    "word": "게드마",
+    "definition": "이스마엘의 아들로 여호와께서 아브라함에게 하신 약속대로 된 열두 수장 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 25:15",
+      "역대기상 1:31"
+    ]
+  },
+  {
+    "id": "gera",
+    "word": "게라",
+    "definition": "베냐민의 맏아들 벨라의 아들로 베냐민 지파 족보에 언급된 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1-3",
+      "창세기 46:21",
+      "사사기 3:15"
+    ]
+  },
+  {
+    "id": "keros",
+    "word": "게로스",
+    "definition": "느디님 가족의 시조로 그 자손이 바빌론 유배 후 스룹바벨과 함께 돌아온 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:44",
+      "느헤미야 7:47"
+    ]
+  },
+  {
+    "id": "gershon",
+    "word": "게르손",
+    "definition": "레위의 세 아들 가운데 첫째로 레위인 가운데 한 가문의 조상이 된 사람",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 6:16",
+      "민수기 3:17, 21",
+      "여호수아 21:6"
+    ]
+  },
+  {
+    "id": "gershom",
+    "word": "게르솜",
+    "definition": "레위의 아들로 립니와 시므이의 아버지이자 게르손이라고도 불린 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:11",
+      "출애굽기 6:16, 17",
+      "역대기상 6:1"
+    ]
+  },
+  {
+    "id": "geber",
+    "word": "게벨",
+    "definition": "솔로몬의 12명 대리관 중 한 사람으로 일 년에 한 달씩 양식을 공급한 책임자",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:7, 13, 19"
+    ]
+  },
+  {
+    "id": "gebim",
+    "word": "게빔",
+    "definition": "아시리아 군대 진격 때 주민이 피신했던 지명으로 정확한 위치는 알려지지 않은 곳",
+    "difficulty": 3,
+    "references": [
+      "이사야 10:24, 31"
+    ]
+  },
+  {
+    "id": "geshan",
+    "word": "게산",
+    "definition": "유다 지파 야대의 아들들 가운데 셋째로 갈렙 자손에 언급된 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:47"
+    ]
+  },
+  {
+    "id": "gezer",
+    "word": "게셀",
+    "definition": "해안 평야 내륙에 있던 가나안 왕 도시로 에브라임에 배당되고 레위인 도시가 된 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 10:33",
+      "여호수아 16:3, 10",
+      "여호수아 21:20, 21"
+    ]
+  },
+  {
+    "id": "geshem",
+    "word": "게셈",
+    "definition": "느헤미야가 성벽 재건을 반대한 아라비아 사람으로 산발랏·도비아와 함께 음모를 꾸민 자",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 2:19",
+      "느헤미야 6:1-7"
+    ]
+  },
+  {
+    "id": "chesed",
+    "word": "게셋",
+    "definition": "밀가가 나홀에게 낳아 준 여덟 아들 가운데 한 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:20-22"
+    ]
+  },
+  {
+    "id": "keziah",
+    "word": "게시아",
+    "definition": "욥이 시련 후 회복되어 얻은 세 딸 가운데 둘째로 육계 향기 같은 아름다움을 가진 딸",
+    "difficulty": 3,
+    "references": [
+      "욥기 42:14, 15"
+    ]
+  },
+  {
+    "id": "laziness",
+    "word": "게으름",
+    "definition": "수고하기를 싫어하는 태만함으로 잠언과 그리스도인 편지들에서 경계한 태도",
+    "difficulty": 1,
+    "references": [
+      "잠언 6:6",
+      "잠언 15:19",
+      "로마서 12:11",
+      "히브리서 6:12"
+    ]
+  },
+  {
+    "id": "gether",
+    "word": "게텔",
+    "definition": "셈의 아들인 아람의 자손 중 한 사람으로 자손에 관해 알려진 것이 없는 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:22, 23",
+      "역대기상 1:17"
+    ]
+  },
+  {
+    "id": "gehazi",
+    "word": "게하시",
+    "definition": "예언자 엘리사의 수종으로 주인의 기적을 탐내다가 문둥병에 걸린 사람",
+    "difficulty": 1,
+    "references": [
+      "열왕기하 4:12",
+      "열왕기하 5:20-27"
+    ]
+  },
+  {
+    "id": "gehenna",
+    "word": "게헨나",
+    "definition": "하느님에게 영원히 멸망되는 것을 상징하는 성경의 표현",
+    "difficulty": 3,
+    "references": [
+      "마태복음 10:28; 마가복음 9:43-48"
+    ]
+  },
+  {
+    "id": "cenchreae",
+    "word": "겐그레아",
+    "definition": "고린도 동쪽 항구 도시로 바울이 서원 때문에 머리를 깎고 회중이 있었던 곳",
+    "difficulty": 3,
+    "references": [
+      "사도행전 18:18",
+      "로마서 16:1"
+    ]
+  },
+  {
+    "id": "gethsemane",
+    "word": "겟세마네",
+    "definition": "예수가 체포되기 전 제자들과 함께 기도한 예루살렘 동쪽의 동산",
+    "difficulty": 2,
+    "references": [
+      "마태복음 26:36-46"
+    ]
+  },
+  {
+    "id": "mustard",
+    "word": "겨자",
+    "definition": "빠른 속도로 자라는 향료 식물로 예수께서 하늘 왕국 비유와 믿음에 대해 언급한 씨",
+    "difficulty": 1,
+    "references": [
+      "마태 13:31, 32",
+      "마가 4:30-32",
+      "누가 13:18, 19"
+    ]
+  },
+  {
+    "id": "mustardseed",
+    "word": "겨자씨",
+    "definition": "매우 작은 씨로, 예수는 믿음과 하느님의 왕국을 설명하는 데 사용했다",
+    "difficulty": 2,
+    "references": [
+      "마태복음 13:31, 32"
+    ]
+  },
+  {
+    "id": "lattice",
+    "word": "격자창",
+    "definition": "나무오리를 교차시켜 그물 모양으로 만든 것으로 창문을 가리는 데 사용된 물건",
+    "difficulty": 1,
+    "references": [
+      "잠언 7:6"
+    ]
+  },
+  {
+    "id": "marriage",
+    "word": "결혼",
+    "definition": "남녀가 하느님이 정하신 표준에 따라 부부로 결합하는 것으로 에덴에서 제정된 제도",
+    "difficulty": 1,
+    "references": [
+      "창세기 2:18-24",
+      "마태 19:4-6",
+      "히브리서 13:4"
+    ]
+  },
+  {
+    "id": "humility",
+    "word": "겸손",
+    "definition": "자신을 지나치게 높이지 않고 하느님과 다른 사람을 존중하는 태도",
+    "difficulty": 1,
+    "references": [
+      "빌립보서 2:3, 4"
+    ]
+  },
+  {
+    "id": "modesty",
+    "word": "겸허",
+    "definition": "자신의 한계를 아는 것으로 미가서에서 여호와께서 요구하시는 태도로 언급된 덕목",
+    "difficulty": 2,
+    "references": [
+      "미가 6:8",
+      "잠언 11:2"
+    ]
+  },
+  {
+    "id": "godlydevotion",
+    "word": "경건",
+    "definition": "하느님을 깊이 존경하고 그분의 뜻에 맞게 살아가는 태도",
+    "difficulty": 3,
+    "references": [
+      "디모데 전서 4:7, 8; 베드로 후서 1:6, 7"
+    ]
+  },
+  {
+    "id": "entry-경계표",
+    "word": "경계표",
+    "definition": "이스라엘 사람들이 가나안에서 각 가족에게 주어진 소유지에 표시한 경계 표지",
+    "difficulty": 2,
+    "references": [
+      "신명기 19:14",
+      "신명기 27:17",
+      "잠언 22:28"
+    ]
+  },
+  {
+    "id": "obeisance",
+    "word": "경배",
+    "definition": "몸을 굽히거나 무릎을 꿇어 복종이나 존경을 나타내는 자세를 취하는 행동",
+    "difficulty": 1,
+    "references": [
+      "창세기 18:2",
+      "사무엘상 24:8",
+      "시편 45:11"
+    ]
+  },
+  {
+    "id": "revelation",
+    "word": "계시",
+    "definition": "하느님이 자신의 뜻이나 목적을 사람에게 알려 주시는 것",
+    "difficulty": 2,
+    "references": [
+      "다니엘 2:28",
+      "갈라디아서 1:11, 12"
+    ]
+  },
+  {
+    "id": "revelationbook",
+    "word": "계시록",
+    "definition": "예수 그리스도를 통해 하느님이 미래의 목적을 상징적으로 알려 주신 책",
+    "difficulty": 1,
+    "references": [
+      "계시록 1:1"
+    ]
+  },
+  {
+    "id": "covenant-2",
+    "word": "계약",
+    "definition": "둘 이상의 당사자들이 어떤 행동을 하겠다고 하는 합의나 약정으로 성경에 280회 이상 나오는 개념",
+    "difficulty": 1,
+    "references": [
+      "고린도후서 3:14",
+      "히브리서 7:22",
+      "예레미야 31:31-34"
+    ]
+  },
+  {
+    "id": "arkofthecovenant",
+    "word": "계약의 궤",
+    "definition": "이스라엘과 맺은 계약을 상징하며 성소의 가장 신성한 곳에 보관된 궤",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 25:10-22",
+      "히브리서 9:3-5"
+    ]
+  },
+  {
+    "id": "conaniah",
+    "word": "고나냐",
+    "definition": "히스기야 통치 때 성전 봉사에 바친 헌물을 맡아 돌본 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기하 31:4, 12, 13",
+      "역대기하 35:9, 19"
+    ]
+  },
+  {
+    "id": "cornelius",
+    "word": "고넬료",
+    "definition": "베드로를 초대해 이방인으로서는 처음으로 성령을 받은 로마 장교",
+    "difficulty": 2,
+    "references": [
+      "사도행전 10장"
+    ]
+  },
+  {
+    "id": "korah",
+    "word": "고라",
+    "definition": "모세와 아론의 권위에 반역했다가 심판받은 레위 사람",
+    "difficulty": 2,
+    "references": [
+      "민수기 16장"
+    ]
+  },
+  {
+    "id": "chorazin",
+    "word": "고라신",
+    "definition": "예수께서 책망하신 갈릴리 바다 북쪽 끝의 도시",
+    "difficulty": 3,
+    "references": [
+      "마태 11:21, 23",
+      "누가 10:13-15"
+    ]
+  },
+  {
+    "id": "kore",
+    "word": "고레",
+    "definition": "고핫 계통의 레위 사람으로 아삽의 아들들 중 한 사람이자 고라의 자손",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 6:18, 21",
+      "역대기상 9:19",
+      "역대기상 26:1"
+    ]
+  },
+  {
+    "id": "corinth",
+    "word": "고린도",
+    "definition": "바울이 회중을 세우고 편지를 보낸 고대 그리스의 도시",
+    "difficulty": 2,
+    "references": [
+      "사도행전 18:1-11"
+    ]
+  },
+  {
+    "id": "firstcorinthians",
+    "word": "고린도전서",
+    "definition": "고린도 회중의 문제를 바로잡고 사랑과 부활을 설명한 바울의 편지",
+    "difficulty": 2,
+    "references": [
+      "고린도 전서 1:1-9",
+      "고린도 전서 13장"
+    ]
+  },
+  {
+    "id": "secondcorinthians",
+    "word": "고린도후서",
+    "definition": "바울이 자신의 봉사와 고린도 회중에 대한 애정을 설명한 편지",
+    "difficulty": 2,
+    "references": [
+      "고린도 후서 1:1-7"
+    ]
+  },
+  {
+    "id": "gomer",
+    "word": "고멜",
+    "definition": "노아의 손자이자 야벳의 아들로 대홍수 후에 태어난 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:1-3",
+      "역대기상 1:4, 5",
+      "에스겔 38:2-6"
+    ]
+  },
+  {
+    "id": "gomorrah",
+    "word": "고모라",
+    "definition": "사해 남단 근처에 있던 도시로 소돔과 함께 여호와의 심판으로 멸망한 곳",
+    "difficulty": 3,
+    "references": [
+      "창세기 13:10, 12",
+      "창세기 19:24, 28",
+      "신명기 29:22, 23"
+    ]
+  },
+  {
+    "id": "gozan",
+    "word": "고산",
+    "definition": "아시리아 사람들에게 정복된 이스라엘 사람들이 끌려간 강 유역의 지역",
+    "difficulty": 1,
+    "references": [
+      "열왕기하 17:6",
+      "열왕기하 18:11",
+      "역대기상 5:26"
+    ]
+  },
+  {
+    "id": "cosam",
+    "word": "고삼",
+    "definition": "다윗의 아들 나단의 자손으로 예수의 어머니 마리아의 조상",
+    "difficulty": 1,
+    "references": [
+      "누가 3:28"
+    ]
+  },
+  {
+    "id": "goshen",
+    "word": "고센",
+    "definition": "이스라엘 사람들이 215년간 거주한 이집트의 한 지역으로 나일 삼각주 동부에 있었던 곳",
+    "difficulty": 1,
+    "references": [
+      "창세기 45:10",
+      "창세기 47:1-6, 11",
+      "출애굽기 8:22, 9:26"
+    ]
+  },
+  {
+    "id": "entry-고수씨",
+    "word": "고수씨",
+    "definition": "이스라엘 사람들이 광야에서 먹은 만나와 색깔과 생김새가 비슷한 씨앗",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 16:31",
+      "민수기 11:7"
+    ]
+  },
+  {
+    "id": "koz",
+    "word": "고스",
+    "definition": "유다 자손으로 아눕과 소베바와 하룸의 아들 아하헬 가족들의 아버지가 된 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 8"
+    ]
+  },
+  {
+    "id": "cozbi",
+    "word": "고스비",
+    "definition": "미디안 수장 수르의 딸로 부도덕으로 인해 비느하스에게 죽임을 당한 여자",
+    "difficulty": 3,
+    "references": [
+      "민수기 25:6-9, 15",
+      "민수기 31:7"
+    ]
+  },
+  {
+    "id": "kohath",
+    "word": "고핫",
+    "definition": "레위의 둘째 아들로 아므람·이스할·헤브론·웃시엘의 아버지이자 레위인 한 가문의 조상",
+    "difficulty": 1,
+    "references": [
+      "창세기 46:11",
+      "출애굽기 6:16, 18",
+      "민수기 3:19"
+    ]
+  },
+  {
+    "id": "golgotha",
+    "word": "골고다",
+    "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
+    "difficulty": 2,
+    "references": [
+      "요한복음 19:16-18"
+    ]
+  },
+  {
+    "id": "golan",
+    "word": "골란",
+    "definition": "므낫세 영토에 있던 바산의 도시로 도피 도시로 선정되고 레위인 도시가 된 곳",
+    "difficulty": 1,
+    "references": [
+      "신명기 4:41-43",
+      "여호수아 20:2, 8",
+      "여호수아 21:27"
+    ]
+  },
+  {
+    "id": "colossae",
+    "word": "골로새",
+    "definition": "소아시아 남서부 프리지아 지방에 있던 도시로 바울이 편지를 보낸 회중이 있던 곳",
+    "difficulty": 1,
+    "references": [
+      "골로새서 1:7, 8",
+      "골로새서 2:1",
+      "골로새서 4:12, 13"
+    ]
+  },
+  {
+    "id": "colossians",
+    "word": "골로새서",
+    "definition": "그리스도의 역할과 새 인간을 입는 일에 관해 설명한 바울의 편지",
+    "difficulty": 2,
+    "references": [
+      "골로새서 1:1-20",
+      "골로새서 3:1-14"
+    ]
+  },
+  {
+    "id": "goliath",
+    "word": "골리앗",
+    "definition": "이스라엘 군대를 위협했지만 다윗에게 패배한 거인 전사",
+    "difficulty": 1,
+    "references": [
+      "사무엘상 17장"
+    ]
+  },
+  {
+    "id": "valley",
+    "word": "골짜기",
+    "definition": "절벽이나 언덕이나 산 사이에 움푹 패어 들어간 지형",
+    "difficulty": 1,
+    "references": [
+      "시편 104:8",
+      "여호수아 8:11",
+      "신명기 8:7, 11:11"
+    ]
+  },
+  {
+    "id": "rush",
+    "word": "골풀",
+    "definition": "습지에서 자라는 볏과 식물과 비슷한 여러 종의 식물 총칭으로 줄기가 둥글고 속이 빈 식물",
+    "difficulty": 2,
+    "references": [
+      "욥기 41:2, 20",
+      "이사야 9:14, 15",
+      "이사야 58:5"
+    ]
+  },
+  {
+    "id": "colhozeh",
+    "word": "골호세",
+    "definition": "그의 아들 살룬이 느헤미야 시대에 예루살렘 성벽 보수를 도운 이스라엘 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:15",
+      "느헤미야 11:4, 5"
+    ]
+  },
+  {
+    "id": "entry-공성퇴",
+    "word": "공성퇴",
+    "definition": "포위 공격군이 도시의 성문과 성벽을 돌파하기 위해 사용한 전투 장비",
+    "difficulty": 2,
+    "references": [
+      "에스겔 4:1, 2",
+      "에스겔 21:22"
+    ]
+  },
+  {
+    "id": "justice",
+    "word": "공의",
+    "definition": "공정하고 올바르게 판단하며 편파적이지 않게 대하는 특성",
+    "difficulty": 3,
+    "references": [
+      "신명기 32:4; 미가 6:8"
+    ]
+  },
+  {
+    "id": "generosity",
+    "word": "관대함",
+    "definition": "자신이 가진 것을 아낌없이 나누고 다른 사람을 너그럽게 대하는 태도",
+    "difficulty": 2,
+    "references": [
+      "고린도 후서 9:7; 디모데 전서 6:18"
+    ]
+  },
+  {
+    "id": "steward",
+    "word": "관리인",
+    "definition": "다른 사람에게 속한 집안이나 재산을 관리할 책임이 맡겨진 사람",
+    "difficulty": 1,
+    "references": [
+      "이사야 22:15",
+      "창세기 24:2",
+      "누가 12:42",
+      "누가 16:1-4"
+    ]
+  },
+  {
+    "id": "anointingoil",
+    "word": "관유",
+    "definition": "제사장과 왕을 임명하거나 성막의 물품을 거룩한 목적에 사용하도록 바르는 기름",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 30:22-30; 사무엘상 16:13"
+    ]
+  },
+  {
+    "id": "luminary",
+    "word": "광명체",
+    "definition": "빛의 근원이나 등불 또는 땅에 빛을 비추는 천체",
+    "difficulty": 1,
+    "references": [
+      "창세기 1:14, 16-19"
+    ]
+  },
+  {
+    "id": "wilderness",
+    "word": "광야",
+    "definition": "인구가 희박한 경작되지 않은 땅으로 목초지와 저수조가 있는 곳이기도 한 지역",
+    "difficulty": 1,
+    "references": [
+      "예레미야 2:2",
+      "시편 65:12",
+      "출애굽기 3:1"
+    ]
+  },
+  {
+    "id": "basket",
+    "word": "광주리",
+    "definition": "야자 잎 섬유·갈대·골풀·잔가지 등으로 만든 용기로 농사와 가사에 사용된 것",
+    "difficulty": 1,
+    "references": [
+      "창세기 40:16-19",
+      "출애굽기 29:3, 23",
+      "사사기 6:19"
+    ]
+  },
+  {
+    "id": "education",
+    "word": "교육",
+    "definition": "지식과 기술을 전수하거나 습득하는 것으로 설명·징계·관찰·책망 등을 통해 이루어짐",
+    "difficulty": 1,
+    "references": [
+      "잠언 1:7",
+      "시편 19:1-3",
+      "히브리서 12:5, 6"
+    ]
+  },
+  {
+    "id": "instruction",
+    "word": "교훈",
+    "definition": "순응할 것이 요구되는 지도나 가르침으로 히브리어 동사 야라와 관련된 개념",
+    "difficulty": 1,
+    "references": [
+      "신명기 32:2",
+      "예레미야 9:20",
+      "잠언 16:21",
+      "이사야 30:20"
+    ]
+  },
+  {
+    "id": "guni",
+    "word": "구니",
+    "definition": "납달리의 아들로 야곱 집안과 함께 이집트에 간 사람이자 납달리 지파 한 가족의 시조",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:24",
+      "역대기상 7:13",
+      "민수기 26:48"
+    ]
+  },
+  {
+    "id": "maggot",
+    "word": "구더기",
+    "definition": "알에서 부화된 지 얼마 안 된 유충으로 썩어 가는 물질에서 발견되는 파리의 애벌레",
+    "difficulty": 2,
+    "references": [
+      "욥기 7:5, 17:14",
+      "이사야 14:11",
+      "이사야 66:24"
+    ]
+  },
+  {
+    "id": "pit",
+    "word": "구덩이",
+    "definition": "천연적으로나 인공적으로 깊거나 움푹하게 팬 곳으로 요셉이 형들에게 던져진 곳",
+    "difficulty": 1,
+    "references": [
+      "창세기 14:10",
+      "창세기 37:20-29",
+      "욥기 17:13-16"
+    ]
+  },
+  {
+    "id": "gurbaal",
+    "word": "구르바알",
+    "definition": "웃시야 왕 시대에 아랍 사람들이 살던 곳으로 정확한 위치는 알려지지 않은 지명",
+    "difficulty": 3,
+    "references": [
+      "역대기하 26:3, 7"
+    ]
+  },
+  {
+    "id": "cloudpillar",
+    "word": "구름기둥",
+    "definition": "이스라엘 백성이 광야를 이동할 때 하느님이 인도하신다는 것을 보여 준 구름 기둥",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 13:21, 22"
+    ]
+  },
+  {
+    "id": "kushaiah",
+    "word": "구사야",
+    "definition": "므라리 가족에 속한 레위 사람으로 다윗 시대에 악사가 된 에단의 아버지나 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 15:16, 17",
+      "역대기상 6:44"
+    ]
+  },
+  {
+    "id": "cushan",
+    "word": "구산",
+    "definition": "하박국서에서 미디안 땅과 유사한 표현으로 나오는 이름으로 미디안의 다른 이름일 가능성",
+    "difficulty": 3,
+    "references": [
+      "하박국 3:7"
+    ]
+  },
+  {
+    "id": "cush",
+    "word": "구스",
+    "definition": "함의 아들 가운데 첫째로 여섯 아들의 아버지이자 아프리카 지역 민족의 조상",
+    "difficulty": 1,
+    "references": [
+      "창세기 10:6-8",
+      "역대기상 1:8-10",
+      "예레미야 13:23"
+    ]
+  },
+  {
+    "id": "beads",
+    "word": "구슬꿰미",
+    "definition": "유리·보석·금·은 등으로 만든 작은 구슬에 구멍을 뚫어 꿰어 놓은 장식품",
+    "difficulty": 2,
+    "references": [
+      "아가 1:10"
+    ]
+  },
+  {
+    "id": "cushi",
+    "word": "구시",
+    "definition": "예언자 스바냐의 아버지",
+    "difficulty": 3,
+    "references": [
+      "스바냐 1:1",
+      "예레미야 36:14"
+    ]
+  },
+  {
+    "id": "quartus",
+    "word": "구아르도",
+    "definition": "고린도에 살던 사람으로 바울이 로마인들에게 보낸 편지에 인사를 포함시킨 그리스도인",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:23"
+    ]
+  },
+  {
+    "id": "salvation",
+    "word": "구원",
+    "definition": "위험과 죄와 죽음에서 벗어나 생명을 얻는 것",
+    "difficulty": 1,
+    "references": [
+      "로마서 6:23"
+    ]
+  },
+  {
+    "id": "savior",
+    "word": "구원자",
+    "definition": "위험이나 파멸에서 보존해 주거나 구출해 주는 자로 주된 구원의 근원은 여호와이심",
+    "difficulty": 1,
+    "references": [
+      "이사야 43:11",
+      "이사야 45:21",
+      "시편 106:8, 10"
+    ]
+  },
+  {
+    "id": "relief",
+    "word": "구제",
+    "definition": "연로하거나 기근이나 역경 때문에 생필품이 부족한 사람들을 물질적으로 돕는 일",
+    "difficulty": 1,
+    "references": [
+      "욥기 29:16, 31:19-22",
+      "야고보서 1:27",
+      "디모데전서 5:9, 10"
+    ]
+  },
+  {
+    "id": "gudgodah",
+    "word": "굿고다",
+    "definition": "이스라엘 사람들이 광야에서 진을 친 곳으로 호르-학깃갓과 동일한 장소",
+    "difficulty": 3,
+    "references": [
+      "신명기 10:6, 7",
+      "민수기 33:33"
+    ]
+  },
+  {
+    "id": "chrysolite",
+    "word": "귀감람석",
+    "definition": "투명하거나 반투명한 노랑 또는 녹색의 준보석으로 대제사장 흉패와 에스겔 환상에 언급된 보석",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 28:20",
+      "출애굽기 39:13",
+      "에스겔 28:13"
+    ]
+  },
+  {
+    "id": "earring",
+    "word": "귀고리",
+    "definition": "장식용으로 귀에 다는 고리나 기타 장식품으로 코고리에도 쓰인 히브리어 단어와 관련된 물건",
+    "difficulty": 2,
+    "references": [
+      "잠언 11:22",
+      "출애굽기 32:2",
+      "에스겔 16:12"
+    ]
+  },
+  {
+    "id": "cricket",
+    "word": "귀뚜라미",
+    "definition": "방아깨비와 유연관계가 있는 뛰는 곤충으로 레위기에서 정한 새로 식용이 허용된 곤충",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:22"
+    ]
+  },
+  {
+    "id": "deafness",
+    "word": "귀먹다",
+    "definition": "귀가 소리를 부분적으로 혹은 완전히 듣지 못하는 상태로 예수의 치유 기적에 언급됨",
+    "difficulty": 1,
+    "references": [
+      "이사야 35:5",
+      "마가 9:25-29",
+      "시편 28:1"
+    ]
+  },
+  {
+    "id": "chenaniah",
+    "word": "그나냐",
+    "definition": "다윗 시대의 레위 사람으로 신성한 궤를 옮기는 일을 하는 레위 사람들의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 15:22, 25-27",
+      "역대기상 26:29"
+    ]
+  },
+  {
+    "id": "chenani",
+    "word": "그나니",
+    "definition": "느헤미야 시대에 신뢰할 만한 협약에 인장을 찍기 전 여호와께 고백을 한 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 9:3, 4, 38"
+    ]
+  },
+  {
+    "id": "kenaz",
+    "word": "그나스",
+    "definition": "에서의 아들 엘리바스의 아들로 에돔 땅의 족장이자 갈렙의 형제",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:11, 15",
+      "여호수아 15:17",
+      "사사기 3:9, 11"
+    ]
+  },
+  {
+    "id": "chenaanah",
+    "word": "그나아나",
+    "definition": "아합 왕 시대에 거짓 예언자 시드기야의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 22:11, 24",
+      "역대기하 18:10, 23"
+    ]
+  },
+  {
+    "id": "kenath",
+    "word": "그낫",
+    "definition": "므낫세 사람 노바가 함락시킨 요르단 강 동쪽의 도시로 노바라 불린 곳",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:42",
+      "역대기상 2:23"
+    ]
+  },
+  {
+    "id": "genubath",
+    "word": "그누밧",
+    "definition": "에돔 왕손 하닷의 아들로 이집트 파라오의 호의 속에서 태어난 사람",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 11:14-20"
+    ]
+  },
+  {
+    "id": "gedaliah",
+    "word": "그달리야",
+    "definition": "예루살렘 멸망 후 유다에 남은 사람들을 다스리도록 임명된 총독",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 25:22-25"
+    ]
+  },
+  {
+    "id": "gederah",
+    "word": "그데라",
+    "definition": "유다에게 할당된 세펠라의 도시로 양 우리와 관련된 이름의 지명",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:33, 36",
+      "역대기상 4:23"
+    ]
+  },
+  {
+    "id": "gederothaim",
+    "word": "그데로다임",
+    "definition": "두 개의 돌우리라는 뜻의 지명으로 세펠라의 유다 도시들 가운데 나오는 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:36"
+    ]
+  },
+  {
+    "id": "gederoth",
+    "word": "그데롯",
+    "definition": "유다 세펠라의 도시로 아하스 왕 때 블레셋 사람들에게 빼앗긴 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:41",
+      "역대기하 28:18, 19"
+    ]
+  },
+  {
+    "id": "kedemoth",
+    "word": "그데못",
+    "definition": "요르단 강 동쪽의 도시이자 광야로 모세가 시혼에게 사자를 보낸 출발지",
+    "difficulty": 3,
+    "references": [
+      "신명기 2:26, 27",
+      "여호수아 13:18",
+      "여호수아 21:34-37"
+    ]
+  },
+  {
+    "id": "gedor",
+    "word": "그돌",
+    "definition": "기브온 성읍의 여이엘의 아들로 베냐민 지파 사람이자 사울 왕의 할아버지 형제",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:29-31",
+      "역대기상 9:35-39"
+    ]
+  },
+  {
+    "id": "chedorlaomer",
+    "word": "그돌라오멜",
+    "definition": "고대 엘람의 왕으로 사해 남쪽 다섯 왕의 반역을 진압하다 아브라함에게 패한 사람",
+    "difficulty": 1,
+    "references": [
+      "창세기 14:1-17"
+    ]
+  },
+  {
+    "id": "keturah",
+    "word": "그두라",
+    "definition": "아브라함의 후처로 여러 아들을 낳은 여자",
+    "difficulty": 3,
+    "references": [
+      "창세기 25:1-6"
+    ]
+  },
+  {
+    "id": "cheran",
+    "word": "그란",
+    "definition": "호리 사람 족장 디손의 아들",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:26",
+      "역대기상 1:41"
+    ]
+  },
+  {
+    "id": "crete",
+    "word": "그레데",
+    "definition": "바울이 디도를 남겨 회중들을 조직하게 한 지중해의 섬",
+    "difficulty": 2,
+    "references": [
+      "디도서 1:5"
+    ]
+  },
+  {
+    "id": "crescens",
+    "word": "그레스게",
+    "definition": "바울이 디모데에게 보낸 둘째 편지에서 갈라디아로 갔다고 언급한 사람",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 4:10"
+    ]
+  },
+  {
+    "id": "cherub",
+    "word": "그룹",
+    "definition": "하느님의 왕좌와 거룩한 목적을 섬기는 높은 지위의 천사",
+    "difficulty": 3,
+    "references": [
+      "창세기 3:24; 에스겔 10:1-5"
+    ]
+  },
+  {
+    "id": "christ",
+    "word": "그리스도",
+    "definition": "기름부음받은 자라는 뜻으로 예수에게 붙은 칭호",
+    "difficulty": 1,
+    "references": [
+      "마태복음 16:16"
+    ]
+  },
+  {
+    "id": "christian",
+    "word": "그리스도인",
+    "definition": "그리스도 예수의 추종자들을 가리키는 말로 안디옥에서 처음 불리기 시작한 이름",
+    "difficulty": 1,
+    "references": [
+      "사도행전 11:26",
+      "사도행전 26:28",
+      "베드로전서 4:16"
+    ]
+  },
+  {
+    "id": "crispus",
+    "word": "그리스보",
+    "definition": "고린도 회당의 주임 관리로 바울이 직접 침례를 준 사람",
+    "difficulty": 3,
+    "references": [
+      "사도행전 18:8",
+      "고린도전서 1:14"
+    ]
+  },
+  {
+    "id": "greek",
+    "word": "그리스어",
+    "definition": "인도·유럽 어족에 속한 언어로 그리스도인 성경을 기록하는 데 사용된 언어",
+    "difficulty": 1,
+    "references": [
+      "마태 27:37",
+      "요한 19:19, 20",
+      "디모데전서 6:20"
+    ]
+  },
+  {
+    "id": "kerioth",
+    "word": "그리옷",
+    "definition": "모압에 대한 예언에 나오는 장소로 여러 개의 작은 성읍들로 이루어졌을 곳",
+    "difficulty": 3,
+    "references": [
+      "예레미야 48:24",
+      "아모스 2:2"
+    ]
+  },
+  {
+    "id": "gemariah",
+    "word": "그마랴",
+    "definition": "여호야김 통치 때 방백으로 바룩이 예레미야의 말을 읽는 것을 들은 사람",
+    "difficulty": 3,
+    "references": [
+      "예레미야 36:10-25"
+    ]
+  },
+  {
+    "id": "gemalli",
+    "word": "그말리",
+    "definition": "단 사람으로 그의 아들 암미엘이 가나안 정탐을 위해 보내진 12명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:12, 16"
+    ]
+  },
+  {
+    "id": "chemosh",
+    "word": "그모스",
+    "definition": "모압 사람들의 주요 신으로 모압 백성이 그의 백성이라 불린 우상",
+    "difficulty": 3,
+    "references": [
+      "민수기 21:29",
+      "예레미야 48:46",
+      "열왕기하 3:26, 27"
+    ]
+  },
+  {
+    "id": "kemuel",
+    "word": "그무엘",
+    "definition": "아브라함의 조카로 나홀과 밀가의 아들이며 아람의 아버지",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:20, 21"
+    ]
+  },
+  {
+    "id": "chephirah",
+    "word": "그비라",
+    "definition": "히위 사람들의 도시로 기브온 사절들이 대표한 네 도시 가운데 하나",
+    "difficulty": 3,
+    "references": [
+      "여호수아 9:7, 17",
+      "여호수아 18:26"
+    ]
+  },
+  {
+    "id": "chesalon",
+    "word": "그살론",
+    "definition": "여아림 산과 함께 언급되는 유다 북쪽 경계의 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:10"
+    ]
+  },
+  {
+    "id": "geshur",
+    "word": "그술",
+    "definition": "요르단 강 동쪽 바산의 아르곱 지방에 접해 있던 아람 사람들의 왕국",
+    "difficulty": 3,
+    "references": [
+      "신명기 3:14",
+      "여호수아 13:13",
+      "사무엘하 13:37, 38"
+    ]
+  },
+  {
+    "id": "chesulloth",
+    "word": "그술롯",
+    "definition": "잇사갈의 경계 도시로 기슬롯-다볼과 동일한 장소",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:18",
+      "여호수아 19:12"
+    ]
+  },
+  {
+    "id": "geuel",
+    "word": "그우엘",
+    "definition": "갓 지파 마기의 아들로 가나안 땅을 정탐하기 위해 보내진 12명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:2, 3, 15"
+    ]
+  },
+  {
+    "id": "keilah",
+    "word": "그일라",
+    "definition": "세펠라에 있던 유다의 요새 도시로 다윗이 블레셋에게서 구원한 곳",
+    "difficulty": 2,
+    "references": [
+      "여호수아 15:44",
+      "사무엘상 23:1-13"
+    ]
+  },
+  {
+    "id": "kehelathah",
+    "word": "그헬라다",
+    "definition": "이스라엘 사람들이 광야 방랑 중에 진을 쳤던 곳으로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "민수기 33:22, 23"
+    ]
+  },
+  {
+    "id": "industriousness",
+    "word": "근면",
+    "definition": "꾸준하고 끈기 있게 활동하는 것으로 게으름의 반대되는 성경적 덕목",
+    "difficulty": 3,
+    "references": [
+      "잠언 10:4, 12:24",
+      "골로새서 1:29",
+      "데살로니가후서 3:7-9"
+    ]
+  },
+  {
+    "id": "entry-근위대",
+    "word": "근위대",
+    "definition": "로마 황제를 위한 경호대로 아우구스투스가 조직한 특별 군사 집단",
+    "difficulty": 3,
+    "references": [
+      "마태 27:27",
+      "마가 15:16",
+      "사도행전 23:35",
+      "빌립보서 1:13"
+    ]
+  },
+  {
+    "id": "claudia",
+    "word": "글라우디아",
+    "definition": "로마의 한 그리스도인 여자로 바울이 디모데에게 보낸 둘째 편지에 인사를 포함시킨 사람",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 4:21"
+    ]
+  },
+  {
+    "id": "chelal",
+    "word": "글랄",
+    "definition": "유배에서 돌아온 후 에스라의 교훈에 따라 타국인 아내를 내보낸 바핫-모압 자손 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 10:16, 17, 30"
+    ]
+  },
+  {
+    "id": "clement",
+    "word": "글레멘드",
+    "definition": "바울과 함께 좋은 소식을 위해 싸운 충실한 그리스도인으로 빌립보서에 언급된 사람",
+    "difficulty": 3,
+    "references": [
+      "빌립보서 4:3"
+    ]
+  },
+  {
+    "id": "cleopas",
+    "word": "글레오바",
+    "definition": "예수께서 부활하신 날에 엠마오로 가던 두 제자 가운데 한 사람",
+    "difficulty": 3,
+    "references": [
+      "누가 24:13-35"
+    ]
+  },
+  {
+    "id": "clopas",
+    "word": "글로바",
+    "definition": "십자가 곁에 서 있던 마리아의 남편이자 사도 작은 야고보의 아버지",
+    "difficulty": 3,
+    "references": [
+      "요한 19:25",
+      "마태 27:56",
+      "마가 15:40"
+    ]
+  },
+  {
+    "id": "chloe",
+    "word": "글로에",
+    "definition": "바울이 그의 집안사람들을 통해 고린도 회중의 분쟁에 관한 보고를 받은 사람",
+    "difficulty": 3,
+    "references": [
+      "고린도전서 1:11"
+    ]
+  },
+  {
+    "id": "cheluhi",
+    "word": "글루히",
+    "definition": "바니 자손으로 에스라 시대에 타국인 아내를 내보낸 사람들 가운데 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 10:34, 35"
+    ]
+  },
+  {
+    "id": "chelub",
+    "word": "글룹",
+    "definition": "유다 자손으로 수하의 형제이며 므힐의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 11",
+      "역대기상 27:26"
+    ]
+  },
+  {
+    "id": "kelita",
+    "word": "글리다",
+    "definition": "에스라 시대에 타국인 아내를 얻은 죄를 인정하고 아내를 내보낸 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 10:23",
+      "느헤미야 8:7",
+      "느헤미야 9:38"
+    ]
+  },
+  {
+    "id": "ban",
+    "word": "금령",
+    "definition": "히브리어 헤렘을 번역한 말로 되돌리거나 구속할 수 없이 하느님께 바쳐진 것을 가리킴",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 22:20",
+      "레위기 27:28, 29",
+      "신명기 13:15-17"
+    ]
+  },
+  {
+    "id": "metals",
+    "word": "금속",
+    "definition": "금·은·구리·철·납 등 성경에 구체적으로 언급된 원소로 창세기부터 기록된 물질",
+    "difficulty": 1,
+    "references": [
+      "창세기 2:11",
+      "창세기 4:22"
+    ]
+  },
+  {
+    "id": "entry-금작화나무",
+    "word": "금작화나무",
+    "definition": "사막의 관목으로 콩과에 속하는 식물이자 엘리야가 그 그늘 아래 앉았던 나무",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 19:4, 5",
+      "욥기 30:4"
+    ]
+  },
+  {
+    "id": "famine",
+    "word": "기근",
+    "definition": "극도로 식량이 부족한 상태로 여호와의 말씀을 듣는 일의 부족을 상징하기도 함",
+    "difficulty": 1,
+    "references": [
+      "아모스 8:11",
+      "계시록 18:8",
+      "학개 2:17"
+    ]
+  },
+  {
+    "id": "kinah",
+    "word": "기나",
+    "definition": "유다 남부의 한 도시로 브엘-세바 근처에 있었던 지명",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21, 22"
+    ]
+  },
+  {
+    "id": "ginath",
+    "word": "기낫",
+    "definition": "오므리와 이스라엘 왕권을 다투다 실패한 디브니의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 16:21, 22"
+    ]
+  },
+  {
+    "id": "prayer",
+    "word": "기도",
+    "definition": "하느님께 말하며 찬양과 감사와 요청을 표현하는 것",
+    "difficulty": 1,
+    "references": [
+      "빌립보서 4:6"
+    ]
+  },
+  {
+    "id": "chidon",
+    "word": "기돈",
+    "definition": "웃사가 증거의 궤를 잘못 만지다 죽었던 타작마당의 소유주나 그 지명",
+    "difficulty": 3,
+    "references": [
+      "역대기상 13:6-14",
+      "사무엘하 6:6"
+    ]
+  },
+  {
+    "id": "gidom",
+    "word": "기돔",
+    "definition": "베냐민 사람들이 이스라엘 다른 지파에게 쫓겨간 장소로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "사사기 20:45"
+    ]
+  },
+  {
+    "id": "pillar",
+    "word": "기둥",
+    "definition": "구조물을 수직으로 받치는 버팀대로 야곱이 기름을 부어 세운 기념물의 형태이기도 함",
+    "difficulty": 1,
+    "references": [
+      "창세기 28:18, 22",
+      "신명기 7:5",
+      "열왕기상 14:23"
+    ]
+  },
+  {
+    "id": "capital",
+    "word": "기둥머리",
+    "definition": "건물 기둥의 맨 윗부분으로 솔로몬 성전의 야긴과 보아스 기둥에 있던 장식",
+    "difficulty": 2,
+    "references": [
+      "역대기하 3:15-17",
+      "역대기하 4:11-13",
+      "예레미야 52:17, 22"
+    ]
+  },
+  {
+    "id": "gideoni",
+    "word": "기드오니",
+    "definition": "베냐민 지파 수장 아비단의 아버지",
+    "difficulty": 3,
+    "references": [
+      "민수기 1:11, 16"
+    ]
+  },
+  {
+    "id": "gideon",
+    "word": "기드온",
+    "definition": "적은 수의 군사로 미디안 군대를 물리친 이스라엘의 재판관",
+    "difficulty": 2,
+    "references": [
+      "사사기 6-7장"
+    ]
+  },
+  {
+    "id": "chitlish",
+    "word": "기들리스",
+    "definition": "유다 상속지 세펠라의 도시로 라기스 근처에 있었던 지명",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:33, 40"
+    ]
+  },
+  {
+    "id": "kiriathaim",
+    "word": "기랴다임",
+    "definition": "르우벤 사람들이 세운 요르단 강 동쪽 도시로 후에 모압의 지배 아래 놓인 곳",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:37",
+      "여호수아 13:19",
+      "예레미야 48:1",
+      "에스겔 25:9"
+    ]
+  },
+  {
+    "id": "writing",
+    "word": "기록",
+    "definition": "단어나 사상을 전달하는 글자나 문자를 어떤 표면에 적어 넣는 행위",
+    "difficulty": 1,
+    "references": [
+      "창세기 5:1",
+      "창세기 36:10",
+      "히브리서 12:16"
+    ]
+  },
+  {
+    "id": "recorder",
+    "word": "기록관",
+    "definition": "이스라엘 궁정에서 큰 책임을 맡은 관리로 왕국의 공식 기록을 담당한 사람",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 8:16",
+      "열왕기하 18:18",
+      "역대기하 34:8"
+    ]
+  },
+  {
+    "id": "chilion",
+    "word": "기룐",
+    "definition": "나오미와 엘리멜렉의 아들로 모압에서 아내 오르바를 얻었으나 자녀 없이 죽은 사람",
+    "difficulty": 3,
+    "references": [
+      "룻기 1:1-5",
+      "룻기 4:9, 10"
+    ]
+  },
+  {
+    "id": "fat",
+    "word": "기름",
+    "definition": "제물의 내장에 있는 지방으로 여호와께 바칠 부분이자 비옥함과 풍요를 상징하는 물질",
+    "difficulty": 1,
+    "references": [
+      "레위기 3:3",
+      "사사기 3:22",
+      "창세기 4:4"
+    ]
+  },
+  {
+    "id": "entry-기름나무",
+    "word": "기름나무",
+    "definition": "기름이나 그와 비슷한 물질이 많이 들어 있는 나무로 솔로몬 성전 건축에 쓰인 목재",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 6:23, 31-33",
+      "느헤미야 8:15",
+      "이사야 41:19"
+    ]
+  },
+  {
+    "id": "anointing",
+    "word": "기름부음",
+    "definition": "특별한 임무나 하늘의 희망을 위해 하느님의 영으로 선택되는 일",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 16:13; 고린도 후서 1:21, 22"
+    ]
+  },
+  {
+    "id": "gimel",
+    "word": "기멜",
+    "definition": "히브리어 알파벳의 세 번째 글자로 시편 119편에 언급된 문자",
+    "difficulty": 3,
+    "references": [
+      "시편 119:17-24"
+    ]
+  },
+  {
+    "id": "gibeon",
+    "word": "기브온",
+    "definition": "이스라엘과 교활한 방법으로 평화의 계약을 맺은 히위 사람들의 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 9:3-27; 10:1-14"
+    ]
+  },
+  {
+    "id": "joy",
+    "word": "기쁨",
+    "definition": "하느님과 좋은 관계를 누리며 느끼는 깊은 즐거움",
+    "difficulty": 1,
+    "references": [
+      "빌립보서 4:4; 갈라디아서 5:22"
+    ]
+  },
+  {
+    "id": "kish",
+    "word": "기스",
+    "definition": "므라리 계통의 레위 사람으로 마흘리의 아들이자 엘르아살의 형제",
+    "difficulty": 3,
+    "references": [
+      "역대기상 23:21, 22",
+      "역대기상 24:29"
+    ]
+  },
+  {
+    "id": "gishpa",
+    "word": "기스바",
+    "definition": "느헤미야 시대에 성전 종인 느디님의 감독자",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 11:21"
+    ]
+  },
+  {
+    "id": "chislev",
+    "word": "기슬레우월",
+    "definition": "바빌론 유배 후 유대인의 아홉째 음력 달로 11~12월에 해당되는 달",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 1:1",
+      "예레미야 36:9",
+      "스가랴 7:1"
+    ]
+  },
+  {
+    "id": "chislon",
+    "word": "기슬론",
+    "definition": "모세 시대의 베냐민 사람으로 아들 엘리닷이 약속의 땅 분배를 도운 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:17, 21"
+    ]
+  },
+  {
+    "id": "kishi",
+    "word": "기시",
+    "definition": "므라리 계통의 레위 사람으로 악사 에단의 아버지이자 구사야와 동일 인물일 듯한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:19, 44",
+      "역대기상 15:17"
+    ]
+  },
+  {
+    "id": "miracles",
+    "word": "기적",
+    "definition": "물질계의 모든 인간의 힘을 능가하는 초자연적인 행위로 전조와 증표를 의미하기도 함",
+    "difficulty": 1,
+    "references": [
+      "신명기 28:46",
+      "역대기상 16:12",
+      "누가 6:19"
+    ]
+  },
+  {
+    "id": "kitron",
+    "word": "기트론",
+    "definition": "스불론 사람들이 가나안 주민을 쫓아내지 못한 도시로 갓닷과 동일한 곳일 가능성",
+    "difficulty": 3,
+    "references": [
+      "사사기 1:30",
+      "여호수아 19:15"
+    ]
+  },
+  {
+    "id": "chinnereth",
+    "word": "긴네렛",
+    "definition": "납달리의 요새 도시로 갈릴리 바다 북서쪽에 위치한 곳",
+    "difficulty": 1,
+    "references": [
+      "여호수아 19:35",
+      "열왕기상 15:20",
+      "민수기 34:11"
+    ]
+  },
+  {
+    "id": "ginnethoi",
+    "word": "긴느도이",
+    "definition": "스룹바벨과 함께 바빌론에서 돌아온 제사장 우두머리 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:1, 4, 7"
+    ]
+  },
+  {
+    "id": "ginnethon",
+    "word": "긴느돈",
+    "definition": "제사장 부계 가문으로 느헤미야 시대에 므술람이 우두머리였던 가문",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:12, 16, 26",
+      "느헤미야 10:1-8"
+    ]
+  },
+  {
+    "id": "gilgal",
+    "word": "길갈",
+    "definition": "여호수아 시대에 이스라엘의 진영이 있었고 중요한 사건들이 일어난 장소",
+    "difficulty": 2,
+    "references": [
+      "여호수아 4:19-24; 사무엘상 11:14, 15"
+    ]
+  },
+  {
+    "id": "gilalai",
+    "word": "길랄래",
+    "definition": "예루살렘 성벽 낙성식 행렬에 참가한 레위 사람 악사",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:27, 31, 36"
+    ]
+  },
+  {
+    "id": "giloh",
+    "word": "길로",
+    "definition": "유다 산간 지방의 도시로 반역자 아히도벨의 고향",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:48, 51",
+      "사무엘하 15:12",
+      "사무엘하 23:34"
+    ]
+  },
+  {
+    "id": "gilead",
+    "word": "길르앗",
+    "definition": "요르단 강 동쪽에 위치하며 목초지로 알려진 지역",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:1-5; 예레미야 8:22"
+    ]
+  },
+  {
+    "id": "cilicia",
+    "word": "길리기아",
+    "definition": "소아시아 남동부의 지역으로 바울의 출생지 타소가 있던 곳",
+    "difficulty": 1,
+    "references": [
+      "사도행전 21:39",
+      "사도행전 22:3",
+      "갈라디아서 1:21"
+    ]
+  },
+  {
+    "id": "chilmad",
+    "word": "길맛",
+    "definition": "티레와 무역하며 고급 옷과 융단을 매매한 곳으로 언급된 지명",
+    "difficulty": 3,
+    "references": [
+      "에스겔 27:2, 23, 24"
+    ]
+  },
+  {
+    "id": "gilboa",
+    "word": "길보아",
+    "definition": "사울과 그 아들들이 블레셋과의 전투에서 죽은 이스르엘 남동쪽의 산",
+    "difficulty": 1,
+    "references": [
+      "사사기 7:1",
+      "사무엘상 28:4",
+      "사무엘상 31:1-4"
+    ]
+  },
+  {
+    "id": "gimzo",
+    "word": "김소",
+    "definition": "유다의 도시로 아하스 통치 때 블레셋 사람들에게 함락된 곳",
+    "difficulty": 3,
+    "references": [
+      "역대기하 28:18, 19"
+    ]
+  },
+  {
+    "id": "chimham",
+    "word": "김함",
+    "definition": "바르실래의 아들로 다윗을 도왔던 길르앗 사람의 대신 궁정에 간 사람",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 19:37-40",
+      "열왕기상 2:7",
+      "예레미야 41:17"
+    ]
+  },
+  {
+    "id": "gibbar",
+    "word": "깁발",
+    "definition": "스룝바벨과 함께 바빌론 유배에서 돌아온 95명의 가족 우두머리",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 20",
+      "느헤미야 7:25"
+    ]
+  },
+  {
+    "id": "gibbethon",
+    "word": "깁브돈",
+    "definition": "단 지파에게 할당되고 레위인 도시가 된 도시로 블레셋에게 빼앗긴 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 21:20, 23",
+      "열왕기상 15:27",
+      "열왕기상 16:15-18"
+    ]
+  },
+  {
+    "id": "kibzaim",
+    "word": "깁사임",
+    "definition": "고핫 계통 레위인에게 주어진 에브라임의 도시로 욕므암이라고도 불린 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 21:20-22",
+      "역대기상 6:68"
+    ]
+  },
+  {
+    "id": "giddalti",
+    "word": "깃달디",
+    "definition": "헤만의 아들로 다윗 시대에 24개 봉사 집단 중 스물두째 우두머리가 된 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 25:1, 4, 29"
+    ]
+  },
+  {
+    "id": "giddel",
+    "word": "깃델",
+    "definition": "성전 종인 느디님 가족의 조상으로 스룝바벨과 함께 유배에서 돌아온 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:47",
+      "느헤미야 7:49"
+    ]
+  },
+  {
+    "id": "kittim",
+    "word": "깃딤",
+    "definition": "야완의 아들로 언급된 이름으로 후에 한 민족과 지역을 가리키는 데 사용된 말",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:4",
+      "역대기상 1:7",
+      "에스겔 27:6"
+    ]
+  },
+  {
+    "id": "gittith",
+    "word": "깃딧",
+    "definition": "시편 8, 81, 84편 머리글에 나오는 음악 관련 표현으로 가드와 관련된 용어",
+    "difficulty": 3,
+    "references": [
+      "시편 8편",
+      "시편 81편",
+      "시편 84편"
+    ]
+  },
+  {
+    "id": "raven",
+    "word": "까마귀",
+    "definition": "성서에 이름이 구체적으로 언급된 최초의 새로 노아가 방주에서 내보낸 검은 새",
+    "difficulty": 1,
+    "references": [
+      "창세기 8:7",
+      "아가 5:11",
+      "레위기 11:13, 15"
+    ]
+  },
+  {
+    "id": "entry-깨끗함",
+    "word": "깨끗함",
+    "definition": "흠이 없고 때 묻거나 불순물이 없는 상태로 신체적·도덕적 순결을 가리키는 개념",
+    "difficulty": 1,
+    "references": [
+      "에스겔 20:38",
+      "시편 18:26",
+      "마태 5:8"
+    ]
+  },
+  {
+    "id": "rebuke",
+    "word": "꾸짖음",
+    "definition": "승인하지 않음을 말이나 행동으로 분명히 표현하는 것으로 히브리어 동사 가아르와 관련된 개념",
+    "difficulty": 3,
+    "references": [
+      "창세기 37:10",
+      "욥기 11:3",
+      "열왕기하 19:3",
+      "마태 12:16"
+    ]
+  },
+  {
+    "id": "entry-끊어짐",
+    "word": "끊어짐",
+    "definition": "이스라엘에서 율법을 어긴 데 대한 처벌로 죽어서 끊어지는 것을 의미하는 표현",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 31:14",
+      "레위기 7:27",
+      "레위기 20:3-6",
+      "민수기 15:30"
+    ]
+  }
+]

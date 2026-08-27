@@ -74,7 +74,10 @@
 - 기존 퍼즐 배치를 변경하지 않고 문제 문구만 수정할 때는 관련 `clue`만 변경한다.
 
 ## 단어 데이터 규칙
-- `data/bibleWordsLib1.json`을 단어 정보의 기준 데이터로 사용한다.
+- `data/bibleWordsLib1.json`은 `data/bibleWordsLib2.json`~`data/bibleWordsLib15.json`을 병합한 통합 라이브러리로, `npm run merge:lib1`로 생성한다.
+- 초성별 라이브러리 매핑: Lib2(가), Lib3(나), Lib4(다), Lib5(라), Lib6(마), Lib7(바), Lib8(사), Lib9(아), Lib10(자), Lib11(차), Lib12(카), Lib13(타), Lib14(파), Lib15(하).
+- 단어 추가·수정은 해당 초성의 Lib2~Lib15 파일에서 직접 편집한 뒤 `npm run merge:lib1`으로 Lib1을 갱신한다.
+- `npm run validate:maps`와 `npm run generate:map`은 실행 전 자동으로 Lib1 병합을 수행한다.
 - 맵의 `wordId`는 단어 데이터의 `id`와 연결하며, 두 값이 일치하는지 확인한다.
 - 맵의 `clue`가 비어 있거나 없으면 연결된 단어 데이터의 `definition`을 표시한다.
 - 맵의 `clue`와 `definition`이 완전히 같으면 `clue`를 중복 저장하지 않는다.

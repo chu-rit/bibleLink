@@ -10,8 +10,9 @@
     "web": "expo start --web",
     "build:web": "expo export --platform web",
     "postbuild:web": "node scripts/createWordPage.js",
-    "validate:maps": "node scripts/validateMaps.js",
-    "generate:map": "node scripts/generateMap.js"
+    "merge:lib1": "node scripts/mergeLib1.js",
+    "validate:maps": "node scripts/mergeLib1.js && node scripts/validateMaps.js",
+    "generate:map": "node scripts/mergeLib1.js && node scripts/generateMap.js"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",

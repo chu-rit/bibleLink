@@ -1,0 +1,2383 @@
+[
+  {
+    "id": "hacaliah",
+    "word": "하가랴",
+    "definition": "총독 느헤미야의 아버지로 성경에 짧게 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 1:1",
+      "느헤미야 10:1"
+    ]
+  },
+  {
+    "id": "hagabah",
+    "word": "하가바",
+    "definition": "성전 종인 느디님 가족의 조상으로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43, 45",
+      "느헤미야 7:48"
+    ]
+  },
+  {
+    "id": "hagar",
+    "word": "하갈",
+    "definition": "사라의 하녀였으며 아브라함의 아들 이스마엘의 어머니가 된 여자",
+    "difficulty": 2,
+    "references": [
+      "창세기 16:1-16; 21:9-21"
+    ]
+  },
+  {
+    "id": "hagab",
+    "word": "하갑",
+    "definition": "성전 종인 느디님 가족의 조상으로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43, 46",
+      "느헤미야 7:48"
+    ]
+  },
+  {
+    "id": "hakupha",
+    "word": "하구바",
+    "definition": "성전 종인 느디님 가족의 우두머리로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 43, 51",
+      "느헤미야 7:6, 46, 53"
+    ]
+  },
+  {
+    "id": "hagri",
+    "word": "하그리",
+    "definition": "다윗의 용사 밉할의 아버지로 성경에 짧게 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 11:26, 38"
+    ]
+  },
+  {
+    "id": "hachilah",
+    "word": "하길라",
+    "definition": "십 광야에 있던 언덕으로 다윗이 사울을 피해 숨은 곳",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 23:19",
+      "사무엘상 26:1-3"
+    ]
+  },
+  {
+    "id": "hananiah",
+    "word": "하나냐",
+    "definition": "예레미야의 예언과 반대되는 거짓 예언을 한 사람",
+    "difficulty": 3,
+    "references": [
+      "예레미야 28:1-17"
+    ]
+  },
+  {
+    "id": "hanani",
+    "word": "하나니",
+    "definition": "헤만의 아들로 다윗 시대 악사 집단을 이끈 인물 중 하나",
+    "difficulty": 3,
+    "references": [
+      "역대기상 25:4-6, 9, 25",
+      "역대기하 16:1-3, 7-10"
+    ]
+  },
+  {
+    "id": "hanamel",
+    "word": "하나멜",
+    "definition": "예레미야의 친삼촌 살룸의 아들로 예레미야가 아나돗 밭을 산 사람",
+    "difficulty": 3,
+    "references": [
+      "예레미야 32:1-12"
+    ]
+  },
+  {
+    "id": "hanan",
+    "word": "하난",
+    "definition": "사삭의 아들들 중 한 사람으로 베냐민 지파 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1, 23-25",
+      "역대기상 11:26, 43"
+    ]
+  },
+  {
+    "id": "hanes",
+    "word": "하네스",
+    "definition": "이사야가 이집트 도움을 구하는 자들을 질책하며 언급한 곳",
+    "difficulty": 3,
+    "references": [
+      "이사야 30:4",
+      "이사야 30:1-5"
+    ]
+  },
+  {
+    "id": "hanoch",
+    "word": "하녹",
+    "definition": "아브라함과 그두라의 아들 미디안의 아들 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 25:1, 2, 4",
+      "역대기상 1:33"
+    ]
+  },
+  {
+    "id": "hanun",
+    "word": "하눈",
+    "definition": "암몬 왕 나하스의 아들로 다윗의 사절을 모욕한 왕",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 10:1–11:1",
+      "역대기상 19:1–20:3"
+    ]
+  },
+  {
+    "id": "god",
+    "word": "하느님",
+    "definition": "하늘과 땅을 창조하고 자신의 목적을 이루는 전능한 영적 존재",
+    "difficulty": 1,
+    "references": [
+      "창세기 1:1",
+      "시편 90:2"
+    ]
+  },
+  {
+    "id": "dayofjehovah",
+    "word": "하느님의 날",
+    "definition": "하느님이 악을 심판하고 자신의 목적을 이루시는 특별한 때",
+    "difficulty": 2,
+    "references": [
+      "베드로 후서 3:10-12"
+    ]
+  },
+  {
+    "id": "entry-하늘",
+    "word": "하늘",
+    "definition": "히브리어 샤마임으로 높은 것을 의미하는 창조된 영역",
+    "difficulty": 1,
+    "references": [
+      "시편 103:11",
+      "잠언 25:3",
+      "이사야 55:9"
+    ]
+  },
+  {
+    "id": "hadashah",
+    "word": "하다사",
+    "definition": "세펠라에 있던 유다 도시로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:33, 37"
+    ]
+  },
+  {
+    "id": "hathach",
+    "word": "하닥",
+    "definition": "아하수에로 왕의 환관으로 왕비 에스더를 수종한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 4:5, 6, 9, 10"
+    ]
+  },
+  {
+    "id": "hadad",
+    "word": "하닷",
+    "definition": "이스마엘의 열두 아들 중 한 사람이자 에돔 왕조의 이름",
+    "difficulty": 3,
+    "references": [
+      "창세기 25:12-15",
+      "역대기상 1:28-30"
+    ]
+  },
+  {
+    "id": "hadadrimmon",
+    "word": "하닷림몬",
+    "definition": "므깃도 골짜기 평야에 있던 장소로 스가랴에 언급됨",
+    "difficulty": 3,
+    "references": [
+      "스가랴 12:11",
+      "열왕기하 23:29"
+    ]
+  },
+  {
+    "id": "hadadezer",
+    "word": "하닷에셀",
+    "definition": "르홉의 아들이자 소바 왕으로 다윗에게 패배한 시리아 왕",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 8:3, 5",
+      "사무엘하 10:19"
+    ]
+  },
+  {
+    "id": "hades",
+    "word": "하데스",
+    "definition": "그리스어로 보이지 않는 곳을 의미하는 죽은 자의 영역",
+    "difficulty": 2,
+    "references": [
+      "마태 11:23, 16:18",
+      "누가 10:15, 16:23",
+      "사도행전 2:27, 31"
+    ]
+  },
+  {
+    "id": "hadoram",
+    "word": "하도람",
+    "definition": "욕단의 아들로 셈의 자손이며 아라비아에 정착한 부족의 시조",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:21, 25-27, 29, 32"
+    ]
+  },
+  {
+    "id": "hadrach",
+    "word": "하드락",
+    "definition": "스가랴 예언에 언급된 나라로 이스라엘 주변 국가 중 하나",
+    "difficulty": 3,
+    "references": [
+      "스가랴 9:1-8"
+    ]
+  },
+  {
+    "id": "hadlai",
+    "word": "하들래",
+    "definition": "에브라임 자손의 우두머리 아마사의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기하 28:6, 12, 16"
+    ]
+  },
+  {
+    "id": "hatita",
+    "word": "하디다",
+    "definition": "성전 문지기 가족의 조상으로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 42",
+      "느헤미야 7:45"
+    ]
+  },
+  {
+    "id": "hatipha",
+    "word": "하디바",
+    "definition": "성전 종인 느디님 가족의 조상으로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43, 54",
+      "느헤미야 7:56"
+    ]
+  },
+  {
+    "id": "hadid",
+    "word": "하딧",
+    "definition": "유배 후 돌아온 베냐민 사람들의 조상들이 살던 도시",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 33",
+      "느헤미야 7:6, 7, 37"
+    ]
+  },
+  {
+    "id": "hara",
+    "word": "하라",
+    "definition": "아시리아 왕이 이스라엘 포로들을 이주시킨 곳",
+    "difficulty": 3,
+    "references": [
+      "역대기상 5:26",
+      "열왕기하 17:6, 18:11"
+    ]
+  },
+  {
+    "id": "haradah",
+    "word": "하라다",
+    "definition": "이스라엘이 가나안으로 가던 길에 진을 친 장소",
+    "difficulty": 3,
+    "references": [
+      "민수기 33:24, 25"
+    ]
+  },
+  {
+    "id": "haran",
+    "word": "하란",
+    "definition": "데라가 머물렀고 아브라함이 가나안으로 떠난 메소포타미아의 도시",
+    "difficulty": 2,
+    "references": [
+      "창세기 11:31, 32; 12:4, 5"
+    ]
+  },
+  {
+    "id": "harosheth",
+    "word": "하로셋",
+    "definition": "가나안 왕 야빈의 군대 대장 시스라의 사령부가 있던 장소",
+    "difficulty": 3,
+    "references": [
+      "사사기 4:2, 13",
+      "사사기 4:16"
+    ]
+  },
+  {
+    "id": "harod",
+    "word": "하롯",
+    "definition": "기드온 휘하 이스라엘 군대가 진을 쳤던 샘이 있는 곳",
+    "difficulty": 3,
+    "references": [
+      "사사기 7:1-7"
+    ]
+  },
+  {
+    "id": "acre",
+    "word": "하루갈이",
+    "definition": "수소 한 겨리가 하루에 갈 수 있는 정도의 땅 면적을 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 14:14",
+      "열왕기상 19:19",
+      "사사기 19:3"
+    ]
+  },
+  {
+    "id": "harumaph",
+    "word": "하루맙",
+    "definition": "느헤미야를 도와 성벽을 재건한 여다야의 아버지",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:10"
+    ]
+  },
+  {
+    "id": "haruz",
+    "word": "하루스",
+    "definition": "욧바 출신으로 유다 왕 아몬의 외할아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 21:19, 20"
+    ]
+  },
+  {
+    "id": "harum",
+    "word": "하룸",
+    "definition": "유다 지파 사람으로 성경에 짧게 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 8"
+    ]
+  },
+  {
+    "id": "harnepher",
+    "word": "하르네벨",
+    "definition": "아셀 지파에 속한 소파의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30, 36"
+    ]
+  },
+  {
+    "id": "harbona",
+    "word": "하르보나",
+    "definition": "아하수에로 왕의 궁정 관리 중 한 사람으로 하만의 계략을 폭로한 자",
+    "difficulty": 3,
+    "references": [
+      "에스더 1:10-12",
+      "에스더 7:9, 10"
+    ]
+  },
+  {
+    "id": "harsha",
+    "word": "하르사",
+    "definition": "성전 종인 느디님 가족의 선조로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43, 52",
+      "느헤미야 7:54"
+    ]
+  },
+  {
+    "id": "harhur",
+    "word": "하르훌",
+    "definition": "성전 종인 느디님 가족의 선조로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43, 51",
+      "느헤미야 7:46, 53"
+    ]
+  },
+  {
+    "id": "harim",
+    "word": "하림",
+    "definition": "아론 가계의 제사장으로 다윗이 조직한 24개 조 중 셋째 조의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:1, 3, 7, 8",
+      "에스라 2:1, 2, 36, 39"
+    ]
+  },
+  {
+    "id": "hariph",
+    "word": "하립",
+    "definition": "유배 후 귀환한 가족의 우두머리로 요라로도 불리는 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 7:6, 7, 24",
+      "에스라 2:18"
+    ]
+  },
+  {
+    "id": "haman",
+    "word": "하만",
+    "definition": "아각 사람 함므다다의 아들로 유대인 멸절을 꾀한 아말렉 왕족 출신",
+    "difficulty": 2,
+    "references": [
+      "에스더 3:1",
+      "에스더 3:12, 13",
+      "에스더 5:4-12"
+    ]
+  },
+  {
+    "id": "hamath",
+    "word": "하맛",
+    "definition": "시리아에 있던 가나안 사람들의 작은 왕국의 수도 도시",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:6, 15-18",
+      "민수기 13:21",
+      "여호수아 13:2, 5"
+    ]
+  },
+  {
+    "id": "hamor",
+    "word": "하몰",
+    "definition": "히위족 수장으로 세겜의 아버지이자 야곱과 땅 거래를 한 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 33:18-20",
+      "창세기 34:1, 2, 25, 26"
+    ]
+  },
+  {
+    "id": "hamutal",
+    "word": "하무달",
+    "definition": "립나 출신 예레미야의 딸로 요시야 왕의 아내이자 두 유다 왕의 어머니",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 23:30, 31, 24:17, 18",
+      "예레미야 52:1"
+    ]
+  },
+  {
+    "id": "hamul",
+    "word": "하물",
+    "definition": "베레스의 작은아들이자 유다의 손자로 그 사람들에게서 나온 가문의 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:12",
+      "민수기 26:21",
+      "역대기상 2:5"
+    ]
+  },
+  {
+    "id": "hapharaim",
+    "word": "하바라임",
+    "definition": "잇사갈 지파 영토 경계에 있던 장소",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:17-19"
+    ]
+  },
+  {
+    "id": "habazziniah",
+    "word": "하바시냐",
+    "definition": "레갑의 아들 요나답의 자손으로 레갑 사람들과 관련된 인물",
+    "difficulty": 3,
+    "references": [
+      "예레미야 35:1-6"
+    ]
+  },
+  {
+    "id": "habaiah",
+    "word": "하바야",
+    "definition": "제사장으로 그 자손이 계보를 확증하지 못해 제사직에서 제외됨",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 61-63",
+      "느헤미야 7:63-65"
+    ]
+  },
+  {
+    "id": "habakkuk",
+    "word": "하박국",
+    "definition": "악인이 번영하는 이유를 하느님께 질문하고 믿음으로 기다린 예언자",
+    "difficulty": 2,
+    "references": [
+      "하박국 1-3장"
+    ]
+  },
+  {
+    "id": "entry-하박국서",
+    "word": "하박국서",
+    "definition": "히브리어 성경의 소예언서 중 여덟 번째 책으로 대화와 비가 기도로 구성됨",
+    "difficulty": 2,
+    "references": [
+      "하박국 1:1, 3:1",
+      "하박국 2:4",
+      "로마서 1:16, 17"
+    ]
+  },
+  {
+    "id": "hasadiah",
+    "word": "하사댜",
+    "definition": "스룹바벨의 아들 중 한 사람으로 다윗 왕의 자손",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:1, 19, 20"
+    ]
+  },
+  {
+    "id": "hashabiah",
+    "word": "하사뱌",
+    "definition": "므라리 가계에 속한 레위 사람으로 성전 노래하는 자의 후예",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:31, 44-47",
+      "역대기상 25:1, 3, 19"
+    ]
+  },
+  {
+    "id": "hazaiah",
+    "word": "하사야",
+    "definition": "유다의 아들 셸라의 자손으로 느헤미야에 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 11:4, 5",
+      "민수기 26:20"
+    ]
+  },
+  {
+    "id": "hazael",
+    "word": "하사엘",
+    "definition": "시리아 왕으로 엘리사 예언에 따라 왕이 된 자",
+    "difficulty": 2,
+    "references": [
+      "열왕기하 8:7-16",
+      "열왕기상 19:15-18",
+      "열왕기하 13:24, 25"
+    ]
+  },
+  {
+    "id": "hazarmaveth",
+    "word": "하살마웻",
+    "definition": "노아의 자손으로 셈과 욕단 계통이며 아라비아 남부에 정착한 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:1, 21, 25, 26, 29",
+      "역대기상 1:20, 23"
+    ]
+  },
+  {
+    "id": "hashabnah",
+    "word": "하삽나",
+    "definition": "느헤미야 시대 고백의 계약을 인장으로 인증한 백성의 우두머리 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 9:38",
+      "느헤미야 10:1, 14, 25"
+    ]
+  },
+  {
+    "id": "hashabneiah",
+    "word": "하삽느야",
+    "definition": "핫두스의 아버지로 예루살렘 성벽 보수 작업에 참여한 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:10",
+      "느헤미야 9:5, 38"
+    ]
+  },
+  {
+    "id": "hazeroth",
+    "word": "하세롯",
+    "definition": "이스라엘이 바란 광야로 가기 전 마지막으로 진을 친 곳",
+    "difficulty": 3,
+    "references": [
+      "민수기 11:35, 12:16",
+      "민수기 33:17, 18",
+      "신명기 1:1"
+    ]
+  },
+  {
+    "id": "hashem",
+    "word": "하셈",
+    "definition": "기손 사람으로 다윗의 용사들 가운데 언급된 인물의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기상 11:26, 34",
+      "사무엘하 23:32"
+    ]
+  },
+  {
+    "id": "hazo",
+    "word": "하소",
+    "definition": "아브라함의 조카로 나홀과 밀가의 다섯 번째 아들",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:20-22"
+    ]
+  },
+  {
+    "id": "hazor",
+    "word": "하솔",
+    "definition": "여호수아 시대 가나안 북부의 주요 도시로 정복된 가나안 왕국 수도",
+    "difficulty": 2,
+    "references": [
+      "여호수아 11:1-13",
+      "여호수아 19:32, 35, 36",
+      "사사기 4:2, 17"
+    ]
+  },
+  {
+    "id": "hashubah",
+    "word": "하수바",
+    "definition": "스룹바벨의 아들로 다윗 왕의 자손 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:19, 20"
+    ]
+  },
+  {
+    "id": "hasupha",
+    "word": "하수파",
+    "definition": "느디님 가족의 조상으로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 43",
+      "느헤미야 7:46"
+    ]
+  },
+  {
+    "id": "hashum",
+    "word": "하숨",
+    "definition": "이스라엘 가족의 선조로 유배 후 귀환한 자 중 하나",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 19",
+      "느헤미야 7:22"
+    ]
+  },
+  {
+    "id": "hazzelelponi",
+    "word": "하슬렐보니",
+    "definition": "에담의 아버지의 딸로 이스르엘과 이스마와 잇바스의 누이",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 3"
+    ]
+  },
+  {
+    "id": "haziel",
+    "word": "하시엘",
+    "definition": "시므이의 아들로 게르손 계통의 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 23:6-9"
+    ]
+  },
+  {
+    "id": "haahashtari",
+    "word": "하아하스다리",
+    "definition": "유다 자손으로 아스훌의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 5, 6"
+    ]
+  },
+  {
+    "id": "eve",
+    "word": "하와",
+    "definition": "아담의 아내이자 처음으로 창조된 여자로, 에덴동산에서 살았다",
+    "difficulty": 1,
+    "references": [
+      "창세기 2-3장"
+    ]
+  },
+  {
+    "id": "hauran",
+    "word": "하우란",
+    "definition": "에스겔 환상에 나오는 이스라엘 상속지 경계의 한 장소",
+    "difficulty": 3,
+    "references": [
+      "에스겔 47:13, 15, 16, 18"
+    ]
+  },
+  {
+    "id": "havilah",
+    "word": "하윌라",
+    "definition": "에덴에서 흘러나온 비손 강이 돌아 흐른 지역으로 금이 나는 땅",
+    "difficulty": 3,
+    "references": [
+      "창세기 2:10-12",
+      "창세기 25:18",
+      "사무엘상 15:7"
+    ]
+  },
+  {
+    "id": "hathath",
+    "word": "하탓",
+    "definition": "옷니엘의 아들로 갈렙의 딸 악사를 통해 얻은 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:13",
+      "여호수아 15:17"
+    ]
+  },
+  {
+    "id": "hakkatan",
+    "word": "학가단",
+    "definition": "아스갓 가족에 속한 요하난의 아버지로 에스라와 함께 귀환한 인물",
+    "difficulty": 3,
+    "references": [
+      "에스라 8:1, 12"
+    ]
+  },
+  {
+    "id": "haggai",
+    "word": "학개",
+    "definition": "유대인들이 성전 재건을 다시 시작하도록 격려한 예언자",
+    "difficulty": 2,
+    "references": [
+      "학개 1:1-14"
+    ]
+  },
+  {
+    "id": "entry-학개서",
+    "word": "학개서",
+    "definition": "소예언서 중 하나로 성전 재건을 권하는 네 가지 소식으로 구성됨",
+    "difficulty": 2,
+    "references": [
+      "학개 1:1, 2:1, 10, 20",
+      "학개 2:6, 7, 21, 22"
+    ]
+  },
+  {
+    "id": "hakkoz",
+    "word": "학고스",
+    "definition": "아론계 제사장으로 다윗 시대 24개 조 중 일곱째 조의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:3-7, 10",
+      "에스라 2:61-63"
+    ]
+  },
+  {
+    "id": "school",
+    "word": "학교",
+    "definition": "교육을 하는 기관으로 그리스어 스콜레에서 유래한 여가 때 하는 학습의 장",
+    "difficulty": 2,
+    "references": [
+      "사도행전 22:3",
+      "사도행전 19:8-10",
+      "골로새서 4:16"
+    ]
+  },
+  {
+    "id": "haggi",
+    "word": "학기",
+    "definition": "갓의 아들들 중 두 번째로 야곱의 손자이자 그 사람들의 선조",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:8, 16",
+      "민수기 26:4, 15"
+    ]
+  },
+  {
+    "id": "haggiah",
+    "word": "학기야",
+    "definition": "시므아의 아들로 므라리 가족에 속한 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:16, 29, 30"
+    ]
+  },
+  {
+    "id": "haggith",
+    "word": "학깃",
+    "definition": "다윗의 아내이자 아도니야의 어머니",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 3:2, 4",
+      "열왕기상 1:5, 11"
+    ]
+  },
+  {
+    "id": "hachmoni",
+    "word": "학모니",
+    "definition": "다윗의 으뜸가는 용사 야소브암의 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 11:11, 27:2",
+      "사무엘하 23:8"
+    ]
+  },
+  {
+    "id": "pupil-2",
+    "word": "학생",
+    "definition": "배우거나 교훈을 받는 사람으로 제자를 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "누가 6:40"
+    ]
+  },
+  {
+    "id": "hannah",
+    "word": "한나",
+    "definition": "아들을 달라고 기도한 뒤 사무엘을 낳아 하느님께 바친 여자",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 1-2장"
+    ]
+  },
+  {
+    "id": "hannathon",
+    "word": "한나돈",
+    "definition": "스불론의 경계 도시로 나사렛 북쪽에 있던 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:10, 14"
+    ]
+  },
+  {
+    "id": "hanniel",
+    "word": "한니엘",
+    "definition": "므낫세 지파를 대표해 약속의 땅 분배를 맡은 수장",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:13, 17, 23",
+      "역대기상 7:30, 39, 40"
+    ]
+  },
+  {
+    "id": "halah",
+    "word": "할라",
+    "definition": "아시리아 군주들이 이스라엘 포로들을 이주시킨 곳",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 17:6, 18:11",
+      "역대기상 5:26"
+    ]
+  },
+  {
+    "id": "hallel",
+    "word": "할렐",
+    "definition": "여호와께 부르는 찬양의 노래로 시편 113-118편을 가리킴",
+    "difficulty": 3,
+    "references": [
+      "시편 113-118편",
+      "시편 136편"
+    ]
+  },
+  {
+    "id": "circumcision",
+    "word": "할례",
+    "definition": "아브라함과 맺은 계약의 표로 남자 아이의 포피를 자르는 의식",
+    "difficulty": 2,
+    "references": [
+      "창세기 17:9-14"
+    ]
+  },
+  {
+    "id": "hallohesh",
+    "word": "할로헤스",
+    "definition": "예루살렘 성벽 보수 작업에 참여한 살룸의 아버지",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:12",
+      "느헤미야 9:38, 10:1, 14"
+    ]
+  },
+  {
+    "id": "hali",
+    "word": "할리",
+    "definition": "아셀의 경계에 있던 성읍으로 악고 평야 동쪽 끝에 있었던 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:24, 25"
+    ]
+  },
+  {
+    "id": "harhas",
+    "word": "할하스",
+    "definition": "여예언자 훌다의 남편 살룸의 할아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 22:14",
+      "역대기하 34:22"
+    ]
+  },
+  {
+    "id": "harhaiah",
+    "word": "할해야",
+    "definition": "금세공인 웃시엘의 아버지로 성벽 보수 작업에 참여한 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:8"
+    ]
+  },
+  {
+    "id": "halhul",
+    "word": "할훌",
+    "definition": "유다 산간 지방에 있던 도시로 헤브론 북쪽에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:20, 48, 58"
+    ]
+  },
+  {
+    "id": "hammath",
+    "word": "함맛",
+    "definition": "레갑 집의 아버지이자 겐 사람들의 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:55",
+      "여호수아 19:32, 35"
+    ]
+  },
+  {
+    "id": "hammon",
+    "word": "함몬",
+    "definition": "아셀의 경계에 있던 도시로 지중해 해안 근처에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:24-28",
+      "역대기상 6:71, 76"
+    ]
+  },
+  {
+    "id": "hammolecheth",
+    "word": "함몰레겟",
+    "definition": "므낫세의 손자 길르앗의 누이로 세 아들의 어머니",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:14, 17, 18"
+    ]
+  },
+  {
+    "id": "hammuel",
+    "word": "함무엘",
+    "definition": "시므온 지파에 속한 미스마의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:24-26"
+    ]
+  },
+  {
+    "id": "hammedatha",
+    "word": "함므다다",
+    "definition": "아각 사람으로 하만의 아버지",
+    "difficulty": 3,
+    "references": [
+      "에스더 3:1, 6"
+    ]
+  },
+  {
+    "id": "reasonableness",
+    "word": "합리성",
+    "definition": "그리스어 에피에이케스로 적당하고 공평하며 너그러운 성품을 가리킴",
+    "difficulty": 2,
+    "references": [
+      "야고보서 3:17",
+      "디모데전서 3:2, 3",
+      "빌립보서 4:5"
+    ]
+  },
+  {
+    "id": "happizzez",
+    "word": "합비세스",
+    "definition": "아론 가계 제사장으로 다윗 시대 18번째 조의 수령",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:1-7, 15"
+    ]
+  },
+  {
+    "id": "mandrake",
+    "word": "합환채",
+    "definition": "가짓과 다년생 식물로 독특한 형태의 뿌리를 가진 약용 식물",
+    "difficulty": 2,
+    "references": [
+      "창세기 30:14, 15",
+      "아가 7:13",
+      "창세기 30:22-24"
+    ]
+  },
+  {
+    "id": "hattush",
+    "word": "핫두스",
+    "definition": "스룹바벨과 함께 유배 후 귀환한 제사장들의 우두머리 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:1, 2, 7",
+      "역대기상 3:1, 10, 22"
+    ]
+  },
+  {
+    "id": "hattil",
+    "word": "핫딜",
+    "definition": "솔로몬의 종들 자손으로 이루어진 부계 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1, 2, 55, 57",
+      "느헤미야 7:59"
+    ]
+  },
+  {
+    "id": "hasshub",
+    "word": "핫숩",
+    "definition": "바핫-모압의 아들로 예루살렘 성벽 보수 작업에 참여한 인물",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:11, 23",
+      "느헤미야 10:1, 14, 23"
+    ]
+  },
+  {
+    "id": "hassenuah",
+    "word": "핫스누아",
+    "definition": "베냐민 지파에 속한 호다위야의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기상 9:7",
+      "느헤미야 11:7, 9"
+    ]
+  },
+  {
+    "id": "sponge",
+    "word": "해면",
+    "definition": "수생 동물의 골격으로 수분 흡수력이 좋고 질기며 탄력성이 있음",
+    "difficulty": 2,
+    "references": [
+      "마태 27:48",
+      "마가 15:36",
+      "요한 19:29"
+    ]
+  },
+  {
+    "id": "happiness",
+    "word": "행복",
+    "definition": "만족스러운 상태로 지속적인 속성을 가진 기쁨의 감정",
+    "difficulty": 1,
+    "references": [
+      "시편 40:4",
+      "시편 41:1, 112:1",
+      "로마서 14:22"
+    ]
+  },
+  {
+    "id": "entry-향나무",
+    "word": "향나무",
+    "definition": "히브리어 베로시로 불리는 상록수로 성전 건축에 사용된 나무",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 5:8-10, 9:11",
+      "역대기하 2:8",
+      "이사야 60:13"
+    ]
+  },
+  {
+    "id": "censer",
+    "word": "향로",
+    "definition": "숭배에서 향을 태우는 데 사용한 용기",
+    "difficulty": 3,
+    "references": [
+      "레위기 16:12, 13; 히브리서 9:4"
+    ]
+  },
+  {
+    "id": "spice",
+    "word": "향료",
+    "definition": "향기 좋은 식물에서 채취한 생산물로 몰약 유향 계피 등이 포함됨",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 30:23-25, 34-37",
+      "요한 19:39, 40",
+      "마가 16:1"
+    ]
+  },
+  {
+    "id": "entry-허리",
+    "word": "허리",
+    "definition": "갈빗대 아래에서 엉덩이까지의 잘록한 부분을 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "이사야 5:27",
+      "열왕기하 4:29",
+      "마태 3:4"
+    ]
+  },
+  {
+    "id": "scarecrow",
+    "word": "허수아비",
+    "definition": "새를 쫓기 위해 밭에 세워두는 사람 모양의 기둥이나 돌 더미",
+    "difficulty": 2,
+    "references": [
+      "예레미야 10:5",
+      "사사기 4:5"
+    ]
+  },
+  {
+    "id": "dedication-2",
+    "word": "헌신",
+    "definition": "하느님의 뜻을 행하는 데 자신의 삶을 기꺼이 바치겠다는 결심",
+    "difficulty": 2,
+    "references": [
+      "로마서 12:1, 2"
+    ]
+  },
+  {
+    "id": "backbiting",
+    "word": "험담",
+    "definition": "그리스어 카탈랄리아로 정당한 근거 없이 나쁘게 말하는 것",
+    "difficulty": 2,
+    "references": [
+      "베드로전서 2:12, 3:16",
+      "야고보서 4:11",
+      "로마서 1:28-30"
+    ]
+  },
+  {
+    "id": "hegai",
+    "word": "헤개",
+    "definition": "아하수에로 왕의 궁정 환관으로 에스더의 미용 관리를 맡은 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 2:3, 8, 9, 15"
+    ]
+  },
+  {
+    "id": "hena",
+    "word": "헤나",
+    "definition": "아시리아가 정복한 도시로 스발와임과 이와와 함께 언급됨",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 18:34, 19:13",
+      "이사야 37:13"
+    ]
+  },
+  {
+    "id": "henna",
+    "word": "헤나나무",
+    "definition": "크림색 꽃이 피는 관목으로 강한 향기와 화장품 용도로 쓰임",
+    "difficulty": 3,
+    "references": [
+      "아가 1:14, 4:13, 7:11"
+    ]
+  },
+  {
+    "id": "henadad",
+    "word": "헤나닷",
+    "definition": "레위 사람으로 그 자손이 성전 재건과 성벽 보수에 참여함",
+    "difficulty": 3,
+    "references": [
+      "에스라 3:8, 9",
+      "느헤미야 3:17, 18, 24"
+    ]
+  },
+  {
+    "id": "hethlon",
+    "word": "헤들론",
+    "definition": "에스겔 환상에 나오는 이스라엘 땅 북쪽 경계의 장소",
+    "difficulty": 3,
+    "references": [
+      "에스겔 47:13, 15",
+      "에스겔 48:1"
+    ]
+  },
+  {
+    "id": "herodias",
+    "word": "헤로디아",
+    "definition": "침례자 요한의 책망을 미워해 그의 죽음을 요구한 여자",
+    "difficulty": 2,
+    "references": [
+      "마가복음 6:17-28"
+    ]
+  },
+  {
+    "id": "herod",
+    "word": "헤롯",
+    "definition": "예수의 탄생 때 베들레헴의 어린아이들을 죽이라고 명령한 왕",
+    "difficulty": 2,
+    "references": [
+      "마태복음 2:1-18"
+    ]
+  },
+  {
+    "id": "hermas",
+    "word": "헤르마",
+    "definition": "로마 회중의 그리스도인으로 바울이 개인적인 인사를 전한 인물",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:14"
+    ]
+  },
+  {
+    "id": "hermes",
+    "word": "헤르메스",
+    "definition": "로마 회중의 그리스도인으로 바울이 인사를 전한 인물",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:14",
+      "사도행전 14:8-13"
+    ]
+  },
+  {
+    "id": "hermogenes",
+    "word": "헤르모게네",
+    "definition": "바울에게서 떠난 아시아 지역의 두 그리스도인 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 1:15"
+    ]
+  },
+  {
+    "id": "hermon",
+    "word": "헤르몬",
+    "definition": "팔레스타인 인근에서 가장 높은 산으로 꼭대기가 거의 일 년 내내 눈으로 덮임",
+    "difficulty": 2,
+    "references": [
+      "신명기 3:8, 9",
+      "역대기상 5:23",
+      "시편 89:12"
+    ]
+  },
+  {
+    "id": "heman",
+    "word": "헤만",
+    "definition": "솔로몬 다음가는 지혜자로 다윗 시대 레위인 악사 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:31",
+      "역대기상 6:33, 15:17-19",
+      "시편 88편"
+    ]
+  },
+  {
+    "id": "hemam",
+    "word": "헤맘",
+    "definition": "로단의 아들이자 호리 사람 세일의 자손",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:20, 22",
+      "역대기상 1:39"
+    ]
+  },
+  {
+    "id": "heber",
+    "word": "헤벨",
+    "definition": "브리아의 아들이자 아셀의 손자로 한 가족의 시조",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:17",
+      "민수기 26:45",
+      "역대기상 7:30-32"
+    ]
+  },
+  {
+    "id": "hebron",
+    "word": "헤브론",
+    "definition": "아브라함이 머물렀고 다윗이 처음 왕으로 다스린 고대 도시",
+    "difficulty": 2,
+    "references": [
+      "창세기 13:18",
+      "사무엘하 2:1-4"
+    ]
+  },
+  {
+    "id": "hesed",
+    "word": "헤셋",
+    "definition": "솔로몬의 12명 대리관 중 한 사람의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:7, 10"
+    ]
+  },
+  {
+    "id": "hezro",
+    "word": "헤스로",
+    "definition": "갈멜 사람으로 다윗의 군대 용사 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:8, 35",
+      "역대기상 11:26, 37"
+    ]
+  },
+  {
+    "id": "hezron",
+    "word": "헤스론",
+    "definition": "르우벤의 아들이자 한 사람들의 선조",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:9",
+      "출애굽기 6:14",
+      "민수기 26:4-6"
+    ]
+  },
+  {
+    "id": "heshmon",
+    "word": "헤스몬",
+    "definition": "유다 남부에 있던 도시로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21, 27"
+    ]
+  },
+  {
+    "id": "heshbon",
+    "word": "헤스본",
+    "definition": "아르논과 얍복 중간쯤에 있던 아모리 왕 시혼의 수도 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 12:2",
+      "민수기 21:26-30",
+      "신명기 2:26-36"
+    ]
+  },
+  {
+    "id": "hezion",
+    "word": "헤시온",
+    "definition": "시리아 왕 벤-하닷의 할아버지로 성경에 처음 언급된 시리아 왕",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 15:18",
+      "열왕기상 11:23"
+    ]
+  },
+  {
+    "id": "hezir",
+    "word": "헤실",
+    "definition": "제사장으로 다윗 시대 24개 조 중 17번째 조로 정해진 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:1, 3, 5-7, 15",
+      "느헤미야 10:1, 14, 20"
+    ]
+  },
+  {
+    "id": "chehth",
+    "word": "헤트",
+    "definition": "히브리어 알파벳 여덟 번째 글자로 거친 후음을 나타냄",
+    "difficulty": 3,
+    "references": [
+      "시편 119:57-64"
+    ]
+  },
+  {
+    "id": "hepher",
+    "word": "헤펠",
+    "definition": "므낫세 지파의 한 가족의 조상이자 길르앗의 아들",
+    "difficulty": 3,
+    "references": [
+      "민수기 26:29, 30, 32",
+      "민수기 27:1-11",
+      "여호수아 17:2, 3"
+    ]
+  },
+  {
+    "id": "helkath",
+    "word": "헬갓",
+    "definition": "아셀 지파 경계에 있던 도시로 레위 사람들에게 할당됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:24, 25, 31",
+      "여호수아 21:27, 30, 31"
+    ]
+  },
+  {
+    "id": "helkai",
+    "word": "헬개",
+    "definition": "대제사장 요야김 시대 므라욧 제사장 부계 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:12, 15"
+    ]
+  },
+  {
+    "id": "heldai",
+    "word": "헬대",
+    "definition": "다윗의 월별 봉사 집단 중 열두째 집단의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 27:1, 15",
+      "사무엘하 23:8, 29"
+    ]
+  },
+  {
+    "id": "helah",
+    "word": "헬라",
+    "definition": "아스훌의 두 아妻 중 한 사람으로 유다 족보에 언급됨",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 5, 7"
+    ]
+  },
+  {
+    "id": "helam",
+    "word": "헬람",
+    "definition": "다윗이 시리아 왕 하닷에셀 군대를 패배시킨 장소",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 10:15-19"
+    ]
+  },
+  {
+    "id": "helez",
+    "word": "헬레스",
+    "definition": "다윗의 용사로 월별 봉사 일곱째 조의 책임자",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:8, 26",
+      "역대기상 11:26, 27",
+      "역대기상 27:1, 10"
+    ]
+  },
+  {
+    "id": "helek",
+    "word": "헬렉",
+    "definition": "길르앗의 아들이자 므낫세의 증손으로 한 가족의 시조",
+    "difficulty": 3,
+    "references": [
+      "민수기 26:3, 4, 29, 30",
+      "여호수아 17:2"
+    ]
+  },
+  {
+    "id": "helem",
+    "word": "헬렘",
+    "definition": "아셀의 자손으로 그 가족이 아셀 지파 계보에 열거됨",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:35, 40"
+    ]
+  },
+  {
+    "id": "heled",
+    "word": "헬렛",
+    "definition": "다윗의 군대 용사로 느도바 사람 바아나의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 11:26, 30",
+      "사무엘하 23:29",
+      "역대기상 27:15"
+    ]
+  },
+  {
+    "id": "helon",
+    "word": "헬론",
+    "definition": "스불론 지파 사람으로 아들 엘리압이 광야 시대 지파 수장",
+    "difficulty": 3,
+    "references": [
+      "민수기 1:4, 9, 16",
+      "민수기 2:7",
+      "민수기 7:24"
+    ]
+  },
+  {
+    "id": "helbah",
+    "word": "헬바",
+    "definition": "아셀 지파 영토에 있던 도시로 가나안 주민을 몰아내지 못한 곳",
+    "difficulty": 3,
+    "references": [
+      "사사기 1:31, 32"
+    ]
+  },
+  {
+    "id": "helbon",
+    "word": "헬본",
+    "definition": "티레에서 높이 평가받은 포도주로 유명한 다마스쿠스 북쪽 마을",
+    "difficulty": 3,
+    "references": [
+      "에스겔 27:18"
+    ]
+  },
+  {
+    "id": "hemdan",
+    "word": "헴단",
+    "definition": "디손의 아들로 호리 사람 세일의 자손",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:20, 21, 26",
+      "역대기상 1:41"
+    ]
+  },
+  {
+    "id": "hephzibah",
+    "word": "헵시바",
+    "definition": "히스기야의 아내이자 므낫세 왕의 어머니",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 20:21, 21:1",
+      "이사야 62:4"
+    ]
+  },
+  {
+    "id": "porch",
+    "word": "현관",
+    "definition": "건축물 입구에 딸린 지붕 있는 부분으로 성전과 궁전에 있었음",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 7:1, 6",
+      "열왕기상 6:3",
+      "열왕기상 10:18-20"
+    ]
+  },
+  {
+    "id": "image",
+    "word": "형상",
+    "definition": "사람이나 사물의 표상이나 형체 또는 모양을 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "마태 22:20",
+      "창세기 1:26, 27",
+      "누가 3:38"
+    ]
+  },
+  {
+    "id": "brother",
+    "word": "형제",
+    "definition": "부모가 같거나 아버지나 어머니가 같은 남자를 가리키는 말",
+    "difficulty": 1,
+    "references": [
+      "창세기 4:1, 2",
+      "창세기 25:24-26",
+      "마태 4:21"
+    ]
+  },
+  {
+    "id": "hoglah",
+    "word": "호글라",
+    "definition": "슬로브핫의 딸 다섯 명 중 세 번째로 아들 없는 아버지의 상속을 받은 여자",
+    "difficulty": 3,
+    "references": [
+      "민수기 36:1-12, 26:33",
+      "민수기 27:1-11",
+      "여호수아 17:3, 4"
+    ]
+  },
+  {
+    "id": "hodaviah",
+    "word": "호다위야",
+    "definition": "엘요에내의 일곱 아들 중 한 사람으로 솔로몬 왕의 자손",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:10, 24",
+      "역대기상 9:7"
+    ]
+  },
+  {
+    "id": "hotham",
+    "word": "호담",
+    "definition": "아셀 지파에 속한 헤벨의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30-32",
+      "역대기상 11:26, 44"
+    ]
+  },
+  {
+    "id": "hodesh",
+    "word": "호데스",
+    "definition": "베냐민 사람 사하라임의 아妻 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1, 8, 9"
+    ]
+  },
+  {
+    "id": "hodiah",
+    "word": "호디야",
+    "definition": "나함의 누이와 결혼한 사람으로 유다 족보에 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 19",
+      "느헤미야 8:1, 5, 7"
+    ]
+  },
+  {
+    "id": "hothir",
+    "word": "호딜",
+    "definition": "헤만의 열네 아들 중 한 사람으로 다윗 시대 악사 집단의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 25:1, 4-6, 28"
+    ]
+  },
+  {
+    "id": "horam",
+    "word": "호람",
+    "definition": "게셀의 왕으로 여호수아가 라기스 정벌 때 쳐부순 31명의 왕 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "여호수아 10:33",
+      "여호수아 12:7, 8, 12, 24"
+    ]
+  },
+  {
+    "id": "horesh",
+    "word": "호레스",
+    "definition": "다윗이 사울을 피해 숨었던 십 광야의 장소로 요나단과 계약을 맺은 곳",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 23:15-19"
+    ]
+  },
+  {
+    "id": "horem",
+    "word": "호렘",
+    "definition": "납달리의 요새 도시로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:35, 38, 39"
+    ]
+  },
+  {
+    "id": "horeb",
+    "word": "호렙",
+    "definition": "시나이 산과 동일시되는 참 하느님의 산으로 모세가 율법을 받은 곳",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 19:8",
+      "출애굽기 33:6",
+      "신명기 1:6, 19"
+    ]
+  },
+  {
+    "id": "horonaim",
+    "word": "호로나임",
+    "definition": "모압의 한 장소로 여호와의 심판을 받을 곳 중 하나",
+    "difficulty": 3,
+    "references": [
+      "이사야 15:1, 5",
+      "예레미야 48:1, 3, 5, 34"
+    ]
+  },
+  {
+    "id": "hor",
+    "word": "호르",
+    "definition": "에돔 경계에 있던 산으로 아론이 죽은 장소",
+    "difficulty": 3,
+    "references": [
+      "민수기 20:22-29",
+      "신명기 32:50",
+      "민수기 33:37-39"
+    ]
+  },
+  {
+    "id": "hormah",
+    "word": "호르마",
+    "definition": "유다 영토 남부에 있던 도시로 이스라엘이 패배 후 정복한 곳",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:30",
+      "민수기 14:40",
+      "신명기 1:44"
+    ]
+  },
+  {
+    "id": "hori",
+    "word": "호리",
+    "definition": "로단을 통한 세일의 자손으로 한 민족의 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:20-22",
+      "역대기상 1:39"
+    ]
+  },
+  {
+    "id": "entry-호리병박",
+    "word": "호리병박",
+    "definition": "요나에게 그늘을 드리워 준 식물로 하룻밤 사이에 자라 벌레에 시듦",
+    "difficulty": 2,
+    "references": [
+      "요나 4:5-11"
+    ]
+  },
+  {
+    "id": "homer",
+    "word": "호멜",
+    "definition": "건량 단위로 코르에 해당하며 10바트나 10에바와 같은 양",
+    "difficulty": 2,
+    "references": [
+      "에스겔 45:11, 14",
+      "호세아 3:2",
+      "레위기 27:16"
+    ]
+  },
+  {
+    "id": "hobah",
+    "word": "호바",
+    "definition": "다마스쿠스 북쪽의 장소로 아브라함이 그돌라오멜 군대를 추격한 곳",
+    "difficulty": 3,
+    "references": [
+      "창세기 14:13-17"
+    ]
+  },
+  {
+    "id": "electrum",
+    "word": "호박금",
+    "definition": "금과 은의 합금으로 번쩍거리는 노란 광채를 내는 금속",
+    "difficulty": 2,
+    "references": [
+      "에스겔 1:4, 27",
+      "에스겔 8:2"
+    ]
+  },
+  {
+    "id": "hobab",
+    "word": "호밥",
+    "definition": "모세의 처남이자 르우엘의 아들로 광야에서 이스라엘의 정찰 역할을 한 겐 족속",
+    "difficulty": 3,
+    "references": [
+      "민수기 10:29",
+      "출애굽기 3:1",
+      "사사기 1:16"
+    ]
+  },
+  {
+    "id": "hophra",
+    "word": "호브라",
+    "definition": "이집트 파라오로 19년간 통치하다가 반란으로 권좌를 잃은 왕",
+    "difficulty": 3,
+    "references": [
+      "예레미야 44:30",
+      "예레미야 44:1, 26, 30"
+    ]
+  },
+  {
+    "id": "hosah",
+    "word": "호사",
+    "definition": "므라리 사람으로 다윗이 계약의 궤를 둔 천막의 문지기",
+    "difficulty": 3,
+    "references": [
+      "역대기상 16:1, 37, 38",
+      "역대기상 26:10-19"
+    ]
+  },
+  {
+    "id": "hoshama",
+    "word": "호사마",
+    "definition": "여호야긴 왕이 바빌론 유배 중에 태어난 일곱 아들 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:17, 18"
+    ]
+  },
+  {
+    "id": "hoshaiah",
+    "word": "호사야",
+    "definition": "예언자 예레미야와 동시대 인물인 여사냐의 아버지",
+    "difficulty": 3,
+    "references": [
+      "예레미야 42:1, 2",
+      "예레미야 43:2"
+    ]
+  },
+  {
+    "id": "hosea",
+    "word": "호세아",
+    "definition": "이스라엘의 불충실을 지적하면서도 하느님의 충성스러운 사랑을 전한 예언자",
+    "difficulty": 2,
+    "references": [
+      "호세아 1:1",
+      "호세아 11:1-9"
+    ]
+  },
+  {
+    "id": "entry-호세아서",
+    "word": "호세아서",
+    "definition": "브에리의 아들 호세아가 기록한 소예언서로 가정생활을 통해 하느님과 이스라엘 관계를 제시함",
+    "difficulty": 2,
+    "references": [
+      "호세아 1:1",
+      "호세아 1-3장",
+      "호세아 6:6"
+    ]
+  },
+  {
+    "id": "hoshea",
+    "word": "호셰아",
+    "definition": "모세가 파견한 12정탐꾼 중 한 사람으로 여호수아의 원래 이름",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:8, 16",
+      "여호수아 1:1",
+      "열왕기하 17:1, 2"
+    ]
+  },
+  {
+    "id": "porcupine",
+    "word": "호저",
+    "definition": "방어용 가시털이 특징인 대형 설치 동물로 폐허에 사는 것으로 언급됨",
+    "difficulty": 2,
+    "references": [
+      "이사야 14:23, 34:11",
+      "스바냐 2:14"
+    ]
+  },
+  {
+    "id": "hoham",
+    "word": "호함",
+    "definition": "헤브론의 왕으로 기브온과 전쟁을 벌인 다섯 왕 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "여호수아 10:1-27"
+    ]
+  },
+  {
+    "id": "holon",
+    "word": "홀론",
+    "definition": "유다 산간 지방의 도시로 고핫 사람 제사장들에게 할당됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21, 48, 51",
+      "여호수아 21:9-19"
+    ]
+  },
+  {
+    "id": "sardius",
+    "word": "홍옥수",
+    "definition": "옥수의 변종으로 반투명 적갈색 보석으로 대제사장 흉패에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "계시록 4:3",
+      "계시록 21:19, 20"
+    ]
+  },
+  {
+    "id": "redsea",
+    "word": "홍해",
+    "definition": "이스라엘 백성이 모세의 인도로 마른 땅처럼 건넌 바다",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 14장"
+    ]
+  },
+  {
+    "id": "garland",
+    "word": "화관",
+    "definition": "머리에 쓰던 장식용 관으로 사마리아 심판 예언에 상징적으로 쓰임",
+    "difficulty": 2,
+    "references": [
+      "이사야 28:1-5",
+      "에스겔 7:7, 10"
+    ]
+  },
+  {
+    "id": "oven",
+    "word": "화덕",
+    "definition": "빵을 굽거나 식품을 익히기 위해 가열하는 아궁이처럼 만든 도구",
+    "difficulty": 2,
+    "references": [
+      "마태 6:30",
+      "출애굽기 8:3",
+      "레위기 26:26"
+    ]
+  },
+  {
+    "id": "brazier",
+    "word": "화로",
+    "definition": "숯불을 담아 난방에 쓰는 다리가 달린 냄비 모양의 기구",
+    "difficulty": 2,
+    "references": [
+      "예레미야 36:22, 23"
+    ]
+  },
+  {
+    "id": "fellowshipoffering",
+    "word": "화목제",
+    "definition": "하느님과의 평화로운 관계와 감사를 나타내기 위해 바치던 제물",
+    "difficulty": 3,
+    "references": [
+      "레위기 3:1-5; 7:11-15"
+    ]
+  },
+  {
+    "id": "cosmetics",
+    "word": "화장품",
+    "definition": "외모를 아름답게 하기 위해 얼굴이나 신체에 바르는 물품이나 제제",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 30:25",
+      "느헤미야 3:8",
+      "마가 14:3"
+    ]
+  },
+  {
+    "id": "reconciliation",
+    "word": "화해",
+    "definition": "다시 조화를 이루고 우호적 관계를 회복하는 것을 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "로마서 5:10",
+      "고린도전서 7:11",
+      "마태 5:24"
+    ]
+  },
+  {
+    "id": "tribulation",
+    "word": "환난",
+    "definition": "그리스어 틀립시스로 고난이나 압박 상황으로 인한 고통을 가리킴",
+    "difficulty": 2,
+    "references": [
+      "요한 16:21",
+      "마태 24:9",
+      "고린도후서 1:8"
+    ]
+  },
+  {
+    "id": "vision",
+    "word": "환상",
+    "definition": "하느님이 자신의 목적을 알리기 위해 사람에게 보여 주신 특별한 장면",
+    "difficulty": 2,
+    "references": [
+      "사도행전 10:9-16; 계시록 1:1"
+    ]
+  },
+  {
+    "id": "visionary",
+    "word": "환시가",
+    "definition": "하느님으로부터 환상을 받은 사람으로 히브리어 호제에 해당함",
+    "difficulty": 2,
+    "references": [
+      "민수기 24:4",
+      "이사야 1:1, 21:2",
+      "다니엘 8:1"
+    ]
+  },
+  {
+    "id": "zodiac",
+    "word": "황도대",
+    "definition": "태양 주위를 도는 지구 궤도면 양쪽에 나타나는 별들의 띠",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 23:5",
+      "욥기 38:32",
+      "이사야 47:12-15"
+    ]
+  },
+  {
+    "id": "stork",
+    "word": "황새",
+    "definition": "충성스러운 새로 히브리어 이름이 사랑의 친절을 나타내는 자라는 뜻",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:19",
+      "신명기 14:18",
+      "예레미야 8:7"
+    ]
+  },
+  {
+    "id": "topaz",
+    "word": "황옥",
+    "definition": "단단하고 투명한 결정질 광물로 대제사장 흉패에 쓰인 보석",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 28:15, 17",
+      "출애굽기 39:10",
+      "계시록 21:19, 20"
+    ]
+  },
+  {
+    "id": "torch",
+    "word": "횃불",
+    "definition": "손으로 들고 다니는 불로 수지 함유 나무나 기름 적신 물질에 불을 붙인 것",
+    "difficulty": 2,
+    "references": [
+      "창세기 15:17",
+      "사사기 7:16, 20",
+      "에스겔 1:13"
+    ]
+  },
+  {
+    "id": "repentance",
+    "word": "회개",
+    "definition": "잘못된 행로를 버리고 하느님의 뜻에 맞게 생각과 행동을 바꾸는 일",
+    "difficulty": 1,
+    "references": [
+      "사도행전 3:19"
+    ]
+  },
+  {
+    "id": "synagogue",
+    "word": "회당",
+    "definition": "유대인들이 모여 성경을 읽고 숭배와 교육을 하던 장소",
+    "difficulty": 2,
+    "references": [
+      "누가복음 4:16-21",
+      "사도행전 13:14-16"
+    ]
+  },
+  {
+    "id": "restoration",
+    "word": "회복",
+    "definition": "이전 상태로 되돌리는 것으로 그리스어 아포카타스타시스에 해당",
+    "difficulty": 2,
+    "references": [
+      "사도행전 3:20, 21",
+      "사도행전 1:6"
+    ]
+  },
+  {
+    "id": "congregation",
+    "word": "회중",
+    "definition": "같은 믿음을 가진 사람들이 함께 모여 하느님을 숭배하는 모임",
+    "difficulty": 1,
+    "references": [
+      "사도행전 2:42-47"
+    ]
+  },
+  {
+    "id": "hospitality",
+    "word": "후대",
+    "definition": "손님이나 낯선 사람을 관대하게 맞아들여 환대하는 것",
+    "difficulty": 2,
+    "references": [
+      "창세기 18:4",
+      "창세기 24:15-25",
+      "창세기 19:2, 3"
+    ]
+  },
+  {
+    "id": "hurai",
+    "word": "후래",
+    "definition": "다윗의 용사로 가아스 급류 골짜기 출신",
+    "difficulty": 3,
+    "references": [
+      "역대기상 11:26, 32",
+      "사무엘하 23:30"
+    ]
+  },
+  {
+    "id": "hur",
+    "word": "후르",
+    "definition": "유다 자손으로 갈렙과 에브랏의 아들이자 브살렐의 조부",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 31:2, 35:30",
+      "역대기상 2:19, 20",
+      "출애굽기 17:8-13"
+    ]
+  },
+  {
+    "id": "huri",
+    "word": "후리",
+    "definition": "갓 사람으로 부스 계통의 자손",
+    "difficulty": 3,
+    "references": [
+      "역대기상 5:11, 14"
+    ]
+  },
+  {
+    "id": "dragnet",
+    "word": "후릿그물",
+    "definition": "고기를 잡기 위해 수역 밑바닥을 훑는 데 사용하는 그물",
+    "difficulty": 2,
+    "references": [
+      "에스겔 26:5, 14, 47:10",
+      "마태 13:47, 48",
+      "누가 5:6, 7"
+    ]
+  },
+  {
+    "id": "hymenaeus",
+    "word": "후메내오",
+    "definition": "1세기 그리스도교에서 배교한 사람으로 거짓 교리를 가르친 자",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 2:16-18",
+      "디모데전서 1:18-20"
+    ]
+  },
+  {
+    "id": "hushah",
+    "word": "후사",
+    "definition": "유다 지파에 속한 에셀의 아들이나 그가 세운 도시",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 4",
+      "역대기상 27:11",
+      "사무엘하 23:27"
+    ]
+  },
+  {
+    "id": "husham",
+    "word": "후삼",
+    "definition": "데만 사람의 땅 출신으로 요밥에 이어 에돔 왕이 된 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:31, 34, 35",
+      "역대기상 1:45, 46"
+    ]
+  },
+  {
+    "id": "hushim",
+    "word": "후심",
+    "definition": "단의 아들로 야곱과 함께 이집트에 들어간 베냐민 계통 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:23",
+      "민수기 26:42",
+      "역대기상 7:6, 12"
+    ]
+  },
+  {
+    "id": "hukkok",
+    "word": "훅곡",
+    "definition": "납달리의 경계 도시로 갈릴리 바다 북단 서쪽에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:32, 34"
+    ]
+  },
+  {
+    "id": "huldah",
+    "word": "훌다",
+    "definition": "율법 책이 발견되었을 때 하느님의 뜻을 알려 준 여예언자",
+    "difficulty": 2,
+    "references": [
+      "열왕기하 22:8-20"
+    ]
+  },
+  {
+    "id": "humtah",
+    "word": "훔다",
+    "definition": "유다 산간 지방에 있던 도시로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:20, 48, 54"
+    ]
+  },
+  {
+    "id": "huppah",
+    "word": "훕바",
+    "definition": "다윗이 조직한 24개 제사장 조 중 열셋째 조의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:1-3, 7, 13"
+    ]
+  },
+  {
+    "id": "huppim",
+    "word": "훕빔",
+    "definition": "베냐민의 아들이나 자손으로 야곱과 함께 이집트에 들어간 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:8, 21",
+      "역대기상 7:6, 7, 12",
+      "역대기상 8:1-5"
+    ]
+  },
+  {
+    "id": "breastpiece",
+    "word": "흉패",
+    "definition": "이스라엘 대제사장이 가슴에 착용한 보석으로 장식된 특별한 의복",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 28:15-30"
+    ]
+  },
+  {
+    "id": "ebony",
+    "word": "흑단",
+    "definition": "검은 심재를 가진 단단한 목재로 에스겔에 언급된 무역품",
+    "difficulty": 2,
+    "references": [
+      "에스겔 27:15"
+    ]
+  },
+  {
+    "id": "jubilee",
+    "word": "희년",
+    "definition": "이스라엘에서 50년마다 땅과 사람에 관한 원래의 상태를 회복하도록 정한 해",
+    "difficulty": 2,
+    "references": [
+      "레위기 25:8-24"
+    ]
+  },
+  {
+    "id": "hope",
+    "word": "희망",
+    "definition": "하느님이 약속하신 미래의 좋은 일을 확신하며 기다리는 마음",
+    "difficulty": 1,
+    "references": [
+      "로마서 15:13; 히브리서 6:19"
+    ]
+  },
+  {
+    "id": "sacrifice",
+    "word": "희생",
+    "definition": "하느님께 바치거나 다른 사람을 위해 포기하는 가치 있는 것",
+    "difficulty": 1,
+    "references": [
+      "히브리서 13:15, 16"
+    ]
+  },
+  {
+    "id": "hirah",
+    "word": "히라",
+    "definition": "유다의 동무인 아둘람 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 38:1, 12"
+    ]
+  },
+  {
+    "id": "hiram",
+    "word": "히람",
+    "definition": "두로 왕으로 솔로몬 성전 건축에 재목과 기술자를 제공한 사람",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 5:1, 10, 18",
+      "사무엘하 5:11",
+      "역대기하 2:3"
+    ]
+  },
+  {
+    "id": "hebrews",
+    "word": "히브리서",
+    "definition": "예수의 제사장 직분과 희생의 우월성을 설명한 성경 책",
+    "difficulty": 2,
+    "references": [
+      "히브리서 4:14-16",
+      "히브리서 10:1-14"
+    ]
+  },
+  {
+    "id": "hyssop",
+    "word": "히솝",
+    "definition": "정결 의식이나 유월절에 피를 바르는 데 사용된 식물",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 12:22; 레위기 14:4-7; 요한복음 19:29"
+    ]
+  },
+  {
+    "id": "hizkiah",
+    "word": "히스갸",
+    "definition": "솔로몬 왕의 자손인 느아랴의 세 아들 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:10, 23"
+    ]
+  },
+  {
+    "id": "hizki",
+    "word": "히스기",
+    "definition": "엘바알의 아들들 중 언급된 베냐민 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1, 17, 18"
+    ]
+  },
+  {
+    "id": "hezekiah",
+    "word": "히스기야",
+    "definition": "아시리아의 위협을 받았을 때 기도로 도움을 구한 유다 왕",
+    "difficulty": 2,
+    "references": [
+      "열왕기하 18-20장",
+      "이사야 36-39장"
+    ]
+  },
+  {
+    "id": "hyacinth",
+    "word": "히아신스",
+    "definition": "진한 파란색 준보석으로 새 예루살렘 열한째 기초석",
+    "difficulty": 3,
+    "references": [
+      "계시록 21:20",
+      "계시록 9:16, 17"
+    ]
+  },
+  {
+    "id": "hierapolis",
+    "word": "히에라폴리스",
+    "definition": "아시아 속주에 있던 도시로 라오디게아 북쪽에 위치함",
+    "difficulty": 3,
+    "references": [
+      "고린도전서 16:8",
+      "골로새서 4:12, 13"
+    ]
+  },
+  {
+    "id": "hiel",
+    "word": "히엘",
+    "definition": "아합 시대에 예리코를 재건한 베델 사람으로 여호수아의 맹세대로 아들들을 잃음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 6:26",
+      "열왕기상 16:33, 34"
+    ]
+  },
+  {
+    "id": "higgaion",
+    "word": "힉가욘",
+    "definition": "히브리어 음악 용어로 묵상이나 부드러운 선율을 가리키는 말",
+    "difficulty": 3,
+    "references": [
+      "시편 9:16",
+      "시편 19:14",
+      "시편 92:3"
+    ]
+  },
+  {
+    "id": "hilkiah",
+    "word": "힐기야",
+    "definition": "성전에서 율법 책을 발견해 요시야 왕에게 전한 대제사장",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 22:8-13"
+    ]
+  },
+  {
+    "id": "hillel",
+    "word": "힐렐",
+    "definition": "비라돈 사람으로 이스라엘 사사 압돈의 아버지",
+    "difficulty": 3,
+    "references": [
+      "사사기 12:13-15"
+    ]
+  },
+  {
+    "id": "sinew",
+    "word": "힘줄",
+    "definition": "근육의 기초가 되는 희고 질긴 살의 줄",
+    "difficulty": 2,
+    "references": [
+      "욥기 10:11",
+      "욥기 40:15-18",
+      "창세기 32:32"
+    ]
+  },
+  {
+    "id": "hiddai",
+    "word": "힛대",
+    "definition": "다윗의 군대 용사로 가아스 급류 골짜기 출신",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:8, 30",
+      "여호수아 24:30",
+      "역대기상 11:32"
+    ]
+  },
+  {
+    "id": "hiddekel",
+    "word": "힛데겔",
+    "definition": "에덴에서 흘러나온 네 강 중 하나로 티그리스 강에 해당",
+    "difficulty": 3,
+    "references": [
+      "창세기 2:10-14",
+      "다니엘 10:4, 5",
+      "다니엘 11:5, 6"
+    ]
+  }
+]

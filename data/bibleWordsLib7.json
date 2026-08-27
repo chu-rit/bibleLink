@@ -1,0 +1,4019 @@
+[
+  {
+    "id": "entry-발삼, 길르앗의 발삼",
+    "word": "길르앗발삼",
+    "definition": "방향이 있는 유성 수지성 물질을 내는 식물과 그 물질로 성소 기름에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 30:23",
+      "아가 4:10, 14, 16",
+      "이사야 3:24"
+    ]
+  },
+  {
+    "id": "pagiel",
+    "word": "바기엘",
+    "definition": "광야 방랑 시 아셀 지파 수장으로 오그란의 아들이자 인구 조사와 제단 봉헌에 참여한 자",
+    "difficulty": 3,
+    "references": [
+      "민수기 1:13, 16",
+      "민수기 2:27, 28",
+      "민수기 7:72-77"
+    ]
+  },
+  {
+    "id": "barnabas",
+    "word": "바나바",
+    "definition": "초기 회중에서 격려하는 일을 했으며 바울과 함께 전파 여행을 한 사람",
+    "difficulty": 2,
+    "references": [
+      "사도행전 4:36, 37",
+      "사도행전 13:1-3"
+    ]
+  },
+  {
+    "id": "phanuel",
+    "word": "바누엘",
+    "definition": "아셀 자손으로 여예언자 안나의 아버지",
+    "difficulty": 3,
+    "references": [
+      "누가 2:36"
+    ]
+  },
+  {
+    "id": "sewing",
+    "word": "바느질",
+    "definition": "바느실로 이어 붙이는 일로 초기부터 자수를 포함해 인류 활동에 중요한 역할을 함",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 26:1",
+      "출애굽기 35:35",
+      "전도서 3:7"
+    ]
+  },
+  {
+    "id": "needle",
+    "word": "바늘",
+    "definition": "한쪽은 뾰족하고 다른 쪽에 귀가 있는 가느다란 용구로 바느질과 수놓기에 사용",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 28:6",
+      "출애굽기 35:34, 35",
+      "전도서 3:7"
+    ]
+  },
+  {
+    "id": "entry-바늘귀",
+    "word": "바늘귀",
+    "definition": "바늘의 구멍으로 예수가 부자가 왕국에 들어가기 어려움을 비유할 때 사용한 표현",
+    "difficulty": 1,
+    "references": [
+      "마태 19:24",
+      "마가 10:25",
+      "누가 18:25"
+    ]
+  },
+  {
+    "id": "bani",
+    "word": "바니",
+    "definition": "므라리 가계 레위 사람으로 다윗이 임명한 성전 봉사자 에단의 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:31, 44, 46",
+      "사무엘하 23:36",
+      "에스라 2:10"
+    ]
+  },
+  {
+    "id": "sea",
+    "word": "바다",
+    "definition": "육지와 구별되는 물이 괸 곳으로 지구 면적의 70퍼센트 이상을 차지함",
+    "difficulty": 1,
+    "references": [
+      "창세기 1:9, 10",
+      "느헤미야 9:6",
+      "계시록 14:7"
+    ]
+  },
+  {
+    "id": "sealskin",
+    "word": "바다표범가죽",
+    "definition": "히브리어 타하시로 불리는 가죽으로 장막 덮개와 신성 기구 포장에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 25:5",
+      "출애굽기 26:14",
+      "민수기 4:6-14"
+    ]
+  },
+  {
+    "id": "padon",
+    "word": "바돈",
+    "definition": "느디님 부계 가문 우두머리로 그 자손이 스룹바벨과 함께 유배에서 돌아옴",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:44",
+      "느헤미야 7:47"
+    ]
+  },
+  {
+    "id": "bartholomew",
+    "word": "바돌로매",
+    "definition": "열두 사도 명단에 포함된 예수의 제자",
+    "difficulty": 2,
+    "references": [
+      "마태복음 10:2-4"
+    ]
+  },
+  {
+    "id": "patrobas",
+    "word": "바드로바",
+    "definition": "로마 회중의 그리스도인으로 바울이 편지에서 인사를 전한 자",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:14"
+    ]
+  },
+  {
+    "id": "pathros",
+    "word": "바드로스",
+    "definition": "이집트의 한 지역으로 상이집트를 가리키며 남쪽 땅을 의미함",
+    "difficulty": 2,
+    "references": [
+      "에스겔 30:13, 14",
+      "이사야 11:11",
+      "창세기 10:13, 14"
+    ]
+  },
+  {
+    "id": "pathrusim",
+    "word": "바드루심",
+    "definition": "함의 아들 미스라임의 자손으로 바드로스의 복수형이며 상이집트에 정주한 족",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:13, 14",
+      "역대기상 1:11, 12",
+      "에스겔 29:14"
+    ]
+  },
+  {
+    "id": "bartimaeus",
+    "word": "바디매오",
+    "definition": "예수께서 시력을 회복시켜 주신 눈먼 거지로 예리코 밖에서 소리쳐 도움을 구함",
+    "difficulty": 3,
+    "references": [
+      "마가 10:46-52",
+      "마태 20:29-34",
+      "누가 18:35-43"
+    ]
+  },
+  {
+    "id": "parah",
+    "word": "바라",
+    "definition": "베냐민에 속한 도시로 예루살렘 북동쪽에 위치하며 근처 샘이 물을 공급함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 18:21, 23"
+    ]
+  },
+  {
+    "id": "barachiah",
+    "word": "바라갸",
+    "definition": "스가랴의 아버지로 성소와 제단 사이에서 살해당한 자의 부",
+    "difficulty": 3,
+    "references": [
+      "마태 23:35",
+      "누가 11:50, 51"
+    ]
+  },
+  {
+    "id": "barachel",
+    "word": "바라겔",
+    "definition": "욥의 벗 엘리후의 아버지로 부스 사람이자 아브라함 조카 부스의 자손",
+    "difficulty": 3,
+    "references": [
+      "욥기 32:2, 6",
+      "창세기 22:20, 21"
+    ]
+  },
+  {
+    "id": "barabbas",
+    "word": "바라바",
+    "definition": "예수 대신 풀려난 감옥의 죄수",
+    "difficulty": 2,
+    "references": [
+      "마태복음 27:15-26"
+    ]
+  },
+  {
+    "id": "barak",
+    "word": "바락",
+    "definition": "납달리 게데스에 살던 아비노암의 아들로 드보라와 함께 가나안 왕 야빈을 물리친 재판관",
+    "difficulty": 3,
+    "references": [
+      "사사기 4:4-9",
+      "사사기 5:9-18",
+      "사사기 4:6"
+    ]
+  },
+  {
+    "id": "paran",
+    "word": "바란",
+    "definition": "이스라엘이 38년간 방랑하던 시나이 반도의 광대한 광야 지역",
+    "difficulty": 2,
+    "references": [
+      "민수기 10:11, 12",
+      "신명기 2:14",
+      "사무엘상 25:1"
+    ]
+  },
+  {
+    "id": "wind",
+    "word": "바람",
+    "definition": "히브리어 루아흐로 영과 움직이는 공기를 모두 가리키며 폭풍 광풍으로도 언급됨",
+    "difficulty": 1,
+    "references": [
+      "전도서 1:6",
+      "호세아 8:7",
+      "예레미야 25:32"
+    ]
+  },
+  {
+    "id": "parosh",
+    "word": "바로스",
+    "definition": "이스라엘 가족의 시조로 그 자손 2172명이 스룹바벨과 함께 돌아옴",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:1-3",
+      "느헤미야 7:8",
+      "에스라 8:3"
+    ]
+  },
+  {
+    "id": "paruah",
+    "word": "바루아",
+    "definition": "잇사갈 지역에서 솔로몬의 식량 담당 대리관으로 섬긴 여호사밧의 아버지",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:7, 17"
+    ]
+  },
+  {
+    "id": "baruch",
+    "word": "바룩",
+    "definition": "예레미야가 받아 전한 소식을 기록하고 읽어 준 서기관",
+    "difficulty": 2,
+    "references": [
+      "예레미야 36:4-10"
+    ]
+  },
+  {
+    "id": "barkos",
+    "word": "바르고스",
+    "definition": "스룹바벨과 함께 돌아온 느디님의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:53",
+      "느헤미야 7:55"
+    ]
+  },
+  {
+    "id": "parnach",
+    "word": "바르낙",
+    "definition": "스불론 사람으로 그 아들 엘리사반이 약속의 땅 분배 시 지파를 대표함",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:17, 18, 25"
+    ]
+  },
+  {
+    "id": "parmenas",
+    "word": "바르메나",
+    "definition": "오순절 후 예루살렘 회중에서 음식 배급을 맡도록 임명받은 일곱 사람 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "사도행전 6:1-6"
+    ]
+  },
+  {
+    "id": "barbarian",
+    "word": "바르바로이",
+    "definition": "그리스어로 타국인이나 다른 언어를 사용하는 사람을 가리키는 표현",
+    "difficulty": 2,
+    "references": [
+      "로마서 1:14",
+      "사도행전 28:1, 2",
+      "고린도전서 14:11"
+    ]
+  },
+  {
+    "id": "pharpar",
+    "word": "바르발",
+    "definition": "나아만이 이스라엘 물보다 낫다고 여긴 다마스쿠스의 두 강 중 하나",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 5:12"
+    ]
+  },
+  {
+    "id": "barzillai",
+    "word": "바르실래",
+    "definition": "므홀랏 사람으로 그 아들 아드리엘이 사울의 딸 메랍과 결혼한 자",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 18:19",
+      "사무엘하 21:8",
+      "사무엘하 17:27-29"
+    ]
+  },
+  {
+    "id": "pharisees",
+    "word": "바리새인",
+    "definition": "율법과 전통을 엄격히 지키려 했으며 예수와 자주 논쟁한 유대교 분파의 사람",
+    "difficulty": 2,
+    "references": [
+      "마태복음 15:1-9",
+      "마태복음 23장"
+    ]
+  },
+  {
+    "id": "bariah",
+    "word": "바리야",
+    "definition": "다윗의 먼 자손으로 솔로몬 계통의 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 3:10, 22"
+    ]
+  },
+  {
+    "id": "parmashta",
+    "word": "바마스다",
+    "definition": "하만의 아들 열 명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 9:9"
+    ]
+  },
+  {
+    "id": "entry-바못-바알",
+    "word": "바못바알",
+    "definition": "모압의 성읍으로 발락이 발람을 데려가 이스라엘을 저주하려 한 바알 숭배 고지",
+    "difficulty": 3,
+    "references": [
+      "민수기 22:41",
+      "민수기 23:1-9",
+      "여호수아 13:17"
+    ]
+  },
+  {
+    "id": "babel",
+    "word": "바벨",
+    "definition": "대홍수 후 최초 도시 중 하나로 하느님이 언어를 혼란시킨 곳",
+    "difficulty": 1,
+    "references": [
+      "창세기 11:9",
+      "창세기 10:9, 10",
+      "창세기 11:4"
+    ]
+  },
+  {
+    "id": "babylon",
+    "word": "바빌론",
+    "definition": "유다를 정복하고 많은 유대인을 유배시킨 고대 제국의 수도",
+    "difficulty": 1,
+    "references": [
+      "열왕기하 24-25장"
+    ]
+  },
+  {
+    "id": "pasach",
+    "word": "바삭",
+    "definition": "아셀 지파 한 가족의 우두머리로 야블렛의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30, 33, 40"
+    ]
+  },
+  {
+    "id": "bashan",
+    "word": "바산",
+    "definition": "갈릴리 바다 동쪽의 넓은 지역으로 비옥한 목초지와 거인 족으로 유명함",
+    "difficulty": 1,
+    "references": [
+      "신명기 3:3-14",
+      "여호수아 12:4, 5",
+      "시편 22:12"
+    ]
+  },
+  {
+    "id": "parshandatha",
+    "word": "바산다다",
+    "definition": "하만의 아들 열 명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 9:7"
+    ]
+  },
+  {
+    "id": "paseah",
+    "word": "바세아",
+    "definition": "유다 자손으로 글룹의 가계에 속한 사람이자 느디님 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:11, 12",
+      "에스라 2:49",
+      "느헤미야 3:6"
+    ]
+  },
+  {
+    "id": "entry-바스-담밈",
+    "word": "바스담밈",
+    "definition": "소고와 아세가 사이에 있던 곳으로 에베스-담밈의 다른 이름",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 17:1",
+      "역대기상 11:13"
+    ]
+  },
+  {
+    "id": "basemath",
+    "word": "바스맛",
+    "definition": "에서의 아내로 헷 사람 엘론의 딸이자 이삭과 리브가에게 비통함의 근원이 된 자",
+    "difficulty": 3,
+    "references": [
+      "창세기 26:34, 35",
+      "창세기 36:2",
+      "창세기 28:8, 9"
+    ]
+  },
+  {
+    "id": "pashhur",
+    "word": "바스훌",
+    "definition": "예레미야를 저수조에 넣은 유다 방백 그달리야의 아버지이자 제사장",
+    "difficulty": 3,
+    "references": [
+      "예레미야 38:1, 4, 6",
+      "예레미야 20:1-6",
+      "역대기상 9:12"
+    ]
+  },
+  {
+    "id": "bazluth",
+    "word": "바슬룻",
+    "definition": "느디님 가족의 우두머리로 그 자손이 스룹바벨과 함께 돌아옴",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:52",
+      "느헤미야 7:54"
+    ]
+  },
+  {
+    "id": "baana",
+    "word": "바아나1",
+    "definition": "솔로몬이 임명한 열두 식량 대리관 중 한 사람으로 아힐룻의 아들",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 4:3, 7, 12",
+      "열왕기상 4:16"
+    ]
+  },
+  {
+    "id": "baanah",
+    "word": "바아나2",
+    "definition": "베냐민 사람 림몬의 아들로 이스-보셋을 암살하고 다윗에게 처형된 자",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 4:2-12",
+      "사무엘하 23:29",
+      "역대기상 11:30"
+    ]
+  },
+  {
+    "id": "baara",
+    "word": "바아라",
+    "definition": "베냐민 사람 사하라임의 아내 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1, 8"
+    ]
+  },
+  {
+    "id": "paarai",
+    "word": "바아래",
+    "definition": "아랍 사람으로 다윗의 군대 용사 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:35",
+      "역대기상 11:37"
+    ]
+  },
+  {
+    "id": "baasha",
+    "word": "바아사",
+    "definition": "이스라엘 열 지파 왕국의 셋째 왕으로 나답을 죽이고 찬탈한 자",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 15:27-30",
+      "열왕기상 16:1-4",
+      "열왕기상 15:16-22"
+    ]
+  },
+  {
+    "id": "baaseiah",
+    "word": "바아세야",
+    "definition": "레위의 자손으로 게르솜 계통이자 성전 악사 아삽의 조상",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:39, 40, 43"
+    ]
+  },
+  {
+    "id": "baal",
+    "word": "바알",
+    "definition": "베냐민 사람 여이엘의 아들 중 넷째이자 가나안의 주요 거짓 신 이름",
+    "difficulty": 1,
+    "references": [
+      "역대기상 8:29, 30",
+      "역대기상 5:5, 6",
+      "여호수아 19:7-9"
+    ]
+  },
+  {
+    "id": "entry-바알-갓",
+    "word": "바알갓",
+    "definition": "헤르몬 산 서쪽 기슭의 레바논 골짜기 성읍으로 가나안 정복 북단 지점",
+    "difficulty": 3,
+    "references": [
+      "여호수아 11:17",
+      "여호수아 12:7",
+      "여호수아 13:5"
+    ]
+  },
+  {
+    "id": "entry-바알-다말",
+    "word": "바알다말",
+    "definition": "기브아 부근의 장소로 베냐민 지파 전투 시 이스라엘이 대형을 지은 곳",
+    "difficulty": 3,
+    "references": [
+      "사사기 19:25-28",
+      "사사기 20:33"
+    ]
+  },
+  {
+    "id": "baalah",
+    "word": "바알라",
+    "definition": "유다 북쪽 경계 도시로 기럇-바알이라고도 불리며 기럇-여아림으로 잘 알려짐",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:9, 10",
+      "여호수아 18:14",
+      "역대기상 13:6"
+    ]
+  },
+  {
+    "id": "baalath",
+    "word": "바알랏",
+    "definition": "단의 원래 영토에 있던 경계 성읍으로 솔로몬이 재건한 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:44, 45",
+      "역대기하 8:5, 6",
+      "열왕기상 9:17, 18"
+    ]
+  },
+  {
+    "id": "entry-바알랏-브엘",
+    "word": "바알랏브엘",
+    "definition": "유다 영토 내 시므온의 고립 도시로 남쪽 라마라고도 불림",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:1, 8",
+      "역대기상 4:33",
+      "사무엘상 30:27"
+    ]
+  },
+  {
+    "id": "baalis",
+    "word": "바알리스",
+    "definition": "암몬 왕으로 그달리야를 살해하려 이스마엘을 보낸 인물",
+    "difficulty": 3,
+    "references": [
+      "예레미야 40:14"
+    ]
+  },
+  {
+    "id": "entry-바알-므온",
+    "word": "바알므온",
+    "definition": "모압 북부 고원 지대의 성읍으로 르우벤 지파에 할당된 곳",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:37, 38",
+      "역대기상 5:8",
+      "예레미야 48:20-23"
+    ]
+  },
+  {
+    "id": "entry-바알-브라심",
+    "word": "바알브라심",
+    "definition": "다윗이 시온 성채 점령 후 블레셋 연합군에게 완승을 거둔 장소",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 5:17-21",
+      "역대기상 14:12",
+      "이사야 28:21"
+    ]
+  },
+  {
+    "id": "entry-바알-브릿",
+    "word": "바알브릿",
+    "definition": "세겜의 바알로 기드온 사후 이스라엘이 숭배하기 시작한 거짓 신",
+    "difficulty": 3,
+    "references": [
+      "사사기 8:33",
+      "사사기 9:4, 27-29",
+      "사사기 9:46-49"
+    ]
+  },
+  {
+    "id": "entry-바알-살리사",
+    "word": "바알살리사",
+    "definition": "엘리사에게 첫 열매 보리 빵 20개를 바친 사람이 있던 지명",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 4:42-44",
+      "열왕기하 4:38, 43"
+    ]
+  },
+  {
+    "id": "entry-바알-세붑",
+    "word": "바알세붑",
+    "definition": "에그론의 블레셋 사람들이 숭배한 바알로 파리의 주라는 조롱적 형태",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 1:2",
+      "열왕기하 1:2-8"
+    ]
+  },
+  {
+    "id": "entry-바알-스본",
+    "word": "바알스본",
+    "definition": "이스라엘이 홍해 건너기 전 비하히롯에서 진 친 곳을 설명하는 지리 지점",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 14:2",
+      "민수기 33:1-7",
+      "출애굽기 14:9"
+    ]
+  },
+  {
+    "id": "entry-바알-하난",
+    "word": "바알하난",
+    "definition": "악볼의 아들로 이스라엘 왕 이전에 통치한 에돔의 일곱째 왕",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:38, 39",
+      "역대기상 1:49, 50",
+      "역대기상 27:28"
+    ]
+  },
+  {
+    "id": "entry-바알-하몬",
+    "word": "바알하몬",
+    "definition": "솔로몬의 노래에서 소출이 많은 솔로몬 왕의 포도원이 있던 곳",
+    "difficulty": 3,
+    "references": [
+      "아가 8:11",
+      "열왕기상 4:20, 21"
+    ]
+  },
+  {
+    "id": "entry-바알-하솔",
+    "word": "바알하솔",
+    "definition": "에브라임 근처의 장소로 압살롬이 양털 깎기 축제 중 암논을 죽인 곳",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 13:23, 28",
+      "역대기하 13:19"
+    ]
+  },
+  {
+    "id": "entry-바-예수",
+    "word": "바예수",
+    "definition": "키프로스 파포스의 유대인 주술사이자 거짓 예언자로 바울에게 저주받은 자",
+    "difficulty": 3,
+    "references": [
+      "사도행전 13:6-12"
+    ]
+  },
+  {
+    "id": "bavvai",
+    "word": "바왜",
+    "definition": "레위 사람으로 느헤미야의 성벽 재건 공사에 참여한 그일라 출신 헤나닷의 아들",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:18, 24"
+    ]
+  },
+  {
+    "id": "pau",
+    "word": "바우",
+    "definition": "에돔의 하달 왕이 왕궁을 둔 장소로 위치는 알려지지 않음",
+    "difficulty": 2,
+    "references": [
+      "창세기 36:39",
+      "역대기상 1:43, 50"
+    ]
+  },
+  {
+    "id": "paul",
+    "word": "바울",
+    "definition": "예수의 제자가 된 뒤 여러 지역에서 좋은 소식을 전한 사도",
+    "difficulty": 1,
+    "references": [
+      "사도행전 9-28장"
+    ]
+  },
+  {
+    "id": "paulus",
+    "word": "바울로",
+    "definition": "기원 47년경 키프로스 속주 총독으로 바울 선교 여행 시 만난 로마 관리",
+    "difficulty": 3,
+    "references": [
+      "사도행전 13:7, 12"
+    ]
+  },
+  {
+    "id": "entry-바위너구리",
+    "word": "바위너구리",
+    "definition": "토끼와 비슷하지만 귀가 짧은 바위 지대 동물로 율법에서 부정한 것으로 분류됨",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:5",
+      "신명기 14:7",
+      "시편 104:18",
+      "잠언 30:26"
+    ]
+  },
+  {
+    "id": "entry-바위, 반석",
+    "word": "바위반석",
+    "definition": "히브리어로 추르와 셀라로 구분되며 여호와를 상징하는 비유적 표현",
+    "difficulty": 1,
+    "references": [
+      "사무엘하 22:2, 3",
+      "시편 18:2",
+      "사사기 15:8"
+    ]
+  },
+  {
+    "id": "entry-바쳐진 것",
+    "word": "바쳐진것",
+    "definition": "신성한 금령 아래 두어 속된 용도 사용이 금지된 사물 사람 도시를 가리킴",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 22:20",
+      "신명기 7:25, 26",
+      "레위기 27:28, 29"
+    ]
+  },
+  {
+    "id": "baca",
+    "word": "바카나무",
+    "definition": "다윗이 르바임 저지에서 블레셋과 싸울 때 관련된 식물로 시편 84편에도 언급됨",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 5:22-25",
+      "역대기상 14:13-16",
+      "시편 84:6"
+    ]
+  },
+  {
+    "id": "wheel",
+    "word": "바퀴",
+    "definition": "축을 중심으로 회전하는 둥근 물체로 전차와 맷돌 등에 사용됨",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 14:25",
+      "이사야 28:27",
+      "열왕기상 7:27-33"
+    ]
+  },
+  {
+    "id": "cockroach",
+    "word": "바퀴벌레",
+    "definition": "히브리어 하실로 번역이 다양한 곤충으로 메뚜기와 관련된 해충으로 추정됨",
+    "difficulty": 2,
+    "references": [
+      "신명기 28:38",
+      "이사야 33:4",
+      "요엘 1:4",
+      "요엘 2:25"
+    ]
+  },
+  {
+    "id": "bath",
+    "word": "바트",
+    "definition": "액량 단위로 한 호멜의 십분의 일이며 약 22리터에 해당함",
+    "difficulty": 2,
+    "references": [
+      "에스겔 45:10, 11, 14"
+    ]
+  },
+  {
+    "id": "entry-바핫-모압",
+    "word": "바핫모압",
+    "definition": "이스라엘 한 가문의 시조로 이름이 모압 통치 관원임을 암시함",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:6",
+      "느헤미야 7:11",
+      "에스라 8:4",
+      "에스라 10:30"
+    ]
+  },
+  {
+    "id": "bahurim",
+    "word": "바후림",
+    "definition": "올리브 산 옆 마을로 예리코로 가는 고대 도로 북쪽에 위치함",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 3:16",
+      "사무엘하 15:23, 30",
+      "사무엘하 16:5-13"
+    ]
+  },
+  {
+    "id": "bakbakkar",
+    "word": "박박갈",
+    "definition": "바빌론 유배 후 예루살렘에 살던 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 9:14, 15, 34"
+    ]
+  },
+  {
+    "id": "bakbukiah",
+    "word": "박부갸",
+    "definition": "스룹바벨과 함께 돌아와 경비로 섬긴 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:1, 9",
+      "느헤미야 11:17, 18"
+    ]
+  },
+  {
+    "id": "bakbuk",
+    "word": "박북",
+    "definition": "스룹바벨과 함께 돌아온 느디님의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:51",
+      "느헤미야 7:53"
+    ]
+  },
+  {
+    "id": "bat",
+    "word": "박쥐",
+    "definition": "날아다니는 포유동물로 율법에서 부정한 날짐승으로 분류됨",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:19",
+      "신명기 14:18",
+      "이사야 2:20"
+    ]
+  },
+  {
+    "id": "mint",
+    "word": "박하",
+    "definition": "향기가 강한 향료 식물으로 십일조를 바치면서 율법의 중한 것을 무시한 자와 관련됨",
+    "difficulty": 2,
+    "references": [
+      "마태 23:23",
+      "누가 11:42"
+    ]
+  },
+  {
+    "id": "persecution",
+    "word": "박해",
+    "definition": "신앙이나 신념으로 인해 고의적으로 핍박하는 것으로 신앙 전파를 막으려는 목적",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 15:9",
+      "신명기 1:44",
+      "누가 17:23",
+      "역대기하 36:16"
+    ]
+  },
+  {
+    "id": "porphyry",
+    "word": "반암",
+    "definition": "진한 빨간색이나 자주색 암석으로 페르시아 궁전 포장에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "에스더 1:6"
+    ]
+  },
+  {
+    "id": "rebelliousness",
+    "word": "반역",
+    "definition": "상급 권위에 대한 불순종과 대항으로 교만과 이기심이 주된 원인",
+    "difficulty": 2,
+    "references": [
+      "창세기 3:1-6",
+      "디모데전서 2:14",
+      "베드로전서 3:19, 20"
+    ]
+  },
+  {
+    "id": "entry-반죽 통",
+    "word": "반죽통",
+    "definition": "곡식 가루와 물을 혼합해 반죽을 만드는 얕은 대접 모양 그릇",
+    "difficulty": 2,
+    "references": [
+      "창세기 18:6",
+      "사무엘상 28:24",
+      "출애굽기 12:33, 34"
+    ]
+  },
+  {
+    "id": "ring",
+    "word": "반지",
+    "definition": "코 귀 손가락에 착용한 고리 형태 장식품으로 인장으로도 사용됨",
+    "difficulty": 1,
+    "references": [
+      "누가 15:22",
+      "야고보서 2:1-9",
+      "열왕기상 21:8"
+    ]
+  },
+  {
+    "id": "entry-받아들이실 만한 때",
+    "word": "받아들이실만한때",
+    "definition": "이사야 49:8의 예언으로 바울이 고린도후서 6:2에서 인용한 구원의 때",
+    "difficulty": 3,
+    "references": [
+      "고린도후서 6:2",
+      "이사야 49:8",
+      "이사야 42:1-4, 6, 7"
+    ]
+  },
+  {
+    "id": "toe",
+    "word": "발가락",
+    "definition": "발끝의 갈라진 부분으로 손가락과 같은 단어로 표현되기도 함",
+    "difficulty": 1,
+    "references": [
+      "사무엘하 21:20",
+      "역대기상 20:6",
+      "다니엘 2:41, 42",
+      "레위기 14:14, 17, 25, 28"
+    ]
+  },
+  {
+    "id": "heel",
+    "word": "발꿈치",
+    "definition": "발 뒤쪽 발목 아랫부분으로 지체시키거나 방해하는 비유로 사용됨",
+    "difficulty": 1,
+    "references": [
+      "창세기 25:26",
+      "창세기 27:36",
+      "호세아 12:2, 3",
+      "창세기 49:17"
+    ]
+  },
+  {
+    "id": "palti",
+    "word": "발디",
+    "definition": "베냐민 지파 수장으로 가나안 땅을 조사하도록 선택된 12 정탐꾼 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "민수기 13:2, 3, 9"
+    ]
+  },
+  {
+    "id": "paltiel",
+    "word": "발디엘",
+    "definition": "약속의 땅 분배 시 잇사갈을 대표한 앗산의 아들",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:17, 18, 26",
+      "사무엘상 25:44",
+      "사무엘하 3:13-16"
+    ]
+  },
+  {
+    "id": "baladan",
+    "word": "발라단",
+    "definition": "바빌론 왕의 아버지로 히스기야 시대 인물",
+    "difficulty": 3,
+    "references": [
+      "이사야 39:1",
+      "열왕기하 20:12"
+    ]
+  },
+  {
+    "id": "balak",
+    "word": "발락",
+    "definition": "이스라엘을 두려워해 발람에게 저주를 부탁한 모압 왕",
+    "difficulty": 2,
+    "references": [
+      "민수기 22-24장"
+    ]
+  },
+  {
+    "id": "palal",
+    "word": "발랄",
+    "definition": "느헤미야 시대에 예루살렘 성벽을 보수한 우새의 아들",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:25"
+    ]
+  },
+  {
+    "id": "balaam",
+    "word": "발람",
+    "definition": "이스라엘을 저주하려 했지만 자신의 나귀에게 책망을 들은 예언자",
+    "difficulty": 2,
+    "references": [
+      "민수기 22-24장"
+    ]
+  },
+  {
+    "id": "pallu",
+    "word": "발루",
+    "definition": "르우벤의 아들로 한 가족의 시조이자 벨레스와 동일 인물로 보임",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:9",
+      "역대기상 5:3",
+      "민수기 26:5"
+    ]
+  },
+  {
+    "id": "anklet",
+    "word": "발목장식",
+    "definition": "걸음을 걷다는 어근에서 유래한 이름으로 발목에 착용하는 장식 고리",
+    "difficulty": 2,
+    "references": [
+      "민수기 31:50",
+      "이사야 3:16, 18, 20"
+    ]
+  },
+  {
+    "id": "entry-발 씻는 일",
+    "word": "발씻는일",
+    "definition": "고대 중동에서 식사 전 환영의 표시로 행한 후대로 먼지 많은 길 걷기 후 필요함",
+    "difficulty": 2,
+    "references": [
+      "사사기 19:21",
+      "사무엘상 25:40-42",
+      "누가 7:36-50"
+    ]
+  },
+  {
+    "id": "footstool",
+    "word": "발판",
+    "definition": "발을 올려놓는 낮은 대로 여호와의 성소와 땅이 비유적으로 불림",
+    "difficulty": 2,
+    "references": [
+      "역대기하 9:18",
+      "역대기상 28:2",
+      "시편 99:5",
+      "이사야 66:1"
+    ]
+  },
+  {
+    "id": "sourdough",
+    "word": "발효된반죽",
+    "definition": "시큼해진 반죽 조각으로 새 반죽에 섞어 발효를 일으키는 누룩 역할",
+    "difficulty": 2,
+    "references": [
+      "레위기 2:11",
+      "출애굽기 12:15",
+      "신명기 16:4"
+    ]
+  },
+  {
+    "id": "night",
+    "word": "밤[夜]",
+    "definition": "해가 질 때부터 뜰 때까지의 어두운 시간대로 창조 첫째 날에 명명됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 1:5, 14",
+      "잠언 7:9",
+      "시편 63:6"
+    ]
+  },
+  {
+    "id": "paddan",
+    "word": "밧단",
+    "definition": "메소포타미아 북부 하란 일대의 지방으로 아람의 들과 동일",
+    "difficulty": 2,
+    "references": [
+      "창세기 35:9",
+      "창세기 28:6, 7",
+      "호세아 12:12"
+    ]
+  },
+  {
+    "id": "entry-밧-랍빔",
+    "word": "밧랍빔",
+    "definition": "솔로몬의 노래에서 술람미 소녀의 눈에 비유된 헤스본 성문 곁의 못",
+    "difficulty": 2,
+    "references": [
+      "아가 7:4",
+      "여호수아 21:38, 39"
+    ]
+  },
+  {
+    "id": "bathsheba",
+    "word": "밧세바",
+    "definition": "다윗의 아내가 되어 솔로몬의 어머니가 된 여자",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 11-12장",
+      "열왕기상 1:11-31"
+    ]
+  },
+  {
+    "id": "embalming",
+    "word": "방부처리",
+    "definition": "시체가 부패하지 않도록 향유 등으로 처리하는 이집트에서 발달한 기술",
+    "difficulty": 2,
+    "references": [
+      "창세기 50:2, 3",
+      "창세기 50:26",
+      "창세기 49:29-32"
+    ]
+  },
+  {
+    "id": "grasshopper",
+    "word": "방아깨비",
+    "definition": "히브리어 하가브로 메뚜기와 함께 언급되는 뛰는 곤충으로 식품으로 깨끗함",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:22",
+      "민수기 13:33",
+      "이사야 40:22"
+    ]
+  },
+  {
+    "id": "entry-방종",
+    "word": "방종",
+    "definition": "법과 권위를 무시하는 뻔뻔스러운 태도로 히브리어 짐마와 그리스어 아셀게이아로 표현됨",
+    "difficulty": 2,
+    "references": [
+      "레위기 18:17, 19:29",
+      "갈라디아서 5:19",
+      "베드로후서 2:7"
+    ]
+  },
+  {
+    "id": "ark",
+    "word": "방주",
+    "definition": "노아의 가족과 동물들이 대홍수를 피하도록 만들어진 큰 배",
+    "difficulty": 1,
+    "references": [
+      "창세기 6:14-22"
+    ]
+  },
+  {
+    "id": "belly",
+    "word": "배1",
+    "definition": "몸통 앞부분 중 갈비뼈 아래로 소화 기관이 들어 있는 복부",
+    "difficulty": 2,
+    "references": [
+      "사사기 3:21, 22",
+      "잠언 13:25",
+      "욥기 1:21"
+    ]
+  },
+  {
+    "id": "ship",
+    "word": "배2",
+    "definition": "항해에 사용된 선박으로 고대부터 해상 운송과 어업에 활용됨",
+    "difficulty": 2,
+    "references": [
+      "신명기 28:68",
+      "에스겔 27:3-7",
+      "열왕기상 22:48"
+    ]
+  },
+  {
+    "id": "apostasy",
+    "word": "배교",
+    "definition": "그리스어 아포스타시아로 떨어져 서 있다는 뜻의 버림이나 반역을 의미함",
+    "difficulty": 2,
+    "references": [
+      "사도행전 21:21",
+      "사도행전 5:37",
+      "창세기 14:4"
+    ]
+  },
+  {
+    "id": "traitor",
+    "word": "배반자",
+    "definition": "신뢰를 저버리거나 불충실한 자로 가장 악명 높은 자는 이스가리옷 유다",
+    "difficulty": 2,
+    "references": [
+      "누가 6:16",
+      "요한 12:6",
+      "마태 26:14-16, 25"
+    ]
+  },
+  {
+    "id": "compensation",
+    "word": "배상보상",
+    "definition": "봉사나 손실 상해에 대해 상응하는 것으로 물어주거나 갚아주는 일",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 21:36",
+      "열왕기상 5:12",
+      "레위기 19:13",
+      "신명기 24:14, 15"
+    ]
+  },
+  {
+    "id": "heron",
+    "word": "백로",
+    "definition": "모세 율법에서 먹을 수 없는 부정한 새로 지정된 물가 새",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:13, 19",
+      "신명기 14:12, 18"
+    ]
+  },
+  {
+    "id": "entry-백발",
+    "word": "백발",
+    "definition": "나이가 들어 머리털 색소가 감소해 하얗게 된 머리로 지혜와 연륜을 상징",
+    "difficulty": 1,
+    "references": [
+      "룻기 4:15",
+      "사무엘상 12:2",
+      "열왕기상 2:6, 9",
+      "시편 71:18"
+    ]
+  },
+  {
+    "id": "ringworm",
+    "word": "백선",
+    "definition": "고리 모양 반점이 특징인 전염성 피부병으로 제사장 자격에 영향을 줌",
+    "difficulty": 2,
+    "references": [
+      "레위기 21:20",
+      "레위기 22:22"
+    ]
+  },
+  {
+    "id": "swan",
+    "word": "백조",
+    "definition": "목이 길고 가늘며 큰 물새로 율법에서 부정한 새로 분류됨",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:18",
+      "신명기 14:16"
+    ]
+  },
+  {
+    "id": "bagpipe",
+    "word": "백파이프",
+    "definition": "다니엘 3장에 나오는 아람어 숨폰야로 번역된 관악기",
+    "difficulty": 2,
+    "references": [
+      "다니엘 3:5, 10, 15"
+    ]
+  },
+  {
+    "id": "lily",
+    "word": "백합",
+    "definition": "히브리어 슈샨으로 다양한 큰 꽃을 통칭하며 솔로몬 성전 장식에도 사용됨",
+    "difficulty": 1,
+    "references": [
+      "열왕기상 7:19, 22, 26",
+      "아가 2:1, 2",
+      "아가 5:13"
+    ]
+  },
+  {
+    "id": "pergamum",
+    "word": "버가모",
+    "definition": "소아시아 미시아 지방의 도시로 계시록 일곱 회중 중 하나가 있던 곳",
+    "difficulty": 2,
+    "references": [
+      "계시록 1:11",
+      "계시록 2:12-17",
+      "계시록 2:13, 14"
+    ]
+  },
+  {
+    "id": "willow",
+    "word": "버드나무",
+    "definition": "히브리어 이름이 아랍어 사프사프에 해당하는 나무로 물가에서 자람",
+    "difficulty": 2,
+    "references": [
+      "에스겔 17:5",
+      "이사야 44:3, 4",
+      "레위기 23:40"
+    ]
+  },
+  {
+    "id": "mildew",
+    "word": "버짐병",
+    "definition": "곰팡이가 식물에 일으키는 병으로 불충실한 이스라엘이 겪은 재난 중 하나",
+    "difficulty": 2,
+    "references": [
+      "신명기 28:22",
+      "열왕기상 8:37-39",
+      "학개 2:17"
+    ]
+  },
+  {
+    "id": "butter",
+    "word": "버터",
+    "definition": "우유를 흔들어 만든 반액체 유제품으로 고대에 귀한 식품이었음",
+    "difficulty": 2,
+    "references": [
+      "욥기 20:17",
+      "사사기 5:25",
+      "잠언 30:33",
+      "창세기 18:8"
+    ]
+  },
+  {
+    "id": "lightning",
+    "word": "번개",
+    "definition": "구름 사이 전기 방전으로 생기는 불꽃으로 이스라엘 우기에 흔히 관찰됨",
+    "difficulty": 1,
+    "references": [
+      "욥기 37:3, 11",
+      "사무엘하 22:15",
+      "스가랴 9:14"
+    ]
+  },
+  {
+    "id": "translation",
+    "word": "번역",
+    "definition": "한 언어로 기록된 내용을 다른 언어로 옮기는 일",
+    "difficulty": 2,
+    "references": [
+      "느헤미야 8:8"
+    ]
+  },
+  {
+    "id": "burntoffering",
+    "word": "번제",
+    "definition": "제물을 제단 위에서 완전히 태워 바치던 희생 제물",
+    "difficulty": 2,
+    "references": [
+      "레위기 1:1-17"
+    ]
+  },
+  {
+    "id": "worm",
+    "word": "벌레",
+    "definition": "가늘고 기어 다니는 무른 동물로 주로 곤충 유충을 가리키며 부패를 상징",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 16:20, 24",
+      "이사야 14:11",
+      "욘나 4:7",
+      "욥기 25:6"
+    ]
+  },
+  {
+    "id": "entry-범죄와 처벌",
+    "word": "범죄와처벌",
+    "definition": "공의의 하느님이 시행하는 심판으로 첫 인간과 뱀에게 선고된 판결에서 시작됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 1:26",
+      "시편 37:28",
+      "로마서 2:13-15"
+    ]
+  },
+  {
+    "id": "illegitimate",
+    "word": "법규에어긋남",
+    "definition": "규정되지 않은 것을 바쳐 처벌받은 나답과 아비후의 사건에서 유래한 개념",
+    "difficulty": 3,
+    "references": [
+      "레위기 10:1, 2",
+      "민수기 3:4",
+      "출애굽기 30:34, 35"
+    ]
+  },
+  {
+    "id": "law",
+    "word": "법율법",
+    "definition": "정부가 제정해 사람들에게 적용하는 원칙과 규정으로 모세 율법을 포함함",
+    "difficulty": 2,
+    "references": [
+      "다니엘 6:5, 8",
+      "이사야 33:22",
+      "누가 2:29"
+    ]
+  },
+  {
+    "id": "entry-법정",
+    "word": "법정",
+    "definition": "여호와를 재판관으로 인정한 이스라엘의 사법 체계로 장로들과 제사장들이 운영함",
+    "difficulty": 2,
+    "references": [
+      "이사야 33:22",
+      "창세기 18:25",
+      "미가 6:2"
+    ]
+  },
+  {
+    "id": "pekah",
+    "word": "베가",
+    "definition": "기원전 778년부터 20년간 이스라엘을 통치한 왕으로 브가히야를 암살하고 즉위한 자",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 15:25, 27, 28",
+      "열왕기하 16:1, 5",
+      "이사야 7:1-7"
+    ]
+  },
+  {
+    "id": "becher",
+    "word": "베겔",
+    "definition": "베냐민의 아들들 중 둘째로 야곱 자손 명단에 나오는 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:21",
+      "역대기상 7:6"
+    ]
+  },
+  {
+    "id": "becorath",
+    "word": "베고랏",
+    "definition": "사울 왕의 조상으로 베냐민 지파 사람",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 9:1"
+    ]
+  },
+  {
+    "id": "benjamin",
+    "word": "베냐민",
+    "definition": "야곱의 막내아들이며 이스라엘의 한 지파의 이름이 된 사람",
+    "difficulty": 2,
+    "references": [
+      "창세기 35:16-19"
+    ]
+  },
+  {
+    "id": "bethany",
+    "word": "베다니",
+    "definition": "마리아와 마르다와 나사로가 살았고 예수가 자주 방문한 마을",
+    "difficulty": 2,
+    "references": [
+      "요한복음 11:1-6; 12:1-3"
+    ]
+  },
+  {
+    "id": "beten",
+    "word": "베덴",
+    "definition": "아셀 경계를 이루는 성읍 중 하나로 위치는 확실하지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:25"
+    ]
+  },
+  {
+    "id": "pethuel",
+    "word": "베두엘",
+    "definition": "예언자 요엘의 아버지",
+    "difficulty": 3,
+    "references": [
+      "요엘 1:1"
+    ]
+  },
+  {
+    "id": "peter",
+    "word": "베드로",
+    "definition": "예수의 열두 사도 가운데 한 사람으로, 초기 그리스도인 회중에서 중요한 역할을 한 사람",
+    "difficulty": 1,
+    "references": [
+      "마태복음 4:18-20",
+      "사도행전 2장"
+    ]
+  },
+  {
+    "id": "entry-베드로의 편지들",
+    "word": "베드로의편지들",
+    "definition": "사도 베드로가 작성한 그리스도인 그리스어 성경의 영감받은 두 편지",
+    "difficulty": 2,
+    "references": [
+      "베드로전서 1:1",
+      "베드로후서 1:1",
+      "베드로후서 3:1"
+    ]
+  },
+  {
+    "id": "firstpeter",
+    "word": "베드로전서",
+    "definition": "시련을 겪는 그리스도인들에게 희망과 거룩한 행실을 권한 편지",
+    "difficulty": 2,
+    "references": [
+      "베드로 전서 1:3-7",
+      "베드로 전서 2:9-12"
+    ]
+  },
+  {
+    "id": "secondpeter",
+    "word": "베드로후서",
+    "definition": "거짓 교사들을 경고하고 여호와의 날을 기다리도록 권한 편지",
+    "difficulty": 2,
+    "references": [
+      "베드로 후서 2:1-3",
+      "베드로 후서 3:10-13"
+    ]
+  },
+  {
+    "id": "bedeiah",
+    "word": "베드야",
+    "definition": "에스라의 권고로 타국인 아내를 내보낸 바니 자손 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 10:34, 35, 44"
+    ]
+  },
+  {
+    "id": "bethlehem",
+    "word": "베들레헴",
+    "definition": "다윗 왕의 고향이며 예수가 태어난 유다의 도시",
+    "difficulty": 1,
+    "references": [
+      "사무엘상 16:1",
+      "마태복음 2:1"
+    ]
+  },
+  {
+    "id": "bera",
+    "word": "베라",
+    "definition": "그돌라오멜에게 격퇴당한 소돔의 왕으로 아브라함이 조카 롯을 구출한 후 전리품을 돌려준 상대",
+    "difficulty": 3,
+    "references": [
+      "창세기 14:1-11",
+      "창세기 14:14-24"
+    ]
+  },
+  {
+    "id": "berechiah",
+    "word": "베레갸",
+    "definition": "게르솜 계통 레위 가문의 시므아의 아들로 성전 악사 아삽의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기상 6:39",
+      "역대기상 15:17",
+      "역대기상 25:1-9"
+    ]
+  },
+  {
+    "id": "peresh",
+    "word": "베레스1",
+    "definition": "므낫세 지파의 마길과 마아가의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:14, 16"
+    ]
+  },
+  {
+    "id": "perez",
+    "word": "베레스2",
+    "definition": "유다가 다말을 통해 낳은 쌍둥이 아들 중 하나로 제라보다 먼저 나옴",
+    "difficulty": 3,
+    "references": [
+      "창세기 38:24-30",
+      "룻기 4:12",
+      "역대기상 2:4, 5"
+    ]
+  },
+  {
+    "id": "entry-베레스-웃사",
+    "word": "베레스웃사",
+    "definition": "계약의 궤를 옮기다 웃사가 죽은 나곤의 타작마당에 붙여진 이름",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 6:4-10",
+      "역대기상 13:6-11"
+    ]
+  },
+  {
+    "id": "berea",
+    "word": "베레아",
+    "definition": "바울의 전파를 들은 사람들이 성경을 자세히 살펴본 마케도니아의 도시",
+    "difficulty": 3,
+    "references": [
+      "사도행전 17:10-13"
+    ]
+  },
+  {
+    "id": "bered",
+    "word": "베렛",
+    "definition": "에브라임의 손자로 수델라 계통의 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:20"
+    ]
+  },
+  {
+    "id": "berothah",
+    "word": "베로다",
+    "definition": "에스겔 환상에 나오는 이스라엘 북쪽 경계의 도시로 베로대와 동일시됨",
+    "difficulty": 3,
+    "references": [
+      "에스겔 47:16",
+      "사무엘하 8:8",
+      "역대기상 18:8"
+    ]
+  },
+  {
+    "id": "bernice",
+    "word": "베르니케",
+    "definition": "헤롯 아그리파 1세의 딸로 오라비 아그리파 2세와 함께 페스투스를 방문한 여자",
+    "difficulty": 3,
+    "references": [
+      "사도행전 25:13, 23",
+      "사도행전 26:1-30"
+    ]
+  },
+  {
+    "id": "persis",
+    "word": "베르시",
+    "definition": "로마의 사랑받은 그리스도인 여자로 바울이 인사를 전하며 칭찬한 자",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:12"
+    ]
+  },
+  {
+    "id": "beri",
+    "word": "베리",
+    "definition": "소파의 아들이자 아셀 지파 한 가족의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:36, 40"
+    ]
+  },
+  {
+    "id": "bebai",
+    "word": "베배",
+    "definition": "한 가족의 우두머리로 그 자손 600여 명이 스룹바벨과 함께 돌아옴",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:11",
+      "느헤미야 7:16",
+      "에스라 8:11"
+    ]
+  },
+  {
+    "id": "besai",
+    "word": "베새",
+    "definition": "스룹바벨과 함께 돌아온 느디님의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:49",
+      "느헤미야 7:52"
+    ]
+  },
+  {
+    "id": "bezek",
+    "word": "베섹",
+    "definition": "유다와 시므온이 가나안과 브리스 군사를 쳐부순 장소이자 사울이 암몬을 물리친 곳",
+    "difficulty": 3,
+    "references": [
+      "사사기 1:3-7",
+      "사무엘상 11:8-11"
+    ]
+  },
+  {
+    "id": "bezer",
+    "word": "베셀",
+    "definition": "아셀 지파 소파의 아들들 중 한 사람이자 레위 도피성",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30, 36, 37",
+      "신명기 4:41-43",
+      "여호수아 20:8"
+    ]
+  },
+  {
+    "id": "beulah",
+    "word": "베울라",
+    "definition": "이사야 62:4에 나오는 히브리어로 결혼한 자를 의미하며 시온의 회복을 상징",
+    "difficulty": 2,
+    "references": [
+      "이사야 62:4",
+      "이사야 54:1, 5, 6",
+      "갈라디아서 4:26-31"
+    ]
+  },
+  {
+    "id": "bezai",
+    "word": "베재",
+    "definition": "이스라엘 사람으로 그 자손 300여 명이 스룹바벨과 함께 돌아옴",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:17",
+      "느헤미야 7:23",
+      "느헤미야 10:14, 18"
+    ]
+  },
+  {
+    "id": "behth",
+    "word": "베트",
+    "definition": "히브리어 알파벳 두 번째 글자로 집을 의미함",
+    "difficulty": 3,
+    "references": [
+      "시편 119:9-16"
+    ]
+  },
+  {
+    "id": "behemoth",
+    "word": "베헤못",
+    "definition": "욥 40장에 나오는 거대한 짐승으로 하마나 물소 혹은 상징적 존재로 해석됨",
+    "difficulty": 2,
+    "references": [
+      "욥기 40:15-24"
+    ]
+  },
+  {
+    "id": "entry-벤-소헷",
+    "word": "벤소헷",
+    "definition": "유다 자손 중 이시의 아들이자 소헷의 형제로 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:20"
+    ]
+  },
+  {
+    "id": "entry-벤-하난",
+    "word": "벤하난",
+    "definition": "쉬몬의 네 아들 중 한 사람으로 유다 자손",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 20"
+    ]
+  },
+  {
+    "id": "entry-벤-하닷",
+    "word": "벤하닷",
+    "definition": "시리아 왕 세 명의 이름으로 하닷은 시리아 폭풍의 신",
+    "difficulty": 3,
+    "references": [
+      "열왕기상 15:16-21",
+      "열왕기상 20:1-6",
+      "역대기하 16:1-6"
+    ]
+  },
+  {
+    "id": "entry-벤-하일",
+    "word": "벤하일",
+    "definition": "여호사밧이 율법을 가르치도록 파견한 다섯 방백 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기하 17:7, 9"
+    ]
+  },
+  {
+    "id": "bethel",
+    "word": "벧엘",
+    "definition": "야곱이 하느님의 약속을 확인한 곳으로, 이스라엘의 중요한 장소가 된 도시",
+    "difficulty": 2,
+    "references": [
+      "창세기 28:10-19"
+    ]
+  },
+  {
+    "id": "bela",
+    "word": "벨라",
+    "definition": "베냐민의 맏아들로 이집트로 들어간 야곱 가족 중 한 명이자 한 가족의 시조",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:8, 21",
+      "민수기 26:38",
+      "역대기상 8:1-5"
+    ]
+  },
+  {
+    "id": "peleth",
+    "word": "벨레스",
+    "definition": "르우벤 사람으로 그 아들 온이 고라의 반역에 가담한 자",
+    "difficulty": 3,
+    "references": [
+      "민수기 16:1",
+      "역대기상 2:33"
+    ]
+  },
+  {
+    "id": "peleg",
+    "word": "벨렉",
+    "definition": "그의 시대에 땅이 나뉘었다고 기록된 에벨의 아들",
+    "difficulty": 3,
+    "references": [
+      "창세기 10:25; 11:16-19"
+    ]
+  },
+  {
+    "id": "pelet",
+    "word": "벨렛",
+    "definition": "유다 계보에서 갈렙 계통에 열거된 야대의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:47",
+      "역대기상 12:1-3"
+    ]
+  },
+  {
+    "id": "belial",
+    "word": "벨리알",
+    "definition": "쓸데없고 비열한 특질을 가리키는 히브리어로 사탄을 상징하기도 함",
+    "difficulty": 2,
+    "references": [
+      "신명기 15:9",
+      "시편 101:3",
+      "신명기 13:13"
+    ]
+  },
+  {
+    "id": "belshazzar",
+    "word": "벨사살",
+    "definition": "바빌론의 마지막 왕으로 잔치를 벌이던 밤에 왕국을 잃은 사람",
+    "difficulty": 3,
+    "references": [
+      "다니엘 5:1-6, 30, 31"
+    ]
+  },
+  {
+    "id": "entry-벳-가델",
+    "word": "벳가델",
+    "definition": "유다 족보에 나오는 이름으로 인명보다 지명으로 추정됨",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:50, 51"
+    ]
+  },
+  {
+    "id": "entry-벳-가물",
+    "word": "벳가물",
+    "definition": "모압 평원 지대의 도시로 디본 근처에 위치함",
+    "difficulty": 3,
+    "references": [
+      "예레미야 48:21, 23"
+    ]
+  },
+  {
+    "id": "entry-벳-니므라",
+    "word": "벳니므라",
+    "definition": "요르단 강 동편 갓 지파에 할당된 성읍으로 니므라라고도 불림",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:3, 34, 36",
+      "여호수아 13:27"
+    ]
+  },
+  {
+    "id": "entry-벳-다곤",
+    "word": "벳다곤",
+    "definition": "다곤 신의 이름을 딴 도시로 유다와 아셀 영토에 각각 있음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21, 41",
+      "여호수아 19:27"
+    ]
+  },
+  {
+    "id": "entry-벳-답부아",
+    "word": "벳답부아",
+    "definition": "헤브론 부근 구릉성 산지에 있던 유다의 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:48, 53",
+      "역대기상 2:42, 43"
+    ]
+  },
+  {
+    "id": "entry-벳-디블라다임",
+    "word": "벳디블라다임",
+    "definition": "모압의 도시로 알몬-디블라다임과 동일시되기도 함",
+    "difficulty": 3,
+    "references": [
+      "예레미야 48:22",
+      "민수기 33:46"
+    ]
+  },
+  {
+    "id": "entry-벳-라바",
+    "word": "벳라바",
+    "definition": "역대기상 4:12에 나오는 이름으로 에스돈이 아버지가 된 가문이나 장소",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:12"
+    ]
+  },
+  {
+    "id": "entry-벳-르홉",
+    "word": "벳르홉",
+    "definition": "아람 사람들의 왕국으로 단 지파가 라이스를 공격할 때 언급됨",
+    "difficulty": 3,
+    "references": [
+      "사사기 18:7, 28",
+      "사무엘하 10:6, 8"
+    ]
+  },
+  {
+    "id": "entry-벳-메르학",
+    "word": "벳메르학",
+    "definition": "압살롬의 반역 시 다윗이 멈추었던 예루살렘 외곽의 마지막 집",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 15:17, 23"
+    ]
+  },
+  {
+    "id": "bethphage",
+    "word": "벳바게",
+    "definition": "예루살렘 근처에서 예수가 제자들에게 나귀를 가져오게 한 마을",
+    "difficulty": 3,
+    "references": [
+      "마태복음 21:1-7"
+    ]
+  },
+  {
+    "id": "entry-벳-바라",
+    "word": "벳바라",
+    "definition": "기드온이 미디안을 추격하며 에브라임에게 점령하라 한 요르단 근처 지점",
+    "difficulty": 3,
+    "references": [
+      "사사기 7:24"
+    ]
+  },
+  {
+    "id": "entry-벳-바세스",
+    "word": "벳바세스",
+    "definition": "잇사갈의 경계 성읍으로 위치는 불확실함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:17, 21"
+    ]
+  },
+  {
+    "id": "entry-벳-벨렛",
+    "word": "벳벨렛",
+    "definition": "유다 상속지 남쪽에 있던 성읍으로 유배 후 다시 사람이 살게 됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:21, 27",
+      "느헤미야 11:26"
+    ]
+  },
+  {
+    "id": "bethzatha",
+    "word": "벳사다",
+    "definition": "예수께서 38년 된 병자를 고치신 못이 있는 예루살렘 근처 지명",
+    "difficulty": 3,
+    "references": [
+      "요한 5:1-9",
+      "요한 5:2"
+    ]
+  },
+  {
+    "id": "bethsaida",
+    "word": "벳새다",
+    "definition": "몇몇 사도들의 고향이며 예수가 많은 기적을 행한 갈릴리 호숫가의 마을",
+    "difficulty": 2,
+    "references": [
+      "요한복음 1:44",
+      "마가복음 8:22-26"
+    ]
+  },
+  {
+    "id": "bethshemesh",
+    "word": "벳세메스",
+    "definition": "블레셋 사람들이 돌려보낸 계약의 궤가 도착한 이스라엘의 도시",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 6:9-15"
+    ]
+  },
+  {
+    "id": "entry-벳-스안",
+    "word": "벳스안",
+    "definition": "요르단 골짜기에서 이스르엘 골짜기로 들어가는 전략적 요지의 가나안 요새 도시",
+    "difficulty": 3,
+    "references": [
+      "여호수아 17:11",
+      "사사기 1:27, 28",
+      "사무엘상 31:8-13"
+    ]
+  },
+  {
+    "id": "entry-벳-싯다",
+    "word": "벳싯다",
+    "definition": "미디안이 기드온에게 패후 도주하던 길에 언급된 성읍",
+    "difficulty": 3,
+    "references": [
+      "사사기 7:22"
+    ]
+  },
+  {
+    "id": "entry-벳-아낫",
+    "word": "벳아낫",
+    "definition": "납달리 지파에 할당된 요새 도시로 가나안 주민을 몰아내지 못함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:38, 39",
+      "사사기 1:33"
+    ]
+  },
+  {
+    "id": "entry-벳-아놋",
+    "word": "벳아놋",
+    "definition": "유다 산간 지방에 할당된 도시로 헤브론 북북동쪽 6킬로미터에 추정됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:59"
+    ]
+  },
+  {
+    "id": "entry-벳-아라바",
+    "word": "벳아라바",
+    "definition": "광야에 있는 유다 영토 내 도시로 베냐민과 유다 접경에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:61",
+      "여호수아 18:21, 22"
+    ]
+  },
+  {
+    "id": "entry-벳-아웬",
+    "word": "벳아웬",
+    "definition": "아이 옆에 있던 베냐민 영토의 성읍으로 베델 동쪽 광야에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 7:2",
+      "여호수아 18:11, 12",
+      "호세아 5:8"
+    ]
+  },
+  {
+    "id": "entry-벳-에덴",
+    "word": "벳에덴",
+    "definition": "아모스가 다마스쿠스에 대해 예언한 시리아의 도시로 비트아디니와 연관됨",
+    "difficulty": 3,
+    "references": [
+      "아모스 1:5",
+      "이사야 7:8"
+    ]
+  },
+  {
+    "id": "entry-벳-에멕",
+    "word": "벳에멕",
+    "definition": "아셀 영토에 있던 성읍으로 악고 북동쪽 8킬로미터에 추정됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:24, 27"
+    ]
+  },
+  {
+    "id": "entry-벳-에젤",
+    "word": "벳에젤",
+    "definition": "미가의 예언에만 언급된 유다의 성읍으로 재난이 임할 것이라고 예고됨",
+    "difficulty": 3,
+    "references": [
+      "미가 1:11"
+    ]
+  },
+  {
+    "id": "entry-벳-여시못",
+    "word": "벳여시못",
+    "definition": "이스라엘이 가나안 진입 전 모압 평원에 진친 지역의 남단 지점",
+    "difficulty": 3,
+    "references": [
+      "민수기 33:48, 49",
+      "여호수아 12:1-3"
+    ]
+  },
+  {
+    "id": "entry-벳-줄",
+    "word": "벳줄",
+    "definition": "유다 산간 지방의 성읍으로 할훌과 그돌 사이에 언급됨",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:58",
+      "역대기하 11:5-12"
+    ]
+  },
+  {
+    "id": "entry-벳-프올",
+    "word": "벳프올",
+    "definition": "이스라엘이 광야 여행 마지막 해에 진친 곳으로 프올의 바알 숭배와 관련됨",
+    "difficulty": 3,
+    "references": [
+      "신명기 3:29",
+      "신명기 4:46",
+      "민수기 25:1-9"
+    ]
+  },
+  {
+    "id": "entry-벳-하란",
+    "word": "벳하란",
+    "definition": "요르단 강 동쪽의 도시로 갓 지파가 요청한 영토에 있던 요새 도시",
+    "difficulty": 3,
+    "references": [
+      "민수기 32:1, 34, 36",
+      "여호수아 13:27"
+    ]
+  },
+  {
+    "id": "entry-벳-호글라",
+    "word": "벳호글라",
+    "definition": "베냐민과 유다 경계에 있던 베냐민 성읍으로 예리코 남동쪽에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:6",
+      "여호수아 18:19, 21"
+    ]
+  },
+  {
+    "id": "entry-벳-호론",
+    "word": "벳호론",
+    "definition": "위와 아래 두 성읍으로 해안 평야에서 베델로 가는 전략적 도로에 위치함",
+    "difficulty": 3,
+    "references": [
+      "여호수아 16:3, 5",
+      "여호수아 18:13, 14",
+      "역대기상 6:68"
+    ]
+  },
+  {
+    "id": "flea",
+    "word": "벼룩",
+    "definition": "작고 날개 없는 기생 곤충으로 다윗이 자신을 비유할 때 언급함",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 24:14",
+      "사무엘상 26:20"
+    ]
+  },
+  {
+    "id": "brick",
+    "word": "벽돌",
+    "definition": "점토나 진흙으로 만든 건축 재료로 바벨 탑 등 고대 건축에 널리 쓰임",
+    "difficulty": 1,
+    "references": [
+      "창세기 11:3",
+      "출애굽기 5:7-19",
+      "이사야 65:3"
+    ]
+  },
+  {
+    "id": "walls",
+    "word": "벽성벽담",
+    "definition": "방벽과 경계 표시 역할을 하는 돌이나 벽돌 구조물로 도시 방어에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 5:11",
+      "열왕기상 6:2, 7",
+      "역대기하 3:4"
+    ]
+  },
+  {
+    "id": "jasper",
+    "word": "벽옥",
+    "definition": "산화철이 함유된 불투명 석영으로 대제사장 흉패와 새 예루살렘 기초석에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 28:18",
+      "출애굽기 39:11",
+      "계시록 21:11, 19"
+    ]
+  },
+  {
+    "id": "transfiguration",
+    "word": "변형",
+    "definition": "예수의 얼굴이 해처럼 빛나고 겉옷이 눈부시게 된 사건으로 베드로 야고보 요한이 목격함",
+    "difficulty": 1,
+    "references": [
+      "마태 17:1-9",
+      "마가 9:2-10",
+      "누가 9:28-36"
+    ]
+  },
+  {
+    "id": "chariot",
+    "word": "병거",
+    "definition": "바퀴 둘에 말이 이끄는 전투용 수레로 고대 전쟁의 핵심 무기",
+    "difficulty": 1,
+    "references": [
+      "열왕기상 4:26",
+      "창세기 41:43",
+      "열왕기상 1:5"
+    ]
+  },
+  {
+    "id": "entry-병거 도시",
+    "word": "병거도시",
+    "definition": "병거를 배치해 둔 솔로몬의 전략적 도시들",
+    "difficulty": 2,
+    "references": [
+      "역대기하 1:14",
+      "열왕기상 9:17-19",
+      "열왕기상 10:26"
+    ]
+  },
+  {
+    "id": "healing",
+    "word": "병고침",
+    "definition": "질병과 결함을 고쳐 건강을 회복시키는 것으로 영적 회복도 포함함",
+    "difficulty": 2,
+    "references": [
+      "마태 4:23, 24",
+      "시편 103:2-4",
+      "출애굽기 15:26"
+    ]
+  },
+  {
+    "id": "quartermaster",
+    "word": "병참장교",
+    "definition": "군대 보급품을 관리하던 장교로 시드기야 왕의 세리야가 언급됨",
+    "difficulty": 2,
+    "references": [
+      "예레미야 51:59-64"
+    ]
+  },
+  {
+    "id": "entry-보게렛-핫스바임",
+    "word": "보게렛핫스바임",
+    "definition": "솔로몬의 종들의 자손 중 한 가족의 우두머리로 유배 후 돌아옴",
+    "difficulty": 2,
+    "references": [
+      "에스라 2:55, 57",
+      "느헤미야 7:59"
+    ]
+  },
+  {
+    "id": "treasury",
+    "word": "보고",
+    "definition": "귀중품을 안전하게 보관하는 장소로 성소의 헌물 금을 간수하는 역할을 함",
+    "difficulty": 2,
+    "references": [
+      "민수기 31:54",
+      "여호수아 6:24",
+      "역대기상 26:20-28"
+    ]
+  },
+  {
+    "id": "custody",
+    "word": "보관보호",
+    "definition": "어떤 것을 돌보고 관리하며 사람을 잘 보살피는 일",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 22:10-13",
+      "창세기 31:39",
+      "창세기 37:18-30"
+    ]
+  },
+  {
+    "id": "bocheru",
+    "word": "보그루",
+    "definition": "사울 왕과 요나단의 자손으로 베냐민 지파 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:38",
+      "역대기상 9:44"
+    ]
+  },
+  {
+    "id": "nest",
+    "word": "보금자리",
+    "definition": "새나 동물이 새끼를 키우기 위해 마련한 곳으로 은신처와 거처를 비유하기도 함",
+    "difficulty": 2,
+    "references": [
+      "잠언 27:8",
+      "이사야 10:14",
+      "신명기 32:11"
+    ]
+  },
+  {
+    "id": "bochim",
+    "word": "보김",
+    "definition": "여호와의 천사가 이스라엘을 책망한 장소로 백성이 울어 붙여진 이름",
+    "difficulty": 3,
+    "references": [
+      "사사기 2:1-5"
+    ]
+  },
+  {
+    "id": "potiphar",
+    "word": "보디발",
+    "definition": "이집트 궁정 관리이자 파라오의 경호 대장으로 요셉을 산 주인",
+    "difficulty": 3,
+    "references": [
+      "창세기 37:36",
+      "창세기 39:1-6",
+      "창세기 39:7-20"
+    ]
+  },
+  {
+    "id": "potiphera",
+    "word": "보디베라",
+    "definition": "온의 제사장으로 요셉의 장인이며 아스낫의 아버지",
+    "difficulty": 3,
+    "references": [
+      "창세기 41:45, 50",
+      "창세기 46:20"
+    ]
+  },
+  {
+    "id": "poratha",
+    "word": "보라다",
+    "definition": "하만의 아들 열 명 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스더 9:8, 10"
+    ]
+  },
+  {
+    "id": "fortunatus",
+    "word": "보르두나도",
+    "definition": "고린도 회중 성원으로 스데바나 아가이고와 함께 에베소의 바울을 방문함",
+    "difficulty": 3,
+    "references": [
+      "고린도전서 16:17, 18",
+      "고린도전서 1:11"
+    ]
+  },
+  {
+    "id": "barley",
+    "word": "보리",
+    "definition": "고대부터 경작된 중요 곡물로 이스라엘 주요 식량이자 첫 열매 제물에 사용됨",
+    "difficulty": 1,
+    "references": [
+      "신명기 8:8",
+      "룻기 1:22",
+      "출애굽기 9:31, 32"
+    ]
+  },
+  {
+    "id": "publius",
+    "word": "보블리오",
+    "definition": "몰타의 부유한 토지 소유자로 파선한 바울 일행을 친절히 대접한 자",
+    "difficulty": 2,
+    "references": [
+      "사도행전 28:7, 8"
+    ]
+  },
+  {
+    "id": "jewel",
+    "word": "보석",
+    "definition": "성경 시대에 장식품이나 성막과 제사장의 의복을 꾸미는 데 사용된 귀한 돌",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 28:15-21; 계시록 21:19, 20"
+    ]
+  },
+  {
+    "id": "entry-보석과 귀한 돌",
+    "word": "보석과귀한돌",
+    "definition": "귀금속에 박아 만든 장신구로 대제사장 흉패와 새 예루살렘 기초석에 사용됨",
+    "difficulty": 2,
+    "references": [
+      "에스겔 28:12, 13",
+      "창세기 2:11, 12",
+      "열왕기상 10:11"
+    ]
+  },
+  {
+    "id": "bozez",
+    "word": "보세스",
+    "definition": "요나단이 블레셋을 공격할 때 언급된 두 바위 중 하나",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 14:4-14"
+    ]
+  },
+  {
+    "id": "bozkath",
+    "word": "보스갓",
+    "definition": "유다 상속지의 성읍으로 요시야 왕의 외할아버지 아다야의 고향",
+    "difficulty": 2,
+    "references": [
+      "여호수아 15:39",
+      "열왕기하 22:1"
+    ]
+  },
+  {
+    "id": "bozrah",
+    "word": "보스라",
+    "definition": "에돔의 탁월한 도시로 황폐될 것이 예언된 곳",
+    "difficulty": 2,
+    "references": [
+      "창세기 36:33",
+      "이사야 34:5, 6",
+      "예레미야 49:13, 22"
+    ]
+  },
+  {
+    "id": "boanerges",
+    "word": "보아너게",
+    "definition": "예수가 야고보와 요한에게 붙인 별명으로 우뢰의 아들이라는 뜻",
+    "difficulty": 2,
+    "references": [
+      "마가 3:17",
+      "누가 9:54"
+    ]
+  },
+  {
+    "id": "boaz",
+    "word": "보아스",
+    "definition": "룻에게 친절을 베풀고 그와 결혼해 다윗 왕의 조상이 된 사람",
+    "difficulty": 2,
+    "references": [
+      "룻기 2:8-12; 4:9-17"
+    ]
+  },
+  {
+    "id": "entry-보아스, I",
+    "word": "보아스1",
+    "definition": "베들레헴의 부유한 토지 소유자로 룻과 결혼해 메시아 가계의 연결 고리가 됨",
+    "difficulty": 1,
+    "references": [
+      "룻기 2:1",
+      "마태 1:5",
+      "역대기상 2:3-11"
+    ]
+  },
+  {
+    "id": "retribution",
+    "word": "보응",
+    "definition": "당연히 받아야 할 상이나 벌로 특히 악에 대한 응보를 가리킴",
+    "difficulty": 2,
+    "references": [
+      "신명기 32:35, 41",
+      "히브리서 10:30"
+    ]
+  },
+  {
+    "id": "surety",
+    "word": "보증보증인",
+    "definition": "채무 이행을 보장하는 것으로 시편 필자가 여호와를 자신의 보증으로 탄원함",
+    "difficulty": 2,
+    "references": [
+      "시편 119:122",
+      "욥기 17:3",
+      "잠언 11:21"
+    ]
+  },
+  {
+    "id": "bohan",
+    "word": "보한",
+    "definition": "르우벤 자손으로 유다 영토 경계를 표시하는 돌의 이름과 관련된 인물",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:6",
+      "여호수아 18:17"
+    ]
+  },
+  {
+    "id": "vengeance",
+    "word": "복수",
+    "definition": "손상이나 모욕을 갚기 위해 처벌을 내리는 것으로 공의의 달성을 의미함",
+    "difficulty": 1,
+    "references": [
+      "신명기 32:35",
+      "시편 94:1",
+      "로마서 12:19",
+      "히브리서 10:30"
+    ]
+  },
+  {
+    "id": "gospel",
+    "word": "복음",
+    "definition": "하느님의 왕국과 예수에 관한 좋은 소식",
+    "difficulty": 1,
+    "references": [
+      "마가복음 1:14, 15"
+    ]
+  },
+  {
+    "id": "preachingwork",
+    "word": "복음 전파",
+    "definition": "하느님의 왕국에 관한 좋은 소식을 사람들에게 알리는 활동",
+    "difficulty": 1,
+    "references": [
+      "마태복음 24:14",
+      "사도행전 20:20"
+    ]
+  },
+  {
+    "id": "evangelizer",
+    "word": "복음전파자",
+    "definition": "좋은 소식을 전파하는 사람으로 그리스어 유앙겔리스테스에서 유래함",
+    "difficulty": 2,
+    "references": [
+      "나훔 1:15",
+      "마태 4:23",
+      "로마서 8:20"
+    ]
+  },
+  {
+    "id": "submissiveness",
+    "word": "복종",
+    "definition": "상위자나 법에 기꺼이 순응하여 굴복하는 것으로 예수의 순응도 포함됨",
+    "difficulty": 2,
+    "references": [
+      "고린도전서 15:27, 28",
+      "에베소서 5:24",
+      "야고보서 4:7"
+    ]
+  },
+  {
+    "id": "nature",
+    "word": "본성자연",
+    "definition": "사물의 근본적 특성이나 사람의 타고난 성품을 가리키는 개념",
+    "difficulty": 2,
+    "references": [
+      "야고보서 3:7",
+      "창세기 1:20-28",
+      "베드로후서 1:4"
+    ]
+  },
+  {
+    "id": "ministry",
+    "word": "봉사의직무",
+    "definition": "상위자의 권위를 받들어 수행하는 봉사로 레위 사람들과 예언자들이 감당함",
+    "difficulty": 2,
+    "references": [
+      "신명기 10:8",
+      "마태 28:19, 20",
+      "고린도후서 5:18"
+    ]
+  },
+  {
+    "id": "entry-봉헌 축제",
+    "word": "봉헌축제",
+    "definition": "안티오코스 4세의 더럽힘 후 성전을 다시 봉헌한 사건을 기념하는 유대인 축제",
+    "difficulty": 2,
+    "references": [
+      "요한 10:22, 23",
+      "에스더 9:18-32"
+    ]
+  },
+  {
+    "id": "dedication",
+    "word": "봉헌헌신",
+    "definition": "신성한 목적으로 구별하거나 분리하는 것으로 히브리어 나자르에서 유래함",
+    "difficulty": 2,
+    "references": [
+      "레위기 15:31",
+      "에스겔 14:7",
+      "민수기 6:4-6"
+    ]
+  },
+  {
+    "id": "phoenix",
+    "word": "뵈닉스",
+    "definition": "크레타의 항구로 바울이 탄 배가 겨울 정박을 위해 향하던 곳",
+    "difficulty": 2,
+    "references": [
+      "사도행전 27:12",
+      "사도행전 27:13-28:1"
+    ]
+  },
+  {
+    "id": "phoebe",
+    "word": "뵈베",
+    "definition": "겐그레아 회중의 그리스도인 자매로 바울이 로마 교회에 추천한 사람",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:1, 2"
+    ]
+  },
+  {
+    "id": "adjutant",
+    "word": "부관",
+    "definition": "병거에 탄 세 번째 전사에서 유래한 직위로 지휘관이나 전사를 의미함",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 14:7",
+      "열왕기상 9:22",
+      "열왕기하 7:2"
+    ]
+  },
+  {
+    "id": "bunah",
+    "word": "부나",
+    "definition": "유다 지파에 속한 여라므엘의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:3, 25"
+    ]
+  },
+  {
+    "id": "punon",
+    "word": "부논",
+    "definition": "이스라엘이 호르 산을 떠난 후 진친 살모나와 오봇 사이의 장소",
+    "difficulty": 2,
+    "references": [
+      "민수기 33:41-43"
+    ]
+  },
+  {
+    "id": "bottle",
+    "word": "부대",
+    "definition": "물이나 기름 포도주 등을 담던 가죽 용기로 고대에 널리 사용됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 21:14",
+      "여호수아 9:13",
+      "마태 9:17"
+    ]
+  },
+  {
+    "id": "pudens",
+    "word": "부데",
+    "definition": "사도 바울 말년의 동료로 디모데에게 인사를 전한 자",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 4:21"
+    ]
+  },
+  {
+    "id": "gentleness",
+    "word": "부드러움",
+    "definition": "성향이나 태도가 온화한 것으로 거칠음의 반대이자 겸손과 관련됨",
+    "difficulty": 2,
+    "references": [
+      "디모데후서 2:24",
+      "민수기 12:3",
+      "데살로니가전서 2:7"
+    ]
+  },
+  {
+    "id": "putiel",
+    "word": "부디엘",
+    "definition": "아론의 아들 엘르아살의 장인이자 비느하스의 외할아버지",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 6:25"
+    ]
+  },
+  {
+    "id": "purah",
+    "word": "부라",
+    "definition": "기드온의 수종자로 무기를 드는 자이자 미디안 진영 정탐에 동행함",
+    "difficulty": 3,
+    "references": [
+      "사사기 7:9-15"
+    ]
+  },
+  {
+    "id": "pyrrhus",
+    "word": "부로",
+    "definition": "바울 3차 선교 여행에 동행한 소바더의 아버지인 베레아 사람",
+    "difficulty": 3,
+    "references": [
+      "사도행전 20:3, 4"
+    ]
+  },
+  {
+    "id": "muzzle",
+    "word": "부리망",
+    "definition": "동물의 입에 씌워 물거나 먹지 못하게 하는 도구",
+    "difficulty": 2,
+    "references": [
+      "신명기 25:4",
+      "디모데전서 5:18",
+      "고린도전서 9:8-14"
+    ]
+  },
+  {
+    "id": "purim",
+    "word": "부림",
+    "definition": "아달월 14, 15일에 열린 제비 축제로 하만의 음모에서 구원받은 것을 기념함",
+    "difficulty": 2,
+    "references": [
+      "에스더 9:21",
+      "에스더 3:7",
+      "에스더 9:24-26"
+    ]
+  },
+  {
+    "id": "buz",
+    "word": "부스",
+    "definition": "아브라함의 형제 나홀의 아들로 리브가의 삼촌이자 한 족속의 조상",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:20-23",
+      "욥기 32:2, 6",
+      "예레미야 25:23"
+    ]
+  },
+  {
+    "id": "buzi",
+    "word": "부시",
+    "definition": "예언자 에스겔의 아버지인 레위 지파 제사장",
+    "difficulty": 3,
+    "references": [
+      "에스겔 1:3"
+    ]
+  },
+  {
+    "id": "flint",
+    "word": "부싯돌",
+    "definition": "강철보다 단단한 돌로 불꽃을 일으키며 단단함과 인내의 비유로 사용됨",
+    "difficulty": 2,
+    "references": [
+      "이사야 5:28",
+      "이사야 50:7",
+      "출애굽기 4:25",
+      "여호수아 5:2, 3"
+    ]
+  },
+  {
+    "id": "puah",
+    "word": "부아",
+    "definition": "두 개의 유사한 히브리어 이름으로 이집트 산파와 이스라엘 사사가 있음",
+    "difficulty": 2,
+    "references": [
+      "역대기상 7:1",
+      "출애굽기 1:15-21",
+      "사사기 10:1"
+    ]
+  },
+  {
+    "id": "puvah",
+    "word": "부와",
+    "definition": "잇사갈의 아들로 그 자손은 부니 사람들로 불림",
+    "difficulty": 2,
+    "references": [
+      "창세기 46:13",
+      "민수기 26:23",
+      "역대기상 7:1"
+    ]
+  },
+  {
+    "id": "uncleanness",
+    "word": "부정",
+    "definition": "하느님의 숭배에 참여하기에 합당하지 않은 의식적 또는 도덕적 상태",
+    "difficulty": 3,
+    "references": [
+      "레위기 15:31; 고린도 후서 7:1"
+    ]
+  },
+  {
+    "id": "incorruption",
+    "word": "부패하지않음",
+    "definition": "썩거나 파멸되지 않는 몸의 특질로 부활된 몸의 속성",
+    "difficulty": 2,
+    "references": [
+      "고린도후서 7:2",
+      "고린도전서 15:33",
+      "베드로후서 2:12"
+    ]
+  },
+  {
+    "id": "resurrection",
+    "word": "부활",
+    "definition": "죽은 사람이 하느님의 능력으로 다시 살아나는 일",
+    "difficulty": 1,
+    "references": [
+      "요한복음 5:28, 29"
+    ]
+  },
+  {
+    "id": "bukki",
+    "word": "북기",
+    "definition": "약속의 땅 분배를 지원하도록 지정된 단 지파 수장으로 요글리의 아들",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:16-18, 22",
+      "역대기상 6:5, 51",
+      "에스라 7:1-6"
+    ]
+  },
+  {
+    "id": "bukkiah",
+    "word": "북기야",
+    "definition": "레위 지파 헤만의 아들로 다윗이 조직한 24 악사 집단 중 여섯째 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 25:1, 4, 9, 13, 31"
+    ]
+  },
+  {
+    "id": "north",
+    "word": "북쪽",
+    "definition": "동쪽을 기준으로 왼쪽 방향이자 성경에서 하느님의 원천을 상징하기도 함",
+    "difficulty": 2,
+    "references": [
+      "창세기 14:15",
+      "시편 107:3",
+      "이사야 43:6",
+      "누가 13:29"
+    ]
+  },
+  {
+    "id": "anger",
+    "word": "분노",
+    "definition": "히브리어 아프로 코에서 유래한 개념으로 정의로운 진노와 인간적 화를 구분함",
+    "difficulty": 1,
+    "references": [
+      "시편 18:7, 8",
+      "에스겔 38:18",
+      "신명기 10:17, 18"
+    ]
+  },
+  {
+    "id": "bunni",
+    "word": "분니",
+    "definition": "레위 사람으로 느헤미야 성벽 재건 후 예루살렘에 살도록 선택된 자의 조상",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 11:1, 15",
+      "느헤미야 9:4",
+      "느헤미야 10:14, 15"
+    ]
+  },
+  {
+    "id": "discernment",
+    "word": "분별",
+    "definition": "무엇이 옳고 그른지 또는 어떤 일이 지혜로운지 판단하는 능력",
+    "difficulty": 3,
+    "references": [
+      "히브리서 5:14; 빌립보서 1:9, 10"
+    ]
+  },
+  {
+    "id": "strife",
+    "word": "분쟁",
+    "definition": "적의로 인해 다투는 것으로 미움과 분노가 원인이 됨",
+    "difficulty": 2,
+    "references": [
+      "잠언 10:12",
+      "잠언 15:18",
+      "잠언 29:22"
+    ]
+  },
+  {
+    "id": "sect",
+    "word": "분파",
+    "definition": "그리스어 하이레시스에서 유래한 말로 선택을 통해 분리된 집단을 가리킴",
+    "difficulty": 2,
+    "references": [
+      "사도행전 5:17",
+      "사도행전 15:5",
+      "사도행전 24:5, 14"
+    ]
+  },
+  {
+    "id": "chalk",
+    "word": "분필",
+    "definition": "히브리어 세레드로 목공이 표시를 하기 위해 사용하는 붉은 가루",
+    "difficulty": 2,
+    "references": [
+      "이사야 44:13"
+    ]
+  },
+  {
+    "id": "incensealtar",
+    "word": "분향단",
+    "definition": "성소 안에서 향을 피우도록 만든 제단",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 30:1-10"
+    ]
+  },
+  {
+    "id": "entry-불 그릇",
+    "word": "불그릇",
+    "definition": "성소 봉사에 사용된 금과 놋쇠 그릇으로 심지 거두기와 향 태우기에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 25:38",
+      "출애굽기 27:3",
+      "레위기 10:1"
+    ]
+  },
+  {
+    "id": "extinguishers",
+    "word": "불끄는기구",
+    "definition": "히브리어 메잠메레트로 심지 자르는 가위나 불집게를 의미함",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 7:50",
+      "열왕기하 25:14",
+      "역대기하 4:22"
+    ]
+  },
+  {
+    "id": "immortality",
+    "word": "불멸성",
+    "definition": "그리스어 아타나시아로 죽지 아니함을 의미하며 부활된 몸의 속성",
+    "difficulty": 2,
+    "references": [
+      "고린도전서 15:53, 54",
+      "디모데전서 6:16",
+      "로마서 2:7"
+    ]
+  },
+  {
+    "id": "entry-불못",
+    "word": "불못",
+    "definition": "계시록에 나오는 상징적 표현으로 둘째 사망을 의미함",
+    "difficulty": 2,
+    "references": [
+      "계시록 20:14",
+      "계시록 21:8",
+      "계시록 19:20"
+    ]
+  },
+  {
+    "id": "entry-불뱀",
+    "word": "불뱀",
+    "definition": "히브리어 사라프로 불타는 자를 의미하며 이스라엘을 친 독뱀",
+    "difficulty": 2,
+    "references": [
+      "이사야 6:2",
+      "민수기 21:6-9",
+      "요한 3:14, 15"
+    ]
+  },
+  {
+    "id": "disobedience",
+    "word": "불순종",
+    "definition": "하느님이나 정당한 권위가 주는 지시를 고의로 따르지 않는 행동",
+    "difficulty": 2,
+    "references": [
+      "창세기 3:1-6; 로마서 5:19"
+    ]
+  },
+  {
+    "id": "pity",
+    "word": "불쌍히여김연민",
+    "definition": "고난 받는 자에 대한 부드러운 감정으로 히브리어 라하밈으로 표현됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 43:14, 30",
+      "시편 40:11",
+      "열왕기상 8:50"
+    ]
+  },
+  {
+    "id": "bul",
+    "word": "불월",
+    "definition": "이스라엘 종교력 여덟째 달로 10월과 11월에 해당함",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 6:37, 38",
+      "창세기 7:11"
+    ]
+  },
+  {
+    "id": "barrenness",
+    "word": "불임",
+    "definition": "아이를 낳을 수 없는 상태로 히브리어 아카르와 갈무드로 표현됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 11:30",
+      "이사야 49:21",
+      "잠언 30:16"
+    ]
+  },
+  {
+    "id": "sardonyx",
+    "word": "붉은줄마노",
+    "definition": "유백색 옥수와 붉은 홍옥수가 층을 이루는 장식용 돌",
+    "difficulty": 2,
+    "references": [
+      "계시록 21:19, 20"
+    ]
+  },
+  {
+    "id": "pekahiah",
+    "word": "브가히야",
+    "definition": "이스라엘 왕 므나헴의 아들로 2년 통치 후 베가에게 암살됨",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 15:22-26"
+    ]
+  },
+  {
+    "id": "pekod",
+    "word": "브곳",
+    "definition": "바빌론 인근 지역으로 예루살렘 심판을 집행할 군대에 포함됨",
+    "difficulty": 2,
+    "references": [
+      "에스겔 23:4, 22-26",
+      "예레미야 50:21"
+    ]
+  },
+  {
+    "id": "benaiah",
+    "word": "브나야",
+    "definition": "여호야다의 아들로 다윗의 용사 중 뛰어난 전사이자 솔로몬의 군사령관",
+    "difficulty": 2,
+    "references": [
+      "역대기상 27:5, 6",
+      "사무엘하 23:20-23",
+      "사무엘하 8:18"
+    ]
+  },
+  {
+    "id": "entry-브네-브락",
+    "word": "브네브락",
+    "definition": "단 지파의 도시로 텔아비브 근처에 위치함",
+    "difficulty": 2,
+    "references": [
+      "여호수아 19:40, 45"
+    ]
+  },
+  {
+    "id": "entry-브네-야아간",
+    "word": "브네야아간",
+    "definition": "이스라엘이 광야 여행 중 머물렀던 장소",
+    "difficulty": 2,
+    "references": [
+      "민수기 33:31, 32",
+      "창세기 36:27"
+    ]
+  },
+  {
+    "id": "beno",
+    "word": "브노",
+    "definition": "다윗 시대의 므라리 자손 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:20, 26, 27"
+    ]
+  },
+  {
+    "id": "penuel",
+    "word": "브누엘",
+    "definition": "유다 지파의 그돌의 아버지이자 야곱이 천사와 씨른 곳의 지명",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 4",
+      "사사기 8:4-9, 17",
+      "열왕기상 12:25"
+    ]
+  },
+  {
+    "id": "peninnah",
+    "word": "브닌나",
+    "definition": "엘가나의 아내로 한나를 조롱하던 자녀가 많은 여자",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 1:1-8"
+    ]
+  },
+  {
+    "id": "pedahzur",
+    "word": "브다술",
+    "definition": "므낫세 지파 사람으로 가말리엘의 아버지",
+    "difficulty": 3,
+    "references": [
+      "민수기 1:10, 16",
+      "민수기 2:20",
+      "민수기 7:54, 59"
+    ]
+  },
+  {
+    "id": "pedaiah",
+    "word": "브다야",
+    "definition": "요르단 강 서쪽 므낫세 반 지파 방백 요엘의 아버지",
+    "difficulty": 3,
+    "references": [
+      "역대기상 27:20, 22",
+      "역대기상 3:17-19",
+      "에스라 5:2"
+    ]
+  },
+  {
+    "id": "pedahel",
+    "word": "브다헬",
+    "definition": "납달리 수장으로 약속의 땅 분배를 도운 암미훗의 아들",
+    "difficulty": 3,
+    "references": [
+      "민수기 34:16, 17, 28"
+    ]
+  },
+  {
+    "id": "pethahiah",
+    "word": "브다히야",
+    "definition": "다윗이 조직한 24 제사장 조 중 열아홉째 조로 선택된 가문",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:5-7, 16",
+      "에스라 10:23",
+      "느헤미야 11:24"
+    ]
+  },
+  {
+    "id": "bedan",
+    "word": "브단",
+    "definition": "이스라엘을 구출한 인물로 기드온 입다 사무엘과 함께 열거됨",
+    "difficulty": 3,
+    "references": [
+      "사무엘상 12:11",
+      "역대기상 7:17"
+    ]
+  },
+  {
+    "id": "bedad",
+    "word": "브닷",
+    "definition": "에돔 왕 하닷의 아버지로 이스라엘 왕 이전에 통치한 자",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:31, 35",
+      "역대기상 1:43, 46"
+    ]
+  },
+  {
+    "id": "entry-브델륨 고무",
+    "word": "브델륨고무",
+    "definition": "몰약과 비슷한 향기로운 수지성 고무로 아라비아와 인도에서 생산됨",
+    "difficulty": 2,
+    "references": [
+      "창세기 2:11, 12",
+      "민수기 11:7",
+      "출애굽기 16:14"
+    ]
+  },
+  {
+    "id": "betonim",
+    "word": "브도님",
+    "definition": "갓 지파에 선물로 준 요르단 강 동쪽의 도시",
+    "difficulty": 2,
+    "references": [
+      "여호수아 13:24-27"
+    ]
+  },
+  {
+    "id": "pethor",
+    "word": "브돌",
+    "definition": "발람의 고향으로 유프라테스 강 근처의 아람 지역 성읍",
+    "difficulty": 2,
+    "references": [
+      "민수기 22:5",
+      "민수기 23:7",
+      "신명기 23:4"
+    ]
+  },
+  {
+    "id": "bethuel",
+    "word": "브두엘",
+    "definition": "아브라함의 조카로 나홀의 아들이자 리브가와 라반의 아버지",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:20, 22",
+      "창세기 24:15, 24, 29",
+      "창세기 25:20"
+    ]
+  },
+  {
+    "id": "beracah",
+    "word": "브라가",
+    "definition": "활을 잘 다루던 베냐민 지파 용사로 시글락에서 다윗과 합류함",
+    "difficulty": 2,
+    "references": [
+      "역대기상 12:1-3",
+      "역대기하 20:26"
+    ]
+  },
+  {
+    "id": "beraiah",
+    "word": "브라야",
+    "definition": "시므이의 아들로 예루살렘에 살던 베냐민 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:1, 21, 28"
+    ]
+  },
+  {
+    "id": "prochorus",
+    "word": "브로고로",
+    "definition": "예루살렘 회중에서 음식 배분을 위해 임명된 일곱 사람 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "사도행전 6:1-6"
+    ]
+  },
+  {
+    "id": "brooch",
+    "word": "브로치",
+    "definition": "금속 장식용 걸쇠로 핀이 있어 옷에 고정하며 고대 남녀가 사용함",
+    "difficulty": 3,
+    "references": [
+      "출애굽기 35:21, 22",
+      "열왕기하 19:28"
+    ]
+  },
+  {
+    "id": "peruda",
+    "word": "브루다",
+    "definition": "솔로몬의 종들 가운데 한 가족의 조상으로 브리다로도 불림",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:55",
+      "느헤미야 7:57"
+    ]
+  },
+  {
+    "id": "perida",
+    "word": "브리다",
+    "definition": "솔로몬의 종들 가운데 한 가족의 조상으로 브루다와 동일시됨",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 7:57",
+      "에스라 2:55"
+    ]
+  },
+  {
+    "id": "prisca",
+    "word": "브리스가",
+    "definition": "아굴라의 아내로 바울과 함께 일한 그리스도인 여자",
+    "difficulty": 3,
+    "references": [
+      "사도행전 18:2, 3",
+      "로마서 16:3-5",
+      "디모데후서 4:19"
+    ]
+  },
+  {
+    "id": "priscilla",
+    "word": "브리스길라",
+    "definition": "남편과 함께 아볼로에게 하느님의 길을 더 정확하게 설명한 여자",
+    "difficulty": 2,
+    "references": [
+      "사도행전 18:24-26"
+    ]
+  },
+  {
+    "id": "beriah",
+    "word": "브리아",
+    "definition": "아셀의 아들로 야곱과 함께 이집트에 간 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 46:8, 17",
+      "민수기 26:44, 45",
+      "역대기상 7:30, 31"
+    ]
+  },
+  {
+    "id": "bezalel",
+    "word": "브살렐",
+    "definition": "장막의 수석 장인으로 여호와가 직접 임명한 유다 지파 기술자",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 31:1, 2",
+      "역대기상 2:20",
+      "출애굽기 35:30-33"
+    ]
+  },
+  {
+    "id": "besodeiah",
+    "word": "브소디야",
+    "definition": "느헤미야 성벽 재건에 참여한 므술람의 아버지",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 3:6"
+    ]
+  },
+  {
+    "id": "entry-브솔 급류 골짜기",
+    "word": "브솔급류골짜기",
+    "definition": "다윗이 아말렉 사람들을 추격할 때 언급된 급류 골짜기",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 30:1, 10, 21"
+    ]
+  },
+  {
+    "id": "bealoth",
+    "word": "브알롯",
+    "definition": "유다 남단에 있던 도시로 위치는 알려지지 않음",
+    "difficulty": 2,
+    "references": [
+      "여호수아 15:24",
+      "열왕기상 4:16"
+    ]
+  },
+  {
+    "id": "bealiah",
+    "word": "브알리야",
+    "definition": "베냐민 사람으로 시글락에서 다윗에게 합류한 전사",
+    "difficulty": 3,
+    "references": [
+      "역대기상 12:1, 2, 5"
+    ]
+  },
+  {
+    "id": "beera",
+    "word": "브에라1",
+    "definition": "아셀 자손 중 한 가족의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30, 37, 40"
+    ]
+  },
+  {
+    "id": "beerah",
+    "word": "브에라2",
+    "definition": "르우벤 사람의 수장으로 아시리아에 의해 유배된 자",
+    "difficulty": 3,
+    "references": [
+      "역대기상 5:6"
+    ]
+  },
+  {
+    "id": "beeroth",
+    "word": "브에롯",
+    "definition": "여호수아와 계약을 맺은 히위 사람들의 네 도시 중 하나로 베냐민에 할당됨",
+    "difficulty": 2,
+    "references": [
+      "여호수아 9:3-17",
+      "여호수아 18:21, 25"
+    ]
+  },
+  {
+    "id": "beeri",
+    "word": "브에리",
+    "definition": "에서의 아내 유딧의 아버지인 헷 사람",
+    "difficulty": 3,
+    "references": [
+      "창세기 26:34",
+      "호세아 1:1"
+    ]
+  },
+  {
+    "id": "beeshterah",
+    "word": "브에스드라",
+    "definition": "게르손 레위 사람들에게 준 요르단 강 동쪽 도시로 아스다롯과 동일시됨",
+    "difficulty": 2,
+    "references": [
+      "여호수아 21:27",
+      "역대기상 6:71"
+    ]
+  },
+  {
+    "id": "entry-브엘",
+    "word": "브엘",
+    "definition": "히브리어 베에르로 천연 샘과 대조되는 우물을 가리키며 지명에 자주 쓰임",
+    "difficulty": 2,
+    "references": [
+      "민수기 21:13-16",
+      "이사야 15:8",
+      "사사기 9:3-5, 21"
+    ]
+  },
+  {
+    "id": "entry-브엘-라해-로이",
+    "word": "브엘라해로이",
+    "definition": "하갈이 천사를 만난 샘으로 살아 계신 나를 보았다는 뜻의 장소",
+    "difficulty": 3,
+    "references": [
+      "창세기 16:7-14",
+      "창세기 24:62, 63",
+      "창세기 25:11"
+    ]
+  },
+  {
+    "id": "beeliada",
+    "word": "브엘랴다",
+    "definition": "다윗이 예루살렘에서 낳은 아들로 엘리아다라고도 불림",
+    "difficulty": 3,
+    "references": [
+      "역대기상 14:3-7",
+      "사무엘하 5:16"
+    ]
+  },
+  {
+    "id": "beersheba",
+    "word": "브엘세바",
+    "definition": "아브라함과 이삭이 우물을 파고 살았던 남쪽 지역의 도시",
+    "difficulty": 2,
+    "references": [
+      "창세기 21:31-33; 26:23-25"
+    ]
+  },
+  {
+    "id": "beor",
+    "word": "브올",
+    "definition": "에돔 사람으로 그 아들 벨라는 에돔의 첫 번째 왕",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:31, 32",
+      "역대기상 1:43",
+      "민수기 22:5"
+    ]
+  },
+  {
+    "id": "peullethai",
+    "word": "브울래대",
+    "definition": "오벳-에돔의 여덟째 아들로 문지기로 섬긴 자",
+    "difficulty": 3,
+    "references": [
+      "역대기상 26:1, 4, 5, 15"
+    ]
+  },
+  {
+    "id": "pelatiah",
+    "word": "블라댜",
+    "definition": "시므온 지파 수장으로 아말렉 잔당을 친 500인의 지휘관",
+    "difficulty": 2,
+    "references": [
+      "역대기상 4:41-43",
+      "에스겔 11:1-13"
+    ]
+  },
+  {
+    "id": "blastus",
+    "word": "블라스도",
+    "definition": "헤롯 아그리파 1세의 침실 담당자로 티레 시돈 사람들이 평화를 청할 때 이용함",
+    "difficulty": 3,
+    "references": [
+      "사도행전 12:20"
+    ]
+  },
+  {
+    "id": "pelaiah",
+    "word": "블라야",
+    "definition": "에스라를 도와 율법을 읽고 설명한 레위 사람",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 8:1-8",
+      "느헤미야 9:38",
+      "느헤미야 10:9, 10"
+    ]
+  },
+  {
+    "id": "pelaliah",
+    "word": "블랄리야",
+    "definition": "제사장으로 그 자손 아다야가 유배 후 성소 봉사에 참여함",
+    "difficulty": 2,
+    "references": [
+      "느헤미야 11:10, 12"
+    ]
+  },
+  {
+    "id": "phlegon",
+    "word": "블레곤",
+    "definition": "로마의 그리스도인으로 바울이 편지에서 인사를 전한 자",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:14"
+    ]
+  },
+  {
+    "id": "philistines",
+    "word": "블레셋",
+    "definition": "이스라엘과 자주 전쟁을 벌인 지중해 연안의 민족",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 17장"
+    ]
+  },
+  {
+    "id": "dirge",
+    "word": "비가",
+    "definition": "사망한 자에 대한 슬픔을 표현하는 서정시나 악곡으로 애가라 함",
+    "difficulty": 3,
+    "references": [
+      "하박국 3:1",
+      "에스겔 2:10",
+      "역대기하 35:25"
+    ]
+  },
+  {
+    "id": "entry-비갓-아웬",
+    "word": "비갓아웬",
+    "definition": "아모스가 다마스쿠스 심판 예언에 언급한 시리아의 골짜기 평야",
+    "difficulty": 2,
+    "references": [
+      "아모스 1:5",
+      "열왕기하 16:9, 10"
+    ]
+  },
+  {
+    "id": "phicol",
+    "word": "비골",
+    "definition": "블레셋 왕 아비멜렉의 군대 대장으로 아브라함과 이삭과의 계약에 동행함",
+    "difficulty": 3,
+    "references": [
+      "창세기 21:22, 32",
+      "창세기 26:26, 31"
+    ]
+  },
+  {
+    "id": "bichri",
+    "word": "비그리",
+    "definition": "세바의 아버지인 베냐민 사람으로 다윗에게 반역한 자의 조상",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 20:1-22"
+    ]
+  },
+  {
+    "id": "bigvai",
+    "word": "비그왜",
+    "definition": "스룹바벨과 함께 돌아온 2000명가량 자손의 조상",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:14",
+      "느헤미야 7:19",
+      "에스라 8:1"
+    ]
+  },
+  {
+    "id": "binea",
+    "word": "비느아",
+    "definition": "사울의 아들 요나단의 자손으로 베냐민 지파 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:33-37, 40",
+      "역대기상 9:39-43"
+    ]
+  },
+  {
+    "id": "phinehas",
+    "word": "비느하스",
+    "definition": "우상 숭배와 부도덕을 막아 하느님의 승인을 받은 제사장",
+    "difficulty": 2,
+    "references": [
+      "민수기 25:1-13"
+    ]
+  },
+  {
+    "id": "scales",
+    "word": "비늘미늘",
+    "definition": "물고기와 파충류의 피부 보호 구조로 정한 것과 부정한 것의 구분 기준",
+    "difficulty": 3,
+    "references": [
+      "레위기 11:9, 10, 12",
+      "신명기 14:9, 10",
+      "에스겔 29:4"
+    ]
+  },
+  {
+    "id": "silk",
+    "word": "비단",
+    "definition": "누에 고치에서 뽑은 섬유로 만든 아름답고 가벼운 고급 천",
+    "difficulty": 2,
+    "references": [
+      "계시록 18:12",
+      "에스겔 16:10, 13"
+    ]
+  },
+  {
+    "id": "pithon",
+    "word": "비돈",
+    "definition": "사울 왕의 자손으로 요나단과 므립바알 계통의 베냐민 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 8:33-35",
+      "역대기상 9:39-41"
+    ]
+  },
+  {
+    "id": "dove",
+    "word": "비둘기",
+    "definition": "성서에서 처음 구체적으로 언급된 새로 노아가 홍수 후 내보낸 새",
+    "difficulty": 1,
+    "references": [
+      "창세기 8:8-12",
+      "이사야 38:14",
+      "에스겔 7:16"
+    ]
+  },
+  {
+    "id": "entry-비둘기 똥",
+    "word": "비둘기똥",
+    "definition": "사마리아 포위 시 극심한 기근에 귀하게 거래된 연료용 물질",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 6:24, 25",
+      "열왕기하 6:26-29"
+    ]
+  },
+  {
+    "id": "bithiah",
+    "word": "비디아",
+    "definition": "파라오의 딸로 유다 지파 메렛의 아내가 된 여자",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 18"
+    ]
+  },
+  {
+    "id": "pirathon",
+    "word": "비라돈",
+    "definition": "에브라임의 성읍으로 아말렉 사람의 산에 위치했던 재판관 압돈의 고향",
+    "difficulty": 2,
+    "references": [
+      "사사기 12:13, 15",
+      "역대기상 11:31",
+      "역대기상 27:14"
+    ]
+  },
+  {
+    "id": "piram",
+    "word": "비람",
+    "definition": "야르뭇을 다스린 아모리 왕으로 기브온 공격 후 여호수아에게 패함",
+    "difficulty": 2,
+    "references": [
+      "여호수아 10:1-27"
+    ]
+  },
+  {
+    "id": "birsha",
+    "word": "비르사",
+    "definition": "그돌라오멜에게 격퇴당한 고모라의 왕",
+    "difficulty": 2,
+    "references": [
+      "창세기 14:1-11"
+    ]
+  },
+  {
+    "id": "birzaith",
+    "word": "비르사잇",
+    "definition": "아셀 족보 말기엘 가족에 나오는 이름으로 창세기 명단에는 없음",
+    "difficulty": 2,
+    "references": [
+      "역대기상 7:30, 31"
+    ]
+  },
+  {
+    "id": "pibeseth",
+    "word": "비베셋",
+    "definition": "에스겔이 이집트 심판 예언에 언급한 나일 삼각주의 도시 부바스티스",
+    "difficulty": 2,
+    "references": [
+      "에스겔 30:17"
+    ]
+  },
+  {
+    "id": "secretary",
+    "word": "비서관",
+    "definition": "서류 작성과 보관을 담당한 관리로 히브리어 소페르는 서기관과 필사자로도 번역됨",
+    "difficulty": 2,
+    "references": [
+      "역대기하 24:11",
+      "열왕기하 19:2",
+      "느헤미야 13:13",
+      "사무엘하 8:15-18"
+    ]
+  },
+  {
+    "id": "entry-비서관의 잉크 통",
+    "word": "비서관의잉크통",
+    "definition": "에스겔 9장에서 이마에 표를 할 때 찬 잉크통으로 띠에 붙어 있었음",
+    "difficulty": 2,
+    "references": [
+      "에스겔 9:2, 3, 11"
+    ]
+  },
+  {
+    "id": "pishon",
+    "word": "비손",
+    "definition": "에덴에서 흘러나온 네 강 중 하나로 하윌라 땅을 돌아 흐른 강",
+    "difficulty": 2,
+    "references": [
+      "창세기 2:10-12",
+      "창세기 2:13"
+    ]
+  },
+  {
+    "id": "pisgah",
+    "word": "비스가",
+    "definition": "사해 동쪽 아바림 산맥 북부의 고지로 모세가 가나안을 바라본 곳",
+    "difficulty": 2,
+    "references": [
+      "민수기 21:20",
+      "신명기 3:27",
+      "신명기 34:1-3"
+    ]
+  },
+  {
+    "id": "pispah",
+    "word": "비스바",
+    "definition": "지도적 위치에 있던 아셀 사람으로 예델의 아들",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:38, 40"
+    ]
+  },
+  {
+    "id": "biziothiah",
+    "word": "비스요댜",
+    "definition": "네게브 유다 상속지에 있던 성읍으로 브엘세바 다음에 언급됨",
+    "difficulty": 2,
+    "references": [
+      "여호수아 15:21, 28",
+      "느헤미야 11:27"
+    ]
+  },
+  {
+    "id": "ridicule",
+    "word": "비웃음",
+    "definition": "얕보거나 조롱하는 행동으로 히브리어와 그리스어에서 다양한 단어로 표현됨",
+    "difficulty": 3,
+    "references": [
+      "잠언 24:9",
+      "잠언 1:22-27",
+      "잠언 17:5"
+    ]
+  },
+  {
+    "id": "bithynia",
+    "word": "비티니아",
+    "definition": "바울이 성령의 인도를 받아 방문하지 못했던 소아시아의 지역",
+    "difficulty": 3,
+    "references": [
+      "사도행전 16:6-8; 베드로 전서 1:1"
+    ]
+  },
+  {
+    "id": "lyre",
+    "word": "비파",
+    "definition": "현을 뜯어 연주하며 하느님을 찬양하는 데 사용한 악기",
+    "difficulty": 2,
+    "references": [
+      "시편 150:3; 역대기상 15:16"
+    ]
+  },
+  {
+    "id": "pihahiroth",
+    "word": "비하히롯",
+    "definition": "이스라엘이 홍해 건너기 전 마지막으로 진친 곳으로 바알스본 앞에 위치함",
+    "difficulty": 2,
+    "references": [
+      "민수기 33:7, 8",
+      "출애굽기 14:1, 2",
+      "출애굽기 14:21, 22"
+    ]
+  },
+  {
+    "id": "bigthan",
+    "word": "빅단",
+    "definition": "아하수에로 왕을 살해하려 모의한 페르시아 궁정 문지기 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "에스더 2:21-23",
+      "에스더 6:2"
+    ]
+  },
+  {
+    "id": "binnui",
+    "word": "빈누이",
+    "definition": "스룹바벨과 함께 돌아온 600명이 넘는 자손의 조상으로 바니로도 불림",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 7:15",
+      "에스라 2:10",
+      "에스라 8:33"
+    ]
+  },
+  {
+    "id": "bilgah",
+    "word": "빌가",
+    "definition": "다윗이 조직한 24 제사장 조 중 열다섯째 조의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 24:1, 3, 14",
+      "느헤미야 12:5, 7"
+    ]
+  },
+  {
+    "id": "bilgai",
+    "word": "빌개",
+    "definition": "느헤미야의 계약에 동의한 제사장이나 그 조상",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 10:1, 8"
+    ]
+  },
+  {
+    "id": "pildash",
+    "word": "빌다스",
+    "definition": "아브라함의 형제 나홀이 밀가를 통해 얻은 여섯째 아들",
+    "difficulty": 3,
+    "references": [
+      "창세기 22:21-23",
+      "창세기 11:29"
+    ]
+  },
+  {
+    "id": "bildad",
+    "word": "빌닷",
+    "definition": "욥의 세 동무 중 한 사람으로 수아 사람이며 아브라함의 자손",
+    "difficulty": 3,
+    "references": [
+      "욥기 2:11",
+      "창세기 25:2",
+      "욥기 8장",
+      "욥기 18장"
+    ]
+  },
+  {
+    "id": "piltai",
+    "word": "빌대",
+    "definition": "유배 후 요야김 시대 모아댜 제사장 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "느헤미야 12:12, 17"
+    ]
+  },
+  {
+    "id": "philadelphia",
+    "word": "빌라델비아",
+    "definition": "소아시아 서쪽의 도시로 계시록 일곱 회중 중 하나가 있던 곳",
+    "difficulty": 2,
+    "references": [
+      "계시록 1:11",
+      "계시록 3:7-13",
+      "계시록 3:9-11"
+    ]
+  },
+  {
+    "id": "pilate",
+    "word": "빌라도",
+    "definition": "예수를 심문한 뒤 무죄를 알면서도 처형하도록 넘긴 로마 총독",
+    "difficulty": 2,
+    "references": [
+      "마태복음 27:11-26"
+    ]
+  },
+  {
+    "id": "philetus",
+    "word": "빌레도",
+    "definition": "1세기 배교자로 후메내오와 함께 부활 교리를 훼손한 거짓 교사",
+    "difficulty": 3,
+    "references": [
+      "디모데후서 2:17, 18"
+    ]
+  },
+  {
+    "id": "philemon",
+    "word": "빌레몬",
+    "definition": "골로새의 회중과 관련이 있었으며 바울에게 편지를 받은 그리스도인",
+    "difficulty": 2,
+    "references": [
+      "빌레몬서 1-7절"
+    ]
+  },
+  {
+    "id": "entry-빌레몬에게 보낸 편지",
+    "word": "빌레몬에게보낸편지",
+    "definition": "바울이 로마 투옥 중 도망 종 오네시모를 위해 그 주인에게 보낸 편지",
+    "difficulty": 2,
+    "references": [
+      "빌레몬서 1, 2, 19",
+      "빌레몬서 8-25"
+    ]
+  },
+  {
+    "id": "philologus",
+    "word": "빌롤로고",
+    "definition": "바울이 로마서 인사에서 언급한 그리스도인",
+    "difficulty": 3,
+    "references": [
+      "로마서 16:15"
+    ]
+  },
+  {
+    "id": "bileam",
+    "word": "빌르암",
+    "definition": "고핫 레위 가족에 할당된 므낫세 영토의 성읍",
+    "difficulty": 2,
+    "references": [
+      "역대기상 6:70",
+      "여호수아 21:11-39"
+    ]
+  },
+  {
+    "id": "philip",
+    "word": "빌립",
+    "definition": "나다나엘에게 메시아를 만났다고 알린 예수의 사도",
+    "difficulty": 2,
+    "references": [
+      "요한복음 1:43-46"
+    ]
+  },
+  {
+    "id": "philippi",
+    "word": "빌립보",
+    "definition": "바울이 유럽에서 처음으로 회중을 세우는 데 기여한 마케도니아의 도시",
+    "difficulty": 2,
+    "references": [
+      "사도행전 16:9-15"
+    ]
+  },
+  {
+    "id": "philippians",
+    "word": "빌립보서",
+    "definition": "어려움 중에도 기뻐하고 겸손을 나타내도록 격려한 바울의 편지",
+    "difficulty": 2,
+    "references": [
+      "빌립보서 1:1-11",
+      "빌립보서 2:1-11"
+    ]
+  },
+  {
+    "id": "bilshan",
+    "word": "빌산",
+    "definition": "스룹바벨과 함께 예루살렘으로 돌아온 탁월한 사람",
+    "difficulty": 3,
+    "references": [
+      "에스라 2:2",
+      "느헤미야 7:7"
+    ]
+  },
+  {
+    "id": "bilhah",
+    "word": "빌하",
+    "definition": "라반의 하녀로 라헬이 야곱과 결혼 시 받은 여종이자 단과 납달리의 어머니",
+    "difficulty": 2,
+    "references": [
+      "창세기 29:29",
+      "창세기 30:3-8",
+      "창세기 35:25"
+    ]
+  },
+  {
+    "id": "bilhan",
+    "word": "빌한",
+    "definition": "호리 사람 족장 에셀의 아들 중 첫째로 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:20, 21, 27",
+      "역대기상 1:42"
+    ]
+  },
+  {
+    "id": "bimhal",
+    "word": "빔할",
+    "definition": "아셀 지파 수장들의 우두머리 중 한 사람",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:30, 33, 40"
+    ]
+  },
+  {
+    "id": "bidkar",
+    "word": "빗갈",
+    "definition": "예후의 부관으로 여호람 왕의 시체를 나봇의 밭에 던진 자",
+    "difficulty": 3,
+    "references": [
+      "열왕기하 9:25, 26"
+    ]
+  },
+  {
+    "id": "entry-빛나는 자",
+    "word": "빛나는자",
+    "definition": "이사야 14장에서 바빌론 왕에게 사용된 묘사적 명칭으로 루시퍼로 음역되기도 함",
+    "difficulty": 2,
+    "references": [
+      "이사야 14:4, 12",
+      "욥기 29:3",
+      "이사야 14:13"
+    ]
+  },
+  {
+    "id": "cuckoo",
+    "word": "뻐꾸기",
+    "definition": "솔로몬 궁정 식품 목록에 한 번 언급된 새로 번역이 다양함",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 4:23",
+      "레위기 11:16",
+      "신명기 14:15"
+    ]
+  },
+  {
+    "id": "entry-뿔북살무사",
+    "word": "뿔북살무사",
+    "definition": "팔레스타인에 서식하는 독사로 두 눈 위에 작은 뿔이 특징",
+    "difficulty": 2,
+    "references": [
+      "시편 140:3",
+      "창세기 49:17"
+    ]
+  },
+  {
+    "id": "horn",
+    "word": "뿔뿔나팔",
+    "definition": "동물의 뿔로 기름 용기와 악기 신호 도구로 사용되며 권세와 능력을 상징",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 16:1, 13",
+      "열왕기상 1:39",
+      "여호수아 6:5"
+    ]
+  }
+]
