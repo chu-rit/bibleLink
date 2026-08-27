@@ -85,7 +85,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
     const revealedMaps = sectionMaps.slice(0, revealCount);
-    const columns = isSmallScreen ? 4 : 5;
+    const columns = 5;
     return (
       <View>
         <View style={styles.sectionHeader}>
