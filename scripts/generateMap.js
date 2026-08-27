@@ -212,9 +212,21 @@ if (!best) {
 }
 
 const ordered = [...best.list].sort((a, b) => a.row - b.row || a.col - b.col);
+
+// 난이도별 시리즈 번호 계산 (E-1, N-1, H-1 형식)
+const prefix = size === 8 ? 'E' : size === 10 ? 'N' : 'H';
+const existingMaps = fs.readdirSync(mapsDir)
+  .filter(f => /^crosswordMap\d+\.json$/.test(f) && f !== outputFile)
+  .map(f => {
+    const m = JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8'));
+    return { file: f, width: m.width, title: m.title };
+  });
+const sameSizeCount = existingMaps.filter(m => m.width === size).length;
+const seriesNum = sameSizeCount + 1;
+
 const map = {
   id: `crossword-map-${String(mapNumber).padStart(3, '0')}`,
-  title: `성경 단어 퍼즐 ${mapNumber}`,
+  title: `${prefix}-${seriesNum}`,
   difficulty: Math.max(1, Math.round(best.average * 10) / 10),
   width: size,
   height: size,
