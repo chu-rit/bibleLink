@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-072",
+  "title": "H-12",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####모세라###믈#",
+    "야벳###군##하바라임",
+    "#에#긴느도이#사#댜#",
+    "#젤라#다#세레뱌###",
+    "##아브넬#벨#####",
+    "##미#########",
+    "여호야다########",
+    "#함#마########",
+    "##머리털#######",
+    "#베리#########",
+    "##덮#########",
+    "##개#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "모세라",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 3,
+      "wordId": "moserah"
+    },
+    {
+      "number": 2,
+      "answer": "세군도",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "secundus"
+    },
+    {
+      "number": 3,
+      "answer": "믈라댜",
+      "direction": "down",
+      "row": 0,
+      "col": 10,
+      "length": 3,
+      "wordId": "melatiah"
+    },
+    {
+      "number": 4,
+      "answer": "야벳",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "japheth"
+    },
+    {
+      "number": 5,
+      "answer": "벳에젤",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 3,
+      "wordId": "entry-벳-에젤"
+    },
+    {
+      "number": 6,
+      "answer": "하사뱌",
+      "direction": "down",
+      "row": 1,
+      "col": 8,
+      "length": 3,
+      "wordId": "hashabiah"
+    },
+    {
+      "number": 7,
+      "answer": "하바라임",
+      "direction": "across",
+      "row": 1,
+      "col": 8,
+      "length": 4,
+      "wordId": "hapharaim"
+    },
+    {
+      "number": 8,
+      "answer": "긴느도이",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 4,
+      "wordId": "ginnethoi"
+    },
+    {
+      "number": 9,
+      "answer": "느다넬",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "nethanel"
+    },
+    {
+      "number": 10,
+      "answer": "이세벨",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "jezebel"
+    },
+    {
+      "number": 11,
+      "answer": "젤라",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "entry-젤라"
+    },
+    {
+      "number": 12,
+      "answer": "라아미야",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "raamiah"
+    },
+    {
+      "number": 13,
+      "answer": "세레뱌",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 3,
+      "wordId": "sherebiah"
+    },
+    {
+      "number": 14,
+      "answer": "아브넬",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 3,
+      "wordId": "abner"
+    },
+    {
+      "number": 15,
+      "answer": "여호야다",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 4,
+      "wordId": "jehoiada"
+    },
+    {
+      "number": 16,
+      "answer": "호함",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "hoham"
+    },
+    {
+      "number": 17,
+      "answer": "다마리",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
+      "length": 3,
+      "wordId": "damaris"
+    },
+    {
+      "number": 18,
+      "answer": "머리털",
+      "direction": "across",
+      "row": 8,
+      "col": 2,
+      "length": 3,
+      "wordId": "hair"
+    },
+    {
+      "number": 19,
+      "answer": "머리덮개",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 4,
+      "wordId": "entry-머리 덮개"
+    },
+    {
+      "number": 20,
+      "answer": "베리",
+      "direction": "across",
+      "row": 9,
+      "col": 1,
+      "length": 2,
+      "wordId": "beri"
+    }
+  ]
+}

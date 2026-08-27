@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-018",
+  "title": "N-6",
+  "difficulty": 2.3,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "유니게#######",
+    "##헨#######",
+    "#아나니아###계#",
+    "#그##론#페르시아",
+    "#립#에###호#합",
+    "#바나바#빌립보##",
+    "###브#립#암##",
+    "###로#보####",
+    "###디도서####",
+    "#밀레도######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "유니게",
+      "direction": "across",
+      "row": 0,
+      "col": 0,
+      "length": 3,
+      "wordId": "eunice"
+    },
+    {
+      "number": 2,
+      "answer": "게헨나",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "gehenna"
+    },
+    {
+      "number": 3,
+      "answer": "아그립바",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "agrippa"
+    },
+    {
+      "number": 4,
+      "answer": "아나니아",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "ananias"
+    },
+    {
+      "number": 5,
+      "answer": "아론",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 2,
+      "wordId": "aaron"
+    },
+    {
+      "number": 6,
+      "answer": "계시",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "revelation"
+    },
+    {
+      "number": 7,
+      "answer": "페르시아",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "persia"
+    },
+    {
+      "number": 8,
+      "answer": "르호보암",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 4,
+      "wordId": "rehoboam"
+    },
+    {
+      "number": 9,
+      "answer": "아합",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "ahab"
+    },
+    {
+      "number": 10,
+      "answer": "에바브로디도",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 6,
+      "wordId": "epaphroditus"
+    },
+    {
+      "number": 11,
+      "answer": "바나바",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "barnabas"
+    },
+    {
+      "number": 12,
+      "answer": "빌립보",
+      "direction": "across",
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "philippi"
+    },
+    {
+      "number": 13,
+      "answer": "빌립보서",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
+      "length": 4,
+      "wordId": "philippians"
+    },
+    {
+      "number": 14,
+      "answer": "디도서",
+      "direction": "across",
+      "row": 8,
+      "col": 3,
+      "length": 3,
+      "wordId": "titusletter"
+    },
+    {
+      "number": 15,
+      "answer": "밀레도",
+      "direction": "across",
+      "row": 9,
+      "col": 1,
+      "length": 3,
+      "wordId": "miletus"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-048",
+  "title": "N-18",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####컴####",
+    "나오미##퍼####",
+    "할#라맛미스베#믹#",
+    "리###살#드#마옥",
+    "엘####할로헤스#",
+    "######의###",
+    "#####남편###",
+    "######지식##",
+    "###정탐꾼들###",
+    "##판결######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "컴퍼스",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "compass"
+    },
+    {
+      "number": 2,
+      "answer": "나오미",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 3,
+      "wordId": "naomi"
+    },
+    {
+      "number": 3,
+      "answer": "나할리엘",
+      "direction": "down",
+      "row": 1,
+      "col": 0,
+      "length": 4,
+      "wordId": "nahaliel"
+    },
+    {
+      "number": 4,
+      "answer": "미라",
+      "direction": "down",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "myra"
+    },
+    {
+      "number": 5,
+      "answer": "라맛미스베",
+      "direction": "across",
+      "row": 2,
+      "col": 2,
+      "length": 5,
+      "wordId": "entry-라맛-미스베"
+    },
+    {
+      "number": 6,
+      "answer": "미살",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 2,
+      "wordId": "mishal"
+    },
+    {
+      "number": 7,
+      "answer": "베드로의편지들",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 7,
+      "wordId": "entry-베드로의 편지들"
+    },
+    {
+      "number": 8,
+      "answer": "믹마스",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 3,
+      "wordId": "entry-믹마스, 믹마쓰"
+    },
+    {
+      "number": 9,
+      "answer": "마옥",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "maoch"
+    },
+    {
+      "number": 10,
+      "answer": "할로헤스",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 4,
+      "wordId": "hallohesh"
+    },
+    {
+      "number": 11,
+      "answer": "남편",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "husband"
+    },
+    {
+      "number": 12,
+      "answer": "지식",
+      "direction": "across",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "knowledge"
+    },
+    {
+      "number": 13,
+      "answer": "정탐꾼들",
+      "direction": "across",
+      "row": 8,
+      "col": 3,
+      "length": 4,
+      "wordId": "spies"
+    },
+    {
+      "number": 14,
+      "answer": "정결",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 2,
+      "wordId": "cleanness"
+    },
+    {
+      "number": 15,
+      "answer": "판결",
+      "direction": "across",
+      "row": 9,
+      "col": 2,
+      "length": 2,
+      "wordId": "entry-판결"
+    }
+  ]
+}

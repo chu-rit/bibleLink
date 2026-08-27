@@ -3,14 +3,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, '..', 'data');
+const wordsDir = path.join(__dirname, '..', 'data', 'words');
 
 const merged = [];
 const seenWords = new Set();
 const seenIds = new Set();
 
 for (let i = 2; i <= 15; i++) {
-  const fp = path.join(dataDir, `bibleWordsLib${i}.json`);
+  const fp = path.join(wordsDir, `bibleWordsLib${i}.json`);
   let lib;
   try {
     lib = JSON.parse(fs.readFileSync(fp, 'utf8'));
@@ -35,7 +35,7 @@ for (let i = 2; i <= 15; i++) {
 // word 기준 정렬
 merged.sort((a, b) => a.word.localeCompare(b.word, 'ko'));
 
-const outPath = path.join(dataDir, 'bibleWordsLib1.json');
+const outPath = path.join(wordsDir, 'bibleWordsLib1.json');
 fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + '\n', 'utf8');
 
 console.log(`\nLib1 merged: ${merged.length} entries from Lib2-Lib15`);

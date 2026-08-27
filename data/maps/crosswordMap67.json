@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-067",
+  "title": "N-27",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "모#########",
+    "금속########",
+    "#주석#######",
+    "#총########",
+    "#독수리######",
+    "###키루스###라",
+    "#멜레아#타#하사엘",
+    "##갑##테#가##",
+    "#####르말랴##",
+    "######씀###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "모금",
+      "direction": "down",
+      "row": 0,
+      "col": 0,
+      "length": 2,
+      "wordId": "collection"
+    },
+    {
+      "number": 2,
+      "answer": "금속",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "metals"
+    },
+    {
+      "number": 3,
+      "answer": "속주총독",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 4,
+      "wordId": "proconsul"
+    },
+    {
+      "number": 4,
+      "answer": "주석",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "tin"
+    },
+    {
+      "number": 5,
+      "answer": "독수리",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "eagle"
+    },
+    {
+      "number": 6,
+      "answer": "리키아",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 3,
+      "wordId": "lycia"
+    },
+    {
+      "number": 7,
+      "answer": "키루스",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "cyrus"
+    },
+    {
+      "number": 8,
+      "answer": "스타테르",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
+      "length": 4,
+      "wordId": "stater"
+    },
+    {
+      "number": 9,
+      "answer": "라엘",
+      "direction": "down",
+      "row": 5,
+      "col": 9,
+      "length": 2,
+      "wordId": "lael"
+    },
+    {
+      "number": 10,
+      "answer": "멜레아",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "melea"
+    },
+    {
+      "number": 11,
+      "answer": "레갑",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "rechab"
+    },
+    {
+      "number": 12,
+      "answer": "하가랴",
+      "direction": "down",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "hacaliah"
+    },
+    {
+      "number": 13,
+      "answer": "하사엘",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "hazael"
+    },
+    {
+      "number": 14,
+      "answer": "르말랴",
+      "direction": "across",
+      "row": 8,
+      "col": 5,
+      "length": 3,
+      "wordId": "remaliah"
+    },
+    {
+      "number": 15,
+      "answer": "말씀",
+      "direction": "down",
+      "row": 8,
+      "col": 6,
+      "length": 2,
+      "wordId": "entry-말씀"
+    }
+  ]
+}

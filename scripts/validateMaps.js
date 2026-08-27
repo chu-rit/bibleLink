@@ -1,17 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, '..', 'data');
+const wordsDir = path.join(__dirname, '..', 'data', 'words');
+const mapsDir = path.join(__dirname, '..', 'data', 'maps');
 const MAX_WORD_USES = 2;
 const EASY_MAX_DIFFICULTY = 1.8;
 
-const readJson = (file) => JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
+const readJson = (dir, file) => JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
 const normalize = (value) => value.replace(/\s/g, '').trim();
 
-const words = readJson('bibleWordsLib1.json');
+const words = readJson(wordsDir, 'bibleWordsLib1.json');
 const wordById = new Map(words.map((item) => [item.id, item]));
 const mapFiles = fs
-  .readdirSync(dataDir)
+  .readdirSync(mapsDir)
   .filter((file) => /^crosswordMap\d+\.json$/.test(file))
   .sort();
 
@@ -26,7 +27,7 @@ const cellsOf = (item) =>
   ]);
 
 mapFiles.forEach((file) => {
-  const map = readJson(file);
+  const map = readJson(mapsDir, file);
   const fail = (message) => errors.push(`${file}: ${message}`);
 
   if (mapIds.has(map.id)) fail(`id "${map.id}"가 ${mapIds.get(map.id)}와 중복됩니다`);

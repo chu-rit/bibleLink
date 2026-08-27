@@ -1,0 +1,112 @@
+{
+  "id": "crossword-map-060",
+  "title": "E-30",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####등잔대",
+    "####횃불#추",
+    "#######야",
+    "######겨자",
+    "#이####자#",
+    "#스##고수씨#",
+    "아라라트산###",
+    "#엘######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "등잔대",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "lampstand"
+    },
+    {
+      "number": 2,
+      "answer": "등불",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "lamp",
+      "clue": "예수께서 그리스도인이 빛의 아들들이라 하시며 밝은 곳에 두어야 한다고 비유한 이 도구는 기름으로 어둠을 밝혔다"
+    },
+    {
+      "number": 3,
+      "answer": "대추야자",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "date"
+    },
+    {
+      "number": 4,
+      "answer": "횃불",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "torch"
+    },
+    {
+      "number": 5,
+      "answer": "겨자씨",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
+      "length": 3,
+      "wordId": "mustardseed"
+    },
+    {
+      "number": 6,
+      "answer": "겨자",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 2,
+      "wordId": "mustard"
+    },
+    {
+      "number": 7,
+      "answer": "이스라엘",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "israel",
+      "clue": "야곱이 얍복 강가에서 천사와 씨름한 뒤 받은 새 이름이자 그의 후손 12지파가 이룬 민족과 땅을 가리키는 말"
+    },
+    {
+      "number": 8,
+      "answer": "고수씨",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "entry-고수씨"
+    },
+    {
+      "number": 9,
+      "answer": "고산",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "gozan"
+    },
+    {
+      "number": 10,
+      "answer": "아라라트산",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 5,
+      "wordId": "ararat"
+    }
+  ]
+}

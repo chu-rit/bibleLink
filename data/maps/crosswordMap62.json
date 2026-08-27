@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-062",
+  "title": "N-22",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#######여##",
+    "#######호멜#",
+    "######발람##",
+    "######목###",
+    "####돌포장###",
+    "##그두라#식초##",
+    "#글룹####막베나",
+    "수레########",
+    "#멘########",
+    "맛드내#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "여호람",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "jehoram"
+    },
+    {
+      "number": 2,
+      "answer": "호멜",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "homer"
+    },
+    {
+      "number": 3,
+      "answer": "발목장식",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "anklet"
+    },
+    {
+      "number": 4,
+      "answer": "발람",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "balaam"
+    },
+    {
+      "number": 5,
+      "answer": "돌라",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "tola"
+    },
+    {
+      "number": 6,
+      "answer": "돌포장",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "entry-돌포장"
+    },
+    {
+      "number": 7,
+      "answer": "그두라",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "keturah"
+    },
+    {
+      "number": 8,
+      "answer": "그룹",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "cherub"
+    },
+    {
+      "number": 9,
+      "answer": "식초",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "vinegar"
+    },
+    {
+      "number": 10,
+      "answer": "초막",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 2,
+      "wordId": "booth"
+    },
+    {
+      "number": 11,
+      "answer": "글룹",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "chelub"
+    },
+    {
+      "number": 12,
+      "answer": "글레멘드",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "clement"
+    },
+    {
+      "number": 13,
+      "answer": "막베나",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "machbenah"
+    },
+    {
+      "number": 14,
+      "answer": "수레",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "wagon"
+    },
+    {
+      "number": 15,
+      "answer": "맛드내",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "mattenai"
+    }
+  ]
+}

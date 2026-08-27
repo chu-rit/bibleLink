@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-030b",
+  "title": "H-10",
+  "difficulty": 2.6,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####마롯#할###",
+    "#####르#시라저수조",
+    "####바알므온####",
+    "#므립바알#세#####",
+    "#무#르#하사댜####",
+    "#간#고##벨#####",
+    "헵#살스김#######",
+    "시#로#########",
+    "바르메나########",
+    "#우#함몰레겟#####",
+    "#벤###바######",
+    "#####논######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "마르알",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "mareal"
+    },
+    {
+      "number": 2,
+      "answer": "마롯",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "maroth"
+    },
+    {
+      "number": 3,
+      "answer": "할라",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "halah"
+    },
+    {
+      "number": 4,
+      "answer": "시온",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "zion"
+    },
+    {
+      "number": 5,
+      "answer": "시라저수조",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
+      "length": 5,
+      "wordId": "entry-시라 저수조"
+    },
+    {
+      "number": 6,
+      "answer": "바알",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 2,
+      "wordId": "baal"
+    },
+    {
+      "number": 7,
+      "answer": "바알므온",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-바알-므온"
+    },
+    {
+      "number": 8,
+      "answer": "므세사벨",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "meshezabel"
+    },
+    {
+      "number": 9,
+      "answer": "므립바알",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-므립-바알"
+    },
+    {
+      "number": 10,
+      "answer": "므무간",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "memucan"
+    },
+    {
+      "number": 11,
+      "answer": "바르고스",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "barkos"
+    },
+    {
+      "number": 12,
+      "answer": "하사댜",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "hasadiah"
+    },
+    {
+      "number": 13,
+      "answer": "헵시바",
+      "direction": "down",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "hephzibah"
+    },
+    {
+      "number": 14,
+      "answer": "살로메",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "salome"
+    },
+    {
+      "number": 15,
+      "answer": "살스김",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "sarsechim"
+    },
+    {
+      "number": 16,
+      "answer": "바르메나",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 4,
+      "wordId": "parmenas"
+    },
+    {
+      "number": 17,
+      "answer": "르우벤",
+      "direction": "down",
+      "row": 8,
+      "col": 1,
+      "length": 3,
+      "wordId": "reuben"
+    },
+    {
+      "number": 18,
+      "answer": "나함",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 2,
+      "wordId": "naham"
+    },
+    {
+      "number": 19,
+      "answer": "함몰레겟",
+      "direction": "across",
+      "row": 9,
+      "col": 3,
+      "length": 4,
+      "wordId": "hammolecheth"
+    },
+    {
+      "number": 20,
+      "answer": "레바논",
+      "direction": "down",
+      "row": 9,
+      "col": 5,
+      "length": 3,
+      "wordId": "lebanon"
+    }
+  ]
+}

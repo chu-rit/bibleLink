@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-006d",
+  "title": "N-2",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######골고다#",
+    "티###시므리#말룩",
+    "베배#이삭#앗###",
+    "리#사고######",
+    "아##니######",
+    "스타디온######",
+    "##모#######",
+    "#하데스######",
+    "#박########",
+    "#국########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "골리앗",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "goliath"
+    },
+    {
+      "number": 2,
+      "answer": "골고다",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "golgotha"
+    },
+    {
+      "number": 3,
+      "answer": "다말",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "tamar"
+    },
+    {
+      "number": 4,
+      "answer": "티베리아스",
+      "direction": "down",
+      "row": 1,
+      "col": 0,
+      "length": 5,
+      "wordId": "tiberias"
+    },
+    {
+      "number": 5,
+      "answer": "시므리",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "shimri"
+    },
+    {
+      "number": 6,
+      "answer": "시삭",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "shishak"
+    },
+    {
+      "number": 7,
+      "answer": "말룩",
+      "direction": "across",
+      "row": 1,
+      "col": 8,
+      "length": 2,
+      "wordId": "malluch"
+    },
+    {
+      "number": 8,
+      "answer": "베배",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "bebai"
+    },
+    {
+      "number": 9,
+      "answer": "이삭",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "isaac"
+    },
+    {
+      "number": 10,
+      "answer": "이고니온",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 4,
+      "wordId": "iconium"
+    },
+    {
+      "number": 11,
+      "answer": "사고",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "entry-사고"
+    },
+    {
+      "number": 12,
+      "answer": "스타디온",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "furlong"
+    },
+    {
+      "number": 13,
+      "answer": "디모데",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "timothy"
+    },
+    {
+      "number": 14,
+      "answer": "하데스",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "hades"
+    },
+    {
+      "number": 15,
+      "answer": "하박국",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "habakkuk"
+    }
+  ]
+}

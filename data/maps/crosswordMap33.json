@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-033",
+  "title": "E-13",
+  "difficulty": 1.3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###백####",
+    "##라합####",
+    "갈리오##긴##",
+    "매#디##네게브",
+    "기#게네사렛#에",
+    "##아#기##스",
+    "#######드",
+    "#######라"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "백합",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 2,
+      "wordId": "lily"
+    },
+    {
+      "number": 2,
+      "answer": "라오디게아",
+      "direction": "down",
+      "row": 1,
+      "col": 2,
+      "length": 5,
+      "wordId": "laodicea"
+    },
+    {
+      "number": 3,
+      "answer": "라합",
+      "direction": "across",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "rahab"
+    },
+    {
+      "number": 4,
+      "answer": "갈리오",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "gallio"
+    },
+    {
+      "number": 5,
+      "answer": "갈매기",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "gull"
+    },
+    {
+      "number": 6,
+      "answer": "긴네렛",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "chinnereth"
+    },
+    {
+      "number": 7,
+      "answer": "네게브",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "negeb"
+    },
+    {
+      "number": 8,
+      "answer": "브에스드라",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 5,
+      "wordId": "beeshterah"
+    },
+    {
+      "number": 9,
+      "answer": "게네사렛",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 4,
+      "wordId": "gennesaret"
+    },
+    {
+      "number": 10,
+      "answer": "사기",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "fraud"
+    }
+  ]
+}

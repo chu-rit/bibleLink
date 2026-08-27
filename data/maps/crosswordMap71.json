@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-071",
+  "title": "H-11",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########바아세야",
+    "########루###",
+    "#####힉#마아세야#",
+    "####니가노르####",
+    "#####욘#스보임##",
+    "####검#기나####",
+    "####은#드#####",
+    "####뽕#오#####",
+    "##평#나보니두스###",
+    "금작화나무###레###",
+    "###감###바라바#수",
+    "###향###락#니게르"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "바루아",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 3,
+      "wordId": "paruah"
+    },
+    {
+      "number": 2,
+      "answer": "바아세야",
+      "direction": "across",
+      "row": 0,
+      "col": 8,
+      "length": 4,
+      "wordId": "baaseiah"
+    },
+    {
+      "number": 3,
+      "answer": "힉가욘",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "higgaion"
+    },
+    {
+      "number": 4,
+      "answer": "마르스나",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 4,
+      "wordId": "marsena"
+    },
+    {
+      "number": 5,
+      "answer": "마아세야",
+      "direction": "across",
+      "row": 2,
+      "col": 7,
+      "length": 4,
+      "wordId": "maaseiah"
+    },
+    {
+      "number": 6,
+      "answer": "니가노르",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "nicanor"
+    },
+    {
+      "number": 7,
+      "answer": "스보임",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "zeboim"
+    },
+    {
+      "number": 8,
+      "answer": "검은뽕나무",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 5,
+      "wordId": "entry-검은뽕나무"
+    },
+    {
+      "number": 9,
+      "answer": "기드오니",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 4,
+      "wordId": "gideoni"
+    },
+    {
+      "number": 10,
+      "answer": "기나",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "kinah"
+    },
+    {
+      "number": 11,
+      "answer": "평화",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 2,
+      "wordId": "peace"
+    },
+    {
+      "number": 12,
+      "answer": "나보니두스",
+      "direction": "across",
+      "row": 8,
+      "col": 4,
+      "length": 5,
+      "wordId": "nabonidus"
+    },
+    {
+      "number": 13,
+      "answer": "스레라",
+      "direction": "down",
+      "row": 8,
+      "col": 8,
+      "length": 3,
+      "wordId": "zererah"
+    },
+    {
+      "number": 14,
+      "answer": "금작화나무",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-금작화나무"
+    },
+    {
+      "number": 15,
+      "answer": "나감향",
+      "direction": "down",
+      "row": 9,
+      "col": 3,
+      "length": 3,
+      "wordId": "naphtuhim"
+    },
+    {
+      "number": 16,
+      "answer": "바라바",
+      "direction": "across",
+      "row": 10,
+      "col": 7,
+      "length": 3,
+      "wordId": "barabbas"
+    },
+    {
+      "number": 17,
+      "answer": "바락",
+      "direction": "down",
+      "row": 10,
+      "col": 7,
+      "length": 2,
+      "wordId": "barak"
+    },
+    {
+      "number": 18,
+      "answer": "바니",
+      "direction": "down",
+      "row": 10,
+      "col": 9,
+      "length": 2,
+      "wordId": "bani"
+    },
+    {
+      "number": 19,
+      "answer": "수르",
+      "direction": "down",
+      "row": 10,
+      "col": 11,
+      "length": 2,
+      "wordId": "zur"
+    },
+    {
+      "number": 20,
+      "answer": "니게르",
+      "direction": "across",
+      "row": 11,
+      "col": 9,
+      "length": 3,
+      "wordId": "niger"
+    }
+  ]
+}

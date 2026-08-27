@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-055",
+  "title": "E-25",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#며######",
+    "#느######",
+    "합리성#####",
+    "환#소요폭동##",
+    "채##셉#물고기",
+    "#######름",
+    "#######부",
+    "#####꾸짖음"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "며느리",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 3,
+      "wordId": "entry-며느리"
+    },
+    {
+      "number": 2,
+      "answer": "합리성",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "reasonableness"
+    },
+    {
+      "number": 3,
+      "answer": "합환채",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "mandrake"
+    },
+    {
+      "number": 4,
+      "answer": "성소",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "sanctuary"
+    },
+    {
+      "number": 5,
+      "answer": "소요폭동",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "sedition"
+    },
+    {
+      "number": 6,
+      "answer": "요셉",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "joseph"
+    },
+    {
+      "number": 7,
+      "answer": "동물",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "animals"
+    },
+    {
+      "number": 8,
+      "answer": "물고기",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "fish"
+    },
+    {
+      "number": 9,
+      "answer": "기름부음",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 4,
+      "wordId": "anointing"
+    },
+    {
+      "number": 10,
+      "answer": "꾸짖음",
+      "direction": "across",
+      "row": 7,
+      "col": 5,
+      "length": 3,
+      "wordId": "rebuke"
+    }
+  ]
+}

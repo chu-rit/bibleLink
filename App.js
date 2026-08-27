@@ -16,8 +16,8 @@ import {
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import crosswordMaps from './data/crosswordMaps';
-import bibleWords from './data/bibleWordsLib1.json';
+import crosswordMaps from './data/maps/crosswordMaps';
+import bibleWords from './data/words/bibleWordsLib1.json';
 import MapSelectScreen from './MapSelectScreen';
 import WordSearchScreen from './WordSearchScreen';
 
@@ -38,6 +38,15 @@ const averageDifficulty = (map) => {
   const values = map.cells.map((cell) => wordDataById[cell.wordId]?.difficulty).filter(Boolean);
   if (!values.length) return map.difficulty;
   return values.reduce((sum, value) => sum + value, 0) / values.length;
+};
+
+const formatMapTitle = (title) => {
+  if (!title) return '';
+  const match = title.match(/^([ENH])-(\d+)$/);
+  if (!match) return title;
+  const [, grade, num] = match;
+  const fullName = grade === 'E' ? 'EASY' : grade === 'N' ? 'NORMAL' : 'HARD';
+  return `${fullName} - ${num}`;
 };
 
 const getFilledCellCount = (map, answers) => {
@@ -290,8 +299,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
             </Pressable>
-            <View style={styles.badge}>
-              <Text style={styles.badgeText}>난이도 {averageDifficulty(crosswordMap).toFixed(1)}</Text>
+            <Text style={styles.mapTitle} numberOfLines={1}>{formatMapTitle(crosswordMap.title)}</Text>
+            <View style={styles.headerBadges}>
+              <View style={styles.hintBadge}>
+                <Text style={styles.hintBadgeText}>힌트 {hintPoints}</Text>
+              </View>
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>난이도 {averageDifficulty(crosswordMap).toFixed(1)}</Text>
+              </View>
             </View>
           </View>
 
@@ -340,8 +355,19 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       return (
                         <Pressable
                           key={`${rowIndex}-${colIndex}`}
-                          disabled={!isOpen}
-                          onPress={() => selectCell(rowIndex, colIndex)}
+                          onPress={() => {
+                            if (!isOpen) {
+                              setSelectedSlot(null);
+                              setInput('');
+                              setIsCorrect(false);
+                              setIsWrong(false);
+                              setIsKeyboardVisible(false);
+                              inputRef.current?.blur();
+                              Keyboard.dismiss();
+                              return;
+                            }
+                            selectCell(rowIndex, colIndex);
+                          }}
                           style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
                         >
                           {isOpen && (
@@ -356,10 +382,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                 ))}
               </View>
             </View>
-
-          <View style={styles.hintPointBar}>
-            <Text style={styles.hintPointText}>힌트 {hintPoints}</Text>
-          </View>
 
           <View style={styles.answerCard}>
             {slot ? (
@@ -529,7 +551,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 }
 
 export default function App() {
-  const [screen, setScreen] = useState(isWordSearchPath ? 'wordSearch' : 'mapSelect');
+  const [screen, setScreen] = useState(isWordSearchPath && isLocalhost ? 'wordSearch' : 'mapSelect');
   const [selectedMap, setSelectedMap] = useState(null);
   const [answersByMap, setAnswersByMap] = useState({});
   const [hintPointsByMap, setHintPointsByMap] = useState({});
@@ -611,10 +633,18 @@ export default function App() {
           setSelectedMap(map);
           setScreen('puzzle');
         }}
-        onWordSearch={Platform.OS === 'web' ? () => {
+        onWordSearch={isLocalhost ? () => {
           const basePath = window.location.pathname.replace(/\/?$/, '');
           window.location.assign(`${basePath}/word/`);
         } : undefined}
+        onResetProgress={() => {
+          setAnswersByMap({});
+          setHintPointsByMap({});
+          setHintedSlotsByMap({});
+          AsyncStorage.removeItem('answersByMap').catch(() => {});
+          AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
+          AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
+        }}
       />
     );
   }
@@ -643,10 +673,14 @@ const styles = StyleSheet.create({
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
+  mapTitle: { flex: 1, color: '#172536', fontSize: 16, fontWeight: '800', marginHorizontal: 10 },
+  headerBadges: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   eyebrow: { color: '#53708d', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
   title: { flex: 1, color: '#172536', fontSize: 18, fontWeight: '800', marginHorizontal: 10 },
   badge: { backgroundColor: '#e2edf6', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
   badgeText: { color: '#315d7f', fontSize: 12, fontWeight: '700' },
+  hintBadge: { backgroundColor: '#fdf0e3', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
+  hintBadgeText: { color: '#e08a3c', fontSize: 12, fontWeight: '700' },
   testModeCard: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#fff8e8', borderRadius: 16, padding: 14, marginBottom: 12, borderWidth: 1, borderColor: '#f0dfb2' },
   testModeCopy: { flex: 1, paddingRight: 12 },
   testModeTitle: { color: '#735a22', fontSize: 14, fontWeight: '800' },
@@ -712,8 +746,6 @@ const styles = StyleSheet.create({
   hintButton: { backgroundColor: '#e08a3c', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 5, alignItems: 'center', justifyContent: 'center' },
   hintButtonText: { color: '#fff', fontSize: 11, fontWeight: '800' },
   hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },
-  hintPointBar: { flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 6, paddingHorizontal: 4 },
-  hintPointText: { color: '#e08a3c', fontSize: 12, fontWeight: '800' },
   primaryButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
   secondaryButton: { flex: 1, backgroundColor: '#eaf3f9', borderRadius: 12, minHeight: 46, alignItems: 'center', justifyContent: 'center' },
   secondaryButtonText: { color: '#315d7f', fontSize: 14, fontWeight: '800' },

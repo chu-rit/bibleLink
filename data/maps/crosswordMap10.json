@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-010b",
+  "title": "H-2",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###########하",
+    "#########벳라바",
+    "######민##프#야",
+    "#####초목#브올##",
+    "##나###독#누###",
+    "바알하몬##수바엘###",
+    "람#마#비그리#####",
+    "#한니엘#우######",
+    "헤나#르바엘######",
+    "#돈#아########",
+    "###살마#######",
+    "####귀#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "하바야",
+      "direction": "down",
+      "row": 0,
+      "col": 11,
+      "length": 3,
+      "wordId": "habaiah"
+    },
+    {
+      "number": 2,
+      "answer": "벳프올",
+      "direction": "down",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "entry-벳-프올"
+    },
+    {
+      "number": 3,
+      "answer": "벳라바",
+      "direction": "across",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "entry-벳-라바"
+    },
+    {
+      "number": 4,
+      "answer": "민목독수리",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 5,
+      "wordId": "vulture"
+    },
+    {
+      "number": 5,
+      "answer": "초목",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "vegetation"
+    },
+    {
+      "number": 6,
+      "answer": "브누엘",
+      "direction": "down",
+      "row": 3,
+      "col": 8,
+      "length": 3,
+      "wordId": "penuel"
+    },
+    {
+      "number": 7,
+      "answer": "브올",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "beor"
+    },
+    {
+      "number": 8,
+      "answer": "나하마니",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 4,
+      "wordId": "nahamani"
+    },
+    {
+      "number": 9,
+      "answer": "바알하몬",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "entry-바알-하몬"
+    },
+    {
+      "number": 10,
+      "answer": "바람",
+      "direction": "down",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "wind"
+    },
+    {
+      "number": 11,
+      "answer": "수바엘",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "shubael"
+    },
+    {
+      "number": 12,
+      "answer": "비그리",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "bichri"
+    },
+    {
+      "number": 13,
+      "answer": "그우엘",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "geuel"
+    },
+    {
+      "number": 14,
+      "answer": "한니엘",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "hanniel"
+    },
+    {
+      "number": 15,
+      "answer": "한나돈",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "hannathon"
+    },
+    {
+      "number": 16,
+      "answer": "엘르아살",
+      "direction": "down",
+      "row": 7,
+      "col": 3,
+      "length": 4,
+      "wordId": "eleazar"
+    },
+    {
+      "number": 17,
+      "answer": "헤나",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "hena"
+    },
+    {
+      "number": 18,
+      "answer": "르바엘",
+      "direction": "across",
+      "row": 8,
+      "col": 3,
+      "length": 3,
+      "wordId": "rephael"
+    },
+    {
+      "number": 19,
+      "answer": "살마",
+      "direction": "across",
+      "row": 10,
+      "col": 3,
+      "length": 2,
+      "wordId": "salma"
+    },
+    {
+      "number": 20,
+      "answer": "마귀",
+      "direction": "down",
+      "row": 10,
+      "col": 4,
+      "length": 2,
+      "wordId": "devil"
+    }
+  ]
+}

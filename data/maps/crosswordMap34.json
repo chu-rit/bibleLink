@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-034",
+  "title": "E-14",
+  "difficulty": 1.3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######골풀",
+    "등불####짜#",
+    "#쌍##길리기아",
+    "#히##보##벨",
+    "#여호수아###",
+    "#김#염####",
+    "#연######",
+    "시민시민권###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "골짜기",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "valley"
+    },
+    {
+      "number": 2,
+      "answer": "골풀",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "rush"
+    },
+    {
+      "number": 3,
+      "answer": "등불",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "lamp"
+    },
+    {
+      "number": 4,
+      "answer": "불쌍히여김연민",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 7,
+      "wordId": "pity"
+    },
+    {
+      "number": 5,
+      "answer": "길리기아",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "cilicia"
+    },
+    {
+      "number": 6,
+      "answer": "길보아",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "gilboa"
+    },
+    {
+      "number": 7,
+      "answer": "아벨",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 2,
+      "wordId": "abel"
+    },
+    {
+      "number": 8,
+      "answer": "여호수아",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "joshua"
+    },
+    {
+      "number": 9,
+      "answer": "수염",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "beard"
+    },
+    {
+      "number": 10,
+      "answer": "시민시민권",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-시민, 시민권"
+    }
+  ]
+}

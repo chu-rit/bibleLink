@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-029",
+  "title": "H-9",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####수#구#폰투스",
+    "#####바세아###바",
+    "####리##르#그나냐",
+    "####블라스도#일#서",
+    "####라#미#삼라##",
+    "즈보####라아마###",
+    "#게#벳여시못#####",
+    "#렛###드######",
+    "#핫#가브리엘#####",
+    "#스#슬########",
+    "#바드루심#######",
+    "#임#힘########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "수바",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "suphah"
+    },
+    {
+      "number": 2,
+      "answer": "구아르도",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "quartus"
+    },
+    {
+      "number": 3,
+      "answer": "폰투스",
+      "direction": "across",
+      "row": 0,
+      "col": 9,
+      "length": 3,
+      "wordId": "pontus"
+    },
+    {
+      "number": 4,
+      "answer": "스바냐서",
+      "direction": "down",
+      "row": 0,
+      "col": 11,
+      "length": 4,
+      "wordId": "entry-스바냐서"
+    },
+    {
+      "number": 5,
+      "answer": "바세아",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "paseah"
+    },
+    {
+      "number": 6,
+      "answer": "리블라",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "riblah"
+    },
+    {
+      "number": 7,
+      "answer": "그나냐",
+      "direction": "across",
+      "row": 2,
+      "col": 9,
+      "length": 3,
+      "wordId": "chenaniah"
+    },
+    {
+      "number": 8,
+      "answer": "그일라",
+      "direction": "down",
+      "row": 2,
+      "col": 9,
+      "length": 3,
+      "wordId": "keilah"
+    },
+    {
+      "number": 9,
+      "answer": "블라스도",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "blastus"
+    },
+    {
+      "number": 10,
+      "answer": "스미라못",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "shemiramoth"
+    },
+    {
+      "number": 11,
+      "answer": "삼라",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "samlah"
+    },
+    {
+      "number": 12,
+      "answer": "삼마",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "shamma"
+    },
+    {
+      "number": 13,
+      "answer": "즈보",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "zepho"
+    },
+    {
+      "number": 14,
+      "answer": "보게렛핫스바임",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 7,
+      "wordId": "entry-보게렛-핫스바임"
+    },
+    {
+      "number": 15,
+      "answer": "라아마",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "raamah"
+    },
+    {
+      "number": 16,
+      "answer": "벳여시못",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-벳-여시못"
+    },
+    {
+      "number": 17,
+      "answer": "시드리",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "sithri"
+    },
+    {
+      "number": 18,
+      "answer": "가브리엘",
+      "direction": "across",
+      "row": 8,
+      "col": 3,
+      "length": 4,
+      "wordId": "gabriel"
+    },
+    {
+      "number": 19,
+      "answer": "가슬루힘",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 4,
+      "wordId": "casluhim"
+    },
+    {
+      "number": 20,
+      "answer": "바드루심",
+      "direction": "across",
+      "row": 10,
+      "col": 1,
+      "length": 4,
+      "wordId": "pathrusim"
+    }
+  ]
+}

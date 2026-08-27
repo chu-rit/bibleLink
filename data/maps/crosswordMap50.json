@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-050",
+  "title": "N-20",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####단식###",
+    "######사파이어",
+    "#######피##",
+    "####미##루포#",
+    "###데카폴리스##",
+    "###나##노###",
+    "#보블리오#####",
+    "스리#온######",
+    "레#바#######",
+    "다리우스######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "단식",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "fast"
+    },
+    {
+      "number": 2,
+      "answer": "식사",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "meal"
+    },
+    {
+      "number": 3,
+      "answer": "사파이어",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 4,
+      "wordId": "sapphire"
+    },
+    {
+      "number": 4,
+      "answer": "파피루스",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 4,
+      "wordId": "papyrus"
+    },
+    {
+      "number": 5,
+      "answer": "미카",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 2,
+      "wordId": "mica"
+    },
+    {
+      "number": 6,
+      "answer": "루포",
+      "direction": "across",
+      "row": 3,
+      "col": 7,
+      "length": 2,
+      "wordId": "rufus"
+    },
+    {
+      "number": 7,
+      "answer": "데카폴리스",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 5,
+      "wordId": "decapolis"
+    },
+    {
+      "number": 8,
+      "answer": "데나리온",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 4,
+      "wordId": "denarius"
+    },
+    {
+      "number": 9,
+      "answer": "리노",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 2,
+      "wordId": "linus"
+    },
+    {
+      "number": 10,
+      "answer": "보블리오",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "publius"
+    },
+    {
+      "number": 11,
+      "answer": "보리",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "barley"
+    },
+    {
+      "number": 12,
+      "answer": "스리",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "zeri"
+    },
+    {
+      "number": 13,
+      "answer": "스레다",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "zeredah"
+    },
+    {
+      "number": 14,
+      "answer": "바우",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 2,
+      "wordId": "pau"
+    },
+    {
+      "number": 15,
+      "answer": "다리우스",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 4,
+      "wordId": "darius"
+    }
+  ]
+}

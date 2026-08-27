@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-021",
+  "title": "N-9",
+  "difficulty": 2.3,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####맛#####",
+    "####디도####",
+    "###레아#####",
+    "#브#위######",
+    "바리새인######",
+    "#스########",
+    "#길르앗######",
+    "실라#수##미#요#",
+    "###르우#가버나움",
+    "####스라야#답#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "맛디아",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 3,
+      "wordId": "matthias"
+    },
+    {
+      "number": 2,
+      "answer": "디도",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "titus"
+    },
+    {
+      "number": 3,
+      "answer": "레위인",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "levite"
+    },
+    {
+      "number": 4,
+      "answer": "레아",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "leah"
+    },
+    {
+      "number": 5,
+      "answer": "브리스길라",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 5,
+      "wordId": "priscilla"
+    },
+    {
+      "number": 6,
+      "answer": "바리새인",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "pharisees"
+    },
+    {
+      "number": 7,
+      "answer": "길르앗",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "gilead"
+    },
+    {
+      "number": 8,
+      "answer": "앗수르",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
+      "length": 3,
+      "wordId": "assyria"
+    },
+    {
+      "number": 9,
+      "answer": "실라",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "silas"
+    },
+    {
+      "number": 10,
+      "answer": "미가야",
+      "direction": "down",
+      "row": 7,
+      "col": 6,
+      "length": 3,
+      "wordId": "micaiah"
+    },
+    {
+      "number": 11,
+      "answer": "요나답",
+      "direction": "down",
+      "row": 7,
+      "col": 8,
+      "length": 3,
+      "wordId": "jonadab"
+    },
+    {
+      "number": 12,
+      "answer": "르우",
+      "direction": "across",
+      "row": 8,
+      "col": 3,
+      "length": 2,
+      "wordId": "reu"
+    },
+    {
+      "number": 13,
+      "answer": "우스",
+      "direction": "down",
+      "row": 8,
+      "col": 4,
+      "length": 2,
+      "wordId": "uz"
+    },
+    {
+      "number": 14,
+      "answer": "가버나움",
+      "direction": "across",
+      "row": 8,
+      "col": 6,
+      "length": 4,
+      "wordId": "capernaum"
+    },
+    {
+      "number": 15,
+      "answer": "스라야",
+      "direction": "across",
+      "row": 9,
+      "col": 4,
+      "length": 3,
+      "wordId": "seraiah"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
+import React, { useState } from 'react';
+import { Modal, Platform, Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Switch, Text, View } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
 
 const COLUMNS = 5;
 const RADIUS = 26;
@@ -45,15 +45,20 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress }) {
+  const [hideSolved, setHideSolved] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
+
   const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
   const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
   const hardMaps = maps.filter((m) => m.difficulty >= 2.6);
-  const easyStartIndex = 0;
-  const normalStartIndex = easyMaps.length;
-  const hardStartIndex = easyMaps.length + normalMaps.length;
 
-  const renderTile = (map, number) => {
+  const mapNumber = (map) => {
+    const match = /^([A-Z])-(\d+)$/.exec(map.title || '');
+    return match ? match[2] : '';
+  };
+
+  const renderTile = (map) => {
     const progress = progressByMap?.[map.id] || { filled: 0, total: map.cells.length };
     const percent = progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
     const isComplete = percent === 100;
@@ -63,72 +68,126 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         onPress={() => onSelect(map)}
         style={[styles.tile, isComplete && styles.tileComplete]}
       >
-        <Gauge percent={percent} number={number} isComplete={isComplete} />
+        <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
       </Pressable>
     );
   };
 
-  const renderSection = (eyebrow, title, sectionMaps, startIndex, accent) => (
-    <View>
-      <View style={styles.sectionHeader}>
-        <View style={styles.sectionCopy}>
-          <Text style={[styles.sectionEyebrow, { color: accent }]}>{eyebrow}</Text>
+  const getPercent = (map) => {
+    const progress = progressByMap?.[map.id] || { filled: 0, total: map.cells.length };
+    return progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
+  };
+
+  const renderSection = (eyebrow, title, sectionMaps, accent) => {
+    const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
+    const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
+    const revealedMaps = sectionMaps.slice(0, revealCount);
+    return (
+      <View>
+        <View style={styles.sectionHeader}>
+          <View style={styles.sectionCopy}>
+            <Text style={[styles.sectionEyebrow, { color: accent }]}>{eyebrow}</Text>
+          </View>
+          <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
+            <Text style={[styles.sectionBadgeText, { color: accent }]}>{sectionMaps.length}개 맵</Text>
+          </View>
         </View>
-        <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
-          <Text style={[styles.sectionBadgeText, { color: accent }]}>{sectionMaps.length}개 맵</Text>
+        <View style={styles.tileGrid}>
+          {revealedMaps.map((map) => {
+            if (hideSolved && getPercent(map) === 100) return null;
+            return renderTile(map);
+          })}
         </View>
       </View>
-      <View style={styles.tileGrid}>
-        {sectionMaps.map((map, index) => renderTile(map, startIndex + index + 1))}
-      </View>
-    </View>
-  );
+    );
+  };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
       <StatusBar barStyle="dark-content" />
+      <View style={styles.header}>
+        <Text style={styles.brandTitle}>BIBLE LINK</Text>
+        <Pressable onPress={() => setShowSettings(true)} style={styles.settingsButton}>
+          <Svg width={22} height={22} viewBox="0 0 24 24">
+            <Path
+              d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+              fill="none" stroke="#53708d" strokeWidth="2"
+            />
+            <Path
+              d="M19.4 13a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"
+              fill="none" stroke="#53708d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            />
+          </Svg>
+        </Pressable>
+      </View>
+
+      {onWordSearch && (
+        <Pressable onPress={onWordSearch} style={styles.searchEntry}>
+          <View style={styles.searchEntryCopy}>
+            <Text style={styles.searchEntryTitle}>단어 찾기</Text>
+            <Text style={styles.searchEntryMeta}>글자로 단어를 검색하고 사용 이력을 확인하세요</Text>
+          </View>
+          <Text style={styles.searchEntryArrow}>›</Text>
+        </Pressable>
+      )}
+
+      <View style={styles.toggleRow}>
+        <Text style={styles.toggleLabel}>푼 퍼즐 가리기</Text>
+        <Switch
+          value={hideSolved}
+          onValueChange={setHideSolved}
+          trackColor={{ false: '#d4dde6', true: '#315d7f' }}
+          thumbColor={hideSolved ? '#fff' : '#fff'}
+        />
+      </View>
+
       <ScrollView
         style={styles.scrollView}
-        contentContainerStyle={[styles.container, styles.containerGrow]}
+        contentContainerStyle={styles.scrollViewContent}
       >
-        <View style={styles.header}>
-          <Text style={styles.eyebrow}>BIBLE LINK</Text>
-          <Text style={styles.title}>맵 선택</Text>
-          <Text style={styles.description}>풀고 싶은 퍼즐판을 선택해 보세요.</Text>
-        </View>
-
-        {onWordSearch && (
-          <Pressable onPress={onWordSearch} style={styles.searchEntry}>
-            <View style={styles.searchEntryCopy}>
-              <Text style={styles.searchEntryTitle}>단어 찾기</Text>
-              <Text style={styles.searchEntryMeta}>글자로 단어를 검색하고 사용 이력을 확인하세요</Text>
-            </View>
-            <Text style={styles.searchEntryArrow}>›</Text>
-          </Pressable>
-        )}
-
-        {renderSection('EASY', '기초 성경 단어', easyMaps, easyStartIndex, '#3c9a72')}
-        {normalMaps.length > 0 && renderSection('NORMAL', '중급 성경 단어', normalMaps, normalStartIndex, '#e08a3c')}
-        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, hardStartIndex, '#d64545')}
+        {renderSection('EASY', '기초 성경 단어', easyMaps, '#3c9a72')}
+        {normalMaps.length > 0 && renderSection('NORMAL', '중급 성경 단어', normalMaps, '#e08a3c')}
+        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545')}
       </ScrollView>
+
+      <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
+          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+            <Text style={styles.modalTitle}>설정</Text>
+            <Pressable
+              style={styles.resetButton}
+              onPress={() => {
+                if (onResetProgress) onResetProgress();
+                setShowSettings(false);
+              }}
+            >
+              <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
+            </Pressable>
+            <Pressable style={styles.closeButton} onPress={() => setShowSettings(false)}>
+              <Text style={styles.closeButtonText}>닫기</Text>
+            </Pressable>
+          </Pressable>
+        </Pressable>
+      </Modal>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%', backgroundColor: '#f6f8fb' },
-  scrollView: { flex: 1, backgroundColor: '#f6f8fb' },
-  container: { padding: 20, paddingBottom: 40, backgroundColor: '#f6f8fb' },
-  containerGrow: { flexGrow: 1 },
-  header: { marginBottom: 20 },
-  eyebrow: { color: '#53708d', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
-  title: { color: '#172536', fontSize: 28, fontWeight: '800', marginTop: 4 },
-  description: { color: '#647487', fontSize: 13, lineHeight: 19, marginTop: 8 },
-  searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#315d7f', borderRadius: 18, padding: 18, marginBottom: 16 },
+  webSafeArea: { height: '100vh' },
+  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
+  brandTitle: { color: '#172536', fontSize: 32, fontWeight: '800', letterSpacing: 1 },
+  settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#e9f0f6' },
+  toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 12 },
+  toggleLabel: { color: '#53708d', fontSize: 12, fontWeight: '700', marginRight: 8 },
+  searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#315d7f', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntryCopy: { flex: 1, paddingRight: 12 },
   searchEntryTitle: { color: '#fff', fontSize: 17, fontWeight: '800' },
   searchEntryMeta: { color: '#cfe0ee', fontSize: 12, marginTop: 6, lineHeight: 17 },
   searchEntryArrow: { color: '#fff', fontSize: 24, fontWeight: '800' },
+  scrollView: { flex: 1, backgroundColor: '#f6f8fb' },
+  scrollViewContent: { paddingHorizontal: 20, paddingBottom: 40 },
   sectionHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14, marginTop: 8, paddingHorizontal: 4 },
   sectionCopy: { flex: 1, alignItems: 'flex-start' },
   sectionEyebrow: { fontSize: 11, fontWeight: '800', letterSpacing: 2, textAlign: 'left' },
@@ -143,4 +202,11 @@ const styles = StyleSheet.create({
   gaugeInner: { alignItems: 'center', justifyContent: 'center' },
   gaugeNumber: { color: '#172536', fontSize: 18, fontWeight: '800' },
   gaugePercent: { color: '#647487', fontSize: 9, fontWeight: '700', marginTop: 1 },
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', alignItems: 'center' },
+  modalContent: { backgroundColor: '#fff', borderRadius: 20, padding: 24, width: '80%', maxWidth: 320, alignItems: 'stretch' },
+  modalTitle: { color: '#172536', fontSize: 20, fontWeight: '800', marginBottom: 20, textAlign: 'center' },
+  resetButton: { backgroundColor: '#d64545', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 12 },
+  resetButtonText: { color: '#fff', fontSize: 15, fontWeight: '800' },
+  closeButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
+  closeButtonText: { color: '#53708d', fontSize: 15, fontWeight: '800' },
 });

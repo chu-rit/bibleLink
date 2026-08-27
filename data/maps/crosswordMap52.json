@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-052",
+  "title": "E-22",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#######성",
+    "#######전",
+    "#####형#대",
+    "#####제사장",
+    "히#####두#",
+    "아#요#사냥개#",
+    "신성한봉사#인#",
+    "스###기둥##"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "성전대장",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "entry-성전 대장"
+    },
+    {
+      "number": 2,
+      "answer": "형제",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "brother"
+    },
+    {
+      "number": 3,
+      "answer": "제사장",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "priest"
+    },
+    {
+      "number": 4,
+      "answer": "사두개인",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "sadducees"
+    },
+    {
+      "number": 5,
+      "answer": "히아신스",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "hyacinth"
+    },
+    {
+      "number": 6,
+      "answer": "요한",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "john"
+    },
+    {
+      "number": 7,
+      "answer": "사냥개",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "greyhound"
+    },
+    {
+      "number": 8,
+      "answer": "사사기",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "judgesbook"
+    },
+    {
+      "number": 9,
+      "answer": "신성한봉사",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-신성한 봉사"
+    },
+    {
+      "number": 10,
+      "answer": "기둥",
+      "direction": "across",
+      "row": 7,
+      "col": 4,
+      "length": 2,
+      "wordId": "pillar"
+    }
+  ]
+}

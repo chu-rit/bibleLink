@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, '..', 'data');
+const wordsDir = path.join(__dirname, '..', 'data', 'words');
+const mapsDir = path.join(__dirname, '..', 'data', 'maps');
 const MAX_WORD_USES = 2;
 
 const args = process.argv.slice(2);
@@ -34,14 +35,14 @@ if (isHard && (size !== 12 || targetWords !== 20)) {
   process.exit(1);
 }
 
-const readJson = (file) => JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
-const words = readJson('bibleWordsLib1.json');
+const readJson = (dir, file) => JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+const words = readJson(wordsDir, 'bibleWordsLib1.json');
 
 const usageCount = new Map();
-fs.readdirSync(dataDir)
+fs.readdirSync(mapsDir)
   .filter((file) => /^crosswordMap\d+\.json$/.test(file) && file !== outputFile)
   .forEach((file) => {
-    readJson(file).cells.forEach((cell) => {
+    readJson(mapsDir, file).cells.forEach((cell) => {
       usageCount.set(cell.wordId, (usageCount.get(cell.wordId) || 0) + 1);
     });
   });
@@ -230,5 +231,5 @@ const map = {
   })),
 };
 
-fs.writeFileSync(path.join(dataDir, outputFile), `${JSON.stringify(map, null, 2)}\n`);
+fs.writeFileSync(path.join(mapsDir, outputFile), `${JSON.stringify(map, null, 2)}\n`);
 console.log(`${outputFile} 생성: ${size}x${size}, 단어 ${map.cells.length}개, 평균 난이도 ${best.average.toFixed(2)}, 새 단어 ${best.fresh}개`);

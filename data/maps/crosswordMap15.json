@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-015",
+  "title": "E-9",
+  "difficulty": 1.6,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####마태#",
+    "#####리##",
+    "##갈라디아서#",
+    "##렙#모#기도",
+    "####데#관#",
+    "##솔#후###",
+    "##로마서###",
+    "빌레몬#####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "마리아",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "mary"
+    },
+    {
+      "number": 2,
+      "answer": "마태",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "matthew"
+    },
+    {
+      "number": 3,
+      "answer": "갈라디아서",
+      "direction": "across",
+      "row": 2,
+      "col": 2,
+      "length": 5,
+      "wordId": "galatians"
+    },
+    {
+      "number": 4,
+      "answer": "갈렙",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "caleb"
+    },
+    {
+      "number": 5,
+      "answer": "디모데후서",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 5,
+      "wordId": "secondtimothy"
+    },
+    {
+      "number": 6,
+      "answer": "서기관",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "scribes"
+    },
+    {
+      "number": 7,
+      "answer": "기도",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 2,
+      "wordId": "prayer"
+    },
+    {
+      "number": 8,
+      "answer": "솔로몬",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "solomon"
+    },
+    {
+      "number": 9,
+      "answer": "로마서",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "romans"
+    },
+    {
+      "number": 10,
+      "answer": "빌레몬",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "philemon"
+    }
+  ]
+}

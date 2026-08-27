@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-019",
+  "title": "N-7",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "길갈#####엘#미",
+    "#멜##고##리브가",
+    "#산헤드린#예후##",
+    "####도#언###",
+    "##여#전도서###",
+    "#골로새서#####",
+    "##보#######",
+    "미리암#######",
+    "가#########",
+    "엘가나#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "길갈",
+      "direction": "across",
+      "row": 0,
+      "col": 0,
+      "length": 2,
+      "wordId": "gilgal"
+    },
+    {
+      "number": 2,
+      "answer": "갈멜산",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 3,
+      "wordId": "carmel"
+    },
+    {
+      "number": 3,
+      "answer": "엘리후",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "elihu"
+    },
+    {
+      "number": 4,
+      "answer": "미가",
+      "direction": "down",
+      "row": 0,
+      "col": 9,
+      "length": 2,
+      "wordId": "micah"
+    },
+    {
+      "number": 5,
+      "answer": "고린도전서",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 5,
+      "wordId": "firstcorinthians"
+    },
+    {
+      "number": 6,
+      "answer": "리브가",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
+      "length": 3,
+      "wordId": "rebecca"
+    },
+    {
+      "number": 7,
+      "answer": "산헤드린",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "sanhedrin"
+    },
+    {
+      "number": 8,
+      "answer": "예언서",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "propheticbooks"
+    },
+    {
+      "number": 9,
+      "answer": "예후",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "jehu"
+    },
+    {
+      "number": 10,
+      "answer": "여로보암",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 4,
+      "wordId": "jeroboam"
+    },
+    {
+      "number": 11,
+      "answer": "전도서",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "ecclesiastes"
+    },
+    {
+      "number": 12,
+      "answer": "골로새서",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 4,
+      "wordId": "colossians"
+    },
+    {
+      "number": 13,
+      "answer": "미리암",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "miriam"
+    },
+    {
+      "number": 14,
+      "answer": "미가엘",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "michael"
+    },
+    {
+      "number": 15,
+      "answer": "엘가나",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "elkanah"
+    }
+  ]
+}

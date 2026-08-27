@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-064",
+  "title": "N-24",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##살모나#####",
+    "####비가####",
+    "#####바####",
+    "#####다리#부논",
+    "######스바림#",
+    "######트###",
+    "##타#바알라###",
+    "#하르네벨#####",
+    "소#수#######",
+    "아하스#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "살모나",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "zalmonah"
+    },
+    {
+      "number": 2,
+      "answer": "나비",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "nahbi"
+    },
+    {
+      "number": 3,
+      "answer": "비가",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "dirge"
+    },
+    {
+      "number": 4,
+      "answer": "가바다",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "gabbatha"
+    },
+    {
+      "number": 5,
+      "answer": "다리",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "leg"
+    },
+    {
+      "number": 6,
+      "answer": "리스트라",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "lystra"
+    },
+    {
+      "number": 7,
+      "answer": "부림",
+      "direction": "down",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "purim"
+    },
+    {
+      "number": 8,
+      "answer": "부논",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "punon"
+    },
+    {
+      "number": 9,
+      "answer": "스바림",
+      "direction": "across",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "shebarim"
+    },
+    {
+      "number": 10,
+      "answer": "타르수스",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 4,
+      "wordId": "tarsus"
+    },
+    {
+      "number": 11,
+      "answer": "바알라",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "baalah"
+    },
+    {
+      "number": 12,
+      "answer": "바벨",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "babel"
+    },
+    {
+      "number": 13,
+      "answer": "하르네벨",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 4,
+      "wordId": "harnepher"
+    },
+    {
+      "number": 14,
+      "answer": "소아",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "shoa"
+    },
+    {
+      "number": 15,
+      "answer": "아하스",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "ahaz"
+    }
+  ]
+}

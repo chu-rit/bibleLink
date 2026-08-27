@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "gravel",
+    "word": "자갈",
+    "definition": "자잘한 돌멩이나 조약돌로 성경에서 해로운 결과의 비유에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "잠언 20:17",
+      "예레미야 애가 3:16"
+    ]
+  },
+  {
+    "id": "partridge",
+    "word": "자고새",
+    "definition": "꿩류의 새로 달리기 빠르지만 날으론 금방 지치는 사냥새",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 26:20",
+      "예레미야 애가 3:52",
+      "예레미야 17:11"
+    ]
+  },
+  {
+    "id": "bag",
+    "word": "자루",
+    "definition": "곡식이나 식량 귀중품을 담는 가죽이나 천으로 만든 주머니",
+    "difficulty": 2,
+    "references": [
+      "여호수아 9:4",
+      "마태 9:17",
+      "창세기 42:25"
+    ]
+  },
+  {
+    "id": "sackcloth",
+    "word": "자루천",
+    "definition": "검은 염소 털로 짠 거친 천으로 부대나 애도 표현에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "계시록 6:12",
+      "이사야 50:3",
+      "창세기 37:34"
+    ]
+  },
+  {
+    "id": "zabad",
+    "word": "자밧",
+    "definition": "수델라 가족에 속한 에브라임 사람이자 다윗의 전사 계통 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 7:20, 21",
+      "역대기상 11:26, 41",
+      "역대기하 24:26"
+    ]
+  },
+  {
+    "id": "mercy",
+    "word": "자비",
+    "definition": "고통받는 사람을 불쌍히 여겨 실제적인 도움을 베푸는 마음과 행동",
+    "difficulty": 1,
+    "references": [
+      "누가복음 10:33-37; 에베소서 2:4, 5"
+    ]
+  },
+  {
+    "id": "embroidery",
+    "word": "자수",
+    "definition": "바늘로 천이나 가죽에 실로 무늬를 놓는 고대 장식 기술",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 35:30-35",
+      "출애굽기 26:1, 36:8",
+      "출애굽기 28:15, 39:8"
+    ]
+  },
+  {
+    "id": "amethyst",
+    "word": "자수정",
+    "definition": "자주색이나 보라색을 띠는 준보석으로 장신구에 쓰이는 석영 변종",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 28:19",
+      "출애굽기 39:12",
+      "계시록 21:20"
+    ]
+  },
+  {
+    "id": "freedom",
+    "word": "자유",
+    "definition": "하느님만이 절대적으로 가지시는 제한 없는 상태를 가리키는 개념",
+    "difficulty": 2,
+    "references": [
+      "창세기 17:1",
+      "예레미야 10:7, 10",
+      "계시록 4:11"
+    ]
+  },
+  {
+    "id": "zayin",
+    "word": "자인",
+    "definition": "히브리어 알파벳의 일곱 번째 글자. 이 글자는 일반적으로 영어 글자 “z”에 해당되며, 히브리어의 경우 시편 119:49-56의 각 절은 이 글자로 시작된다.",
+    "difficulty": 3,
+    "references": [
+      "시편 119:49-56"
+    ]
+  },
+  {
+    "id": "entry-자제",
+    "word": "자제",
+    "definition": "자신의 성격 행동 말 생각을 규제하고 억제하는 하느님 영의 열매",
+    "difficulty": 2,
+    "references": [
+      "창세기 43:31",
+      "에스더 5:10",
+      "잠언 10:19"
+    ]
+  },
+  {
+    "id": "selfcontrol",
+    "word": "자제력",
+    "definition": "감정과 욕망을 제어하여 하느님의 원칙에 맞게 행동하는 힘",
+    "difficulty": 2,
+    "references": [
+      "갈라디아서 5:22, 23; 베드로 후서 1:5, 6"
+    ]
+  },
+  {
+    "id": "jackal",
+    "word": "자칼",
+    "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
+    "difficulty": 2,
+    "references": [
+      "예레미야 9:11",
+      "이사야 13:22",
+      "미가 1:8"
+    ]
+  },
+  {
+    "id": "harpoon",
+    "word": "작살",
+    "definition": "큰 물고기를 찌르는 날카로운 촉이 달린 창 모양의 도구",
+    "difficulty": 2,
+    "references": [
+      "욥기 41:7"
+    ]
+  },
+  {
+    "id": "zalmon",
+    "word": "잘몬",
+    "definition": "아호히 사람으로 다윗의 전사이자 산 이름이기도 한 인물",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 23:8, 28",
+      "사사기 9:48, 49",
+      "시편 68:14"
+    ]
+  },
+  {
+    "id": "entry-잠두",
+    "word": "잠두",
+    "definition": "팔레스타인에서 재배된 일년생 콩류 식물로 식량에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 17:24-29",
+      "에스겔 4:9, 10"
+    ]
+  },
+  {
+    "id": "proverbs",
+    "word": "잠언",
+    "definition": "하느님을 두려워하는 것이 지혜의 시작임을 가르치는 성경 책",
+    "difficulty": 1,
+    "references": [
+      "잠언 1:1-7"
+    ]
+  },
+  {
+    "id": "prefect",
+    "word": "장관",
+    "definition": "바빌로니아 정부에서 태수보다 낮은 관리로 다니엘이 임명된 직위",
+    "difficulty": 2,
+    "references": [
+      "다니엘 2:48",
+      "다니엘 3:2, 3, 27",
+      "다니엘 6:6, 7"
+    ]
+  },
+  {
+    "id": "entry-장교",
+    "word": "장교",
+    "definition": "로마 군단에서 백 명의 군인을 지휘하는 백인대 대장",
+    "difficulty": 2,
+    "references": [
+      "마태 8:5-13",
+      "누가 7:1-9",
+      "요한 19:23"
+    ]
+  },
+  {
+    "id": "tabernacletent",
+    "word": "장막",
+    "definition": "이스라엘 사람들이 광야에서 생활하거나 숭배 장소로 사용한 천막 형태의 구조물",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 33:7-11; 히브리서 9:1-3"
+    ]
+  },
+  {
+    "id": "maturity",
+    "word": "장성",
+    "definition": "영적으로 성숙하여 교리에 현혹되지 않는 온전히 자란 상태",
+    "difficulty": 2,
+    "references": [
+      "에베소서 4:11-14",
+      "히브리서 5:11-6:2",
+      "고린도전서 2:6"
+    ]
+  },
+  {
+    "id": "ornaments",
+    "word": "장식품",
+    "definition": "외관을 돋보이게 하기 위해 사람이나 건물 동물에 달았던 장식 물건",
+    "difficulty": 2,
+    "references": [
+      "사사기 8:21, 26",
+      "창세기 24:22, 30, 47",
+      "출애굽기 32:1-4"
+    ]
+  },
+  {
+    "id": "birthright",
+    "word": "장자권",
+    "definition": "가족의 맏아들이 상속과 가문의 책임에서 갖던 특별한 권리",
+    "difficulty": 2,
+    "references": [
+      "창세기 25:29-34; 신명기 21:15-17"
+    ]
+  },
+  {
+    "id": "marketplace",
+    "word": "장터",
+    "definition": "고대 도시에서 물건을 사고팔고 공공 집회가 열리던 광장",
+    "difficulty": 2,
+    "references": [
+      "사도행전 16:19-21",
+      "사도행전 17:17-21",
+      "마태 20:3, 4"
+    ]
+  },
+  {
+    "id": "plague",
+    "word": "재앙",
+    "definition": "하느님이 반역이나 불순종에 대해 내리시는 타격이나 징벌",
+    "difficulty": 2,
+    "references": [
+      "민수기 16:41-50",
+      "스가랴 14:12, 15, 18",
+      "사무엘상 5:1-6:4"
+    ]
+  },
+  {
+    "id": "entry-재판관",
+    "word": "재판관",
+    "definition": "왕이 다스리기 전 여호와께서 이스라엘을 구출하려고 일으키신 지도자들",
+    "difficulty": 2,
+    "references": [
+      "사사기 2:16",
+      "사도행전 13:20",
+      "욥기 29:7"
+    ]
+  },
+  {
+    "id": "entry-재판관기",
+    "word": "재판관기",
+    "definition": "가나안 정복 후 왕권 확립 전 약 330년간을 다룬 성서의 한 책",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 23:32, 33",
+      "민수기 33:55",
+      "히브리서 11:32-34"
+    ]
+  },
+  {
+    "id": "plowing",
+    "word": "쟁기질",
+    "definition": "땅을 갈아 씨를 뿌리기 위한 농사 작업으로 안식에 쉬어야 할 의무가 있음",
+    "difficulty": 2,
+    "references": [
+      "잠언 20:4",
+      "전도서 11:4",
+      "출애굽기 34:21"
+    ]
+  },
+  {
+    "id": "cistern",
+    "word": "저수조",
+    "definition": "빗물이나 샘물을 모아 저장하려고 만든 인공 지하 구덩이",
+    "difficulty": 2,
+    "references": [
+      "창세기 37:20-29",
+      "사무엘하 23:20",
+      "시편 30:3"
+    ]
+  },
+  {
+    "id": "scales-2",
+    "word": "저울",
+    "definition": "물체의 무게를 재는 천칭 장치로 공정한 거래와 심판의 상징",
+    "difficulty": 2,
+    "references": [
+      "예레미야 32:10",
+      "이사야 46:6",
+      "계시록 6:5"
+    ]
+  },
+  {
+    "id": "entry-저주",
+    "word": "저주",
+    "definition": "어떤 사람이나 사물에 재앙이 닥치기를 바라는 선언이나 위협",
+    "difficulty": 1,
+    "references": [
+      "창세기 3:14, 15",
+      "창세기 4:11, 12",
+      "여호수아 9:23"
+    ]
+  },
+  {
+    "id": "antichrist",
+    "word": "적그리스도",
+    "definition": "그리스도를 대적하거나 대체하는 자로 요한 서한에만 나오는 표현",
+    "difficulty": 2,
+    "references": [
+      "요한첫째 2:18",
+      "요한첫째 2:22",
+      "요한둘째 7"
+    ]
+  },
+  {
+    "id": "adversary",
+    "word": "적대자",
+    "definition": "맞서 겨루거나 대항하는 적이나 반대자를 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "민수기 25:18",
+      "시편 129:1",
+      "베드로전서 5:8"
+    ]
+  },
+  {
+    "id": "scorpion",
+    "word": "전갈",
+    "definition": "거미류에 속한 작은 절지동물로 꼬리에 독침을 가진 위험한 생물",
+    "difficulty": 2,
+    "references": [
+      "계시록 9:3, 5, 10",
+      "신명기 8:15",
+      "민수기 34:4"
+    ]
+  },
+  {
+    "id": "almighty",
+    "word": "전능자",
+    "definition": "히브리어 샷다이로 전능한 힘을 가진 하느님을 가리키는 칭호",
+    "difficulty": 2,
+    "references": [
+      "창세기 17:1",
+      "출애굽기 6:3",
+      "에스겔 10:5"
+    ]
+  },
+  {
+    "id": "ecclesiastes",
+    "word": "전도서",
+    "definition": "인간의 수고와 삶의 의미를 살피며 하느님을 두려워해야 함을 강조하는 성경 책",
+    "difficulty": 2,
+    "references": [
+      "전도서 12:13, 14"
+    ]
+  },
+  {
+    "id": "herald",
+    "word": "전령",
+    "definition": "왕의 명령과 포고령을 공포하는 궁정 관리를 가리키는 직위",
+    "difficulty": 2,
+    "references": [
+      "다니엘 3:4",
+      "다니엘 5:29",
+      "마가 1:45"
+    ]
+  },
+  {
+    "id": "spoil",
+    "word": "전리품",
+    "definition": "패배한 적으로부터 빼앗은 강탈물이나 노략물",
+    "difficulty": 2,
+    "references": [
+      "누가 11:21, 22",
+      "창세기 14:1-24",
+      "민수기 31:3-5"
+    ]
+  },
+  {
+    "id": "war",
+    "word": "전쟁",
+    "definition": "적을 정복하거나 멸하기 위한 무력 충돌로 성경에 자주 언급됨",
+    "difficulty": 1,
+    "references": [
+      "창세기 14:1-24",
+      "출애굽기 15:3",
+      "시편 24:8"
+    ]
+  },
+  {
+    "id": "drinkoffering",
+    "word": "전제",
+    "definition": "제단에서 다른 제물과 함께 포도주를 붓는 방식으로 바치던 제물",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 29:40, 41; 민수기 15:5"
+    ]
+  },
+  {
+    "id": "portent",
+    "word": "전조",
+    "definition": "미래의 사건을 미리 보여 주는 표징이나 경이로운 일",
+    "difficulty": 2,
+    "references": [
+      "신명기 13:1-3",
+      "열왕기상 13:1-5",
+      "이사야 20:3-6"
+    ]
+  },
+  {
+    "id": "tradition",
+    "word": "전통",
+    "definition": "부모에서 자녀로 전달되는 교리나 관행으로 그리스어 파라도시스에서 유래",
+    "difficulty": 2,
+    "references": [
+      "고린도전서 11:2",
+      "요한 2:1, 2",
+      "누가 22:14-18"
+    ]
+  },
+  {
+    "id": "preaching",
+    "word": "전파",
+    "definition": "하느님의 왕국과 성경의 소식을 사람들에게 공개적으로 알리는 활동",
+    "difficulty": 2,
+    "references": [
+      "마태복음 24:14",
+      "로마서 10:14, 15"
+    ]
+  },
+  {
+    "id": "entry-절구",
+    "word": "절구",
+    "definition": "곡식이나 향료를 넣고 공이로 찧거나 빻는 데 쓰는 그릇",
+    "difficulty": 2,
+    "references": [
+      "민수기 11:7, 8",
+      "출애굽기 27:20, 21",
+      "잠언 27:22"
+    ]
+  },
+  {
+    "id": "astrologers",
+    "word": "점성술사",
+    "definition": "하늘을 별자리에 따라 나누어 점을 치는 바빌론의 술사들",
+    "difficulty": 2,
+    "references": [
+      "다니엘 2:27",
+      "다니엘 4:7",
+      "이사야 47:13"
+    ]
+  },
+  {
+    "id": "grafting",
+    "word": "접붙이기",
+    "definition": "한 나무의 가지를 다른 나무 줄기에 붙여 영구 결합시키는 농업 기술",
+    "difficulty": 2,
+    "references": [
+      "로마서 11:17-24",
+      "갈라디아서 6:16",
+      "요한 15:1-6"
+    ]
+  },
+  {
+    "id": "marshmallow",
+    "word": "접시꽃",
+    "definition": "다년생 식물로 목질 줄기가 1.8미터에 이르며 흉년에 식량으로 쓰임",
+    "difficulty": 2,
+    "references": [
+      "욥기 6:6"
+    ]
+  },
+  {
+    "id": "shank",
+    "word": "정강이",
+    "definition": "무릎과 발목 사이의 다리 아랫부분으로 희생 제물 준비에 언급됨",
+    "difficulty": 2,
+    "references": [
+      "레위기 1:9, 13",
+      "레위기 4:11, 12",
+      "레위기 11:21"
+    ]
+  },
+  {
+    "id": "cleanness",
+    "word": "정결",
+    "definition": "하느님의 숭배에서 도덕적·의식적으로 깨끗한 상태",
+    "difficulty": 2,
+    "references": [
+      "레위기 11:44, 45; 시편 24:3, 4"
+    ]
+  },
+  {
+    "id": "purification",
+    "word": "정결례",
+    "definition": "부정한 상태에서 벗어나 숭배에 다시 참여하기 위해 행하던 의식",
+    "difficulty": 2,
+    "references": [
+      "레위기 14:8, 9; 누가복음 2:22"
+    ]
+  },
+  {
+    "id": "canon",
+    "word": "정경",
+    "definition": "하느님의 영감을 받은 성경 책으로 인정된 책들의 목록",
+    "difficulty": 2,
+    "references": [
+      "누가복음 24:44",
+      "디모데 후서 3:16"
+    ]
+  },
+  {
+    "id": "spies",
+    "word": "정탐꾼들",
+    "definition": "은밀히 관찰해 정보를 얻는 사람들로 가나안 땅을 탐지한 12명의 수장",
+    "difficulty": 2,
+    "references": [
+      "신명기 1:22, 23",
+      "민수기 13:1-33",
+      "여호수아 2:1-24"
+    ]
+  },
+  {
+    "id": "altar",
+    "word": "제단",
+    "definition": "하느님께 희생 제물을 바치기 위해 만든 구조물",
+    "difficulty": 1,
+    "references": [
+      "창세기 8:20"
+    ]
+  },
+  {
+    "id": "zethar",
+    "word": "제달",
+    "definition": "아하수에로가 와스디를 부르도록 보낸 일곱 궁정 관리 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "에스더 1:10, 11"
+    ]
+  },
+  {
+    "id": "zerah",
+    "word": "제라",
+    "definition": "에돔의 족장으로 르우엘의 아들이자 에서의 손자인 인물",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:3, 4, 13, 17",
+      "역대기상 1:37",
+      "창세기 38:27-30"
+    ]
+  },
+  {
+    "id": "zereth",
+    "word": "제레드",
+    "definition": "헬라가 아스훌에게 낳아 준 유다 지파 아들들 중 첫째로 언급된 인물",
+    "difficulty": 3,
+    "references": [
+      "역대기상 4:1, 5, 7"
+    ]
+  },
+  {
+    "id": "zeresh",
+    "word": "제레스",
+    "definition": "하만의 아내로 모르드개를 기둥에 매달자고 제안한 여자",
+    "difficulty": 3,
+    "references": [
+      "에스더 5:10, 14",
+      "에스더 6:13"
+    ]
+  },
+  {
+    "id": "offerings",
+    "word": "제물",
+    "definition": "아벨과 카인의 예부터 시작된 하느님께 바치는 예물의 관습",
+    "difficulty": 2,
+    "references": [
+      "창세기 4:1-4",
+      "창세기 8:18-22",
+      "히브리서 11:4"
+    ]
+  },
+  {
+    "id": "zebah",
+    "word": "제바",
+    "definition": "미디안의 한 왕으로 7년간 이스라엘을 압제하다 기드온에게 패한 자",
+    "difficulty": 3,
+    "references": [
+      "사사기 6:1-6",
+      "사사기 8:18, 19",
+      "시편 83:11, 12"
+    ]
+  },
+  {
+    "id": "priest",
+    "word": "제사장",
+    "definition": "고대 이스라엘에서 백성을 대신해 하느님께 제물을 바치고 숭배를 인도한 사람",
+    "difficulty": 1,
+    "references": [
+      "레위기 8장"
+    ]
+  },
+  {
+    "id": "priesthood",
+    "word": "제사직",
+    "definition": "하느님을 섬기며 백성을 위해 제사와 봉사를 수행하는 직무",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 28:1",
+      "히브리서 5:1"
+    ]
+  },
+  {
+    "id": "zeus",
+    "word": "제우스",
+    "definition": "그리스인들이 최고로 여긴 거짓 신으로 로마의 주피터에 해당함",
+    "difficulty": 2,
+    "references": [
+      "사도행전 14:8-13",
+      "사도행전 28:11"
+    ]
+  },
+  {
+    "id": "disciple",
+    "word": "제자",
+    "definition": "스승의 가르침을 배우고 그 가르침에 따라 행동하는 사람",
+    "difficulty": 1,
+    "references": [
+      "마태복음 28:19, 20"
+    ]
+  },
+  {
+    "id": "entry-젤라",
+    "word": "젤라",
+    "definition": "베냐민의 도시로 사울과 요나단의 뼈가 장사된 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 18:21, 28",
+      "사무엘하 21:14"
+    ]
+  },
+  {
+    "id": "carving",
+    "word": "조각",
+    "definition": "나무나 돌 금속을 빚거나 깎아 형상을 만드는 기술로 우상에도 쓰임",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 20:4",
+      "신명기 27:15",
+      "이사야 44:9-20"
+    ]
+  },
+  {
+    "id": "tribute",
+    "word": "조공",
+    "definition": "복속의 표시로 약국이나 통치자에게 바치는 돈이나 공물",
+    "difficulty": 2,
+    "references": [
+      "사무엘하 8:2, 6",
+      "열왕기상 4:21",
+      "역대기하 17:10, 11"
+    ]
+  },
+  {
+    "id": "grandparents",
+    "word": "조부모",
+    "definition": "아버지나 어머니의 부모로 성경에 할아버지 할머니로 드물게 나옴",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 15:10, 13",
+      "열왕기상 15:1, 2, 8",
+      "창세기 28:13"
+    ]
+  },
+  {
+    "id": "genealogy",
+    "word": "족보",
+    "definition": "사람의 조상이나 가계를 기술한 기록으로 성경에 정확히 보존됨",
+    "difficulty": 2,
+    "references": [
+      "에베소서 3:14, 15",
+      "역대기상 5:17",
+      "느헤미야 7:5"
+    ]
+  },
+  {
+    "id": "sheik",
+    "word": "족장",
+    "definition": "에돔과 호리 족속의 우두머리들에게 주어진 칭호로 히브리어 알루프에서 유래",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 15:15",
+      "창세기 36:15",
+      "창세기 36:20, 21"
+    ]
+  },
+  {
+    "id": "boil",
+    "word": "종기",
+    "definition": "피부가 국부적으로 붓고 통증이 있는 병으로 이집트 재앙에 나옴",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 9:8-11",
+      "신명기 28:27, 35",
+      "욥기 2:7, 8"
+    ]
+  },
+  {
+    "id": "kind",
+    "word": "종류",
+    "definition": "창조 기록에 나오는 생물 분류 단위로 하느님이 그대로 창조하신 기본 형태",
+    "difficulty": 1,
+    "references": [
+      "창세기 1:11, 12",
+      "창세기 1:21, 24, 25",
+      "고린도전서 14:33"
+    ]
+  },
+  {
+    "id": "paper",
+    "word": "종이",
+    "definition": "파피루스 식물을 얇게 잘라 만든 고대의 필기 도구",
+    "difficulty": 2,
+    "references": [
+      "요한둘째 12절"
+    ]
+  },
+  {
+    "id": "sinfulness",
+    "word": "죄악",
+    "definition": "하느님의 의로운 표준을 어기거나 그 표준에서 벗어난 행동과 상태",
+    "difficulty": 2,
+    "references": [
+      "요한 첫째 3:4; 로마서 3:23"
+    ]
+  },
+  {
+    "id": "sovereignty",
+    "word": "주권",
+    "definition": "최고의 통치권이나 권력으로 하느님의 절대적 지배를 가리킴",
+    "difficulty": 2,
+    "references": [
+      "시편 47:9",
+      "시편 138:5",
+      "계시록 6:10"
+    ]
+  },
+  {
+    "id": "tin",
+    "word": "주석",
+    "definition": "녹는점이 낮은 푸른빛 흰색 금속으로 정련 과정에서 분리되는 찌꺼기",
+    "difficulty": 2,
+    "references": [
+      "에스겔 22:18, 20",
+      "이사야 1:25",
+      "에스겔 27:12"
+    ]
+  },
+  {
+    "id": "zuar",
+    "word": "주알",
+    "definition": "잇사갈 사람으로 지파 수장 느다넬의 아버지",
+    "difficulty": 3,
+    "references": [
+      "민수기 1:8, 16",
+      "민수기 2:5",
+      "민수기 10:15"
+    ]
+  },
+  {
+    "id": "presumptuousness",
+    "word": "주제넘음",
+    "definition": "권위 없이 자신을 내세우거나 건방지게 행하는 것으로 겸허의 반대",
+    "difficulty": 2,
+    "references": [
+      "창세기 25:29",
+      "출애굽기 21:14",
+      "잠언 21:24"
+    ]
+  },
+  {
+    "id": "death",
+    "word": "죽음",
+    "definition": "생명 기능이 모두 정지된 상태로 삶의 반대이자 죄의 결과",
+    "difficulty": 1,
+    "references": [
+      "신명기 30:15, 19",
+      "전도서 3:19",
+      "요한 12:24"
+    ]
+  },
+  {
+    "id": "preparation",
+    "word": "준비일",
+    "definition": "매주 안식일 전날로 유대인들이 안식일 준비를 한 날",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 16:5, 22-27",
+      "마가 15:42",
+      "출애굽기 20:10"
+    ]
+  },
+  {
+    "id": "onyx",
+    "word": "줄마노",
+    "definition": "흰색과 검정 갈색 빨간색 층이 번갈아 있는 준보석의 일종",
+    "difficulty": 2,
+    "references": [
+      "창세기 2:11, 12",
+      "출애굽기 28:9-12",
+      "에스겔 28:12, 13"
+    ]
+  },
+  {
+    "id": "mediator",
+    "word": "중개자",
+    "definition": "대립된 두 당사자 사이에서 화해를 이끄는 자로 모세와 예수에게 적용됨",
+    "difficulty": 2,
+    "references": [
+      "갈라디아서 3:19",
+      "디모데전서 2:5",
+      "히브리서 9:15"
+    ]
+  },
+  {
+    "id": "zepho",
+    "word": "즈보",
+    "definition": "엘리바스의 아들로 에서의 손자이자 에돔 족장 중 한 명",
+    "difficulty": 3,
+    "references": [
+      "창세기 36:10, 11, 15",
+      "역대기상 1:36"
+    ]
+  },
+  {
+    "id": "deed",
+    "word": "증서",
+    "definition": "부동산 양도 등에 필요한 법적 문서로 예레미야가 밭을 구입할 때 쓰임",
+    "difficulty": 2,
+    "references": [
+      "예레미야 32:6-15",
+      "예레미야 32:11, 12, 14"
+    ]
+  },
+  {
+    "id": "zimri",
+    "word": "지므리",
+    "definition": "유다 손자 제라의 아들이자 시므온 지파의 인물이기도 한 이름",
+    "difficulty": 3,
+    "references": [
+      "역대기상 2:4, 6",
+      "민수기 25:6-8, 14-18",
+      "열왕기상 16:3, 4"
+    ]
+  },
+  {
+    "id": "ziba",
+    "word": "지바",
+    "definition": "사울 집안의 하인으로 므비보셋의 유산을 돌보도록 임명된 자",
+    "difficulty": 3,
+    "references": [
+      "사무엘하 9:2-12",
+      "사무엘하 16:1-4",
+      "사무엘하 19:17, 24-30"
+    ]
+  },
+  {
+    "id": "mostholy",
+    "word": "지성소",
+    "definition": "성막과 성전에서 가장 안쪽에 있는 신성한 공간",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 26:33, 34",
+      "히브리서 9:3-8"
+    ]
+  },
+  {
+    "id": "knowledge",
+    "word": "지식",
+    "definition": "사실을 알고 이해하며 하느님의 뜻을 분별하는 데 필요한 정보",
+    "difficulty": 2,
+    "references": [
+      "잠언 2:6; 요한복음 17:3"
+    ]
+  },
+  {
+    "id": "zia",
+    "word": "지아",
+    "definition": "바산에 살던 갓 사람으로 한 가문의 우두머리",
+    "difficulty": 3,
+    "references": [
+      "역대기상 5:11, 13"
+    ]
+  },
+  {
+    "id": "district",
+    "word": "지역",
+    "definition": "행정 단위나 도시 주변 지방 또는 특정 경계 안의 지방을 가리키는 말",
+    "difficulty": 2,
+    "references": [
+      "느헤미야 3:9, 12, 14-18",
+      "느헤미야 1:3"
+    ]
+  },
+  {
+    "id": "hell",
+    "word": "지옥",
+    "definition": "일부 번역판에서 히브리어 셰올과 그리스어 하데스를 번역한 표현",
+    "difficulty": 2,
+    "references": []
+  },
+  {
+    "id": "zior",
+    "word": "지올",
+    "definition": "유다 산간 지방의 도시로 헤브론 근처 시이르에 있던 곳",
+    "difficulty": 3,
+    "references": [
+      "여호수아 15:20, 48, 54"
+    ]
+  },
+  {
+    "id": "earthquake",
+    "word": "지진",
+    "definition": "지구 내부의 힘으로 지면이 갑자기 진동하는 현상으로 심판에 자주 언급됨",
+    "difficulty": 2,
+    "references": [
+      "열왕기상 19:11",
+      "아모스 1:1",
+      "예레미야 47:3"
+    ]
+  },
+  {
+    "id": "tribe",
+    "word": "지파",
+    "definition": "여러 가족이나 씨족으로 이루어진 동일 혈통의 사람들 집단",
+    "difficulty": 1,
+    "references": [
+      "출애굽기 7:12",
+      "민수기 17:2-6",
+      "시편 74:2"
+    ]
+  },
+  {
+    "id": "staff",
+    "word": "지팡이",
+    "definition": "여행이나 목축에 사용했으며 하느님의 능력을 나타내는 표가 되기도 한 도구",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 4:2-5; 시편 23:4"
+    ]
+  },
+  {
+    "id": "wisdom",
+    "word": "지혜",
+    "definition": "지식을 올바르게 사용해 하느님의 뜻에 맞는 판단을 내리는 능력",
+    "difficulty": 1,
+    "references": [
+      "잠언 9:10"
+    ]
+  },
+  {
+    "id": "bulbul",
+    "word": "직박구리",
+    "definition": "지빠귀 비슷한 중간 크기 새로 히스기야가 지절거리는 소리로 언급함",
+    "difficulty": 3,
+    "references": [
+      "이사야 38:14",
+      "예레미야 8:7"
+    ]
+  },
+  {
+    "id": "showbread",
+    "word": "진설병",
+    "definition": "성소의 상 위에 정기적으로 차려 놓았던 열두 개의 빵",
+    "difficulty": 2,
+    "references": [
+      "레위기 24:5-9; 마태복음 12:3, 4"
+    ]
+  },
+  {
+    "id": "pearl",
+    "word": "진주",
+    "definition": "조개体内에 형성된 구형의 보석으로 가치가 높아 비유에 쓰임",
+    "difficulty": 2,
+    "references": [
+      "디모데전서 2:9",
+      "계시록 18:12, 16",
+      "마태 13:45, 46"
+    ]
+  },
+  {
+    "id": "entry-진통",
+    "word": "진통",
+    "definition": "출산에 따르는 고통으로 하와의 죄 이후 주어진 결과",
+    "difficulty": 2,
+    "references": [
+      "잠언 10:22",
+      "창세기 3:16",
+      "요한 16:20-22"
+    ]
+  },
+  {
+    "id": "clay",
+    "word": "진흙",
+    "definition": "젖었을 때 모양을 바꿀 수 있고 말리면 단단해지는 미세한 흙",
+    "difficulty": 2,
+    "references": [
+      "이사야 41:25",
+      "욥기 38:14",
+      "창세기 11:3"
+    ]
+  },
+  {
+    "id": "zillah",
+    "word": "질라",
+    "definition": "라멕의 두 아내 중 한 사람으로 두발-카인과 나아마의 어머니",
+    "difficulty": 3,
+    "references": [
+      "창세기 4:19-24"
+    ]
+  },
+  {
+    "id": "entry-질투",
+    "word": "질투",
+    "definition": "긍정적이거나 부정적일 수 있는 감정으로 하느님의 전적인 정성을 가리키기도 함",
+    "difficulty": 2,
+    "references": [
+      "잠언 14:30",
+      "스가랴 1:14",
+      "출애굽기 20:5"
+    ]
+  },
+  {
+    "id": "pigeon",
+    "word": "집비둘기",
+    "definition": "비둘기와 같은 히브리어 요나로 불리는 새로 가금화된 큰 종류",
+    "difficulty": 2,
+    "references": [
+      "레위기 1:14",
+      "레위기 5:5-7",
+      "레위기 12:6-8"
+    ]
+  },
+  {
+    "id": "ziddim",
+    "word": "짓딤",
+    "definition": "납달리 영토에 있던 요새 도시로 정확한 위치는 알려지지 않음",
+    "difficulty": 3,
+    "references": [
+      "여호수아 19:32, 35"
+    ]
+  },
+  {
+    "id": "discipline",
+    "word": "징계",
+    "definition": "교육과 시정과 권고를 포함하는 훈련으로 하느님의 사랑의 표현",
+    "difficulty": 2,
+    "references": [
+      "잠언 3:11, 12",
+      "신명기 8:3-5",
+      "에베소서 6:4"
+    ]
+  },
+  {
+    "id": "bramble",
+    "word": "찔레나무",
+    "definition": "판관 요담의 비유에 나오는 가시나무로 왕권을 상징하는 나무",
+    "difficulty": 2,
+    "references": [
+      "사사기 9:8-15",
+      "사사기 9:1-6, 16-20",
+      "시편 58:9"
+    ]
+  }
+]

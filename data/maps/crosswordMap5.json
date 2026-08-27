@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-005b",
+  "title": "N-1",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####데#####",
+    "####살렘####",
+    "####로#####",
+    "###옷니엘####",
+    "####가##뇌##",
+    "#아##후릿그물##",
+    "#사무엘서#말###",
+    "##릿##프리지아#",
+    "산#매#####사면",
+    "파발꾼###스가랴#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "데살로니가후서",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 7,
+      "wordId": "secondthessalonians"
+    },
+    {
+      "number": 2,
+      "answer": "살렘",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "salem"
+    },
+    {
+      "number": 3,
+      "answer": "옷니엘",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "othniel"
+    },
+    {
+      "number": 4,
+      "answer": "뇌물",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 2,
+      "wordId": "bribe"
+    },
+    {
+      "number": 5,
+      "answer": "아사",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 2,
+      "wordId": "asa"
+    },
+    {
+      "number": 6,
+      "answer": "후릿그물",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 4,
+      "wordId": "dragnet"
+    },
+    {
+      "number": 7,
+      "answer": "그말리",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "gemalli"
+    },
+    {
+      "number": 8,
+      "answer": "사무엘서",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-사무엘서"
+    },
+    {
+      "number": 9,
+      "answer": "무릿매꾼",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 4,
+      "wordId": "slinger"
+    },
+    {
+      "number": 10,
+      "answer": "프리지아",
+      "direction": "across",
+      "row": 7,
+      "col": 5,
+      "length": 4,
+      "wordId": "phrygia"
+    },
+    {
+      "number": 11,
+      "answer": "아사랴",
+      "direction": "down",
+      "row": 7,
+      "col": 8,
+      "length": 3,
+      "wordId": "azariah"
+    },
+    {
+      "number": 12,
+      "answer": "산파",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "midwife"
+    },
+    {
+      "number": 13,
+      "answer": "사면",
+      "direction": "across",
+      "row": 8,
+      "col": 8,
+      "length": 2,
+      "wordId": "amnesty"
+    },
+    {
+      "number": 14,
+      "answer": "파발꾼",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "courier"
+    },
+    {
+      "number": 15,
+      "answer": "스가랴",
+      "direction": "across",
+      "row": 9,
+      "col": 6,
+      "length": 3,
+      "wordId": "zechariah"
+    }
+  ]
+}

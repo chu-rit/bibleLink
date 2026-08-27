@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-077",
+  "title": "H-17",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##########세#",
+    "#########므라욧",
+    "########헤실##",
+    "#########레#브",
+    "########바못바알",
+    "#######메삭##리",
+    "#########시비야",
+    "#######히스기##",
+    "#########록##",
+    "세바#르#브#면류관##",
+    "#스#보르두나도####",
+    "#맛메나#엘#칼새###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "세라",
+      "direction": "down",
+      "row": 0,
+      "col": 10,
+      "length": 2,
+      "wordId": "serah"
+    },
+    {
+      "number": 2,
+      "answer": "므실레못",
+      "direction": "down",
+      "row": 1,
+      "col": 9,
+      "length": 4,
+      "wordId": "meshillemoth"
+    },
+    {
+      "number": 3,
+      "answer": "므라욧",
+      "direction": "across",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "meraioth"
+    },
+    {
+      "number": 4,
+      "answer": "헤실",
+      "direction": "across",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "hezir"
+    },
+    {
+      "number": 5,
+      "answer": "브알리야",
+      "direction": "down",
+      "row": 3,
+      "col": 11,
+      "length": 4,
+      "wordId": "bealiah"
+    },
+    {
+      "number": 6,
+      "answer": "바못바알",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 4,
+      "wordId": "entry-바못-바알"
+    },
+    {
+      "number": 7,
+      "answer": "바삭",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "pasach"
+    },
+    {
+      "number": 8,
+      "answer": "메삭",
+      "direction": "across",
+      "row": 5,
+      "col": 7,
+      "length": 2,
+      "wordId": "meshach"
+    },
+    {
+      "number": 9,
+      "answer": "시기록관",
+      "direction": "down",
+      "row": 6,
+      "col": 9,
+      "length": 4,
+      "wordId": "entry-시 기록관"
+    },
+    {
+      "number": 10,
+      "answer": "시비야",
+      "direction": "across",
+      "row": 6,
+      "col": 9,
+      "length": 3,
+      "wordId": "zibiah"
+    },
+    {
+      "number": 11,
+      "answer": "히스기",
+      "direction": "across",
+      "row": 7,
+      "col": 7,
+      "length": 3,
+      "wordId": "hizki"
+    },
+    {
+      "number": 12,
+      "answer": "세바",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 2,
+      "wordId": "sheba"
+    },
+    {
+      "number": 13,
+      "answer": "바스맛",
+      "direction": "down",
+      "row": 9,
+      "col": 1,
+      "length": 3,
+      "wordId": "basemath"
+    },
+    {
+      "number": 14,
+      "answer": "르보나",
+      "direction": "down",
+      "row": 9,
+      "col": 3,
+      "length": 3,
+      "wordId": "lebonah"
+    },
+    {
+      "number": 15,
+      "answer": "브두엘",
+      "direction": "down",
+      "row": 9,
+      "col": 5,
+      "length": 3,
+      "wordId": "bethuel"
+    },
+    {
+      "number": 16,
+      "answer": "면도칼",
+      "direction": "down",
+      "row": 9,
+      "col": 7,
+      "length": 3,
+      "wordId": "razor"
+    },
+    {
+      "number": 17,
+      "answer": "면류관",
+      "direction": "across",
+      "row": 9,
+      "col": 7,
+      "length": 3,
+      "wordId": "crown"
+    },
+    {
+      "number": 18,
+      "answer": "보르두나도",
+      "direction": "across",
+      "row": 10,
+      "col": 3,
+      "length": 5,
+      "wordId": "fortunatus"
+    },
+    {
+      "number": 19,
+      "answer": "맛메나",
+      "direction": "across",
+      "row": 11,
+      "col": 1,
+      "length": 3,
+      "wordId": "madmenah"
+    },
+    {
+      "number": 20,
+      "answer": "칼새",
+      "direction": "across",
+      "row": 11,
+      "col": 7,
+      "length": 2,
+      "wordId": "swift"
+    }
+  ]
+}

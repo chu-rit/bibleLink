@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-068",
+  "title": "N-28",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##느바욧#####",
+    "###르######",
+    "#밧세바#바####",
+    "도단#로맘디에셀#비",
+    "공##이#매#사모스",
+    "####키오스##요",
+    "#######오바댜",
+    "########돌#",
+    "#######의로움",
+    "########매#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "느바욧",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "nebaioth"
+    },
+    {
+      "number": 2,
+      "answer": "바르바로이",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 5,
+      "wordId": "barbarian"
+    },
+    {
+      "number": 3,
+      "answer": "밧세바",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 3,
+      "wordId": "bathsheba"
+    },
+    {
+      "number": 4,
+      "answer": "밧단",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "paddan"
+    },
+    {
+      "number": 5,
+      "answer": "바디매오",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 4,
+      "wordId": "bartimaeus"
+    },
+    {
+      "number": 6,
+      "answer": "도단",
+      "direction": "across",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "dothan"
+    },
+    {
+      "number": 7,
+      "answer": "도공",
+      "direction": "down",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "potter"
+    },
+    {
+      "number": 8,
+      "answer": "로맘디에셀",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-로맘디-에셀"
+    },
+    {
+      "number": 9,
+      "answer": "셀사",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 2,
+      "wordId": "zelzah"
+    },
+    {
+      "number": 10,
+      "answer": "비스요댜",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 4,
+      "wordId": "biziothiah"
+    },
+    {
+      "number": 11,
+      "answer": "사모스",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "samos"
+    },
+    {
+      "number": 12,
+      "answer": "키오스",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "chios"
+    },
+    {
+      "number": 13,
+      "answer": "오바댜",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "obadiah"
+    },
+    {
+      "number": 14,
+      "answer": "바돌로매",
+      "direction": "down",
+      "row": 6,
+      "col": 8,
+      "length": 4,
+      "wordId": "bartholomew"
+    },
+    {
+      "number": 15,
+      "answer": "의로움",
+      "direction": "across",
+      "row": 8,
+      "col": 7,
+      "length": 3,
+      "wordId": "righteousness"
+    }
+  ]
+}

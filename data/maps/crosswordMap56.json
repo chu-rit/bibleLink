@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-056",
+  "title": "E-26",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######기근",
+    "####게으름#",
+    "####하###",
+    "###요시야##",
+    "#요나단####",
+    "#한#강####",
+    "#삼촌#####",
+    "에서######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "기름",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "fat"
+    },
+    {
+      "number": 2,
+      "answer": "기근",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "famine"
+    },
+    {
+      "number": 3,
+      "answer": "게으름",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "laziness"
+    },
+    {
+      "number": 4,
+      "answer": "게하시",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "gehazi"
+    },
+    {
+      "number": 5,
+      "answer": "요시야",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "josiah"
+    },
+    {
+      "number": 6,
+      "answer": "요단강",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "jordan"
+    },
+    {
+      "number": 7,
+      "answer": "요나단",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "jonathan"
+    },
+    {
+      "number": 8,
+      "answer": "요한삼서",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "thirdjohn"
+    },
+    {
+      "number": 9,
+      "answer": "삼촌",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "uncle"
+    },
+    {
+      "number": 10,
+      "answer": "에서",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "esau"
+    }
+  ]
+}

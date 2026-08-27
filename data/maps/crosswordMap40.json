@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-040",
+  "title": "E-20",
+  "difficulty": 1.3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####침대#",
+    "######머리",
+    "####광주리#",
+    "#####제##",
+    "#####넘##",
+    "####복음##",
+    "###자수###",
+    "허수아비####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "침대",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "bed"
+    },
+    {
+      "number": 2,
+      "answer": "대머리",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "baldness"
+    },
+    {
+      "number": 3,
+      "answer": "머리",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "head"
+    },
+    {
+      "number": 4,
+      "answer": "광주리",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "basket"
+    },
+    {
+      "number": 5,
+      "answer": "주제넘음",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 4,
+      "wordId": "presumptuousness"
+    },
+    {
+      "number": 6,
+      "answer": "복음",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "gospel"
+    },
+    {
+      "number": 7,
+      "answer": "복수",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "vengeance"
+    },
+    {
+      "number": 8,
+      "answer": "자수",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
+      "length": 2,
+      "wordId": "embroidery"
+    },
+    {
+      "number": 9,
+      "answer": "자비",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
+      "length": 2,
+      "wordId": "mercy"
+    },
+    {
+      "number": 10,
+      "answer": "허수아비",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "scarecrow"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-044",
+  "title": "N-14",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "순종########",
+    "#기둥머리#####",
+    "####워#골###",
+    "##독#야이로###",
+    "느부사라단#새잡는자",
+    "다##못######",
+    "뱌##길#파####",
+    "###르엘라야###",
+    "#메바앗#오####",
+    "##트#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "순종",
+      "direction": "across",
+      "row": 0,
+      "col": 0,
+      "length": 2,
+      "wordId": "obedience"
+    },
+    {
+      "number": 2,
+      "answer": "종기",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 2,
+      "wordId": "boil"
+    },
+    {
+      "number": 3,
+      "answer": "기둥머리",
+      "direction": "across",
+      "row": 1,
+      "col": 1,
+      "length": 4,
+      "wordId": "capital"
+    },
+    {
+      "number": 4,
+      "answer": "리워야단",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 4,
+      "wordId": "leviathan"
+    },
+    {
+      "number": 5,
+      "answer": "골로새",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "colossae"
+    },
+    {
+      "number": 6,
+      "answer": "독사",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "viper"
+    },
+    {
+      "number": 7,
+      "answer": "야이로",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "jairus"
+    },
+    {
+      "number": 8,
+      "answer": "느부사라단",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 5,
+      "wordId": "nebuzaradan"
+    },
+    {
+      "number": 9,
+      "answer": "느다뱌",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "nedabiah"
+    },
+    {
+      "number": 10,
+      "answer": "라못길르앗",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-라못-길르앗"
+    },
+    {
+      "number": 11,
+      "answer": "새잡는자",
+      "direction": "across",
+      "row": 4,
+      "col": 6,
+      "length": 4,
+      "wordId": "birdcatcher"
+    },
+    {
+      "number": 12,
+      "answer": "파라오",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "pharaoh"
+    },
+    {
+      "number": 13,
+      "answer": "르엘라야",
+      "direction": "across",
+      "row": 7,
+      "col": 3,
+      "length": 4,
+      "wordId": "reelaiah"
+    },
+    {
+      "number": 14,
+      "answer": "메바앗",
+      "direction": "across",
+      "row": 8,
+      "col": 1,
+      "length": 3,
+      "wordId": "mephaath"
+    },
+    {
+      "number": 15,
+      "answer": "바트",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 2,
+      "wordId": "bath"
+    }
+  ]
+}

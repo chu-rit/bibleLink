@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-080",
+  "title": "H-20",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##########재#",
+    "#####고###재판관",
+    "#####멜기###관#",
+    "###오##시하#바기엘",
+    "###네###그모스##",
+    "###시##네리#훌##",
+    "###모르타르#####",
+    "####아#갈네####",
+    "보#블라야#######",
+    "관#랄#########",
+    "보#리#########",
+    "호디야#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "재판관기",
+      "direction": "down",
+      "row": 0,
+      "col": 10,
+      "length": 4,
+      "wordId": "entry-재판관기"
+    },
+    {
+      "number": 2,
+      "answer": "고멜",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "gomer"
+    },
+    {
+      "number": 3,
+      "answer": "재판관",
+      "direction": "across",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "entry-재판관"
+    },
+    {
+      "number": 4,
+      "answer": "멜기",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "melchi"
+    },
+    {
+      "number": 5,
+      "answer": "기시",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "kishi"
+    },
+    {
+      "number": 6,
+      "answer": "오네시모",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "onesimus"
+    },
+    {
+      "number": 7,
+      "answer": "시하",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 2,
+      "wordId": "ziha"
+    },
+    {
+      "number": 8,
+      "answer": "하그리",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 3,
+      "wordId": "hagri"
+    },
+    {
+      "number": 9,
+      "answer": "바스훌",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 3,
+      "wordId": "pashhur"
+    },
+    {
+      "number": 10,
+      "answer": "바기엘",
+      "direction": "across",
+      "row": 3,
+      "col": 9,
+      "length": 3,
+      "wordId": "pagiel"
+    },
+    {
+      "number": 11,
+      "answer": "그모스",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "chemosh"
+    },
+    {
+      "number": 12,
+      "answer": "네르갈",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "nergal"
+    },
+    {
+      "number": 13,
+      "answer": "네리",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "neri"
+    },
+    {
+      "number": 14,
+      "answer": "모르타르",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-모르타르"
+    },
+    {
+      "number": 15,
+      "answer": "르아야",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "reaiah"
+    },
+    {
+      "number": 16,
+      "answer": "갈네",
+      "direction": "across",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "calneh"
+    },
+    {
+      "number": 17,
+      "answer": "보관보호",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
+      "length": 4,
+      "wordId": "custody"
+    },
+    {
+      "number": 18,
+      "answer": "블라야",
+      "direction": "across",
+      "row": 8,
+      "col": 2,
+      "length": 3,
+      "wordId": "pelaiah"
+    },
+    {
+      "number": 19,
+      "answer": "블랄리야",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 4,
+      "wordId": "pelaliah"
+    },
+    {
+      "number": 20,
+      "answer": "호디야",
+      "direction": "across",
+      "row": 11,
+      "col": 0,
+      "length": 3,
+      "wordId": "hodiah"
+    }
+  ]
+}

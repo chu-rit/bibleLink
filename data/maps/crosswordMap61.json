@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-061",
+  "title": "N-21",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########세나",
+    "########금#",
+    "########징#",
+    "########수알",
+    "#####대#구원#",
+    "##유#상속재산##",
+    "철#다레아#앙###",
+    "학개서#######",
+    "#구########",
+    "브리아#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "세금징수원",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 5,
+      "wordId": "entry-세금 징수원"
+    },
+    {
+      "number": 2,
+      "answer": "세나",
+      "direction": "across",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "zenas"
+    },
+    {
+      "number": 3,
+      "answer": "수알",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "shual"
+    },
+    {
+      "number": 4,
+      "answer": "대속",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
+      "length": 2,
+      "wordId": "ransom"
+    },
+    {
+      "number": 5,
+      "answer": "구산",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 2,
+      "wordId": "cushan"
+    },
+    {
+      "number": 6,
+      "answer": "구원",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 2,
+      "wordId": "salvation"
+    },
+    {
+      "number": 7,
+      "answer": "유다서",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "judesletter"
+    },
+    {
+      "number": 8,
+      "answer": "상아",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "ivory"
+    },
+    {
+      "number": 9,
+      "answer": "상속재산",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 4,
+      "wordId": "inheritance"
+    },
+    {
+      "number": 10,
+      "answer": "재앙",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "plague"
+    },
+    {
+      "number": 11,
+      "answer": "철학",
+      "direction": "down",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "philosophy"
+    },
+    {
+      "number": 12,
+      "answer": "다레아",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-다레아"
+    },
+    {
+      "number": 13,
+      "answer": "학개서",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "entry-학개서"
+    },
+    {
+      "number": 14,
+      "answer": "개구리",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "frog"
+    },
+    {
+      "number": 15,
+      "answer": "브리아",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "beriah"
+    }
+  ]
+}

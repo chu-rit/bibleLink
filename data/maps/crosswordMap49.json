@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-049",
+  "title": "N-19",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####하삽나##",
+    "####자루#일##",
+    "#####갈##바왜",
+    "####카이사레아#",
+    "###비파#다#나답",
+    "####도#리#1#",
+    "####키#####",
+    "하#샤모아#####",
+    "길랄래#######",
+    "라#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "하삽나",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "hashabnah"
+    },
+    {
+      "number": 2,
+      "answer": "하루갈이",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 4,
+      "wordId": "acre"
+    },
+    {
+      "number": 3,
+      "answer": "나일",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 2,
+      "wordId": "nile"
+    },
+    {
+      "number": 4,
+      "answer": "자루",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "bag"
+    },
+    {
+      "number": 5,
+      "answer": "바아나1",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 4,
+      "wordId": "baana"
+    },
+    {
+      "number": 6,
+      "answer": "바왜",
+      "direction": "across",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "bavvai"
+    },
+    {
+      "number": 7,
+      "answer": "카이사레아",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 5,
+      "wordId": "caesarea"
+    },
+    {
+      "number": 8,
+      "answer": "카파도키아",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 5,
+      "wordId": "cappadocia"
+    },
+    {
+      "number": 9,
+      "answer": "사다리",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
+      "length": 3,
+      "wordId": "ladder"
+    },
+    {
+      "number": 10,
+      "answer": "비파",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "lyre"
+    },
+    {
+      "number": 11,
+      "answer": "나답",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "nadab"
+    },
+    {
+      "number": 12,
+      "answer": "하길라",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "hachilah"
+    },
+    {
+      "number": 13,
+      "answer": "샤모아",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "chamois"
+    },
+    {
+      "number": 14,
+      "answer": "샤래",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 2,
+      "wordId": "sharai"
+    },
+    {
+      "number": 15,
+      "answer": "길랄래",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 3,
+      "wordId": "gilalai"
+    }
+  ]
+}

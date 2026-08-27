@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-011",
+  "title": "E-5",
+  "difficulty": 1.8,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####여호아스",
+    "######브#",
+    "####에스라#",
+    "#엘리#베#함#",
+    "세리##소###",
+    "#야고보서###",
+    "##린#####",
+    "고린도후서###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "여호아스",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "jehoash"
+    },
+    {
+      "number": 2,
+      "answer": "아브라함",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "abraham"
+    },
+    {
+      "number": 3,
+      "answer": "에스라",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "ezra"
+    },
+    {
+      "number": 4,
+      "answer": "에베소서",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "ephesians"
+    },
+    {
+      "number": 5,
+      "answer": "엘리야",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "elijah"
+    },
+    {
+      "number": 6,
+      "answer": "엘리",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "eli"
+    },
+    {
+      "number": 7,
+      "answer": "세리",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 2,
+      "wordId": "taxcollector"
+    },
+    {
+      "number": 8,
+      "answer": "야고보서",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 4,
+      "wordId": "jamesletter"
+    },
+    {
+      "number": 9,
+      "answer": "고린도",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "corinth"
+    },
+    {
+      "number": 10,
+      "answer": "고린도후서",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 5,
+      "wordId": "secondcorinthians"
+    }
+  ]
+}

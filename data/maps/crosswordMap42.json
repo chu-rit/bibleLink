@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-042",
+  "title": "N-12",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######바알하솔",
+    "####시내산#솔#",
+    "####므#####",
+    "밀#구덩이#####",
+    "랍보니#######",
+    "#스########",
+    "보라다#######",
+    "디#릭히######",
+    "베#########",
+    "라갈########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "바알하솔",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-바알-하솔"
+    },
+    {
+      "number": 2,
+      "answer": "바산",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "bashan"
+    },
+    {
+      "number": 3,
+      "answer": "하솔",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "hazor"
+    },
+    {
+      "number": 4,
+      "answer": "시내산",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "sinai"
+    },
+    {
+      "number": 5,
+      "answer": "시므이",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "shimei"
+    },
+    {
+      "number": 6,
+      "answer": "밀랍",
+      "direction": "down",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "wax"
+    },
+    {
+      "number": 7,
+      "answer": "구덩이",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "pit"
+    },
+    {
+      "number": 8,
+      "answer": "구니",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "guni"
+    },
+    {
+      "number": 9,
+      "answer": "랍보니",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "rabboni"
+    },
+    {
+      "number": 10,
+      "answer": "보스라",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "bozrah"
+    },
+    {
+      "number": 11,
+      "answer": "보라다",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "poratha"
+    },
+    {
+      "number": 12,
+      "answer": "보디베라",
+      "direction": "down",
+      "row": 6,
+      "col": 0,
+      "length": 4,
+      "wordId": "potiphera"
+    },
+    {
+      "number": 13,
+      "answer": "다릭",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "daric"
+    },
+    {
+      "number": 14,
+      "answer": "릭히",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 2,
+      "wordId": "likhi"
+    },
+    {
+      "number": 15,
+      "answer": "라갈",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 2,
+      "wordId": "entry-라갈"
+    }
+  ]
+}

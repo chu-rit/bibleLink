@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-047",
+  "title": "N-17",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#신########",
+    "#성########",
+    "#한########",
+    "#목초지######",
+    "#상#성######",
+    "###소제#####",
+    "#증서#사#####",
+    "##머리직분##파#",
+    "므고나##니코폴리스",
+    "#삼####아##아"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "신성한목상",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 5,
+      "wordId": "entry-신성한 목상"
+    },
+    {
+      "number": 2,
+      "answer": "목초지",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "entry-목초지"
+    },
+    {
+      "number": 3,
+      "answer": "지성소",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "mostholy"
+    },
+    {
+      "number": 4,
+      "answer": "소제",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "grainoffering"
+    },
+    {
+      "number": 5,
+      "answer": "제사직",
+      "direction": "down",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "priesthood"
+    },
+    {
+      "number": 6,
+      "answer": "증서",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "deed"
+    },
+    {
+      "number": 7,
+      "answer": "서머나",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "smyrna"
+    },
+    {
+      "number": 8,
+      "answer": "머리직분",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 4,
+      "wordId": "headship"
+    },
+    {
+      "number": 9,
+      "answer": "분니",
+      "direction": "down",
+      "row": 7,
+      "col": 5,
+      "length": 2,
+      "wordId": "bunni"
+    },
+    {
+      "number": 10,
+      "answer": "파리",
+      "direction": "down",
+      "row": 7,
+      "col": 8,
+      "length": 2,
+      "wordId": "fly"
+    },
+    {
+      "number": 11,
+      "answer": "므고나",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 3,
+      "wordId": "meconah"
+    },
+    {
+      "number": 12,
+      "answer": "고삼",
+      "direction": "down",
+      "row": 8,
+      "col": 1,
+      "length": 2,
+      "wordId": "cosam"
+    },
+    {
+      "number": 13,
+      "answer": "니코폴리스",
+      "direction": "across",
+      "row": 8,
+      "col": 5,
+      "length": 5,
+      "wordId": "nicopolis"
+    },
+    {
+      "number": 14,
+      "answer": "코아",
+      "direction": "down",
+      "row": 8,
+      "col": 6,
+      "length": 2,
+      "wordId": "koa"
+    },
+    {
+      "number": 15,
+      "answer": "스아",
+      "direction": "down",
+      "row": 8,
+      "col": 9,
+      "length": 2,
+      "wordId": "seah"
+    }
+  ]
+}

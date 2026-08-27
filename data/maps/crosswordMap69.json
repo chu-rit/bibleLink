@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-069",
+  "title": "N-29",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###클######",
+    "#아굴라######",
+    "게달#우르##셀##",
+    "#랴#디#미틸레네#",
+    "###우리야#우##",
+    "#나하스#민#키레네",
+    "##느####아#피",
+    "느디님######림",
+    "보#의#######",
+    "##날#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "클라우디우스",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 6,
+      "wordId": "claudius"
+    },
+    {
+      "number": 2,
+      "answer": "아굴라",
+      "direction": "across",
+      "row": 1,
+      "col": 1,
+      "length": 3,
+      "wordId": "aquila"
+    },
+    {
+      "number": 3,
+      "answer": "아달랴",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 3,
+      "wordId": "athaliah"
+    },
+    {
+      "number": 4,
+      "answer": "게달",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "kedar"
+    },
+    {
+      "number": 5,
+      "answer": "우르",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "ur"
+    },
+    {
+      "number": 6,
+      "answer": "셀레우키아",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 5,
+      "wordId": "seleucia"
+    },
+    {
+      "number": 7,
+      "answer": "미야민",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "mijamin"
+    },
+    {
+      "number": 8,
+      "answer": "미틸레네",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 4,
+      "wordId": "mitylene"
+    },
+    {
+      "number": 9,
+      "answer": "우리야",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 3,
+      "wordId": "uriah"
+    },
+    {
+      "number": 10,
+      "answer": "나하스",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "nahash"
+    },
+    {
+      "number": 11,
+      "answer": "하느님의날",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 5,
+      "wordId": "dayofjehovah"
+    },
+    {
+      "number": 12,
+      "answer": "키레네",
+      "direction": "across",
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "cyrene"
+    },
+    {
+      "number": 13,
+      "answer": "네피림",
+      "direction": "down",
+      "row": 5,
+      "col": 9,
+      "length": 3,
+      "wordId": "nephilim"
+    },
+    {
+      "number": 14,
+      "answer": "느디님",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "nethinim"
+    },
+    {
+      "number": 15,
+      "answer": "느보",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "nebo"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-017",
+  "title": "N-5",
+  "difficulty": 2.3,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####수금####",
+    "###마가#####",
+    "###게######",
+    "###도######",
+    "##베냐민#기#빌립",
+    "####수#드보라#",
+    "####기브온#도#",
+    "##루##엘####",
+    "엔게디##세####",
+    "##아레오바고###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "수가",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "sychar"
+    },
+    {
+      "number": 2,
+      "answer": "수금",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "harp"
+    },
+    {
+      "number": 3,
+      "answer": "마게도냐",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "macedonia"
+    },
+    {
+      "number": 4,
+      "answer": "마가",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 2,
+      "wordId": "mark"
+    },
+    {
+      "number": 5,
+      "answer": "베냐민",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 3,
+      "wordId": "benjamin"
+    },
+    {
+      "number": 6,
+      "answer": "민수기",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "numbers"
+    },
+    {
+      "number": 7,
+      "answer": "기드온",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "gideon"
+    },
+    {
+      "number": 8,
+      "answer": "빌라도",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 3,
+      "wordId": "pilate"
+    },
+    {
+      "number": 9,
+      "answer": "빌립",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "philip"
+    },
+    {
+      "number": 10,
+      "answer": "드보라",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "deborah"
+    },
+    {
+      "number": 11,
+      "answer": "기브온",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "gibeon"
+    },
+    {
+      "number": 12,
+      "answer": "브엘세바",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 4,
+      "wordId": "beersheba"
+    },
+    {
+      "number": 13,
+      "answer": "루디아",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "lydia"
+    },
+    {
+      "number": 14,
+      "answer": "엔게디",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 3,
+      "wordId": "engedi"
+    },
+    {
+      "number": 15,
+      "answer": "아레오바고",
+      "direction": "across",
+      "row": 9,
+      "col": 2,
+      "length": 5,
+      "wordId": "areopagus"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-041",
+  "title": "N-11",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###브######",
+    "#소금도시#####",
+    "랍바#님######",
+    "사#########",
+    "리###데마####",
+    "스비다#르#####",
+    "##림몬베레스###",
+    "#벳줄###알###",
+    "######야고보#",
+    "######숩#한나"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "브도님",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 3,
+      "wordId": "betonim"
+    },
+    {
+      "number": 2,
+      "answer": "소바",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 2,
+      "wordId": "zobah"
+    },
+    {
+      "number": 3,
+      "answer": "소금도시",
+      "direction": "across",
+      "row": 1,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-소금 도시"
+    },
+    {
+      "number": 4,
+      "answer": "랍사리스",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 4,
+      "wordId": "rabsaris"
+    },
+    {
+      "number": 5,
+      "answer": "랍바",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "rabbah"
+    },
+    {
+      "number": 6,
+      "answer": "데르베",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "derbe"
+    },
+    {
+      "number": 7,
+      "answer": "데마",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "demas"
+    },
+    {
+      "number": 8,
+      "answer": "스비다",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "zebidah"
+    },
+    {
+      "number": 9,
+      "answer": "다림줄",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "plummet"
+    },
+    {
+      "number": 10,
+      "answer": "림몬베레스",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 5,
+      "wordId": "entry-림몬-베레스"
+    },
+    {
+      "number": 11,
+      "answer": "스알야숩",
+      "direction": "down",
+      "row": 6,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-스알-야숩"
+    },
+    {
+      "number": 12,
+      "answer": "벳줄",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 2,
+      "wordId": "entry-벳-줄"
+    },
+    {
+      "number": 13,
+      "answer": "야고보",
+      "direction": "across",
+      "row": 8,
+      "col": 6,
+      "length": 3,
+      "wordId": "james"
+    },
+    {
+      "number": 14,
+      "answer": "보한",
+      "direction": "down",
+      "row": 8,
+      "col": 8,
+      "length": 2,
+      "wordId": "bohan"
+    },
+    {
+      "number": 15,
+      "answer": "한나",
+      "direction": "across",
+      "row": 9,
+      "col": 8,
+      "length": 2,
+      "wordId": "hannah"
+    }
+  ]
+}

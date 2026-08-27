@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-078",
+  "title": "H-18",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#########헤#베",
+    "##빌######스#드",
+    "##하구바###브로고로",
+    "####산당높은곳##후",
+    "#달마누다######서",
+    "##돈#다핫######",
+    "#지###스바랏####",
+    "#므###누#사붓###",
+    "#리카오니아#론####",
+    "마#멜#########",
+    "므실레밋########",
+    "레#온#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "헤스로",
+      "direction": "down",
+      "row": 0,
+      "col": 9,
+      "length": 3,
+      "wordId": "hezro"
+    },
+    {
+      "number": 2,
+      "answer": "베드로후서",
+      "direction": "down",
+      "row": 0,
+      "col": 11,
+      "length": 5,
+      "wordId": "secondpeter"
+    },
+    {
+      "number": 3,
+      "answer": "빌하",
+      "direction": "down",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "bilhah"
+    },
+    {
+      "number": 4,
+      "answer": "하구바",
+      "direction": "across",
+      "row": 2,
+      "col": 2,
+      "length": 3,
+      "wordId": "hakupha"
+    },
+    {
+      "number": 5,
+      "answer": "바산다다",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "parshandatha"
+    },
+    {
+      "number": 6,
+      "answer": "브곳",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 2,
+      "wordId": "pekod"
+    },
+    {
+      "number": 7,
+      "answer": "브로고로",
+      "direction": "across",
+      "row": 2,
+      "col": 8,
+      "length": 4,
+      "wordId": "prochorus"
+    },
+    {
+      "number": 8,
+      "answer": "산당높은곳",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 5,
+      "wordId": "entry-산당, 높은 곳"
+    },
+    {
+      "number": 9,
+      "answer": "달마누다",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "dalmanutha"
+    },
+    {
+      "number": 10,
+      "answer": "마돈",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "madon"
+    },
+    {
+      "number": 11,
+      "answer": "다핫",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "tahath"
+    },
+    {
+      "number": 12,
+      "answer": "핫스누아",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
+      "length": 4,
+      "wordId": "hassenuah"
+    },
+    {
+      "number": 13,
+      "answer": "지므리",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "zimri"
+    },
+    {
+      "number": 14,
+      "answer": "스바랏",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "sepharad"
+    },
+    {
+      "number": 15,
+      "answer": "랏사론",
+      "direction": "down",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "lassharon"
+    },
+    {
+      "number": 16,
+      "answer": "사붓",
+      "direction": "across",
+      "row": 7,
+      "col": 7,
+      "length": 2,
+      "wordId": "zabud"
+    },
+    {
+      "number": 17,
+      "answer": "리카오니아",
+      "direction": "across",
+      "row": 8,
+      "col": 1,
+      "length": 5,
+      "wordId": "lycaonia"
+    },
+    {
+      "number": 18,
+      "answer": "카멜레온",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 4,
+      "wordId": "chameleon"
+    },
+    {
+      "number": 19,
+      "answer": "마므레",
+      "direction": "down",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "mamre"
+    },
+    {
+      "number": 20,
+      "answer": "므실레밋",
+      "direction": "across",
+      "row": 10,
+      "col": 0,
+      "length": 4,
+      "wordId": "meshillemith"
+    }
+  ]
+}

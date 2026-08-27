@@ -1,0 +1,111 @@
+{
+  "id": "crossword-map-051",
+  "title": "E-21",
+  "difficulty": 1.3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#######사",
+    "#######생",
+    "거#탈####사",
+    "짓#출애굽기#생",
+    "말루기##적대자",
+    "#비####제#",
+    "######사#",
+    "#####족장#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "사생사생자",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 5,
+      "wordId": "illegitimate-2"
+    },
+    {
+      "number": 2,
+      "answer": "거짓말",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "lie",
+      "clue": "사탄이 사용한 이것은 아담과 하와를 속여 에덴에서 쫓겨나게 했으며 진리를 알 권리가 있는 자를 기만하는 행위다"
+    },
+    {
+      "number": 3,
+      "answer": "탈출기",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-탈출기"
+    },
+    {
+      "number": 4,
+      "answer": "출애굽기",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "exodus"
+    },
+    {
+      "number": 5,
+      "answer": "기적",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "miracles"
+    },
+    {
+      "number": 6,
+      "answer": "말루기",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "malluchi"
+    },
+    {
+      "number": 7,
+      "answer": "루비",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 2,
+      "wordId": "ruby"
+    },
+    {
+      "number": 8,
+      "answer": "적대자",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "adversary"
+    },
+    {
+      "number": 9,
+      "answer": "대제사장",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 4,
+      "wordId": "highpriest"
+    },
+    {
+      "number": 10,
+      "answer": "족장",
+      "direction": "across",
+      "row": 7,
+      "col": 5,
+      "length": 2,
+      "wordId": "sheik"
+    }
+  ]
+}

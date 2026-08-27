@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-073",
+  "title": "H-13",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#########부##",
+    "#########스하랴",
+    "##########닷#",
+    "##########에#",
+    "#######술#베셀#",
+    "#######취#두##",
+    "#######함무엘##",
+    "########화#필하",
+    "#######세과세#사",
+    "빗갈###벳벨렛#구사야",
+    "#르호봇이르####탄#",
+    "#엣###홉######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "부스",
+      "direction": "down",
+      "row": 0,
+      "col": 9,
+      "length": 2,
+      "wordId": "buz"
+    },
+    {
+      "number": 2,
+      "answer": "스하랴",
+      "direction": "across",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "shehariah"
+    },
+    {
+      "number": 3,
+      "answer": "하닷에셀",
+      "direction": "down",
+      "row": 1,
+      "col": 10,
+      "length": 4,
+      "wordId": "hadadezer"
+    },
+    {
+      "number": 4,
+      "answer": "술취함",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "drunkenness"
+    },
+    {
+      "number": 5,
+      "answer": "베두엘",
+      "direction": "down",
+      "row": 4,
+      "col": 9,
+      "length": 3,
+      "wordId": "pethuel"
+    },
+    {
+      "number": 6,
+      "answer": "베셀",
+      "direction": "across",
+      "row": 4,
+      "col": 9,
+      "length": 2,
+      "wordId": "bezer"
+    },
+    {
+      "number": 7,
+      "answer": "함무엘",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "hammuel"
+    },
+    {
+      "number": 8,
+      "answer": "무화과",
+      "direction": "down",
+      "row": 6,
+      "col": 8,
+      "length": 3,
+      "wordId": "fig"
+    },
+    {
+      "number": 9,
+      "answer": "필하",
+      "direction": "across",
+      "row": 7,
+      "col": 10,
+      "length": 2,
+      "wordId": "pilha"
+    },
+    {
+      "number": 10,
+      "answer": "하사야",
+      "direction": "down",
+      "row": 7,
+      "col": 11,
+      "length": 3,
+      "wordId": "hazaiah"
+    },
+    {
+      "number": 11,
+      "answer": "세과세",
+      "direction": "across",
+      "row": 8,
+      "col": 7,
+      "length": 3,
+      "wordId": "taxation"
+    },
+    {
+      "number": 12,
+      "answer": "세렛",
+      "direction": "down",
+      "row": 8,
+      "col": 7,
+      "length": 2,
+      "wordId": "sered"
+    },
+    {
+      "number": 13,
+      "answer": "세구",
+      "direction": "down",
+      "row": 8,
+      "col": 9,
+      "length": 2,
+      "wordId": "secu"
+    },
+    {
+      "number": 14,
+      "answer": "빗갈",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 2,
+      "wordId": "bidkar"
+    },
+    {
+      "number": 15,
+      "answer": "갈르엣",
+      "direction": "down",
+      "row": 9,
+      "col": 1,
+      "length": 3,
+      "wordId": "galeed"
+    },
+    {
+      "number": 16,
+      "answer": "벳벨렛",
+      "direction": "across",
+      "row": 9,
+      "col": 5,
+      "length": 3,
+      "wordId": "entry-벳-벨렛"
+    },
+    {
+      "number": 17,
+      "answer": "벳르홉",
+      "direction": "down",
+      "row": 9,
+      "col": 5,
+      "length": 3,
+      "wordId": "entry-벳-르홉"
+    },
+    {
+      "number": 18,
+      "answer": "구사야",
+      "direction": "across",
+      "row": 9,
+      "col": 9,
+      "length": 3,
+      "wordId": "kushaiah"
+    },
+    {
+      "number": 19,
+      "answer": "사탄",
+      "direction": "down",
+      "row": 9,
+      "col": 10,
+      "length": 2,
+      "wordId": "satan"
+    },
+    {
+      "number": 20,
+      "answer": "르호봇이르",
+      "direction": "across",
+      "row": 10,
+      "col": 1,
+      "length": 5,
+      "wordId": "entry-르호봇-이르"
+    }
+  ]
+}

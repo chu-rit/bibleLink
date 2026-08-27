@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-013b",
+  "title": "E-7",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####갈빗대#",
+    "######회중",
+    "#######개",
+    "#####구원자",
+    "#무교절축제##",
+    "#기#구####",
+    "#갑######",
+    "저주######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "갈빗대",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 3,
+      "wordId": "rib"
+    },
+    {
+      "number": 2,
+      "answer": "대회",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "convention"
+    },
+    {
+      "number": 3,
+      "answer": "회중",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "congregation"
+    },
+    {
+      "number": 4,
+      "answer": "중개자",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 3,
+      "wordId": "mediator"
+    },
+    {
+      "number": 5,
+      "answer": "구원자",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "savior"
+    },
+    {
+      "number": 6,
+      "answer": "구제",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "relief"
+    },
+    {
+      "number": 7,
+      "answer": "무교절축제",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 5,
+      "wordId": "entry-무교절 축제"
+    },
+    {
+      "number": 8,
+      "answer": "무기갑주",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-무기, 갑주"
+    },
+    {
+      "number": 9,
+      "answer": "절구",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "entry-절구"
+    },
+    {
+      "number": 10,
+      "answer": "저주",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "entry-저주"
+    }
+  ]
+}

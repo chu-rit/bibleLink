@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Keyboard,
   Platform,
@@ -11,8 +11,8 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import bibleWords from './data/bibleWordsLib1.json';
-import crosswordMaps from './data/crosswordMaps';
+import bibleWords from './data/words/bibleWordsLib1.json';
+import crosswordMaps from './data/maps/crosswordMaps';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
 
@@ -81,10 +81,41 @@ export default function WordSearchScreen({ onBack }) {
     return list;
   }, [query]);
 
+  const PAGE_SIZE = 100;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [query]);
+
+  const visibleResults = useMemo(
+    () => results.slice(0, visibleCount),
+    [results, visibleCount]
+  );
+
+  const handleScroll = useCallback(({ nativeEvent }) => {
+    const { layoutMeasurement, contentOffset, contentSize } = nativeEvent;
+    const distanceFromBottom = contentSize.height - contentOffset.y - layoutMeasurement.height;
+    if (distanceFromBottom < 200 && visibleCount < results.length) {
+      setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, results.length));
+    }
+  }, [visibleCount, results.length]);
+
   const totalUsed = useMemo(
     () => bibleWords.filter((item) => getUsage(item.id) > 0).length,
     []
   );
+
+  const diffStats = useMemo(() => {
+    const stats = { 1: { total: 0, used: 0 }, 2: { total: 0, used: 0 }, 3: { total: 0, used: 0 } };
+    bibleWords.forEach((item) => {
+      const d = item.difficulty;
+      if (!stats[d]) return;
+      stats[d].total++;
+      if (getUsage(item.id) > 0) stats[d].used++;
+    });
+    return stats;
+  }, []);
 
   const renderItem = ({ item }) => (
     <View style={[styles.wordCard, item.usage > 0 && styles.usedWordCard]}>
@@ -153,11 +184,35 @@ export default function WordSearchScreen({ onBack }) {
           style={styles.list}
           contentContainerStyle={styles.listContent}
           keyboardShouldPersistTaps="handled"
+          onScroll={handleScroll}
+          scrollEventThrottle={16}
         >
-          {results.map((item) => (
+          {visibleResults.map((item) => (
             <View key={item.id}>{renderItem({ item })}</View>
           ))}
+          {visibleCount < results.length && (
+            <Text style={styles.loadingMore}>더 불러오는 중...</Text>
+          )}
         </ScrollView>
+
+        <View style={styles.statsPanel}>
+          {[
+            { label: 'EASY', d: 1, color: '#3c9a72' },
+            { label: 'NORMAL', d: 2, color: '#e08a3c' },
+            { label: 'HARD', d: 3, color: '#d64545' },
+          ].map(({ label, d, color }) => {
+            const s = diffStats[d];
+            const percent = s.total ? Math.round((s.used / s.total) * 100) : 0;
+            return (
+              <View key={d} style={styles.statRow}>
+                <View style={[styles.statDot, { backgroundColor: color }]} />
+                <Text style={styles.statLabel}>{label}</Text>
+                <Text style={styles.statValue}>{s.used}/{s.total}</Text>
+                <Text style={styles.statPercent}>{percent}%</Text>
+              </View>
+            );
+          })}
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -193,4 +248,11 @@ const styles = StyleSheet.create({
   mapUsageText: { flex: 1, color: '#647487', fontSize: 11, lineHeight: 16 },
   metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
   metaText: { color: '#8a99a8', fontSize: 11, fontWeight: '600' },
+  loadingMore: { color: '#8a99a8', fontSize: 12, fontWeight: '700', textAlign: 'center', paddingVertical: 16 },
+  statsPanel: { backgroundColor: '#fff', borderRadius: 14, padding: 12, borderWidth: 1, borderColor: '#e7edf2', marginTop: 8 },
+  statRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 4 },
+  statDot: { width: 8, height: 8, borderRadius: 4, marginRight: 8 },
+  statLabel: { color: '#172536', fontSize: 12, fontWeight: '800', width: 60 },
+  statValue: { color: '#34485d', fontSize: 12, fontWeight: '700', flex: 1 },
+  statPercent: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
 });

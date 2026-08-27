@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-016b",
+  "title": "E-10",
+  "difficulty": 1.5,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##열#####",
+    "##왕#####",
+    "신명기#####",
+    "##하갈####",
+    "###그##사랑",
+    "###미루나무#",
+    "#제우스##엘#",
+    "창자######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "열왕기하",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 4,
+      "wordId": "secondkings"
+    },
+    {
+      "number": 2,
+      "answer": "신명기",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "deuteronomy"
+    },
+    {
+      "number": 3,
+      "answer": "하갈",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "hagar"
+    },
+    {
+      "number": 4,
+      "answer": "갈그미스",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "carchemish"
+    },
+    {
+      "number": 5,
+      "answer": "사무엘",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "samuel"
+    },
+    {
+      "number": 6,
+      "answer": "사랑",
+      "direction": "across",
+      "row": 4,
+      "col": 6,
+      "length": 2,
+      "wordId": "love"
+    },
+    {
+      "number": 7,
+      "answer": "미루나무",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 4,
+      "wordId": "poplars"
+    },
+    {
+      "number": 8,
+      "answer": "제우스",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "zeus"
+    },
+    {
+      "number": 9,
+      "answer": "제자",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "disciple"
+    },
+    {
+      "number": 10,
+      "answer": "창자",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "intestines"
+    }
+  ]
+}

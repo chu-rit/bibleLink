@@ -1,0 +1,110 @@
+{
+  "id": "crossword-map-038",
+  "title": "E-18",
+  "difficulty": 1.3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###귀뚜라미#",
+    "###먹##가#",
+    "#눈멀다#비서관",
+    "#동###둘##",
+    "가자###기##",
+    "마#######",
+    "우#######",
+    "지역######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "귀먹다",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 3,
+      "wordId": "deafness"
+    },
+    {
+      "number": 2,
+      "answer": "귀뚜라미",
+      "direction": "across",
+      "row": 0,
+      "col": 3,
+      "length": 4,
+      "wordId": "cricket"
+    },
+    {
+      "number": 3,
+      "answer": "미가서",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 3,
+      "wordId": "entry-미가서"
+    },
+    {
+      "number": 4,
+      "answer": "눈멀다",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 3,
+      "wordId": "blindness"
+    },
+    {
+      "number": 5,
+      "answer": "눈동자",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 3,
+      "wordId": "pupil"
+    },
+    {
+      "number": 6,
+      "answer": "비서관",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "secretary"
+    },
+    {
+      "number": 7,
+      "answer": "비둘기",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "dove"
+    },
+    {
+      "number": 8,
+      "answer": "가자",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 2,
+      "wordId": "gaza"
+    },
+    {
+      "number": 9,
+      "answer": "가마우지",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "cormorant"
+    },
+    {
+      "number": 10,
+      "answer": "지역",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "district"
+    }
+  ]
+}

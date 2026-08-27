@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-063",
+  "title": "N-23",
+  "difficulty": 2.1,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######마지막때",
+    "####시므앗#나#",
+    "#믹##완##로드#",
+    "#담무스월###배교",
+    "###알#####훈",
+    "###디######",
+    "#믹달엘######",
+    "브돌########",
+    "알#########",
+    "롯#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "마앗",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "maath"
+    },
+    {
+      "number": 2,
+      "answer": "마지막때",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-마지막 때"
+    },
+    {
+      "number": 3,
+      "answer": "막나드배",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 4,
+      "wordId": "machnadebai"
+    },
+    {
+      "number": 4,
+      "answer": "시완월",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "sivan"
+    },
+    {
+      "number": 5,
+      "answer": "시므앗",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "shimeath"
+    },
+    {
+      "number": 6,
+      "answer": "믹담",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "miktam"
+    },
+    {
+      "number": 7,
+      "answer": "로드",
+      "direction": "across",
+      "row": 2,
+      "col": 7,
+      "length": 2,
+      "wordId": "lod"
+    },
+    {
+      "number": 8,
+      "answer": "담무스월",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-담무스월"
+    },
+    {
+      "number": 9,
+      "answer": "스알디엘",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "shealtiel"
+    },
+    {
+      "number": 10,
+      "answer": "배교",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "apostasy"
+    },
+    {
+      "number": 11,
+      "answer": "교훈",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "instruction"
+    },
+    {
+      "number": 12,
+      "answer": "믹달엘",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "entry-믹달-엘"
+    },
+    {
+      "number": 13,
+      "answer": "믹돌",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "migdol"
+    },
+    {
+      "number": 14,
+      "answer": "브돌",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "pethor"
+    },
+    {
+      "number": 15,
+      "answer": "브알롯",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "bealoth"
+    }
+  ]
+}

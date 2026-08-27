@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-070",
+  "title": "N-30",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########고#",
+    "#######페레스",
+    "#########밧",
+    "####여###불월",
+    "####호#베헤못#",
+    "#몰#도아#울###",
+    "셸라##하윌라###",
+    "#다브네스#####",
+    "##살#######",
+    "#할렐#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "고레",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "kore"
+    },
+    {
+      "number": 2,
+      "answer": "페레스",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
+      "length": 3,
+      "wordId": "peres"
+    },
+    {
+      "number": 3,
+      "answer": "스밧월",
+      "direction": "down",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "shebat"
+    },
+    {
+      "number": 4,
+      "answer": "여호아하스",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 5,
+      "wordId": "jehoahaz"
+    },
+    {
+      "number": 5,
+      "answer": "불못",
+      "direction": "down",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "entry-불못"
+    },
+    {
+      "number": 6,
+      "answer": "불월",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "bul"
+    },
+    {
+      "number": 7,
+      "answer": "베헤못",
+      "direction": "across",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "behemoth"
+    },
+    {
+      "number": 8,
+      "answer": "베울라",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "beulah"
+    },
+    {
+      "number": 9,
+      "answer": "몰라다",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "moladah"
+    },
+    {
+      "number": 10,
+      "answer": "도아",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "toah"
+    },
+    {
+      "number": 11,
+      "answer": "셸라",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "shelah"
+    },
+    {
+      "number": 12,
+      "answer": "하윌라",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "havilah"
+    },
+    {
+      "number": 13,
+      "answer": "다브네스",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 4,
+      "wordId": "tahpenes"
+    },
+    {
+      "number": 14,
+      "answer": "브살렐",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "bezalel"
+    },
+    {
+      "number": 15,
+      "answer": "할렐",
+      "direction": "across",
+      "row": 9,
+      "col": 1,
+      "length": 2,
+      "wordId": "hallel"
+    }
+  ]
+}

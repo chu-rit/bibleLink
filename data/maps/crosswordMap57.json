@@ -1,0 +1,111 @@
+{
+  "id": "crossword-map-057",
+  "title": "E-27",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "####다###",
+    "####르비딤#",
+    "발##다곤###",
+    "가슴받이####",
+    "락##아####",
+    "###몬#미##",
+    "##바드로스##",
+    "##퀴##바느질"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "다르곤",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 3,
+      "wordId": "darkon"
+    },
+    {
+      "number": 2,
+      "answer": "르비딤",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "rephidim"
+    },
+    {
+      "number": 3,
+      "answer": "발가락",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "toe"
+    },
+    {
+      "number": 4,
+      "answer": "다이아몬드",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 5,
+      "wordId": "diamond"
+    },
+    {
+      "number": 5,
+      "answer": "다곤",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "dannah"
+    },
+    {
+      "number": 6,
+      "answer": "가슴받이",
+      "direction": "across",
+      "row": 3,
+      "col": 0,
+      "length": 4,
+      "wordId": "breastpiece-pouch"
+    },
+    {
+      "number": 7,
+      "answer": "미스바",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "mizpah",
+      "clue": "사무엘이 돌을 세워 여호와께서 우리를 여기까지 도우셨다 한 집결지로 사울도 여기서 왕으로 뽑혔다"
+    },
+    {
+      "number": 8,
+      "answer": "바드로스",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 4,
+      "wordId": "pathros"
+    },
+    {
+      "number": 9,
+      "answer": "바퀴",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "wheel"
+    },
+    {
+      "number": 10,
+      "answer": "바느질",
+      "direction": "across",
+      "row": 7,
+      "col": 5,
+      "length": 3,
+      "wordId": "sewing"
+    }
+  ]
+}

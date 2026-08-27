@@ -1,0 +1,112 @@
+{
+  "id": "crossword-map-058",
+  "title": "E-28",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##힘#분별##",
+    "붉은줄마노###",
+    "###지####",
+    "###막게다##",
+    "###날#니네베",
+    "####요엘#들",
+    "#######레",
+    "#######헴"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "힘줄",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 2,
+      "wordId": "sinew"
+    },
+    {
+      "number": 2,
+      "answer": "분노",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "anger"
+    },
+    {
+      "number": 3,
+      "answer": "분별",
+      "direction": "across",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "discernment"
+    },
+    {
+      "number": 4,
+      "answer": "붉은줄마노",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 5,
+      "wordId": "sardonyx"
+    },
+    {
+      "number": 5,
+      "answer": "마지막날",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-마지막 날"
+    },
+    {
+      "number": 6,
+      "answer": "막게다",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "makkedah"
+    },
+    {
+      "number": 7,
+      "answer": "다니엘",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "daniel",
+      "clue": "바빌론 포로기에 세 명의 친구와 함께 왕의 음식을 거절하고도 총수로 인정받은 예언자"
+    },
+    {
+      "number": 8,
+      "answer": "니네베",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "nineveh",
+      "clue": "요나가 싫어하면서도 가서 전파했고 마침내 회개한 이 아시리아 수도의 백성은 12만 명이 넘었다"
+    },
+    {
+      "number": 9,
+      "answer": "베들레헴",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 4,
+      "wordId": "bethlehem"
+    },
+    {
+      "number": 10,
+      "answer": "요엘",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 2,
+      "wordId": "joel"
+    }
+  ]
+}

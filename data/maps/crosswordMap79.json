@@ -1,0 +1,204 @@
+{
+  "id": "crossword-map-079",
+  "title": "H-19",
+  "difficulty": 2.7,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######나단##므#",
+    "#######후메내오#",
+    "####므술레멧##노파",
+    "#####람###헬대#",
+    "####스미라#말라##",
+    "#####소##로###",
+    "##스#창녀##디###",
+    "#빌롤로고#######",
+    "셀라##########",
+    "#델렘#########",
+    "#비##########",
+    "벳아웬#########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "나단",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "nathan"
+    },
+    {
+      "number": 2,
+      "answer": "단후멧",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "tanhumeth"
+    },
+    {
+      "number": 3,
+      "answer": "므오노대",
+      "direction": "down",
+      "row": 0,
+      "col": 10,
+      "length": 4,
+      "wordId": "meonothai"
+    },
+    {
+      "number": 4,
+      "answer": "후메내오",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
+      "length": 4,
+      "wordId": "hymenaeus"
+    },
+    {
+      "number": 5,
+      "answer": "므술레멧",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "meshullemeth"
+    },
+    {
+      "number": 6,
+      "answer": "술람미소녀",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 5,
+      "wordId": "shulammite"
+    },
+    {
+      "number": 7,
+      "answer": "노파",
+      "direction": "across",
+      "row": 2,
+      "col": 10,
+      "length": 2,
+      "wordId": "nophah"
+    },
+    {
+      "number": 8,
+      "answer": "헬대",
+      "direction": "across",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "heldai"
+    },
+    {
+      "number": 9,
+      "answer": "헬라",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "helah"
+    },
+    {
+      "number": 10,
+      "answer": "스미라",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "zemirah"
+    },
+    {
+      "number": 11,
+      "answer": "말라",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "mahlah"
+    },
+    {
+      "number": 12,
+      "answer": "말로디",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 3,
+      "wordId": "mallothi"
+    },
+    {
+      "number": 13,
+      "answer": "스롤",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "zeror"
+    },
+    {
+      "number": 14,
+      "answer": "창녀",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "harlot"
+    },
+    {
+      "number": 15,
+      "answer": "창고",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "storehouse"
+    },
+    {
+      "number": 16,
+      "answer": "빌롤로고",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 4,
+      "wordId": "philologus"
+    },
+    {
+      "number": 17,
+      "answer": "빌라델비아",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 5,
+      "wordId": "philadelphia"
+    },
+    {
+      "number": 18,
+      "answer": "셀라",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "sela"
+    },
+    {
+      "number": 19,
+      "answer": "델렘",
+      "direction": "across",
+      "row": 9,
+      "col": 1,
+      "length": 2,
+      "wordId": "telem"
+    },
+    {
+      "number": 20,
+      "answer": "벳아웬",
+      "direction": "across",
+      "row": 11,
+      "col": 0,
+      "length": 3,
+      "wordId": "entry-벳-아웬"
+    }
+  ]
+}

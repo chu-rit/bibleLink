@@ -1,0 +1,111 @@
+{
+  "id": "crossword-map-054",
+  "title": "E-24",
+  "difficulty": 1.4,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######석류",
+    "#####예수#",
+    "##어##루##",
+    "#느부갓네살##",
+    "보고###렘##",
+    "아#######",
+    "스불론#####",
+    "1#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "석수",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "mason"
+    },
+    {
+      "number": 2,
+      "answer": "석류",
+      "direction": "across",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "pomegranate"
+    },
+    {
+      "number": 3,
+      "answer": "예루살렘",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 4,
+      "wordId": "jerusalem"
+    },
+    {
+      "number": 4,
+      "answer": "예수",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "jesus"
+    },
+    {
+      "number": 5,
+      "answer": "어부",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "fisherman",
+      "clue": "베드로와 안드레가 그물을 던지다 예수께 부름받은 이 직업은 갈릴리 호숫가에서 행해졌다"
+    },
+    {
+      "number": 6,
+      "answer": "느고",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "entry-느고"
+    },
+    {
+      "number": 7,
+      "answer": "느부갓네살",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 5,
+      "wordId": "nebuchadnezzar"
+    },
+    {
+      "number": 8,
+      "answer": "보아스1",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "entry-보아스, I"
+    },
+    {
+      "number": 9,
+      "answer": "보고",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 2,
+      "wordId": "treasury"
+    },
+    {
+      "number": 10,
+      "answer": "스불론",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "zebulun"
+    }
+  ]
+}

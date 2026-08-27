@@ -1,0 +1,157 @@
+{
+  "id": "crossword-map-066",
+  "title": "N-26",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#므########",
+    "#깃#마가복음###",
+    "#도시#이##겟##",
+    "##글레오바#세펠라",
+    "사드락##알#마#핫",
+    "아####살모네##",
+    "완####리####",
+    "####벨사살###",
+    "######레###",
+    "######겟###"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "므깃도",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 3,
+      "wordId": "megiddo"
+    },
+    {
+      "number": 2,
+      "answer": "마가복음",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "marksgospel"
+    },
+    {
+      "number": 3,
+      "answer": "가이오",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "gaius"
+    },
+    {
+      "number": 4,
+      "answer": "도시",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "city"
+    },
+    {
+      "number": 5,
+      "answer": "시글락",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 3,
+      "wordId": "ziklag"
+    },
+    {
+      "number": 6,
+      "answer": "겟세마네",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 4,
+      "wordId": "gethsemane"
+    },
+    {
+      "number": 7,
+      "answer": "글레오바",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "cleopas"
+    },
+    {
+      "number": 8,
+      "answer": "바알살리사",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 5,
+      "wordId": "entry-바알-살리사"
+    },
+    {
+      "number": 9,
+      "answer": "세펠라",
+      "direction": "across",
+      "row": 3,
+      "col": 7,
+      "length": 3,
+      "wordId": "shephelah"
+    },
+    {
+      "number": 10,
+      "answer": "라핫",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "lahad"
+    },
+    {
+      "number": 11,
+      "answer": "사드락",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "shadrach"
+    },
+    {
+      "number": 12,
+      "answer": "사아완",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "zaavan"
+    },
+    {
+      "number": 13,
+      "answer": "살모네",
+      "direction": "across",
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "salmone"
+    },
+    {
+      "number": 14,
+      "answer": "벨사살",
+      "direction": "across",
+      "row": 7,
+      "col": 4,
+      "length": 3,
+      "wordId": "belshazzar"
+    },
+    {
+      "number": 15,
+      "answer": "살레겟",
+      "direction": "down",
+      "row": 7,
+      "col": 6,
+      "length": 3,
+      "wordId": "shallecheth"
+    }
+  ]
+}
