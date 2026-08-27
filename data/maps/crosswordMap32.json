@@ -1,110 +1,110 @@
 {
   "id": "crossword-map-032",
-  "title": "E-12",
+  "title": "성경 단어 퍼즐 32",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#그######",
-    "#리######",
-    "#스#납####",
-    "#도#달팽이##",
-    "섞인무리#스미닛",
-    "##릎##라##",
-    "###다니엘서#",
-    "###윗##명#"
+    "###에덴###",
+    "갈그미스##골#",
+    "#리#더#달란트",
+    "#스###팽##",
+    "#도마뱀붙이##",
+    "나인######",
+    "오#######",
+    "미#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "그리스도인",
+      "answer": "에스더",
       "direction": "down",
       "row": 0,
+      "col": 3,
+      "length": 3,
+      "wordId": "esther"
+    },
+    {
+      "number": 2,
+      "answer": "에덴",
+      "direction": "across",
+      "row": 0,
+      "col": 3,
+      "length": 2,
+      "wordId": "eden"
+    },
+    {
+      "number": 3,
+      "answer": "갈그미스",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 4,
+      "wordId": "carchemish"
+    },
+    {
+      "number": 4,
+      "answer": "그리스도인",
+      "direction": "down",
+      "row": 1,
       "col": 1,
       "length": 5,
       "wordId": "christian"
     },
     {
-      "number": 2,
-      "answer": "납달리",
+      "number": 5,
+      "answer": "골란",
       "direction": "down",
-      "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "naphtali"
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "golan"
     },
     {
-      "number": 3,
-      "answer": "달팽이",
+      "number": 6,
+      "answer": "달란트",
       "direction": "across",
-      "row": 3,
-      "col": 3,
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "talent"
+    },
+    {
+      "number": 7,
+      "answer": "달팽이",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
       "length": 3,
       "wordId": "snail"
     },
     {
-      "number": 4,
-      "answer": "이스라엘",
-      "direction": "down",
-      "row": 3,
-      "col": 5,
-      "length": 4,
-      "wordId": "israel"
-    },
-    {
-      "number": 5,
-      "answer": "섞인무리",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "entry-섞인 무리"
-    },
-    {
-      "number": 6,
-      "answer": "무릎",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 2,
-      "wordId": "entry-무릎, 무릎을 꿇다"
-    },
-    {
-      "number": 7,
-      "answer": "스미닛",
-      "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 3,
-      "wordId": "sheminith"
-    },
-    {
       "number": 8,
-      "answer": "다니엘서",
+      "answer": "도마뱀붙이",
       "direction": "across",
-      "row": 6,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-다니엘서"
+      "row": 4,
+      "col": 1,
+      "length": 5,
+      "wordId": "gecko"
     },
     {
       "number": 9,
-      "answer": "다윗",
-      "direction": "down",
-      "row": 6,
-      "col": 3,
+      "answer": "나인",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
       "length": 2,
-      "wordId": "david"
+      "wordId": "nain"
     },
     {
       "number": 10,
-      "answer": "서명",
+      "answer": "나오미",
       "direction": "down",
-      "row": 6,
-      "col": 6,
-      "length": 2,
-      "wordId": "signature"
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "naomi"
     }
   ]
 }

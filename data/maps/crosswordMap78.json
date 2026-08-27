@@ -1,204 +1,204 @@
 {
   "id": "crossword-map-078",
-  "title": "H-18",
-  "difficulty": 2.7,
+  "title": "성경 단어 퍼즐 78",
+  "difficulty": 2.8,
   "width": 12,
   "height": 12,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#########헤#베",
-    "##빌######스#드",
-    "##하구바###브로고로",
-    "####산당높은곳##후",
-    "#달마누다######서",
-    "##돈#다핫######",
-    "#지###스바랏####",
-    "#므###누#사붓###",
-    "#리카오니아#론####",
-    "마#멜#########",
-    "므실레밋########",
-    "레#온#########"
+    "######밉삼##가렙",
+    "#######무두장이#",
+    "###마#칼데아##난#",
+    "##바돈##베#####",
+    "##예#학고스#####",
+    "##수함#나######",
+    "###맛다냐######",
+    "##삿#니#######",
+    "#므두사엘#######",
+    "#실##서#######",
+    "벨레스#########",
+    "#못##########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "헤스로",
-      "direction": "down",
+      "answer": "밉삼",
+      "direction": "across",
       "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "hezro"
+      "col": 6,
+      "length": 2,
+      "wordId": "mibsam"
     },
     {
       "number": 2,
-      "answer": "베드로후서",
+      "answer": "삼무아",
       "direction": "down",
       "row": 0,
-      "col": 11,
-      "length": 5,
-      "wordId": "secondpeter"
+      "col": 7,
+      "length": 3,
+      "wordId": "shammua"
     },
     {
       "number": 3,
-      "answer": "빌하",
+      "answer": "가이난",
       "direction": "down",
-      "row": 1,
-      "col": 2,
-      "length": 2,
-      "wordId": "bilhah"
+      "row": 0,
+      "col": 10,
+      "length": 3,
+      "wordId": "cainan"
     },
     {
       "number": 4,
-      "answer": "하구바",
+      "answer": "가렙",
       "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "hakupha"
+      "row": 0,
+      "col": 10,
+      "length": 2,
+      "wordId": "gareb"
     },
     {
       "number": 5,
-      "answer": "바산다다",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
+      "answer": "무두장이",
+      "direction": "across",
+      "row": 1,
+      "col": 7,
       "length": 4,
-      "wordId": "parshandatha"
+      "wordId": "tanner"
     },
     {
       "number": 6,
-      "answer": "브곳",
-      "direction": "down",
-      "row": 2,
-      "col": 8,
-      "length": 2,
-      "wordId": "pekod"
-    },
-    {
-      "number": 7,
-      "answer": "브로고로",
-      "direction": "across",
-      "row": 2,
-      "col": 8,
-      "length": 4,
-      "wordId": "prochorus"
-    },
-    {
-      "number": 8,
-      "answer": "산당높은곳",
-      "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 5,
-      "wordId": "entry-산당, 높은 곳"
-    },
-    {
-      "number": 9,
-      "answer": "달마누다",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
-      "length": 4,
-      "wordId": "dalmanutha"
-    },
-    {
-      "number": 10,
       "answer": "마돈",
       "direction": "down",
-      "row": 4,
-      "col": 2,
+      "row": 2,
+      "col": 3,
       "length": 2,
       "wordId": "madon"
     },
     {
-      "number": 11,
-      "answer": "다핫",
+      "number": 7,
+      "answer": "칼데아",
       "direction": "across",
-      "row": 5,
-      "col": 4,
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "chaldea"
+    },
+    {
+      "number": 8,
+      "answer": "데베스",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "thebez"
+    },
+    {
+      "number": 9,
+      "answer": "바예수",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-바-예수"
+    },
+    {
+      "number": 10,
+      "answer": "바돈",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
       "length": 2,
-      "wordId": "tahath"
+      "wordId": "padon"
+    },
+    {
+      "number": 11,
+      "answer": "학고스",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "hakkoz"
     },
     {
       "number": 12,
-      "answer": "핫스누아",
+      "answer": "고나냐",
       "direction": "down",
-      "row": 5,
+      "row": 4,
       "col": 5,
-      "length": 4,
-      "wordId": "hassenuah"
+      "length": 3,
+      "wordId": "conaniah"
     },
     {
       "number": 13,
-      "answer": "지므리",
-      "direction": "down",
-      "row": 6,
-      "col": 1,
-      "length": 3,
-      "wordId": "zimri"
+      "answer": "수함",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "shuham"
     },
     {
       "number": 14,
-      "answer": "스바랏",
-      "direction": "across",
-      "row": 6,
-      "col": 5,
-      "length": 3,
-      "wordId": "sepharad"
+      "answer": "함맛",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "hammath"
     },
     {
       "number": 15,
-      "answer": "랏사론",
-      "direction": "down",
+      "answer": "맛다냐",
+      "direction": "across",
       "row": 6,
-      "col": 7,
+      "col": 3,
       "length": 3,
-      "wordId": "lassharon"
+      "wordId": "mattaniah"
     },
     {
       "number": 16,
-      "answer": "사붓",
-      "direction": "across",
-      "row": 7,
-      "col": 7,
-      "length": 2,
-      "wordId": "zabud"
+      "answer": "다니엘서",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-다니엘서"
     },
     {
       "number": 17,
-      "answer": "리카오니아",
-      "direction": "across",
-      "row": 8,
-      "col": 1,
-      "length": 5,
-      "wordId": "lycaonia"
+      "answer": "삿두",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 2,
+      "wordId": "zattu"
     },
     {
       "number": 18,
-      "answer": "카멜레온",
-      "direction": "down",
+      "answer": "므두사엘",
+      "direction": "across",
       "row": 8,
-      "col": 2,
+      "col": 1,
       "length": 4,
-      "wordId": "chameleon"
+      "wordId": "methushael"
     },
     {
       "number": 19,
-      "answer": "마므레",
+      "answer": "므실레못",
       "direction": "down",
-      "row": 9,
-      "col": 0,
-      "length": 3,
-      "wordId": "mamre"
+      "row": 8,
+      "col": 1,
+      "length": 4,
+      "wordId": "meshillemoth"
     },
     {
       "number": 20,
-      "answer": "므실레밋",
+      "answer": "벨레스",
       "direction": "across",
       "row": 10,
       "col": 0,
-      "length": 4,
-      "wordId": "meshillemith"
+      "length": 3,
+      "wordId": "peleth"
     }
   ]
 }

@@ -1,110 +1,110 @@
 {
   "id": "crossword-map-052",
-  "title": "E-22",
+  "title": "성경 단어 퍼즐 52",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######성",
-    "#######전",
-    "#####형#대",
+    "#####속죄일",
+    "####경건##",
     "#####제사장",
-    "히#####두#",
-    "아#요#사냥개#",
-    "신성한봉사#인#",
-    "스###기둥##"
+    "######사#",
+    "####비둘기똥",
+    "####둘###",
+    "##구름기둥##",
+    "보아스#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "성전대장",
+      "answer": "속건제",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 4,
-      "wordId": "entry-성전 대장"
+      "col": 5,
+      "length": 3,
+      "wordId": "guiltoffering"
     },
     {
       "number": 2,
-      "answer": "형제",
-      "direction": "down",
-      "row": 2,
+      "answer": "속죄일",
+      "direction": "across",
+      "row": 0,
       "col": 5,
-      "length": 2,
-      "wordId": "brother"
+      "length": 3,
+      "wordId": "dayofatonement"
     },
     {
       "number": 3,
+      "answer": "경건",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "godlydevotion"
+    },
+    {
+      "number": 4,
       "answer": "제사장",
       "direction": "across",
-      "row": 3,
+      "row": 2,
       "col": 5,
       "length": 3,
       "wordId": "priest"
     },
     {
-      "number": 4,
-      "answer": "사두개인",
-      "direction": "down",
-      "row": 3,
-      "col": 6,
-      "length": 4,
-      "wordId": "sadducees"
-    },
-    {
       "number": 5,
-      "answer": "히아신스",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "hyacinth"
-    },
-    {
-      "number": 6,
-      "answer": "요한",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
-      "length": 2,
-      "wordId": "john"
-    },
-    {
-      "number": 7,
-      "answer": "사냥개",
-      "direction": "across",
-      "row": 5,
-      "col": 4,
-      "length": 3,
-      "wordId": "greyhound"
-    },
-    {
-      "number": 8,
       "answer": "사사기",
       "direction": "down",
-      "row": 5,
-      "col": 4,
+      "row": 2,
+      "col": 6,
       "length": 3,
       "wordId": "judgesbook"
     },
     {
-      "number": 9,
-      "answer": "신성한봉사",
+      "number": 6,
+      "answer": "비둘기똥",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-비둘기 똥"
+    },
+    {
+      "number": 7,
+      "answer": "비둘기",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "dove"
+    },
+    {
+      "number": 8,
+      "answer": "구름기둥",
       "direction": "across",
       "row": 6,
-      "col": 0,
-      "length": 5,
-      "wordId": "entry-신성한 봉사"
+      "col": 2,
+      "length": 4,
+      "wordId": "cloudpillar"
+    },
+    {
+      "number": 9,
+      "answer": "구스",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "cush"
     },
     {
       "number": 10,
-      "answer": "기둥",
+      "answer": "보아스",
       "direction": "across",
       "row": 7,
-      "col": 4,
-      "length": 2,
-      "wordId": "pillar"
+      "col": 0,
+      "length": 3,
+      "wordId": "boaz"
     }
   ]
 }

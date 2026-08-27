@@ -1,110 +1,110 @@
 {
   "id": "crossword-map-035",
-  "title": "E-15",
+  "title": "성경 단어 퍼즐 35",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####다대오",
-    "####레#리#",
-    "###바위반석#",
-    "###늘#지##",
-    "#까마귀####",
-    "욥#하#####",
-    "기름나무####",
-    "##임#####"
+    "#####성막#",
+    "스불론###벨#",
+    "#쌍##메추라기",
+    "#히##시##둥",
+    "#여호수아###",
+    "새김#염####",
+    "#연######",
+    "#민######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "다대오",
+      "answer": "성막",
       "direction": "across",
       "row": 0,
       "col": 5,
-      "length": 3,
-      "wordId": "thaddaeus"
+      "length": 2,
+      "wordId": "tabernacle"
     },
     {
       "number": 2,
-      "answer": "대리석",
+      "answer": "막벨라",
       "direction": "down",
       "row": 0,
       "col": 6,
       "length": 3,
-      "wordId": "marble"
+      "wordId": "machpelah"
     },
     {
       "number": 3,
-      "answer": "레위",
-      "direction": "down",
+      "answer": "스불론",
+      "direction": "across",
       "row": 1,
-      "col": 4,
-      "length": 2,
-      "wordId": "levi"
+      "col": 0,
+      "length": 3,
+      "wordId": "zebulun"
     },
     {
       "number": 4,
-      "answer": "바위반석",
-      "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-바위, 반석"
+      "answer": "불쌍히여김연민",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 7,
+      "wordId": "pity"
     },
     {
       "number": 5,
-      "answer": "바늘귀",
+      "answer": "메시아",
       "direction": "down",
       "row": 2,
-      "col": 3,
+      "col": 4,
       "length": 3,
-      "wordId": "entry-바늘귀"
+      "wordId": "messiah"
     },
     {
       "number": 6,
-      "answer": "반지",
-      "direction": "down",
+      "answer": "메추라기",
+      "direction": "across",
       "row": 2,
-      "col": 5,
-      "length": 2,
-      "wordId": "ring"
+      "col": 4,
+      "length": 4,
+      "wordId": "quail"
     },
     {
       "number": 7,
-      "answer": "까마귀",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
-      "length": 3,
-      "wordId": "raven"
+      "answer": "기둥",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 2,
+      "wordId": "pillar"
     },
     {
       "number": 8,
-      "answer": "마하나임",
-      "direction": "down",
+      "answer": "여호수아",
+      "direction": "across",
       "row": 4,
-      "col": 2,
+      "col": 1,
       "length": 4,
-      "wordId": "mahanaim"
+      "wordId": "joshua"
     },
     {
       "number": 9,
-      "answer": "욥기",
+      "answer": "수염",
       "direction": "down",
-      "row": 5,
-      "col": 0,
+      "row": 4,
+      "col": 3,
       "length": 2,
-      "wordId": "jobbook"
+      "wordId": "beard"
     },
     {
       "number": 10,
-      "answer": "기름나무",
+      "answer": "새김",
       "direction": "across",
-      "row": 6,
+      "row": 5,
       "col": 0,
-      "length": 4,
-      "wordId": "entry-기름나무"
+      "length": 2,
+      "wordId": "engraving"
     }
   ]
 }

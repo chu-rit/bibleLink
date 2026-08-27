@@ -1,157 +1,157 @@
 {
   "id": "crossword-map-047",
-  "title": "N-17",
+  "title": "성경 단어 퍼즐 47",
   "difficulty": 2.1,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#신########",
-    "#성########",
-    "#한########",
-    "#목초지######",
-    "#상#성######",
-    "###소제#####",
-    "#증서#사#####",
-    "##머리직분##파#",
-    "므고나##니코폴리스",
-    "#삼####아##아"
+    "#####느부사스반",
+    "######리#굽#",
+    "#####희망###",
+    "###안식년####",
+    "##지식######",
+    "##성#######",
+    "#수소#######",
+    "서명########",
+    "머#갈#######",
+    "나단멜렉######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "신성한목상",
-      "direction": "down",
+      "answer": "느부사스반",
+      "direction": "across",
       "row": 0,
-      "col": 1,
+      "col": 5,
       "length": 5,
-      "wordId": "entry-신성한 목상"
+      "wordId": "nebushazban"
     },
     {
       "number": 2,
-      "answer": "목초지",
-      "direction": "across",
-      "row": 3,
-      "col": 1,
+      "answer": "부리망",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
       "length": 3,
-      "wordId": "entry-목초지"
+      "wordId": "muzzle"
     },
     {
       "number": 3,
-      "answer": "지성소",
+      "answer": "스굽",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "segub"
+    },
+    {
+      "number": 4,
+      "answer": "희년",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "jubilee"
+    },
+    {
+      "number": 5,
+      "answer": "희망",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "hope"
+    },
+    {
+      "number": 6,
+      "answer": "안식",
       "direction": "down",
       "row": 3,
       "col": 3,
+      "length": 2,
+      "wordId": "rest"
+    },
+    {
+      "number": 7,
+      "answer": "안식년",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "sabbaticalyear"
+    },
+    {
+      "number": 8,
+      "answer": "지성소",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
       "length": 3,
       "wordId": "mostholy"
     },
     {
-      "number": 4,
-      "answer": "소제",
+      "number": 9,
+      "answer": "지식",
       "direction": "across",
-      "row": 5,
-      "col": 3,
+      "row": 4,
+      "col": 2,
       "length": 2,
-      "wordId": "grainoffering"
+      "wordId": "knowledge"
     },
     {
-      "number": 5,
-      "answer": "제사직",
+      "number": 10,
+      "answer": "수명",
       "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 3,
-      "wordId": "priesthood"
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "entry-수명"
     },
     {
-      "number": 6,
-      "answer": "증서",
+      "number": 11,
+      "answer": "수소",
       "direction": "across",
       "row": 6,
       "col": 1,
       "length": 2,
-      "wordId": "deed"
+      "wordId": "bull"
     },
     {
-      "number": 7,
+      "number": 12,
       "answer": "서머나",
       "direction": "down",
-      "row": 6,
-      "col": 2,
+      "row": 7,
+      "col": 0,
       "length": 3,
       "wordId": "smyrna"
     },
     {
-      "number": 8,
-      "answer": "머리직분",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
-      "length": 4,
-      "wordId": "headship"
-    },
-    {
-      "number": 9,
-      "answer": "분니",
-      "direction": "down",
-      "row": 7,
-      "col": 5,
-      "length": 2,
-      "wordId": "bunni"
-    },
-    {
-      "number": 10,
-      "answer": "파리",
-      "direction": "down",
-      "row": 7,
-      "col": 8,
-      "length": 2,
-      "wordId": "fly"
-    },
-    {
-      "number": 11,
-      "answer": "므고나",
-      "direction": "across",
-      "row": 8,
-      "col": 0,
-      "length": 3,
-      "wordId": "meconah"
-    },
-    {
-      "number": 12,
-      "answer": "고삼",
-      "direction": "down",
-      "row": 8,
-      "col": 1,
-      "length": 2,
-      "wordId": "cosam"
-    },
-    {
       "number": 13,
-      "answer": "니코폴리스",
+      "answer": "서명",
       "direction": "across",
-      "row": 8,
-      "col": 5,
-      "length": 5,
-      "wordId": "nicopolis"
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "signature"
     },
     {
       "number": 14,
-      "answer": "코아",
+      "answer": "갈멜",
       "direction": "down",
       "row": 8,
-      "col": 6,
+      "col": 2,
       "length": 2,
-      "wordId": "koa"
+      "wordId": "carmel-2"
     },
     {
       "number": 15,
-      "answer": "스아",
-      "direction": "down",
-      "row": 8,
-      "col": 9,
-      "length": 2,
-      "wordId": "seah"
+      "answer": "나단멜렉",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 4,
+      "wordId": "entry-나단-멜렉"
     }
   ]
 }

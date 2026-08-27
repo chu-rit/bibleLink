@@ -1,157 +1,157 @@
 {
   "id": "crossword-map-048",
-  "title": "N-18",
+  "title": "성경 단어 퍼즐 48",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####컴####",
-    "나오미##퍼####",
-    "할#라맛미스베#믹#",
-    "리###살#드#마옥",
-    "엘####할로헤스#",
-    "######의###",
-    "#####남편###",
-    "######지식##",
-    "###정탐꾼들###",
-    "##판결######"
+    "##에바브라####",
+    "####네#####",
+    "####야#순###",
+    "#말기수아#두기고#",
+    "####간다게#핫숩",
+    "#####시####",
+    "####시스트럼##",
+    "##헤스몬#####",
+    "시간시#######",
+    "홀#온#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "컴퍼스",
-      "direction": "down",
+      "answer": "에바브라",
+      "direction": "across",
       "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "compass"
+      "col": 2,
+      "length": 4,
+      "wordId": "epaphras"
     },
     {
       "number": 2,
-      "answer": "나오미",
-      "direction": "across",
-      "row": 1,
-      "col": 0,
-      "length": 3,
-      "wordId": "naomi"
+      "answer": "브네야아간",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 5,
+      "wordId": "entry-브네-야아간"
     },
     {
       "number": 3,
-      "answer": "나할리엘",
+      "answer": "순두게",
       "direction": "down",
-      "row": 1,
-      "col": 0,
-      "length": 4,
-      "wordId": "nahaliel"
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "syntyche"
     },
     {
       "number": 4,
-      "answer": "미라",
-      "direction": "down",
-      "row": 1,
-      "col": 2,
-      "length": 2,
-      "wordId": "myra"
+      "answer": "말기수아",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 4,
+      "wordId": "entry-말기-수아"
     },
     {
       "number": 5,
-      "answer": "라맛미스베",
+      "answer": "두기고",
       "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 5,
-      "wordId": "entry-라맛-미스베"
+      "row": 3,
+      "col": 6,
+      "length": 3,
+      "wordId": "tychicus"
     },
     {
       "number": 6,
-      "answer": "미살",
+      "answer": "고핫",
       "direction": "down",
-      "row": 2,
-      "col": 4,
-      "length": 2,
-      "wordId": "mishal"
-    },
-    {
-      "number": 7,
-      "answer": "베드로의편지들",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 7,
-      "wordId": "entry-베드로의 편지들"
-    },
-    {
-      "number": 8,
-      "answer": "믹마스",
-      "direction": "down",
-      "row": 2,
-      "col": 8,
-      "length": 3,
-      "wordId": "entry-믹마스, 믹마쓰"
-    },
-    {
-      "number": 9,
-      "answer": "마옥",
-      "direction": "across",
       "row": 3,
       "col": 8,
       "length": 2,
-      "wordId": "maoch"
+      "wordId": "kohath"
+    },
+    {
+      "number": 7,
+      "answer": "간다게",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "candace"
+    },
+    {
+      "number": 8,
+      "answer": "다시스",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "tarshish"
+    },
+    {
+      "number": 9,
+      "answer": "핫숩",
+      "direction": "across",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "hasshub"
     },
     {
       "number": 10,
-      "answer": "할로헤스",
-      "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 4,
-      "wordId": "hallohesh"
+      "answer": "시몬",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "simon"
     },
     {
       "number": 11,
-      "answer": "남편",
+      "answer": "시스트럼",
       "direction": "across",
       "row": 6,
-      "col": 5,
-      "length": 2,
-      "wordId": "husband"
+      "col": 4,
+      "length": 4,
+      "wordId": "sistrum"
     },
     {
       "number": 12,
-      "answer": "지식",
+      "answer": "헤스몬",
       "direction": "across",
       "row": 7,
-      "col": 6,
-      "length": 2,
-      "wordId": "knowledge"
+      "col": 2,
+      "length": 3,
+      "wordId": "heshmon"
     },
     {
       "number": 13,
-      "answer": "정탐꾼들",
-      "direction": "across",
-      "row": 8,
-      "col": 3,
-      "length": 4,
-      "wordId": "spies"
+      "answer": "헤시온",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "hezion"
     },
     {
       "number": 14,
-      "answer": "정결",
-      "direction": "down",
+      "answer": "시간시",
+      "direction": "across",
       "row": 8,
-      "col": 3,
-      "length": 2,
-      "wordId": "cleanness"
+      "col": 0,
+      "length": 3,
+      "wordId": "hour"
     },
     {
       "number": 15,
-      "answer": "판결",
-      "direction": "across",
-      "row": 9,
-      "col": 2,
+      "answer": "시홀",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
       "length": 2,
-      "wordId": "entry-판결"
+      "wordId": "shihor"
     }
   ]
 }

@@ -1,112 +1,110 @@
 {
   "id": "crossword-map-039",
-  "title": "E-19",
+  "title": "성경 단어 퍼즐 39",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######방",
-    "#######아",
-    "#######깨",
-    "######마비",
-    "##선##하늘#",
-    "만군의여호와##",
-    "나##호####",
-    "#범죄와처벌##"
+    "##구#####",
+    "##더#####",
+    "물고기#####",
+    "푸#######",
+    "레#####목욕",
+    "나#친#구원자#",
+    "무교절축제###",
+    "#육######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "방아깨비",
+      "answer": "구더기",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 4,
-      "wordId": "grasshopper"
+      "col": 2,
+      "length": 3,
+      "wordId": "maggot"
     },
     {
       "number": 2,
-      "answer": "마늘",
+      "answer": "물푸레나무",
       "direction": "down",
-      "row": 3,
-      "col": 6,
-      "length": 2,
-      "wordId": "garlic"
+      "row": 2,
+      "col": 0,
+      "length": 5,
+      "wordId": "ash"
     },
     {
       "number": 3,
-      "answer": "마비",
+      "answer": "물고기",
       "direction": "across",
-      "row": 3,
-      "col": 6,
-      "length": 2,
-      "wordId": "paralysis"
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "fish"
     },
     {
       "number": 4,
-      "answer": "선의",
+      "answer": "목자",
       "direction": "down",
       "row": 4,
-      "col": 2,
+      "col": 6,
       "length": 2,
-      "wordId": "goodwill"
+      "wordId": "shepherd"
     },
     {
       "number": 5,
-      "answer": "하와",
-      "direction": "down",
+      "answer": "목욕",
+      "direction": "across",
       "row": 4,
-      "col": 5,
+      "col": 6,
       "length": 2,
-      "wordId": "eve",
-      "clue": "모든 살아 있는 사람의 어머니라 불리게 된 에덴의 첫 여자"
+      "wordId": "bathing"
     },
     {
       "number": 6,
-      "answer": "하늘",
-      "direction": "across",
-      "row": 4,
-      "col": 5,
+      "answer": "친절",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
       "length": 2,
-      "wordId": "entry-하늘"
+      "wordId": "kindness"
     },
     {
       "number": 7,
-      "answer": "만군의여호와",
-      "direction": "across",
+      "answer": "구제",
+      "direction": "down",
       "row": 5,
-      "col": 0,
-      "length": 6,
-      "wordId": "entry-만군의 여호와"
+      "col": 4,
+      "length": 2,
+      "wordId": "relief"
     },
     {
       "number": 8,
-      "answer": "만나",
-      "direction": "down",
+      "answer": "구원자",
+      "direction": "across",
       "row": 5,
-      "col": 0,
-      "length": 2,
-      "wordId": "manna",
-      "clue": "이스라엘이 광야에서 매일 거두었지만 6일째에는 두 배로 거두어야 했던 양식"
+      "col": 4,
+      "length": 3,
+      "wordId": "savior"
     },
     {
       "number": 9,
-      "answer": "여호와",
-      "direction": "down",
-      "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "jehovah"
+      "answer": "무교절축제",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-무교절 축제"
     },
     {
       "number": 10,
-      "answer": "범죄와처벌",
-      "direction": "across",
-      "row": 7,
+      "answer": "교육",
+      "direction": "down",
+      "row": 6,
       "col": 1,
-      "length": 5,
-      "wordId": "entry-범죄와 처벌"
+      "length": 2,
+      "wordId": "education"
     }
   ]
 }

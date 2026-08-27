@@ -13,7 +13,7 @@
     "보고###렘##",
     "아#######",
     "스불론#####",
-    "1#######"
+    "########"
   ],
   "cells": [
     {
@@ -82,12 +82,12 @@
     },
     {
       "number": 8,
-      "answer": "보아스1",
+      "answer": "보아스",
       "direction": "down",
       "row": 4,
       "col": 0,
-      "length": 4,
-      "wordId": "entry-보아스, I"
+      "length": 3,
+      "wordId": "boaz"
     },
     {
       "number": 9,

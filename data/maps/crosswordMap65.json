@@ -1,157 +1,157 @@
 {
   "id": "crossword-map-065",
-  "title": "N-25",
+  "title": "성경 단어 퍼즐 65",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###길######",
-    "##빌르암#####",
-    "###앗######",
-    "###발######",
-    "###삼갈느보###",
-    "####멜#금#세달",
-    "######자#펠#",
-    "##시##올리브산#",
-    "#세대대###로##",
-    "제단#사랑의잔치##"
+    "###힛#슬#돕#증",
+    "###데살로니가전서",
+    "##세겔#브##리#",
+    "####마핫##품#",
+    "###시비#####",
+    "헤##브######",
+    "르##라헬#####",
+    "마하나임######",
+    "#드########",
+    "#락########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "길르앗발삼",
+      "answer": "힛데겔",
       "direction": "down",
       "row": 0,
       "col": 3,
-      "length": 5,
-      "wordId": "entry-발삼, 길르앗의 발삼"
+      "length": 3,
+      "wordId": "hiddekel"
     },
     {
       "number": 2,
-      "answer": "빌르암",
-      "direction": "across",
-      "row": 1,
-      "col": 2,
-      "length": 3,
-      "wordId": "bileam"
+      "answer": "슬로브핫",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 4,
+      "wordId": "zelophehad"
     },
     {
       "number": 3,
-      "answer": "삼갈느보",
-      "direction": "across",
-      "row": 4,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-삼갈-느보"
+      "answer": "돕가",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 2,
+      "wordId": "dophkah"
     },
     {
       "number": 4,
-      "answer": "갈멜",
+      "answer": "증서",
       "direction": "down",
-      "row": 4,
-      "col": 4,
+      "row": 0,
+      "col": 9,
       "length": 2,
-      "wordId": "carmel-2"
+      "wordId": "deed"
     },
     {
       "number": 5,
-      "answer": "보금자리",
-      "direction": "down",
-      "row": 4,
-      "col": 6,
-      "length": 4,
-      "wordId": "nest"
+      "answer": "데살로니가전서",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 7,
+      "wordId": "firstthessalonians"
     },
     {
       "number": 6,
-      "answer": "세펠산",
+      "answer": "전리품",
       "direction": "down",
-      "row": 5,
+      "row": 1,
       "col": 8,
       "length": 3,
-      "wordId": "entry-세펠 산"
+      "wordId": "spoil"
     },
     {
       "number": 7,
-      "answer": "세달",
+      "answer": "세겔",
       "direction": "across",
-      "row": 5,
-      "col": 8,
+      "row": 2,
+      "col": 2,
       "length": 2,
-      "wordId": "shethar"
+      "wordId": "shekel"
     },
     {
       "number": 8,
-      "answer": "시대",
-      "direction": "down",
-      "row": 7,
-      "col": 2,
+      "answer": "마핫",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
       "length": 2,
-      "wordId": "age"
+      "wordId": "mahath"
     },
     {
       "number": 9,
-      "answer": "올리브산",
-      "direction": "across",
-      "row": 7,
-      "col": 5,
-      "length": 4,
-      "wordId": "olivesmount"
+      "answer": "마비",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 2,
+      "wordId": "paralysis"
     },
     {
       "number": 10,
-      "answer": "브로치",
-      "direction": "down",
-      "row": 7,
-      "col": 7,
-      "length": 3,
-      "wordId": "brooch"
+      "answer": "시비",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "shiphi"
     },
     {
       "number": 11,
-      "answer": "세대대",
-      "direction": "across",
-      "row": 8,
-      "col": 1,
-      "length": 3,
-      "wordId": "generation"
+      "answer": "시브라임",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 4,
+      "wordId": "sibraim"
     },
     {
       "number": 12,
-      "answer": "세단",
+      "answer": "헤르마",
       "direction": "down",
-      "row": 8,
-      "col": 1,
-      "length": 2,
-      "wordId": "zethan"
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "hermas"
     },
     {
       "number": 13,
-      "answer": "대사",
-      "direction": "down",
-      "row": 8,
+      "answer": "라헬",
+      "direction": "across",
+      "row": 6,
       "col": 3,
       "length": 2,
-      "wordId": "ambassador"
+      "wordId": "rachel"
     },
     {
       "number": 14,
-      "answer": "제단",
+      "answer": "마하나임",
       "direction": "across",
-      "row": 9,
+      "row": 7,
       "col": 0,
-      "length": 2,
-      "wordId": "altar"
+      "length": 4,
+      "wordId": "mahanaim"
     },
     {
       "number": 15,
-      "answer": "사랑의잔치",
-      "direction": "across",
-      "row": 9,
-      "col": 3,
-      "length": 5,
-      "wordId": "entry-사랑의 잔치"
+      "answer": "하드락",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "hadrach"
     }
   ]
 }
