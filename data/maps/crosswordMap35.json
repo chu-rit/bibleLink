@@ -6,105 +6,105 @@
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####성막#",
-    "스불론###벨#",
-    "#쌍##메추라기",
-    "#히##시##둥",
-    "#여호수아###",
-    "새김#염####",
-    "#연######",
-    "#민######"
+    "#####버가모",
+    "#######리",
+    "####여호수아",
+    "####호#박#",
+    "###하와###",
+    "##마늘####",
+    "##노#####",
+    "실로아#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "성막",
+      "answer": "버가모",
       "direction": "across",
       "row": 0,
       "col": 5,
-      "length": 2,
-      "wordId": "tabernacle"
+      "length": 3,
+      "wordId": "pergamum"
     },
     {
       "number": 2,
-      "answer": "막벨라",
+      "answer": "모리아",
       "direction": "down",
       "row": 0,
-      "col": 6,
+      "col": 7,
       "length": 3,
-      "wordId": "machpelah"
+      "wordId": "moriah"
     },
     {
       "number": 3,
-      "answer": "스불론",
-      "direction": "across",
-      "row": 1,
-      "col": 0,
-      "length": 3,
-      "wordId": "zebulun"
-    },
-    {
-      "number": 4,
-      "answer": "불쌍히여김연민",
-      "direction": "down",
-      "row": 1,
-      "col": 1,
-      "length": 7,
-      "wordId": "pity"
-    },
-    {
-      "number": 5,
-      "answer": "메시아",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "messiah"
-    },
-    {
-      "number": 6,
-      "answer": "메추라기",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "quail"
-    },
-    {
-      "number": 7,
-      "answer": "기둥",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 2,
-      "wordId": "pillar"
-    },
-    {
-      "number": 8,
       "answer": "여호수아",
       "direction": "across",
-      "row": 4,
-      "col": 1,
+      "row": 2,
+      "col": 4,
       "length": 4,
       "wordId": "joshua"
     },
     {
-      "number": 9,
-      "answer": "수염",
+      "number": 4,
+      "answer": "여호와",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "jehovah"
+    },
+    {
+      "number": 5,
+      "answer": "수박",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "watermelon"
+    },
+    {
+      "number": 6,
+      "answer": "하와",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "eve"
+    },
+    {
+      "number": 7,
+      "answer": "하늘",
       "direction": "down",
       "row": 4,
       "col": 3,
       "length": 2,
-      "wordId": "beard"
+      "wordId": "entry-하늘"
+    },
+    {
+      "number": 8,
+      "answer": "마늘",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "garlic"
+    },
+    {
+      "number": 9,
+      "answer": "마노아",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "manoah"
     },
     {
       "number": 10,
-      "answer": "새김",
+      "answer": "실로아",
       "direction": "across",
-      "row": 5,
+      "row": 7,
       "col": 0,
-      "length": 2,
-      "wordId": "engraving"
+      "length": 3,
+      "wordId": "shiloah"
     }
   ]
 }

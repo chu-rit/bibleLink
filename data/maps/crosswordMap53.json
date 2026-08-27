@@ -1,111 +1,110 @@
 {
   "id": "crossword-map-053",
-  "title": "E-23",
+  "title": "성경 단어 퍼즐 53",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####나귀#",
-    "######고센",
-    "####납달리#",
-    "##발꿈치###",
-    "##씻#####",
-    "##는#####",
-    "#생일#####",
-    "무명######"
+    "####지파##",
+    "#####수비대",
+    "###갈빗대##",
+    "###릴####",
+    "##피리####",
+    "#납치#####",
+    "#달######",
+    "대리석#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "나귀",
+      "answer": "지파",
       "direction": "across",
       "row": 0,
-      "col": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "ass"
+      "wordId": "tribe"
     },
     {
       "number": 2,
-      "answer": "귀고리",
+      "answer": "파수대",
       "direction": "down",
       "row": 0,
-      "col": 6,
+      "col": 5,
       "length": 3,
-      "wordId": "earring"
+      "wordId": "watchtower"
     },
     {
       "number": 3,
-      "answer": "고센",
+      "answer": "수비대",
       "direction": "across",
       "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "goshen"
+      "col": 5,
+      "length": 3,
+      "wordId": "garrison"
     },
     {
       "number": 4,
-      "answer": "납치",
+      "answer": "갈릴리",
       "direction": "down",
       "row": 2,
-      "col": 4,
+      "col": 3,
+      "length": 3,
+      "wordId": "galilee"
+    },
+    {
+      "number": 5,
+      "answer": "갈빗대",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "rib"
+    },
+    {
+      "number": 6,
+      "answer": "피치",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "pitch"
+    },
+    {
+      "number": 7,
+      "answer": "피리",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "entry-피리"
+    },
+    {
+      "number": 8,
+      "answer": "납달리",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "naphtali"
+    },
+    {
+      "number": 9,
+      "answer": "납치",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
       "length": 2,
       "wordId": "kidnapping"
     },
     {
-      "number": 5,
-      "answer": "납달리",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "naphtali",
-      "clue": "빌하가 야곱에게 낳아 준 둘째 아들로 그 지파는 갈릴리 북부를 차지했고 바락이 드보라와 함께 싸운 병사들의 출신 지파다"
-    },
-    {
-      "number": 6,
-      "answer": "발꿈치",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 3,
-      "wordId": "heel"
-    },
-    {
-      "number": 7,
-      "answer": "발씻는일",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "entry-발 씻는 일"
-    },
-    {
-      "number": 8,
-      "answer": "생일",
-      "direction": "across",
-      "row": 6,
-      "col": 1,
-      "length": 2,
-      "wordId": "birthday"
-    },
-    {
-      "number": 9,
-      "answer": "생명",
-      "direction": "down",
-      "row": 6,
-      "col": 1,
-      "length": 2,
-      "wordId": "life"
-    },
-    {
       "number": 10,
-      "answer": "무명",
+      "answer": "대리석",
       "direction": "across",
       "row": 7,
       "col": 0,
-      "length": 2,
-      "wordId": "cotton"
+      "length": 3,
+      "wordId": "marble"
     }
   ]
 }
