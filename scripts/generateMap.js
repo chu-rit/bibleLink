@@ -215,18 +215,39 @@ const ordered = [...best.list].sort((a, b) => a.row - b.row || a.col - b.col);
 
 // 난이도별 시리즈 번호 계산 (E-1, N-1, H-1 형식)
 const prefix = size === 8 ? 'E' : size === 10 ? 'N' : 'H';
-const existingMaps = fs.readdirSync(mapsDir)
-  .filter(f => /^crosswordMap\d+\.json$/.test(f) && f !== outputFile)
-  .map(f => {
-    const m = JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8'));
-    return { file: f, width: m.width, title: m.title };
-  });
-const sameSizeCount = existingMaps.filter(m => m.width === size).length;
-const seriesNum = sameSizeCount + 1;
+const outputFilePath = path.join(mapsDir, outputFile);
+const fileExists = fs.existsSync(outputFilePath);
+
+// 기존 맵이 있으면 타이틀 유지, 없으면 시리즈 번호 새로 부여
+let title;
+if (fileExists) {
+  const existingMap = JSON.parse(fs.readFileSync(outputFilePath, 'utf8'));
+  title = existingMap.title;
+} else {
+  const existingMaps = fs.readdirSync(mapsDir)
+    .filter(f => /^crosswordMap\d+\.json$/.test(f) && f !== outputFile)
+    .map(f => {
+      const m = JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8'));
+      return { file: f, width: m.width, title: m.title };
+    });
+  const sameSizeCount = existingMaps.filter(m => m.width === size).length;
+  title = `${prefix}-${sameSizeCount + 1}`;
+}
+
+// id 생성: 재생성 시 기존 id와 중복되지 않는 새 id 부여
+const allIds = fs.readdirSync(mapsDir)
+  .filter(f => /^crosswordMap\d+\.json$/.test(f))
+  .map(f => JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8')).id);
+let maxIdNum = 0;
+allIds.forEach(id => {
+  const match = id && id.match(/crossword-map-(\d+)/);
+  if (match) maxIdNum = Math.max(maxIdNum, parseInt(match[1]));
+});
+const newIdNum = maxIdNum + 1;
 
 const map = {
-  id: `crossword-map-${String(mapNumber).padStart(3, '0')}`,
-  title: `${prefix}-${seriesNum}`,
+  id: `crossword-map-${String(newIdNum).padStart(3, '0')}`,
+  title,
   difficulty: Math.max(1, Math.round(best.average * 10) / 10),
   width: size,
   height: size,

@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-019",
+  "id": "crossword-map-082",
   "title": "N-7",
-  "difficulty": 2.2,
+  "difficulty": 2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "길갈#####엘#미",
-    "#멜##고##리브가",
-    "#산헤드린#예후##",
-    "####도#언###",
-    "##여#전도서###",
-    "#골로새서#####",
-    "##보#######",
-    "미리암#######",
-    "가#########",
-    "엘가나#######"
+    "#########목",
+    "########안수",
+    "######까#드#",
+    "######마스레가",
+    "####바늘귀##몬",
+    "###스알##용##",
+    "#히##하박국서##",
+    "#브#게난#####",
+    "올리브산######",
+    "#서########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "길갈",
-      "direction": "across",
-      "row": 0,
-      "col": 0,
-      "length": 2,
-      "wordId": "gilgal"
-    },
-    {
-      "number": 2,
-      "answer": "갈멜산",
-      "direction": "down",
-      "row": 0,
-      "col": 1,
-      "length": 3,
-      "wordId": "carmel"
-    },
-    {
-      "number": 3,
-      "answer": "엘리후",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 3,
-      "wordId": "elihu"
-    },
-    {
-      "number": 4,
-      "answer": "미가",
+      "answer": "목수",
       "direction": "down",
       "row": 0,
       "col": 9,
       "length": 2,
-      "wordId": "micah"
+      "wordId": "carpenter"
+    },
+    {
+      "number": 2,
+      "answer": "안드레",
+      "direction": "down",
+      "row": 1,
+      "col": 8,
+      "length": 3,
+      "wordId": "andrew"
+    },
+    {
+      "number": 3,
+      "answer": "안수",
+      "direction": "across",
+      "row": 1,
+      "col": 8,
+      "length": 2,
+      "wordId": "layingonofhands"
+    },
+    {
+      "number": 4,
+      "answer": "까마귀",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "raven"
     },
     {
       "number": 5,
-      "answer": "고린도전서",
-      "direction": "down",
-      "row": 1,
-      "col": 4,
-      "length": 5,
-      "wordId": "firstcorinthians"
+      "answer": "마스레가",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "masrekah"
     },
     {
       "number": 6,
-      "answer": "리브가",
-      "direction": "across",
-      "row": 1,
-      "col": 7,
-      "length": 3,
-      "wordId": "rebecca"
+      "answer": "가몬",
+      "direction": "down",
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "gamon"
     },
     {
       "number": 7,
-      "answer": "산헤드린",
-      "direction": "across",
-      "row": 2,
-      "col": 1,
+      "answer": "바알하난",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
       "length": 4,
-      "wordId": "sanhedrin"
+      "wordId": "entry-바알-하난"
     },
     {
       "number": 8,
-      "answer": "예언서",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "propheticbooks"
-    },
-    {
-      "number": 9,
-      "answer": "예후",
-      "direction": "across",
-      "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "jehu"
-    },
-    {
-      "number": 10,
-      "answer": "여로보암",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 4,
-      "wordId": "jeroboam"
-    },
-    {
-      "number": 11,
-      "answer": "전도서",
+      "answer": "바늘귀",
       "direction": "across",
       "row": 4,
       "col": 4,
       "length": 3,
-      "wordId": "ecclesiastes"
+      "wordId": "entry-바늘귀"
+    },
+    {
+      "number": 9,
+      "answer": "스알",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "sheal"
+    },
+    {
+      "number": 10,
+      "answer": "용서",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 2,
+      "wordId": "forgiveness"
+    },
+    {
+      "number": 11,
+      "answer": "히브리서",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "hebrews"
     },
     {
       "number": 12,
-      "answer": "골로새서",
+      "answer": "하박국서",
       "direction": "across",
-      "row": 5,
-      "col": 1,
+      "row": 6,
+      "col": 4,
       "length": 4,
-      "wordId": "colossians"
+      "wordId": "entry-하박국서"
     },
     {
       "number": 13,
-      "answer": "미리암",
+      "answer": "게난",
       "direction": "across",
       "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "miriam"
+      "col": 3,
+      "length": 2,
+      "wordId": "kenan"
     },
     {
       "number": 14,
-      "answer": "미가엘",
+      "answer": "게산",
       "direction": "down",
       "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "michael"
+      "col": 3,
+      "length": 2,
+      "wordId": "geshan"
     },
     {
       "number": 15,
-      "answer": "엘가나",
+      "answer": "올리브산",
       "direction": "across",
-      "row": 9,
+      "row": 8,
       "col": 0,
-      "length": 3,
-      "wordId": "elkanah"
+      "length": 4,
+      "wordId": "olivesmount"
     }
   ]
 }

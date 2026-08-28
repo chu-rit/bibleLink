@@ -124,6 +124,11 @@ mapFiles.forEach((file) => {
 
   const difficulties = map.cells.map((item) => wordById.get(item.wordId)?.difficulty).filter(Boolean);
   const average = difficulties.reduce((sum, value) => sum + value, 0) / (difficulties.length || 1);
+  const computedDifficulty = Math.max(1, Math.round(average * 10) / 10);
+  if (map.difficulty !== computedDifficulty) {
+    map.difficulty = computedDifficulty;
+    fs.writeFileSync(path.join(mapsDir, file), `${JSON.stringify(map, null, 2)}\n`, 'utf8');
+  }
   if (map.difficulty <= EASY_MAX_DIFFICULTY) {
     if (map.width !== 8 || map.height !== 8) fail('이지 맵은 8x8이어야 합니다');
     if (map.cells.length !== 10) fail('이지 맵은 단어 10개여야 합니다');

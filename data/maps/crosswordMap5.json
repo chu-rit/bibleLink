@@ -1,7 +1,7 @@
 {
   "id": "crossword-map-005b",
   "title": "N-1",
-  "difficulty": 2.1,
+  "difficulty": 1.9,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",

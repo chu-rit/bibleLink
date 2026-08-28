@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-008",
+  "id": "crossword-map-081",
   "title": "N-4",
-  "difficulty": 2.5,
+  "difficulty": 2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########안수",
-    "####사독##드#",
-    "#포도나무##베레아",
-    "####엘##드#마",
-    "###아하수에로#겟",
-    "비##둘##봇##돈",
-    "티#엘람######",
-    "니#리#######",
-    "아히멜렉######",
-    "##렉#######"
+    "#####격####",
+    "###선견자####",
+    "##공의#창병###",
+    "불멸성###거###",
+    "##퇴###도#마곡",
+    "######시브온#",
+    "#######다##",
+    "#######히람#",
+    "#####브나야##",
+    "######병###"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "안드레",
+      "answer": "격자창",
       "direction": "down",
       "row": 0,
-      "col": 8,
+      "col": 5,
       "length": 3,
-      "wordId": "andrew"
+      "wordId": "lattice"
     },
     {
       "number": 2,
-      "answer": "안수",
+      "answer": "선견자",
       "direction": "across",
-      "row": 0,
-      "col": 8,
-      "length": 2,
-      "wordId": "layingonofhands"
+      "row": 1,
+      "col": 3,
+      "length": 3,
+      "wordId": "seer"
     },
     {
       "number": 3,
-      "answer": "사무엘하",
+      "answer": "선의",
       "direction": "down",
       "row": 1,
-      "col": 4,
-      "length": 4,
-      "wordId": "secondsamuel"
+      "col": 3,
+      "length": 2,
+      "wordId": "goodwill"
     },
     {
       "number": 4,
-      "answer": "사독",
+      "answer": "공의",
       "direction": "across",
-      "row": 1,
-      "col": 4,
+      "row": 2,
+      "col": 2,
       "length": 2,
-      "wordId": "zadok"
+      "wordId": "justice"
     },
     {
       "number": 5,
-      "answer": "포도나무",
-      "direction": "across",
+      "answer": "공성퇴",
+      "direction": "down",
       "row": 2,
-      "col": 1,
-      "length": 4,
-      "wordId": "vine"
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-공성퇴"
     },
     {
       "number": 6,
-      "answer": "베레아",
+      "answer": "창병",
       "direction": "across",
       "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "berea"
+      "col": 5,
+      "length": 2,
+      "wordId": "spearmen"
     },
     {
       "number": 7,
-      "answer": "베드로",
+      "answer": "병거도시",
       "direction": "down",
       "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "peter"
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-병거 도시"
     },
     {
       "number": 8,
-      "answer": "아마겟돈",
-      "direction": "down",
-      "row": 2,
-      "col": 9,
-      "length": 4,
-      "wordId": "armageddon"
+      "answer": "불멸성",
+      "direction": "across",
+      "row": 3,
+      "col": 0,
+      "length": 3,
+      "wordId": "immortality"
     },
     {
       "number": 9,
-      "answer": "아하수에로",
-      "direction": "across",
+      "answer": "마온",
+      "direction": "down",
       "row": 4,
-      "col": 3,
-      "length": 5,
-      "wordId": "ahasuerus"
+      "col": 8,
+      "length": 2,
+      "wordId": "maon"
     },
     {
       "number": 10,
-      "answer": "아둘람",
-      "direction": "down",
+      "answer": "마곡",
+      "direction": "across",
       "row": 4,
-      "col": 3,
-      "length": 3,
-      "wordId": "adullam"
+      "col": 8,
+      "length": 2,
+      "wordId": "magog"
     },
     {
       "number": 11,
-      "answer": "에봇",
-      "direction": "down",
-      "row": 4,
+      "answer": "시브온",
+      "direction": "across",
+      "row": 5,
       "col": 6,
-      "length": 2,
-      "wordId": "ephod"
+      "length": 3,
+      "wordId": "zibeon"
     },
     {
       "number": 12,
-      "answer": "비티니아",
+      "answer": "브다히야",
       "direction": "down",
       "row": 5,
-      "col": 0,
+      "col": 7,
       "length": 4,
-      "wordId": "bithynia"
+      "wordId": "pethahiah"
     },
     {
       "number": 13,
-      "answer": "엘람",
+      "answer": "히람",
       "direction": "across",
-      "row": 6,
-      "col": 2,
+      "row": 7,
+      "col": 7,
       "length": 2,
-      "wordId": "elam"
+      "wordId": "hiram"
     },
     {
       "number": 14,
-      "answer": "엘리멜렉",
-      "direction": "down",
-      "row": 6,
-      "col": 2,
-      "length": 4,
-      "wordId": "elimelech"
+      "answer": "브나야",
+      "direction": "across",
+      "row": 8,
+      "col": 5,
+      "length": 3,
+      "wordId": "benaiah"
     },
     {
       "number": 15,
-      "answer": "아히멜렉",
-      "direction": "across",
+      "answer": "나병",
+      "direction": "down",
       "row": 8,
-      "col": 0,
-      "length": 4,
-      "wordId": "ahimelech"
+      "col": 6,
+      "length": 2,
+      "wordId": "leprosy"
     }
   ]
 }
