@@ -244,8 +244,10 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     ? activeStartY + (slot.length - 1) * cellSize
     : activeStartY;
   const gridHeight = crosswordMap.grid.length * cellSize;
-  const topPadding = Math.min(cellSize * 2, activeStartY);
-  const bottomPadding = Math.min(cellSize * 2, gridHeight - activeEndY - cellSize);
+  const availableBelow = gridHeight - activeEndY - cellSize;
+  const availableAbove = activeStartY;
+  const topPadding = Math.min(cellSize * 2 + Math.max(0, cellSize * 2 - availableBelow), availableAbove);
+  const bottomPadding = Math.min(cellSize * 2 + Math.max(0, cellSize * 2 - availableAbove), availableBelow);
   const hasActiveSlot = selectedSlot !== null && slot !== undefined;
   const boardViewportHeight = hasActiveSlot
     ? Math.min(boardHeight, activeSpanHeight + topPadding + bottomPadding)
