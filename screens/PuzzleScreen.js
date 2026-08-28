@@ -88,7 +88,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     const initialViewportHeight = window.innerHeight;
     const updateViewport = () => {
       setWebViewportHeight(viewport.height);
-      setIsKeyboardVisible(viewport.height < initialViewportHeight - 100);
+      setIsKeyboardVisible(viewport.height < initialViewportHeight - 150);
       window.scrollTo(0, 0);
     };
 
@@ -434,7 +434,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                       returnKeyType="done"
                       blurOnSubmit={false}
                       onFocus={() => {
-                        setIsKeyboardVisible(true);
+                        if (Platform.OS !== 'web') setIsKeyboardVisible(true);
                         if (Platform.OS === 'web') {
                           const resetScroll = () => window.scrollTo(0, 0);
                           resetScroll();
@@ -584,7 +584,7 @@ const styles = StyleSheet.create({
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   answerCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+    backgroundColor: 'rgba(255, 255, 255, 0.82)',
     borderRadius: 20,
     padding: 14,
     borderWidth: 1,
