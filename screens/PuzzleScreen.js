@@ -370,7 +370,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
         <View
           style={[
             styles.answerCardContainer,
-            { bottom: isKeyboardVisible ? keyboardHeight : 0 },
+            isKeyboardVisible && {
+              position: 'absolute',
+              bottom: Platform.OS === 'web'
+                ? Math.max(0, (windowHeight || 0) - (webViewportHeight || windowHeight || 0))
+                : keyboardHeight,
+            },
           ]}
           pointerEvents={slot ? 'auto' : 'none'}
         >
@@ -464,7 +469,6 @@ const styles = StyleSheet.create({
   container: { flex: 1, position: 'relative' },
   gameContent: { flex: 1, padding: 16 },
   answerCardContainer: {
-    position: 'absolute',
     left: 12,
     right: 12,
   },
