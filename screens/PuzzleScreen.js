@@ -44,7 +44,7 @@ const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (isLocalhost || webPath.includes('/master') || getMasterModeFromStorage());
 
-function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint }) {
+function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint, masterMode }) {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [answers, setAnswers] = useState(initialAnswers || {});
   const [input, setInput] = useState('');
@@ -325,7 +325,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                   <View style={[styles.progressFill, { width: `${progress}%` }]} />
                 </View>
               </View>
-              {isMasterMode && (
+              {(masterMode || isMasterMode) && (
                 <View style={styles.autoFillBox}>
                   <Text style={styles.autoFillLabel}>정답 보기</Text>
                   <Switch

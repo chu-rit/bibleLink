@@ -146,6 +146,7 @@ export default function App() {
       hintPoints={hintPointsByMap[selectedMap.id] ?? 3}
       hintedSlots={hintedSlotsByMap[selectedMap.id] || {}}
       onUseHint={handleUseHint}
+      masterMode={masterMode}
       onBack={() => {
         setSelectedMap(null);
         setScreen('mapSelect');
