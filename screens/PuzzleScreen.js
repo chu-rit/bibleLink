@@ -374,7 +374,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             </View>
           </View>
-        </View>
 
         <View
           style={[
