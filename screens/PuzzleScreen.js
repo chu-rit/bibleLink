@@ -367,14 +367,15 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             </View>
             </View>
         </View>
+      </View>
 
-          <View
-            style={[
-              styles.answerCard,
-              isKeyboardVisible && Platform.OS !== 'web' && { bottom: keyboardHeight },
-            ]}
-            pointerEvents={slot ? 'auto' : 'none'}
-          >
+      <View
+        style={[
+          styles.answerCard,
+          isKeyboardVisible && Platform.OS !== 'web' && { bottom: keyboardHeight },
+        ]}
+        pointerEvents={slot ? 'auto' : 'none'}
+      >
             {slot ? (
               <View>
                 {!isCorrect && (
@@ -535,13 +536,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             </View>
           </View>
         </Modal>
-      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  safeArea: { flex: 1, backgroundColor: '#f6f8fb', position: 'relative', height: '100%' },
   webFixedScreen: { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 },
   flex: { flex: 1, position: 'relative' },
   container: { flex: 1, padding: 16, position: 'relative' },
