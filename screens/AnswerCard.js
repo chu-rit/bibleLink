@@ -1,0 +1,193 @@
+import React, { useRef } from 'react';
+import {
+  Animated,
+  Easing,
+  Keyboard,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+
+function AnswerCard({
+  slot,
+  selectedSlot,
+  answers,
+  input,
+  setInput,
+  inputKey,
+  isCorrect,
+  isWrong,
+  isHinted,
+  clue,
+  hintReferences,
+  hintPoints,
+  shakeAnim,
+  fadeAnim,
+  translateYAnim,
+  onUseHint,
+  onSubmit,
+  onClearInput,
+  onFocusInput,
+  onBlurInput,
+  inputRef,
+}) {
+  if (!slot) {
+    return (
+      <View style={styles.answerCard} pointerEvents="none">
+        <View style={styles.emptySelection}>
+          <Text style={styles.emptySelectionTitle}>퍼즐판의 칸을 눌러 보세요</Text>
+          <Text style={styles.emptySelectionText} numberOfLines={2}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
+        </View>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.answerCard}>
+      {!isCorrect && (
+        <View style={styles.hintBox}>
+          {isHinted ? (
+            <Text style={styles.hintReference} numberOfLines={2}>{hintReferences}</Text>
+          ) : (
+            <Pressable
+              onPress={() => onUseHint?.(selectedSlot)}
+              disabled={hintPoints <= 0}
+              style={[
+                styles.hintButton,
+                hintPoints <= 0 && styles.primaryButtonDisabled,
+              ]}
+            >
+              <Text style={styles.hintButtonText}>
+                {hintPoints <= 0 ? '없음' : '힌트'}
+              </Text>
+            </Pressable>
+          )}
+        </View>
+      )}
+      <View style={styles.selectedHeader}>
+        <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
+        {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
+      </View>
+      <Text style={styles.clue} numberOfLines={2}>{clue}</Text>
+      <View style={styles.actionRow}>
+        <Animated.View
+          style={[
+            styles.answerInputWrap,
+            { transform: [{ translateX: shakeAnim }] },
+          ]}
+        >
+          <TextInput
+            key={inputKey}
+            ref={inputRef}
+            value={input}
+            onChangeText={(text) => {
+              setInput(text);
+            }}
+            placeholder="정답을 입력하세요"
+            placeholderTextColor="#9aa3ad"
+            autoFocus
+            autoCapitalize="none"
+            maxLength={slot.length}
+            style={[
+              styles.answerInput,
+              input && styles.answerInputWithClear,
+              isCorrect && styles.answerInputCorrect,
+              isWrong && styles.answerInputWrong,
+              isWrong && styles.answerInputHidden,
+            ]}
+            returnKeyType="done"
+            blurOnSubmit={false}
+            onFocus={onFocusInput}
+            onBlur={onBlurInput}
+            onSubmitEditing={onSubmit}
+          />
+          {input && (
+            <Pressable
+              onPress={onClearInput}
+              accessibilityLabel="입력 내용 지우기"
+              style={styles.clearInputButton}
+            >
+              <Text style={styles.clearInputButtonText}>×</Text>
+            </Pressable>
+          )}
+          {isWrong && (
+            <Animated.View
+              pointerEvents="none"
+              style={[
+                styles.wrongTextOverlay,
+                {
+                  transform: [
+                    { translateX: shakeAnim },
+                    { translateY: translateYAnim },
+                  ],
+                  opacity: fadeAnim,
+                },
+              ]}
+            >
+              <Text style={styles.wrongText}>{input}</Text>
+            </Animated.View>
+          )}
+        </Animated.View>
+        <Pressable
+          onPress={onSubmit}
+          style={[
+            styles.primaryButton,
+            isCorrect && styles.primaryButtonCorrect,
+            isWrong && styles.primaryButtonWrong,
+          ]}
+        >
+          <Text style={styles.primaryButtonText}>
+            {isCorrect ? '정답' : isWrong ? '오답' : '정답 확인'}
+          </Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  answerCard: {
+    backgroundColor: 'rgba(255, 255, 255, 0.82)',
+    borderRadius: 20,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: '#e7edf2',
+    shadowColor: '#17324d',
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: -4 },
+    elevation: 8,
+  },
+  hintBox: { position: 'absolute', top: -2, right: -2, zIndex: 1, maxWidth: 160 },
+  hintButton: { backgroundColor: '#e08a3c', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 5, alignItems: 'center', justifyContent: 'center' },
+  hintButtonText: { color: '#fff', fontSize: 11, fontWeight: '800' },
+  hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },
+  selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
+  selectedDirection: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
+  check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
+  clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
+  actionRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
+  answerInputWrap: { flex: 1, position: 'relative' },
+  answerInput: { borderWidth: 1, borderColor: '#cbd8e2', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#20384d', fontSize: 16, backgroundColor: '#fbfdff' },
+  answerInputWithClear: { paddingRight: 36 },
+  clearInputButton: { position: 'absolute', top: 1, right: 1, width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
+  clearInputButtonText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
+  answerInputHidden: { color: 'transparent' },
+  answerInputCorrect: { borderColor: '#3c9a72', backgroundColor: '#e7f6ee' },
+  answerInputWrong: { borderColor: '#d64545', backgroundColor: '#fdeaea' },
+  wrongTextOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', paddingHorizontal: 12 },
+  wrongText: { fontSize: 16, fontWeight: '600', color: '#d64545' },
+  primaryButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 16, height: 42, alignItems: 'center', justifyContent: 'center' },
+  primaryButtonCorrect: { backgroundColor: '#3c9a72' },
+  primaryButtonWrong: { backgroundColor: '#d64545' },
+  primaryButtonDisabled: { backgroundColor: '#a3b3c2' },
+  primaryButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
+  emptySelection: { alignItems: 'center' },
+  emptySelectionTitle: { color: '#315d7f', fontSize: 14, fontWeight: '800' },
+  emptySelectionText: { color: '#647487', fontSize: 12, lineHeight: 17, marginTop: 4, textAlign: 'center' },
+});
+
+export default AnswerCard;

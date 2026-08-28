@@ -7,7 +7,6 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   Switch,
   StyleSheet,
@@ -25,6 +24,7 @@ import {
   getFilledCellCount,
   getOpenCellCount,
 } from '../utils';
+import AnswerCard from './AnswerCard';
 
 const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
@@ -274,7 +274,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-        <ScrollView style={styles.flex} contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+      <View style={styles.container}>
+        <View style={styles.gameContent}>
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
@@ -364,145 +365,65 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             </View>
           </View>
+        </View>
 
-          <View
-            style={[
-              styles.answerCard,
-              isKeyboardVisible && { marginBottom: keyboardHeight },
-            ]}
-            pointerEvents={slot ? 'auto' : 'none'}
-          >
-            {slot ? (
-              <View>
-                {!isCorrect && (
-                  <View style={styles.hintBox}>
-                    {isHinted ? (
-                      <Text style={styles.hintReference} numberOfLines={2}>{hintReferences}</Text>
-                    ) : (
-                      <Pressable
-                        onPress={() => onUseHint?.(crosswordMap.id, selectedSlot)}
-                        disabled={hintPoints <= 0}
-                        style={[
-                          styles.hintButton,
-                          hintPoints <= 0 && styles.primaryButtonDisabled,
-                        ]}
-                      >
-                        <Text style={styles.hintButtonText}>
-                          {hintPoints <= 0 ? '없음' : '힌트'}
-                        </Text>
-                      </Pressable>
-                    )}
-                  </View>
-                )}
-                <View style={styles.selectedHeader}>
-                  <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
-                  {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
-                </View>
-                <Text style={styles.clue} numberOfLines={2}>{clue}</Text>
-                <View style={styles.actionRow}>
-                  <Animated.View
-                    style={[
-                      styles.answerInputWrap,
-                      { transform: [{ translateX: shakeAnim }] },
-                    ]}
-                  >
-                    <TextInput
-                      key={inputKey}
-                      ref={inputRef}
-                      value={input}
-                      onChangeText={(text) => {
-                        setInput(text);
-                        setIsCorrect(false);
-                        setIsWrong(false);
-                      }}
-                      placeholder="정답을 입력하세요"
-                      placeholderTextColor="#9aa3ad"
-                      autoFocus
-                      autoCapitalize="none"
-                      maxLength={slot.length}
-                      style={[
-                        styles.answerInput,
-                        input && styles.answerInputWithClear,
-                        isCorrect && styles.answerInputCorrect,
-                        isWrong && styles.answerInputWrong,
-                        isWrong && styles.answerInputHidden,
-                      ]}
-                      returnKeyType="done"
-                      blurOnSubmit={false}
-                      onFocus={() => {
-                        if (Platform.OS !== 'web') setIsKeyboardVisible(true);
-                        if (Platform.OS === 'web') {
-                          const resetScroll = () => window.scrollTo(0, 0);
-                          resetScroll();
-                          setTimeout(resetScroll, 100);
-                          setTimeout(resetScroll, 300);
-                          setTimeout(resetScroll, 500);
-                        }
-                      }}
-                      onBlur={() => {
-                        if (Platform.OS !== 'web') setIsKeyboardVisible(false);
-                      }}
-                      onSubmitEditing={submitAnswer}
-                    />
-                    {input && (
-                      <Pressable
-                        onPress={() => {
-                          setAnswers((current) => {
-                            const next = { ...current };
-                            delete next[selectedSlot];
-                            return next;
-                          });
-                          setInput('');
-                          setIsCorrect(false);
-                          setIsWrong(false);
-                          inputRef.current?.focus();
-                        }}
-                        accessibilityLabel="입력 내용 지우기"
-                        style={styles.clearInputButton}
-                      >
-                        <Text style={styles.clearInputButtonText}>×</Text>
-                      </Pressable>
-                    )}
-                    {isWrong && (
-                      <Animated.View
-                        pointerEvents="none"
-                        style={[
-                          styles.wrongTextOverlay,
-                          {
-                            transform: [
-                              { translateX: shakeAnim },
-                              { translateY: translateYAnim },
-                            ],
-                            opacity: fadeAnim,
-                          },
-                        ]}
-                      >
-                        <Text style={styles.wrongText}>{input}</Text>
-                      </Animated.View>
-                    )}
-                  </Animated.View>
-                  <Pressable
-                    onPress={submitAnswer}
-                    style={[
-                      styles.primaryButton,
-                      isCorrect && styles.primaryButtonCorrect,
-                      isWrong && styles.primaryButtonWrong,
-                    ]}
-                  >
-                    <Text style={styles.primaryButtonText}>
-                      {isCorrect ? '정답' : isWrong ? '오답' : '정답 확인'}
-                    </Text>
-                  </Pressable>
-                </View>
-              </View>
-            ) : (
-              <View style={styles.emptySelection}>
-                <Text style={styles.emptySelectionTitle}>퍼즐판의 칸을 눌러 보세요</Text>
-                <Text style={styles.emptySelectionText} numberOfLines={2}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
-              </View>
-            )}
-          </View>
-        </ScrollView>
+        <View
+          style={[
+            styles.answerCardContainer,
+            { bottom: isKeyboardVisible ? keyboardHeight : 0 },
+          ]}
+          pointerEvents={slot ? 'auto' : 'none'}
+        >
+          <AnswerCard
+            slot={slot}
+            selectedSlot={selectedSlot}
+            answers={answers}
+            input={input}
+            setInput={(text) => {
+              setInput(text);
+              setIsCorrect(false);
+              setIsWrong(false);
+            }}
+            inputKey={inputKey}
+            isCorrect={isCorrect}
+            isWrong={isWrong}
+            isHinted={isHinted}
+            clue={clue}
+            hintReferences={hintReferences}
+            hintPoints={hintPoints}
+            shakeAnim={shakeAnim}
+            fadeAnim={fadeAnim}
+            translateYAnim={translateYAnim}
+            onUseHint={(slotIndex) => onUseHint?.(crosswordMap.id, slotIndex)}
+            onSubmit={submitAnswer}
+            onClearInput={() => {
+              setAnswers((current) => {
+                const next = { ...current };
+                delete next[selectedSlot];
+                return next;
+              });
+              setInput('');
+              setIsCorrect(false);
+              setIsWrong(false);
+              inputRef.current?.focus();
+            }}
+            onFocusInput={() => {
+              if (Platform.OS !== 'web') setIsKeyboardVisible(true);
+              if (Platform.OS === 'web') {
+                const resetScroll = () => window.scrollTo(0, 0);
+                resetScroll();
+                setTimeout(resetScroll, 100);
+                setTimeout(resetScroll, 300);
+                setTimeout(resetScroll, 500);
+              }
+            }}
+            onBlurInput={() => {
+              if (Platform.OS !== 'web') setIsKeyboardVisible(false);
+            }}
+            inputRef={inputRef}
+          />
+        </View>
+      </View>
 
       <Modal
         visible={showClearModal}
@@ -540,7 +461,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
   flex: { flex: 1 },
-  container: { padding: 16, flexGrow: 1 },
+  container: { flex: 1, position: 'relative' },
+  gameContent: { flex: 1, padding: 16 },
+  answerCardContainer: {
+    position: 'absolute',
+    left: 12,
+    right: 12,
+  },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
@@ -579,19 +506,6 @@ const styles = StyleSheet.create({
   cellText: { color: '#234963', fontSize: 20, fontWeight: '800' },
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
-  answerCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.82)',
-    borderRadius: 20,
-    padding: 14,
-    borderWidth: 1,
-    borderColor: '#e7edf2',
-    marginTop: 8,
-    shadowColor: '#17324d',
-    shadowOpacity: 0.12,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: -4 },
-    elevation: 8,
-  },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fff', borderRadius: 20, padding: 24, alignItems: 'center' },
   clearModalCloseButton: { position: 'absolute', top: 8, right: 8, width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
@@ -600,31 +514,6 @@ const styles = StyleSheet.create({
   clearModalText: { color: '#647487', fontSize: 14, marginTop: 8, marginBottom: 20 },
   clearModalButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },
   clearModalButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
-  selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
-  selectedDirection: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
-  emptySelection: { alignItems: 'center' },
-  emptySelectionTitle: { color: '#315d7f', fontSize: 14, fontWeight: '800' },
-  emptySelectionText: { color: '#647487', fontSize: 12, lineHeight: 17, marginTop: 4, textAlign: 'center' },
-  answerInputWrap: { flex: 1, position: 'relative' },
-  answerInput: { borderWidth: 1, borderColor: '#cbd8e2', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#20384d', fontSize: 16, backgroundColor: '#fbfdff' },
-  answerInputWithClear: { paddingRight: 36 },
-  clearInputButton: { position: 'absolute', top: 1, right: 1, width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
-  clearInputButtonText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
-  answerInputHidden: { color: 'transparent' },
-  answerInputCorrect: { borderColor: '#3c9a72', backgroundColor: '#e7f6ee' },
-  answerInputWrong: { borderColor: '#d64545', backgroundColor: '#fdeaea' },
-  wrongTextOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', paddingHorizontal: 12 },
-  wrongText: { fontSize: 16, fontWeight: '600', color: '#d64545' },
-  actionRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
-  primaryButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 16, height: 42, alignItems: 'center', justifyContent: 'center' },
-  primaryButtonCorrect: { backgroundColor: '#3c9a72' },
-  primaryButtonWrong: { backgroundColor: '#d64545' },
-  primaryButtonDisabled: { backgroundColor: '#a3b3c2' },
-  hintBox: { position: 'absolute', top: -2, right: -2, zIndex: 1, maxWidth: 160 },
-  hintButton: { backgroundColor: '#e08a3c', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 5, alignItems: 'center', justifyContent: 'center' },
-  hintButtonText: { color: '#fff', fontSize: 11, fontWeight: '800' },
-  hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },
-  primaryButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
 });
 
 export default PuzzleScreen;
