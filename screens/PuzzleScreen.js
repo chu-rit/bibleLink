@@ -380,6 +380,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             styles.answerCardContainer,
             isKeyboardVisible && {
               position: 'absolute',
+              left: 0,
+              right: 0,
               bottom: Platform.OS === 'web'
                 ? Math.max(0, (windowHeight || 0) - (webViewportHeight || windowHeight || 0))
                 : keyboardHeight,
@@ -476,9 +478,8 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   container: { flex: 1, padding: 16 },
   answerCardContainer: {
-    left: 12,
-    right: 12,
     marginTop: 8,
+    alignSelf: 'stretch',
   },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
