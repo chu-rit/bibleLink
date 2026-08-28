@@ -11,14 +11,18 @@ const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
+const webPath = Platform.OS === 'web' &&
+  typeof window !== 'undefined'
+  ? (window.location.pathname + (window.location.hash || ''))
+  : '';
+
 const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
-  (isLocalhost || window.location.pathname.includes('/master'));
+  (isLocalhost || webPath.includes('/master'));
 
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
-  window.location.pathname.endsWith('/word') ||
-  window.location.pathname.endsWith('/word/');
+  (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
 export default function App() {
   const [screen, setScreen] = useState(isWordSearchPath && isMasterMode ? 'wordSearch' : 'mapSelect');
@@ -85,7 +89,10 @@ export default function App() {
       <WordSearchScreen
         onBack={() => {
           if (Platform.OS === 'web') {
-            window.location.assign(window.location.pathname.replace(/\/word\/?$/, '') || '/');
+            const hash = window.location.hash || '';
+            const cleaned = hash.replace(/\/word\/?$/, '');
+            window.location.hash = cleaned || '/';
+            setScreen('mapSelect');
             return;
           }
           setScreen('mapSelect');
@@ -104,8 +111,9 @@ export default function App() {
           setScreen('puzzle');
         }}
         onWordSearch={isMasterMode ? () => {
-          const basePath = window.location.pathname.replace(/\/?$/, '');
-          window.location.assign(`${basePath}/word/`);
+          const currentHash = (window.location.hash || '').replace(/^#/, '');
+          const base = currentHash || '/';
+          window.location.hash = `${base.replace(/\/?$/, '')}/word/`;
         } : undefined}
         onResetProgress={() => {
           setAnswersByMap({});

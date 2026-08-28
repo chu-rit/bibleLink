@@ -30,9 +30,14 @@ const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
+const webPath = Platform.OS === 'web' &&
+  typeof window !== 'undefined'
+  ? (window.location.pathname + (window.location.hash || ''))
+  : '';
+
 const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
-  (isLocalhost || window.location.pathname.includes('/master'));
+  (isLocalhost || webPath.includes('/master'));
 
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint }) {
   const [selectedSlot, setSelectedSlot] = useState(null);
