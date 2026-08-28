@@ -150,6 +150,7 @@ function AnswerCard({
 
 const styles = StyleSheet.create({
   answerCard: {
+    width: '100%',
     backgroundColor: 'rgba(255, 255, 255, 0.82)',
     borderRadius: 20,
     padding: 14,

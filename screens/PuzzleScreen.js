@@ -476,6 +476,8 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   container: { flex: 1, padding: 16 },
   answerCardContainer: {
+    left: 12,
+    right: 12,
     marginTop: 8,
   },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
