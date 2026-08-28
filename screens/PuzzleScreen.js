@@ -105,18 +105,28 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   useEffect(() => {
     const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow';
     const hideEvent = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide';
-    const showSubscription = Keyboard.addListener(showEvent, (e) => {
+    const frameEvent = Platform.OS === 'ios' ? 'keyboardDidChangeFrame' : 'keyboardDidChangeFrame';
+
+    const subscriptions = [];
+
+    subscriptions.push(Keyboard.addListener(showEvent, (e) => {
       setIsKeyboardVisible(true);
       setKeyboardHeight(e.endCoordinates?.height || 0);
-    });
-    const hideSubscription = Keyboard.addListener(hideEvent, () => {
+    }));
+
+    subscriptions.push(Keyboard.addListener(frameEvent, (e) => {
+      if (e.endCoordinates) {
+        setKeyboardHeight(e.endCoordinates.height || 0);
+      }
+    }));
+
+    subscriptions.push(Keyboard.addListener(hideEvent, () => {
       setIsKeyboardVisible(false);
       setKeyboardHeight(0);
-    });
+    }));
 
     return () => {
-      showSubscription.remove();
-      hideSubscription.remove();
+      subscriptions.forEach((s) => s.remove());
     };
   }, []);
 
