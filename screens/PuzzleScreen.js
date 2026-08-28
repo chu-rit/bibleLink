@@ -372,7 +372,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       <View
         style={[
           styles.answerCard,
-          isKeyboardVisible && Platform.OS !== 'web' && { bottom: keyboardHeight },
+          isKeyboardVisible && {
+            bottom: Platform.OS === 'web'
+              ? Math.max(0, (windowHeight || 0) - (webViewportHeight || (windowHeight || 0)))
+              : keyboardHeight,
+          },
         ]}
         pointerEvents={slot ? 'auto' : 'none'}
       >
