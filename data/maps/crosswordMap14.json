@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-014",
+  "id": "crossword-map-083",
   "title": "E-8",
-  "difficulty": 1.6,
+  "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######펠#",
-    "######릭#",
-    "#####베스도",
-    "요#헤롯#드##",
-    "나사로##로##",
-    "##디모데전서#",
-    "메시아##서##",
-    "#편######"
+    "###요나#벧#",
+    "####사무엘하",
+    "##베드로###",
+    "##드#####",
+    "#향로#####",
+    "##후대####",
+    "예언서#####",
+    "#약######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "펠릭스",
-      "direction": "down",
-      "row": 0,
-      "col": 6,
-      "length": 3,
-      "wordId": "felix"
-    },
-    {
-      "number": 2,
-      "answer": "베드로전서",
-      "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 5,
-      "wordId": "firstpeter"
-    },
-    {
-      "number": 3,
-      "answer": "베스도",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "festus"
-    },
-    {
-      "number": 4,
       "answer": "요나",
-      "direction": "down",
-      "row": 3,
-      "col": 0,
+      "direction": "across",
+      "row": 0,
+      "col": 3,
       "length": 2,
       "wordId": "jonah"
     },
     {
-      "number": 5,
-      "answer": "헤로디아",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "herodias"
-    },
-    {
-      "number": 6,
-      "answer": "헤롯",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 2,
-      "wordId": "herod"
-    },
-    {
-      "number": 7,
+      "number": 2,
       "answer": "나사로",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
+      "direction": "down",
+      "row": 0,
+      "col": 4,
       "length": 3,
       "wordId": "lazarus"
     },
     {
+      "number": 3,
+      "answer": "벧엘",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "bethel"
+    },
+    {
+      "number": 4,
+      "answer": "사무엘하",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 4,
+      "wordId": "secondsamuel"
+    },
+    {
+      "number": 5,
+      "answer": "베드로",
+      "direction": "across",
+      "row": 2,
+      "col": 2,
+      "length": 3,
+      "wordId": "peter"
+    },
+    {
+      "number": 6,
+      "answer": "베드로후서",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 5,
+      "wordId": "secondpeter"
+    },
+    {
+      "number": 7,
+      "answer": "향로",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 2,
+      "wordId": "censer"
+    },
+    {
       "number": 8,
-      "answer": "디모데전서",
+      "answer": "후대",
       "direction": "across",
       "row": 5,
       "col": 2,
-      "length": 5,
-      "wordId": "firsttimothy"
+      "length": 2,
+      "wordId": "hospitality"
     },
     {
       "number": 9,
-      "answer": "메시아",
+      "answer": "예언서",
       "direction": "across",
       "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "messiah"
+      "wordId": "propheticbooks"
     },
     {
       "number": 10,
-      "answer": "시편",
+      "answer": "언약",
       "direction": "down",
       "row": 6,
       "col": 1,
       "length": 2,
-      "wordId": "psalms"
+      "wordId": "covenant"
     }
   ]
 }

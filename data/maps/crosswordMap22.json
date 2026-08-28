@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-022",
+  "id": "crossword-map-085",
   "title": "N-10",
-  "difficulty": 2.2,
+  "difficulty": 2.3,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######말고##",
-    "######라###",
-    "#####멜기세덱#",
-    "#####리####",
-    "##데##데살로니가",
-    "#갈라디아##이#나",
-    "####비느하스#안",
-    "#히스기야#란###",
-    "##바#######",
-    "하나냐#######"
+    "###소베렛####",
+    "####레#####",
+    "랍##보아너게###",
+    "비손#세######",
+    "#가아스######",
+    "발락########",
+    "#너#알##탬###",
+    "아비멜렉##버드나무",
+    "볼##산헤드린###",
+    "로##더######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "말라기",
-      "direction": "down",
+      "answer": "소베렛",
+      "direction": "across",
       "row": 0,
-      "col": 6,
+      "col": 3,
       "length": 3,
-      "wordId": "malachi"
+      "wordId": "sophereth"
     },
     {
       "number": 2,
-      "answer": "말고",
-      "direction": "across",
+      "answer": "베레아",
+      "direction": "down",
       "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "malchus"
+      "col": 4,
+      "length": 3,
+      "wordId": "berea"
     },
     {
       "number": 3,
-      "answer": "멜리데",
+      "answer": "랍비",
       "direction": "down",
       "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "malta"
+      "col": 0,
+      "length": 2,
+      "wordId": "rabbi"
     },
     {
       "number": 4,
-      "answer": "멜기세덱",
-      "direction": "across",
+      "answer": "보세스",
+      "direction": "down",
       "row": 2,
-      "col": 5,
-      "length": 4,
-      "wordId": "melchizedek"
+      "col": 3,
+      "length": 3,
+      "wordId": "bozez"
     },
     {
       "number": 5,
-      "answer": "데라",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 2,
-      "wordId": "terah"
+      "answer": "보아너게",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 4,
+      "wordId": "boanerges"
     },
     {
       "number": 6,
-      "answer": "데살로니가",
+      "answer": "비손",
       "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 5,
-      "wordId": "thessalonica"
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "pishon"
     },
     {
       "number": 7,
-      "answer": "로이스",
+      "answer": "손가락너비",
       "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 3,
-      "wordId": "lois"
+      "row": 3,
+      "col": 1,
+      "length": 5,
+      "wordId": "fingerbreadth"
     },
     {
       "number": 8,
-      "answer": "가나안",
-      "direction": "down",
+      "answer": "가아스",
+      "direction": "across",
       "row": 4,
-      "col": 9,
+      "col": 1,
       "length": 3,
-      "wordId": "canaan"
+      "wordId": "gaash"
     },
     {
       "number": 9,
-      "answer": "갈라디아",
+      "answer": "발락",
       "direction": "across",
       "row": 5,
-      "col": 1,
-      "length": 4,
-      "wordId": "galatia"
+      "col": 0,
+      "length": 2,
+      "wordId": "balak"
     },
     {
       "number": 10,
-      "answer": "아비야",
+      "answer": "알렉산더",
       "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 3,
-      "wordId": "abijah"
+      "row": 6,
+      "col": 3,
+      "length": 4,
+      "wordId": "alexander"
     },
     {
       "number": 11,
-      "answer": "비느하스",
-      "direction": "across",
-      "row": 6,
-      "col": 4,
-      "length": 4,
-      "wordId": "phinehas"
-    },
-    {
-      "number": 12,
-      "answer": "하란",
+      "answer": "탬버린",
       "direction": "down",
       "row": 6,
       "col": 6,
-      "length": 2,
-      "wordId": "haran"
+      "length": 3,
+      "wordId": "tambourine"
+    },
+    {
+      "number": 12,
+      "answer": "아비멜렉",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "abimelech"
     },
     {
       "number": 13,
-      "answer": "히스기야",
-      "direction": "across",
+      "answer": "아볼로",
+      "direction": "down",
       "row": 7,
-      "col": 1,
-      "length": 4,
-      "wordId": "hezekiah"
+      "col": 0,
+      "length": 3,
+      "wordId": "apollos"
     },
     {
       "number": 14,
-      "answer": "스바냐",
-      "direction": "down",
+      "answer": "버드나무",
+      "direction": "across",
       "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "zephaniah"
+      "col": 6,
+      "length": 4,
+      "wordId": "willow"
     },
     {
       "number": 15,
-      "answer": "하나냐",
+      "answer": "산헤드린",
       "direction": "across",
-      "row": 9,
-      "col": 0,
-      "length": 3,
-      "wordId": "hananiah"
+      "row": 8,
+      "col": 3,
+      "length": 4,
+      "wordId": "sanhedrin"
     }
   ]
 }

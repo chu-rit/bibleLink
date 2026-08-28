@@ -58,7 +58,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const cellSize = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
     ? Math.max(8, Math.min(Math.floor(boardWidth / (crosswordMap.width || 1)), 56))
     : 20;
-  const boardHeight = Math.max(200, Math.min(cellSize * (crosswordMap.height || 1), availableHeight * 0.5));
+  const boardHeight = Math.max(200, Math.min(cellSize * (crosswordMap.height || 1), (windowHeight || 0) * 0.5));
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
@@ -365,6 +365,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               },
               !isKeyboardVisible && { bottom: 16 },
             ]}
+            pointerEvents={slot ? 'auto' : 'none'}
           >
             {slot ? (
               <View>

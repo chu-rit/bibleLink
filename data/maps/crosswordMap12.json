@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-012",
+  "id": "crossword-map-084",
   "title": "E-6",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######가인",
-    "###느헤미야#",
-    "####브#바룩",
-    "##바빌론###",
-    "#사울#####",
-    "#마######",
-    "여리고#####",
-    "#아######"
+    "######갈#",
+    "######고#",
+    "####사마리아",
+    "###바울##라",
+    "###카##루비",
+    "#면#나귀##아",
+    "포도나무####",
+    "#칼######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "가야바",
+      "answer": "갈고리",
       "direction": "down",
       "row": 0,
       "col": 6,
       "length": 3,
-      "wordId": "caiaphas"
+      "wordId": "hook"
     },
     {
       "number": 2,
-      "answer": "가인",
-      "direction": "across",
-      "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "cain"
-    },
-    {
-      "number": 3,
-      "answer": "느헤미야",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 4,
-      "wordId": "nehemiah"
-    },
-    {
-      "number": 4,
-      "answer": "헤브론",
-      "direction": "down",
-      "row": 1,
-      "col": 4,
-      "length": 3,
-      "wordId": "hebron"
-    },
-    {
-      "number": 5,
-      "answer": "바룩",
-      "direction": "across",
-      "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "baruch"
-    },
-    {
-      "number": 6,
-      "answer": "바빌론",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 3,
-      "wordId": "babylon"
-    },
-    {
-      "number": 7,
-      "answer": "바울",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 2,
-      "wordId": "paul"
-    },
-    {
-      "number": 8,
       "answer": "사울",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
+      "direction": "down",
+      "row": 2,
+      "col": 4,
       "length": 2,
       "wordId": "saul"
     },
     {
-      "number": 9,
+      "number": 3,
       "answer": "사마리아",
-      "direction": "down",
-      "row": 4,
-      "col": 1,
+      "direction": "across",
+      "row": 2,
+      "col": 4,
       "length": 4,
       "wordId": "samaria"
     },
     {
+      "number": 4,
+      "answer": "아라비아",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 4,
+      "wordId": "arabia"
+    },
+    {
+      "number": 5,
+      "answer": "바카나무",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "baca"
+    },
+    {
+      "number": 6,
+      "answer": "바울",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "paul"
+    },
+    {
+      "number": 7,
+      "answer": "루비",
+      "direction": "across",
+      "row": 4,
+      "col": 6,
+      "length": 2,
+      "wordId": "ruby"
+    },
+    {
+      "number": 8,
+      "answer": "면도칼",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "razor"
+    },
+    {
+      "number": 9,
+      "answer": "나귀",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "ass"
+    },
+    {
       "number": 10,
-      "answer": "여리고",
+      "answer": "포도나무",
       "direction": "across",
       "row": 6,
       "col": 0,
-      "length": 3,
-      "wordId": "jericho"
+      "length": 4,
+      "wordId": "vine"
     }
   ]
 }
