@@ -161,7 +161,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
             <Pressable
               style={styles.resetButton}
               onPress={() => {
-                if (onResetProgress) onResetProgress();
+                if (onResetProgress) onResetProgress(!hideSolved);
                 setShowSettings(false);
               }}
             >

@@ -16,7 +16,12 @@ const webPath = Platform.OS === 'web' &&
   ? (window.location.pathname + (window.location.hash || ''))
   : '';
 
-const isMasterMode = Platform.OS === 'web' &&
+const getMasterModeFromStorage = () => {
+  if (Platform.OS !== 'web' || typeof window === 'undefined') return false;
+  try { return localStorage.getItem('masterMode') === '1'; } catch { return false; }
+};
+
+const isMasterModeByUrl = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (isLocalhost || webPath.includes('/master'));
 
@@ -25,7 +30,8 @@ const isWordSearchPath = Platform.OS === 'web' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
 export default function App() {
-  const [screen, setScreen] = useState(isWordSearchPath && isMasterMode ? 'wordSearch' : 'mapSelect');
+  const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
+  const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'mapSelect');
   const [selectedMap, setSelectedMap] = useState(null);
   const [answersByMap, setAnswersByMap] = useState({});
   const [hintPointsByMap, setHintPointsByMap] = useState({});
@@ -110,18 +116,23 @@ export default function App() {
           setSelectedMap(map);
           setScreen('puzzle');
         }}
-        onWordSearch={isMasterMode ? () => {
+        onWordSearch={masterMode ? () => {
           const currentHash = (window.location.hash || '').replace(/^#/, '');
           const base = currentHash || '/';
           window.location.hash = `${base.replace(/\/?$/, '')}/word/`;
         } : undefined}
-        onResetProgress={() => {
+        onResetProgress={(hideSolvedOff) => {
           setAnswersByMap({});
           setHintPointsByMap({});
           setHintedSlotsByMap({});
           AsyncStorage.removeItem('answersByMap').catch(() => {});
           AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
           AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
+          if (hideSolvedOff) {
+            const next = !masterMode;
+            setMasterMode(next);
+            try { localStorage.setItem('masterMode', next ? '1' : '0'); } catch {}
+          }
         }}
       />
     );

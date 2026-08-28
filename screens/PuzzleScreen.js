@@ -35,9 +35,14 @@ const webPath = Platform.OS === 'web' &&
   ? (window.location.pathname + (window.location.hash || ''))
   : '';
 
+const getMasterModeFromStorage = () => {
+  if (Platform.OS !== 'web' || typeof window === 'undefined') return false;
+  try { return localStorage.getItem('masterMode') === '1'; } catch { return false; }
+};
+
 const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
-  (isLocalhost || webPath.includes('/master'));
+  (isLocalhost || webPath.includes('/master') || getMasterModeFromStorage());
 
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint }) {
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -389,8 +394,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             styles.answerCardContainer,
             isKeyboardVisible && {
               position: 'absolute',
-              left: 0,
-              right: 0,
+              left: 12,
+              right: 12,
               bottom: Platform.OS === 'web'
                 ? Math.max(0, (windowHeight || 0) - (webViewportHeight || windowHeight || 0))
                 : keyboardHeight,
