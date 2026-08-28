@@ -11,8 +11,8 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import bibleWords from './data/words/bibleWordsLib1.json';
-import crosswordMaps from './data/maps/crosswordMaps';
+import bibleWords from '../data/words/bibleWordsLib1.json';
+import crosswordMaps from '../data/maps/crosswordMaps';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
 
