@@ -7,7 +7,6 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   Switch,
   StyleSheet,
@@ -275,7 +274,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <ScrollView style={styles.flex} contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+      <View style={styles.container}>
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
@@ -322,7 +321,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: boardWidth,
-                height: boardViewportHeight,
+                flex: 1,
                 justifyContent: 'flex-start',
               },
             ]}
@@ -371,7 +370,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           style={[
             styles.answerCardContainer,
             isKeyboardVisible && {
-              marginBottom: Platform.OS === 'web'
+              position: 'absolute',
+              bottom: Platform.OS === 'web'
                 ? Math.max(0, (windowHeight || 0) - (webViewportHeight || windowHeight || 0))
                 : keyboardHeight,
             },
@@ -427,7 +427,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             inputRef={inputRef}
           />
         </View>
-        </ScrollView>
+      </View>
 
       <Modal
         visible={showClearModal}
@@ -465,7 +465,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
   flex: { flex: 1 },
-  container: { padding: 16, flexGrow: 1 },
+  container: { flex: 1, padding: 16 },
   answerCardContainer: {
     marginTop: 8,
   },
