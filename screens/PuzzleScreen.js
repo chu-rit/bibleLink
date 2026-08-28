@@ -55,10 +55,20 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       ? webViewportHeight
       : Math.max(200, (windowHeight || 0) - keyboardHeight))
     : (windowHeight || 0);
-  const cellSize = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
-    ? Math.max(8, Math.min(Math.floor(boardWidth / (crosswordMap.width || 1)), 56))
-    : 20;
-  const boardHeight = Math.max(200, Math.min(cellSize * (crosswordMap.height || 1), (windowHeight || 0) * 0.5));
+  const headerHeight = 160;
+  const maxBoardHeight = (windowHeight || 0) - headerHeight;
+  const cellSizeRef = useRef(null);
+  if (cellSizeRef.current === null) {
+    cellSizeRef.current = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
+      ? Math.max(8, Math.min(
+        Math.floor(boardWidth / (crosswordMap.width || 1)),
+        Math.floor(maxBoardHeight / (crosswordMap.height || 1)),
+        56
+      ))
+      : 20;
+  }
+  const cellSize = cellSizeRef.current;
+  const boardHeight = cellSize * (crosswordMap.height || 1);
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
@@ -262,8 +272,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     <SafeAreaView
       style={[
         styles.safeArea,
-        Platform.OS === 'web' && styles.webFixedScreen,
-        Platform.OS === 'web' && webViewportHeight && { height: webViewportHeight },
       ]}
     >
       <StatusBar barStyle="dark-content" />
@@ -315,11 +323,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: boardWidth,
-                height: boardViewportHeight,
-                justifyContent: isKeyboardVisible ? 'flex-start' : 'center',
+                flex: 1,
+                justifyContent: 'flex-start',
               },
             ]}
           >
+            <View style={styles.boardClip}>
             <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
                 {crosswordMap.grid.map((row, rowIndex) => (
                   <View style={styles.gridRow} key={`row-${rowIndex}`}>
@@ -356,14 +365,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                 ))}
               </View>
             </View>
+            </View>
+        </View>
 
           <View
             style={[
               styles.answerCard,
-              isKeyboardVisible && {
-                bottom: Platform.OS === 'web' ? 0 : keyboardHeight,
-              },
-              !isKeyboardVisible && { bottom: 16 },
+              isKeyboardVisible && Platform.OS !== 'web' && { bottom: keyboardHeight },
             ]}
             pointerEvents={slot ? 'auto' : 'none'}
           >
@@ -498,36 +506,35 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             )}
           </View>
 
-          <Modal
-            visible={showClearModal}
-            transparent
-            animationType="fade"
-            onRequestClose={() => setShowClearModal(false)}
-          >
-            <View style={styles.clearModalOverlay}>
-              <View style={styles.clearModalCard}>
-                <Pressable
-                  onPress={() => setShowClearModal(false)}
-                  accessibilityLabel="클리어 팝업 닫기"
-                  style={styles.clearModalCloseButton}
-                >
-                  <Text style={styles.clearModalCloseText}>×</Text>
-                </Pressable>
-                <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
-                <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
-                <Pressable
-                  onPress={() => {
-                    setShowClearModal(false);
-                    onBack();
-                  }}
-                  style={styles.clearModalButton}
-                >
-                  <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
-                </Pressable>
-              </View>
+        <Modal
+          visible={showClearModal}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setShowClearModal(false)}
+        >
+          <View style={styles.clearModalOverlay}>
+            <View style={styles.clearModalCard}>
+              <Pressable
+                onPress={() => setShowClearModal(false)}
+                accessibilityLabel="클리어 팝업 닫기"
+                style={styles.clearModalCloseButton}
+              >
+                <Text style={styles.clearModalCloseText}>×</Text>
+              </Pressable>
+              <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
+              <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
+              <Pressable
+                onPress={() => {
+                  setShowClearModal(false);
+                  onBack();
+                }}
+                style={styles.clearModalButton}
+              >
+                <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
+              </Pressable>
             </View>
-          </Modal>
-        </View>
+          </View>
+        </Modal>
       </View>
     </SafeAreaView>
   );
@@ -536,7 +543,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
   webFixedScreen: { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 },
-  flex: { flex: 1 },
+  flex: { flex: 1, position: 'relative' },
   container: { flex: 1, padding: 16, position: 'relative' },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
@@ -556,7 +563,8 @@ const styles = StyleSheet.create({
   progressValue: { color: '#315d7f', fontSize: 13, fontWeight: '800' },
   progressTrack: { height: 8, backgroundColor: '#e9eef3', borderRadius: 8, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: '#4d8cba', borderRadius: 8 },
-  boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10, overflow: 'hidden' },
+  boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
+  boardClip: { overflow: 'hidden', width: '100%', height: '100%' },
   board: {
     borderWidth: 2,
     borderColor: '#315d7f',
@@ -584,6 +592,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 16,
     right: 16,
+    bottom: 0,
     shadowColor: '#17324d',
     shadowOpacity: 0.12,
     shadowRadius: 16,
