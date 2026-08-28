@@ -30,6 +30,10 @@ const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
+const isMasterMode = Platform.OS === 'web' &&
+  typeof window !== 'undefined' &&
+  (isLocalhost || window.location.pathname.includes('/master'));
+
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint }) {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [answers, setAnswers] = useState(initialAnswers || {});
@@ -311,7 +315,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                   <View style={[styles.progressFill, { width: `${progress}%` }]} />
                 </View>
               </View>
-              {isLocalhost && (
+              {isMasterMode && (
                 <View style={styles.autoFillBox}>
                   <Text style={styles.autoFillLabel}>정답 보기</Text>
                   <Switch

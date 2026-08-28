@@ -11,13 +11,17 @@ const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
+const isMasterMode = Platform.OS === 'web' &&
+  typeof window !== 'undefined' &&
+  (isLocalhost || window.location.pathname.includes('/master'));
+
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   window.location.pathname.endsWith('/word') ||
   window.location.pathname.endsWith('/word/');
 
 export default function App() {
-  const [screen, setScreen] = useState(isWordSearchPath && isLocalhost ? 'wordSearch' : 'mapSelect');
+  const [screen, setScreen] = useState(isWordSearchPath && isMasterMode ? 'wordSearch' : 'mapSelect');
   const [selectedMap, setSelectedMap] = useState(null);
   const [answersByMap, setAnswersByMap] = useState({});
   const [hintPointsByMap, setHintPointsByMap] = useState({});
@@ -99,7 +103,7 @@ export default function App() {
           setSelectedMap(map);
           setScreen('puzzle');
         }}
-        onWordSearch={isLocalhost ? () => {
+        onWordSearch={isMasterMode ? () => {
           const basePath = window.location.pathname.replace(/\/?$/, '');
           window.location.assign(`${basePath}/word/`);
         } : undefined}
