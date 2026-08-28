@@ -3,6 +3,7 @@ import {
   Animated,
   Easing,
   Keyboard,
+  KeyboardAvoidingView,
   Modal,
   Platform,
   Pressable,
@@ -271,13 +272,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [filledCellCount, totalCellCount]);
 
   return (
-    <SafeAreaView
-      style={[
-        styles.safeArea,
-      ]}
-    >
+    <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <View style={styles.flex}>
+      <KeyboardAvoidingView
+        style={styles.flex}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
         <View style={styles.container}>
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
@@ -325,13 +326,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: boardWidth,
-                flex: 1,
+                height: boardViewportHeight,
                 justifyContent: 'flex-start',
               },
             ]}
           >
             <View style={styles.boardClip}>
-            <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
+              <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
                 {crosswordMap.grid.map((row, rowIndex) => (
                   <View style={styles.gridRow} key={`row-${rowIndex}`}>
                     {[...row].map((value, colIndex) => {
@@ -367,21 +368,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                 ))}
               </View>
             </View>
-            </View>
-        </View>
-      </View>
+          </View>
 
-      <View
-        style={[
-          styles.answerCard,
-          isKeyboardVisible && {
-            bottom: Platform.OS === 'web'
-              ? Math.max(0, (windowHeight || 0) - (webViewportHeight || (windowHeight || 0)))
-              : keyboardHeight,
-          },
-        ]}
-        pointerEvents={slot ? 'auto' : 'none'}
-      >
+          <View style={styles.answerCard} pointerEvents={slot ? 'auto' : 'none'}>
             {slot ? (
               <View>
                 {!isCorrect && (
@@ -512,45 +501,46 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             )}
           </View>
+        </View>
+      </KeyboardAvoidingView>
 
-        <Modal
-          visible={showClearModal}
-          transparent
-          animationType="fade"
-          onRequestClose={() => setShowClearModal(false)}
-        >
-          <View style={styles.clearModalOverlay}>
-            <View style={styles.clearModalCard}>
-              <Pressable
-                onPress={() => setShowClearModal(false)}
-                accessibilityLabel="클리어 팝업 닫기"
-                style={styles.clearModalCloseButton}
-              >
-                <Text style={styles.clearModalCloseText}>×</Text>
-              </Pressable>
-              <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
-              <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
-              <Pressable
-                onPress={() => {
-                  setShowClearModal(false);
-                  onBack();
-                }}
-                style={styles.clearModalButton}
-              >
-                <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
-              </Pressable>
-            </View>
+      <Modal
+        visible={showClearModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowClearModal(false)}
+      >
+        <View style={styles.clearModalOverlay}>
+          <View style={styles.clearModalCard}>
+            <Pressable
+              onPress={() => setShowClearModal(false)}
+              accessibilityLabel="클리어 팝업 닫기"
+              style={styles.clearModalCloseButton}
+            >
+              <Text style={styles.clearModalCloseText}>×</Text>
+            </Pressable>
+            <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
+            <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
+            <Pressable
+              onPress={() => {
+                setShowClearModal(false);
+                onBack();
+              }}
+              style={styles.clearModalButton}
+            >
+              <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
+            </Pressable>
           </View>
-        </Modal>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#f6f8fb', position: 'relative', height: '100%' },
-  webFixedScreen: { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 },
-  flex: { flex: 1, position: 'relative' },
-  container: { flex: 1, padding: 16, position: 'relative' },
+  safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  flex: { flex: 1 },
+  container: { flex: 1, padding: 16 },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
@@ -595,10 +585,7 @@ const styles = StyleSheet.create({
     padding: 14,
     borderWidth: 1,
     borderColor: '#e7edf2',
-    position: 'absolute',
-    left: 16,
-    right: 16,
-    bottom: 0,
+    marginTop: 8,
     shadowColor: '#17324d',
     shadowOpacity: 0.12,
     shadowRadius: 16,
