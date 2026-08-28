@@ -76,6 +76,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [isWrong, setIsWrong] = useState(false);
   const [autoFill, setAutoFill] = useState(false);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [inputKey, setInputKey] = useState(0);
   const [webViewportHeight, setWebViewportHeight] = useState(null);
   const [showClearModal, setShowClearModal] = useState(false);
@@ -88,15 +89,17 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
   const boardWidth = Math.max(200, (windowWidth || 0) - 32);
-  const boardHeight = Math.max(200, Math.min(boardWidth, (windowHeight || 0) * (isKeyboardVisible ? 0.65 : 0.5)));
-  const rawCellSize = isKeyboardVisible
-    ? Math.min(Math.floor(boardWidth / (crosswordMap.width || 1)), 56)
-    : Math.min(
-      Math.floor(boardWidth / (crosswordMap.width || 1)),
-      Math.floor(boardHeight / (crosswordMap.height || 1)),
-      56
-    );
-  const cellSize = Number.isFinite(rawCellSize) ? Math.max(8, rawCellSize) : 20;
+  const availableHeight = isKeyboardVisible
+    ? (Platform.OS === 'web' && webViewportHeight
+      ? webViewportHeight
+      : Math.max(200, (windowHeight || 0) - keyboardHeight))
+    : (windowHeight || 0);
+  const cellSize = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
+    ? Math.max(8, Math.min(Math.floor(boardWidth / (crosswordMap.width || 1)), 56))
+    : 20;
+  const boardHeight = isKeyboardVisible
+    ? Math.max(160, Math.min(cellSize * (crosswordMap.height || 1), availableHeight * 0.4, 300))
+    : Math.max(200, Math.min(cellSize * (crosswordMap.height || 1), availableHeight * 0.5));
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
@@ -132,8 +135,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   useEffect(() => {
     const showEvent = Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow';
     const hideEvent = Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide';
-    const showSubscription = Keyboard.addListener(showEvent, () => setIsKeyboardVisible(true));
-    const hideSubscription = Keyboard.addListener(hideEvent, () => setIsKeyboardVisible(false));
+    const showSubscription = Keyboard.addListener(showEvent, (e) => {
+      setIsKeyboardVisible(true);
+      setKeyboardHeight(e.endCoordinates?.height || 0);
+    });
+    const hideSubscription = Keyboard.addListener(hideEvent, () => {
+      setIsKeyboardVisible(false);
+      setKeyboardHeight(0);
+    });
 
     return () => {
       showSubscription.remove();
@@ -261,14 +270,19 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const totalCellCount = Object.keys(openCells).length;
   const progress = totalCellCount ? Math.round((filledCellCount / totalCellCount) * 100) : 0;
   const activeSpanHeight = slot?.direction === 'down' ? slot.length * cellSize : cellSize;
-  const boardViewportHeight = isKeyboardVisible
-    ? Math.min(boardHeight, Math.max(cellSize * 5, activeSpanHeight + cellSize * 4))
-    : boardHeight;
   const activeStartY = (slot?.row || 0) * cellSize;
-  const activeEndY = activeStartY + activeSpanHeight;
-  const maxBoardOffset = Math.max(0, crosswordMap.grid.length * cellSize - boardViewportHeight);
-  const boardOffsetY = isKeyboardVisible
-    ? -Math.min(maxBoardOffset, Math.max(0, ((activeStartY + activeEndY) / 2) - boardViewportHeight / 2))
+  const activeEndY = slot?.direction === 'down'
+    ? activeStartY + (slot.length - 1) * cellSize
+    : activeStartY;
+  const gridHeight = crosswordMap.grid.length * cellSize;
+  const topPadding = Math.min(cellSize * 2, activeStartY);
+  const bottomPadding = Math.min(cellSize * 2, gridHeight - activeEndY - cellSize);
+  const boardViewportHeight = isKeyboardVisible
+    ? Math.min(boardHeight, activeSpanHeight + topPadding + bottomPadding)
+    : boardHeight;
+  const maxBoardOffset = Math.max(0, gridHeight - boardViewportHeight);
+  const boardOffsetY = isKeyboardVisible && maxBoardOffset > 0
+    ? -Math.min(maxBoardOffset, Math.max(0, activeStartY - topPadding))
     : 0;
 
   useEffect(() => {
@@ -383,7 +397,15 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             </View>
 
-          <View style={styles.answerCard}>
+          <View
+            style={[
+              styles.answerCard,
+              isKeyboardVisible && {
+                bottom: Platform.OS === 'web' ? 0 : keyboardHeight,
+              },
+              !isKeyboardVisible && { bottom: 16 },
+            ]}
+          >
             {slot ? (
               <View>
                 {!isCorrect && (
@@ -669,7 +691,7 @@ const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
   webFixedScreen: { position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 },
   flex: { flex: 1 },
-  container: { flex: 1, padding: 16 },
+  container: { flex: 1, padding: 16, position: 'relative' },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
@@ -712,7 +734,21 @@ const styles = StyleSheet.create({
   direction: { color: '#5d89a7', fontSize: 11, fontWeight: '800', marginBottom: 3 },
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
-  answerCard: { backgroundColor: '#fff', borderRadius: 20, padding: 14, borderWidth: 1, borderColor: '#e7edf2', position: 'relative' },
+  answerCard: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: '#e7edf2',
+    position: 'absolute',
+    left: 16,
+    right: 16,
+    shadowColor: '#17324d',
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: -4 },
+    elevation: 8,
+  },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fff', borderRadius: 20, padding: 24, alignItems: 'center' },
   clearModalCloseButton: { position: 'absolute', top: 8, right: 8, width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
