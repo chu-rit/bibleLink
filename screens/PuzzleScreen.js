@@ -3,7 +3,6 @@ import {
   Animated,
   Easing,
   Keyboard,
-  KeyboardAvoidingView,
   Modal,
   Platform,
   Pressable,
@@ -275,11 +274,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <KeyboardAvoidingView
-        style={styles.flex}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        enabled
-      >
         <ScrollView style={styles.flex} contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
@@ -371,7 +365,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             </View>
           </View>
 
-          <View style={styles.answerCard} pointerEvents={slot ? 'auto' : 'none'}>
+          <View
+            style={[
+              styles.answerCard,
+              isKeyboardVisible && { marginBottom: keyboardHeight },
+            ]}
+            pointerEvents={slot ? 'auto' : 'none'}
+          >
             {slot ? (
               <View>
                 {!isCorrect && (
@@ -503,7 +503,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             )}
           </View>
         </ScrollView>
-      </KeyboardAvoidingView>
 
       <Modal
         visible={showClearModal}
