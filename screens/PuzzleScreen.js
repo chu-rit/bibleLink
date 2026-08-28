@@ -7,6 +7,7 @@ import {
   Platform,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   Switch,
   StyleSheet,
@@ -274,8 +275,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" />
-      <View style={styles.container}>
-        <View style={styles.gameContent}>
+      <ScrollView style={styles.flex} contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
@@ -371,8 +371,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           style={[
             styles.answerCardContainer,
             isKeyboardVisible && {
-              position: 'absolute',
-              bottom: Platform.OS === 'web'
+              marginBottom: Platform.OS === 'web'
                 ? Math.max(0, (windowHeight || 0) - (webViewportHeight || windowHeight || 0))
                 : keyboardHeight,
             },
@@ -428,7 +427,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             inputRef={inputRef}
           />
         </View>
-      </View>
+        </ScrollView>
 
       <Modal
         visible={showClearModal}
@@ -466,11 +465,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
   flex: { flex: 1 },
-  container: { flex: 1, position: 'relative' },
-  gameContent: { flex: 1, padding: 16 },
+  container: { padding: 16, flexGrow: 1 },
   answerCardContainer: {
-    left: 12,
-    right: 12,
+    marginTop: 8,
   },
   backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
   backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
