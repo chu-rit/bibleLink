@@ -297,24 +297,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const filledCellCount = getFilledCellCount(crosswordMap, answers);
   const totalCellCount = Object.keys(openCells).length;
   const progress = totalCellCount ? Math.round((filledCellCount / totalCellCount) * 100) : 0;
-  const activeSpanHeight = slot?.direction === 'down' ? slot.length * cellSize : cellSize;
+  const hasActiveSlot = selectedSlot !== null && slot !== undefined;
   const activeStartY = (slot?.row || 0) * cellSize;
   const activeEndY = slot?.direction === 'down'
     ? activeStartY + (slot.length - 1) * cellSize
     : activeStartY;
+  const activeCenterY = (activeStartY + activeEndY) / 2;
   const gridHeight = crosswordMap.grid.length * cellSize;
-  const availableBelow = gridHeight - activeEndY - cellSize;
-  const availableAbove = activeStartY;
-  const topPadding = Math.min(cellSize * 2, availableAbove);
-  const bottomPadding = Math.min(cellSize * 2, availableBelow);
-  const hasActiveSlot = selectedSlot !== null && slot !== undefined;
-  const boardViewportHeight = hasActiveSlot
-    ? Math.min(boardHeight, activeSpanHeight + topPadding + bottomPadding)
-    : boardHeight;
-  const maxBoardOffset = Math.max(0, gridHeight - boardViewportHeight);
-  const boardOffsetY = hasActiveSlot && maxBoardOffset > 0
-    ? -Math.min(maxBoardOffset, Math.max(0, activeStartY - topPadding))
-    : 0;
+  const layerBelow = activeCenterY < gridHeight / 2;
 
   useEffect(() => {
     if (filledCellCount < totalCellCount) {
@@ -379,13 +369,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: exactBoardWidth,
-                flex: 1,
+                height: boardHeight,
                 justifyContent: 'flex-start',
+                position: 'relative',
               },
             ]}
           >
-            <View style={[styles.boardClip, { width: exactBoardWidth, height: boardViewportHeight, boxSizing: 'border-box' }]}>
-              <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
+            <View style={[styles.boardClip, { width: exactBoardWidth, height: boardHeight, boxSizing: 'border-box' }]}>
+              <View style={styles.board}>
                 {crosswordMap.grid.map((row, rowIndex) => (
                   <View style={styles.gridRow} key={`row-${rowIndex}`}>
                     {[...row].map((value, colIndex) => {
@@ -421,72 +412,77 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                 ))}
               </View>
             </View>
-          </View>
 
-        <View
-          style={[
-            styles.answerCardContainer,
-            isKeyboardVisible && {
-              position: 'absolute',
-              left: 12,
-              right: 12,
-              bottom: Platform.OS === 'web'
-                ? Math.max(0, (windowHeight || window.innerHeight) - (webViewportHeight || windowHeight || window.innerHeight))
-                : keyboardHeight,
-            },
-          ]}
-          pointerEvents={slot ? 'auto' : 'none'}
-          onLayout={(e) => setAnswerCardHeight(e.nativeEvent.layout.height)}
-        >
-          <AnswerCard
-            slot={slot}
-            selectedSlot={selectedSlot}
-            answers={answers}
-            input={input}
-            setInput={(text) => {
-              setInput(text);
-              setIsCorrect(false);
-              setIsWrong(false);
-            }}
-            inputKey={inputKey}
-            isCorrect={isCorrect}
-            isWrong={isWrong}
-            isHinted={isHinted}
-            clue={clue}
-            hintReferences={hintReferences}
-            hintPoints={hintPoints}
-            shakeAnim={shakeAnim}
-            fadeAnim={fadeAnim}
-            translateYAnim={translateYAnim}
-            onUseHint={(slotIndex) => onUseHint?.(crosswordMap.id, slotIndex)}
-            onSubmit={submitAnswer}
-            onClearInput={() => {
-              setAnswers((current) => {
-                const next = { ...current };
-                delete next[selectedSlot];
-                return next;
-              });
-              setInput('');
-              setIsCorrect(false);
-              setIsWrong(false);
-              inputRef.current?.focus();
-            }}
-            onFocusInput={() => {
-              if (Platform.OS !== 'web') setIsKeyboardVisible(true);
-              if (Platform.OS === 'web') {
-                const resetScroll = () => window.scrollTo(0, 0);
-                resetScroll();
-                setTimeout(resetScroll, 100);
-                setTimeout(resetScroll, 300);
-                setTimeout(resetScroll, 500);
-              }
-            }}
-            onBlurInput={() => {
-              if (Platform.OS !== 'web') setIsKeyboardVisible(false);
-            }}
-            inputRef={inputRef}
-          />
-        </View>
+            {hasActiveSlot && (
+              <View
+                style={[
+                  styles.answerCardContainer,
+                  {
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    [layerBelow ? 'bottom' : 'top']: 0,
+                  },
+                  isKeyboardVisible && {
+                    [layerBelow ? 'bottom' : 'top']: Platform.OS === 'web'
+                      ? Math.max(0, (windowHeight || window.innerHeight) - (webViewportHeight || windowHeight || window.innerHeight))
+                      : keyboardHeight,
+                  },
+                ]}
+                pointerEvents="auto"
+                onLayout={(e) => setAnswerCardHeight(e.nativeEvent.layout.height)}
+              >
+                <AnswerCard
+                  slot={slot}
+                  selectedSlot={selectedSlot}
+                  answers={answers}
+                  input={input}
+                  setInput={(text) => {
+                    setInput(text);
+                    setIsCorrect(false);
+                    setIsWrong(false);
+                  }}
+                  inputKey={inputKey}
+                  isCorrect={isCorrect}
+                  isWrong={isWrong}
+                  isHinted={isHinted}
+                  clue={clue}
+                  hintReferences={hintReferences}
+                  hintPoints={hintPoints}
+                  shakeAnim={shakeAnim}
+                  fadeAnim={fadeAnim}
+                  translateYAnim={translateYAnim}
+                  onUseHint={(slotIndex) => onUseHint?.(crosswordMap.id, slotIndex)}
+                  onSubmit={submitAnswer}
+                  onClearInput={() => {
+                    setAnswers((current) => {
+                      const next = { ...current };
+                      delete next[selectedSlot];
+                      return next;
+                    });
+                    setInput('');
+                    setIsCorrect(false);
+                    setIsWrong(false);
+                    inputRef.current?.focus();
+                  }}
+                  onFocusInput={() => {
+                    if (Platform.OS !== 'web') setIsKeyboardVisible(true);
+                    if (Platform.OS === 'web') {
+                      const resetScroll = () => window.scrollTo(0, 0);
+                      resetScroll();
+                      setTimeout(resetScroll, 100);
+                      setTimeout(resetScroll, 300);
+                      setTimeout(resetScroll, 500);
+                    }
+                  }}
+                  onBlurInput={() => {
+                    if (Platform.OS !== 'web') setIsKeyboardVisible(false);
+                  }}
+                  inputRef={inputRef}
+                />
+              </View>
+            )}
+          </View>
       </View>
 
       <Modal
