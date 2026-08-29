@@ -1,118 +1,110 @@
 {
-  "id": "crossword-map-001",
+  "id": "crossword-map-111",
   "title": "E-1",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######도마",
-    "#######르",
-    "######유다",
-    "#만나###대#",
-    "##사마리아인#",
-    "##렛##람##",
-    "#####어부#",
-    "######활#"
+    "####말[馬]",
+    "브리스길라###",
+    "곳###기드온#",
+    "##학개서###",
+    "###구####",
+    "##골리앗###",
+    "##짜#####",
+    "##기쁨####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "사마리아인",
+      "answer": "말[馬]",
       "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 5,
-      "wordId": "samaritan",
-      "clue": "유대 사회에서 배척받았지만, 예수의 비유에서는 강도 만난 사람을 도운 인물로 OOOO인"
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "horse"
     },
     {
       "number": 2,
-      "answer": "나사렛",
+      "answer": "말라기서",
       "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 3,
-      "wordId": "nazareth"
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-말라기서"
     },
     {
       "number": 3,
-      "answer": "유대인",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "jews",
-      "clue": "예루살렘 성전과 율법을 중심으로 정체성을 지켜 온 백성을 가리키는 말"
+      "answer": "브리스길라",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 5,
+      "wordId": "priscilla"
     },
     {
       "number": 4,
-      "answer": "아람어",
+      "answer": "브곳",
       "direction": "down",
-      "row": 4,
-      "col": 5,
-      "length": 3,
-      "wordId": "aramaic",
-      "clue": "예수 시대 팔레스타인에서 일상적으로 널리 쓰였고 다니엘서 일부에도 기록된 언어"
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "pekod"
     },
     {
       "number": 5,
-      "answer": "어부",
+      "answer": "기드온",
       "direction": "across",
-      "row": 6,
-      "col": 5,
-      "length": 2,
-      "wordId": "fisherman",
-      "clue": "갈릴리 호수에서 생업으로 그물을 던졌으며 예수의 제자로 부름받은 이들이 많았던 직업"
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "gideon"
     },
     {
       "number": 6,
-      "answer": "부활",
-      "direction": "down",
-      "row": 6,
-      "col": 6,
-      "length": 2,
-      "wordId": "resurrection",
-      "clue": "이 땅에서 이루어질 “의로운 사람들과 불의한 사람들”의 OO은 하느님의 목적에 있어 매우 중요하다."
+      "answer": "학개서",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-학개서"
     },
     {
       "number": 7,
-      "answer": "유다",
-      "direction": "across",
-      "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "judah"
+      "answer": "개구리",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "frog"
     },
     {
       "number": 8,
-      "answer": "마르다",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
+      "answer": "골리앗",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
       "length": 3,
-      "wordId": "martha",
-      "clue": "베다니에서 동생과 함께 예수를 맞이했으며 손님 접대에 마음을 쓴 인물"
+      "wordId": "goliath"
     },
     {
       "number": 9,
-      "answer": "도마",
-      "direction": "across",
-      "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "thomas",
-      "clue": "다른 제자들의 증언만으로 믿지 않고 직접 확인하려 했던 열두 제자 중 한 사람"
+      "answer": "골짜기",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "valley"
     },
     {
       "number": 10,
-      "answer": "만나",
+      "answer": "기쁨",
       "direction": "across",
-      "row": 3,
-      "col": 1,
+      "row": 7,
+      "col": 2,
       "length": 2,
-      "wordId": "manna",
-      "clue": "광야를 지나는 40년 동안 이스라엘 백성이 아침마다 거두어 먹은 양식"
+      "wordId": "joy"
     }
   ]
 }

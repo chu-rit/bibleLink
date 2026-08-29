@@ -565,15 +565,6 @@
     ]
   },
   {
-    "id": "carmel",
-    "word": "갈멜산",
-    "definition": "엘리야가 바알의 예언자들과 대결한 산",
-    "difficulty": 2,
-    "references": [
-      "열왕기상 18장"
-    ]
-  },
-  {
     "id": "carmi",
     "word": "갈미",
     "definition": "르우벤의 아들로 야곱 집안과 함께 이집트로 간 사람이자 아간의 조상",
@@ -1033,15 +1024,6 @@
     "references": [
       "마태 13:31, 32",
       "마가 4:30-32"
-    ]
-  },
-  {
-    "id": "mustardseed",
-    "word": "겨자씨",
-    "definition": "매우 작은 씨로, 예수는 믿음과 하느님의 왕국을 설명하는 데 사용했다",
-    "difficulty": 2,
-    "references": [
-      "마태복음 13:31, 32"
     ]
   },
   {
@@ -1788,7 +1770,7 @@
   },
   {
     "id": "crete",
-    "word": "그레데",
+    "word": "크레테",
     "definition": "바울이 디도를 남겨 회중들을 조직하게 한 지중해의 섬",
     "difficulty": 2,
     "references": [

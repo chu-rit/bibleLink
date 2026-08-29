@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-021",
+  "id": "crossword-map-110",
   "title": "N-9",
   "difficulty": 2.3,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####맛#####",
-    "####디도####",
-    "###레아#####",
-    "#브#위######",
-    "바리새인######",
-    "#스########",
-    "#길르앗######",
-    "실라#수##미#요#",
-    "###르우#가버나움",
-    "####스라야#답#"
+    "########쉬#",
+    "######헤르몬#",
+    "##골#아모스###",
+    "유두고#레#로루하마",
+    "향#다대오####가",
+    "####바룩####",
+    "###소고#####",
+    "###시######",
+    "###바후림####",
+    "###더######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "맛디아",
+      "answer": "쉬몬",
       "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 3,
-      "wordId": "matthias"
+      "col": 8,
+      "length": 2,
+      "wordId": "shimon"
     },
     {
       "number": 2,
-      "answer": "디도",
-      "direction": "across",
+      "answer": "헤스로",
+      "direction": "down",
       "row": 1,
-      "col": 4,
-      "length": 2,
-      "wordId": "titus"
+      "col": 6,
+      "length": 3,
+      "wordId": "hezro"
     },
     {
       "number": 3,
-      "answer": "레위인",
-      "direction": "down",
-      "row": 2,
-      "col": 3,
+      "answer": "헤르몬",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
       "length": 3,
-      "wordId": "levite"
+      "wordId": "hermon"
     },
     {
       "number": 4,
-      "answer": "레아",
-      "direction": "across",
+      "answer": "골고다",
+      "direction": "down",
       "row": 2,
-      "col": 3,
-      "length": 2,
-      "wordId": "leah"
+      "col": 2,
+      "length": 3,
+      "wordId": "golgotha"
     },
     {
       "number": 5,
-      "answer": "브리스길라",
-      "direction": "down",
-      "row": 3,
-      "col": 1,
-      "length": 5,
-      "wordId": "priscilla"
+      "answer": "아모스",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "amos"
     },
     {
       "number": 6,
-      "answer": "바리새인",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "pharisees"
+      "answer": "아레오바고",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 5,
+      "wordId": "areopagus"
     },
     {
       "number": 7,
-      "answer": "길르앗",
+      "answer": "유두고",
       "direction": "across",
-      "row": 6,
-      "col": 1,
+      "row": 3,
+      "col": 0,
       "length": 3,
-      "wordId": "gilead"
+      "wordId": "eutychus"
     },
     {
       "number": 8,
-      "answer": "앗수르",
+      "answer": "유향",
       "direction": "down",
-      "row": 6,
-      "col": 3,
-      "length": 3,
-      "wordId": "assyria"
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "frankincense"
     },
     {
       "number": 9,
-      "answer": "실라",
+      "answer": "로루하마",
       "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 2,
-      "wordId": "silas"
+      "row": 3,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-로-루하마"
     },
     {
       "number": 10,
-      "answer": "미가야",
+      "answer": "마가",
       "direction": "down",
-      "row": 7,
-      "col": 6,
-      "length": 3,
-      "wordId": "micaiah"
+      "row": 3,
+      "col": 9,
+      "length": 2,
+      "wordId": "mark"
     },
     {
       "number": 11,
-      "answer": "요나답",
-      "direction": "down",
-      "row": 7,
-      "col": 8,
+      "answer": "다대오",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
       "length": 3,
-      "wordId": "jonadab"
+      "wordId": "thaddaeus"
     },
     {
       "number": 12,
-      "answer": "르우",
+      "answer": "바룩",
       "direction": "across",
-      "row": 8,
-      "col": 3,
+      "row": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "reu"
+      "wordId": "baruch"
     },
     {
       "number": 13,
-      "answer": "우스",
-      "direction": "down",
-      "row": 8,
-      "col": 4,
+      "answer": "소고",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
       "length": 2,
-      "wordId": "uz"
+      "wordId": "entry-소고"
     },
     {
       "number": 14,
-      "answer": "가버나움",
-      "direction": "across",
-      "row": 8,
-      "col": 6,
+      "answer": "소시바더",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
       "length": 4,
-      "wordId": "capernaum"
+      "wordId": "sosipater"
     },
     {
       "number": 15,
-      "answer": "스라야",
+      "answer": "바후림",
       "direction": "across",
-      "row": 9,
-      "col": 4,
+      "row": 8,
+      "col": 3,
       "length": 3,
-      "wordId": "seraiah"
+      "wordId": "bahurim"
     }
   ]
 }

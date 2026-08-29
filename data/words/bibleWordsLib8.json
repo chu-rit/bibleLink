@@ -136,7 +136,7 @@
   },
   {
     "id": "sadducees",
-    "word": "사두개인",
+    "word": "사두개파",
     "definition": "부활과 천사의 존재를 믿지 않았으며 성전 제사장 계층과 관련된 유대교 분파",
     "difficulty": 1,
     "references": [
@@ -280,7 +280,7 @@
   },
   {
     "id": "samaritan",
-    "word": "사마리아인",
+    "word": "사마리아사람",
     "definition": "사마리아 지역에 살던 사람으로, 유대인과 다른 배경을 가진 민족",
     "difficulty": 2,
     "references": [
@@ -1134,16 +1134,6 @@
     ]
   },
   {
-    "id": "oath-2",
-    "word": "서약맹세",
-    "definition": "발언의 진실성이나 약속을 확언하는 말로 하느님께 호소하는 행위",
-    "difficulty": 2,
-    "references": [
-      "창세기 24:8",
-      "레위기 5:4"
-    ]
-  },
-  {
     "id": "vow",
     "word": "서원",
     "definition": "하느님께 어떤 일을 하거나 하지 않겠다고 자발적으로 약속하는 것",
@@ -1950,16 +1940,6 @@
     "references": [
       "창세기 13:10-12",
       "창세기 14:1-11"
-    ]
-  },
-  {
-    "id": "sedition",
-    "word": "소요폭동",
-    "definition": "그리스어 스타시스로 분리해 서 있는 것을 의미하며 폭동이나 분쟁을 가리킴",
-    "difficulty": 2,
-    "references": [
-      "마가 15:7",
-      "누가 23:19, 25"
     ]
   },
   {
@@ -3405,7 +3385,7 @@
   },
   {
     "id": "sinai",
-    "word": "시내산",
+    "word": "시나이",
     "definition": "모세가 하느님의 율법을 받은 산",
     "difficulty": 2,
     "references": [
@@ -3878,16 +3858,6 @@
     ]
   },
   {
-    "id": "kidneys",
-    "word": "신장콩팥",
-    "definition": "등뼈 아래 한 쌍의 장기로 피를 걸러내며 비유적으로 내면의 깊은 부분을 상징",
-    "difficulty": 2,
-    "references": [
-      "시편 7:9",
-      "계시록 2:23"
-    ]
-  },
-  {
     "id": "silas",
     "word": "실라",
     "definition": "바울과 함께 전파 여행을 했으며 빌립보에서 감옥에 갇힌 그리스도인",
@@ -3962,6 +3932,36 @@
     "references": [
       "레위기 27:30",
       "말라기 3:10"
+    ]
+  },
+  {
+    "id": "oath-2",
+    "word": "서약",
+    "definition": "발언의 진실성이나 약속을 확언하는 말로 하느님께 호소하는 행위",
+    "difficulty": 2,
+    "references": [
+      "창세기 24:8",
+      "레위기 5:4"
+    ]
+  },
+  {
+    "id": "sedition",
+    "word": "소요",
+    "definition": "그리스어 스타시스로 분리해 서 있는 것을 의미하며 폭동이나 분쟁을 가리킴",
+    "difficulty": 2,
+    "references": [
+      "마가 15:7",
+      "누가 23:19, 25"
+    ]
+  },
+  {
+    "id": "kidneys",
+    "word": "신장",
+    "definition": "등뼈 아래 한 쌍의 장기로 피를 걸러내며 비유적으로 내면의 깊은 부분을 상징",
+    "difficulty": 2,
+    "references": [
+      "시편 7:9",
+      "계시록 2:23"
     ]
   }
 ]

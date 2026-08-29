@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-013",
+  "id": "crossword-map-109",
   "title": "E-7",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####스##",
+    "####라마##",
+    "#####리#자",
     "####방아깨비",
     "######끗#",
     "####거룩함#",
-    "#사두개인###",
-    "#르#밀####",
-    "제단######",
-    "물#######"
+    "###살인###",
+    "니고데모####",
+    "###네####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "스아",
-      "direction": "down",
+      "answer": "라마",
+      "direction": "across",
       "row": 0,
-      "col": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "seah"
+      "wordId": "ramah"
     },
     {
       "number": 2,
+      "answer": "마리아",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "mary"
+    },
+    {
+      "number": 3,
+      "answer": "자비",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "mercy"
+    },
+    {
+      "number": 4,
       "answer": "방아깨비",
       "direction": "across",
-      "row": 1,
+      "row": 2,
       "col": 4,
       "length": 4,
       "wordId": "grasshopper"
     },
     {
-      "number": 3,
+      "number": 5,
       "answer": "깨끗함",
       "direction": "down",
-      "row": 1,
+      "row": 2,
       "col": 6,
       "length": 3,
       "wordId": "entry-깨끗함"
     },
     {
-      "number": 4,
+      "number": 6,
       "answer": "거룩함",
       "direction": "across",
-      "row": 3,
+      "row": 4,
       "col": 4,
       "length": 3,
       "wordId": "holiness"
     },
     {
-      "number": 5,
+      "number": 7,
       "answer": "거인",
       "direction": "down",
-      "row": 3,
+      "row": 4,
       "col": 4,
       "length": 2,
       "wordId": "giant"
     },
     {
-      "number": 6,
-      "answer": "사두개인",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
-      "length": 4,
-      "wordId": "sadducees"
-    },
-    {
-      "number": 7,
-      "answer": "사르단",
-      "direction": "down",
-      "row": 4,
-      "col": 1,
-      "length": 3,
-      "wordId": "zarethan"
-    },
-    {
       "number": 8,
-      "answer": "개밀",
-      "direction": "down",
-      "row": 4,
+      "answer": "살인",
+      "direction": "across",
+      "row": 5,
       "col": 3,
       "length": 2,
-      "wordId": "spelt"
+      "wordId": "murder"
     },
     {
       "number": 9,
-      "answer": "제단",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 2,
-      "wordId": "altar"
+      "answer": "살모네",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "salmone"
     },
     {
       "number": 10,
-      "answer": "제물",
-      "direction": "down",
+      "answer": "니고데모",
+      "direction": "across",
       "row": 6,
       "col": 0,
-      "length": 2,
-      "wordId": "offerings"
+      "length": 4,
+      "wordId": "nicodemus"
     }
   ]
 }

@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-096",
+  "id": "crossword-map-113",
   "title": "N-6",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######목###",
-    "######초###",
-    "######지진##",
-    "#######설#미",
-    "#######병고침",
-    "########린#",
-    "#######사도#",
-    "##방부처리#무##",
-    "노하#디#브두엘##",
-    "#갑스엘#가####"
+    "###마하시옷##레",
+    "###르#삭###기",
+    "##각다귀#부드러움",
+    "####고모라###",
+    "#푸테올리#####",
+    "###리######",
+    "묵##브엘#####",
+    "상속재산######",
+    "#죄########",
+    "#일########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "목초지",
-      "direction": "down",
+      "answer": "마하시옷",
+      "direction": "across",
       "row": 0,
-      "col": 6,
-      "length": 3,
-      "wordId": "entry-목초지"
+      "col": 3,
+      "length": 4,
+      "wordId": "mahazioth"
     },
     {
       "number": 2,
-      "answer": "지진",
-      "direction": "across",
-      "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "earthquake"
+      "answer": "마르다",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 3,
+      "wordId": "martha"
     },
     {
       "number": 3,
-      "answer": "진설병",
+      "answer": "시삭",
       "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "showbread"
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "shishak"
     },
     {
       "number": 4,
-      "answer": "미침",
+      "answer": "레기움",
       "direction": "down",
-      "row": 3,
+      "row": 0,
       "col": 9,
-      "length": 2,
-      "wordId": "madness"
+      "length": 3,
+      "wordId": "rhegium"
     },
     {
       "number": 5,
-      "answer": "병고침",
+      "answer": "각다귀",
       "direction": "across",
-      "row": 4,
-      "col": 7,
+      "row": 2,
+      "col": 2,
       "length": 3,
-      "wordId": "healing"
+      "wordId": "gnat"
     },
     {
       "number": 6,
-      "answer": "고린도",
+      "answer": "귀고리",
       "direction": "down",
-      "row": 4,
-      "col": 8,
+      "row": 2,
+      "col": 4,
       "length": 3,
-      "wordId": "corinth"
+      "wordId": "earring"
     },
     {
       "number": 7,
-      "answer": "사무엘",
+      "answer": "부라",
       "direction": "down",
-      "row": 6,
-      "col": 7,
-      "length": 3,
-      "wordId": "samuel"
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "purah"
     },
     {
       "number": 8,
-      "answer": "사도",
+      "answer": "부드러움",
       "direction": "across",
-      "row": 6,
-      "col": 7,
-      "length": 2,
-      "wordId": "apostle"
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "gentleness"
     },
     {
       "number": 9,
-      "answer": "방부처리",
+      "answer": "고모라",
       "direction": "across",
-      "row": 7,
-      "col": 2,
-      "length": 4,
-      "wordId": "embalming"
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "gomorrah"
     },
     {
       "number": 10,
-      "answer": "부디엘",
-      "direction": "down",
-      "row": 7,
-      "col": 3,
-      "length": 3,
-      "wordId": "putiel"
+      "answer": "푸테올리",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "puteoli"
     },
     {
       "number": 11,
-      "answer": "리브가",
+      "answer": "올리브산",
       "direction": "down",
-      "row": 7,
-      "col": 5,
-      "length": 3,
-      "wordId": "rebecca"
+      "row": 4,
+      "col": 3,
+      "length": 4,
+      "wordId": "olivesmount"
     },
     {
       "number": 12,
-      "answer": "노하",
-      "direction": "across",
-      "row": 8,
+      "answer": "묵상",
+      "direction": "down",
+      "row": 6,
       "col": 0,
       "length": 2,
-      "wordId": "nohah"
+      "wordId": "meditation"
     },
     {
       "number": 13,
-      "answer": "하갑",
-      "direction": "down",
-      "row": 8,
-      "col": 1,
+      "answer": "브엘",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
       "length": 2,
-      "wordId": "hagab"
+      "wordId": "entry-브엘"
     },
     {
       "number": 14,
-      "answer": "브두엘",
+      "answer": "상속재산",
       "direction": "across",
-      "row": 8,
-      "col": 5,
-      "length": 3,
-      "wordId": "bethuel"
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "inheritance"
     },
     {
       "number": 15,
-      "answer": "갑스엘",
-      "direction": "across",
-      "row": 9,
+      "answer": "속죄일",
+      "direction": "down",
+      "row": 7,
       "col": 1,
       "length": 3,
-      "wordId": "kabzeel"
+      "wordId": "dayofatonement"
     }
   ]
 }

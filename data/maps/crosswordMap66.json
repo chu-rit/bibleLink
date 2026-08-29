@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-105",
+  "id": "crossword-map-114",
   "title": "N-26",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#비단###무###",
-    "#늘#네##시숙결혼",
-    "#미드르닷##곳##",
-    "#늘#갈#바알브릿#",
-    "뿔##사프란#놋##",
-    "북##레######",
-    "살만에셀######",
-    "무#########",
-    "사령관#######",
-    "##유혹######"
+    "#하데스#바산###",
+    "###마나핫####",
+    "페니키아#모####",
+    "####모압####",
+    "####르#####",
+    "####드###그#",
+    "###삭개오##말#",
+    "#####순#전리품",
+    "###나팔절축제##",
+    "###손######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "비늘미늘",
-      "direction": "down",
+      "answer": "하데스",
+      "direction": "across",
       "row": 0,
       "col": 1,
-      "length": 4,
-      "wordId": "scales"
+      "length": 3,
+      "wordId": "hades"
     },
     {
       "number": 2,
-      "answer": "비단",
-      "direction": "across",
+      "answer": "스마아",
+      "direction": "down",
       "row": 0,
-      "col": 1,
-      "length": 2,
-      "wordId": "silk"
+      "col": 3,
+      "length": 3,
+      "wordId": "shemaah"
     },
     {
       "number": 3,
-      "answer": "무시",
+      "answer": "바핫모압",
       "direction": "down",
       "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "mushi"
+      "col": 5,
+      "length": 4,
+      "wordId": "entry-바핫-모압"
     },
     {
       "number": 4,
-      "answer": "네르갈사레셀",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
-      "length": 6,
-      "wordId": "entry-네르갈-사레셀"
+      "answer": "바산",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "bashan"
     },
     {
       "number": 5,
-      "answer": "시숙결혼",
+      "answer": "마나핫",
       "direction": "across",
       "row": 1,
-      "col": 6,
-      "length": 4,
-      "wordId": "entry-시숙 결혼"
+      "col": 3,
+      "length": 3,
+      "wordId": "manahath"
     },
     {
       "number": 6,
-      "answer": "숙곳브놋",
-      "direction": "down",
-      "row": 1,
-      "col": 7,
+      "answer": "페니키아",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
       "length": 4,
-      "wordId": "entry-숙곳-브놋"
+      "wordId": "phoenicia"
     },
     {
       "number": 7,
-      "answer": "미드르닷",
-      "direction": "across",
-      "row": 2,
-      "col": 1,
+      "answer": "모르드개",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
       "length": 4,
-      "wordId": "mithredath"
+      "wordId": "mordecai"
     },
     {
       "number": 8,
-      "answer": "바란",
-      "direction": "down",
+      "answer": "모압",
+      "direction": "across",
       "row": 3,
-      "col": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "paran"
+      "wordId": "moab"
     },
     {
       "number": 9,
-      "answer": "바알브릿",
-      "direction": "across",
-      "row": 3,
-      "col": 5,
-      "length": 4,
-      "wordId": "entry-바알-브릿"
+      "answer": "그말리",
+      "direction": "down",
+      "row": 5,
+      "col": 8,
+      "length": 3,
+      "wordId": "gemalli"
     },
     {
       "number": 10,
-      "answer": "뿔북살무사",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 5,
-      "wordId": "entry-뿔북살무사"
+      "answer": "삭개오",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
+      "length": 3,
+      "wordId": "zacchaeus"
     },
     {
       "number": 11,
-      "answer": "사프란",
-      "direction": "across",
-      "row": 4,
-      "col": 3,
+      "answer": "오순절",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
       "length": 3,
-      "wordId": "saffron"
+      "wordId": "pentecost"
     },
     {
       "number": 12,
-      "answer": "살만에셀",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 4,
-      "wordId": "shalmaneser"
+      "answer": "전제",
+      "direction": "down",
+      "row": 7,
+      "col": 7,
+      "length": 2,
+      "wordId": "drinkoffering"
     },
     {
       "number": 13,
-      "answer": "사령관",
+      "answer": "전리품",
       "direction": "across",
-      "row": 8,
-      "col": 0,
+      "row": 7,
+      "col": 7,
       "length": 3,
-      "wordId": "entry-사령관"
+      "wordId": "spoil"
     },
     {
       "number": 14,
-      "answer": "관유",
-      "direction": "down",
+      "answer": "나팔절축제",
+      "direction": "across",
       "row": 8,
-      "col": 2,
-      "length": 2,
-      "wordId": "anointingoil"
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-나팔절 축제"
     },
     {
       "number": 15,
-      "answer": "유혹",
-      "direction": "across",
-      "row": 9,
-      "col": 2,
+      "answer": "나손",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
       "length": 2,
-      "wordId": "temptation"
+      "wordId": "nahshon"
     }
   ]
 }

@@ -1,112 +1,110 @@
 {
-  "id": "crossword-map-060",
+  "id": "crossword-map-112",
   "title": "E-30",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####등잔대",
-    "####횃불#추",
-    "#######야",
-    "######겨자",
-    "#이####자#",
-    "#스##고수씨#",
-    "아라라트산###",
-    "#엘######"
+    "#구덩이####",
+    "낙원#코#티##",
+    "###니네베##",
+    "#기브온#리##",
+    "#근###우#브",
+    "####이스라엘",
+    "#######세",
+    "#######바"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "등잔대",
+      "answer": "구덩이",
       "direction": "across",
       "row": 0,
-      "col": 5,
+      "col": 1,
       "length": 3,
-      "wordId": "lampstand"
+      "wordId": "pit"
     },
     {
       "number": 2,
-      "answer": "등불",
+      "answer": "구원",
       "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 1,
       "length": 2,
-      "wordId": "lamp",
-      "clue": "예수께서 그리스도인이 빛의 아들들이라 하시며 밝은 곳에 두어야 한다고 비유한 이 도구는 기름으로 어둠을 밝혔다"
+      "wordId": "salvation"
     },
     {
       "number": 3,
-      "answer": "대추야자",
+      "answer": "이코니온",
       "direction": "down",
       "row": 0,
-      "col": 7,
+      "col": 3,
       "length": 4,
-      "wordId": "date"
+      "wordId": "iconium"
     },
     {
       "number": 4,
-      "answer": "횃불",
+      "answer": "낙원",
       "direction": "across",
       "row": 1,
-      "col": 4,
+      "col": 0,
       "length": 2,
-      "wordId": "torch"
+      "wordId": "paradise"
     },
     {
       "number": 5,
-      "answer": "겨자씨",
+      "answer": "티베리우스",
       "direction": "down",
-      "row": 3,
-      "col": 6,
-      "length": 3,
-      "wordId": "mustardseed"
+      "row": 1,
+      "col": 5,
+      "length": 5,
+      "wordId": "tiberius"
     },
     {
       "number": 6,
-      "answer": "겨자",
+      "answer": "니네베",
       "direction": "across",
-      "row": 3,
-      "col": 6,
-      "length": 2,
-      "wordId": "mustard"
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "nineveh"
     },
     {
       "number": 7,
-      "answer": "이스라엘",
-      "direction": "down",
-      "row": 4,
+      "answer": "기브온",
+      "direction": "across",
+      "row": 3,
       "col": 1,
-      "length": 4,
-      "wordId": "israel",
-      "clue": "야곱이 얍복 강가에서 천사와 씨름한 뒤 받은 새 이름이자 그의 후손 12지파가 이룬 민족과 땅을 가리키는 말"
+      "length": 3,
+      "wordId": "gibeon"
     },
     {
       "number": 8,
-      "answer": "고수씨",
-      "direction": "across",
-      "row": 5,
-      "col": 4,
-      "length": 3,
-      "wordId": "entry-고수씨"
+      "answer": "기근",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "famine"
     },
     {
       "number": 9,
-      "answer": "고산",
+      "answer": "브엘세바",
       "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "gozan"
+      "row": 4,
+      "col": 7,
+      "length": 4,
+      "wordId": "beersheba"
     },
     {
       "number": 10,
-      "answer": "아라라트산",
+      "answer": "이스라엘",
       "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 5,
-      "wordId": "ararat"
+      "row": 5,
+      "col": 4,
+      "length": 4,
+      "wordId": "israel"
     }
   ]
 }

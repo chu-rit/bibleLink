@@ -1,204 +1,204 @@
 {
-  "id": "crossword-map-074",
+  "id": "crossword-map-115",
   "title": "H-14",
   "difficulty": 2.7,
   "width": 12,
   "height": 12,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######그누밧##",
-    "#######레#랍비돗",
-    "######로데#빔##",
-    "######글#####",
-    "####사알림#####",
-    "#세#글랄#######",
-    "데르둘로########",
-    "레##에녹#######",
-    "스데반#주알######",
-    "#므##석#######",
-    "수니##########",
-    "확###########"
+    "#########마##",
+    "#######히스기야#",
+    "########룹###",
+    "########바르발#",
+    "#######에벨#디도",
+    "######나봇###다",
+    "#게####할####와",
+    "#로##시홀리브낫#예후",
+    "바스맛#르#엘#####",
+    "##디#티몬######",
+    "#히아신스#######",
+    "#엘##########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "그누밧",
-      "direction": "across",
+      "answer": "마기",
+      "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 3,
-      "wordId": "genubath"
+      "col": 9,
+      "length": 2,
+      "wordId": "machi"
     },
     {
       "number": 2,
-      "answer": "그레데",
-      "direction": "down",
-      "row": 0,
+      "answer": "히스기야",
+      "direction": "across",
+      "row": 1,
       "col": 7,
-      "length": 3,
-      "wordId": "crete"
+      "length": 4,
+      "wordId": "hezekiah"
     },
     {
       "number": 3,
-      "answer": "밧랍빔",
+      "answer": "스룹바벨",
       "direction": "down",
-      "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "entry-밧-랍빔"
+      "row": 1,
+      "col": 8,
+      "length": 4,
+      "wordId": "zerubbabel"
     },
     {
       "number": 4,
-      "answer": "랍비돗",
+      "answer": "바르발",
       "direction": "across",
-      "row": 1,
-      "col": 9,
+      "row": 3,
+      "col": 8,
       "length": 3,
-      "wordId": "lappidoth"
+      "wordId": "pharpar"
     },
     {
       "number": 5,
-      "answer": "로데",
-      "direction": "across",
-      "row": 2,
-      "col": 6,
+      "answer": "발디",
+      "direction": "down",
+      "row": 3,
+      "col": 10,
       "length": 2,
-      "wordId": "rhoda"
+      "wordId": "palti"
     },
     {
       "number": 6,
-      "answer": "로글림",
+      "answer": "에봇",
       "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "rogelim"
+      "row": 4,
+      "col": 7,
+      "length": 2,
+      "wordId": "ephod"
     },
     {
       "number": 7,
-      "answer": "사알림",
+      "answer": "에벨",
       "direction": "across",
       "row": 4,
-      "col": 4,
-      "length": 3,
-      "wordId": "shaalim"
+      "col": 7,
+      "length": 2,
+      "wordId": "eber"
     },
     {
       "number": 8,
-      "answer": "사랄",
-      "direction": "down",
+      "answer": "디도",
+      "direction": "across",
       "row": 4,
-      "col": 4,
+      "col": 10,
       "length": 2,
-      "wordId": "sharar"
+      "wordId": "titus"
     },
     {
       "number": 9,
-      "answer": "세르",
+      "answer": "도다와후",
       "direction": "down",
-      "row": 5,
-      "col": 1,
-      "length": 2,
-      "wordId": "zer"
+      "row": 4,
+      "col": 11,
+      "length": 4,
+      "wordId": "dodavahu"
     },
     {
       "number": 10,
-      "answer": "글랄",
-      "direction": "across",
+      "answer": "나할리엘",
+      "direction": "down",
       "row": 5,
-      "col": 3,
-      "length": 2,
-      "wordId": "chelal"
+      "col": 6,
+      "length": 4,
+      "wordId": "nahaliel"
     },
     {
       "number": 11,
-      "answer": "글로에",
-      "direction": "down",
+      "answer": "나봇",
+      "direction": "across",
       "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "chloe"
+      "col": 6,
+      "length": 2,
+      "wordId": "naboth"
     },
     {
       "number": 12,
-      "answer": "데르둘로",
-      "direction": "across",
+      "answer": "게로스",
+      "direction": "down",
       "row": 6,
-      "col": 0,
-      "length": 4,
-      "wordId": "tertullus"
+      "col": 1,
+      "length": 3,
+      "wordId": "keros"
     },
     {
       "number": 13,
-      "answer": "데레스",
+      "answer": "시르티스",
       "direction": "down",
-      "row": 6,
-      "col": 0,
-      "length": 3,
-      "wordId": "teresh"
+      "row": 7,
+      "col": 4,
+      "length": 4,
+      "wordId": "syrtis"
     },
     {
       "number": 14,
-      "answer": "에녹",
+      "answer": "시홀리브낫",
       "direction": "across",
       "row": 7,
-      "col": 3,
-      "length": 2,
-      "wordId": "enoch"
+      "col": 4,
+      "length": 5,
+      "wordId": "entry-시홀-리브낫"
     },
     {
       "number": 15,
-      "answer": "녹주석",
-      "direction": "down",
+      "answer": "예후",
+      "direction": "across",
       "row": 7,
-      "col": 4,
-      "length": 3,
-      "wordId": "beryl"
+      "col": 10,
+      "length": 2,
+      "wordId": "jehu"
     },
     {
       "number": 16,
-      "answer": "스데반",
+      "answer": "바스맛",
       "direction": "across",
       "row": 8,
       "col": 0,
       "length": 3,
-      "wordId": "stephen"
+      "wordId": "basemath"
     },
     {
       "number": 17,
-      "answer": "데므니",
+      "answer": "맛디아",
       "direction": "down",
       "row": 8,
-      "col": 1,
+      "col": 2,
       "length": 3,
-      "wordId": "temeni"
+      "wordId": "matthias"
     },
     {
       "number": 18,
-      "answer": "주알",
+      "answer": "티몬",
       "direction": "across",
-      "row": 8,
+      "row": 9,
       "col": 4,
       "length": 2,
-      "wordId": "zuar"
+      "wordId": "timon"
     },
     {
       "number": 19,
-      "answer": "수니",
+      "answer": "히아신스",
       "direction": "across",
       "row": 10,
-      "col": 0,
-      "length": 2,
-      "wordId": "shuni"
+      "col": 1,
+      "length": 4,
+      "wordId": "hyacinth"
     },
     {
       "number": 20,
-      "answer": "수확",
+      "answer": "히엘",
       "direction": "down",
       "row": 10,
-      "col": 0,
+      "col": 1,
       "length": 2,
-      "wordId": "harvest"
+      "wordId": "hiel"
     }
   ]
 }

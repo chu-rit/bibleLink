@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-031",
+  "id": "crossword-map-119",
   "title": "E-11",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "##거짓말###",
-    "####라반##",
-    "##메뚜기##모",
-    "에베소#서약맹세",
-    "##포#####",
-    "##타#####",
-    "##미움####",
-    "마노아#####"
+    "######미갈",
+    "#######릴",
+    "#####며느리",
+    "###성##헤#",
+    "##메소포타미아",
+    "##뚜###야#",
+    "탈출기#예언서#",
+    "#산######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "거짓말",
+      "answer": "미갈",
       "direction": "across",
       "row": 0,
-      "col": 2,
-      "length": 3,
-      "wordId": "lie"
+      "col": 6,
+      "length": 2,
+      "wordId": "michal"
     },
     {
       "number": 2,
-      "answer": "말라기서",
+      "answer": "갈릴리",
       "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "entry-말라기서"
+      "col": 7,
+      "length": 3,
+      "wordId": "galilee"
     },
     {
       "number": 3,
-      "answer": "라반",
+      "answer": "며느리",
       "direction": "across",
-      "row": 1,
-      "col": 4,
-      "length": 2,
-      "wordId": "laban"
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "entry-며느리"
     },
     {
       "number": 4,
-      "answer": "메뚜기",
-      "direction": "across",
+      "answer": "느헤미야서",
+      "direction": "down",
       "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "locust"
+      "col": 6,
+      "length": 5,
+      "wordId": "entry-느헤미야서"
     },
     {
       "number": 5,
-      "answer": "메소포타미아",
+      "answer": "성소",
       "direction": "down",
-      "row": 2,
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "sanctuary"
+    },
+    {
+      "number": 6,
+      "answer": "메소포타미아",
+      "direction": "across",
+      "row": 4,
       "col": 2,
       "length": 6,
       "wordId": "mesopotamia"
     },
     {
-      "number": 6,
-      "answer": "모세",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 2,
-      "wordId": "moses"
-    },
-    {
       "number": 7,
-      "answer": "에베소",
-      "direction": "across",
-      "row": 3,
-      "col": 0,
+      "answer": "메뚜기",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
       "length": 3,
-      "wordId": "ephesus"
+      "wordId": "locust"
     },
     {
       "number": 8,
-      "answer": "서약맹세",
+      "answer": "탈출기",
       "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 4,
-      "wordId": "oath-2"
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "entry-탈출기"
     },
     {
       "number": 9,
-      "answer": "미움",
-      "direction": "across",
+      "answer": "출산",
+      "direction": "down",
       "row": 6,
-      "col": 2,
+      "col": 1,
       "length": 2,
-      "wordId": "hate"
+      "wordId": "birth"
     },
     {
       "number": 10,
-      "answer": "마노아",
+      "answer": "예언서",
       "direction": "across",
-      "row": 7,
-      "col": 0,
+      "row": 6,
+      "col": 4,
       "length": 3,
-      "wordId": "manoah"
+      "wordId": "propheticbooks"
     }
   ]
 }

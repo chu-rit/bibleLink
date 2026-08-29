@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-017",
+  "id": "crossword-map-107",
   "title": "N-5",
   "difficulty": 2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####수금####",
-    "###마가#####",
-    "###게######",
-    "###도######",
-    "##베냐민#기#빌립",
-    "####수#드보라#",
-    "####기브온#도#",
-    "##루##엘####",
-    "엔게디##세####",
-    "##아레오바고###"
+    "######수정##",
+    "#######강##",
+    "#####백파이프#",
+    "######발#리#",
+    "####파수꾼#지#",
+    "####운##마아가",
+    "###베드야#케#야",
+    "달마누다#곱#도#바",
+    "###니###니##",
+    "####헤로디아##"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "수가",
-      "direction": "down",
+      "answer": "수정",
+      "direction": "across",
       "row": 0,
-      "col": 4,
+      "col": 6,
       "length": 2,
-      "wordId": "sychar"
+      "wordId": "crystal"
     },
     {
       "number": 2,
-      "answer": "수금",
-      "direction": "across",
+      "answer": "정강이",
+      "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "harp"
+      "col": 7,
+      "length": 3,
+      "wordId": "shank"
     },
     {
       "number": 3,
-      "answer": "마게도냐",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
+      "answer": "백파이프",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
       "length": 4,
-      "wordId": "macedonia"
+      "wordId": "bagpipe"
     },
     {
       "number": 4,
-      "answer": "마가",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 2,
-      "wordId": "mark"
+      "answer": "파발꾼",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "courier"
     },
     {
       "number": 5,
-      "answer": "베냐민",
-      "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "benjamin"
+      "answer": "프리지아",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 4,
+      "wordId": "phrygia"
     },
     {
       "number": 6,
-      "answer": "민수기",
+      "answer": "파운드",
       "direction": "down",
       "row": 4,
       "col": 4,
       "length": 3,
-      "wordId": "numbers"
+      "wordId": "pound"
     },
     {
       "number": 7,
-      "answer": "기드온",
-      "direction": "down",
+      "answer": "파수꾼",
+      "direction": "across",
       "row": 4,
-      "col": 6,
+      "col": 4,
       "length": 3,
-      "wordId": "gideon"
+      "wordId": "watchman"
     },
     {
       "number": 8,
-      "answer": "빌라도",
-      "direction": "down",
-      "row": 4,
-      "col": 8,
+      "answer": "마아가",
+      "direction": "across",
+      "row": 5,
+      "col": 7,
       "length": 3,
-      "wordId": "pilate"
+      "wordId": "maacah"
     },
     {
       "number": 9,
-      "answer": "빌립",
-      "direction": "across",
-      "row": 4,
-      "col": 8,
-      "length": 2,
-      "wordId": "philip"
+      "answer": "마케도니아",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 5,
+      "wordId": "macedonia"
     },
     {
       "number": 10,
-      "answer": "드보라",
-      "direction": "across",
+      "answer": "가야바",
+      "direction": "down",
       "row": 5,
-      "col": 6,
+      "col": 9,
       "length": 3,
-      "wordId": "deborah"
+      "wordId": "caiaphas"
     },
     {
       "number": 11,
-      "answer": "기브온",
+      "answer": "베드야",
       "direction": "across",
       "row": 6,
-      "col": 4,
+      "col": 3,
       "length": 3,
-      "wordId": "gibeon"
+      "wordId": "bedeiah"
     },
     {
       "number": 12,
-      "answer": "브엘세바",
+      "answer": "베다니",
       "direction": "down",
       "row": 6,
-      "col": 5,
-      "length": 4,
-      "wordId": "beersheba"
+      "col": 3,
+      "length": 3,
+      "wordId": "bethany"
     },
     {
       "number": 13,
-      "answer": "루디아",
+      "answer": "야곱",
       "direction": "down",
-      "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "lydia"
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "jacob"
     },
     {
       "number": 14,
-      "answer": "엔게디",
+      "answer": "달마누다",
       "direction": "across",
-      "row": 8,
+      "row": 7,
       "col": 0,
-      "length": 3,
-      "wordId": "engedi"
+      "length": 4,
+      "wordId": "dalmanutha"
     },
     {
       "number": 15,
-      "answer": "아레오바고",
+      "answer": "헤로디아",
       "direction": "across",
       "row": 9,
-      "col": 2,
-      "length": 5,
-      "wordId": "areopagus"
+      "col": 4,
+      "length": 4,
+      "wordId": "herodias"
     }
   ]
 }

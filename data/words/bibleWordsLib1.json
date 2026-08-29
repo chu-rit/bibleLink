@@ -565,15 +565,6 @@
     ]
   },
   {
-    "id": "carmel",
-    "word": "갈멜산",
-    "definition": "엘리야가 바알의 예언자들과 대결한 산",
-    "difficulty": 2,
-    "references": [
-      "열왕기상 18장"
-    ]
-  },
-  {
     "id": "carmi",
     "word": "갈미",
     "definition": "르우벤의 아들로 야곱 집안과 함께 이집트로 간 사람이자 아간의 조상",
@@ -1033,15 +1024,6 @@
     "references": [
       "마태 13:31, 32",
       "마가 4:30-32"
-    ]
-  },
-  {
-    "id": "mustardseed",
-    "word": "겨자씨",
-    "definition": "매우 작은 씨로, 예수는 믿음과 하느님의 왕국을 설명하는 데 사용했다",
-    "difficulty": 2,
-    "references": [
-      "마태복음 13:31, 32"
     ]
   },
   {
@@ -1784,15 +1766,6 @@
     "references": [
       "창세기 36:26",
       "역대기상 1:41"
-    ]
-  },
-  {
-    "id": "crete",
-    "word": "그레데",
-    "definition": "바울이 디도를 남겨 회중들을 조직하게 한 지중해의 섬",
-    "difficulty": 2,
-    "references": [
-      "디도서 1:5"
     ]
   },
   {
@@ -6231,15 +6204,6 @@
     ]
   },
   {
-    "id": "macedonia",
-    "word": "마게도냐",
-    "definition": "바울이 환상에서 도움 요청을 받고 좋은 소식을 전하러 간 지역",
-    "difficulty": 2,
-    "references": [
-      "사도행전 16:9-12"
-    ]
-  },
-  {
     "id": "magog",
     "word": "마곡",
     "definition": "야벳의 아들이자 노아의 손자로 대홍수 후 민족들의 조상 중 한 사람",
@@ -6632,6 +6596,15 @@
     "references": [
       "다니엘 12:4, 9, 10",
       "다니엘 11:40"
+    ]
+  },
+  {
+    "id": "macedonia",
+    "word": "마케도니아",
+    "definition": "바울이 환상에서 도움 요청을 받고 좋은 소식을 전하러 간 지역",
+    "difficulty": 2,
+    "references": [
+      "사도행전 16:9-12"
     ]
   },
   {
@@ -8741,7 +8714,7 @@
   },
   {
     "id": "miletus",
-    "word": "밀레도",
+    "word": "밀레투스",
     "definition": "바울이 에베소 회중의 장로들을 만나 격려한 도시",
     "difficulty": 3,
     "references": [
@@ -9107,7 +9080,7 @@
   },
   {
     "id": "pharisees",
-    "word": "바리새인",
+    "word": "바리새파",
     "definition": "율법과 전통을 엄격히 지키려 했으며 예수와 자주 논쟁한 유대교 분파의 사람",
     "difficulty": 2,
     "references": [
@@ -9903,7 +9876,7 @@
   },
   {
     "id": "compensation",
-    "word": "배상보상",
+    "word": "배상",
     "definition": "봉사나 손실 상해에 대해 상응하는 것으로 물어주거나 갚아주는 일",
     "difficulty": 2,
     "references": [
@@ -10030,7 +10003,7 @@
   },
   {
     "id": "burntoffering",
-    "word": "번제",
+    "word": "번제물",
     "definition": "제물을 제단 위에서 완전히 태워 바치던 희생 제물",
     "difficulty": 2,
     "references": [
@@ -10121,6 +10094,15 @@
     "difficulty": 3,
     "references": [
       "여호수아 19:25"
+    ]
+  },
+  {
+    "id": "bethel",
+    "word": "베델",
+    "definition": "야곱이 하느님의 약속을 확인한 곳으로, 이스라엘의 중요한 장소가 된 도시",
+    "difficulty": 2,
+    "references": [
+      "창세기 28:10-19"
     ]
   },
   {
@@ -10378,15 +10360,6 @@
     "difficulty": 3,
     "references": [
       "역대기하 17:7, 9"
-    ]
-  },
-  {
-    "id": "bethel",
-    "word": "벧엘",
-    "definition": "야곱이 하느님의 약속을 확인한 곳으로, 이스라엘의 중요한 장소가 된 도시",
-    "difficulty": 2,
-    "references": [
-      "창세기 28:10-19"
     ]
   },
   {
@@ -10855,7 +10828,7 @@
   },
   {
     "id": "custody",
-    "word": "보관보호",
+    "word": "보관",
     "definition": "어떤 것을 돌보고 관리하며 사람을 잘 보살피는 일",
     "difficulty": 2,
     "references": [
@@ -11078,7 +11051,7 @@
   },
   {
     "id": "nature",
-    "word": "본성자연",
+    "word": "본성",
     "definition": "사물의 근본적 특성이나 사람의 타고난 성품을 가리키는 개념",
     "difficulty": 2,
     "references": [
@@ -11097,6 +11070,16 @@
     ]
   },
   {
+    "id": "dedication",
+    "word": "봉헌",
+    "definition": "신성한 목적으로 구별하거나 분리하는 것으로 히브리어 나자르에서 유래함",
+    "difficulty": 2,
+    "references": [
+      "레위기 15:31",
+      "에스겔 14:7"
+    ]
+  },
+  {
     "id": "entry-봉헌 축제",
     "word": "봉헌축제",
     "definition": "안티오코스 4세의 더럽힘 후 성전을 다시 봉헌한 사건을 기념하는 유대인 축제",
@@ -11104,16 +11087,6 @@
     "references": [
       "요한 10:22, 23",
       "에스더 9:18-32"
-    ]
-  },
-  {
-    "id": "dedication",
-    "word": "봉헌헌신",
-    "definition": "신성한 목적으로 구별하거나 분리하는 것으로 히브리어 나자르에서 유래함",
-    "difficulty": 2,
-    "references": [
-      "레위기 15:31",
-      "에스겔 14:7"
     ]
   },
   {
@@ -11722,15 +11695,6 @@
     ]
   },
   {
-    "id": "priscilla",
-    "word": "브리스길라",
-    "definition": "남편과 함께 아볼로에게 하느님의 길을 더 정확하게 설명한 여자",
-    "difficulty": 2,
-    "references": [
-      "사도행전 18:24-26"
-    ]
-  },
-  {
     "id": "beriah",
     "word": "브리아",
     "definition": "아셀의 아들로 야곱과 함께 이집트에 간 인물",
@@ -12010,7 +11974,7 @@
   },
   {
     "id": "scales",
-    "word": "비늘미늘",
+    "word": "비늘",
     "definition": "물고기와 파충류의 피부 보호 구조로 정한 것과 부정한 것의 구분 기준",
     "difficulty": 2,
     "references": [
@@ -12555,7 +12519,7 @@
   },
   {
     "id": "sadducees",
-    "word": "사두개인",
+    "word": "사두개파",
     "definition": "부활과 천사의 존재를 믿지 않았으며 성전 제사장 계층과 관련된 유대교 분파",
     "difficulty": 1,
     "references": [
@@ -12699,7 +12663,7 @@
   },
   {
     "id": "samaritan",
-    "word": "사마리아인",
+    "word": "사마리아사람",
     "definition": "사마리아 지역에 살던 사람으로, 유대인과 다른 배경을 가진 민족",
     "difficulty": 2,
     "references": [
@@ -13554,7 +13518,7 @@
   },
   {
     "id": "oath-2",
-    "word": "서약맹세",
+    "word": "서약",
     "definition": "발언의 진실성이나 약속을 확언하는 말로 하느님께 호소하는 행위",
     "difficulty": 2,
     "references": [
@@ -14373,7 +14337,7 @@
   },
   {
     "id": "sedition",
-    "word": "소요폭동",
+    "word": "소요",
     "definition": "그리스어 스타시스로 분리해 서 있는 것을 의미하며 폭동이나 분쟁을 가리킴",
     "difficulty": 2,
     "references": [
@@ -15814,21 +15778,21 @@
     ]
   },
   {
+    "id": "sinai",
+    "word": "시나이",
+    "definition": "모세가 하느님의 율법을 받은 산",
+    "difficulty": 2,
+    "references": [
+      "출애굽기 19-20장"
+    ]
+  },
+  {
     "id": "shinab",
     "word": "시납",
     "definition": "아드마의 왕으로 그돌라오멜에게 반역했다 실패한 다섯 군주 중 한 명",
     "difficulty": 3,
     "references": [
       "창세기 14:1-10"
-    ]
-  },
-  {
-    "id": "sinai",
-    "word": "시내산",
-    "definition": "모세가 하느님의 율법을 받은 산",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 19-20장"
     ]
   },
   {
@@ -16298,7 +16262,7 @@
   },
   {
     "id": "kidneys",
-    "word": "신장콩팥",
+    "word": "신장",
     "definition": "등뼈 아래 한 쌍의 장기로 피를 걸러내며 비유적으로 내면의 깊은 부분을 상징",
     "difficulty": 2,
     "references": [
@@ -16458,7 +16422,7 @@
   },
   {
     "id": "ararat",
-    "word": "아라라트산",
+    "word": "아라라트",
     "definition": "대홍수 후 노아의 방주가 머문 산악 지역",
     "difficulty": 2,
     "references": [
@@ -17363,21 +17327,21 @@
     ]
   },
   {
-    "id": "jordan",
-    "word": "요단강",
-    "definition": "이스라엘 땅을 흐르며 예수가 침례를 받은 강",
-    "difficulty": 1,
-    "references": [
-      "마태복음 3:13-17"
-    ]
-  },
-  {
     "id": "jotham",
     "word": "요담",
     "definition": "아버지 웃시야를 대신해 통치했으며 하느님 앞에서 바르게 행한 유다 왕",
     "difficulty": 2,
     "references": [
       "역대기하 27장"
+    ]
+  },
+  {
+    "id": "jordan",
+    "word": "요르단 강",
+    "definition": "이스라엘 땅을 흐르며 예수가 침례를 받은 강",
+    "difficulty": 1,
+    "references": [
+      "마태복음 3:13-17"
     ]
   },
   {
@@ -17583,15 +17547,6 @@
     ]
   },
   {
-    "id": "iconium",
-    "word": "이고니온",
-    "definition": "바울과 바나바가 전파했으며 반대도 받았던 소아시아의 도시",
-    "difficulty": 2,
-    "references": [
-      "사도행전 13:51-14:6"
-    ]
-  },
-  {
     "id": "ithamar",
     "word": "이다말",
     "definition": "아론의 아들로 성막의 여러 봉사와 관련된 제사장",
@@ -17674,6 +17629,15 @@
     "difficulty": 1,
     "references": [
       "출애굽기 1-14장"
+    ]
+  },
+  {
+    "id": "iconium",
+    "word": "이코니온",
+    "definition": "바울과 바나바가 전파했으며 반대도 받았던 소아시아의 도시",
+    "difficulty": 2,
+    "references": [
+      "사도행전 13:51-14:6"
     ]
   },
   {
@@ -18625,7 +18589,7 @@
   },
   {
     "id": "showbread",
-    "word": "진설병",
+    "word": "진설빵",
     "definition": "성소의 상 위에 정기적으로 차려 놓았던 열두 개의 빵",
     "difficulty": 2,
     "references": [
@@ -19273,6 +19237,15 @@
     ]
   },
   {
+    "id": "crete",
+    "word": "크레테",
+    "definition": "바울이 디도를 남겨 회중들을 조직하게 한 지중해의 섬",
+    "difficulty": 2,
+    "references": [
+      "디도서 1:5"
+    ]
+  },
+  {
     "id": "chebar",
     "word": "크발",
     "definition": "칼데아 사람들의 땅에 있던 강으로 에스겔이 유배 중 환상을 본 곳",
@@ -19823,6 +19796,15 @@
     "difficulty": 2,
     "references": [
       "출애굽기 30:34-38"
+    ]
+  },
+  {
+    "id": "priscilla",
+    "word": "프리스길라",
+    "definition": "남편과 함께 아볼로에게 하느님의 길을 더 정확하게 설명한 여자",
+    "difficulty": 2,
+    "references": [
+      "사도행전 18:24-26"
     ]
   },
   {

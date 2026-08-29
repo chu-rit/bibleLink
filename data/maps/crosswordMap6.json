@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-006d",
+  "id": "crossword-map-106",
   "title": "N-2",
   "difficulty": 2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######골고다#",
-    "티###시므리#말룩",
-    "베배#이삭#앗###",
-    "리#소고######",
-    "아##니######",
-    "스타디온######",
-    "##모#######",
-    "#하데스######",
-    "#박########",
-    "#국########"
+    "##페#미###세상",
+    "##스타디온##대#",
+    "##투#안#세베대#",
+    "#비스바###레##",
+    "#웃#다마스쿠스##",
+    "믿음##하##1##",
+    "##맛다나#####",
+    "##디#임#####",
+    "##디#######",
+    "##야#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "골리앗",
+      "answer": "페스투스",
       "direction": "down",
       "row": 0,
-      "col": 6,
-      "length": 3,
-      "wordId": "goliath"
+      "col": 2,
+      "length": 4,
+      "wordId": "festus"
     },
     {
       "number": 2,
-      "answer": "골고다",
-      "direction": "across",
+      "answer": "미디안",
+      "direction": "down",
       "row": 0,
-      "col": 6,
+      "col": 4,
       "length": 3,
-      "wordId": "golgotha"
+      "wordId": "midian"
     },
     {
       "number": 3,
-      "answer": "다말",
+      "answer": "세대대",
       "direction": "down",
       "row": 0,
       "col": 8,
-      "length": 2,
-      "wordId": "tamar"
+      "length": 3,
+      "wordId": "generation"
     },
     {
       "number": 4,
-      "answer": "티베리아스",
-      "direction": "down",
-      "row": 1,
-      "col": 0,
-      "length": 5,
-      "wordId": "tiberias"
+      "answer": "세상",
+      "direction": "across",
+      "row": 0,
+      "col": 8,
+      "length": 2,
+      "wordId": "world"
     },
     {
       "number": 5,
-      "answer": "시므리",
-      "direction": "across",
-      "row": 1,
-      "col": 4,
-      "length": 3,
-      "wordId": "shimri"
-    },
-    {
-      "number": 6,
-      "answer": "시삭",
-      "direction": "down",
-      "row": 1,
-      "col": 4,
-      "length": 2,
-      "wordId": "shishak"
-    },
-    {
-      "number": 7,
-      "answer": "말룩",
-      "direction": "across",
-      "row": 1,
-      "col": 8,
-      "length": 2,
-      "wordId": "malluch"
-    },
-    {
-      "number": 8,
-      "answer": "베배",
-      "direction": "across",
-      "row": 2,
-      "col": 0,
-      "length": 2,
-      "wordId": "bebai"
-    },
-    {
-      "number": 9,
-      "answer": "이삭",
-      "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 2,
-      "wordId": "isaac"
-    },
-    {
-      "number": 10,
-      "answer": "이고니온",
-      "direction": "down",
-      "row": 2,
-      "col": 3,
-      "length": 4,
-      "wordId": "iconium"
-    },
-    {
-      "number": 11,
-      "answer": "소고",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 2,
-      "wordId": "entry-소고"
-    },
-    {
-      "number": 12,
       "answer": "스타디온",
       "direction": "across",
-      "row": 5,
-      "col": 0,
+      "row": 1,
+      "col": 2,
       "length": 4,
       "wordId": "furlong"
     },
     {
-      "number": 13,
-      "answer": "디모데",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
+      "number": 6,
+      "answer": "세베대",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
       "length": 3,
-      "wordId": "timothy"
+      "wordId": "zebedee"
+    },
+    {
+      "number": 7,
+      "answer": "베레스1",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 4,
+      "wordId": "peresh"
+    },
+    {
+      "number": 8,
+      "answer": "비스바",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "pispah"
+    },
+    {
+      "number": 9,
+      "answer": "비웃음",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "ridicule"
+    },
+    {
+      "number": 10,
+      "answer": "바다",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "sea"
+    },
+    {
+      "number": 11,
+      "answer": "다마스쿠스",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 5,
+      "wordId": "damascus"
+    },
+    {
+      "number": 12,
+      "answer": "마하나임",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 4,
+      "wordId": "mahanaim"
+    },
+    {
+      "number": 13,
+      "answer": "믿음",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "faith"
     },
     {
       "number": 14,
-      "answer": "하데스",
+      "answer": "맛다나",
       "direction": "across",
-      "row": 7,
-      "col": 1,
+      "row": 6,
+      "col": 2,
       "length": 3,
-      "wordId": "hades"
+      "wordId": "mattanah"
     },
     {
       "number": 15,
-      "answer": "하박국",
+      "answer": "맛디디야",
       "direction": "down",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "habakkuk"
+      "row": 6,
+      "col": 2,
+      "length": 4,
+      "wordId": "mattithiah"
     }
   ]
 }

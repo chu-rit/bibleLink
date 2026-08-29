@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-055",
+  "id": "crossword-map-117",
   "title": "E-25",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#며######",
-    "#느######",
-    "합리성#####",
-    "환#소요폭동##",
-    "채##셉#물고기",
-    "#######름",
-    "#######부",
-    "#####꾸짖음"
+    "####가###",
+    "####데###",
+    "###미스바##",
+    "###가#벨사살",
+    "느헤미야##두#",
+    "######개밀",
+    "#####전파#",
+    "#####갈##"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "며느리",
+      "answer": "가데스",
       "direction": "down",
       "row": 0,
-      "col": 1,
+      "col": 4,
       "length": 3,
-      "wordId": "entry-며느리"
+      "wordId": "kadesh"
     },
     {
       "number": 2,
-      "answer": "합리성",
+      "answer": "미스바",
       "direction": "across",
       "row": 2,
-      "col": 0,
+      "col": 3,
       "length": 3,
-      "wordId": "reasonableness"
+      "wordId": "mizpah"
     },
     {
       "number": 3,
-      "answer": "합환채",
+      "answer": "미가야",
       "direction": "down",
       "row": 2,
-      "col": 0,
+      "col": 3,
       "length": 3,
-      "wordId": "mandrake"
+      "wordId": "micaiah"
     },
     {
       "number": 4,
-      "answer": "성소",
+      "answer": "바벨",
       "direction": "down",
       "row": 2,
-      "col": 2,
+      "col": 5,
       "length": 2,
-      "wordId": "sanctuary"
+      "wordId": "babel"
     },
     {
       "number": 5,
-      "answer": "소요폭동",
+      "answer": "벨사살",
       "direction": "across",
       "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "sedition"
+      "col": 5,
+      "length": 3,
+      "wordId": "belshazzar"
     },
     {
       "number": 6,
-      "answer": "요셉",
+      "answer": "사두개파",
       "direction": "down",
       "row": 3,
-      "col": 3,
-      "length": 2,
-      "wordId": "joseph"
+      "col": 6,
+      "length": 4,
+      "wordId": "sadducees"
     },
     {
       "number": 7,
-      "answer": "동물",
-      "direction": "down",
-      "row": 3,
-      "col": 5,
-      "length": 2,
-      "wordId": "animals"
+      "answer": "느헤미야",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "nehemiah"
     },
     {
       "number": 8,
-      "answer": "물고기",
+      "answer": "개밀",
       "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 3,
-      "wordId": "fish"
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "spelt"
     },
     {
       "number": 9,
-      "answer": "기름부음",
-      "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 4,
-      "wordId": "anointing"
+      "answer": "전파",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "preaching"
     },
     {
       "number": 10,
-      "answer": "꾸짖음",
-      "direction": "across",
-      "row": 7,
+      "answer": "전갈",
+      "direction": "down",
+      "row": 6,
       "col": 5,
-      "length": 3,
-      "wordId": "rebuke"
+      "length": 2,
+      "wordId": "scorpion"
     }
   ]
 }
