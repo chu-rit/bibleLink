@@ -99,22 +99,54 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [selectedSlot]);
 
   useEffect(() => {
-    if (Platform.OS !== 'web' || typeof window === 'undefined' || !window.visualViewport) return undefined;
+    if (Platform.OS !== 'web' || typeof window === 'undefined') return undefined;
+    const input = inputRef.current;
+    if (!input) return undefined;
+    const onFocus = () => setIsKeyboardVisible(true);
+    const onBlur = () => {
+      const viewport = window.visualViewport;
+      const baseHeight = baseHeightRef.current || window.innerHeight;
+      const vh = viewport ? viewport.height : window.innerHeight;
+      setIsKeyboardVisible(vh < baseHeight - 150);
+    };
+    input.addEventListener('focus', onFocus);
+    input.addEventListener('blur', onBlur);
+    return () => {
+      input.removeEventListener('focus', onFocus);
+      input.removeEventListener('blur', onBlur);
+    };
+  }, [selectedSlot]);
+
+  const baseHeightRef = useRef(null);
+  if (baseHeightRef.current === null && typeof window !== 'undefined') {
+    baseHeightRef.current = window.innerHeight;
+  }
+
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof window === 'undefined') return undefined;
 
     const viewport = window.visualViewport;
-    const baseHeight = windowHeight || window.innerHeight;
+    const baseHeight = baseHeightRef.current || window.innerHeight;
+
     const updateViewport = () => {
-      setWebViewportHeight(viewport.height);
-      setIsKeyboardVisible(viewport.height < baseHeight - 150);
+      const vh = viewport ? viewport.height : window.innerHeight;
+      setWebViewportHeight(vh);
+      setIsKeyboardVisible(vh < baseHeight - 150);
       window.scrollTo(0, 0);
     };
 
     updateViewport();
-    viewport.addEventListener('resize', updateViewport);
-    viewport.addEventListener('scroll', updateViewport);
+    if (viewport) {
+      viewport.addEventListener('resize', updateViewport);
+      viewport.addEventListener('scroll', updateViewport);
+    }
+    window.addEventListener('resize', updateViewport);
     return () => {
-      viewport.removeEventListener('resize', updateViewport);
-      viewport.removeEventListener('scroll', updateViewport);
+      if (viewport) {
+        viewport.removeEventListener('resize', updateViewport);
+        viewport.removeEventListener('scroll', updateViewport);
+      }
+      window.removeEventListener('resize', updateViewport);
     };
   }, []);
 
