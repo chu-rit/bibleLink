@@ -71,7 +71,7 @@ function AnswerCard({
         <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
         {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
       </View>
-      <Text style={styles.clue} numberOfLines={2}>{clue}</Text>
+      <Text style={styles.clue}>{clue}</Text>
       <View style={styles.actionRow}>
         <Animated.View
           style={[
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
   selectedDirection: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
-  clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
+  clue: { color: '#34485d', fontSize: 14, lineHeight: 18, fontWeight: '700' },
   actionRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
   answerInputWrap: { flex: 1, position: 'relative' },
   answerInput: { borderWidth: 1, borderColor: '#cbd8e2', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#20384d', fontSize: 16, backgroundColor: '#fbfdff' },

@@ -45,12 +45,13 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, masterMode }) {
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
   const isSmallScreen = (windowWidth || 375) < 480;
   const isWeb = Platform.OS === 'web';
+  const masterTileWidth = Math.floor((windowWidth || 375) / 5) - 12;
 
   const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
   const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
@@ -65,11 +66,14 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const progress = progressByMap?.[map.id] || { filled: 0, total: map.cells.length };
     const percent = progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
     const isComplete = percent === 100;
+    const tileStyle = columns === 1
+      ? { width: masterTileWidth, marginRight: 8 }
+      : { flexBasis: `${100 / columns}%` };
     return (
       <Pressable
         key={map.id}
         onPress={() => onSelect(map)}
-        style={[styles.tile, { flexBasis: `${100 / columns}%` }, isComplete && styles.tileComplete]}
+        style={[styles.tile, tileStyle, isComplete && styles.tileComplete]}
       >
         <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
       </Pressable>
@@ -84,8 +88,30 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const renderSection = (eyebrow, title, sectionMaps, accent) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
-    const revealedMaps = sectionMaps.slice(0, revealCount);
+    const revealedMaps = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
     const columns = 5;
+    if (masterMode) {
+      return (
+        <View style={styles.sectionBlock}>
+          <View style={styles.sectionHeader}>
+            <View style={styles.sectionCopy}>
+              <Text style={[styles.sectionEyebrow, { color: accent }]}>{eyebrow}</Text>
+            </View>
+            <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
+              <Text style={[styles.sectionBadgeText, { color: accent }]}>{sectionMaps.length}개 맵</Text>
+            </View>
+          </View>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.masterScroll}>
+            <View style={styles.masterTileRow}>
+              {revealedMaps.map((map) => {
+                if (hideSolved && getPercent(map) === 100) return null;
+                return renderTile(map, 1);
+              })}
+            </View>
+          </ScrollView>
+        </View>
+      );
+    }
     return (
       <View>
         <View style={styles.sectionHeader}>
@@ -203,6 +229,8 @@ const styles = StyleSheet.create({
   sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start' },
   sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right' },
   tileGrid: { flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 8 },
+  masterScroll: { marginBottom: 12 },
+  masterTileRow: { flexDirection: 'row' },
   tile: { aspectRatio: 1, alignItems: 'center', justifyContent: 'center', padding: 4 },
   tileComplete: { backgroundColor: '#e7f6ee', borderRadius: 16 },
   gauge: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },

@@ -119,6 +119,7 @@ export default function App() {
       <MapSelectScreen
         maps={crosswordMaps}
         progressByMap={progressByMap}
+        masterMode={masterMode}
         onSelect={(map) => {
           setSelectedMap(map);
           setScreen('puzzle');
