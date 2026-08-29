@@ -83,7 +83,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       : 20;
   }
   const cellSize = cellSizeRef.current;
-  const boardHeight = cellSize * (crosswordMap.height || 1);
+  const exactBoardWidth = cellSize * (crosswordMap.width || 1) + 4;
+  const boardHeight = cellSize * (crosswordMap.height || 1) + 4;
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);
@@ -344,13 +345,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             style={[
               styles.boardArea,
               {
-                width: boardWidth,
+                width: exactBoardWidth,
                 flex: 1,
                 justifyContent: 'flex-start',
               },
             ]}
           >
-            <View style={styles.boardClip}>
+            <View style={[styles.boardClip, { width: exactBoardWidth, height: boardViewportHeight, boxSizing: 'border-box' }]}>
               <View style={[styles.board, { transform: [{ translateY: boardOffsetY }] }]}>
                 {crosswordMap.grid.map((row, rowIndex) => (
                   <View style={styles.gridRow} key={`row-${rowIndex}`}>
@@ -514,11 +515,15 @@ const styles = StyleSheet.create({
   progressTrack: { height: 8, backgroundColor: '#e9eef3', borderRadius: 8, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: '#4d8cba', borderRadius: 8 },
   boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
-  boardClip: { overflow: 'hidden', width: '100%', height: '100%' },
+  boardClip: { overflow: 'hidden', height: '100%' },
   board: {
+    backgroundColor: '#fff',
+  },
+  boardClip: {
+    overflow: 'hidden',
+    height: '100%',
     borderWidth: 2,
     borderColor: '#315d7f',
-    backgroundColor: '#fff',
     borderRadius: 8,
     shadowColor: '#17324d',
     shadowOpacity: 0.1,
