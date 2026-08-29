@@ -379,7 +379,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: exactBoardWidth,
-                height: boardViewportHeight,
+                flex: 1,
                 justifyContent: 'flex-start',
               },
             ]}
@@ -426,15 +426,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
         <View
           style={[
             styles.answerCardContainer,
-            {
+            isKeyboardVisible && {
               position: 'absolute',
               left: 12,
               right: 12,
-              bottom: isKeyboardVisible
-                ? (Platform.OS === 'web'
-                  ? Math.max(0, (windowHeight || window.innerHeight) - (webViewportHeight || windowHeight || window.innerHeight))
-                  : keyboardHeight)
-                : 0,
+              bottom: Platform.OS === 'web'
+                ? Math.max(0, (windowHeight || window.innerHeight) - (webViewportHeight || windowHeight || window.innerHeight))
+                : keyboardHeight,
             },
           ]}
           pointerEvents={slot ? 'auto' : 'none'}
