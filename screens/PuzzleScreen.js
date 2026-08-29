@@ -55,6 +55,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [inputKey, setInputKey] = useState(0);
   const [webViewportHeight, setWebViewportHeight] = useState(null);
+  const [answerCardHeight, setAnswerCardHeight] = useState(0);
   const [showClearModal, setShowClearModal] = useState(false);
   const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -346,7 +347,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               styles.boardArea,
               {
                 width: exactBoardWidth,
-                flex: 1,
+                height: boardViewportHeight,
                 justifyContent: 'flex-start',
               },
             ]}
@@ -393,13 +394,19 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
         <View
           style={[
             styles.answerCardContainer,
-            isKeyboardVisible && {
-              paddingBottom: Platform.OS === 'web'
-                ? Math.max(0, window.innerHeight - (webViewportHeight || window.innerHeight))
-                : keyboardHeight,
+            {
+              position: 'absolute',
+              left: 12,
+              right: 12,
+              bottom: isKeyboardVisible
+                ? (Platform.OS === 'web'
+                  ? Math.max(0, window.innerHeight - (webViewportHeight || window.innerHeight))
+                  : keyboardHeight)
+                : 0,
             },
           ]}
           pointerEvents={slot ? 'auto' : 'none'}
+          onLayout={(e) => setAnswerCardHeight(e.nativeEvent.layout.height)}
         >
           <AnswerCard
             slot={slot}
