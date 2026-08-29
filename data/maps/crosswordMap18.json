@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-018",
+  "id": "crossword-map-096",
   "title": "N-6",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "유니게#######",
-    "##헨#######",
-    "#아나니아###계#",
-    "#그##론#페르시아",
-    "#립#에###호#합",
-    "#바나바#빌립보##",
-    "###브#립#암##",
-    "###로#보####",
-    "###디도서####",
-    "#밀레도######"
+    "######목###",
+    "######초###",
+    "######지진##",
+    "#######설#미",
+    "#######병고침",
+    "########린#",
+    "#######사도#",
+    "##방부처리#무##",
+    "노하#디#브두엘##",
+    "#갑스엘#가####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "유니게",
-      "direction": "across",
+      "answer": "목초지",
+      "direction": "down",
       "row": 0,
-      "col": 0,
+      "col": 6,
       "length": 3,
-      "wordId": "eunice"
+      "wordId": "entry-목초지"
     },
     {
       "number": 2,
-      "answer": "게헨나",
-      "direction": "down",
-      "row": 0,
-      "col": 2,
-      "length": 3,
-      "wordId": "gehenna"
+      "answer": "지진",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "earthquake"
     },
     {
       "number": 3,
-      "answer": "아그립바",
+      "answer": "진설병",
       "direction": "down",
       "row": 2,
-      "col": 1,
-      "length": 4,
-      "wordId": "agrippa"
+      "col": 7,
+      "length": 3,
+      "wordId": "showbread"
     },
     {
       "number": 4,
-      "answer": "아나니아",
-      "direction": "across",
-      "row": 2,
-      "col": 1,
-      "length": 4,
-      "wordId": "ananias"
-    },
-    {
-      "number": 5,
-      "answer": "아론",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
-      "length": 2,
-      "wordId": "aaron"
-    },
-    {
-      "number": 6,
-      "answer": "계시",
-      "direction": "down",
-      "row": 2,
-      "col": 8,
-      "length": 2,
-      "wordId": "revelation"
-    },
-    {
-      "number": 7,
-      "answer": "페르시아",
-      "direction": "across",
-      "row": 3,
-      "col": 6,
-      "length": 4,
-      "wordId": "persia"
-    },
-    {
-      "number": 8,
-      "answer": "르호보암",
-      "direction": "down",
-      "row": 3,
-      "col": 7,
-      "length": 4,
-      "wordId": "rehoboam"
-    },
-    {
-      "number": 9,
-      "answer": "아합",
+      "answer": "미침",
       "direction": "down",
       "row": 3,
       "col": 9,
       "length": 2,
-      "wordId": "ahab"
+      "wordId": "madness"
+    },
+    {
+      "number": 5,
+      "answer": "병고침",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "healing"
+    },
+    {
+      "number": 6,
+      "answer": "고린도",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 3,
+      "wordId": "corinth"
+    },
+    {
+      "number": 7,
+      "answer": "사무엘",
+      "direction": "down",
+      "row": 6,
+      "col": 7,
+      "length": 3,
+      "wordId": "samuel"
+    },
+    {
+      "number": 8,
+      "answer": "사도",
+      "direction": "across",
+      "row": 6,
+      "col": 7,
+      "length": 2,
+      "wordId": "apostle"
+    },
+    {
+      "number": 9,
+      "answer": "방부처리",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 4,
+      "wordId": "embalming"
     },
     {
       "number": 10,
-      "answer": "에바브로디도",
+      "answer": "부디엘",
       "direction": "down",
-      "row": 4,
+      "row": 7,
       "col": 3,
-      "length": 6,
-      "wordId": "epaphroditus"
+      "length": 3,
+      "wordId": "putiel"
     },
     {
       "number": 11,
-      "answer": "바나바",
-      "direction": "across",
-      "row": 5,
-      "col": 1,
+      "answer": "리브가",
+      "direction": "down",
+      "row": 7,
+      "col": 5,
       "length": 3,
-      "wordId": "barnabas"
+      "wordId": "rebecca"
     },
     {
       "number": 12,
-      "answer": "빌립보",
+      "answer": "노하",
       "direction": "across",
-      "row": 5,
-      "col": 5,
-      "length": 3,
-      "wordId": "philippi"
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "nohah"
     },
     {
       "number": 13,
-      "answer": "빌립보서",
+      "answer": "하갑",
       "direction": "down",
-      "row": 5,
-      "col": 5,
-      "length": 4,
-      "wordId": "philippians"
+      "row": 8,
+      "col": 1,
+      "length": 2,
+      "wordId": "hagab"
     },
     {
       "number": 14,
-      "answer": "디도서",
+      "answer": "브두엘",
       "direction": "across",
       "row": 8,
-      "col": 3,
+      "col": 5,
       "length": 3,
-      "wordId": "titusletter"
+      "wordId": "bethuel"
     },
     {
       "number": 15,
-      "answer": "밀레도",
+      "answer": "갑스엘",
       "direction": "across",
       "row": 9,
       "col": 1,
       "length": 3,
-      "wordId": "miletus"
+      "wordId": "kabzeel"
     }
   ]
 }

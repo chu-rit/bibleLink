@@ -1337,26 +1337,6 @@
     ]
   },
   {
-    "id": "firstpeter",
-    "word": "베드로전서",
-    "definition": "시련을 겪는 그리스도인들에게 희망과 거룩한 행실을 권한 편지",
-    "difficulty": 2,
-    "references": [
-      "베드로 전서 1:3-7",
-      "베드로 전서 2:9-12"
-    ]
-  },
-  {
-    "id": "secondpeter",
-    "word": "베드로후서",
-    "definition": "거짓 교사들을 경고하고 여호와의 날을 기다리도록 권한 편지",
-    "difficulty": 2,
-    "references": [
-      "베드로 후서 2:1-3",
-      "베드로 후서 3:10-13"
-    ]
-  },
-  {
     "id": "bedeiah",
     "word": "베드야",
     "definition": "에스라의 권고로 타국인 아내를 내보낸 바니 자손 중 한 사람",
@@ -3552,16 +3532,6 @@
     "difficulty": 2,
     "references": [
       "사도행전 16:9-15"
-    ]
-  },
-  {
-    "id": "philippians",
-    "word": "빌립보서",
-    "definition": "어려움 중에도 기뻐하고 겸손을 나타내도록 격려한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "빌립보서 1:1-11",
-      "빌립보서 2:1-11"
     ]
   },
   {

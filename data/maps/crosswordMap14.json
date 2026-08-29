@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-083",
+  "id": "crossword-map-093",
   "title": "E-8",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###요나#벧#",
-    "####사무엘하",
-    "##베드로###",
-    "##드#####",
-    "#향로#####",
-    "##후대####",
-    "예언서#####",
-    "#약######"
+    "######종#",
+    "#####면류관",
+    "###요나##대",
+    "####아브라함",
+    "###하만#반#",
+    "호리병박####",
+    "###국####",
+    "###서####"
   ],
   "cells": [
     {
       "number": 1,
+      "answer": "종류",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "kind"
+    },
+    {
+      "number": 2,
+      "answer": "면류관",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "crown"
+    },
+    {
+      "number": 3,
+      "answer": "관대함",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 3,
+      "wordId": "generosity"
+    },
+    {
+      "number": 4,
       "answer": "요나",
       "direction": "across",
-      "row": 0,
+      "row": 2,
       "col": 3,
       "length": 2,
       "wordId": "jonah"
     },
     {
-      "number": 2,
-      "answer": "나사로",
-      "direction": "down",
-      "row": 0,
-      "col": 4,
-      "length": 3,
-      "wordId": "lazarus"
-    },
-    {
-      "number": 3,
-      "answer": "벧엘",
-      "direction": "down",
-      "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "bethel"
-    },
-    {
-      "number": 4,
-      "answer": "사무엘하",
-      "direction": "across",
-      "row": 1,
-      "col": 4,
-      "length": 4,
-      "wordId": "secondsamuel"
-    },
-    {
       "number": 5,
-      "answer": "베드로",
-      "direction": "across",
+      "answer": "나아만",
+      "direction": "down",
       "row": 2,
-      "col": 2,
+      "col": 4,
       "length": 3,
-      "wordId": "peter"
+      "wordId": "naaman"
     },
     {
       "number": 6,
-      "answer": "베드로후서",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 5,
-      "wordId": "secondpeter"
+      "answer": "아브라함",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "abraham"
     },
     {
       "number": 7,
-      "answer": "향로",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
+      "answer": "라반",
+      "direction": "down",
+      "row": 3,
+      "col": 6,
       "length": 2,
-      "wordId": "censer"
+      "wordId": "laban"
     },
     {
       "number": 8,
-      "answer": "후대",
+      "answer": "하만",
       "direction": "across",
-      "row": 5,
-      "col": 2,
+      "row": 4,
+      "col": 3,
       "length": 2,
-      "wordId": "hospitality"
+      "wordId": "haman"
     },
     {
       "number": 9,
-      "answer": "예언서",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 3,
-      "wordId": "propheticbooks"
+      "answer": "하박국서",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-하박국서"
     },
     {
       "number": 10,
-      "answer": "언약",
-      "direction": "down",
-      "row": 6,
-      "col": 1,
-      "length": 2,
-      "wordId": "covenant"
+      "answer": "호리병박",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "entry-호리병박"
     }
   ]
 }

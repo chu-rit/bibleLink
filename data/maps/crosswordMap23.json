@@ -1,204 +1,204 @@
 {
-  "id": "crossword-map-023b",
+  "id": "crossword-map-099",
   "title": "H-3",
   "difficulty": 2.6,
   "width": 12,
   "height": 12,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####스미다#게델##",
-    "#####스###라마#",
-    "####벳바세스##하눈",
-    "##도비아##닷딤홋시#",
-    "##피#놋#####옷#",
-    "빌레도#########",
-    "산#시브월#######",
-    "#깁#엘########",
-    "#사아라임#######",
-    "#임#해########",
-    "###로########",
-    "#요한이서#######"
+    "#######바알랏브엘",
+    "##########울#",
+    "##########래#",
+    "########삽브대#",
+    "#########엘##",
+    "#######그마랴##",
+    "###도피성#데#다윗#",
+    "뻐꾸기##막헬롯####",
+    "##트###레#####",
+    "식그론#베레스2####",
+    "#무#미가#######",
+    "#엘가나########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "스미다",
+      "answer": "바알랏브엘",
       "direction": "across",
       "row": 0,
-      "col": 4,
-      "length": 3,
-      "wordId": "shemida"
+      "col": 7,
+      "length": 5,
+      "wordId": "entry-바알랏-브엘"
     },
     {
       "number": 2,
-      "answer": "미스바",
+      "answer": "브울래대",
       "direction": "down",
       "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "mizpah"
+      "col": 10,
+      "length": 4,
+      "wordId": "peullethai"
     },
     {
       "number": 3,
-      "answer": "게델",
+      "answer": "삽브대",
       "direction": "across",
-      "row": 0,
+      "row": 3,
       "col": 8,
-      "length": 2,
-      "wordId": "geder"
+      "length": 3,
+      "wordId": "shabbethai"
     },
     {
       "number": 4,
-      "answer": "델라",
+      "answer": "브엘랴다",
       "direction": "down",
-      "row": 0,
+      "row": 3,
       "col": 9,
-      "length": 2,
-      "wordId": "telah"
+      "length": 4,
+      "wordId": "beeliada"
     },
     {
       "number": 5,
-      "answer": "라마",
-      "direction": "across",
-      "row": 1,
-      "col": 9,
-      "length": 2,
-      "wordId": "ramah"
+      "answer": "그데롯",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "gederoth"
     },
     {
       "number": 6,
-      "answer": "마하시옷",
-      "direction": "down",
-      "row": 1,
-      "col": 10,
-      "length": 4,
-      "wordId": "mahazioth"
+      "answer": "그마랴",
+      "direction": "across",
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "gemariah"
     },
     {
       "number": 7,
-      "answer": "벳아놋",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
+      "answer": "도피성",
+      "direction": "across",
+      "row": 6,
+      "col": 3,
       "length": 3,
-      "wordId": "entry-벳-아놋"
+      "wordId": "citiesofrefuge"
     },
     {
       "number": 8,
-      "answer": "벳바세스",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "entry-벳-바세스"
+      "answer": "성막",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "tabernacle"
     },
     {
       "number": 9,
-      "answer": "스닷",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
+      "answer": "다윗",
+      "direction": "across",
+      "row": 6,
+      "col": 9,
       "length": 2,
-      "wordId": "zedad"
+      "wordId": "david"
     },
     {
       "number": 10,
-      "answer": "하눈",
+      "answer": "뻐꾸기",
       "direction": "across",
-      "row": 2,
-      "col": 10,
-      "length": 2,
-      "wordId": "hanun"
+      "row": 7,
+      "col": 0,
+      "length": 3,
+      "wordId": "cuckoo"
     },
     {
       "number": 11,
-      "answer": "도피도시",
+      "answer": "기트론",
       "direction": "down",
-      "row": 3,
+      "row": 7,
       "col": 2,
-      "length": 4,
-      "wordId": "entry-도피 도시"
+      "length": 3,
+      "wordId": "kitron"
     },
     {
       "number": 12,
-      "answer": "도비아",
+      "answer": "막헬롯",
       "direction": "across",
-      "row": 3,
-      "col": 2,
+      "row": 7,
+      "col": 5,
       "length": 3,
-      "wordId": "tobiah"
+      "wordId": "makheloth"
     },
     {
       "number": 13,
-      "answer": "닷딤홋시",
-      "direction": "across",
-      "row": 3,
-      "col": 7,
-      "length": 4,
-      "wordId": "entry-닷딤-홋시"
+      "answer": "헬레스",
+      "direction": "down",
+      "row": 7,
+      "col": 6,
+      "length": 3,
+      "wordId": "helez"
     },
     {
       "number": 14,
-      "answer": "빌레도",
+      "answer": "식그론",
       "direction": "across",
-      "row": 5,
+      "row": 9,
       "col": 0,
       "length": 3,
-      "wordId": "philetus"
+      "wordId": "shikkeron"
     },
     {
       "number": 15,
-      "answer": "빌산",
+      "answer": "그무엘",
       "direction": "down",
-      "row": 5,
-      "col": 0,
-      "length": 2,
-      "wordId": "bilshan"
+      "row": 9,
+      "col": 1,
+      "length": 3,
+      "wordId": "kemuel"
     },
     {
       "number": 16,
-      "answer": "시브월",
+      "answer": "베레스2",
       "direction": "across",
-      "row": 6,
-      "col": 2,
-      "length": 3,
-      "wordId": "ziv"
+      "row": 9,
+      "col": 4,
+      "length": 4,
+      "wordId": "perez"
     },
     {
       "number": 17,
-      "answer": "브엘라해로이",
+      "answer": "베가",
       "direction": "down",
-      "row": 6,
-      "col": 3,
-      "length": 6,
-      "wordId": "entry-브엘-라해-로이"
+      "row": 9,
+      "col": 4,
+      "length": 2,
+      "wordId": "pekah"
     },
     {
       "number": 18,
-      "answer": "깁사임",
-      "direction": "down",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "kibzaim"
+      "answer": "미가",
+      "direction": "across",
+      "row": 10,
+      "col": 3,
+      "length": 2,
+      "wordId": "micah"
     },
     {
       "number": 19,
-      "answer": "사아라임",
-      "direction": "across",
-      "row": 8,
-      "col": 1,
-      "length": 4,
-      "wordId": "shaaraim"
+      "answer": "미나",
+      "direction": "down",
+      "row": 10,
+      "col": 3,
+      "length": 2,
+      "wordId": "mina"
     },
     {
       "number": 20,
-      "answer": "요한이서",
+      "answer": "엘가나",
       "direction": "across",
       "row": 11,
       "col": 1,
-      "length": 4,
-      "wordId": "secondjohn"
+      "length": 3,
+      "wordId": "elkanah"
     }
   ]
 }

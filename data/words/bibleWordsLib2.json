@@ -478,16 +478,6 @@
     ]
   },
   {
-    "id": "galatians",
-    "word": "갈라디아서",
-    "definition": "그리스도인의 자유와 믿음으로 의롭게 되는 일을 설명한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "갈라디아서 1:1-5",
-      "갈라디아서 5:1-6"
-    ]
-  },
-  {
     "id": "galal",
     "word": "갈랄",
     "definition": "바빌론 유배에서 돌아온 레위 사람으로 예배에서 섬긴 자",
@@ -1218,25 +1208,6 @@
     ]
   },
   {
-    "id": "firstcorinthians",
-    "word": "고린도전서",
-    "definition": "고린도 회중의 문제를 바로잡고 사랑과 부활을 설명한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "고린도 전서 1:1-9",
-      "고린도 전서 13장"
-    ]
-  },
-  {
-    "id": "secondcorinthians",
-    "word": "고린도후서",
-    "definition": "바울이 자신의 봉사와 고린도 회중에 대한 애정을 설명한 편지",
-    "difficulty": 2,
-    "references": [
-      "고린도 후서 1:1-7"
-    ]
-  },
-  {
     "id": "gomer",
     "word": "고멜",
     "definition": "노아의 손자이자 야벳의 아들로 대홍수 후에 태어난 사람",
@@ -1351,16 +1322,6 @@
     "references": [
       "골로새서 1:7, 8",
       "골로새서 2:1"
-    ]
-  },
-  {
-    "id": "colossians",
-    "word": "골로새서",
-    "definition": "그리스도의 역할과 새 인간을 입는 일에 관해 설명한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "골로새서 1:1-20",
-      "골로새서 3:1-14"
     ]
   },
   {

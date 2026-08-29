@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-002-v2",
+  "id": "crossword-map-088",
   "title": "E-2",
   "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####그###",
-    "####리#에덴",
-    "##다마스쿠스#",
-    "천#니#도#더#",
-    "사무엘상####",
-    "#지######",
-    "회개######",
-    "당#######"
+    "##욥##컴##",
+    "##기적#퍼##",
+    "###그리스도인",
+    "병거#리####",
+    "#머#스####",
+    "그리스도####",
+    "##불#####",
+    "바빌론#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "그리스도",
+      "answer": "욥기",
       "direction": "down",
       "row": 0,
-      "col": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "jobbook"
+    },
+    {
+      "number": 2,
+      "answer": "컴퍼스",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "compass"
+    },
+    {
+      "number": 3,
+      "answer": "기적",
+      "direction": "across",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "miracles"
+    },
+    {
+      "number": 4,
+      "answer": "적그리스도",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 5,
+      "wordId": "antichrist"
+    },
+    {
+      "number": 5,
+      "answer": "그리스도인",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 5,
+      "wordId": "christian"
+    },
+    {
+      "number": 6,
+      "answer": "병거",
+      "direction": "across",
+      "row": 3,
+      "col": 0,
+      "length": 2,
+      "wordId": "chariot"
+    },
+    {
+      "number": 7,
+      "answer": "거머리",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "leech"
+    },
+    {
+      "number": 8,
+      "answer": "그리스도",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
       "length": 4,
       "wordId": "christ"
     },
     {
-      "number": 2,
-      "answer": "에스더",
-      "direction": "down",
-      "row": 1,
-      "col": 6,
-      "length": 3,
-      "wordId": "esther"
-    },
-    {
-      "number": 3,
-      "answer": "에덴",
-      "direction": "across",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "eden"
-    },
-    {
-      "number": 4,
-      "answer": "다니엘",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "daniel"
-    },
-    {
-      "number": 5,
-      "answer": "다마스쿠스",
-      "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 5,
-      "wordId": "damascus"
-    },
-    {
-      "number": 6,
-      "answer": "천사",
-      "direction": "down",
-      "row": 3,
-      "col": 0,
-      "length": 2,
-      "wordId": "angel"
-    },
-    {
-      "number": 7,
-      "answer": "사무엘상",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "firstsamuel"
-    },
-    {
-      "number": 8,
-      "answer": "무지개",
-      "direction": "down",
-      "row": 4,
-      "col": 1,
-      "length": 3,
-      "wordId": "rainbow"
-    },
-    {
       "number": 9,
-      "answer": "회개",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 2,
-      "wordId": "repentance"
+      "answer": "스불론",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "zebulun"
     },
     {
       "number": 10,
-      "answer": "회당",
-      "direction": "down",
-      "row": 6,
+      "answer": "바빌론",
+      "direction": "across",
+      "row": 7,
       "col": 0,
-      "length": 2,
-      "wordId": "synagogue"
+      "length": 3,
+      "wordId": "babylon"
     }
   ]
 }

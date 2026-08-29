@@ -1,111 +1,110 @@
 {
-  "id": "crossword-map-037",
+  "id": "crossword-map-100",
   "title": "E-17",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####바##",
-    "####베다니#",
-    "######네#",
-    "#####세베대",
-    "##열왕기상#해",
-    "##왕#록###",
-    "수준기#####",
-    "##하#####"
+    "####뇌물##",
+    "#####수##",
+    "####여리고#",
+    "####호#삼실",
+    "####아###",
+    "##제우스###",
+    "예언자#####",
+    "#약######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "바다",
-      "direction": "down",
+      "answer": "뇌물",
+      "direction": "across",
       "row": 0,
-      "col": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "sea"
+      "wordId": "bribe"
     },
     {
       "number": 2,
-      "answer": "베다니",
-      "direction": "across",
-      "row": 1,
-      "col": 4,
+      "answer": "물수리",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
       "length": 3,
-      "wordId": "bethany"
+      "wordId": "osprey"
     },
     {
       "number": 3,
-      "answer": "니네베",
+      "answer": "여호아스",
       "direction": "down",
-      "row": 1,
-      "col": 6,
-      "length": 3,
-      "wordId": "nineveh"
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "jehoash"
     },
     {
       "number": 4,
-      "answer": "세상",
-      "direction": "down",
-      "row": 3,
-      "col": 5,
-      "length": 2,
-      "wordId": "world"
+      "answer": "여리고",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "jericho"
     },
     {
       "number": 5,
-      "answer": "세베대",
-      "direction": "across",
-      "row": 3,
-      "col": 5,
-      "length": 3,
-      "wordId": "zebedee"
+      "answer": "고삼",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "cosam"
     },
     {
       "number": 6,
-      "answer": "대해",
-      "direction": "down",
+      "answer": "삼실",
+      "direction": "across",
       "row": 3,
-      "col": 7,
+      "col": 6,
       "length": 2,
-      "wordId": "entry-대해"
+      "wordId": "tow"
     },
     {
       "number": 7,
-      "answer": "열왕기상",
-      "direction": "across",
-      "row": 4,
+      "answer": "제자",
+      "direction": "down",
+      "row": 5,
       "col": 2,
-      "length": 4,
-      "wordId": "firstkings"
+      "length": 2,
+      "wordId": "disciple"
     },
     {
       "number": 8,
-      "answer": "열왕기하",
-      "direction": "down",
-      "row": 4,
+      "answer": "제우스",
+      "direction": "across",
+      "row": 5,
       "col": 2,
-      "length": 4,
-      "wordId": "secondkings",
-      "clue": "엘리야의 승천과 엘리사의 봉사를 시작으로 유다와 이스라엘 왕들의 치리를 기록한 책"
+      "length": 3,
+      "wordId": "zeus"
     },
     {
       "number": 9,
-      "answer": "기록",
-      "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "writing"
-    },
-    {
-      "number": 10,
-      "answer": "수준기",
+      "answer": "예언자",
       "direction": "across",
       "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "entry-수준기"
+      "wordId": "prophet"
+    },
+    {
+      "number": 10,
+      "answer": "언약",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "covenant"
     }
   ]
 }

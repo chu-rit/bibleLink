@@ -390,16 +390,6 @@
     ]
   },
   {
-    "id": "jamesletter",
-    "word": "야고보서",
-    "definition": "믿음이 행동으로 나타나야 한다고 가르치는 성경 책",
-    "difficulty": 2,
-    "references": [
-      "야고보서 1:22-27",
-      "야고보서 2:14-26"
-    ]
-  },
-  {
     "id": "jacob",
     "word": "야곱",
     "definition": "이스라엘이라는 이름을 받은 사람으로, 열두 지파의 조상이 되었다",
@@ -525,16 +515,6 @@
     "difficulty": 2,
     "references": [
       "사도행전 19:1-10"
-    ]
-  },
-  {
-    "id": "ephesians",
-    "word": "에베소서",
-    "definition": "그리스도인 회중의 연합과 새 인간에 관해 설명한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "에베소서 1:1-10",
-      "에베소서 4:1-6"
     ]
   },
   {
@@ -803,42 +783,6 @@
     ]
   },
   {
-    "id": "firstchronicles",
-    "word": "역대기상",
-    "definition": "아담부터 다윗까지의 계보와 다윗의 통치를 기록한 성경 책",
-    "difficulty": 1,
-    "references": [
-      "역대기상 1:1; 11:1-3"
-    ]
-  },
-  {
-    "id": "secondchronicles",
-    "word": "역대기하",
-    "definition": "솔로몬부터 바빌론 유배와 귀환 명령까지의 유다 역사를 기록한 책",
-    "difficulty": 1,
-    "references": [
-      "역대기하 1:1; 36:15-23"
-    ]
-  },
-  {
-    "id": "firstkings",
-    "word": "열왕기상",
-    "definition": "솔로몬의 통치와 이스라엘 왕국이 분열된 과정을 기록한 성경 책",
-    "difficulty": 1,
-    "references": [
-      "열왕기상 3:5-12; 12:16-20"
-    ]
-  },
-  {
-    "id": "secondkings",
-    "word": "열왕기하",
-    "definition": "분열된 왕국들의 역사와 사마리아와 예루살렘의 멸망을 기록한 성경 책",
-    "difficulty": 1,
-    "references": [
-      "열왕기하 17:5-7; 25:8-11"
-    ]
-  },
-  {
     "id": "inspiration",
     "word": "영감",
     "definition": "하느님이 성경 필자들이 기록하도록 자신의 생각을 전달하신 작용",
@@ -856,15 +800,6 @@
     "references": [
       "예레미야 1:4-10",
       "예레미야 29:10-14"
-    ]
-  },
-  {
-    "id": "lamentations",
-    "word": "예레미야애가",
-    "definition": "예루살렘이 멸망한 뒤 예레미야가 슬픔과 희망을 표현한 시 모음",
-    "difficulty": 2,
-    "references": [
-      "예레미야애가 1:1-5; 3:21-24"
     ]
   },
   {
@@ -1118,42 +1053,6 @@
     ]
   },
   {
-    "id": "johnsgospel",
-    "word": "요한복음",
-    "definition": "예수가 하느님의 아들이라는 믿음을 갖도록 기록된 복음서",
-    "difficulty": 2,
-    "references": [
-      "요한복음 20:30, 31"
-    ]
-  },
-  {
-    "id": "thirdjohn",
-    "word": "요한삼서",
-    "definition": "동료 그리스도인에게 후대와 진리를 계속 행하도록 권한 편지",
-    "difficulty": 2,
-    "references": [
-      "요한삼서 3-8"
-    ]
-  },
-  {
-    "id": "secondjohn",
-    "word": "요한이서",
-    "definition": "진리와 사랑 안에서 계속 걷고 거짓 가르침을 경계하도록 권한 편지",
-    "difficulty": 2,
-    "references": [
-      "요한 2서 4-11절"
-    ]
-  },
-  {
-    "id": "firstjohn",
-    "word": "요한일서",
-    "definition": "하느님에 대한 사랑과 형제 사랑을 실천하도록 권하는 편지",
-    "difficulty": 2,
-    "references": [
-      "요한 1서 4:7-12"
-    ]
-  },
-  {
     "id": "jobbook",
     "word": "욥기",
     "definition": "심한 시련 속에서도 충절을 지킨 사람과 하느님의 공의를 다룬 성경 책",
@@ -1233,15 +1132,6 @@
     "references": [
       "창세기 29:35",
       "열왕기상 12:20"
-    ]
-  },
-  {
-    "id": "judesletter",
-    "word": "유다서",
-    "definition": "회중에 몰래 들어온 부도덕한 사람들을 경고하는 편지",
-    "difficulty": 2,
-    "references": [
-      "유다서 3-7절"
     ]
   },
   {

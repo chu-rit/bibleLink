@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-016b",
+  "id": "crossword-map-095",
   "title": "E-10",
   "difficulty": 1.5,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "##열#####",
-    "##왕#####",
-    "신명기#####",
-    "##하갈####",
-    "###그##사랑",
-    "###미루나무#",
-    "#제우스##엘#",
-    "창자######"
+    "#######솔",
+    "###아하수에로",
+    "###비#염#몬",
+    "###가젤###",
+    "##생일####",
+    "#무명#####",
+    "#지######",
+    "중개자#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "열왕기하",
+      "answer": "솔로몬",
       "direction": "down",
       "row": 0,
-      "col": 2,
-      "length": 4,
-      "wordId": "secondkings"
+      "col": 7,
+      "length": 3,
+      "wordId": "solomon"
     },
     {
       "number": 2,
-      "answer": "신명기",
+      "answer": "아하수에로",
       "direction": "across",
-      "row": 2,
-      "col": 0,
-      "length": 3,
-      "wordId": "deuteronomy"
+      "row": 1,
+      "col": 3,
+      "length": 5,
+      "wordId": "ahasuerus"
     },
     {
       "number": 3,
-      "answer": "하갈",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 2,
-      "wordId": "hagar"
+      "answer": "아비가일",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "abigail"
     },
     {
       "number": 4,
-      "answer": "갈그미스",
+      "answer": "수염",
       "direction": "down",
-      "row": 3,
-      "col": 3,
-      "length": 4,
-      "wordId": "carchemish"
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "beard"
     },
     {
       "number": 5,
-      "answer": "사무엘",
-      "direction": "down",
-      "row": 4,
-      "col": 6,
-      "length": 3,
-      "wordId": "samuel"
+      "answer": "가젤",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "gazelle"
     },
     {
       "number": 6,
-      "answer": "사랑",
+      "answer": "생일",
       "direction": "across",
       "row": 4,
-      "col": 6,
+      "col": 2,
       "length": 2,
-      "wordId": "love"
+      "wordId": "birthday"
     },
     {
       "number": 7,
-      "answer": "미루나무",
-      "direction": "across",
-      "row": 5,
-      "col": 3,
-      "length": 4,
-      "wordId": "poplars"
+      "answer": "생명",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "life"
     },
     {
       "number": 8,
-      "answer": "제우스",
+      "answer": "무명",
       "direction": "across",
-      "row": 6,
+      "row": 5,
       "col": 1,
-      "length": 3,
-      "wordId": "zeus"
+      "length": 2,
+      "wordId": "cotton"
     },
     {
       "number": 9,
-      "answer": "제자",
+      "answer": "무지개",
       "direction": "down",
-      "row": 6,
+      "row": 5,
       "col": 1,
-      "length": 2,
-      "wordId": "disciple"
+      "length": 3,
+      "wordId": "rainbow"
     },
     {
       "number": 10,
-      "answer": "창자",
+      "answer": "중개자",
       "direction": "across",
       "row": 7,
       "col": 0,
-      "length": 2,
-      "wordId": "intestines"
+      "length": 3,
+      "wordId": "mediator"
     }
   ]
 }

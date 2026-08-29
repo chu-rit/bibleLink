@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-003",
+  "id": "crossword-map-089",
   "title": "E-3",
   "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######창조",
-    "######세#",
-    "####역대기하",
-    "##예#대##와",
-    "지#레위기###",
-    "팡#미#상###",
-    "이사야#####",
-    "#도######"
+    "######호#",
+    "######세겜",
+    "######아#",
+    "####예언서#",
+    "###목수###",
+    "#감독자####",
+    "지옥######",
+    "혜#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "창세기",
+      "answer": "호세아서",
       "direction": "down",
       "row": 0,
       "col": 6,
-      "length": 3,
-      "wordId": "genesis"
+      "length": 4,
+      "wordId": "entry-호세아서"
     },
     {
       "number": 2,
-      "answer": "창조",
+      "answer": "세겜",
       "direction": "across",
-      "row": 0,
+      "row": 1,
       "col": 6,
       "length": 2,
-      "wordId": "creation"
+      "wordId": "shechem"
     },
     {
       "number": 3,
-      "answer": "역대기상",
+      "answer": "예수",
       "direction": "down",
-      "row": 2,
+      "row": 3,
       "col": 4,
-      "length": 4,
-      "wordId": "firstchronicles"
+      "length": 2,
+      "wordId": "jesus"
     },
     {
       "number": 4,
-      "answer": "역대기하",
+      "answer": "예언서",
       "direction": "across",
-      "row": 2,
+      "row": 3,
       "col": 4,
-      "length": 4,
-      "wordId": "secondchronicles"
+      "length": 3,
+      "wordId": "propheticbooks"
     },
     {
       "number": 5,
-      "answer": "하와",
+      "answer": "목자",
       "direction": "down",
-      "row": 2,
-      "col": 7,
+      "row": 4,
+      "col": 3,
       "length": 2,
-      "wordId": "eve"
+      "wordId": "shepherd"
     },
     {
       "number": 6,
-      "answer": "예레미야",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "jeremiah"
+      "answer": "목수",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "carpenter"
     },
     {
       "number": 7,
-      "answer": "지팡이",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
+      "answer": "감독자",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
       "length": 3,
-      "wordId": "staff"
+      "wordId": "overseer"
     },
     {
       "number": 8,
-      "answer": "레위기",
-      "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "leviticus"
+      "answer": "감옥",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 2,
+      "wordId": "prison"
     },
     {
       "number": 9,
-      "answer": "이사야",
+      "answer": "지옥",
       "direction": "across",
       "row": 6,
       "col": 0,
-      "length": 3,
-      "wordId": "isaiah"
+      "length": 2,
+      "wordId": "hell"
     },
     {
       "number": 10,
-      "answer": "사도",
+      "answer": "지혜",
       "direction": "down",
       "row": 6,
-      "col": 1,
+      "col": 0,
       "length": 2,
-      "wordId": "apostle"
+      "wordId": "wisdom"
     }
   ]
 }

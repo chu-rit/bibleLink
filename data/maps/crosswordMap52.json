@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-052",
+  "id": "crossword-map-101",
   "title": "E-22",
   "difficulty": 1.5,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####속죄일",
-    "####경건##",
-    "#####제사장",
-    "######사#",
-    "####비둘기똥",
-    "####둘###",
-    "##구름기둥##",
-    "보아스#####"
+    "######안수",
+    "######드#",
+    "#####모레셋",
+    "##삽넉가래##",
+    "###가####",
+    "성전#래####",
+    "#쟁기질####",
+    "##도#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "속건제",
+      "answer": "안드레",
       "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 6,
       "length": 3,
-      "wordId": "guiltoffering"
+      "wordId": "andrew"
     },
     {
       "number": 2,
-      "answer": "속죄일",
+      "answer": "안수",
       "direction": "across",
       "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "dayofatonement"
+      "col": 6,
+      "length": 2,
+      "wordId": "layingonofhands"
     },
     {
       "number": 3,
-      "answer": "경건",
-      "direction": "across",
-      "row": 1,
-      "col": 4,
+      "answer": "모래",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
       "length": 2,
-      "wordId": "godlydevotion"
+      "wordId": "sand"
     },
     {
       "number": 4,
-      "answer": "제사장",
+      "answer": "모레셋",
       "direction": "across",
       "row": 2,
       "col": 5,
       "length": 3,
-      "wordId": "priest"
+      "wordId": "moresheth"
     },
     {
       "number": 5,
-      "answer": "사사기",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "judgesbook"
+      "answer": "삽넉가래",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 4,
+      "wordId": "shovel"
     },
     {
       "number": 6,
-      "answer": "비둘기똥",
-      "direction": "across",
-      "row": 4,
-      "col": 4,
+      "answer": "넉가래질",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
       "length": 4,
-      "wordId": "entry-비둘기 똥"
+      "wordId": "winnowing"
     },
     {
       "number": 7,
-      "answer": "비둘기",
-      "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 3,
-      "wordId": "dove"
+      "answer": "성전",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "temple"
     },
     {
       "number": 8,
-      "answer": "구름기둥",
-      "direction": "across",
-      "row": 6,
-      "col": 2,
-      "length": 4,
-      "wordId": "cloudpillar"
+      "answer": "전쟁",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 2,
+      "wordId": "war"
     },
     {
       "number": 9,
-      "answer": "구스",
+      "answer": "쟁기질",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "plowing"
+    },
+    {
+      "number": 10,
+      "answer": "기도",
       "direction": "down",
       "row": 6,
       "col": 2,
       "length": 2,
-      "wordId": "cush"
-    },
-    {
-      "number": 10,
-      "answer": "보아스",
-      "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "boaz"
+      "wordId": "prayer"
     }
   ]
 }

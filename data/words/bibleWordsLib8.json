@@ -336,15 +336,6 @@
     ]
   },
   {
-    "id": "firstsamuel",
-    "word": "사무엘상",
-    "definition": "사무엘과 사울과 다윗의 초기 활동을 중심으로 기록한 성경 책",
-    "difficulty": 1,
-    "references": [
-      "사무엘상 3:19-21; 16:1-13"
-    ]
-  },
-  {
     "id": "entry-사무엘서",
     "word": "사무엘서",
     "definition": "히브리어 성경의 두 책으로 사무엘과 다윗 왕국의 역사를 기록함",
@@ -352,15 +343,6 @@
     "references": [
       "역대기상 29:29",
       "사무엘상 10:25"
-    ]
-  },
-  {
-    "id": "secondsamuel",
-    "word": "사무엘하",
-    "definition": "다윗의 통치와 하느님께서 그와 맺으신 왕국 계약을 기록한 성경 책",
-    "difficulty": 1,
-    "references": [
-      "사무엘하 5:3-5; 7:12-16"
     ]
   },
   {
@@ -437,15 +419,6 @@
     "difficulty": 3,
     "references": [
       "역대기상 2:3-5, 25, 33"
-    ]
-  },
-  {
-    "id": "judgesbook",
-    "word": "사사기",
-    "definition": "이스라엘이 약속의 땅에 정착한 뒤 재판관들이 활동한 시대의 기록",
-    "difficulty": 1,
-    "references": [
-      "사사기 2:16-19"
     ]
   },
   {

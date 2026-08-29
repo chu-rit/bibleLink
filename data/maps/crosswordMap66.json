@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-066",
+  "id": "crossword-map-105",
   "title": "N-26",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#므########",
-    "#깃#마가복음###",
-    "#도시#이##겟##",
-    "##글레오바#세펠라",
-    "사드락##알#마#핫",
-    "아####살모네##",
-    "완####리####",
-    "####벨사살###",
-    "######레###",
-    "######겟###"
+    "#비단###무###",
+    "#늘#네##시숙결혼",
+    "#미드르닷##곳##",
+    "#늘#갈#바알브릿#",
+    "뿔##사프란#놋##",
+    "북##레######",
+    "살만에셀######",
+    "무#########",
+    "사령관#######",
+    "##유혹######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "므깃도",
+      "answer": "비늘미늘",
       "direction": "down",
       "row": 0,
       "col": 1,
-      "length": 3,
-      "wordId": "megiddo"
+      "length": 4,
+      "wordId": "scales"
     },
     {
       "number": 2,
-      "answer": "마가복음",
+      "answer": "비단",
       "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 4,
-      "wordId": "marksgospel"
+      "row": 0,
+      "col": 1,
+      "length": 2,
+      "wordId": "silk"
     },
     {
       "number": 3,
-      "answer": "가이오",
+      "answer": "무시",
       "direction": "down",
-      "row": 1,
-      "col": 4,
-      "length": 3,
-      "wordId": "gaius"
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "mushi"
     },
     {
       "number": 4,
-      "answer": "도시",
-      "direction": "across",
-      "row": 2,
-      "col": 1,
-      "length": 2,
-      "wordId": "city"
+      "answer": "네르갈사레셀",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 6,
+      "wordId": "entry-네르갈-사레셀"
     },
     {
       "number": 5,
-      "answer": "시글락",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "ziklag"
+      "answer": "시숙결혼",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-시숙 결혼"
     },
     {
       "number": 6,
-      "answer": "겟세마네",
+      "answer": "숙곳브놋",
       "direction": "down",
-      "row": 2,
+      "row": 1,
       "col": 7,
       "length": 4,
-      "wordId": "gethsemane"
+      "wordId": "entry-숙곳-브놋"
     },
     {
       "number": 7,
-      "answer": "글레오바",
+      "answer": "미드르닷",
       "direction": "across",
-      "row": 3,
-      "col": 2,
+      "row": 2,
+      "col": 1,
       "length": 4,
-      "wordId": "cleopas"
+      "wordId": "mithredath"
     },
     {
       "number": 8,
-      "answer": "바알살리사",
+      "answer": "바란",
       "direction": "down",
       "row": 3,
       "col": 5,
-      "length": 5,
-      "wordId": "entry-바알-살리사"
+      "length": 2,
+      "wordId": "paran"
     },
     {
       "number": 9,
-      "answer": "세펠라",
+      "answer": "바알브릿",
       "direction": "across",
       "row": 3,
-      "col": 7,
-      "length": 3,
-      "wordId": "shephelah"
+      "col": 5,
+      "length": 4,
+      "wordId": "entry-바알-브릿"
     },
     {
       "number": 10,
-      "answer": "라핫",
+      "answer": "뿔북살무사",
       "direction": "down",
-      "row": 3,
-      "col": 9,
-      "length": 2,
-      "wordId": "lahad"
+      "row": 4,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-뿔북살무사"
     },
     {
       "number": 11,
-      "answer": "사드락",
+      "answer": "사프란",
       "direction": "across",
       "row": 4,
-      "col": 0,
+      "col": 3,
       "length": 3,
-      "wordId": "shadrach"
+      "wordId": "saffron"
     },
     {
       "number": 12,
-      "answer": "사아완",
-      "direction": "down",
-      "row": 4,
+      "answer": "살만에셀",
+      "direction": "across",
+      "row": 6,
       "col": 0,
-      "length": 3,
-      "wordId": "zaavan"
+      "length": 4,
+      "wordId": "shalmaneser"
     },
     {
       "number": 13,
-      "answer": "살모네",
+      "answer": "사령관",
       "direction": "across",
-      "row": 5,
-      "col": 5,
+      "row": 8,
+      "col": 0,
       "length": 3,
-      "wordId": "salmone"
+      "wordId": "entry-사령관"
     },
     {
       "number": 14,
-      "answer": "벨사살",
-      "direction": "across",
-      "row": 7,
-      "col": 4,
-      "length": 3,
-      "wordId": "belshazzar"
+      "answer": "관유",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 2,
+      "wordId": "anointingoil"
     },
     {
       "number": 15,
-      "answer": "살레겟",
-      "direction": "down",
-      "row": 7,
-      "col": 6,
-      "length": 3,
-      "wordId": "shallecheth"
+      "answer": "유혹",
+      "direction": "across",
+      "row": 9,
+      "col": 2,
+      "length": 2,
+      "wordId": "temptation"
     }
   ]
 }

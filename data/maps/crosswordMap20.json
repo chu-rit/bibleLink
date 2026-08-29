@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-020",
+  "id": "crossword-map-098",
   "title": "N-8",
   "difficulty": 2.1,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#########관",
-    "#####감##온유",
-    "#####사도행전#",
-    "######르#함#",
-    "#####누가###",
-    "#####가####",
-    "###요한복음###",
-    "#미디안#음####",
-    "삼갈#나홀#####",
-    "손#########"
+    "#######타##",
+    "######하르보나",
+    "#####에#타#사",
+    "###펠릭스#로#로",
+    "#####라기스##",
+    "#사#담##록###",
+    "미루나무#부관###",
+    "#헨#스게와####",
+    "####헨#####",
+    "##뿔뿔나팔####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "관유",
+      "answer": "타르타로스",
       "direction": "down",
       "row": 0,
-      "col": 9,
-      "length": 2,
-      "wordId": "anointingoil"
+      "col": 7,
+      "length": 5,
+      "wordId": "tartarus"
     },
     {
       "number": 2,
-      "answer": "감사",
-      "direction": "down",
+      "answer": "하르보나",
+      "direction": "across",
       "row": 1,
-      "col": 5,
-      "length": 2,
-      "wordId": "thanksgiving"
+      "col": 6,
+      "length": 4,
+      "wordId": "harbona"
     },
     {
       "number": 3,
-      "answer": "온전함",
+      "answer": "나사로",
       "direction": "down",
       "row": 1,
-      "col": 8,
+      "col": 9,
       "length": 3,
-      "wordId": "completeness"
+      "wordId": "lazarus"
     },
     {
       "number": 4,
-      "answer": "온유",
-      "direction": "across",
-      "row": 1,
-      "col": 8,
-      "length": 2,
-      "wordId": "mildness"
+      "answer": "에스라",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "ezra"
     },
     {
       "number": 5,
-      "answer": "사도행전",
+      "answer": "펠릭스",
       "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 4,
-      "wordId": "actsoftheapostles"
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "felix"
     },
     {
       "number": 6,
-      "answer": "도르가",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
+      "answer": "라기스",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
       "length": 3,
-      "wordId": "dorcas"
+      "wordId": "lachish"
     },
     {
       "number": 7,
-      "answer": "누가복음",
+      "answer": "기록관",
       "direction": "down",
       "row": 4,
-      "col": 5,
-      "length": 4,
-      "wordId": "lukesgospel"
+      "col": 6,
+      "length": 3,
+      "wordId": "recorder"
     },
     {
       "number": 8,
-      "answer": "누가",
-      "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 2,
-      "wordId": "luke"
+      "answer": "사루헨",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "sharuhen"
     },
     {
       "number": 9,
-      "answer": "요한복음",
-      "direction": "across",
-      "row": 6,
+      "answer": "담무스",
+      "direction": "down",
+      "row": 5,
       "col": 3,
-      "length": 4,
-      "wordId": "johnsgospel"
+      "length": 3,
+      "wordId": "entry-담무스"
     },
     {
       "number": 10,
-      "answer": "요안나",
-      "direction": "down",
+      "answer": "미루나무",
+      "direction": "across",
       "row": 6,
-      "col": 3,
-      "length": 3,
-      "wordId": "joanna"
+      "col": 0,
+      "length": 4,
+      "wordId": "poplars"
     },
     {
       "number": 11,
-      "answer": "미디안",
+      "answer": "부관",
       "direction": "across",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "midian"
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "adjutant"
     },
     {
       "number": 12,
-      "answer": "미갈",
+      "answer": "부와",
       "direction": "down",
-      "row": 7,
-      "col": 1,
+      "row": 6,
+      "col": 5,
       "length": 2,
-      "wordId": "michal"
+      "wordId": "puvah"
     },
     {
       "number": 13,
-      "answer": "삼갈",
+      "answer": "스게와",
       "direction": "across",
-      "row": 8,
-      "col": 0,
-      "length": 2,
-      "wordId": "shamgar"
+      "row": 7,
+      "col": 3,
+      "length": 3,
+      "wordId": "sceva"
     },
     {
       "number": 14,
-      "answer": "삼손",
+      "answer": "게헨나",
       "direction": "down",
-      "row": 8,
-      "col": 0,
-      "length": 2,
-      "wordId": "samson"
+      "row": 7,
+      "col": 4,
+      "length": 3,
+      "wordId": "gehenna"
     },
     {
       "number": 15,
-      "answer": "나홀",
+      "answer": "뿔뿔나팔",
       "direction": "across",
-      "row": 8,
-      "col": 3,
-      "length": 2,
-      "wordId": "nahor"
+      "row": 9,
+      "col": 2,
+      "length": 4,
+      "wordId": "horn"
     }
   ]
 }

@@ -704,25 +704,6 @@
     ]
   },
   {
-    "id": "firstthessalonians",
-    "word": "데살로니가전서",
-    "definition": "환난 가운데 충실한 데살로니가 회중을 칭찬하고 격려한 편지",
-    "difficulty": 2,
-    "references": [
-      "데살로니가 전서 1:1-10",
-      "데살로니가 전서 4:13-18"
-    ]
-  },
-  {
-    "id": "secondthessalonians",
-    "word": "데살로니가후서",
-    "definition": "여호와의 날에 관한 잘못된 생각을 바로잡은 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "데살로니가 후서 2:1-12"
-    ]
-  },
-  {
     "id": "theophilus",
     "word": "데오빌로",
     "definition": "누가가 자신의 복음서와 사도행전을 쓴 대상으로 존귀한 사람이라 불림",
@@ -1185,42 +1166,12 @@
     ]
   },
   {
-    "id": "titusletter",
-    "word": "디도서",
-    "definition": "회중을 조직하고 건전한 가르침을 따르도록 권한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "디도서 1:5-9",
-      "디도서 2:11-14"
-    ]
-  },
-  {
     "id": "timothy",
     "word": "디모데",
     "definition": "바울과 함께 좋은 소식을 전한 젊은 그리스도인",
     "difficulty": 2,
     "references": [
       "사도행전 16:1-3"
-    ]
-  },
-  {
-    "id": "firsttimothy",
-    "word": "디모데전서",
-    "definition": "회중을 감독하는 일과 건전한 가르침에 관한 바울의 편지",
-    "difficulty": 2,
-    "references": [
-      "디모데 전서 3:1-13",
-      "디모데 전서 4:12-16"
-    ]
-  },
-  {
-    "id": "secondtimothy",
-    "word": "디모데후서",
-    "definition": "바울이 죽음을 앞두고 디모데에게 충실히 봉사하도록 권한 편지",
-    "difficulty": 2,
-    "references": [
-      "디모데 후서 1:1-14",
-      "디모데 후서 4:6-8"
     ]
   },
   {

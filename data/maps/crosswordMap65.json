@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-065",
+  "id": "crossword-map-104",
   "title": "N-25",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###힛#슬#돕#증",
-    "###데살로니가전서",
-    "##세겔#브##리#",
-    "####마핫##품#",
-    "###시비#####",
-    "헤##브######",
-    "르##라헬#####",
-    "마하나임######",
-    "#드########",
-    "#락########"
+    "########사#",
+    "########마비",
+    "#########르",
+    "####베###아사",
+    "###페르시아#나#",
+    "##류#니#비티니아",
+    "사모트라케#야#아#",
+    "냥##이######",
+    "개##스미다####",
+    "#####볼####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "힛데겔",
+      "answer": "사마",
       "direction": "down",
       "row": 0,
-      "col": 3,
-      "length": 3,
-      "wordId": "hiddekel"
+      "col": 8,
+      "length": 2,
+      "wordId": "shama"
     },
     {
       "number": 2,
-      "answer": "슬로브핫",
-      "direction": "down",
-      "row": 0,
-      "col": 5,
-      "length": 4,
-      "wordId": "zelophehad"
-    },
-    {
-      "number": 3,
-      "answer": "돕가",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 2,
-      "wordId": "dophkah"
-    },
-    {
-      "number": 4,
-      "answer": "증서",
-      "direction": "down",
-      "row": 0,
-      "col": 9,
-      "length": 2,
-      "wordId": "deed"
-    },
-    {
-      "number": 5,
-      "answer": "데살로니가전서",
+      "answer": "마비",
       "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 7,
-      "wordId": "firstthessalonians"
-    },
-    {
-      "number": 6,
-      "answer": "전리품",
-      "direction": "down",
       "row": 1,
       "col": 8,
-      "length": 3,
-      "wordId": "spoil"
-    },
-    {
-      "number": 7,
-      "answer": "세겔",
-      "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 2,
-      "wordId": "shekel"
-    },
-    {
-      "number": 8,
-      "answer": "마핫",
-      "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 2,
-      "wordId": "mahath"
-    },
-    {
-      "number": 9,
-      "answer": "마비",
-      "direction": "down",
-      "row": 3,
-      "col": 4,
       "length": 2,
       "wordId": "paralysis"
     },
     {
-      "number": 10,
-      "answer": "시비",
+      "number": 3,
+      "answer": "비르사",
+      "direction": "down",
+      "row": 1,
+      "col": 9,
+      "length": 3,
+      "wordId": "birsha"
+    },
+    {
+      "number": 4,
+      "answer": "베르니케",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "bernice"
+    },
+    {
+      "number": 5,
+      "answer": "아나니아",
+      "direction": "down",
+      "row": 3,
+      "col": 8,
+      "length": 4,
+      "wordId": "ananias"
+    },
+    {
+      "number": 6,
+      "answer": "아사",
+      "direction": "across",
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "asa"
+    },
+    {
+      "number": 7,
+      "answer": "페르시아",
       "direction": "across",
       "row": 4,
       "col": 3,
+      "length": 4,
+      "wordId": "persia"
+    },
+    {
+      "number": 8,
+      "answer": "아비야",
+      "direction": "down",
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "abijah"
+    },
+    {
+      "number": 9,
+      "answer": "류트",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
       "length": 2,
-      "wordId": "shiphi"
+      "wordId": "lute"
+    },
+    {
+      "number": 10,
+      "answer": "비티니아",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 4,
+      "wordId": "bithynia"
     },
     {
       "number": 11,
-      "answer": "시브라임",
-      "direction": "down",
-      "row": 4,
-      "col": 3,
-      "length": 4,
-      "wordId": "sibraim"
+      "answer": "사모트라케",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 5,
+      "wordId": "samothrace"
     },
     {
       "number": 12,
-      "answer": "헤르마",
+      "answer": "사냥개",
       "direction": "down",
-      "row": 5,
+      "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "hermas"
+      "wordId": "greyhound"
     },
     {
       "number": 13,
-      "answer": "라헬",
-      "direction": "across",
+      "answer": "라이스",
+      "direction": "down",
       "row": 6,
       "col": 3,
-      "length": 2,
-      "wordId": "rachel"
+      "length": 3,
+      "wordId": "laish"
     },
     {
       "number": 14,
-      "answer": "마하나임",
+      "answer": "스미다",
       "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 4,
-      "wordId": "mahanaim"
+      "row": 8,
+      "col": 3,
+      "length": 3,
+      "wordId": "shemida"
     },
     {
       "number": 15,
-      "answer": "하드락",
+      "answer": "다볼",
       "direction": "down",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "hadrach"
+      "row": 8,
+      "col": 5,
+      "length": 2,
+      "wordId": "tabor"
     }
   ]
 }

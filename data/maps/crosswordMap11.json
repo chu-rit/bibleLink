@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-011",
+  "id": "crossword-map-092",
   "title": "E-5",
   "difficulty": 1.8,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####여호아스",
-    "######브#",
-    "####에스라#",
-    "#엘리#베#함#",
-    "세리##소###",
-    "#야고보서###",
-    "##린#####",
-    "고린도후서###"
+    "######헌신",
+    "#######월",
+    "#######축",
+    "#####화목제",
+    "####박해##",
+    "#베#빌하###",
+    "#드#르####",
+    "여로보암####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "여호아스",
+      "answer": "헌신",
       "direction": "across",
       "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "jehoash"
+      "col": 6,
+      "length": 2,
+      "wordId": "dedication-2"
     },
     {
       "number": 2,
-      "answer": "아브라함",
+      "answer": "신월축제",
       "direction": "down",
       "row": 0,
-      "col": 6,
+      "col": 7,
       "length": 4,
-      "wordId": "abraham"
+      "wordId": "entry-신월 축제"
     },
     {
       "number": 3,
-      "answer": "에스라",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "ezra"
+      "answer": "화해",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "reconciliation"
     },
     {
       "number": 4,
-      "answer": "에베소서",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "ephesians"
+      "answer": "화목제",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "fellowshipoffering"
     },
     {
       "number": 5,
-      "answer": "엘리야",
+      "answer": "박하",
       "direction": "down",
-      "row": 3,
-      "col": 1,
-      "length": 3,
-      "wordId": "elijah"
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "mint"
     },
     {
       "number": 6,
-      "answer": "엘리",
+      "answer": "박해",
       "direction": "across",
-      "row": 3,
-      "col": 1,
+      "row": 4,
+      "col": 4,
       "length": 2,
-      "wordId": "eli"
+      "wordId": "persecution"
     },
     {
       "number": 7,
-      "answer": "세리",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 2,
-      "wordId": "taxcollector"
+      "answer": "베드로",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "peter"
     },
     {
       "number": 8,
-      "answer": "야고보서",
-      "direction": "across",
+      "answer": "빌르암",
+      "direction": "down",
       "row": 5,
-      "col": 1,
-      "length": 4,
-      "wordId": "jamesletter"
+      "col": 3,
+      "length": 3,
+      "wordId": "bileam"
     },
     {
       "number": 9,
-      "answer": "고린도",
-      "direction": "down",
+      "answer": "빌하",
+      "direction": "across",
       "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "corinth"
+      "col": 3,
+      "length": 2,
+      "wordId": "bilhah"
     },
     {
       "number": 10,
-      "answer": "고린도후서",
+      "answer": "여로보암",
       "direction": "across",
       "row": 7,
       "col": 0,
-      "length": 5,
-      "wordId": "secondcorinthians"
+      "length": 4,
+      "wordId": "jeroboam"
     }
   ]
 }
