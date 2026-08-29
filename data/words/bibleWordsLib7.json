@@ -80,7 +80,7 @@
   },
   {
     "id": "sealskin",
-    "word": "바다표범",
+    "word": "바다표범가죽",
     "definition": "히브리어 타하시로 불리는 가죽이 OOOO의 가죽을 의미하며, 장막 덮개와 신성 기구 포장에 사용됨",
     "difficulty": 2,
     "references": [
@@ -436,21 +436,11 @@
   },
   {
     "id": "baana",
-    "word": "바아나1",
+    "word": "바아나",
     "definition": "솔로몬이 임명한 열두 식량 대리관 중 한 사람으로 아힐룻의 아들",
     "difficulty": 3,
     "references": [
       "열왕기상 4:3, 7, 12"
-    ]
-  },
-  {
-    "id": "baanah",
-    "word": "바아나2",
-    "definition": "베냐민 사람 림몬의 아들로 이스-보셋을 암살하고 다윗에게 처형된 자",
-    "difficulty": 3,
-    "references": [
-      "사무엘하 4:2-12",
-      "사무엘하 23:29"
     ]
   },
   {
@@ -1057,22 +1047,12 @@
   },
   {
     "id": "belly",
-    "word": "배1",
+    "word": "배",
     "definition": "몸통 앞부분 중 갈비뼈 아래로 소화 기관이 들어 있는 복부",
     "difficulty": 2,
     "references": [
       "사사기 3:21, 22",
       "잠언 13:25"
-    ]
-  },
-  {
-    "id": "ship",
-    "word": "배2",
-    "definition": "항해에 사용된 선박으로 고대부터 해상 운송과 어업에 활용됨",
-    "difficulty": 2,
-    "references": [
-      "신명기 28:68",
-      "에스겔 27:3-7"
     ]
   },
   {
@@ -1204,15 +1184,6 @@
     ]
   },
   {
-    "id": "translation",
-    "word": "번역",
-    "definition": "한 언어로 기록된 내용을 다른 언어로 옮기는 일",
-    "difficulty": 2,
-    "references": [
-      "느헤미야 8:8"
-    ]
-  },
-  {
     "id": "burntoffering",
     "word": "번제물",
     "definition": "제물을 제단 위에서 완전히 태워 바치던 희생 제물",
@@ -1233,7 +1204,7 @@
   },
   {
     "id": "law",
-    "word": "법율법",
+    "word": "율법",
     "definition": "정부가 제정해 사람들에게 적용하는 원칙과 규정으로 모세 율법을 포함함",
     "difficulty": 2,
     "references": [
@@ -1366,21 +1337,11 @@
   },
   {
     "id": "peresh",
-    "word": "베레스1",
+    "word": "베레스",
     "definition": "므낫세 지파의 마길과 마아가의 아들",
     "difficulty": 3,
     "references": [
       "역대기상 7:14, 16"
-    ]
-  },
-  {
-    "id": "perez",
-    "word": "베레스2",
-    "definition": "유다가 다말을 통해 낳은 쌍둥이 아들 중 하나로 제라보다 먼저 나옴",
-    "difficulty": 3,
-    "references": [
-      "창세기 38:24-30",
-      "룻기 4:12"
     ]
   },
   {
@@ -1950,7 +1911,7 @@
   },
   {
     "id": "walls",
-    "word": "벽성벽담",
+    "word": "성벽",
     "definition": "방벽과 경계 표시 역할을 하는 돌이나 벽돌 구조물로 도시 방어에 사용됨",
     "difficulty": 2,
     "references": [
@@ -2125,15 +2086,6 @@
     ]
   },
   {
-    "id": "jewel",
-    "word": "보석",
-    "definition": "성경 시대에 장식품이나 성막과 제사장의 의복을 꾸미는 데 사용된 귀한 돌",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:15-21; 계시록 21:19, 20"
-    ]
-  },
-  {
     "id": "bozez",
     "word": "보세스",
     "definition": "요나단이 블레셋을 공격할 때 언급된 두 바위 중 하나",
@@ -2219,15 +2171,6 @@
     "references": [
       "신명기 32:35",
       "시편 94:1"
-    ]
-  },
-  {
-    "id": "gospel",
-    "word": "복음",
-    "definition": "하느님의 왕국과 예수에 관한 좋은 소식",
-    "difficulty": 1,
-    "references": [
-      "마가복음 1:14, 15"
     ]
   },
   {
@@ -2443,7 +2386,7 @@
   },
   {
     "id": "uncleanness",
-    "word": "부정",
+    "word": "부정함",
     "definition": "하느님의 숭배에 참여하기에 합당하지 않은 의식적 또는 도덕적 상태",
     "difficulty": 2,
     "references": [
@@ -2509,15 +2452,6 @@
     ]
   },
   {
-    "id": "discernment",
-    "word": "분별",
-    "definition": "무엇이 옳고 그른지 또는 어떤 일이 지혜로운지 판단하는 능력",
-    "difficulty": 2,
-    "references": [
-      "히브리서 5:14; 빌립보서 1:9, 10"
-    ]
-  },
-  {
     "id": "strife",
     "word": "분쟁",
     "definition": "적의로 인해 다투는 것으로 미움과 분노가 원인이 됨",
@@ -2548,7 +2482,7 @@
   },
   {
     "id": "incensealtar",
-    "word": "분향단",
+    "word": "분향제단",
     "definition": "성소 안에서 향을 피우도록 만든 제단",
     "difficulty": 2,
     "references": [
@@ -2603,15 +2537,6 @@
     "references": [
       "이사야 6:2",
       "민수기 21:6-9"
-    ]
-  },
-  {
-    "id": "disobedience",
-    "word": "불순종",
-    "definition": "하느님이나 정당한 권위가 주는 지시를 고의로 따르지 않는 행동",
-    "difficulty": 2,
-    "references": [
-      "창세기 3:1-6; 로마서 5:19"
     ]
   },
   {
@@ -2876,15 +2801,6 @@
     ]
   },
   {
-    "id": "priscilla",
-    "word": "프리스길라",
-    "definition": "남편과 함께 아볼로에게 하느님의 길을 더 정확하게 설명한 여자",
-    "difficulty": 2,
-    "references": [
-      "사도행전 18:24-26"
-    ]
-  },
-  {
     "id": "beriah",
     "word": "브리아",
     "definition": "아셀의 아들로 야곱과 함께 이집트에 간 인물",
@@ -2933,17 +2849,8 @@
     ]
   },
   {
-    "id": "beera",
-    "word": "브에라1",
-    "definition": "아셀 자손 중 한 가족의 우두머리",
-    "difficulty": 3,
-    "references": [
-      "역대기상 7:30, 37, 40"
-    ]
-  },
-  {
     "id": "beerah",
-    "word": "브에라2",
+    "word": "브에라",
     "definition": "르우벤 사람의 수장으로 아시리아에 의해 유배된 자",
     "difficulty": 3,
     "references": [
@@ -3324,15 +3231,6 @@
     ]
   },
   {
-    "id": "lyre",
-    "word": "비파",
-    "definition": "현을 뜯어 연주하며 하느님을 찬양하는 데 사용한 악기",
-    "difficulty": 2,
-    "references": [
-      "시편 150:3; 역대기상 15:16"
-    ]
-  },
-  {
     "id": "pihahiroth",
     "word": "비하히롯",
     "definition": "이스라엘이 홍해 건너기 전 마지막으로 진친 곳으로 바알스본 앞에 위치함",
@@ -3554,7 +3452,7 @@
   },
   {
     "id": "horn",
-    "word": "뿔뿔나팔",
+    "word": "뿔나팔",
     "definition": "동물의 뿔로 기름 용기와 악기 신호 도구로 사용되며 권세와 능력을 상징",
     "difficulty": 2,
     "references": [

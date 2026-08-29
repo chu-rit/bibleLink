@@ -250,15 +250,6 @@
     ]
   },
   {
-    "id": "simonmagus",
-    "word": "마술사 시몬",
-    "definition": "성령을 받는 권한을 돈으로 사려고 했다가 베드로에게 책망받은 사람",
-    "difficulty": 3,
-    "references": [
-      "사도행전 8:9-24"
-    ]
-  },
-  {
     "id": "mash",
     "word": "마스",
     "definition": "셈의 자손으로 아람 계통의 인물",
@@ -1685,15 +1676,6 @@
     ]
   },
   {
-    "id": "basin",
-    "word": "물두멍",
-    "definition": "제사장들이 봉사하기 전에 손과 발을 씻도록 성막에 둔 큰 물그릇",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 30:17-21; 38:8"
-    ]
-  },
-  {
     "id": "retirement",
     "word": "물러남",
     "definition": "일자리나 특정 직무에서 물러나는 것으로 레위인의 50세 이후 봉사 제한을 의미",
@@ -1701,15 +1683,6 @@
     "references": [
       "민수기 8:23-26",
       "역대기상 23:3"
-    ]
-  },
-  {
-    "id": "slingstone",
-    "word": "물맷돌",
-    "definition": "다윗이 물매에 넣어 골리앗을 쓰러뜨리는 데 사용한 돌",
-    "difficulty": 2,
-    "references": [
-      "사무엘상 17:40-50"
     ]
   },
   {

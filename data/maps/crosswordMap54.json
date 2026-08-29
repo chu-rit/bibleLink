@@ -1,111 +1,110 @@
 {
-  "id": "crossword-map-054",
+  "id": "crossword-map-125",
   "title": "E-24",
   "difficulty": 1.5,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######석류",
-    "#####예수#",
-    "##어##루##",
-    "#느부갓네살##",
-    "보고###렘##",
-    "아#######",
-    "스불론#####",
-    "########"
+    "######칼새",
+    "#######예",
+    "######노루",
+    "#######살",
+    "#도##예루살렘",
+    "줄마노##디##",
+    "##아카이아##",
+    "####삭###"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "석수",
-      "direction": "down",
-      "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "mason"
-    },
-    {
-      "number": 2,
-      "answer": "석류",
+      "answer": "칼새",
       "direction": "across",
       "row": 0,
       "col": 6,
       "length": 2,
-      "wordId": "pomegranate"
+      "wordId": "swift"
+    },
+    {
+      "number": 2,
+      "answer": "새예루살렘",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 5,
+      "wordId": "entry-새 예루살렘"
     },
     {
       "number": 3,
-      "answer": "예루살렘",
+      "answer": "노루",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "roebuck"
+    },
+    {
+      "number": 4,
+      "answer": "도마",
       "direction": "down",
-      "row": 1,
-      "col": 5,
+      "row": 4,
+      "col": 1,
+      "length": 2,
+      "wordId": "thomas"
+    },
+    {
+      "number": 5,
+      "answer": "예루살렘",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
       "length": 4,
       "wordId": "jerusalem"
     },
     {
-      "number": 4,
-      "answer": "예수",
-      "direction": "across",
-      "row": 1,
-      "col": 5,
-      "length": 2,
-      "wordId": "jesus"
-    },
-    {
-      "number": 5,
-      "answer": "어부",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 2,
-      "wordId": "fisherman",
-      "clue": "베드로와 안드레가 그물을 던지다 예수께 부름받은 이 직업은 갈릴리 호숫가에서 행해졌다"
-    },
-    {
       "number": 6,
-      "answer": "느고",
+      "answer": "루디아",
       "direction": "down",
-      "row": 3,
-      "col": 1,
-      "length": 2,
-      "wordId": "entry-느고"
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "lydia"
     },
     {
       "number": 7,
-      "answer": "느부갓네살",
+      "answer": "줄마노",
       "direction": "across",
-      "row": 3,
-      "col": 1,
-      "length": 5,
-      "wordId": "nebuchadnezzar"
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "onyx"
     },
     {
       "number": 8,
-      "answer": "보아스",
+      "answer": "노아",
       "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 3,
-      "wordId": "boaz"
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "noah"
     },
     {
       "number": 9,
-      "answer": "보고",
+      "answer": "아카이아",
       "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 2,
-      "wordId": "treasury"
+      "row": 6,
+      "col": 2,
+      "length": 4,
+      "wordId": "achaia"
     },
     {
       "number": 10,
-      "answer": "스불론",
-      "direction": "across",
+      "answer": "이삭",
+      "direction": "down",
       "row": 6,
-      "col": 0,
-      "length": 3,
-      "wordId": "zebulun"
+      "col": 4,
+      "length": 2,
+      "wordId": "isaac"
     }
   ]
 }

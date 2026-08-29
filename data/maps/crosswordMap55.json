@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-117",
+  "id": "crossword-map-150",
   "title": "E-25",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####가###",
-    "####데###",
-    "###미스바##",
-    "###가#벨사살",
-    "느헤미야##두#",
-    "######개밀",
-    "#####전파#",
-    "#####갈##"
+    "##번#####",
+    "##제#####",
+    "#제물#####",
+    "천사######",
+    "#장성#요###",
+    "##경건한정성#",
+    "######구제",
+    "######갑#"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "가데스",
+      "answer": "번제물",
       "direction": "down",
       "row": 0,
-      "col": 4,
+      "col": 2,
       "length": 3,
-      "wordId": "kadesh"
+      "wordId": "burntoffering"
     },
     {
       "number": 2,
-      "answer": "미스바",
-      "direction": "across",
+      "answer": "제사장",
+      "direction": "down",
       "row": 2,
-      "col": 3,
+      "col": 1,
       "length": 3,
-      "wordId": "mizpah"
+      "wordId": "priest"
     },
     {
       "number": 3,
-      "answer": "미가야",
-      "direction": "down",
+      "answer": "제물",
+      "direction": "across",
       "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "micaiah"
+      "col": 1,
+      "length": 2,
+      "wordId": "offerings"
     },
     {
       "number": 4,
-      "answer": "바벨",
-      "direction": "down",
-      "row": 2,
-      "col": 5,
+      "answer": "천사",
+      "direction": "across",
+      "row": 3,
+      "col": 0,
       "length": 2,
-      "wordId": "babel"
+      "wordId": "angel"
     },
     {
       "number": 5,
-      "answer": "벨사살",
+      "answer": "장성",
       "direction": "across",
-      "row": 3,
-      "col": 5,
-      "length": 3,
-      "wordId": "belshazzar"
+      "row": 4,
+      "col": 1,
+      "length": 2,
+      "wordId": "maturity"
     },
     {
       "number": 6,
-      "answer": "사두개파",
+      "answer": "성경",
       "direction": "down",
-      "row": 3,
-      "col": 6,
-      "length": 4,
-      "wordId": "sadducees"
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "bible"
     },
     {
       "number": 7,
-      "answer": "느헤미야",
-      "direction": "across",
+      "answer": "요한",
+      "direction": "down",
       "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "nehemiah"
+      "col": 4,
+      "length": 2,
+      "wordId": "john"
     },
     {
       "number": 8,
-      "answer": "개밀",
+      "answer": "경건한정성",
       "direction": "across",
       "row": 5,
-      "col": 6,
-      "length": 2,
-      "wordId": "spelt"
+      "col": 2,
+      "length": 5,
+      "wordId": "godlydevotion"
     },
     {
       "number": 9,
-      "answer": "전파",
-      "direction": "across",
-      "row": 6,
-      "col": 5,
-      "length": 2,
-      "wordId": "preaching"
+      "answer": "성구갑",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "entry-성구 갑"
     },
     {
       "number": 10,
-      "answer": "전갈",
-      "direction": "down",
+      "answer": "구제",
+      "direction": "across",
       "row": 6,
-      "col": 5,
+      "col": 6,
       "length": 2,
-      "wordId": "scorpion"
+      "wordId": "relief"
     }
   ]
 }

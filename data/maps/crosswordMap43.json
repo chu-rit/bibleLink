@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-043",
+  "id": "crossword-map-146",
   "title": "N-13",
   "difficulty": 2.1,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########대#",
-    "#물두멍#데메드리오",
-    "###에스겔##관#",
-    "##헤#마#####",
-    "첨#스가랴서####",
-    "필사본##쪽####",
-    "#르########",
-    "리밧########",
-    "비#########",
-    "아#########"
+    "#####시드래#홍",
+    "######보#대해",
+    "#####시라쿠사#",
+    "###헤르몬#민##",
+    "페스투스######",
+    "#바#본######",
+    "미냐민#######",
+    "늘#########",
+    "갑#########",
+    "옷니엘#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "대리관",
-      "direction": "down",
+      "answer": "시드래",
+      "direction": "across",
       "row": 0,
-      "col": 8,
+      "col": 5,
       "length": 3,
-      "wordId": "deputy"
+      "wordId": "shitrai"
     },
     {
       "number": 2,
-      "answer": "물두멍",
-      "direction": "across",
-      "row": 1,
-      "col": 1,
+      "answer": "드보라",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
       "length": 3,
-      "wordId": "basin"
+      "wordId": "deborah"
     },
     {
       "number": 3,
-      "answer": "멍에",
+      "answer": "홍해",
       "direction": "down",
-      "row": 1,
-      "col": 3,
+      "row": 0,
+      "col": 9,
       "length": 2,
-      "wordId": "yoke"
+      "wordId": "redsea"
     },
     {
       "number": 4,
-      "answer": "데겔",
+      "answer": "대사",
       "direction": "down",
       "row": 1,
-      "col": 5,
+      "col": 8,
       "length": 2,
-      "wordId": "deker"
+      "wordId": "ambassador"
     },
     {
       "number": 5,
-      "answer": "데메드리오",
+      "answer": "대해",
       "direction": "across",
       "row": 1,
-      "col": 5,
-      "length": 5,
-      "wordId": "demetrius"
+      "col": 8,
+      "length": 2,
+      "wordId": "entry-대해"
     },
     {
       "number": 6,
-      "answer": "에스겔",
+      "answer": "시라쿠사",
       "direction": "across",
       "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "ezekiel"
+      "col": 5,
+      "length": 4,
+      "wordId": "syracuse"
     },
     {
       "number": 7,
-      "answer": "스마랴",
+      "answer": "시몬",
       "direction": "down",
       "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "shemariah"
+      "col": 5,
+      "length": 2,
+      "wordId": "simon"
     },
     {
       "number": 8,
+      "answer": "쿠민",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 2,
+      "wordId": "cumin"
+    },
+    {
+      "number": 9,
+      "answer": "헤르몬",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "hermon"
+    },
+    {
+      "number": 10,
       "answer": "헤스본",
       "direction": "down",
       "row": 3,
-      "col": 2,
+      "col": 3,
       "length": 3,
       "wordId": "heshbon"
     },
     {
-      "number": 9,
-      "answer": "첨필",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 2,
-      "wordId": "stylus"
-    },
-    {
-      "number": 10,
-      "answer": "스가랴서",
+      "number": 11,
+      "answer": "페스투스",
       "direction": "across",
       "row": 4,
-      "col": 2,
+      "col": 0,
       "length": 4,
-      "wordId": "entry-스가랴서"
-    },
-    {
-      "number": 11,
-      "answer": "서쪽",
-      "direction": "down",
-      "row": 4,
-      "col": 5,
-      "length": 2,
-      "wordId": "west"
+      "wordId": "festus"
     },
     {
       "number": 12,
-      "answer": "필사본",
-      "direction": "across",
-      "row": 5,
-      "col": 0,
+      "answer": "스바냐",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
       "length": 3,
-      "wordId": "manuscript"
+      "wordId": "zephaniah"
     },
     {
       "number": 13,
-      "answer": "사르밧",
-      "direction": "down",
-      "row": 5,
-      "col": 1,
+      "answer": "미냐민",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
       "length": 3,
-      "wordId": "zarephath"
+      "wordId": "miniamin"
     },
     {
       "number": 14,
-      "answer": "리밧",
-      "direction": "across",
-      "row": 7,
+      "answer": "미늘갑옷",
+      "direction": "down",
+      "row": 6,
       "col": 0,
-      "length": 2,
-      "wordId": "riphath"
+      "length": 4,
+      "wordId": "armor"
     },
     {
       "number": 15,
-      "answer": "리비아",
-      "direction": "down",
-      "row": 7,
+      "answer": "옷니엘",
+      "direction": "across",
+      "row": 9,
       "col": 0,
       "length": 3,
-      "wordId": "libya"
+      "wordId": "othniel"
     }
   ]
 }

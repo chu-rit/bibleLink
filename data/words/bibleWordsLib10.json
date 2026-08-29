@@ -108,15 +108,6 @@
     ]
   },
   {
-    "id": "selfcontrol",
-    "word": "자제력",
-    "definition": "감정과 욕망을 제어하여 하느님의 원칙에 맞게 행동하는 힘",
-    "difficulty": 2,
-    "references": [
-      "갈라디아서 5:22, 23; 베드로 후서 1:5, 6"
-    ]
-  },
-  {
     "id": "jackal",
     "word": "자칼",
     "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
@@ -215,7 +206,7 @@
   },
   {
     "id": "birthright",
-    "word": "장자권",
+    "word": "장자",
     "definition": "가족의 맏아들이 상속과 가문의 책임에서 갖던 특별한 권리",
     "difficulty": 2,
     "references": [
@@ -411,7 +402,7 @@
   },
   {
     "id": "preaching",
-    "word": "전파",
+    "word": "전파자",
     "definition": "하느님의 왕국과 성경의 소식을 사람들에게 공개적으로 알리는 활동",
     "difficulty": 2,
     "references": [
@@ -475,15 +466,6 @@
     "difficulty": 2,
     "references": [
       "레위기 11:44, 45; 시편 24:3, 4"
-    ]
-  },
-  {
-    "id": "purification",
-    "word": "정결례",
-    "definition": "부정한 상태에서 벗어나 숭배에 다시 참여하기 위해 행하던 의식",
-    "difficulty": 2,
-    "references": [
-      "레위기 14:8, 9; 누가복음 2:22"
     ]
   },
   {
@@ -580,16 +562,6 @@
     "difficulty": 1,
     "references": [
       "레위기 8장"
-    ]
-  },
-  {
-    "id": "priesthood",
-    "word": "제사직",
-    "definition": "하느님을 섬기며 백성을 위해 제사와 봉사를 수행하는 직무",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:1",
-      "히브리서 5:1"
     ]
   },
   {
@@ -696,15 +668,6 @@
     "difficulty": 2,
     "references": [
       "요한둘째 12절"
-    ]
-  },
-  {
-    "id": "sinfulness",
-    "word": "죄악",
-    "definition": "하느님의 의로운 표준을 어기거나 그 표준에서 벗어난 행동과 상태",
-    "difficulty": 2,
-    "references": [
-      "요한 첫째 3:4; 로마서 3:23"
     ]
   },
   {

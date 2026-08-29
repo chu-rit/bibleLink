@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-098",
+  "id": "crossword-map-136",
   "title": "N-8",
   "difficulty": 2.1,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######타##",
-    "######하르보나",
-    "#####에#타#사",
-    "###펠릭스#로#로",
-    "#####라기스##",
-    "#사#담##록###",
-    "미루나무#부관###",
-    "#헨#스게와####",
-    "####헨#####",
-    "##뿔뿔나팔####"
+    "######도###",
+    "###세#접시꽃##",
+    "##수금#붙####",
+    "###징#이집트##",
+    "###수준기#로##",
+    "##서원###아굴라",
+    "#계약##헬레스##",
+    "몰약########",
+    "#의########",
+    "#궤########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "타르타로스",
+      "answer": "도시",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 5,
-      "wordId": "tartarus"
+      "col": 6,
+      "length": 2,
+      "wordId": "city"
     },
     {
       "number": 2,
-      "answer": "하르보나",
-      "direction": "across",
+      "answer": "세금징수원",
+      "direction": "down",
       "row": 1,
-      "col": 6,
-      "length": 4,
-      "wordId": "harbona"
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-세금 징수원"
     },
     {
       "number": 3,
-      "answer": "나사로",
+      "answer": "접붙이기",
       "direction": "down",
       "row": 1,
-      "col": 9,
-      "length": 3,
-      "wordId": "lazarus"
+      "col": 5,
+      "length": 4,
+      "wordId": "grafting"
     },
     {
       "number": 4,
-      "answer": "에스라",
-      "direction": "down",
-      "row": 2,
+      "answer": "접시꽃",
+      "direction": "across",
+      "row": 1,
       "col": 5,
       "length": 3,
-      "wordId": "ezra"
+      "wordId": "marshmallow"
     },
     {
       "number": 5,
-      "answer": "펠릭스",
+      "answer": "수금",
       "direction": "across",
-      "row": 3,
-      "col": 3,
-      "length": 3,
-      "wordId": "felix"
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "harp"
     },
     {
       "number": 6,
-      "answer": "라기스",
+      "answer": "이집트",
       "direction": "across",
-      "row": 4,
+      "row": 3,
       "col": 5,
       "length": 3,
-      "wordId": "lachish"
+      "wordId": "egypt"
     },
     {
       "number": 7,
-      "answer": "기록관",
+      "answer": "트로아스",
       "direction": "down",
-      "row": 4,
-      "col": 6,
-      "length": 3,
-      "wordId": "recorder"
+      "row": 3,
+      "col": 7,
+      "length": 4,
+      "wordId": "troas"
     },
     {
       "number": 8,
-      "answer": "사루헨",
-      "direction": "down",
-      "row": 5,
-      "col": 1,
+      "answer": "수준기",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
       "length": 3,
-      "wordId": "sharuhen"
+      "wordId": "entry-수준기"
     },
     {
       "number": 9,
-      "answer": "담무스",
-      "direction": "down",
+      "answer": "서원",
+      "direction": "across",
       "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "entry-담무스"
+      "col": 2,
+      "length": 2,
+      "wordId": "vow"
     },
     {
       "number": 10,
-      "answer": "미루나무",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 4,
-      "wordId": "poplars"
+      "answer": "서약",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "oath-2"
     },
     {
       "number": 11,
-      "answer": "부관",
+      "answer": "아굴라",
       "direction": "across",
-      "row": 6,
-      "col": 5,
-      "length": 2,
-      "wordId": "adjutant"
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "aquila"
     },
     {
       "number": 12,
-      "answer": "부와",
-      "direction": "down",
+      "answer": "계약",
+      "direction": "across",
       "row": 6,
-      "col": 5,
+      "col": 1,
       "length": 2,
-      "wordId": "puvah"
+      "wordId": "covenant-2"
     },
     {
       "number": 13,
-      "answer": "스게와",
-      "direction": "across",
-      "row": 7,
-      "col": 3,
-      "length": 3,
-      "wordId": "sceva"
+      "answer": "계약의궤",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "arkofthecovenant"
     },
     {
       "number": 14,
-      "answer": "게헨나",
-      "direction": "down",
-      "row": 7,
-      "col": 4,
+      "answer": "헬레스",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
       "length": 3,
-      "wordId": "gehenna"
+      "wordId": "helez"
     },
     {
       "number": 15,
-      "answer": "뿔뿔나팔",
+      "answer": "몰약",
       "direction": "across",
-      "row": 9,
-      "col": 2,
-      "length": 4,
-      "wordId": "horn"
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "myrrh"
     }
   ]
 }

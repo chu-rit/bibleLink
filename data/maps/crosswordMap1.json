@@ -1,5 +1,5 @@
 {
-  "id": "crossword-map-111",
+  "id": "crossword-map-147",
   "title": "E-1",
   "difficulty": 1.3,
   "width": 8,
@@ -7,13 +7,13 @@
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
     "####말[馬]",
-    "브리스길라###",
-    "곳###기드온#",
+    "###실라###",
+    "##철#기쁨##",
     "##학개서###",
     "###구####",
-    "##골리앗###",
-    "##짜#####",
-    "##기쁨####"
+    "#대머리####",
+    "#속######",
+    "동물######"
   ],
   "cells": [
     {
@@ -36,30 +36,30 @@
     },
     {
       "number": 3,
-      "answer": "브리스길라",
+      "answer": "실라",
       "direction": "across",
       "row": 1,
-      "col": 0,
-      "length": 5,
-      "wordId": "priscilla"
+      "col": 3,
+      "length": 2,
+      "wordId": "silas"
     },
     {
       "number": 4,
-      "answer": "브곳",
+      "answer": "철학",
       "direction": "down",
-      "row": 1,
-      "col": 0,
+      "row": 2,
+      "col": 2,
       "length": 2,
-      "wordId": "pekod"
+      "wordId": "philosophy"
     },
     {
       "number": 5,
-      "answer": "기드온",
+      "answer": "기쁨",
       "direction": "across",
       "row": 2,
       "col": 4,
-      "length": 3,
-      "wordId": "gideon"
+      "length": 2,
+      "wordId": "joy"
     },
     {
       "number": 6,
@@ -81,30 +81,30 @@
     },
     {
       "number": 8,
-      "answer": "골리앗",
+      "answer": "대머리",
       "direction": "across",
       "row": 5,
-      "col": 2,
+      "col": 1,
       "length": 3,
-      "wordId": "goliath"
+      "wordId": "baldness"
     },
     {
       "number": 9,
-      "answer": "골짜기",
+      "answer": "대속물",
       "direction": "down",
       "row": 5,
-      "col": 2,
+      "col": 1,
       "length": 3,
-      "wordId": "valley"
+      "wordId": "ransom"
     },
     {
       "number": 10,
-      "answer": "기쁨",
+      "answer": "동물",
       "direction": "across",
       "row": 7,
-      "col": 2,
+      "col": 0,
       "length": 2,
-      "wordId": "joy"
+      "wordId": "animals"
     }
   ]
 }

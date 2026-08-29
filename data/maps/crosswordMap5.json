@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-091",
+  "id": "crossword-map-120",
   "title": "N-1",
   "difficulty": 1.9,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####송#####",
-    "###부아###자유",
-    "####지팡이#제#",
-    "######사고력#",
-    "####힐기야###",
-    "#####름####",
-    "#사#사#나발###",
-    "돌무화과나무####",
-    "#엘##팔#####",
-    "성서사본######"
+    "#####데####",
+    "####압살롬##병",
+    "#####로###고",
+    "###랍보니##미침",
+    "##천막#가버나움#",
+    "#기둥####사##",
+    "#슬###쉽볼렛##",
+    "블레셋#######",
+    "#우########",
+    "#월########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "송아지",
+      "answer": "데살로니가",
       "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 3,
-      "wordId": "calf"
+      "col": 5,
+      "length": 5,
+      "wordId": "thessalonica"
     },
     {
       "number": 2,
-      "answer": "부아",
+      "answer": "압살롬",
       "direction": "across",
       "row": 1,
-      "col": 3,
-      "length": 2,
-      "wordId": "puah"
+      "col": 4,
+      "length": 3,
+      "wordId": "absalom"
     },
     {
       "number": 3,
-      "answer": "자제력",
+      "answer": "병고침",
       "direction": "down",
       "row": 1,
-      "col": 8,
+      "col": 9,
       "length": 3,
-      "wordId": "selfcontrol"
+      "wordId": "healing"
     },
     {
       "number": 4,
-      "answer": "자유",
+      "answer": "랍보니",
       "direction": "across",
-      "row": 1,
-      "col": 8,
-      "length": 2,
-      "wordId": "freedom"
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "rabboni"
     },
     {
       "number": 5,
-      "answer": "지팡이",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "staff"
+      "answer": "랍막",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "rabmag"
     },
     {
       "number": 6,
-      "answer": "이사야",
+      "answer": "미움",
       "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "isaiah"
+      "row": 3,
+      "col": 8,
+      "length": 2,
+      "wordId": "hate"
     },
     {
       "number": 7,
-      "answer": "사고력",
+      "answer": "미침",
       "direction": "across",
       "row": 3,
-      "col": 6,
-      "length": 3,
-      "wordId": "entry-사고력"
+      "col": 8,
+      "length": 2,
+      "wordId": "madness"
     },
     {
       "number": 8,
-      "answer": "힐기야",
+      "answer": "천막",
       "direction": "across",
       "row": 4,
-      "col": 4,
-      "length": 3,
-      "wordId": "hilkiah"
+      "col": 2,
+      "length": 2,
+      "wordId": "tent"
     },
     {
       "number": 9,
-      "answer": "기름나무",
+      "answer": "천둥",
       "direction": "down",
       "row": 4,
-      "col": 5,
-      "length": 4,
-      "wordId": "entry-기름나무"
+      "col": 2,
+      "length": 2,
+      "wordId": "thunder"
     },
     {
       "number": 10,
-      "answer": "사무엘서",
-      "direction": "down",
-      "row": 6,
-      "col": 1,
+      "answer": "가버나움",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
       "length": 4,
-      "wordId": "entry-사무엘서"
+      "wordId": "capernaum"
     },
     {
       "number": 11,
-      "answer": "사과",
+      "answer": "나사렛",
       "direction": "down",
-      "row": 6,
-      "col": 3,
-      "length": 2,
-      "wordId": "apple"
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "nazareth"
     },
     {
       "number": 12,
-      "answer": "나발",
+      "answer": "기둥",
       "direction": "across",
-      "row": 6,
-      "col": 5,
+      "row": 5,
+      "col": 1,
       "length": 2,
-      "wordId": "nabal"
+      "wordId": "pillar"
     },
     {
       "number": 13,
-      "answer": "돌무화과나무",
-      "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 6,
-      "wordId": "sycamore"
+      "answer": "기슬레우월",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 5,
+      "wordId": "chislev"
     },
     {
       "number": 14,
-      "answer": "나팔",
-      "direction": "down",
-      "row": 7,
-      "col": 4,
-      "length": 2,
-      "wordId": "trumpet"
+      "answer": "쉽볼렛",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "shibboleth"
     },
     {
       "number": 15,
-      "answer": "성서사본",
+      "answer": "블레셋",
       "direction": "across",
-      "row": 9,
+      "row": 7,
       "col": 0,
-      "length": 4,
-      "wordId": "entry-성서 사본"
+      "length": 3,
+      "wordId": "philistines"
     }
   ]
 }

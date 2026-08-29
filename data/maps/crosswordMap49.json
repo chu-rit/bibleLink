@@ -1,70 +1,88 @@
 {
-  "id": "crossword-map-049",
+  "id": "crossword-map-132",
   "title": "N-19",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####하삽나##",
-    "####자루#일##",
-    "#####갈##바왜",
-    "####카이사레아#",
-    "###비파#다#나답",
-    "####도#리#1#",
-    "####키#####",
-    "하#샤모아#####",
-    "길랄래#######",
-    "라#########"
+    "####보#미###",
+    "니코폴리스#사모스#",
+    "#프##갓디엘#바왜",
+    "########디#",
+    "######이사야#",
+    "#######프##",
+    "######바란##",
+    "#####파리###",
+    "######새김##",
+    "#####산파###"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "하삽나",
-      "direction": "across",
+      "answer": "보스갓",
+      "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 4,
       "length": 3,
-      "wordId": "hashabnah"
+      "wordId": "bozkath"
     },
     {
       "number": 2,
-      "answer": "하루갈이",
+      "answer": "미사엘",
       "direction": "down",
       "row": 0,
-      "col": 5,
-      "length": 4,
-      "wordId": "acre"
+      "col": 6,
+      "length": 3,
+      "wordId": "mishael"
     },
     {
       "number": 3,
-      "answer": "나일",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 2,
-      "wordId": "nile"
+      "answer": "니코폴리스",
+      "direction": "across",
+      "row": 1,
+      "col": 0,
+      "length": 5,
+      "wordId": "nicopolis"
     },
     {
       "number": 4,
-      "answer": "자루",
-      "direction": "across",
+      "answer": "코프",
+      "direction": "down",
       "row": 1,
-      "col": 4,
+      "col": 1,
       "length": 2,
-      "wordId": "bag"
+      "wordId": "qohph"
     },
     {
       "number": 5,
-      "answer": "바아나1",
-      "direction": "down",
-      "row": 2,
-      "col": 8,
-      "length": 4,
-      "wordId": "baana"
+      "answer": "사모스",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 3,
+      "wordId": "samos"
     },
     {
       "number": 6,
+      "answer": "스바디야",
+      "direction": "down",
+      "row": 1,
+      "col": 8,
+      "length": 4,
+      "wordId": "shephatiah"
+    },
+    {
+      "number": 7,
+      "answer": "갓디엘",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "gaddiel"
+    },
+    {
+      "number": 8,
       "answer": "바왜",
       "direction": "across",
       "row": 2,
@@ -73,85 +91,67 @@
       "wordId": "bavvai"
     },
     {
-      "number": 7,
-      "answer": "카이사레아",
-      "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 5,
-      "wordId": "caesarea"
-    },
-    {
-      "number": 8,
-      "answer": "카파도키아",
-      "direction": "down",
-      "row": 3,
-      "col": 4,
-      "length": 5,
-      "wordId": "cappadocia"
-    },
-    {
       "number": 9,
-      "answer": "사다리",
-      "direction": "down",
-      "row": 3,
+      "answer": "이사야",
+      "direction": "across",
+      "row": 4,
       "col": 6,
       "length": 3,
-      "wordId": "ladder"
+      "wordId": "isaiah"
     },
     {
       "number": 10,
-      "answer": "비파",
-      "direction": "across",
+      "answer": "사프란",
+      "direction": "down",
       "row": 4,
-      "col": 3,
-      "length": 2,
-      "wordId": "lyre"
+      "col": 7,
+      "length": 3,
+      "wordId": "saffron"
     },
     {
       "number": 11,
-      "answer": "나답",
+      "answer": "바란",
       "direction": "across",
-      "row": 4,
-      "col": 8,
+      "row": 6,
+      "col": 6,
       "length": 2,
-      "wordId": "nadab"
+      "wordId": "paran"
     },
     {
       "number": 12,
-      "answer": "하길라",
+      "answer": "바리새파",
       "direction": "down",
-      "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "hachilah"
+      "row": 6,
+      "col": 6,
+      "length": 4,
+      "wordId": "pharisees"
     },
     {
       "number": 13,
-      "answer": "샤모아",
+      "answer": "파리",
       "direction": "across",
       "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "chamois"
+      "col": 5,
+      "length": 2,
+      "wordId": "fly"
     },
     {
       "number": 14,
-      "answer": "샤래",
-      "direction": "down",
-      "row": 7,
-      "col": 2,
+      "answer": "새김",
+      "direction": "across",
+      "row": 8,
+      "col": 6,
       "length": 2,
-      "wordId": "sharai"
+      "wordId": "engraving"
     },
     {
       "number": 15,
-      "answer": "길랄래",
+      "answer": "산파",
       "direction": "across",
-      "row": 8,
-      "col": 0,
-      "length": 3,
-      "wordId": "gilalai"
+      "row": 9,
+      "col": 5,
+      "length": 2,
+      "wordId": "midwife"
     }
   ]
 }

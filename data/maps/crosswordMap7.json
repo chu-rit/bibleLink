@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-007b",
+  "id": "crossword-map-131",
   "title": "N-3",
   "difficulty": 2.1,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "호세아######고",
-    "##카#파#므두셀라",
-    "##이집트#비###",
-    "#노아#모#보응##",
-    "###이스보셋###",
-    "###다######",
-    "##가말리엘####",
-    "##룟#######",
-    "##유스도#####",
-    "#훌다#######"
+    "#######소할#",
+    "##세#####해면",
+    "소금바다#블랄리야#",
+    "돔##마#라#브##",
+    "##비스요댜#가슴띠",
+    "###쿠######",
+    "###스미닛####",
+    "####틸#####",
+    "###키레네####",
+    "####네#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "호세아",
+      "answer": "소할",
       "direction": "across",
       "row": 0,
-      "col": 0,
-      "length": 3,
-      "wordId": "hosea"
+      "col": 7,
+      "length": 2,
+      "wordId": "zohar"
     },
     {
       "number": 2,
-      "answer": "아카이아",
+      "answer": "할해야",
       "direction": "down",
       "row": 0,
-      "col": 2,
-      "length": 4,
-      "wordId": "achaia"
+      "col": 8,
+      "length": 3,
+      "wordId": "harhaiah"
     },
     {
       "number": 3,
-      "answer": "고라",
+      "answer": "세바",
       "direction": "down",
-      "row": 0,
-      "col": 9,
+      "row": 1,
+      "col": 2,
       "length": 2,
-      "wordId": "korah"
+      "wordId": "sheba"
     },
     {
       "number": 4,
-      "answer": "파트모스",
-      "direction": "down",
+      "answer": "해면",
+      "direction": "across",
       "row": 1,
-      "col": 4,
-      "length": 4,
-      "wordId": "patmos"
+      "col": 8,
+      "length": 2,
+      "wordId": "sponge"
     },
     {
       "number": 5,
-      "answer": "므비보셋",
-      "direction": "down",
-      "row": 1,
-      "col": 6,
+      "answer": "소금바다",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
       "length": 4,
-      "wordId": "mephibosheth"
+      "wordId": "entry-소금 바다"
     },
     {
       "number": 6,
-      "answer": "므두셀라",
-      "direction": "across",
-      "row": 1,
-      "col": 6,
-      "length": 4,
-      "wordId": "methuselah"
+      "answer": "소돔",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "sodom"
     },
     {
       "number": 7,
-      "answer": "이집트",
-      "direction": "across",
+      "answer": "다마스쿠스",
+      "direction": "down",
       "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "egypt"
+      "col": 3,
+      "length": 5,
+      "wordId": "damascus"
     },
     {
       "number": 8,
-      "answer": "노아",
-      "direction": "across",
-      "row": 3,
-      "col": 1,
-      "length": 2,
-      "wordId": "noah"
+      "answer": "블라댜",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "pelatiah"
     },
     {
       "number": 9,
-      "answer": "보응",
+      "answer": "블랄리야",
       "direction": "across",
-      "row": 3,
-      "col": 6,
-      "length": 2,
-      "wordId": "retribution"
+      "row": 2,
+      "col": 5,
+      "length": 4,
+      "wordId": "pelaliah"
     },
     {
       "number": 10,
-      "answer": "이스보셋",
-      "direction": "across",
-      "row": 4,
-      "col": 3,
-      "length": 4,
-      "wordId": "ishbosheth"
+      "answer": "리브가",
+      "direction": "down",
+      "row": 2,
+      "col": 7,
+      "length": 3,
+      "wordId": "rebecca"
     },
     {
       "number": 11,
-      "answer": "이다말",
-      "direction": "down",
+      "answer": "비스요댜",
+      "direction": "across",
       "row": 4,
-      "col": 3,
-      "length": 3,
-      "wordId": "ithamar"
+      "col": 2,
+      "length": 4,
+      "wordId": "biziothiah"
     },
     {
       "number": 12,
-      "answer": "가말리엘",
+      "answer": "가슴띠",
       "direction": "across",
-      "row": 6,
-      "col": 2,
-      "length": 4,
-      "wordId": "gamaliel"
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "breastband"
     },
     {
       "number": 13,
-      "answer": "가룟 유다",
-      "direction": "down",
+      "answer": "스미닛",
+      "direction": "across",
       "row": 6,
-      "col": 2,
-      "length": 4,
-      "wordId": "judasiscariot"
+      "col": 3,
+      "length": 3,
+      "wordId": "sheminith"
     },
     {
       "number": 14,
-      "answer": "유스도",
-      "direction": "across",
-      "row": 8,
-      "col": 2,
-      "length": 3,
-      "wordId": "justus"
+      "answer": "미틸레네",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 4,
+      "wordId": "mitylene"
     },
     {
       "number": 15,
-      "answer": "훌다",
+      "answer": "키레네",
       "direction": "across",
-      "row": 9,
-      "col": 1,
-      "length": 2,
-      "wordId": "huldah"
+      "row": 8,
+      "col": 3,
+      "length": 3,
+      "wordId": "cyrene"
     }
   ]
 }

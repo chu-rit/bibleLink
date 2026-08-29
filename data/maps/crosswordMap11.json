@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-092",
+  "id": "crossword-map-148",
   "title": "E-5",
   "difficulty": 1.8,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######헌신",
-    "#######월",
-    "#######축",
-    "#####화목제",
-    "####박해##",
-    "#베#빌하###",
-    "#드#르####",
-    "여로보암####"
+    "####모퉁잇돌",
+    "####세##무",
+    "######설화",
+    "#######과",
+    "아히멜렉###나",
+    "##기#미루나무",
+    "##세펠라#발#",
+    "##덱#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "헌신",
+      "answer": "모퉁잇돌",
       "direction": "across",
       "row": 0,
-      "col": 6,
-      "length": 2,
-      "wordId": "dedication-2"
+      "col": 4,
+      "length": 4,
+      "wordId": "cornerstone"
     },
     {
       "number": 2,
-      "answer": "신월축제",
+      "answer": "모세",
       "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 4,
-      "wordId": "entry-신월 축제"
+      "col": 4,
+      "length": 2,
+      "wordId": "moses"
     },
     {
       "number": 3,
-      "answer": "화해",
+      "answer": "돌무화과나무",
       "direction": "down",
-      "row": 3,
-      "col": 5,
-      "length": 2,
-      "wordId": "reconciliation"
+      "row": 0,
+      "col": 7,
+      "length": 6,
+      "wordId": "sycamore"
     },
     {
       "number": 4,
-      "answer": "화목제",
+      "answer": "설화",
       "direction": "across",
-      "row": 3,
-      "col": 5,
-      "length": 3,
-      "wordId": "fellowshipoffering"
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "fable"
     },
     {
       "number": 5,
-      "answer": "박하",
-      "direction": "down",
+      "answer": "아히멜렉",
+      "direction": "across",
       "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "mint"
+      "col": 0,
+      "length": 4,
+      "wordId": "ahimelech"
     },
     {
       "number": 6,
-      "answer": "박해",
-      "direction": "across",
+      "answer": "멜기세덱",
+      "direction": "down",
       "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "persecution"
+      "col": 2,
+      "length": 4,
+      "wordId": "melchizedek"
     },
     {
       "number": 7,
-      "answer": "베드로",
-      "direction": "down",
+      "answer": "미루나무",
+      "direction": "across",
       "row": 5,
-      "col": 1,
-      "length": 3,
-      "wordId": "peter"
+      "col": 4,
+      "length": 4,
+      "wordId": "poplars"
     },
     {
       "number": 8,
-      "answer": "빌르암",
+      "answer": "미라",
       "direction": "down",
       "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "bileam"
+      "col": 4,
+      "length": 2,
+      "wordId": "myra"
     },
     {
       "number": 9,
-      "answer": "빌하",
-      "direction": "across",
+      "answer": "나발",
+      "direction": "down",
       "row": 5,
-      "col": 3,
+      "col": 6,
       "length": 2,
-      "wordId": "bilhah"
+      "wordId": "nabal"
     },
     {
       "number": 10,
-      "answer": "여로보암",
+      "answer": "세펠라",
       "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 4,
-      "wordId": "jeroboam"
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "shephelah"
     }
   ]
 }

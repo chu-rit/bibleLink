@@ -78,15 +78,6 @@
     ]
   },
   {
-    "id": "judasiscariot",
-    "word": "가룟 유다",
-    "definition": "예수를 배반해 종교 지도자들에게 넘긴 열두 사도 중 한 사람",
-    "difficulty": 2,
-    "references": [
-      "마태복음 26:14-16, 47-50"
-    ]
-  },
-  {
     "id": "carkas",
     "word": "가르가스",
     "definition": "아하수에로 왕이 와스디를 부르기 위해 보낸 일곱 궁정 관리 가운데 한 사람",
@@ -594,15 +585,6 @@
     ]
   },
   {
-    "id": "thanksgiving",
-    "word": "감사",
-    "definition": "받은 은혜와 마련에 대해 고마움을 표현하는 마음과 행동",
-    "difficulty": 2,
-    "references": [
-      "시편 100:4; 데살로니가 전서 5:18"
-    ]
-  },
-  {
     "id": "spikenard",
     "word": "감송",
     "definition": "히말라야 산맥에서 자라는 방향성 식물로 값비싼 향유의 원료가 된 것",
@@ -658,15 +640,6 @@
     "references": [
       "여호수아 15:21",
       "사무엘하 23:20"
-    ]
-  },
-  {
-    "id": "armor",
-    "word": "갑옷",
-    "definition": "전사가 싸울 때 몸을 보호하기 위해 입는 장비",
-    "difficulty": 2,
-    "references": [
-      "사무엘상 17:38, 39; 에베소서 6:11"
     ]
   },
   {
@@ -1066,7 +1039,7 @@
   },
   {
     "id": "godlydevotion",
-    "word": "경건",
+    "word": "경건한정성",
     "definition": "하느님을 깊이 존경하고 그분의 뜻에 맞게 살아가는 태도",
     "difficulty": 1,
     "references": [
@@ -1279,7 +1252,7 @@
   },
   {
     "id": "golgotha",
-    "word": "골고다",
+    "word": "골고타",
     "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
     "difficulty": 2,
     "references": [
@@ -1384,15 +1357,6 @@
     ]
   },
   {
-    "id": "anointingoil",
-    "word": "관유",
-    "definition": "제사장과 왕을 임명하거나 성막의 물품을 거룩한 목적에 사용하도록 바르는 기름",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 30:22-30; 사무엘상 16:13"
-    ]
-  },
-  {
     "id": "luminary",
     "word": "광명체",
     "definition": "빛의 근원이나 등불 또는 땅에 빛을 비추는 천체",
@@ -1478,15 +1442,6 @@
     "difficulty": 3,
     "references": [
       "역대기하 26:3, 7"
-    ]
-  },
-  {
-    "id": "cloudpillar",
-    "word": "구름기둥",
-    "definition": "이스라엘 백성이 광야를 이동할 때 하느님이 인도하신다는 것을 보여 준 구름 기둥",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 13:21, 22"
     ]
   },
   {
@@ -4276,7 +4231,7 @@
   },
   {
     "id": "ransom",
-    "word": "대속",
+    "word": "대속물",
     "definition": "잃어버린 것을 되찾거나 해방하기 위해 그에 상응하는 값을 치르는 마련",
     "difficulty": 2,
     "references": [
@@ -4892,15 +4847,6 @@
     ]
   },
   {
-    "id": "lamp",
-    "word": "등불",
-    "definition": "기름 등을 태워 어두운 곳을 밝히는 도구",
-    "difficulty": 1,
-    "references": [
-      "마태복음 25:1-13"
-    ]
-  },
-  {
     "id": "lampstand",
     "word": "등잔대",
     "definition": "성막과 성전의 성소 안에서 빛을 밝히도록 사용된 기구",
@@ -4925,15 +4871,6 @@
     "difficulty": 2,
     "references": [
       "사도행전 16:1-3"
-    ]
-  },
-  {
-    "id": "courtyardgate",
-    "word": "뜰문",
-    "definition": "성막의 뜰로 들어가는 입구에 드리운 휘장과 그 출입구",
-    "difficulty": 3,
-    "references": [
-      "출애굽기 27:16-18; 38:18"
     ]
   },
   {
@@ -5464,16 +5401,6 @@
     "difficulty": 2,
     "references": [
       "레위기 1:1-3; 19:2"
-    ]
-  },
-  {
-    "id": "levite",
-    "word": "레위인",
-    "definition": "이스라엘의 레위 지파에 속해 성막과 성전 봉사를 도운 사람",
-    "difficulty": 2,
-    "references": [
-      "민수기 3:5-13",
-      "누가복음 10:32"
     ]
   },
   {
@@ -6413,15 +6340,6 @@
     "references": [
       "예레미야 32:12",
       "예레미야 51:59"
-    ]
-  },
-  {
-    "id": "simonmagus",
-    "word": "마술사 시몬",
-    "definition": "성령을 받는 권한을 돈으로 사려고 했다가 베드로에게 책망받은 사람",
-    "difficulty": 3,
-    "references": [
-      "사도행전 8:9-24"
     ]
   },
   {
@@ -7860,15 +7778,6 @@
     ]
   },
   {
-    "id": "basin",
-    "word": "물두멍",
-    "definition": "제사장들이 봉사하기 전에 손과 발을 씻도록 성막에 둔 큰 물그릇",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 30:17-21; 38:8"
-    ]
-  },
-  {
     "id": "retirement",
     "word": "물러남",
     "definition": "일자리나 특정 직무에서 물러나는 것으로 레위인의 50세 이후 봉사 제한을 의미",
@@ -7876,15 +7785,6 @@
     "references": [
       "민수기 8:23-26",
       "역대기상 23:3"
-    ]
-  },
-  {
-    "id": "slingstone",
-    "word": "물맷돌",
-    "definition": "다윗이 물매에 넣어 골리앗을 쓰러뜨리는 데 사용한 돌",
-    "difficulty": 2,
-    "references": [
-      "사무엘상 17:40-50"
     ]
   },
   {
@@ -8362,6 +8262,15 @@
     "references": [
       "역대기하 31:14, 15",
       "느헤미야 12:17"
+    ]
+  },
+  {
+    "id": "armor",
+    "word": "미늘갑옷",
+    "definition": "전사가 싸울 때 몸을 보호하기 위해 입는 장비",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 17:38, 39; 에베소서 6:11"
     ]
   },
   {
@@ -8859,7 +8768,7 @@
   },
   {
     "id": "sealskin",
-    "word": "바다표범",
+    "word": "바다표범가죽",
     "definition": "히브리어 타하시로 불리는 가죽이 OOOO의 가죽을 의미하며, 장막 덮개와 신성 기구 포장에 사용됨",
     "difficulty": 2,
     "references": [
@@ -9215,21 +9124,11 @@
   },
   {
     "id": "baana",
-    "word": "바아나1",
+    "word": "바아나",
     "definition": "솔로몬이 임명한 열두 식량 대리관 중 한 사람으로 아힐룻의 아들",
     "difficulty": 3,
     "references": [
       "열왕기상 4:3, 7, 12"
-    ]
-  },
-  {
-    "id": "baanah",
-    "word": "바아나2",
-    "definition": "베냐민 사람 림몬의 아들로 이스-보셋을 암살하고 다윗에게 처형된 자",
-    "difficulty": 3,
-    "references": [
-      "사무엘하 4:2-12",
-      "사무엘하 23:29"
     ]
   },
   {
@@ -9836,22 +9735,12 @@
   },
   {
     "id": "belly",
-    "word": "배1",
+    "word": "배",
     "definition": "몸통 앞부분 중 갈비뼈 아래로 소화 기관이 들어 있는 복부",
     "difficulty": 2,
     "references": [
       "사사기 3:21, 22",
       "잠언 13:25"
-    ]
-  },
-  {
-    "id": "ship",
-    "word": "배2",
-    "definition": "항해에 사용된 선박으로 고대부터 해상 운송과 어업에 활용됨",
-    "difficulty": 2,
-    "references": [
-      "신명기 28:68",
-      "에스겔 27:3-7"
     ]
   },
   {
@@ -9993,15 +9882,6 @@
     ]
   },
   {
-    "id": "translation",
-    "word": "번역",
-    "definition": "한 언어로 기록된 내용을 다른 언어로 옮기는 일",
-    "difficulty": 2,
-    "references": [
-      "느헤미야 8:8"
-    ]
-  },
-  {
     "id": "burntoffering",
     "word": "번제물",
     "definition": "제물을 제단 위에서 완전히 태워 바치던 희생 제물",
@@ -10018,16 +9898,6 @@
     "references": [
       "출애굽기 16:20, 24",
       "이사야 14:11"
-    ]
-  },
-  {
-    "id": "law",
-    "word": "법율법",
-    "definition": "정부가 제정해 사람들에게 적용하는 원칙과 규정으로 모세 율법을 포함함",
-    "difficulty": 2,
-    "references": [
-      "다니엘 6:5, 8",
-      "이사야 33:22"
     ]
   },
   {
@@ -10164,21 +10034,11 @@
   },
   {
     "id": "peresh",
-    "word": "베레스1",
+    "word": "베레스",
     "definition": "므낫세 지파의 마길과 마아가의 아들",
     "difficulty": 3,
     "references": [
       "역대기상 7:14, 16"
-    ]
-  },
-  {
-    "id": "perez",
-    "word": "베레스2",
-    "definition": "유다가 다말을 통해 낳은 쌍둥이 아들 중 하나로 제라보다 먼저 나옴",
-    "difficulty": 3,
-    "references": [
-      "창세기 38:24-30",
-      "룻기 4:12"
     ]
   },
   {
@@ -10738,16 +10598,6 @@
     ]
   },
   {
-    "id": "walls",
-    "word": "벽성벽담",
-    "definition": "방벽과 경계 표시 역할을 하는 돌이나 벽돌 구조물로 도시 방어에 사용됨",
-    "difficulty": 2,
-    "references": [
-      "사무엘하 5:11",
-      "열왕기상 6:2, 7"
-    ]
-  },
-  {
     "id": "jasper",
     "word": "벽옥",
     "definition": "산화철이 함유된 불투명 석영으로 대제사장 흉패와 새 예루살렘 기초석에 사용됨",
@@ -10924,15 +10774,6 @@
     ]
   },
   {
-    "id": "jewel",
-    "word": "보석",
-    "definition": "성경 시대에 장식품이나 성막과 제사장의 의복을 꾸미는 데 사용된 귀한 돌",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:15-21; 계시록 21:19, 20"
-    ]
-  },
-  {
     "id": "bozez",
     "word": "보세스",
     "definition": "요나단이 블레셋을 공격할 때 언급된 두 바위 중 하나",
@@ -11018,15 +10859,6 @@
     "references": [
       "신명기 32:35",
       "시편 94:1"
-    ]
-  },
-  {
-    "id": "gospel",
-    "word": "복음",
-    "definition": "하느님의 왕국과 예수에 관한 좋은 소식",
-    "difficulty": 1,
-    "references": [
-      "마가복음 1:14, 15"
     ]
   },
   {
@@ -11262,7 +11094,7 @@
   },
   {
     "id": "uncleanness",
-    "word": "부정",
+    "word": "부정함",
     "definition": "하느님의 숭배에 참여하기에 합당하지 않은 의식적 또는 도덕적 상태",
     "difficulty": 2,
     "references": [
@@ -11328,15 +11160,6 @@
     ]
   },
   {
-    "id": "discernment",
-    "word": "분별",
-    "definition": "무엇이 옳고 그른지 또는 어떤 일이 지혜로운지 판단하는 능력",
-    "difficulty": 2,
-    "references": [
-      "히브리서 5:14; 빌립보서 1:9, 10"
-    ]
-  },
-  {
     "id": "strife",
     "word": "분쟁",
     "definition": "적의로 인해 다투는 것으로 미움과 분노가 원인이 됨",
@@ -11367,7 +11190,7 @@
   },
   {
     "id": "incensealtar",
-    "word": "분향단",
+    "word": "분향제단",
     "definition": "성소 안에서 향을 피우도록 만든 제단",
     "difficulty": 2,
     "references": [
@@ -11422,15 +11245,6 @@
     "references": [
       "이사야 6:2",
       "민수기 21:6-9"
-    ]
-  },
-  {
-    "id": "disobedience",
-    "word": "불순종",
-    "definition": "하느님이나 정당한 권위가 주는 지시를 고의로 따르지 않는 행동",
-    "difficulty": 2,
-    "references": [
-      "창세기 3:1-6; 로마서 5:19"
     ]
   },
   {
@@ -11743,17 +11557,8 @@
     ]
   },
   {
-    "id": "beera",
-    "word": "브에라1",
-    "definition": "아셀 자손 중 한 가족의 우두머리",
-    "difficulty": 3,
-    "references": [
-      "역대기상 7:30, 37, 40"
-    ]
-  },
-  {
     "id": "beerah",
-    "word": "브에라2",
+    "word": "브에라",
     "definition": "르우벤 사람의 수장으로 아시리아에 의해 유배된 자",
     "difficulty": 3,
     "references": [
@@ -12144,15 +11949,6 @@
     ]
   },
   {
-    "id": "lyre",
-    "word": "비파",
-    "definition": "현을 뜯어 연주하며 하느님을 찬양하는 데 사용한 악기",
-    "difficulty": 2,
-    "references": [
-      "시편 150:3; 역대기상 15:16"
-    ]
-  },
-  {
     "id": "pihahiroth",
     "word": "비하히롯",
     "definition": "이스라엘이 홍해 건너기 전 마지막으로 진친 곳으로 바알스본 앞에 위치함",
@@ -12363,6 +12159,16 @@
     ]
   },
   {
+    "id": "horn",
+    "word": "뿔나팔",
+    "definition": "동물의 뿔로 기름 용기와 악기 신호 도구로 사용되며 권세와 능력을 상징",
+    "difficulty": 2,
+    "references": [
+      "사무엘상 16:1, 13",
+      "열왕기상 1:39"
+    ]
+  },
+  {
     "id": "entry-뿔북살무사",
     "word": "뿔북살무사",
     "definition": "팔레스타인에 서식하는 독사로 두 눈 위에 작은 뿔이 특징",
@@ -12370,16 +12176,6 @@
     "references": [
       "시편 140:3",
       "창세기 49:17"
-    ]
-  },
-  {
-    "id": "horn",
-    "word": "뿔뿔나팔",
-    "definition": "동물의 뿔로 기름 용기와 악기 신호 도구로 사용되며 권세와 능력을 상징",
-    "difficulty": 2,
-    "references": [
-      "사무엘상 16:1, 13",
-      "열왕기상 1:39"
     ]
   },
   {
@@ -13245,16 +13041,6 @@
     ]
   },
   {
-    "id": "shovel",
-    "word": "삽넉가래",
-    "definition": "파거나 뜨는 데 쓰는 긴 자루의 연장으로 장막 제단의 재를 치우는 데 사용됨",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 27:1-3",
-      "출애굽기 38:3"
-    ]
-  },
-  {
     "id": "sabtah",
     "word": "삽다",
     "definition": "구스의 아들이자 니므롯의 형제로 아라비아 남부에 정착한 가족의 선조",
@@ -13643,12 +13429,13 @@
     ]
   },
   {
-    "id": "consecration",
-    "word": "성별",
-    "definition": "하느님을 섬기는 특별한 목적을 위해 사람이나 물건을 구별하는 일",
+    "id": "walls",
+    "word": "성벽",
+    "definition": "방벽과 경계 표시 역할을 하는 돌이나 벽돌 구조물로 도시 방어에 사용됨",
     "difficulty": 2,
     "references": [
-      "출애굽기 29:44; 레위기 8:10-12"
+      "사무엘하 5:11",
+      "열왕기상 6:2, 7"
     ]
   },
   {
@@ -13719,16 +13506,6 @@
     ]
   },
   {
-    "id": "taxation",
-    "word": "세과세",
-    "definition": "당국이 사람이나 재산에 부과하는 세금으로 십일조 인두세 통행세 등이 있음",
-    "difficulty": 2,
-    "references": [
-      "민수기 18:26-29",
-      "출애굽기 30:12-16"
-    ]
-  },
-  {
     "id": "secu",
     "word": "세구",
     "definition": "사울이 다윗의 행방을 물은 라마 근처의 저수조가 있던 곳",
@@ -13795,7 +13572,7 @@
   },
   {
     "id": "generation",
-    "word": "세대대",
+    "word": "세대",
     "definition": "거의 같은 시기에 태어난 사람 전체나 가계의 한 세대를 가리키는 말",
     "difficulty": 2,
     "references": [
@@ -14437,15 +14214,6 @@
     "references": [
       "레위기 16장",
       "레위기 23:26-32"
-    ]
-  },
-  {
-    "id": "cover",
-    "word": "속죄판",
-    "definition": "계약의 궤 위에 놓였으며 대제사장이 속죄일에 피를 뿌린 덮개",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 25:17-22; 레위기 16:14, 15"
     ]
   },
   {
@@ -15739,7 +15507,7 @@
   },
   {
     "id": "hour",
-    "word": "시간시",
+    "word": "시간",
     "definition": "그리스어 호라로 짧은 기간이나 하루의 한 부분을 가리키는 시간 단위",
     "difficulty": 2,
     "references": [
@@ -16320,7 +16088,7 @@
   },
   {
     "id": "judgment",
-    "word": "심판",
+    "word": "심판대",
     "definition": "하느님이 사람과 행동을 의로운 기준에 따라 판단하시는 일",
     "difficulty": 1,
     "references": [
@@ -16364,15 +16132,6 @@
     "references": [
       "사도행전 18:1-3",
       "로마서 16:3, 4"
-    ]
-  },
-  {
-    "id": "agrippa",
-    "word": "아그립바",
-    "definition": "바울의 변론을 들은 왕으로, 그리스도인이 될 뻔했다는 말을 들은 사람",
-    "difficulty": 2,
-    "references": [
-      "사도행전 25:13-27; 26:1-29"
     ]
   },
   {
@@ -16657,24 +16416,6 @@
     ]
   },
   {
-    "id": "layingonofhands",
-    "word": "안수",
-    "definition": "특정한 목적을 위해 사람의 머리에 손을 얹는 성경 시대의 관행",
-    "difficulty": 2,
-    "references": [
-      "사도행전 6:5, 6; 13:2, 3"
-    ]
-  },
-  {
-    "id": "rest",
-    "word": "안식",
-    "definition": "하느님을 숭배하며 일상적인 일을 쉬도록 정해진 휴식 또는 평온한 상태",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 20:8-11; 히브리서 4:9-11"
-    ]
-  },
-  {
     "id": "sabbaticalyear",
     "word": "안식년",
     "definition": "이스라엘 사람들이 칠 년마다 땅을 쉬게 하고 빚을 면제하던 해",
@@ -16774,30 +16515,12 @@
     ]
   },
   {
-    "id": "flock",
-    "word": "양떼",
-    "definition": "함께 길러지는 여러 마리의 양으로, 성경에서는 하느님의 백성을 상징하기도 한다",
-    "difficulty": 2,
-    "references": [
-      "요한복음 10:14-16"
-    ]
-  },
-  {
     "id": "conscience",
     "word": "양심",
     "definition": "무엇이 옳고 그른지 판단하도록 돕는 마음속의 도덕 감각",
     "difficulty": 1,
     "references": [
       "로마서 2:14, 15; 베드로 전서 3:16"
-    ]
-  },
-  {
-    "id": "fisherman",
-    "word": "어부",
-    "definition": "물고기를 잡는 일을 하는 사람으로, 예수의 몇몇 사도들의 직업이었다",
-    "difficulty": 1,
-    "references": [
-      "마태복음 4:18-22"
     ]
   },
   {
@@ -17170,7 +16893,7 @@
   },
   {
     "id": "propheticbooks",
-    "word": "예언서",
+    "word": "예언",
     "definition": "하느님의 심판과 목적에 관한 예언을 담은 성경 책들",
     "difficulty": 1,
     "references": [
@@ -17249,15 +16972,6 @@
     "references": [
       "마태복음 5:5",
       "갈라디아서 5:22, 23"
-    ]
-  },
-  {
-    "id": "completeness",
-    "word": "온전함",
-    "definition": "하느님을 섬기는 면에서 나뉘지 않은 마음과 성숙한 상태",
-    "difficulty": 2,
-    "references": [
-      "열왕기상 8:61; 마태복음 5:48"
     ]
   },
   {
@@ -17529,21 +17243,13 @@
     ]
   },
   {
-    "id": "temptation",
-    "word": "유혹",
-    "definition": "잘못된 일을 하도록 마음을 끌어당기는 압력이나 기회",
-    "difficulty": 1,
+    "id": "law",
+    "word": "율법",
+    "definition": "정부가 제정해 사람들에게 적용하는 원칙과 규정으로 모세 율법을 포함함",
+    "difficulty": 2,
     "references": [
-      "야고보서 1:14, 15; 고린도 전서 10:13"
-    ]
-  },
-  {
-    "id": "righteousness",
-    "word": "의로움",
-    "definition": "하느님의 표준에 따라 올바르게 행동하는 특성",
-    "difficulty": 1,
-    "references": [
-      "마태복음 6:33; 로마서 3:21, 22"
+      "다니엘 6:5, 8",
+      "이사야 33:22"
     ]
   },
   {
@@ -17767,15 +17473,6 @@
     ]
   },
   {
-    "id": "selfcontrol",
-    "word": "자제력",
-    "definition": "감정과 욕망을 제어하여 하느님의 원칙에 맞게 행동하는 힘",
-    "difficulty": 2,
-    "references": [
-      "갈라디아서 5:22, 23; 베드로 후서 1:5, 6"
-    ]
-  },
-  {
     "id": "jackal",
     "word": "자칼",
     "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
@@ -17874,7 +17571,7 @@
   },
   {
     "id": "birthright",
-    "word": "장자권",
+    "word": "장자",
     "definition": "가족의 맏아들이 상속과 가문의 책임에서 갖던 특별한 권리",
     "difficulty": 2,
     "references": [
@@ -18070,7 +17767,7 @@
   },
   {
     "id": "preaching",
-    "word": "전파",
+    "word": "전파자",
     "definition": "하느님의 왕국과 성경의 소식을 사람들에게 공개적으로 알리는 활동",
     "difficulty": 2,
     "references": [
@@ -18134,15 +17831,6 @@
     "difficulty": 2,
     "references": [
       "레위기 11:44, 45; 시편 24:3, 4"
-    ]
-  },
-  {
-    "id": "purification",
-    "word": "정결례",
-    "definition": "부정한 상태에서 벗어나 숭배에 다시 참여하기 위해 행하던 의식",
-    "difficulty": 2,
-    "references": [
-      "레위기 14:8, 9; 누가복음 2:22"
     ]
   },
   {
@@ -18239,16 +17927,6 @@
     "difficulty": 1,
     "references": [
       "레위기 8장"
-    ]
-  },
-  {
-    "id": "priesthood",
-    "word": "제사직",
-    "definition": "하느님을 섬기며 백성을 위해 제사와 봉사를 수행하는 직무",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:1",
-      "히브리서 5:1"
     ]
   },
   {
@@ -18355,15 +18033,6 @@
     "difficulty": 2,
     "references": [
       "요한둘째 12절"
-    ]
-  },
-  {
-    "id": "sinfulness",
-    "word": "죄악",
-    "definition": "하느님의 의로운 표준을 어기거나 그 표준에서 벗어난 행동과 상태",
-    "difficulty": 2,
-    "references": [
-      "요한 첫째 3:4; 로마서 3:23"
     ]
   },
   {
@@ -18819,15 +18488,6 @@
     ]
   },
   {
-    "id": "heaven",
-    "word": "천국",
-    "definition": "하느님이 계신 하늘 영역 또는 하늘의 희망을 가리키는 표현",
-    "difficulty": 1,
-    "references": [
-      "마태복음 5:3; 6:9, 10"
-    ]
-  },
-  {
     "id": "thunder",
     "word": "천둥",
     "definition": "번개 방전 후 가열된 공기의 팽창으로 발생하는 큰 소리",
@@ -18887,7 +18547,7 @@
   },
   {
     "id": "booths",
-    "word": "초막절",
+    "word": "초막절축제",
     "definition": "이스라엘이 광야에서 천막생활을 한 일을 기억하며 지키던 축제",
     "difficulty": 2,
     "references": [
@@ -18966,7 +18626,7 @@
   },
   {
     "id": "faithfulness",
-    "word": "충실",
+    "word": "충실하고슬기로운종",
     "definition": "약속과 의무를 저버리지 않고 믿을 만하게 행동하는 특성",
     "difficulty": 2,
     "references": [
@@ -19238,7 +18898,7 @@
   },
   {
     "id": "crete",
-    "word": "크레테",
+    "word": "크레타",
     "definition": "바울이 디도를 남겨 회중들을 조직하게 한 지중해의 섬",
     "difficulty": 2,
     "references": [
@@ -19732,15 +19392,6 @@
     ]
   },
   {
-    "id": "wine",
-    "word": "포도주",
-    "definition": "포도를 발효시켜 만든 음료로 성경 시대에 널리 사용되었다",
-    "difficulty": 1,
-    "references": [
-      "요한복음 2:1-11"
-    ]
-  },
-  {
     "id": "captive",
     "word": "포로",
     "definition": "전쟁의 결과로 사로잡혀 끌려가거나 속박 아래 있는 사람",
@@ -19799,15 +19450,6 @@
     ]
   },
   {
-    "id": "priscilla",
-    "word": "프리스길라",
-    "definition": "남편과 함께 아볼로에게 하느님의 길을 더 정확하게 설명한 여자",
-    "difficulty": 2,
-    "references": [
-      "사도행전 18:24-26"
-    ]
-  },
-  {
     "id": "phrygia",
     "word": "프리지아",
     "definition": "소아시아 중앙에 있던 지역으로 로마 속주 갈라디아와 아시아에 걸친 곳",
@@ -19855,15 +19497,6 @@
     "references": [
       "이사야 34:9, 10",
       "출애굽기 2:3"
-    ]
-  },
-  {
-    "id": "manuscript",
-    "word": "필사본",
-    "definition": "원본 문서를 손으로 베껴 기록한 고대 문서",
-    "difficulty": 2,
-    "references": [
-      "예레미야 36:1-4"
     ]
   },
   {
@@ -20019,15 +19652,6 @@
     "references": [
       "사무엘하 10:1–11:1",
       "역대기상 19:1–20:3"
-    ]
-  },
-  {
-    "id": "dayofjehovah",
-    "word": "하느님의 날",
-    "definition": "하느님이 악을 심판하고 자신의 목적을 이루시는 특별한 때",
-    "difficulty": 2,
-    "references": [
-      "베드로 후서 3:10-12"
     ]
   },
   {
@@ -21715,7 +21339,7 @@
   },
   {
     "id": "fellowshipoffering",
-    "word": "화목제",
+    "word": "화목덮개",
     "definition": "하느님과의 평화로운 관계와 감사를 나타내기 위해 바치던 제물",
     "difficulty": 2,
     "references": [
@@ -21982,15 +21606,6 @@
     "references": [
       "창세기 46:8, 21",
       "역대기상 7:6, 7, 12"
-    ]
-  },
-  {
-    "id": "breastpiece",
-    "word": "흉패",
-    "definition": "이스라엘 대제사장이 가슴에 착용한 보석으로 장식된 특별한 의복",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:15-30"
     ]
   },
   {

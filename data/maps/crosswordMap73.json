@@ -1,204 +1,204 @@
 {
-  "id": "crossword-map-073",
+  "id": "crossword-map-151",
   "title": "H-13",
   "difficulty": 2.7,
   "width": 12,
   "height": 12,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#########부##",
-    "#########스하랴",
-    "##########닷#",
-    "##########에#",
-    "#######술#베셀#",
-    "#######취#두##",
-    "#######함무엘##",
-    "########화#필하",
-    "#######세과세#사",
-    "빗갈###벳벨렛#구사야",
-    "#르호봇이르####탄#",
-    "#엣###홉######"
+    "#####말고###봉#",
+    "######라부#호사마",
+    "#######시바#의#",
+    "########아#직#",
+    "#######헤나나무#",
+    "#####브에롯#하##",
+    "###맛다다###래##",
+    "###닷#헬렉#####",
+    "##사다새#######",
+    "하다사#########",
+    "루###########",
+    "스###########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "부스",
-      "direction": "down",
+      "answer": "말고",
+      "direction": "across",
       "row": 0,
-      "col": 9,
+      "col": 5,
       "length": 2,
-      "wordId": "buz"
+      "wordId": "malchus"
     },
     {
       "number": 2,
-      "answer": "스하랴",
-      "direction": "across",
-      "row": 1,
-      "col": 9,
-      "length": 3,
-      "wordId": "shehariah"
+      "answer": "고라",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 2,
+      "wordId": "korah"
     },
     {
       "number": 3,
-      "answer": "하닷에셀",
+      "answer": "봉사의직무",
       "direction": "down",
-      "row": 1,
+      "row": 0,
       "col": 10,
-      "length": 4,
-      "wordId": "hadadezer"
+      "length": 5,
+      "wordId": "ministry"
     },
     {
       "number": 4,
-      "answer": "술취함",
-      "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 3,
-      "wordId": "drunkenness"
+      "answer": "라부",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "raphu"
     },
     {
       "number": 5,
-      "answer": "베두엘",
+      "answer": "부시",
       "direction": "down",
-      "row": 4,
-      "col": 9,
-      "length": 3,
-      "wordId": "pethuel"
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "buzi"
     },
     {
       "number": 6,
-      "answer": "베셀",
+      "answer": "호사마",
       "direction": "across",
-      "row": 4,
+      "row": 1,
       "col": 9,
-      "length": 2,
-      "wordId": "bezer"
+      "length": 3,
+      "wordId": "hoshama"
     },
     {
       "number": 7,
-      "answer": "함무엘",
+      "answer": "시바",
       "direction": "across",
-      "row": 6,
+      "row": 2,
       "col": 7,
-      "length": 3,
-      "wordId": "hammuel"
+      "length": 2,
+      "wordId": "ziphah"
     },
     {
       "number": 8,
-      "answer": "무화과",
+      "answer": "바아나",
       "direction": "down",
-      "row": 6,
+      "row": 2,
       "col": 8,
       "length": 3,
-      "wordId": "fig"
+      "wordId": "baana"
     },
     {
       "number": 9,
-      "answer": "필하",
+      "answer": "헤나나무",
       "direction": "across",
-      "row": 7,
-      "col": 10,
-      "length": 2,
-      "wordId": "pilha"
+      "row": 4,
+      "col": 7,
+      "length": 4,
+      "wordId": "henna"
     },
     {
       "number": 10,
-      "answer": "하사야",
+      "answer": "헤롯",
       "direction": "down",
-      "row": 7,
-      "col": 11,
-      "length": 3,
-      "wordId": "hazaiah"
+      "row": 4,
+      "col": 7,
+      "length": 2,
+      "wordId": "herod"
     },
     {
       "number": 11,
-      "answer": "세과세",
-      "direction": "across",
-      "row": 8,
-      "col": 7,
+      "answer": "나하래",
+      "direction": "down",
+      "row": 4,
+      "col": 9,
       "length": 3,
-      "wordId": "taxation"
+      "wordId": "naharai"
     },
     {
       "number": 12,
-      "answer": "세렛",
-      "direction": "down",
-      "row": 8,
-      "col": 7,
-      "length": 2,
-      "wordId": "sered"
+      "answer": "브에롯",
+      "direction": "across",
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "beeroth"
     },
     {
       "number": 13,
-      "answer": "세구",
+      "answer": "브다헬",
       "direction": "down",
-      "row": 8,
-      "col": 9,
-      "length": 2,
-      "wordId": "secu"
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "pedahel"
     },
     {
       "number": 14,
-      "answer": "빗갈",
+      "answer": "맛다다",
       "direction": "across",
-      "row": 9,
-      "col": 0,
-      "length": 2,
-      "wordId": "bidkar"
+      "row": 6,
+      "col": 3,
+      "length": 3,
+      "wordId": "mattatha"
     },
     {
       "number": 15,
-      "answer": "갈르엣",
+      "answer": "맛닷다",
       "direction": "down",
-      "row": 9,
-      "col": 1,
+      "row": 6,
+      "col": 3,
       "length": 3,
-      "wordId": "galeed"
+      "wordId": "mattattah"
     },
     {
       "number": 16,
-      "answer": "벳벨렛",
+      "answer": "헬렉",
       "direction": "across",
-      "row": 9,
+      "row": 7,
       "col": 5,
-      "length": 3,
-      "wordId": "entry-벳-벨렛"
+      "length": 2,
+      "wordId": "helek"
     },
     {
       "number": 17,
-      "answer": "벳르홉",
-      "direction": "down",
-      "row": 9,
-      "col": 5,
+      "answer": "사다새",
+      "direction": "across",
+      "row": 8,
+      "col": 2,
       "length": 3,
-      "wordId": "entry-벳-르홉"
+      "wordId": "pelican"
     },
     {
       "number": 18,
-      "answer": "구사야",
-      "direction": "across",
-      "row": 9,
-      "col": 9,
-      "length": 3,
-      "wordId": "kushaiah"
+      "answer": "사사",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 2,
+      "wordId": "zaza"
     },
     {
       "number": 19,
-      "answer": "사탄",
-      "direction": "down",
+      "answer": "하다사",
+      "direction": "across",
       "row": 9,
-      "col": 10,
-      "length": 2,
-      "wordId": "satan"
+      "col": 0,
+      "length": 3,
+      "wordId": "hadashah"
     },
     {
       "number": 20,
-      "answer": "르호봇이르",
-      "direction": "across",
-      "row": 10,
-      "col": 1,
-      "length": 5,
-      "wordId": "entry-르호봇-이르"
+      "answer": "하루스",
+      "direction": "down",
+      "row": 9,
+      "col": 0,
+      "length": 3,
+      "wordId": "haruz"
     }
   ]
 }

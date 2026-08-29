@@ -135,15 +135,6 @@
     ]
   },
   {
-    "id": "dayofjehovah",
-    "word": "하느님의 날",
-    "definition": "하느님이 악을 심판하고 자신의 목적을 이루시는 특별한 때",
-    "difficulty": 2,
-    "references": [
-      "베드로 후서 3:10-12"
-    ]
-  },
-  {
     "id": "entry-하늘",
     "word": "하늘",
     "definition": "히브리어 샤마임으로 높은 것을 의미하는 창조된 영역",
@@ -1828,7 +1819,7 @@
   },
   {
     "id": "fellowshipoffering",
-    "word": "화목제",
+    "word": "화목덮개",
     "definition": "하느님과의 평화로운 관계와 감사를 나타내기 위해 바치던 제물",
     "difficulty": 2,
     "references": [
@@ -2095,15 +2086,6 @@
     "references": [
       "창세기 46:8, 21",
       "역대기상 7:6, 7, 12"
-    ]
-  },
-  {
-    "id": "breastpiece",
-    "word": "흉패",
-    "definition": "이스라엘 대제사장이 가슴에 착용한 보석으로 장식된 특별한 의복",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 28:15-30"
     ]
   },
   {

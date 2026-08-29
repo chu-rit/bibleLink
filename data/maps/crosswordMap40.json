@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-040",
+  "id": "crossword-map-142",
   "title": "E-20",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####침대#",
-    "######머리",
-    "####광주리#",
-    "#####제##",
-    "#####넘##",
-    "####복음##",
-    "###자수###",
-    "허수아비####"
+    "#####유대인",
+    "######제#",
+    "######사탄",
+    "#####족장#",
+    "#모##느보##",
+    "아레오바고###",
+    "#셋#늘####",
+    "###귀####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "침대",
+      "answer": "유대인",
       "direction": "across",
       "row": 0,
       "col": 5,
-      "length": 2,
-      "wordId": "bed"
+      "length": 3,
+      "wordId": "jews"
     },
     {
       "number": 2,
-      "answer": "대머리",
+      "answer": "대제사장",
       "direction": "down",
       "row": 0,
       "col": 6,
-      "length": 3,
-      "wordId": "baldness"
+      "length": 4,
+      "wordId": "highpriest"
     },
     {
       "number": 3,
-      "answer": "머리",
+      "answer": "사탄",
       "direction": "across",
-      "row": 1,
+      "row": 2,
       "col": 6,
       "length": 2,
-      "wordId": "head"
+      "wordId": "satan"
     },
     {
       "number": 4,
-      "answer": "광주리",
+      "answer": "족장",
       "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "basket"
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "sheik"
     },
     {
       "number": 5,
-      "answer": "주제넘음",
+      "answer": "족보",
       "direction": "down",
-      "row": 2,
+      "row": 3,
       "col": 5,
-      "length": 4,
-      "wordId": "presumptuousness"
+      "length": 2,
+      "wordId": "genealogy"
     },
     {
       "number": 6,
-      "answer": "복음",
-      "direction": "across",
-      "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "gospel"
+      "answer": "모레셋",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "moresheth"
     },
     {
       "number": 7,
-      "answer": "복수",
-      "direction": "down",
-      "row": 5,
+      "answer": "느보",
+      "direction": "across",
+      "row": 4,
       "col": 4,
       "length": 2,
-      "wordId": "vengeance"
+      "wordId": "nebo"
     },
     {
       "number": 8,
-      "answer": "자수",
-      "direction": "across",
-      "row": 6,
-      "col": 3,
+      "answer": "느고",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
       "length": 2,
-      "wordId": "embroidery"
+      "wordId": "entry-느고"
     },
     {
       "number": 9,
-      "answer": "자비",
-      "direction": "down",
-      "row": 6,
-      "col": 3,
-      "length": 2,
-      "wordId": "mercy"
+      "answer": "아레오바고",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 5,
+      "wordId": "areopagus"
     },
     {
       "number": 10,
-      "answer": "허수아비",
-      "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 4,
-      "wordId": "scarecrow"
+      "answer": "바늘귀",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "entry-바늘귀"
     }
   ]
 }

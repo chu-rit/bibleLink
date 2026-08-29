@@ -1,112 +1,110 @@
 {
-  "id": "crossword-map-058",
+  "id": "crossword-map-133",
   "title": "E-28",
   "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "##힘#분별##",
-    "붉은줄마노###",
-    "###지####",
-    "###막게다##",
-    "###날#니네베",
-    "####요엘#들",
-    "#######레",
-    "#######헴"
+    "######방#",
+    "######부#",
+    "######처#",
+    "#####엘리야",
+    "####머리##",
+    "사#사다리###",
+    "무화과#쓰###",
+    "엘##회개###"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "힘줄",
+      "answer": "방부처리",
       "direction": "down",
       "row": 0,
-      "col": 2,
-      "length": 2,
-      "wordId": "sinew"
+      "col": 6,
+      "length": 4,
+      "wordId": "embalming"
     },
     {
       "number": 2,
-      "answer": "분노",
+      "answer": "엘리",
       "direction": "down",
-      "row": 0,
-      "col": 4,
+      "row": 3,
+      "col": 5,
       "length": 2,
-      "wordId": "anger"
+      "wordId": "eli"
     },
     {
       "number": 3,
-      "answer": "분별",
+      "answer": "엘리야",
       "direction": "across",
-      "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "discernment"
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "elijah"
     },
     {
       "number": 4,
-      "answer": "붉은줄마노",
-      "direction": "across",
-      "row": 1,
-      "col": 0,
-      "length": 5,
-      "wordId": "sardonyx"
+      "answer": "머리쓰개",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 4,
+      "wordId": "headdress"
     },
     {
       "number": 5,
-      "answer": "마지막날",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-마지막 날"
+      "answer": "머리",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "head"
     },
     {
       "number": 6,
-      "answer": "막게다",
-      "direction": "across",
-      "row": 3,
-      "col": 3,
+      "answer": "사무엘",
+      "direction": "down",
+      "row": 5,
+      "col": 0,
       "length": 3,
-      "wordId": "makkedah"
+      "wordId": "samuel"
     },
     {
       "number": 7,
-      "answer": "다니엘",
+      "answer": "사과",
       "direction": "down",
-      "row": 3,
-      "col": 5,
-      "length": 3,
-      "wordId": "daniel",
-      "clue": "바빌론 포로기에 세 명의 친구와 함께 왕의 음식을 거절하고도 총수로 인정받은 예언자"
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "apple"
     },
     {
       "number": 8,
-      "answer": "니네베",
+      "answer": "사다리",
       "direction": "across",
-      "row": 4,
-      "col": 5,
+      "row": 5,
+      "col": 2,
       "length": 3,
-      "wordId": "nineveh",
-      "clue": "요나가 싫어하면서도 가서 전파했고 마침내 회개한 이 아시리아 수도의 백성은 12만 명이 넘었다"
+      "wordId": "ladder"
     },
     {
       "number": 9,
-      "answer": "베들레헴",
-      "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 4,
-      "wordId": "bethlehem"
+      "answer": "무화과",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "fig"
     },
     {
       "number": 10,
-      "answer": "요엘",
+      "answer": "회개",
       "direction": "across",
-      "row": 5,
-      "col": 4,
+      "row": 7,
+      "col": 3,
       "length": 2,
-      "wordId": "joel"
+      "wordId": "repentance"
     }
   ]
 }

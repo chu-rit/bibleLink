@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-097",
+  "id": "crossword-map-139",
   "title": "N-7",
   "difficulty": 2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######바라갸",
-    "#######늘##",
-    "#####까마귀##",
-    "######므###",
-    "##용#카멜레온##",
-    "##서머인#####",
-    "부대#리######",
-    "#제사직######",
-    "시사#분니#####",
-    "#장성#######"
+    "철학#느######",
+    "#기름부음#####",
+    "#야#스#####호",
+    "###심판대###세",
+    "#####리카오니아",
+    "###기록관#바#서",
+    "###름###댜##",
+    "###나답#####",
+    "##나무######",
+    "사르곤#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "바늘귀",
-      "direction": "down",
+      "answer": "철학",
+      "direction": "across",
       "row": 0,
-      "col": 7,
-      "length": 3,
-      "wordId": "entry-바늘귀"
+      "col": 0,
+      "length": 2,
+      "wordId": "philosophy"
     },
     {
       "number": 2,
-      "answer": "바라갸",
-      "direction": "across",
+      "answer": "학기야",
+      "direction": "down",
       "row": 0,
-      "col": 7,
+      "col": 1,
       "length": 3,
-      "wordId": "barachiah"
+      "wordId": "haggiah"
     },
     {
       "number": 3,
-      "answer": "까마귀",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "raven"
+      "answer": "느부스심",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 4,
+      "wordId": "nephushesim"
     },
     {
       "number": 4,
-      "answer": "마므레",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "mamre"
+      "answer": "기름부음",
+      "direction": "across",
+      "row": 1,
+      "col": 1,
+      "length": 4,
+      "wordId": "anointing"
     },
     {
       "number": 5,
-      "answer": "용서",
+      "answer": "호세아서",
       "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 2,
-      "wordId": "forgiveness"
+      "row": 2,
+      "col": 9,
+      "length": 4,
+      "wordId": "entry-호세아서"
     },
     {
       "number": 6,
-      "answer": "카멜레온",
+      "answer": "심판대",
       "direction": "across",
-      "row": 4,
-      "col": 4,
-      "length": 4,
-      "wordId": "chameleon"
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "judgment"
     },
     {
       "number": 7,
-      "answer": "카인",
+      "answer": "대리관",
       "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "cain"
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "deputy"
     },
     {
       "number": 8,
-      "answer": "서머인",
+      "answer": "리카오니아",
       "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "semein"
+      "row": 4,
+      "col": 5,
+      "length": 5,
+      "wordId": "lycaonia"
     },
     {
       "number": 9,
-      "answer": "머리직분",
+      "answer": "오바댜",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "obadiah"
+    },
+    {
+      "number": 10,
+      "answer": "기록관",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "recorder"
+    },
+    {
+      "number": 11,
+      "answer": "기름나무",
       "direction": "down",
       "row": 5,
       "col": 3,
       "length": 4,
-      "wordId": "headship"
-    },
-    {
-      "number": 10,
-      "answer": "부대",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 2,
-      "wordId": "bottle"
-    },
-    {
-      "number": 11,
-      "answer": "대제사장",
-      "direction": "down",
-      "row": 6,
-      "col": 1,
-      "length": 4,
-      "wordId": "highpriest"
+      "wordId": "entry-기름나무"
     },
     {
       "number": 12,
-      "answer": "제사직",
+      "answer": "나답",
       "direction": "across",
       "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "priesthood"
+      "col": 3,
+      "length": 2,
+      "wordId": "nadab"
     },
     {
       "number": 13,
-      "answer": "시사",
+      "answer": "나무",
       "direction": "across",
       "row": 8,
-      "col": 0,
+      "col": 2,
       "length": 2,
-      "wordId": "shiza"
+      "wordId": "trees"
     },
     {
       "number": 14,
-      "answer": "분니",
-      "direction": "across",
+      "answer": "나곤",
+      "direction": "down",
       "row": 8,
-      "col": 3,
+      "col": 2,
       "length": 2,
-      "wordId": "bunni"
+      "wordId": "nacon"
     },
     {
       "number": 15,
-      "answer": "장성",
+      "answer": "사르곤",
       "direction": "across",
       "row": 9,
-      "col": 1,
-      "length": 2,
-      "wordId": "maturity"
+      "col": 0,
+      "length": 3,
+      "wordId": "sargon"
     }
   ]
 }

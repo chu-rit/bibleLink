@@ -233,15 +233,6 @@
     ]
   },
   {
-    "id": "wine",
-    "word": "포도주",
-    "definition": "포도를 발효시켜 만든 음료로 성경 시대에 널리 사용되었다",
-    "difficulty": 1,
-    "references": [
-      "요한복음 2:1-11"
-    ]
-  },
-  {
     "id": "captive",
     "word": "포로",
     "definition": "전쟁의 결과로 사로잡혀 끌려가거나 속박 아래 있는 사람",
@@ -347,15 +338,6 @@
     "references": [
       "이사야 34:9, 10",
       "출애굽기 2:3"
-    ]
-  },
-  {
-    "id": "manuscript",
-    "word": "필사본",
-    "definition": "원본 문서를 손으로 베껴 기록한 고대 문서",
-    "difficulty": 2,
-    "references": [
-      "예레미야 36:1-4"
     ]
   },
   {

@@ -135,15 +135,6 @@
     ]
   },
   {
-    "id": "heaven",
-    "word": "천국",
-    "definition": "하느님이 계신 하늘 영역 또는 하늘의 희망을 가리키는 표현",
-    "difficulty": 1,
-    "references": [
-      "마태복음 5:3; 6:9, 10"
-    ]
-  },
-  {
     "id": "thunder",
     "word": "천둥",
     "definition": "번개 방전 후 가열된 공기의 팽창으로 발생하는 큰 소리",
@@ -203,7 +194,7 @@
   },
   {
     "id": "booths",
-    "word": "초막절",
+    "word": "초막절축제",
     "definition": "이스라엘이 광야에서 천막생활을 한 일을 기억하며 지키던 축제",
     "difficulty": 2,
     "references": [
@@ -282,7 +273,7 @@
   },
   {
     "id": "faithfulness",
-    "word": "충실",
+    "word": "충실하고슬기로운종",
     "definition": "약속과 의무를 저버리지 않고 믿을 만하게 행동하는 특성",
     "difficulty": 2,
     "references": [

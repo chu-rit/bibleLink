@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-110",
+  "id": "crossword-map-140",
   "title": "N-9",
   "difficulty": 2.3,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########쉬#",
-    "######헤르몬#",
-    "##골#아모스###",
-    "유두고#레#로루하마",
-    "향#다대오####가",
-    "####바룩####",
-    "###소고#####",
-    "###시######",
-    "###바후림####",
-    "###더######"
+    "######갑###",
+    "#####바돌로매#",
+    "###브리다#암##",
+    "##메네#표#미가#",
+    "###야#범##말#",
+    "겐그레아#가#갤리선",
+    "#무#간#죽음#엘#",
+    "요엘########",
+    "나#########",
+    "단#########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "쉬몬",
+      "answer": "갑돌",
       "direction": "down",
       "row": 0,
-      "col": 8,
+      "col": 6,
       "length": 2,
-      "wordId": "shimon"
+      "wordId": "caphtor"
     },
     {
       "number": 2,
-      "answer": "헤스로",
-      "direction": "down",
+      "answer": "바돌로매",
+      "direction": "across",
       "row": 1,
-      "col": 6,
-      "length": 3,
-      "wordId": "hezro"
+      "col": 5,
+      "length": 4,
+      "wordId": "bartholomew"
     },
     {
       "number": 3,
-      "answer": "헤르몬",
-      "direction": "across",
+      "answer": "바다표범가죽",
+      "direction": "down",
       "row": 1,
-      "col": 6,
-      "length": 3,
-      "wordId": "hermon"
+      "col": 5,
+      "length": 6,
+      "wordId": "sealskin"
     },
     {
       "number": 4,
-      "answer": "골고다",
+      "answer": "로암미",
       "direction": "down",
-      "row": 2,
-      "col": 2,
+      "row": 1,
+      "col": 7,
       "length": 3,
-      "wordId": "golgotha"
+      "wordId": "entry-로-암미"
     },
     {
       "number": 5,
-      "answer": "아모스",
+      "answer": "브리다",
       "direction": "across",
       "row": 2,
-      "col": 4,
+      "col": 3,
       "length": 3,
-      "wordId": "amos"
+      "wordId": "perida"
     },
     {
       "number": 6,
-      "answer": "아레오바고",
+      "answer": "브네야아간",
       "direction": "down",
       "row": 2,
-      "col": 4,
+      "col": 3,
       "length": 5,
-      "wordId": "areopagus"
+      "wordId": "entry-브네-야아간"
     },
     {
       "number": 7,
-      "answer": "유두고",
+      "answer": "메네",
       "direction": "across",
       "row": 3,
-      "col": 0,
-      "length": 3,
-      "wordId": "eutychus"
+      "col": 2,
+      "length": 2,
+      "wordId": "mene"
     },
     {
       "number": 8,
-      "answer": "유향",
-      "direction": "down",
+      "answer": "미가",
+      "direction": "across",
       "row": 3,
-      "col": 0,
+      "col": 7,
       "length": 2,
-      "wordId": "frankincense"
+      "wordId": "micah"
     },
     {
       "number": 9,
-      "answer": "로루하마",
-      "direction": "across",
+      "answer": "가말리엘",
+      "direction": "down",
       "row": 3,
-      "col": 6,
+      "col": 8,
       "length": 4,
-      "wordId": "entry-로-루하마"
+      "wordId": "gamaliel"
     },
     {
       "number": 10,
-      "answer": "마가",
-      "direction": "down",
-      "row": 3,
-      "col": 9,
-      "length": 2,
-      "wordId": "mark"
+      "answer": "겐그레아",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "cenchreae"
     },
     {
       "number": 11,
-      "answer": "다대오",
-      "direction": "across",
-      "row": 4,
-      "col": 2,
+      "answer": "그무엘",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
       "length": 3,
-      "wordId": "thaddaeus"
+      "wordId": "kemuel"
     },
     {
       "number": 12,
-      "answer": "바룩",
+      "answer": "갤리선",
       "direction": "across",
       "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "baruch"
+      "col": 7,
+      "length": 3,
+      "wordId": "galley"
     },
     {
       "number": 13,
-      "answer": "소고",
+      "answer": "죽음",
       "direction": "across",
       "row": 6,
-      "col": 3,
+      "col": 5,
       "length": 2,
-      "wordId": "entry-소고"
+      "wordId": "death"
     },
     {
       "number": 14,
-      "answer": "소시바더",
-      "direction": "down",
-      "row": 6,
-      "col": 3,
-      "length": 4,
-      "wordId": "sosipater"
+      "answer": "요엘",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "joel"
     },
     {
       "number": 15,
-      "answer": "바후림",
-      "direction": "across",
-      "row": 8,
-      "col": 3,
+      "answer": "요나단",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
       "length": 3,
-      "wordId": "bahurim"
+      "wordId": "jonathan"
     }
   ]
 }

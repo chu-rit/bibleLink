@@ -19,15 +19,6 @@
     ]
   },
   {
-    "id": "agrippa",
-    "word": "아그립바",
-    "definition": "바울의 변론을 들은 왕으로, 그리스도인이 될 뻔했다는 말을 들은 사람",
-    "difficulty": 2,
-    "references": [
-      "사도행전 25:13-27; 26:1-29"
-    ]
-  },
-  {
     "id": "ananias",
     "word": "아나니아",
     "definition": "아내와 함께 재산에 관해 거짓말해 심판받은 예루살렘의 그리스도인",
@@ -309,24 +300,6 @@
     ]
   },
   {
-    "id": "layingonofhands",
-    "word": "안수",
-    "definition": "특정한 목적을 위해 사람의 머리에 손을 얹는 성경 시대의 관행",
-    "difficulty": 2,
-    "references": [
-      "사도행전 6:5, 6; 13:2, 3"
-    ]
-  },
-  {
-    "id": "rest",
-    "word": "안식",
-    "definition": "하느님을 숭배하며 일상적인 일을 쉬도록 정해진 휴식 또는 평온한 상태",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 20:8-11; 히브리서 4:9-11"
-    ]
-  },
-  {
     "id": "sabbaticalyear",
     "word": "안식년",
     "definition": "이스라엘 사람들이 칠 년마다 땅을 쉬게 하고 빚을 면제하던 해",
@@ -426,30 +399,12 @@
     ]
   },
   {
-    "id": "flock",
-    "word": "양떼",
-    "definition": "함께 길러지는 여러 마리의 양으로, 성경에서는 하느님의 백성을 상징하기도 한다",
-    "difficulty": 2,
-    "references": [
-      "요한복음 10:14-16"
-    ]
-  },
-  {
     "id": "conscience",
     "word": "양심",
     "definition": "무엇이 옳고 그른지 판단하도록 돕는 마음속의 도덕 감각",
     "difficulty": 1,
     "references": [
       "로마서 2:14, 15; 베드로 전서 3:16"
-    ]
-  },
-  {
-    "id": "fisherman",
-    "word": "어부",
-    "definition": "물고기를 잡는 일을 하는 사람으로, 예수의 몇몇 사도들의 직업이었다",
-    "difficulty": 1,
-    "references": [
-      "마태복음 4:18-22"
     ]
   },
   {
@@ -822,7 +777,7 @@
   },
   {
     "id": "propheticbooks",
-    "word": "예언서",
+    "word": "예언",
     "definition": "하느님의 심판과 목적에 관한 예언을 담은 성경 책들",
     "difficulty": 1,
     "references": [
@@ -901,15 +856,6 @@
     "references": [
       "마태복음 5:5",
       "갈라디아서 5:22, 23"
-    ]
-  },
-  {
-    "id": "completeness",
-    "word": "온전함",
-    "definition": "하느님을 섬기는 면에서 나뉘지 않은 마음과 성숙한 상태",
-    "difficulty": 2,
-    "references": [
-      "열왕기상 8:61; 마태복음 5:48"
     ]
   },
   {
@@ -1178,24 +1124,6 @@
     "difficulty": 1,
     "references": [
       "출애굽기 30:34-38; 마태복음 2:11"
-    ]
-  },
-  {
-    "id": "temptation",
-    "word": "유혹",
-    "definition": "잘못된 일을 하도록 마음을 끌어당기는 압력이나 기회",
-    "difficulty": 1,
-    "references": [
-      "야고보서 1:14, 15; 고린도 전서 10:13"
-    ]
-  },
-  {
-    "id": "righteousness",
-    "word": "의로움",
-    "definition": "하느님의 표준에 따라 올바르게 행동하는 특성",
-    "difficulty": 1,
-    "references": [
-      "마태복음 6:33; 로마서 3:21, 22"
     ]
   },
   {

@@ -862,16 +862,6 @@
     ]
   },
   {
-    "id": "shovel",
-    "word": "삽넉가래",
-    "definition": "파거나 뜨는 데 쓰는 긴 자루의 연장으로 장막 제단의 재를 치우는 데 사용됨",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 27:1-3",
-      "출애굽기 38:3"
-    ]
-  },
-  {
     "id": "sabtah",
     "word": "삽다",
     "definition": "구스의 아들이자 니므롯의 형제로 아라비아 남부에 정착한 가족의 선조",
@@ -1250,15 +1240,6 @@
     ]
   },
   {
-    "id": "consecration",
-    "word": "성별",
-    "definition": "하느님을 섬기는 특별한 목적을 위해 사람이나 물건을 구별하는 일",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 29:44; 레위기 8:10-12"
-    ]
-  },
-  {
     "id": "entry-성서 사본",
     "word": "성서사본",
     "definition": "모세부터 요한까지 1600년에 걸쳐 기록되고 보존된 성경의 필사본",
@@ -1323,16 +1304,6 @@
     "difficulty": 2,
     "references": [
       "창세기 12:6, 7; 여호수아 24:1, 25"
-    ]
-  },
-  {
-    "id": "taxation",
-    "word": "세과세",
-    "definition": "당국이 사람이나 재산에 부과하는 세금으로 십일조 인두세 통행세 등이 있음",
-    "difficulty": 2,
-    "references": [
-      "민수기 18:26-29",
-      "출애굽기 30:12-16"
     ]
   },
   {
@@ -1402,7 +1373,7 @@
   },
   {
     "id": "generation",
-    "word": "세대대",
+    "word": "세대",
     "definition": "거의 같은 시기에 태어난 사람 전체나 가계의 한 세대를 가리키는 말",
     "difficulty": 2,
     "references": [
@@ -2034,15 +2005,6 @@
     "references": [
       "레위기 16장",
       "레위기 23:26-32"
-    ]
-  },
-  {
-    "id": "cover",
-    "word": "속죄판",
-    "definition": "계약의 궤 위에 놓였으며 대제사장이 속죄일에 피를 뿌린 덮개",
-    "difficulty": 2,
-    "references": [
-      "출애굽기 25:17-22; 레위기 16:14, 15"
     ]
   },
   {
@@ -3336,7 +3298,7 @@
   },
   {
     "id": "hour",
-    "word": "시간시",
+    "word": "시간",
     "definition": "그리스어 호라로 짧은 기간이나 하루의 한 부분을 가리키는 시간 단위",
     "difficulty": 2,
     "references": [
@@ -3907,7 +3869,7 @@
   },
   {
     "id": "judgment",
-    "word": "심판",
+    "word": "심판대",
     "definition": "하느님이 사람과 행동을 의로운 기준에 따라 판단하시는 일",
     "difficulty": 1,
     "references": [

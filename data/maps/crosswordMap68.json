@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-068",
+  "id": "crossword-map-144",
   "title": "N-28",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "##느바욧#####",
-    "###르######",
-    "#밧세바#바####",
-    "도단#로맘디에셀#비",
-    "공##이#매#사모스",
-    "####키오스##요",
-    "#######오바댜",
-    "########돌#",
-    "#######의로움",
-    "########매#"
+    "#므########",
+    "#로맘디에셀####",
+    "하닥##베#####",
+    "수###소요##종#",
+    "바####르호봇이르",
+    "####도단###하",
+    "#####강#밧랍빔",
+    "########사#",
+    "#######막게다",
+    "#########윗"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "느바욧",
-      "direction": "across",
+      "answer": "므로닥",
+      "direction": "down",
       "row": 0,
-      "col": 2,
+      "col": 1,
       "length": 3,
-      "wordId": "nebaioth"
+      "wordId": "merodach"
     },
     {
       "number": 2,
-      "answer": "바르바로이",
-      "direction": "down",
-      "row": 0,
-      "col": 3,
-      "length": 5,
-      "wordId": "barbarian"
-    },
-    {
-      "number": 3,
-      "answer": "밧세바",
-      "direction": "across",
-      "row": 2,
-      "col": 1,
-      "length": 3,
-      "wordId": "bathsheba"
-    },
-    {
-      "number": 4,
-      "answer": "밧단",
-      "direction": "down",
-      "row": 2,
-      "col": 1,
-      "length": 2,
-      "wordId": "paddan"
-    },
-    {
-      "number": 5,
-      "answer": "바디매오",
-      "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 4,
-      "wordId": "bartimaeus"
-    },
-    {
-      "number": 6,
-      "answer": "도단",
-      "direction": "across",
-      "row": 3,
-      "col": 0,
-      "length": 2,
-      "wordId": "dothan"
-    },
-    {
-      "number": 7,
-      "answer": "도공",
-      "direction": "down",
-      "row": 3,
-      "col": 0,
-      "length": 2,
-      "wordId": "potter"
-    },
-    {
-      "number": 8,
       "answer": "로맘디에셀",
       "direction": "across",
-      "row": 3,
-      "col": 3,
+      "row": 1,
+      "col": 1,
       "length": 5,
       "wordId": "entry-로맘디-에셀"
     },
     {
-      "number": 9,
-      "answer": "셀사",
+      "number": 3,
+      "answer": "에베소",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "ephesus"
+    },
+    {
+      "number": 4,
+      "answer": "하닥",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "hathach"
+    },
+    {
+      "number": 5,
+      "answer": "하수바",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "hashubah"
+    },
+    {
+      "number": 6,
+      "answer": "소요",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 2,
+      "wordId": "sedition"
+    },
+    {
+      "number": 7,
+      "answer": "요르단강",
       "direction": "down",
       "row": 3,
-      "col": 7,
+      "col": 5,
+      "length": 4,
+      "wordId": "jordan"
+    },
+    {
+      "number": 8,
+      "answer": "종이",
+      "direction": "down",
+      "row": 3,
+      "col": 8,
       "length": 2,
-      "wordId": "zelzah"
+      "wordId": "paper"
+    },
+    {
+      "number": 9,
+      "answer": "르호봇이르",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 5,
+      "wordId": "entry-르호봇-이르"
     },
     {
       "number": 10,
-      "answer": "비스요댜",
+      "answer": "르하빔",
       "direction": "down",
-      "row": 3,
+      "row": 4,
       "col": 9,
-      "length": 4,
-      "wordId": "biziothiah"
+      "length": 3,
+      "wordId": "lehabim"
     },
     {
       "number": 11,
-      "answer": "사모스",
-      "direction": "across",
-      "row": 4,
-      "col": 7,
-      "length": 3,
-      "wordId": "samos"
-    },
-    {
-      "number": 12,
-      "answer": "키오스",
+      "answer": "도단",
       "direction": "across",
       "row": 5,
       "col": 4,
-      "length": 3,
-      "wordId": "chios"
+      "length": 2,
+      "wordId": "dothan"
     },
     {
-      "number": 13,
-      "answer": "오바댜",
+      "number": 12,
+      "answer": "밧랍빔",
       "direction": "across",
       "row": 6,
       "col": 7,
       "length": 3,
-      "wordId": "obadiah"
+      "wordId": "entry-밧-랍빔"
     },
     {
-      "number": 14,
-      "answer": "바돌로매",
+      "number": 13,
+      "answer": "랍사게",
       "direction": "down",
       "row": 6,
       "col": 8,
-      "length": 4,
-      "wordId": "bartholomew"
+      "length": 3,
+      "wordId": "rabshakeh"
     },
     {
-      "number": 15,
-      "answer": "의로움",
+      "number": 14,
+      "answer": "막게다",
       "direction": "across",
       "row": 8,
       "col": 7,
       "length": 3,
-      "wordId": "righteousness"
+      "wordId": "makkedah"
+    },
+    {
+      "number": 15,
+      "answer": "다윗",
+      "direction": "down",
+      "row": 8,
+      "col": 9,
+      "length": 2,
+      "wordId": "david"
     }
   ]
 }

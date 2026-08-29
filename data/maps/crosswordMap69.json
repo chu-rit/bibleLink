@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-069",
+  "id": "crossword-map-134",
   "title": "N-29",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###클######",
-    "#아굴라######",
-    "게달#우르##셀##",
-    "#랴#디#미틸레네#",
-    "###우리야#우##",
-    "#나하스#민#키레네",
-    "##느####아#피",
-    "느디님######림",
-    "보#의#######",
-    "##날#######"
+    "브다술#######",
+    "#니########",
+    "#엘리사######",
+    "###고스비####",
+    "#통찰력#베냐민##",
+    "#치###셋#수##",
+    "#자인####기시#",
+    "########숙곳",
+    "#######판결#",
+    "########혼#"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "클라우디우스",
-      "direction": "down",
+      "answer": "브다술",
+      "direction": "across",
       "row": 0,
-      "col": 3,
-      "length": 6,
-      "wordId": "claudius"
+      "col": 0,
+      "length": 3,
+      "wordId": "pedahzur"
     },
     {
       "number": 2,
-      "answer": "아굴라",
-      "direction": "across",
-      "row": 1,
+      "answer": "다니엘",
+      "direction": "down",
+      "row": 0,
       "col": 1,
       "length": 3,
-      "wordId": "aquila"
+      "wordId": "daniel"
     },
     {
       "number": 3,
-      "answer": "아달랴",
-      "direction": "down",
-      "row": 1,
+      "answer": "엘리사",
+      "direction": "across",
+      "row": 2,
       "col": 1,
       "length": 3,
-      "wordId": "athaliah"
+      "wordId": "elisha"
     },
     {
       "number": 4,
-      "answer": "게달",
-      "direction": "across",
+      "answer": "사고력",
+      "direction": "down",
       "row": 2,
-      "col": 0,
-      "length": 2,
-      "wordId": "kedar"
+      "col": 3,
+      "length": 3,
+      "wordId": "entry-사고력"
     },
     {
       "number": 5,
-      "answer": "우르",
+      "answer": "고스비",
       "direction": "across",
-      "row": 2,
+      "row": 3,
       "col": 3,
-      "length": 2,
-      "wordId": "ur"
+      "length": 3,
+      "wordId": "cozbi"
     },
     {
       "number": 6,
-      "answer": "셀레우키아",
+      "answer": "비베셋",
       "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 5,
-      "wordId": "seleucia"
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "pibeseth"
     },
     {
       "number": 7,
-      "answer": "미야민",
-      "direction": "down",
-      "row": 3,
-      "col": 5,
+      "answer": "통찰력",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
       "length": 3,
-      "wordId": "mijamin"
+      "wordId": "insight"
     },
     {
       "number": 8,
-      "answer": "미틸레네",
-      "direction": "across",
-      "row": 3,
-      "col": 5,
-      "length": 4,
-      "wordId": "mitylene"
+      "answer": "통치자",
+      "direction": "down",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "ruler"
     },
     {
       "number": 9,
-      "answer": "우리야",
+      "answer": "베냐민",
       "direction": "across",
       "row": 4,
-      "col": 3,
+      "col": 5,
       "length": 3,
-      "wordId": "uriah"
+      "wordId": "benjamin"
     },
     {
       "number": 10,
-      "answer": "나하스",
-      "direction": "across",
-      "row": 5,
-      "col": 1,
+      "answer": "민수기",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
       "length": 3,
-      "wordId": "nahash"
+      "wordId": "numbers"
     },
     {
       "number": 11,
-      "answer": "하느님의 날",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
-      "length": 5,
-      "wordId": "dayofjehovah"
+      "answer": "자인",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "zayin"
     },
     {
       "number": 12,
-      "answer": "키레네",
+      "answer": "기시",
       "direction": "across",
-      "row": 5,
+      "row": 6,
       "col": 7,
-      "length": 3,
-      "wordId": "cyrene"
+      "length": 2,
+      "wordId": "kishi"
     },
     {
       "number": 13,
-      "answer": "네피림",
+      "answer": "시숙결혼",
       "direction": "down",
-      "row": 5,
-      "col": 9,
-      "length": 3,
-      "wordId": "nephilim"
+      "row": 6,
+      "col": 8,
+      "length": 4,
+      "wordId": "entry-시숙 결혼"
     },
     {
       "number": 14,
-      "answer": "느디님",
+      "answer": "숙곳",
       "direction": "across",
       "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "nethinim"
+      "col": 8,
+      "length": 2,
+      "wordId": "succoth"
     },
     {
       "number": 15,
-      "answer": "느보",
-      "direction": "down",
-      "row": 7,
-      "col": 0,
+      "answer": "판결",
+      "direction": "across",
+      "row": 8,
+      "col": 7,
       "length": 2,
-      "wordId": "nebo"
+      "wordId": "entry-판결"
     }
   ]
 }

@@ -1,204 +1,204 @@
 {
-  "id": "crossword-map-028",
+  "id": "crossword-map-149",
   "title": "H-8",
   "difficulty": 2.7,
   "width": 12,
   "height": 12,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#########하루스",
-    "########호르##",
-    "#########사다새",
-    "##########베#",
-    "########시스라#",
-    "##하#멤##노바###",
-    "나깃수#피시디아####",
-    "할#파포스##댜####",
-    "랄##도########",
-    "##메주자#######",
-    "##섹#수하######",
-    "####정#######"
+    "#######노바#광#",
+    "######므#아#주#",
+    "######히에라폴리스",
+    "####가르다####게",
+    "###호르#####부와",
+    "##우#스마랴###활#",
+    "#하르보나#######",
+    "갈로#르########",
+    "#셋#두########",
+    "###나핫#######",
+    "#유스도########",
+    "##엡#########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "하르사",
-      "direction": "down",
-      "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "harsha"
-    },
-    {
-      "number": 2,
-      "answer": "하루스",
-      "direction": "across",
-      "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "haruz"
-    },
-    {
-      "number": 3,
-      "answer": "호르",
-      "direction": "across",
-      "row": 1,
-      "col": 8,
-      "length": 2,
-      "wordId": "hor"
-    },
-    {
-      "number": 4,
-      "answer": "사다새",
-      "direction": "across",
-      "row": 2,
-      "col": 9,
-      "length": 3,
-      "wordId": "pelican"
-    },
-    {
-      "number": 5,
-      "answer": "다베라",
-      "direction": "down",
-      "row": 2,
-      "col": 10,
-      "length": 3,
-      "wordId": "taberah"
-    },
-    {
-      "number": 6,
-      "answer": "시바",
-      "direction": "down",
-      "row": 4,
-      "col": 8,
-      "length": 2,
-      "wordId": "ziphah"
-    },
-    {
-      "number": 7,
-      "answer": "시스라",
-      "direction": "across",
-      "row": 4,
-      "col": 8,
-      "length": 3,
-      "wordId": "sisera"
-    },
-    {
-      "number": 8,
-      "answer": "하수파",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "hasupha"
-    },
-    {
-      "number": 9,
-      "answer": "멤피스",
-      "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 3,
-      "wordId": "memphis"
-    },
-    {
-      "number": 10,
-      "answer": "노아댜",
-      "direction": "down",
-      "row": 5,
-      "col": 7,
-      "length": 3,
-      "wordId": "noadiah"
-    },
-    {
-      "number": 11,
       "answer": "노바",
       "direction": "across",
-      "row": 5,
+      "row": 0,
       "col": 7,
       "length": 2,
       "wordId": "nobah"
     },
     {
-      "number": 12,
-      "answer": "나깃수",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
+      "number": 2,
+      "answer": "바아라",
+      "direction": "down",
+      "row": 0,
+      "col": 8,
       "length": 3,
-      "wordId": "narcissus"
+      "wordId": "baara"
+    },
+    {
+      "number": 3,
+      "answer": "광주리",
+      "direction": "down",
+      "row": 0,
+      "col": 10,
+      "length": 3,
+      "wordId": "basket"
+    },
+    {
+      "number": 4,
+      "answer": "므히다",
+      "direction": "down",
+      "row": 1,
+      "col": 6,
+      "length": 3,
+      "wordId": "mehida"
+    },
+    {
+      "number": 5,
+      "answer": "히에라폴리스",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 6,
+      "wordId": "hierapolis"
+    },
+    {
+      "number": 6,
+      "answer": "스게와",
+      "direction": "down",
+      "row": 2,
+      "col": 11,
+      "length": 3,
+      "wordId": "sceva"
+    },
+    {
+      "number": 7,
+      "answer": "가르다",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "kartah"
+    },
+    {
+      "number": 8,
+      "answer": "가르스나",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "carshena"
+    },
+    {
+      "number": 9,
+      "answer": "호르",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "hor"
+    },
+    {
+      "number": 10,
+      "answer": "부와",
+      "direction": "across",
+      "row": 4,
+      "col": 10,
+      "length": 2,
+      "wordId": "puvah"
+    },
+    {
+      "number": 11,
+      "answer": "부활",
+      "direction": "down",
+      "row": 4,
+      "col": 10,
+      "length": 2,
+      "wordId": "resurrection"
+    },
+    {
+      "number": 12,
+      "answer": "우르",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "ur"
     },
     {
       "number": 13,
-      "answer": "나할랄",
-      "direction": "down",
-      "row": 6,
-      "col": 0,
+      "answer": "스마랴",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
       "length": 3,
-      "wordId": "nahalal"
+      "wordId": "shemariah"
     },
     {
       "number": 14,
-      "answer": "피시디아",
+      "answer": "하르보나",
       "direction": "across",
       "row": 6,
-      "col": 4,
+      "col": 1,
       "length": 4,
-      "wordId": "pisidia"
+      "wordId": "harbona"
     },
     {
       "number": 15,
-      "answer": "파포스",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
+      "answer": "하로셋",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
       "length": 3,
-      "wordId": "paphos"
+      "wordId": "harosheth"
     },
     {
       "number": 16,
-      "answer": "포도주",
+      "answer": "보르두나도",
       "direction": "down",
-      "row": 7,
+      "row": 6,
       "col": 3,
-      "length": 3,
-      "wordId": "wine"
+      "length": 5,
+      "wordId": "fortunatus"
     },
     {
       "number": 17,
-      "answer": "메주자",
+      "answer": "갈로",
       "direction": "across",
-      "row": 9,
-      "col": 2,
-      "length": 3,
-      "wordId": "mezuzah"
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "calno"
     },
     {
       "number": 18,
-      "answer": "메섹",
-      "direction": "down",
+      "answer": "나핫",
+      "direction": "across",
       "row": 9,
-      "col": 2,
+      "col": 3,
       "length": 2,
-      "wordId": "meshech"
+      "wordId": "nahath"
     },
     {
       "number": 19,
-      "answer": "자수정",
-      "direction": "down",
-      "row": 9,
-      "col": 4,
+      "answer": "유스도",
+      "direction": "across",
+      "row": 10,
+      "col": 1,
       "length": 3,
-      "wordId": "amethyst"
+      "wordId": "justus"
     },
     {
       "number": 20,
-      "answer": "수하",
-      "direction": "across",
+      "answer": "스엡",
+      "direction": "down",
       "row": 10,
-      "col": 4,
+      "col": 2,
       "length": 2,
-      "wordId": "shuhah"
+      "wordId": "zeeb"
     }
   ]
 }
