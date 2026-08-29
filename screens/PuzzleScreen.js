@@ -394,10 +394,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           style={[
             styles.answerCardContainer,
             isKeyboardVisible && {
-              position: 'absolute',
-              left: 12,
-              right: 12,
-              bottom: Platform.OS === 'web'
+              paddingBottom: Platform.OS === 'web'
                 ? Math.max(0, window.innerHeight - (webViewportHeight || window.innerHeight))
                 : keyboardHeight,
             },
