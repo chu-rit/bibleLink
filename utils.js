@@ -2,7 +2,10 @@ import bibleWords from './data/words/bibleWordsLib1.json';
 
 export const normalize = (value) => value.replace(/\s/g, '').trim();
 
-export const formatReferenceByChapter = (reference) => reference.replace(/(\d+):\d+(?:-\d+)?(?:,\s*\d+)*/g, '$1장');
+export const formatReferenceByChapter = (reference) => reference.replace(/(시편\s+)?(\d+):\d+(?:-\d+)?(?:,\s*\d+)*/g, (match, psalms, p1) => {
+  const suffix = psalms ? '편' : '장';
+  return (psalms || '') + p1 + suffix;
+});
 
 export const wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
 
