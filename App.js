@@ -39,6 +39,20 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    if (Platform.OS !== 'web' || typeof window === 'undefined') return undefined;
+    const onHashChange = () => {
+      const hash = window.location.hash || '';
+      if (hash.includes('/word')) {
+        setScreen('wordSearch');
+      } else if (hash.includes('/master') || hash === '' || hash === '#' || hash === '#/') {
+        setScreen('mapSelect');
+      }
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  useEffect(() => {
     Promise.all([
       AsyncStorage.getItem('answersByMap'),
       AsyncStorage.getItem('hintPointsByMap'),
@@ -94,13 +108,6 @@ export default function App() {
     return (
       <WordSearchScreen
         onBack={() => {
-          if (Platform.OS === 'web') {
-            const hash = window.location.hash || '';
-            const cleaned = hash.replace(/\/word\/?$/, '');
-            window.location.hash = cleaned || '/';
-            setScreen('mapSelect');
-            return;
-          }
           setScreen('mapSelect');
         }}
       />
@@ -117,9 +124,7 @@ export default function App() {
           setScreen('puzzle');
         }}
         onWordSearch={masterMode ? () => {
-          const currentHash = (window.location.hash || '').replace(/^#/, '');
-          const base = currentHash || '/';
-          window.location.hash = `${base.replace(/\/?$/, '')}/word/`;
+          setScreen('wordSearch');
         } : undefined}
         onResetProgress={(hideSolvedOff) => {
           setAnswersByMap({});
