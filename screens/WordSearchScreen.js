@@ -28,9 +28,8 @@ const usageCount = (() => {
 
 const getUsage = (id) => usageCount.get(id) || 0;
 const getMapTitles = (wordId) => crosswordMaps
-  .map((map, index) => ({ map, index }))
-  .filter(({ map }) => map.cells.some((cell) => cell.wordId === wordId))
-  .map(({ index }) => `맵 ${index + 1}`);
+  .filter((map) => map.cells.some((cell) => cell.wordId === wordId))
+  .map((map) => map.title);
 
 export default function WordSearchScreen({ onBack }) {
   const [query, setQuery] = useState('');
