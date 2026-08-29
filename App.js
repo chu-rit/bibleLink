@@ -76,13 +76,15 @@ export default function App() {
   };
 
   const handleUseHint = (mapId, slotIndex) => {
-    setHintPointsByMap((prev) => {
-      const current = prev[mapId] ?? 3;
-      if (current <= 0) return prev;
-      const next = { ...prev, [mapId]: current - 1 };
-      AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
-      return next;
-    });
+    if (!masterMode) {
+      setHintPointsByMap((prev) => {
+        const current = prev[mapId] ?? 3;
+        if (current <= 0) return prev;
+        const next = { ...prev, [mapId]: current - 1 };
+        AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
+        return next;
+      });
+    }
     setHintedSlotsByMap((prev) => {
       const next = { ...prev, [mapId]: { ...(prev[mapId] || {}), [slotIndex]: true } };
       AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
