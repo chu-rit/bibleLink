@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: -4 },
     elevation: 8,
   },
-  hintBox: { position: 'absolute', top: -2, right: -2, zIndex: 1, maxWidth: 160 },
+  hintBox: { position: 'absolute', top: 4, right: 4, zIndex: 1, maxWidth: 160 },
   hintButton: { backgroundColor: '#e08a3c', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 5, alignItems: 'center', justifyContent: 'center' },
   hintButtonText: { color: '#fff', fontSize: 11, fontWeight: '800' },
   hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },

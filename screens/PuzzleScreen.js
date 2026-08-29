@@ -364,6 +364,18 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             </View>
           )}
 
+          <Pressable
+            style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}
+            onPress={() => {
+              if (selectedSlot !== null) {
+                setSelectedSlot(null);
+                setInput('');
+                setIsCorrect(false);
+                setIsWrong(false);
+                inputRef.current?.blur();
+              }
+            }}
+          >
           <View
             style={[
               styles.boardArea,
@@ -483,6 +495,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             )}
           </View>
+          </Pressable>
       </View>
 
       <Modal
