@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-125",
+  "id": "crossword-map-156",
   "title": "E-24",
-  "difficulty": 1.5,
+  "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######칼새",
-    "#######예",
-    "######노루",
-    "#######살",
-    "#도##예루살렘",
-    "줄마노##디##",
-    "##아카이아##",
-    "####삭###"
+    "######느#",
+    "#####조부모",
+    "머리직분##갓#",
+    "###노아#네#",
+    "####벨사살#",
+    "#####두##",
+    "###믿#개##",
+    "##복음전파자#"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "칼새",
-      "direction": "across",
+      "answer": "느부갓네살",
+      "direction": "down",
       "row": 0,
       "col": 6,
-      "length": 2,
-      "wordId": "swift"
+      "length": 5,
+      "wordId": "nebuchadnezzar"
     },
     {
       "number": 2,
-      "answer": "새예루살렘",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 5,
-      "wordId": "entry-새 예루살렘"
+      "answer": "조부모",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "grandparents"
     },
     {
       "number": 3,
-      "answer": "노루",
+      "answer": "머리직분",
       "direction": "across",
       "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "roebuck"
+      "col": 0,
+      "length": 4,
+      "wordId": "headship"
     },
     {
       "number": 4,
-      "answer": "도마",
+      "answer": "분노",
       "direction": "down",
-      "row": 4,
-      "col": 1,
+      "row": 2,
+      "col": 3,
       "length": 2,
-      "wordId": "thomas"
+      "wordId": "anger"
     },
     {
       "number": 5,
-      "answer": "예루살렘",
-      "direction": "across",
-      "row": 4,
-      "col": 4,
-      "length": 4,
-      "wordId": "jerusalem"
-    },
-    {
-      "number": 6,
-      "answer": "루디아",
-      "direction": "down",
-      "row": 4,
-      "col": 5,
-      "length": 3,
-      "wordId": "lydia"
-    },
-    {
-      "number": 7,
-      "answer": "줄마노",
-      "direction": "across",
-      "row": 5,
-      "col": 0,
-      "length": 3,
-      "wordId": "onyx"
-    },
-    {
-      "number": 8,
       "answer": "노아",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
+      "direction": "across",
+      "row": 3,
+      "col": 3,
       "length": 2,
       "wordId": "noah"
     },
     {
-      "number": 9,
-      "answer": "아카이아",
+      "number": 6,
+      "answer": "아벨",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 2,
+      "wordId": "abel"
+    },
+    {
+      "number": 7,
+      "answer": "벨사살",
       "direction": "across",
-      "row": 6,
-      "col": 2,
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "belshazzar"
+    },
+    {
+      "number": 8,
+      "answer": "사두개파",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
       "length": 4,
-      "wordId": "achaia"
+      "wordId": "sadducees"
+    },
+    {
+      "number": 9,
+      "answer": "믿음",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
+      "length": 2,
+      "wordId": "faith"
     },
     {
       "number": 10,
-      "answer": "이삭",
-      "direction": "down",
-      "row": 6,
-      "col": 4,
-      "length": 2,
-      "wordId": "isaac"
+      "answer": "복음전파자",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 5,
+      "wordId": "evangelizer"
     }
   ]
 }

@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-147",
+  "id": "crossword-map-152",
   "title": "E-1",
   "difficulty": 1.3,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####말[馬]",
-    "###실라###",
-    "##철#기쁨##",
-    "##학개서###",
-    "###구####",
-    "#대머리####",
-    "#속######",
-    "동물######"
+    "#####번개#",
+    "######구스",
+    "####대머리#",
+    "####추###",
+    "가###야###",
+    "나#감독자###",
+    "안디옥#####",
+    "#도######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "말[馬]",
+      "answer": "번개",
       "direction": "across",
       "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "horse"
+      "col": 5,
+      "length": 2,
+      "wordId": "lightning"
     },
     {
       "number": 2,
-      "answer": "말라기서",
-      "direction": "down",
-      "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "entry-말라기서"
-    },
-    {
-      "number": 3,
-      "answer": "실라",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 2,
-      "wordId": "silas"
-    },
-    {
-      "number": 4,
-      "answer": "철학",
-      "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 2,
-      "wordId": "philosophy"
-    },
-    {
-      "number": 5,
-      "answer": "기쁨",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 2,
-      "wordId": "joy"
-    },
-    {
-      "number": 6,
-      "answer": "학개서",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 3,
-      "wordId": "entry-학개서"
-    },
-    {
-      "number": 7,
       "answer": "개구리",
       "direction": "down",
-      "row": 3,
-      "col": 3,
+      "row": 0,
+      "col": 6,
       "length": 3,
       "wordId": "frog"
     },
     {
-      "number": 8,
+      "number": 3,
+      "answer": "구스",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "cush"
+    },
+    {
+      "number": 4,
       "answer": "대머리",
       "direction": "across",
-      "row": 5,
-      "col": 1,
+      "row": 2,
+      "col": 4,
       "length": 3,
       "wordId": "baldness"
     },
     {
-      "number": 9,
-      "answer": "대속물",
+      "number": 5,
+      "answer": "대추야자",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "date"
+    },
+    {
+      "number": 6,
+      "answer": "가나안",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "canaan"
+    },
+    {
+      "number": 7,
+      "answer": "감독자",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "overseer"
+    },
+    {
+      "number": 8,
+      "answer": "감옥",
       "direction": "down",
       "row": 5,
-      "col": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "prison"
+    },
+    {
+      "number": 9,
+      "answer": "안디옥",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
       "length": 3,
-      "wordId": "ransom"
+      "wordId": "antioch"
     },
     {
       "number": 10,
-      "answer": "동물",
-      "direction": "across",
-      "row": 7,
-      "col": 0,
+      "answer": "디도",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
       "length": 2,
-      "wordId": "animals"
+      "wordId": "titus"
     }
   ]
 }

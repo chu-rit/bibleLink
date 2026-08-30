@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-144",
+  "id": "crossword-map-155",
   "title": "N-28",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#므########",
-    "#로맘디에셀####",
-    "하닥##베#####",
-    "수###소요##종#",
-    "바####르호봇이르",
-    "####도단###하",
-    "#####강#밧랍빔",
-    "########사#",
-    "#######막게다",
-    "#########윗"
+    "####피시디아##",
+    "#######달레트",
+    "#####스가랴##",
+    "###시비아####",
+    "#몰#므######",
+    "스타디온######",
+    "올#모#######",
+    "#스데반######",
+    "자루#역######",
+    "#야########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "므로닥",
-      "direction": "down",
+      "answer": "피시디아",
+      "direction": "across",
       "row": 0,
-      "col": 1,
-      "length": 3,
-      "wordId": "merodach"
+      "col": 4,
+      "length": 4,
+      "wordId": "pisidia"
     },
     {
       "number": 2,
-      "answer": "로맘디에셀",
-      "direction": "across",
-      "row": 1,
-      "col": 1,
-      "length": 5,
-      "wordId": "entry-로맘디-에셀"
+      "answer": "아달랴",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "athaliah"
     },
     {
       "number": 3,
-      "answer": "에베소",
-      "direction": "down",
+      "answer": "달레트",
+      "direction": "across",
       "row": 1,
-      "col": 4,
+      "col": 7,
       "length": 3,
-      "wordId": "ephesus"
+      "wordId": "daleth"
     },
     {
       "number": 4,
-      "answer": "하닥",
-      "direction": "across",
+      "answer": "스아",
+      "direction": "down",
       "row": 2,
-      "col": 0,
+      "col": 5,
       "length": 2,
-      "wordId": "hathach"
+      "wordId": "seah"
     },
     {
       "number": 5,
-      "answer": "하수바",
-      "direction": "down",
+      "answer": "스가랴",
+      "direction": "across",
       "row": 2,
-      "col": 0,
+      "col": 5,
       "length": 3,
-      "wordId": "hashubah"
+      "wordId": "zechariah"
     },
     {
       "number": 6,
-      "answer": "소요",
-      "direction": "across",
+      "answer": "시므온",
+      "direction": "down",
       "row": 3,
-      "col": 4,
-      "length": 2,
-      "wordId": "sedition"
+      "col": 3,
+      "length": 3,
+      "wordId": "simeon"
     },
     {
       "number": 7,
-      "answer": "요르단강",
-      "direction": "down",
+      "answer": "시비아",
+      "direction": "across",
       "row": 3,
-      "col": 5,
-      "length": 4,
-      "wordId": "jordan"
+      "col": 3,
+      "length": 3,
+      "wordId": "zibia"
     },
     {
       "number": 8,
-      "answer": "종이",
+      "answer": "몰타",
       "direction": "down",
-      "row": 3,
-      "col": 8,
+      "row": 4,
+      "col": 1,
       "length": 2,
-      "wordId": "paper"
+      "wordId": "malta"
     },
     {
       "number": 9,
-      "answer": "르호봇이르",
+      "answer": "스타디온",
       "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 5,
-      "wordId": "entry-르호봇-이르"
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "furlong"
     },
     {
       "number": 10,
-      "answer": "르하빔",
+      "answer": "스올",
       "direction": "down",
-      "row": 4,
-      "col": 9,
-      "length": 3,
-      "wordId": "lehabim"
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "sheol"
     },
     {
       "number": 11,
-      "answer": "도단",
-      "direction": "across",
+      "answer": "디모데",
+      "direction": "down",
       "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "dothan"
+      "col": 2,
+      "length": 3,
+      "wordId": "timothy"
     },
     {
       "number": 12,
-      "answer": "밧랍빔",
+      "answer": "스데반",
       "direction": "across",
-      "row": 6,
-      "col": 7,
+      "row": 7,
+      "col": 1,
       "length": 3,
-      "wordId": "entry-밧-랍빔"
+      "wordId": "stephen"
     },
     {
       "number": 13,
-      "answer": "랍사게",
+      "answer": "스루야",
       "direction": "down",
-      "row": 6,
-      "col": 8,
+      "row": 7,
+      "col": 1,
       "length": 3,
-      "wordId": "rabshakeh"
+      "wordId": "zeruiah"
     },
     {
       "number": 14,
-      "answer": "막게다",
-      "direction": "across",
-      "row": 8,
-      "col": 7,
-      "length": 3,
-      "wordId": "makkedah"
+      "answer": "반역",
+      "direction": "down",
+      "row": 7,
+      "col": 3,
+      "length": 2,
+      "wordId": "rebelliousness"
     },
     {
       "number": 15,
-      "answer": "다윗",
-      "direction": "down",
+      "answer": "자루",
+      "direction": "across",
       "row": 8,
-      "col": 9,
+      "col": 0,
       "length": 2,
-      "wordId": "david"
+      "wordId": "bag"
     }
   ]
 }
