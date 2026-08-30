@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-148",
+  "id": "crossword-map-161",
   "title": "E-5",
-  "difficulty": 1.8,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####모퉁잇돌",
-    "####세##무",
-    "######설화",
-    "#######과",
-    "아히멜렉###나",
-    "##기#미루나무",
-    "##세펠라#발#",
-    "##덱#####"
+    "######목#",
+    "#####고수씨",
+    "####바산##",
+    "###하늘###",
+    "#여호와####",
+    "#호######",
+    "예수######",
+    "#아######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "모퉁잇돌",
-      "direction": "across",
+      "answer": "목수",
+      "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 4,
-      "wordId": "cornerstone"
+      "col": 6,
+      "length": 2,
+      "wordId": "carpenter"
     },
     {
       "number": 2,
-      "answer": "모세",
-      "direction": "down",
-      "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "moses"
+      "answer": "고수씨",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "entry-고수씨"
     },
     {
       "number": 3,
-      "answer": "돌무화과나무",
+      "answer": "고산",
       "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 6,
-      "wordId": "sycamore"
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "gozan"
     },
     {
       "number": 4,
-      "answer": "설화",
+      "answer": "바산",
       "direction": "across",
       "row": 2,
-      "col": 6,
+      "col": 4,
       "length": 2,
-      "wordId": "fable"
+      "wordId": "bashan"
     },
     {
       "number": 5,
-      "answer": "아히멜렉",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "ahimelech"
+      "answer": "바늘",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 2,
+      "wordId": "needle"
     },
     {
       "number": 6,
-      "answer": "멜기세덱",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 4,
-      "wordId": "melchizedek"
+      "answer": "하늘",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "entry-하늘"
     },
     {
       "number": 7,
-      "answer": "미루나무",
-      "direction": "across",
-      "row": 5,
-      "col": 4,
-      "length": 4,
-      "wordId": "poplars"
+      "answer": "하와",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "eve"
     },
     {
       "number": 8,
-      "answer": "미라",
-      "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "myra"
+      "answer": "여호와",
+      "direction": "across",
+      "row": 4,
+      "col": 1,
+      "length": 3,
+      "wordId": "jehovah"
     },
     {
       "number": 9,
-      "answer": "나발",
+      "answer": "여호수아",
       "direction": "down",
-      "row": 5,
-      "col": 6,
-      "length": 2,
-      "wordId": "nabal"
+      "row": 4,
+      "col": 1,
+      "length": 4,
+      "wordId": "joshua"
     },
     {
       "number": 10,
-      "answer": "세펠라",
+      "answer": "예수",
       "direction": "across",
       "row": 6,
-      "col": 2,
-      "length": 3,
-      "wordId": "shephelah"
+      "col": 0,
+      "length": 2,
+      "wordId": "jesus"
     }
   ]
 }

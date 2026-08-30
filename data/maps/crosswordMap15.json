@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-094",
+  "id": "crossword-map-165",
   "title": "E-9",
-  "difficulty": 1.6,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "불#######",
-    "끄#######",
-    "는#######",
-    "기#####사면",
-    "구슬꿰미#소라#",
-    "###가나안##",
-    "이스마엘####",
-    "##태#####"
+    "#####갈매기",
+    "###번#릴#쁨",
+    "###개구리##",
+    "####덩###",
+    "##달팽이###",
+    "##란#####",
+    "이집트#####",
+    "삭#######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "불끄는기구",
+      "answer": "갈릴리",
       "direction": "down",
       "row": 0,
-      "col": 0,
-      "length": 5,
-      "wordId": "extinguishers"
+      "col": 5,
+      "length": 3,
+      "wordId": "galilee"
     },
     {
       "number": 2,
-      "answer": "사라",
-      "direction": "down",
-      "row": 3,
-      "col": 6,
-      "length": 2,
-      "wordId": "sarah"
+      "answer": "갈매기",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "gull"
     },
     {
       "number": 3,
-      "answer": "사면",
-      "direction": "across",
-      "row": 3,
-      "col": 6,
+      "answer": "기쁨",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
       "length": 2,
-      "wordId": "amnesty"
+      "wordId": "joy"
     },
     {
       "number": 4,
-      "answer": "구슬꿰미",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "beads"
+      "answer": "번개",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 2,
+      "wordId": "lightning"
     },
     {
       "number": 5,
-      "answer": "미가엘",
-      "direction": "down",
-      "row": 4,
+      "answer": "개구리",
+      "direction": "across",
+      "row": 2,
       "col": 3,
       "length": 3,
-      "wordId": "michael"
+      "wordId": "frog"
     },
     {
       "number": 6,
-      "answer": "소안",
+      "answer": "구덩이",
       "direction": "down",
-      "row": 4,
-      "col": 5,
-      "length": 2,
-      "wordId": "zoan"
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "pit"
     },
     {
       "number": 7,
-      "answer": "소라",
-      "direction": "across",
+      "answer": "달란트",
+      "direction": "down",
       "row": 4,
-      "col": 5,
-      "length": 2,
-      "wordId": "zorah"
+      "col": 2,
+      "length": 3,
+      "wordId": "talent"
     },
     {
       "number": 8,
-      "answer": "가나안",
+      "answer": "달팽이",
       "direction": "across",
-      "row": 5,
-      "col": 3,
+      "row": 4,
+      "col": 2,
       "length": 3,
-      "wordId": "canaan"
+      "wordId": "snail"
     },
     {
       "number": 9,
-      "answer": "이스마엘",
+      "answer": "이집트",
       "direction": "across",
       "row": 6,
       "col": 0,
-      "length": 4,
-      "wordId": "ishmael"
+      "length": 3,
+      "wordId": "egypt"
     },
     {
       "number": 10,
-      "answer": "마태",
+      "answer": "이삭",
       "direction": "down",
       "row": 6,
-      "col": 2,
+      "col": 0,
       "length": 2,
-      "wordId": "matthew"
+      "wordId": "isaac"
     }
   ]
 }

@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-084",
+  "id": "crossword-map-162",
   "title": "E-6",
-  "difficulty": 1.4,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######갈#",
-    "######고#",
+    "#######길",
+    "######보리",
+    "#####도#기",
     "####사마리아",
-    "###바울##라",
-    "###카##루비",
-    "#면#나귀##아",
-    "포도나무####",
-    "#칼######"
+    "###바울###",
+    "#눈멀다####",
+    "#동######",
+    "겨자######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "갈고리",
+      "answer": "길리기아",
       "direction": "down",
       "row": 0,
-      "col": 6,
-      "length": 3,
-      "wordId": "hook"
+      "col": 7,
+      "length": 4,
+      "wordId": "cilicia"
     },
     {
       "number": 2,
-      "answer": "사울",
-      "direction": "down",
-      "row": 2,
-      "col": 4,
+      "answer": "보리",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
       "length": 2,
-      "wordId": "saul"
+      "wordId": "barley"
     },
     {
       "number": 3,
+      "answer": "도마",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "thomas"
+    },
+    {
+      "number": 4,
       "answer": "사마리아",
       "direction": "across",
-      "row": 2,
+      "row": 3,
       "col": 4,
       "length": 4,
       "wordId": "samaria"
     },
     {
-      "number": 4,
-      "answer": "아라비아",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 4,
-      "wordId": "arabia"
-    },
-    {
       "number": 5,
-      "answer": "바카나무",
+      "answer": "사울",
       "direction": "down",
       "row": 3,
-      "col": 3,
-      "length": 4,
-      "wordId": "baca"
+      "col": 4,
+      "length": 2,
+      "wordId": "saul"
     },
     {
       "number": 6,
       "answer": "바울",
       "direction": "across",
-      "row": 3,
+      "row": 4,
       "col": 3,
       "length": 2,
       "wordId": "paul"
     },
     {
       "number": 7,
-      "answer": "루비",
-      "direction": "across",
+      "answer": "바다",
+      "direction": "down",
       "row": 4,
-      "col": 6,
+      "col": 3,
       "length": 2,
-      "wordId": "ruby"
+      "wordId": "sea"
     },
     {
       "number": 8,
-      "answer": "면도칼",
+      "answer": "눈멀다",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "blindness"
+    },
+    {
+      "number": 9,
+      "answer": "눈동자",
       "direction": "down",
       "row": 5,
       "col": 1,
       "length": 3,
-      "wordId": "razor"
-    },
-    {
-      "number": 9,
-      "answer": "나귀",
-      "direction": "across",
-      "row": 5,
-      "col": 3,
-      "length": 2,
-      "wordId": "ass"
+      "wordId": "pupil"
     },
     {
       "number": 10,
-      "answer": "포도나무",
+      "answer": "겨자",
       "direction": "across",
-      "row": 6,
+      "row": 7,
       "col": 0,
-      "length": 4,
-      "wordId": "vine"
+      "length": 2,
+      "wordId": "mustard"
     }
   ]
 }

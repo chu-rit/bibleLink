@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-109",
+  "id": "crossword-map-163",
   "title": "E-7",
-  "difficulty": 1.4,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####라마##",
-    "#####리#자",
-    "####방아깨비",
-    "######끗#",
-    "####거룩함#",
-    "###살인###",
-    "니고데모####",
-    "###네####"
+    "#####나일#",
+    "#####다##",
+    "#####나사로",
+    "#성#미가엘##",
+    "#막벨라####",
+    "##사#####",
+    "예루살렘####",
+    "#비######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "라마",
-      "direction": "across",
-      "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "ramah"
-    },
-    {
-      "number": 2,
-      "answer": "마리아",
+      "answer": "나다나엘",
       "direction": "down",
       "row": 0,
       "col": 5,
-      "length": 3,
-      "wordId": "mary"
+      "length": 4,
+      "wordId": "nathanael"
+    },
+    {
+      "number": 2,
+      "answer": "나일",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "nile"
     },
     {
       "number": 3,
-      "answer": "자비",
-      "direction": "down",
-      "row": 1,
-      "col": 7,
-      "length": 2,
-      "wordId": "mercy"
+      "answer": "나사로",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "lazarus"
     },
     {
       "number": 4,
-      "answer": "방아깨비",
-      "direction": "across",
-      "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "grasshopper"
+      "answer": "성막",
+      "direction": "down",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "tabernacle"
     },
     {
       "number": 5,
-      "answer": "깨끗함",
+      "answer": "미라",
       "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 3,
-      "wordId": "entry-깨끗함"
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "myra"
     },
     {
       "number": 6,
-      "answer": "거룩함",
+      "answer": "미가엘",
       "direction": "across",
-      "row": 4,
-      "col": 4,
+      "row": 3,
+      "col": 3,
       "length": 3,
-      "wordId": "holiness"
+      "wordId": "michael"
     },
     {
       "number": 7,
-      "answer": "거인",
-      "direction": "down",
+      "answer": "막벨라",
+      "direction": "across",
       "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "giant"
+      "col": 1,
+      "length": 3,
+      "wordId": "machpelah"
     },
     {
       "number": 8,
-      "answer": "살인",
-      "direction": "across",
-      "row": 5,
-      "col": 3,
-      "length": 2,
-      "wordId": "murder"
+      "answer": "벨사살",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 3,
+      "wordId": "belshazzar"
     },
     {
       "number": 9,
-      "answer": "살모네",
-      "direction": "down",
-      "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "salmone"
-    },
-    {
-      "number": 10,
-      "answer": "니고데모",
+      "answer": "예루살렘",
       "direction": "across",
       "row": 6,
       "col": 0,
       "length": 4,
-      "wordId": "nicodemus"
+      "wordId": "jerusalem"
+    },
+    {
+      "number": 10,
+      "answer": "루비",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "ruby"
     }
   ]
 }

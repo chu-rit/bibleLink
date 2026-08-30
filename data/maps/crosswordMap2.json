@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-088",
+  "id": "crossword-map-158",
   "title": "E-2",
-  "difficulty": 1.2,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "##욥##컴##",
-    "##기적#퍼##",
-    "###그리스도인",
-    "병거#리####",
-    "#머#스####",
-    "그리스도####",
-    "##불#####",
-    "바빌론#####"
+    "#####머##",
+    "####그리스도",
+    "######불#",
+    "####바빌론#",
+    "####늘###",
+    "##까마귀###",
+    "승천#르####",
+    "#막게다####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "욥기",
-      "direction": "down",
-      "row": 0,
-      "col": 2,
-      "length": 2,
-      "wordId": "jobbook"
-    },
-    {
-      "number": 2,
-      "answer": "컴퍼스",
+      "answer": "머리",
       "direction": "down",
       "row": 0,
       "col": 5,
-      "length": 3,
-      "wordId": "compass"
-    },
-    {
-      "number": 3,
-      "answer": "기적",
-      "direction": "across",
-      "row": 1,
-      "col": 2,
       "length": 2,
-      "wordId": "miracles"
+      "wordId": "head"
     },
     {
-      "number": 4,
-      "answer": "적그리스도",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
-      "length": 5,
-      "wordId": "antichrist"
-    },
-    {
-      "number": 5,
-      "answer": "그리스도인",
-      "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 5,
-      "wordId": "christian"
-    },
-    {
-      "number": 6,
-      "answer": "병거",
-      "direction": "across",
-      "row": 3,
-      "col": 0,
-      "length": 2,
-      "wordId": "chariot"
-    },
-    {
-      "number": 7,
-      "answer": "거머리",
-      "direction": "down",
-      "row": 3,
-      "col": 1,
-      "length": 3,
-      "wordId": "leech"
-    },
-    {
-      "number": 8,
+      "number": 2,
       "answer": "그리스도",
       "direction": "across",
-      "row": 5,
-      "col": 0,
+      "row": 1,
+      "col": 4,
       "length": 4,
       "wordId": "christ"
     },
     {
-      "number": 9,
+      "number": 3,
       "answer": "스불론",
       "direction": "down",
-      "row": 5,
-      "col": 2,
+      "row": 1,
+      "col": 6,
       "length": 3,
       "wordId": "zebulun"
     },
     {
-      "number": 10,
+      "number": 4,
+      "answer": "바늘귀",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "entry-바늘귀"
+    },
+    {
+      "number": 5,
       "answer": "바빌론",
       "direction": "across",
-      "row": 7,
-      "col": 0,
+      "row": 3,
+      "col": 4,
       "length": 3,
       "wordId": "babylon"
+    },
+    {
+      "number": 6,
+      "answer": "까마귀",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "raven"
+    },
+    {
+      "number": 7,
+      "answer": "마르다",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "martha"
+    },
+    {
+      "number": 8,
+      "answer": "승천",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "ascension"
+    },
+    {
+      "number": 9,
+      "answer": "천막",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "tent"
+    },
+    {
+      "number": 10,
+      "answer": "막게다",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "makkedah"
     }
   ]
 }

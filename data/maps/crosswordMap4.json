@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-090",
+  "id": "crossword-map-160",
   "title": "E-4",
-  "difficulty": 1.6,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######창조",
-    "######세#",
-    "###메추라기#",
-    "###시#틴##",
-    "#시리아#어##",
-    "남편######",
-    "은#######",
-    "자고새#####"
+    "####멤피스#",
+    "######바벨",
+    "######냐#",
+    "####미가서#",
+    "##가데스###",
+    "병#브#바빌론#",
+    "거머리#####",
+    "##엘#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "창세기",
-      "direction": "down",
+      "answer": "멤피스",
+      "direction": "across",
       "row": 0,
-      "col": 6,
+      "col": 4,
       "length": 3,
-      "wordId": "genesis"
+      "wordId": "memphis"
     },
     {
       "number": 2,
-      "answer": "창조",
-      "direction": "across",
+      "answer": "스바냐서",
+      "direction": "down",
       "row": 0,
       "col": 6,
-      "length": 2,
-      "wordId": "creation"
+      "length": 4,
+      "wordId": "entry-스바냐서"
     },
     {
       "number": 3,
-      "answer": "메시아",
-      "direction": "down",
-      "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "messiah"
+      "answer": "바벨",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "babel"
     },
     {
       "number": 4,
-      "answer": "메추라기",
+      "answer": "미가서",
       "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 4,
-      "wordId": "quail"
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "entry-미가서"
     },
     {
       "number": 5,
-      "answer": "라틴어",
+      "answer": "미스바",
       "direction": "down",
-      "row": 2,
-      "col": 5,
+      "row": 3,
+      "col": 4,
       "length": 3,
-      "wordId": "latin"
+      "wordId": "mizpah"
     },
     {
       "number": 6,
-      "answer": "시리아",
+      "answer": "가데스",
       "direction": "across",
       "row": 4,
-      "col": 1,
+      "col": 2,
       "length": 3,
-      "wordId": "syria"
+      "wordId": "kadesh"
     },
     {
       "number": 7,
-      "answer": "시편",
+      "answer": "가브리엘",
       "direction": "down",
       "row": 4,
-      "col": 1,
-      "length": 2,
-      "wordId": "psalms"
+      "col": 2,
+      "length": 4,
+      "wordId": "gabriel"
     },
     {
       "number": 8,
-      "answer": "남편",
-      "direction": "across",
-      "row": 5,
-      "col": 0,
-      "length": 2,
-      "wordId": "husband"
-    },
-    {
-      "number": 9,
-      "answer": "남은자",
+      "answer": "병거",
       "direction": "down",
       "row": 5,
       "col": 0,
+      "length": 2,
+      "wordId": "chariot"
+    },
+    {
+      "number": 9,
+      "answer": "바빌론",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
       "length": 3,
-      "wordId": "remnant"
+      "wordId": "babylon"
     },
     {
       "number": 10,
-      "answer": "자고새",
+      "answer": "거머리",
       "direction": "across",
-      "row": 7,
+      "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "partridge"
+      "wordId": "leech"
     }
   ]
 }

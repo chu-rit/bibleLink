@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-095",
+  "id": "crossword-map-166",
   "title": "E-10",
-  "difficulty": 1.5,
+  "difficulty": 1.1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######솔",
-    "###아하수에로",
-    "###비#염#몬",
-    "###가젤###",
-    "##생일####",
-    "#무명#####",
-    "#지######",
-    "중개자#####"
+    "#######학",
+    "#####모#개",
+    "####호세아서",
+    "######브#",
+    "######라마",
+    "####거룩함#",
+    "##유대인###",
+    "풍자향#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "솔로몬",
+      "answer": "학개서",
       "direction": "down",
       "row": 0,
       "col": 7,
       "length": 3,
-      "wordId": "solomon"
+      "wordId": "entry-학개서"
     },
     {
       "number": 2,
-      "answer": "아하수에로",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 5,
-      "wordId": "ahasuerus"
-    },
-    {
-      "number": 3,
-      "answer": "아비가일",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
-      "length": 4,
-      "wordId": "abigail"
-    },
-    {
-      "number": 4,
-      "answer": "수염",
+      "answer": "모세",
       "direction": "down",
       "row": 1,
       "col": 5,
       "length": 2,
-      "wordId": "beard"
+      "wordId": "moses"
+    },
+    {
+      "number": 3,
+      "answer": "호세아서",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-호세아서"
+    },
+    {
+      "number": 4,
+      "answer": "아브라함",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "abraham"
     },
     {
       "number": 5,
-      "answer": "가젤",
+      "answer": "라마",
       "direction": "across",
-      "row": 3,
-      "col": 3,
+      "row": 4,
+      "col": 6,
       "length": 2,
-      "wordId": "gazelle"
+      "wordId": "ramah"
     },
     {
       "number": 6,
-      "answer": "생일",
+      "answer": "거룩함",
       "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 2,
-      "wordId": "birthday"
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "holiness"
     },
     {
       "number": 7,
-      "answer": "생명",
+      "answer": "거인",
       "direction": "down",
-      "row": 4,
-      "col": 2,
+      "row": 5,
+      "col": 4,
       "length": 2,
-      "wordId": "life"
+      "wordId": "giant"
     },
     {
       "number": 8,
-      "answer": "무명",
+      "answer": "유대인",
       "direction": "across",
-      "row": 5,
-      "col": 1,
-      "length": 2,
-      "wordId": "cotton"
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "jews"
     },
     {
       "number": 9,
-      "answer": "무지개",
+      "answer": "유향",
       "direction": "down",
-      "row": 5,
-      "col": 1,
-      "length": 3,
-      "wordId": "rainbow"
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "frankincense"
     },
     {
       "number": 10,
-      "answer": "중개자",
+      "answer": "풍자향",
       "direction": "across",
       "row": 7,
       "col": 0,
       "length": 3,
-      "wordId": "mediator"
+      "wordId": "galbanum"
     }
   ]
 }

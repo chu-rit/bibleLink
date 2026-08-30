@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-152",
+  "id": "crossword-map-157",
   "title": "E-1",
-  "difficulty": 1.3,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####번개#",
-    "######구스",
-    "####대머리#",
-    "####추###",
-    "가###야###",
-    "나#감독자###",
-    "안디옥#####",
-    "#도######"
+    "#######용",
+    "#####학개서",
+    "######구#",
+    "#####골리앗",
+    "#가#베드로##",
+    "만나#들#새##",
+    "#안드레####",
+    "###헴####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "번개",
-      "direction": "across",
+      "answer": "용서",
+      "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 7,
       "length": 2,
-      "wordId": "lightning"
+      "wordId": "forgiveness"
     },
     {
       "number": 2,
+      "answer": "학개서",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "entry-학개서"
+    },
+    {
+      "number": 3,
       "answer": "개구리",
       "direction": "down",
-      "row": 0,
+      "row": 1,
       "col": 6,
       "length": 3,
       "wordId": "frog"
     },
     {
-      "number": 3,
-      "answer": "구스",
-      "direction": "across",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "cush"
-    },
-    {
       "number": 4,
-      "answer": "대머리",
+      "answer": "골리앗",
       "direction": "across",
-      "row": 2,
-      "col": 4,
+      "row": 3,
+      "col": 5,
       "length": 3,
-      "wordId": "baldness"
+      "wordId": "goliath"
     },
     {
       "number": 5,
-      "answer": "대추야자",
+      "answer": "골로새",
       "direction": "down",
-      "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "date"
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "colossae"
     },
     {
       "number": 6,
       "answer": "가나안",
       "direction": "down",
       "row": 4,
-      "col": 0,
+      "col": 1,
       "length": 3,
       "wordId": "canaan"
     },
     {
       "number": 7,
-      "answer": "감독자",
+      "answer": "베드로",
       "direction": "across",
-      "row": 5,
-      "col": 2,
+      "row": 4,
+      "col": 3,
       "length": 3,
-      "wordId": "overseer"
+      "wordId": "peter"
     },
     {
       "number": 8,
-      "answer": "감옥",
+      "answer": "베들레헴",
       "direction": "down",
-      "row": 5,
-      "col": 2,
-      "length": 2,
-      "wordId": "prison"
+      "row": 4,
+      "col": 3,
+      "length": 4,
+      "wordId": "bethlehem"
     },
     {
       "number": 9,
-      "answer": "안디옥",
+      "answer": "만나",
       "direction": "across",
-      "row": 6,
+      "row": 5,
       "col": 0,
-      "length": 3,
-      "wordId": "antioch"
+      "length": 2,
+      "wordId": "manna"
     },
     {
       "number": 10,
-      "answer": "디도",
-      "direction": "down",
+      "answer": "안드레",
+      "direction": "across",
       "row": 6,
       "col": 1,
-      "length": 2,
-      "wordId": "titus"
+      "length": 3,
+      "wordId": "andrew"
     }
   ]
 }
