@@ -18,7 +18,17 @@ import crosswordMap17 from './crosswordMap17.json';
 import crosswordMap18 from './crosswordMap18.json';
 import crosswordMap19 from './crosswordMap19.json';
 import crosswordMap20 from './crosswordMap20.json';
+import crosswordMap21 from './crosswordMap21.json';
+import crosswordMap22 from './crosswordMap22.json';
+import crosswordMap23 from './crosswordMap23.json';
+import crosswordMap24 from './crosswordMap24.json';
+import crosswordMap25 from './crosswordMap25.json';
+import crosswordMap26 from './crosswordMap26.json';
+import crosswordMap27 from './crosswordMap27.json';
+import crosswordMap28 from './crosswordMap28.json';
+import crosswordMap29 from './crosswordMap29.json';
+import crosswordMap30 from './crosswordMap30.json';
 
-const crosswordMaps = [crosswordMap1, crosswordMap2, crosswordMap3, crosswordMap4, crosswordMap5, crosswordMap6, crosswordMap7, crosswordMap8, crosswordMap9, crosswordMap10, crosswordMap11, crosswordMap12, crosswordMap13, crosswordMap14, crosswordMap15, crosswordMap16, crosswordMap17, crosswordMap18, crosswordMap19, crosswordMap20];
+const crosswordMaps = [crosswordMap1, crosswordMap2, crosswordMap3, crosswordMap4, crosswordMap5, crosswordMap6, crosswordMap7, crosswordMap8, crosswordMap9, crosswordMap10, crosswordMap11, crosswordMap12, crosswordMap13, crosswordMap14, crosswordMap15, crosswordMap16, crosswordMap17, crosswordMap18, crosswordMap19, crosswordMap20, crosswordMap21, crosswordMap22, crosswordMap23, crosswordMap24, crosswordMap25, crosswordMap26, crosswordMap27, crosswordMap28, crosswordMap29, crosswordMap30];
 
 export default crosswordMaps;

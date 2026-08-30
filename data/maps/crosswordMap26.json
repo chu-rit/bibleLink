@@ -1,0 +1,159 @@
+{
+  "id": "20260830_026",
+  "title": "H-6",
+  "difficulty": 2.9,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "############",
+    "############",
+    "베재#갈##학#####",
+    "레#하네스#모#####",
+    "스바림#데므니#####",
+    "웃##스바#######",
+    "사마##나감향#####",
+    "#하라##옥######",
+    "#래##########",
+    "############",
+    "############",
+    "############"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "베레스웃사",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 5,
+      "wordId": "entry-베레스-웃사"
+    },
+    {
+      "number": 2,
+      "answer": "베재",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "bezai"
+    },
+    {
+      "number": 3,
+      "answer": "갈네",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "calneh"
+    },
+    {
+      "number": 4,
+      "answer": "학모니",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "hachmoni"
+    },
+    {
+      "number": 5,
+      "answer": "하네스",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "hanes"
+    },
+    {
+      "number": 6,
+      "answer": "하림",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "harim"
+    },
+    {
+      "number": 7,
+      "answer": "스데바나",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "stephanas"
+    },
+    {
+      "number": 8,
+      "answer": "스바림",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "shebarim"
+    },
+    {
+      "number": 9,
+      "answer": "데므니",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "temeni"
+    },
+    {
+      "number": 10,
+      "answer": "스바",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "sheba-2"
+    },
+    {
+      "number": 11,
+      "answer": "사마",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "shama"
+    },
+    {
+      "number": 12,
+      "answer": "마하래",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "maharai"
+    },
+    {
+      "number": 13,
+      "answer": "나감향",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "naphtuhim"
+    },
+    {
+      "number": 14,
+      "answer": "감옥",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 2,
+      "wordId": "prison"
+    },
+    {
+      "number": 15,
+      "answer": "하라",
+      "direction": "across",
+      "row": 7,
+      "col": 1,
+      "length": 2,
+      "wordId": "hara"
+    }
+  ]
+}

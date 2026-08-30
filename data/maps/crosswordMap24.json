@@ -1,0 +1,159 @@
+{
+  "id": "20260830_024",
+  "title": "H-4",
+  "difficulty": 2.9,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "############",
+    "############",
+    "############",
+    "############",
+    "############",
+    "############",
+    "############",
+    "#가###훔#셉나###",
+    "그나니#스다구#하룸##",
+    "낫#가르보#시드래###",
+    "##노##메######",
+    "#헤르모게네######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "가나",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 2,
+      "wordId": "cana"
+    },
+    {
+      "number": 2,
+      "answer": "훔다",
+      "direction": "down",
+      "row": 7,
+      "col": 5,
+      "length": 2,
+      "wordId": "humtah"
+    },
+    {
+      "number": 3,
+      "answer": "셉나",
+      "direction": "across",
+      "row": 7,
+      "col": 7,
+      "length": 2,
+      "wordId": "entry-셉나"
+    },
+    {
+      "number": 4,
+      "answer": "나하래",
+      "direction": "down",
+      "row": 7,
+      "col": 8,
+      "length": 3,
+      "wordId": "naharai"
+    },
+    {
+      "number": 5,
+      "answer": "그나니",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 3,
+      "wordId": "chenani"
+    },
+    {
+      "number": 6,
+      "answer": "그낫",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "kenath"
+    },
+    {
+      "number": 7,
+      "answer": "니가노르",
+      "direction": "down",
+      "row": 8,
+      "col": 2,
+      "length": 4,
+      "wordId": "nicanor"
+    },
+    {
+      "number": 8,
+      "answer": "스보",
+      "direction": "down",
+      "row": 8,
+      "col": 4,
+      "length": 2,
+      "wordId": "shepho"
+    },
+    {
+      "number": 9,
+      "answer": "스다구",
+      "direction": "across",
+      "row": 8,
+      "col": 4,
+      "length": 3,
+      "wordId": "stachys"
+    },
+    {
+      "number": 10,
+      "answer": "구시",
+      "direction": "down",
+      "row": 8,
+      "col": 6,
+      "length": 2,
+      "wordId": "cushi"
+    },
+    {
+      "number": 11,
+      "answer": "하룸",
+      "direction": "across",
+      "row": 8,
+      "col": 8,
+      "length": 2,
+      "wordId": "harum"
+    },
+    {
+      "number": 12,
+      "answer": "가르보",
+      "direction": "across",
+      "row": 9,
+      "col": 2,
+      "length": 3,
+      "wordId": "carpus"
+    },
+    {
+      "number": 13,
+      "answer": "시드래",
+      "direction": "across",
+      "row": 9,
+      "col": 6,
+      "length": 3,
+      "wordId": "shitrai"
+    },
+    {
+      "number": 14,
+      "answer": "메네",
+      "direction": "down",
+      "row": 10,
+      "col": 5,
+      "length": 2,
+      "wordId": "mene"
+    },
+    {
+      "number": 15,
+      "answer": "헤르모게네",
+      "direction": "across",
+      "row": 11,
+      "col": 1,
+      "length": 5,
+      "wordId": "hermogenes"
+    }
+  ]
+}

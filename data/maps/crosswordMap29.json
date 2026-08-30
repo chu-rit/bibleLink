@@ -1,0 +1,159 @@
+{
+  "id": "20260830_029",
+  "title": "H-9",
+  "difficulty": 2.9,
+  "width": 12,
+  "height": 12,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "############",
+    "##########그#",
+    "##########레#",
+    "##########스#",
+    "#########사게#",
+    "#######박부갸##",
+    "#######박####",
+    "######사갈####",
+    "#질#루#세삭#####",
+    "시라쿠사#에######",
+    "스##니골라######",
+    "#시리아########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "그레스게",
+      "direction": "down",
+      "row": 1,
+      "col": 10,
+      "length": 4,
+      "wordId": "crescens"
+    },
+    {
+      "number": 2,
+      "answer": "사갸",
+      "direction": "down",
+      "row": 4,
+      "col": 9,
+      "length": 2,
+      "wordId": "sachia"
+    },
+    {
+      "number": 3,
+      "answer": "사게",
+      "direction": "across",
+      "row": 4,
+      "col": 9,
+      "length": 2,
+      "wordId": "shagee"
+    },
+    {
+      "number": 4,
+      "answer": "박박갈",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "bakbakkar"
+    },
+    {
+      "number": 5,
+      "answer": "박부갸",
+      "direction": "across",
+      "row": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "bakbukiah"
+    },
+    {
+      "number": 6,
+      "answer": "사삭",
+      "direction": "down",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "shashak"
+    },
+    {
+      "number": 7,
+      "answer": "사갈",
+      "direction": "across",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "sacar"
+    },
+    {
+      "number": 8,
+      "answer": "질라",
+      "direction": "down",
+      "row": 8,
+      "col": 1,
+      "length": 2,
+      "wordId": "zillah"
+    },
+    {
+      "number": 9,
+      "answer": "루사니아",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 4,
+      "wordId": "lysanias"
+    },
+    {
+      "number": 10,
+      "answer": "세에라",
+      "direction": "down",
+      "row": 8,
+      "col": 5,
+      "length": 3,
+      "wordId": "sheerah"
+    },
+    {
+      "number": 11,
+      "answer": "세삭",
+      "direction": "across",
+      "row": 8,
+      "col": 5,
+      "length": 2,
+      "wordId": "sheshach"
+    },
+    {
+      "number": 12,
+      "answer": "시라쿠사",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 4,
+      "wordId": "syracuse"
+    },
+    {
+      "number": 13,
+      "answer": "시스",
+      "direction": "down",
+      "row": 9,
+      "col": 0,
+      "length": 2,
+      "wordId": "ziz"
+    },
+    {
+      "number": 14,
+      "answer": "니골라",
+      "direction": "across",
+      "row": 10,
+      "col": 3,
+      "length": 3,
+      "wordId": "nicolaus"
+    },
+    {
+      "number": 15,
+      "answer": "시리아",
+      "direction": "across",
+      "row": 11,
+      "col": 1,
+      "length": 3,
+      "wordId": "syria"
+    }
+  ]
+}

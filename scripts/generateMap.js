@@ -191,9 +191,6 @@ function build(seed) {
   const average = list.reduce((sum, item) => sum + item.difficulty, 0) / list.length;
   if (average > targetDifficulty) return null;
 
-  const rows = result.grid.map((row) => row.some((value) => value));
-  const columns = Array.from({ length: size }, (_, c) => result.grid.some((row) => row[c]));
-  if (!rows[0] || !rows[size - 1] || !columns[0] || !columns[size - 1]) return null;
   return { list, grid: result.grid, average, fresh: list.filter((item) => item.uses === 0).length };
 }
 
@@ -236,19 +233,29 @@ if (fileExists) {
   title = `${prefix}-${sameSizeCount + 1}`;
 }
 
-// id 생성: 재생성 시 기존 id와 중복되지 않는 새 id 부여
+// id 생성: 날짜 기반 (YYYYMMDD_NNN) 형식, 카운터 파일로 삭제 후 재생성 충돌 방지
+const today = new Date();
+const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, '0')}${String(today.getDate()).padStart(2, '0')}`;
+const counterFile = path.join(mapsDir, '.lastMapId');
+let lastCounter = { date: '', seq: 0 };
+if (fs.existsSync(counterFile)) {
+  try { lastCounter = JSON.parse(fs.readFileSync(counterFile, 'utf8')); } catch {}
+}
 const allIds = fs.readdirSync(mapsDir)
   .filter(f => /^crosswordMap\d+\.json$/.test(f))
   .map(f => JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8')).id);
-let maxIdNum = 0;
+let maxSeqForToday = 0;
 allIds.forEach(id => {
-  const match = id && id.match(/crossword-map-(\d+)/);
-  if (match) maxIdNum = Math.max(maxIdNum, parseInt(match[1]));
+  const match = id && id.match(/^(\d{8})_(\d+)$/);
+  if (match && match[1] === dateStr) maxSeqForToday = Math.max(maxSeqForToday, parseInt(match[2]));
 });
-const newIdNum = maxIdNum + 1;
+if (lastCounter.date === dateStr) maxSeqForToday = Math.max(maxSeqForToday, lastCounter.seq);
+const newSeq = maxSeqForToday + 1;
+const newId = `${dateStr}_${String(newSeq).padStart(3, '0')}`;
+fs.writeFileSync(counterFile, JSON.stringify({ date: dateStr, seq: newSeq }), 'utf8');
 
 const map = {
-  id: `crossword-map-${String(newIdNum).padStart(3, '0')}`,
+  id: newId,
   title,
   difficulty: Math.max(1, Math.round(best.average * 10) / 10),
   width: size,
