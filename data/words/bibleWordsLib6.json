@@ -109,7 +109,7 @@
     "id": "manoah",
     "word": "마노아",
     "definition": "소라에 살던 단 사람으로 삼손의 아버지이자 여호와의 충실한 숭배자",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사사기 13:2-23",
       "사사기 14:1-4"
@@ -436,7 +436,7 @@
     "id": "mahanaim",
     "word": "마하나임",
     "definition": "요르단 강 동쪽의 장소로 야곱이 천사들을 만난 곳이자 두 진영을 의미함",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 32:1, 2",
       "여호수아 21:38"
@@ -522,7 +522,7 @@
     "id": "makkedah",
     "word": "막게다",
     "definition": "세펠라의 가나안 왕도로 다섯 왕이 숨었다 처형된 동굴이 있는 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 10:5-29",
       "여호수아 12:16"
@@ -568,7 +568,7 @@
     "id": "machpelah",
     "word": "막벨라",
     "definition": "아브라함이 산 헤브론 부근의 동굴로 족장들의 매장지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 23:14-19",
       "창세기 49:30, 31"
@@ -1036,11 +1036,10 @@
   {
     "id": "locust",
     "word": "메뚜기",
-    "definition": "큰 떼로 이동하는 방아깨비류 곤충으로 성서에서 재앙과 식량으로 언급됨",
+    "definition": "네가 나의 백성을 보내기를 계속 거부하면, 내가 내일 너의 영토 안으로 OOO를 몰고 오겠다",
     "difficulty": 1,
     "references": [
-      "레위기 11:22",
-      "시편 105:34"
+      "출애굽기 10:4"
     ]
   },
   {
@@ -1267,11 +1266,10 @@
   {
     "id": "razor",
     "word": "면도칼",
-    "definition": "털이나 수염을 깎는 도구로 드러내다를 의미하는 어근에서 유래",
+    "definition": "나실인으로 서원한 기간 내내 OOO을 머리에 대서는 안 된다.",
     "difficulty": 1,
     "references": [
-      "이사야 3:17",
-      "창세기 41:14"
+      "민수기 6:5"
     ]
   },
   {
@@ -1316,10 +1314,9 @@
   {
     "id": "sand",
     "word": "모래",
-    "definition": "자갈보다 작고 실트보다 굵은 입자로 바다의 경계이자 수많음의 상징",
+    "definition": "내가 반드시 너를 축복하고 너의 자손을 하늘의 별처럼, 바닷가의 OO알처럼 번성하게 할 것이다.",
     "difficulty": 1,
     "references": [
-      "예레미야 5:22",
       "창세기 22:17"
     ]
   },
@@ -2175,7 +2172,7 @@
     "id": "myra",
     "word": "미라",
     "definition": "리키아 속주의 주요 도시로 바울이 예루살렘으로 가는 길에 배를 갈아탄 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 27:1-6",
       "사도행전 21:1"
@@ -2292,7 +2289,7 @@
     "id": "mizpah",
     "word": "미스바",
     "definition": "유다의 여러 장소 이름으로 사사 시대에 이스라엘이 모인 집결지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 11:3",
       "여호수아 15:38"

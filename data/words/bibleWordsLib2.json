@@ -32,7 +32,7 @@
     "id": "kadesh",
     "word": "가데스",
     "definition": "이스라엘 사람들이 광야에서 진을 쳤던 곳으로 정탐꾼들이 파송되고 40년 방랑의 출발점이 된 장소",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "민수기 13:26",
       "신명기 1:2"
@@ -42,7 +42,7 @@
     "id": "gath",
     "word": "가드",
     "definition": "블레셋 다섯 추축 성주 도시 가운데 하나로 골리앗의 출생지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사무엘상 6:17",
       "사무엘상 17:4"
@@ -136,7 +136,7 @@
     "id": "cormorant",
     "word": "가마우지",
     "definition": "물에 잠수하여 물고기를 잡는 물새로 부정한 새로 분류된 동물",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "레위기 11:17",
       "신명기 14:17"
@@ -327,7 +327,7 @@
     "id": "gaza",
     "word": "가자",
     "definition": "가나안 사람의 경계에 언급된 고대 도시로 블레셋 추축 성주 도시 가운데 하나",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 10:19",
       "사사기 16:1-3"
@@ -511,7 +511,7 @@
     "id": "gallio",
     "word": "갈리오",
     "definition": "아카이아 속주 총독으로 바울에 대한 유대인의 고발을 로마법 위반 사실이 없다며 기각한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 18:12-17"
     ]
@@ -549,7 +549,7 @@
     "id": "carmel-2",
     "word": "갈멜",
     "definition": "산맥과 도시 양쪽에 쓰이는 이름으로 엘리야가 바알 예언자들과 대결한 산",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 12:22",
       "여호수아 19:24-26"
@@ -964,7 +964,7 @@
     "id": "gehazi",
     "word": "게하시",
     "definition": "예언자 엘리사의 수종으로 주인의 기적을 탐내다가 문둥병에 걸린 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기하 4:12",
       "열왕기하 5:20-27"
@@ -1214,7 +1214,7 @@
     "id": "goshen",
     "word": "고센",
     "definition": "이스라엘 사람들이 215년간 거주한 이집트의 한 지역으로 나일 삼각주 동부에 있었던 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 45:10",
       "창세기 47:1-6, 11"
@@ -1263,7 +1263,7 @@
     "id": "golgotha",
     "word": "골고타",
     "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "요한복음 19:16-18"
     ]
@@ -1300,11 +1300,10 @@
   {
     "id": "valley",
     "word": "골짜기",
-    "definition": "절벽이나 언덕이나 산 사이에 움푹 패어 들어간 지형",
+    "definition": "이들은 모두 싯딤 OOO 곧 '소금 바다'에 군대를 모았다",
     "difficulty": 1,
     "references": [
-      "시편 104:8",
-      "여호수아 8:11"
+      "창세기 14:3"
     ]
   },
   {
@@ -1427,11 +1426,10 @@
   {
     "id": "maggot",
     "word": "구더기",
-    "definition": "알에서 부화된 지 얼마 안 된 유충으로 썩어 가는 물질에서 발견되는 파리의 애벌레",
+    "definition": "게헨나에서는 OOO도 죽지 않고 불도 꺼지지 않습니다.",
     "difficulty": 1,
     "references": [
-      "욥기 7:5, 17:14",
-      "이사야 14:11"
+      "마가복음 9:47, 48"
     ]
   },
   {
@@ -1476,7 +1474,7 @@
     "id": "cush",
     "word": "구스",
     "definition": "함의 아들 가운데 첫째로 여섯 아들의 아버지이자 아프리카 지역 민족의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 10:6-8",
       "역대기상 1:8-10"
@@ -1557,16 +1555,6 @@
     "references": [
       "출애굽기 28:20",
       "출애굽기 39:13"
-    ]
-  },
-  {
-    "id": "earring",
-    "word": "귀고리",
-    "definition": "장식용으로 귀에 다는 고리나 기타 장식품으로 코고리에도 쓰인 히브리어 단어와 관련된 물건",
-    "difficulty": 1,
-    "references": [
-      "잠언 11:22",
-      "출애굽기 32:2"
     ]
   },
   {
@@ -1708,7 +1696,7 @@
     "id": "chedorlaomer",
     "word": "그돌라오멜",
     "definition": "고대 엘람의 왕으로 사해 남쪽 다섯 왕의 반역을 진압하다 아브라함에게 패한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 14:1-17"
     ]
@@ -2316,7 +2304,7 @@
     "id": "chinnereth",
     "word": "긴네렛",
     "definition": "납달리의 요새 도시로 갈릴리 바다 북서쪽에 위치한 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 19:35",
       "열왕기상 15:20"
@@ -2382,7 +2370,7 @@
     "id": "cilicia",
     "word": "길리기아",
     "definition": "소아시아 남동부의 지역으로 바울의 출생지 타소가 있던 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 21:39",
       "사도행전 22:3"
@@ -2401,7 +2389,7 @@
     "id": "gilboa",
     "word": "길보아",
     "definition": "사울과 그 아들들이 블레셋과의 전투에서 죽은 이스르엘 남동쪽의 산",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사사기 7:1",
       "사무엘상 28:4"

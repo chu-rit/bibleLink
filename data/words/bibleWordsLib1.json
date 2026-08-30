@@ -32,7 +32,7 @@
     "id": "kadesh",
     "word": "가데스",
     "definition": "이스라엘 사람들이 광야에서 진을 쳤던 곳으로 정탐꾼들이 파송되고 40년 방랑의 출발점이 된 장소",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "민수기 13:26",
       "신명기 1:2"
@@ -42,7 +42,7 @@
     "id": "gath",
     "word": "가드",
     "definition": "블레셋 다섯 추축 성주 도시 가운데 하나로 골리앗의 출생지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사무엘상 6:17",
       "사무엘상 17:4"
@@ -136,7 +136,7 @@
     "id": "cormorant",
     "word": "가마우지",
     "definition": "물에 잠수하여 물고기를 잡는 물새로 부정한 새로 분류된 동물",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "레위기 11:17",
       "신명기 14:17"
@@ -327,7 +327,7 @@
     "id": "gaza",
     "word": "가자",
     "definition": "가나안 사람의 경계에 언급된 고대 도시로 블레셋 추축 성주 도시 가운데 하나",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 10:19",
       "사사기 16:1-3"
@@ -511,7 +511,7 @@
     "id": "gallio",
     "word": "갈리오",
     "definition": "아카이아 속주 총독으로 바울에 대한 유대인의 고발을 로마법 위반 사실이 없다며 기각한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 18:12-17"
     ]
@@ -549,7 +549,7 @@
     "id": "carmel-2",
     "word": "갈멜",
     "definition": "산맥과 도시 양쪽에 쓰이는 이름으로 엘리야가 바알 예언자들과 대결한 산",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 12:22",
       "여호수아 19:24-26"
@@ -955,7 +955,7 @@
     "id": "gehazi",
     "word": "게하시",
     "definition": "예언자 엘리사의 수종으로 주인의 기적을 탐내다가 문둥병에 걸린 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기하 4:12",
       "열왕기하 5:20-27"
@@ -1205,7 +1205,7 @@
     "id": "goshen",
     "word": "고센",
     "definition": "이스라엘 사람들이 215년간 거주한 이집트의 한 지역으로 나일 삼각주 동부에 있었던 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 45:10",
       "창세기 47:1-6, 11"
@@ -1254,7 +1254,7 @@
     "id": "golgotha",
     "word": "골고타",
     "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "요한복음 19:16-18"
     ]
@@ -1291,11 +1291,10 @@
   {
     "id": "valley",
     "word": "골짜기",
-    "definition": "절벽이나 언덕이나 산 사이에 움푹 패어 들어간 지형",
+    "definition": "이들은 모두 싯딤 OOO 곧 '소금 바다'에 군대를 모았다",
     "difficulty": 1,
     "references": [
-      "시편 104:8",
-      "여호수아 8:11"
+      "창세기 14:3"
     ]
   },
   {
@@ -1418,11 +1417,10 @@
   {
     "id": "maggot",
     "word": "구더기",
-    "definition": "알에서 부화된 지 얼마 안 된 유충으로 썩어 가는 물질에서 발견되는 파리의 애벌레",
+    "definition": "게헨나에서는 OOO도 죽지 않고 불도 꺼지지 않습니다.",
     "difficulty": 1,
     "references": [
-      "욥기 7:5, 17:14",
-      "이사야 14:11"
+      "마가복음 9:47, 48"
     ]
   },
   {
@@ -1467,7 +1465,7 @@
     "id": "cush",
     "word": "구스",
     "definition": "함의 아들 가운데 첫째로 여섯 아들의 아버지이자 아프리카 지역 민족의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 10:6-8",
       "역대기상 1:8-10"
@@ -1548,16 +1546,6 @@
     "references": [
       "출애굽기 28:20",
       "출애굽기 39:13"
-    ]
-  },
-  {
-    "id": "earring",
-    "word": "귀고리",
-    "definition": "장식용으로 귀에 다는 고리나 기타 장식품으로 코고리에도 쓰인 히브리어 단어와 관련된 물건",
-    "difficulty": 1,
-    "references": [
-      "잠언 11:22",
-      "출애굽기 32:2"
     ]
   },
   {
@@ -1699,7 +1687,7 @@
     "id": "chedorlaomer",
     "word": "그돌라오멜",
     "definition": "고대 엘람의 왕으로 사해 남쪽 다섯 왕의 반역을 진압하다 아브라함에게 패한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 14:1-17"
     ]
@@ -2298,7 +2286,7 @@
     "id": "chinnereth",
     "word": "긴네렛",
     "definition": "납달리의 요새 도시로 갈릴리 바다 북서쪽에 위치한 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 19:35",
       "열왕기상 15:20"
@@ -2364,7 +2352,7 @@
     "id": "cilicia",
     "word": "길리기아",
     "definition": "소아시아 남동부의 지역으로 바울의 출생지 타소가 있던 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 21:39",
       "사도행전 22:3"
@@ -2383,7 +2371,7 @@
     "id": "gilboa",
     "word": "길보아",
     "definition": "사울과 그 아들들이 블레셋과의 전투에서 죽은 이스르엘 남동쪽의 산",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사사기 7:1",
       "사무엘상 28:4"
@@ -2540,11 +2528,11 @@
   {
     "id": "ass",
     "word": "나귀",
-    "definition": "단단한 굽을 가진 말과의 동물로 산악 지형에 적합한 짐바리 짐승",
+    "definition": "성경 시대에 사람과 짐을 나르는 데 널리 사용된 동물로 아브라함과 예수도 이동할 때 사용했다",
     "difficulty": 1,
     "references": [
-      "창세기 12:16",
-      "창세기 22:3"
+      "창세기 22:3",
+      "마태복음 21:7"
     ]
   },
   {
@@ -2589,7 +2577,7 @@
     "id": "nadab",
     "word": "나답",
     "definition": "아론과 엘리세바의 맏아들로 이집트에서 태어나 제사장으로 임명받은 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 6:23",
       "출애굽기 28:1"
@@ -2985,7 +2973,7 @@
     "id": "naphtali",
     "word": "납달리",
     "definition": "라헬의 하녀 빌하가 야곱에게 낳은 둘째 아들이자 이스라엘 지파의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 35:25, 26",
       "창세기 30:2-8"
@@ -3176,11 +3164,11 @@
   {
     "id": "roebuck",
     "word": "노루",
-    "definition": "가젤과 비슷하지만 더 작은 동물로 정결 식용으로 허용된 짐승",
+    "definition": "가젤과 비슷하지만 그보다는 작은 동물로, 솔로몬 왕의 식탁에 정기적으로 공급된 고기 가운데 하나",
     "difficulty": 1,
     "references": [
-      "신명기 14:5, 6",
-      "열왕기상 4:22, 23"
+      "신명기 14:5",
+      "열왕기상 4:23"
     ]
   },
   {
@@ -3283,11 +3271,10 @@
   {
     "id": "bribe",
     "word": "뇌물",
-    "definition": "받는 사람에게 영향을 미쳐 부당한 행동을 하게 하려는 목적으로 주는 대가성 금품",
+    "definition": "너는 OO을 받아서는 안 된다. OO은 눈 밝은 사람의 눈을 멀게 하고, 의로운 사람의 말을 왜곡시킬 수 있다",
     "difficulty": 1,
     "references": [
-      "출애굽기 23:8",
-      "신명기 16:19"
+      "출애굽기 23:8"
     ]
   },
   {
@@ -3334,7 +3321,7 @@
     "id": "entry-느고",
     "word": "느고",
     "definition": "유다 왕 요시야와 동시대에 살던 이집트 파라오로 요시야를 전사시킨 왕",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "역대기하 35:20–36:4",
       "열왕기하 23:29-35"
@@ -3462,7 +3449,7 @@
     "id": "nebo",
     "word": "느보",
     "definition": "모압의 도시로 시혼의 지배를 받다 이스라엘이 점령 후 르우벤 사람들이 재건한 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "민수기 32:3, 37, 38",
       "이사야 15:2"
@@ -3769,7 +3756,7 @@
     "id": "darkon",
     "word": "다르곤",
     "definition": "스룹바벨과 함께 바빌론 유배에서 돌아온 솔로몬의 종들의 자손 가운데 한 가문",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "에스라 2:55, 56",
       "느헤미야 7:57, 58"
@@ -4125,11 +4112,10 @@
   {
     "id": "pledge",
     "word": "담보",
-    "definition": "꾸어 준 것을 갚겠다는 보증으로 채무자가 채권자에게 제공하는 개인 재산",
+    "definition": "다말은 OO를 지혜롭게 사용하여 유다가 스스로 한 짓을 밝혀내게 하였다.",
     "difficulty": 1,
     "references": [
-      "출애굽기 22:26, 27",
-      "신명기 24:12, 13"
+      "창세기 38:17, 18, 25"
     ]
   },
   {
@@ -4202,10 +4188,9 @@
   {
     "id": "marble",
     "word": "대리석",
-    "definition": "입자가 치밀한 결정질 석회암으로 광택이 잘 나는 건축 재료",
+    "definition": "광택이 잘 나는 건축용 돌로, 에스더 시대 수산의 페르시아 궁전의 기둥과 바닥에 사용되었다.",
     "difficulty": 1,
     "references": [
-      "아가 5:15",
       "에스더 1:6"
     ]
   },
@@ -4550,11 +4535,10 @@
   {
     "id": "thief",
     "word": "도둑",
-    "definition": "남의 물건을 허가 없이 고의로 취하는 사람으로 대개 밤에 몰래 훔치는 자",
+    "definition": "그러나 한 가지는 알아 두십시오. OO이 밤 몇 시에 올지 집주인이 알았더라면, 깨어 있으면서 집에 OO이 침입하지 못하게 했을 것입니다.",
     "difficulty": 1,
     "references": [
-      "욥기 24:14",
-      "마태 24:43"
+      "마태복음 24:43"
     ]
   },
   {
@@ -6201,7 +6185,7 @@
     "id": "manoah",
     "word": "마노아",
     "definition": "소라에 살던 단 사람으로 삼손의 아버지이자 여호와의 충실한 숭배자",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사사기 13:2-23",
       "사사기 14:1-4"
@@ -6537,7 +6521,7 @@
     "id": "mahanaim",
     "word": "마하나임",
     "definition": "요르단 강 동쪽의 장소로 야곱이 천사들을 만난 곳이자 두 진영을 의미함",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 32:1, 2",
       "여호수아 21:38"
@@ -6623,7 +6607,7 @@
     "id": "makkedah",
     "word": "막게다",
     "definition": "세펠라의 가나안 왕도로 다섯 왕이 숨었다 처형된 동굴이 있는 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 10:5-29",
       "여호수아 12:16"
@@ -6669,7 +6653,7 @@
     "id": "machpelah",
     "word": "막벨라",
     "definition": "아브라함이 산 헤브론 부근의 동굴로 족장들의 매장지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 23:14-19",
       "창세기 49:30, 31"
@@ -7137,11 +7121,10 @@
   {
     "id": "locust",
     "word": "메뚜기",
-    "definition": "큰 떼로 이동하는 방아깨비류 곤충으로 성서에서 재앙과 식량으로 언급됨",
+    "definition": "네가 나의 백성을 보내기를 계속 거부하면, 내가 내일 너의 영토 안으로 OOO를 몰고 오겠다",
     "difficulty": 1,
     "references": [
-      "레위기 11:22",
-      "시편 105:34"
+      "출애굽기 10:4"
     ]
   },
   {
@@ -7368,11 +7351,10 @@
   {
     "id": "razor",
     "word": "면도칼",
-    "definition": "털이나 수염을 깎는 도구로 드러내다를 의미하는 어근에서 유래",
+    "definition": "나실인으로 서원한 기간 내내 OOO을 머리에 대서는 안 된다.",
     "difficulty": 1,
     "references": [
-      "이사야 3:17",
-      "창세기 41:14"
+      "민수기 6:5"
     ]
   },
   {
@@ -7417,10 +7399,9 @@
   {
     "id": "sand",
     "word": "모래",
-    "definition": "자갈보다 작고 실트보다 굵은 입자로 바다의 경계이자 수많음의 상징",
+    "definition": "내가 반드시 너를 축복하고 너의 자손을 하늘의 별처럼, 바닷가의 OO알처럼 번성하게 할 것이다.",
     "difficulty": 1,
     "references": [
-      "예레미야 5:22",
       "창세기 22:17"
     ]
   },
@@ -8285,7 +8266,7 @@
     "id": "myra",
     "word": "미라",
     "definition": "리키아 속주의 주요 도시로 바울이 예루살렘으로 가는 길에 배를 갈아탄 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사도행전 27:1-6",
       "사도행전 21:1"
@@ -8402,7 +8383,7 @@
     "id": "mizpah",
     "word": "미스바",
     "definition": "유다의 여러 장소 이름으로 사사 시대에 이스라엘이 모인 집결지",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "여호수아 11:3",
       "여호수아 15:38"
@@ -8718,11 +8699,10 @@
   {
     "id": "needle",
     "word": "바늘",
-    "definition": "한쪽은 뾰족하고 다른 쪽에 귀가 있는 가느다란 용구로 바느질과 수놓기에 사용",
+    "definition": "다시 여러분에게 말하는데, 부자가 하느님의 왕국에 들어가는 것보다 낙타가 OO귀로 빠져나가는 것이 더 쉽습니다.",
     "difficulty": 1,
     "references": [
-      "출애굽기 28:6",
-      "출애굽기 35:34, 35"
+      "마태복음 19:24"
     ]
   },
   {
@@ -9046,7 +9026,7 @@
     "id": "bashan",
     "word": "바산",
     "definition": "갈릴리 바다 동쪽의 넓은 지역으로 비옥한 목초지와 거인 족으로 유명함",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "신명기 3:3-14",
       "여호수아 12:4, 5"
@@ -9541,11 +9521,10 @@
   {
     "id": "heel",
     "word": "발꿈치",
-    "definition": "발 뒤쪽 발목 아랫부분으로 지체시키거나 방해하는 비유로 사용됨",
+    "definition": "그는 너의 머리를 짓밟을 것이고 너는 그의 OOO를 상하게 할 것이다.",
     "difficulty": 1,
     "references": [
-      "창세기 25:26",
-      "창세기 27:36"
+      "창세기 3:15"
     ]
   },
   {
@@ -9921,7 +9900,7 @@
     "id": "bethany",
     "word": "베다니",
     "definition": "마리아와 마르다와 나사로가 살았고 예수가 자주 방문한 마을",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "요한복음 11:1-6; 12:1-3"
     ]
@@ -10559,11 +10538,10 @@
   {
     "id": "brick",
     "word": "벽돌",
-    "definition": "점토나 진흙으로 만든 건축 재료로 바벨 탑 등 고대 건축에 널리 쓰임",
+    "definition": "자! 우리가 OO을 만들어 불로 굽자. 그래서 그들은 돌 대신 OO을 사용했고 역청을 모르타르로 사용했다",
     "difficulty": 1,
     "references": [
-      "창세기 11:3",
-      "출애굽기 5:7-19"
+      "창세기 11:3"
     ]
   },
   {
@@ -15248,7 +15226,7 @@
     "id": "zebulun",
     "word": "스불론",
     "definition": "야곱과 레아의 여섯째 아들로 이스라엘 열두 지파 중 한 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 30:20",
       "창세기 35:23"
@@ -15876,7 +15854,7 @@
     "id": "zion",
     "word": "시온",
     "definition": "원래 여부스 사람의 성채로 다윗이 함락해 다윗의 도시가 된 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기상 8:1",
       "역대기상 11:5"
@@ -16459,7 +16437,7 @@
     "id": "japheth",
     "word": "야벳",
     "definition": "대홍수에서 생존한 노아의 아들 가운데 한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 9:18, 19"
     ]
@@ -16514,7 +16492,7 @@
     "id": "edom",
     "word": "에돔",
     "definition": "에서의 후손이 세운 나라로 이스라엘 남동쪽에 있던 지역",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 36:8, 9; 민수기 20:14-21"
     ]
@@ -16872,7 +16850,7 @@
     "id": "jehu",
     "word": "예후",
     "definition": "이스라엘의 왕이 되어 바알 숭배를 없애는 일을 시작한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기하 9:1-10; 10:18-28"
     ]
@@ -16909,7 +16887,7 @@
     "id": "obed",
     "word": "오벳",
     "definition": "룻과 보아스의 아들로 다윗 왕의 할아버지가 된 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "룻기 4:13-17; 역대기상 2:12"
     ]
@@ -17095,7 +17073,7 @@
     "id": "ur",
     "word": "우르",
     "definition": "아브라함의 가족이 살았으며 그가 하느님의 부름을 받은 고대 도시",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 11:27-31; 사도행전 7:2-4"
     ]
@@ -17434,11 +17412,10 @@
   {
     "id": "jackal",
     "word": "자칼",
-    "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
+    "definition": "나는 OO의 형제가 되고 타조 딸들의 친구가 되었네",
     "difficulty": 1,
     "references": [
-      "예레미야 9:11",
-      "이사야 13:22"
+      "욥기 30:29"
     ]
   },
   {
@@ -19761,7 +19738,7 @@
     "id": "haran",
     "word": "하란",
     "definition": "데라가 머물렀고 아브라함이 가나안으로 떠난 메소포타미아의 도시",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 11:31, 32; 12:4, 5"
     ]
@@ -19884,7 +19861,7 @@
     "id": "haman",
     "word": "하만",
     "definition": "아각 사람 함므다다의 아들로 유대인 멸절을 꾀한 아말렉 왕족 출신",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "에스더 3:1"
     ]
@@ -20497,11 +20474,10 @@
   {
     "id": "sponge",
     "word": "해면",
-    "definition": "수생 동물의 골격으로 수분 흡수력이 좋고 질기며 탄력성이 있음",
+    "definition": "그 즉시 그들 중 한 사람이 달려가서 OO을 가져다가 신 포도주에 적셔 갈대에 꽂아 그분에게 마시라고 주었다",
     "difficulty": 1,
     "references": [
-      "마태 27:48",
-      "마가 15:36"
+      "마태복음 27:48"
     ]
   },
   {
@@ -21057,7 +21033,7 @@
     "id": "horeb",
     "word": "호렙",
     "definition": "시나이 산과 동일시되는 참 하느님의 산으로 모세가 율법을 받은 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기상 19:8",
       "출애굽기 33:6"
@@ -21387,11 +21363,10 @@
   {
     "id": "torch",
     "word": "횃불",
-    "definition": "손으로 들고 다니는 불로 수지 함유 나무나 기름 적신 물질에 불을 붙인 것",
+    "definition": "해가 져서 매우 어두워졌을 때에 연기 나는 가마가 나타났고 타오르는 OO이 그 갈라놓은 조각들 사이로 지나갔다",
     "difficulty": 1,
     "references": [
-      "창세기 15:17",
-      "사사기 7:16, 20"
+      "창세기 15:17"
     ]
   },
   {
@@ -21616,7 +21591,7 @@
     "id": "hiram",
     "word": "히람",
     "definition": "두로 왕으로 솔로몬 성전 건축에 재목과 기술자를 제공한 사람",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기상 5:1, 10, 18",
       "사무엘하 5:11"

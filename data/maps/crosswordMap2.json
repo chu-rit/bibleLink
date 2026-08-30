@@ -1,110 +1,110 @@
 {
-  "id": "20260830_002",
+  "id": "20260830_031",
   "title": "E-2",
-  "difficulty": 1,
+  "difficulty": 1.1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######구#",
-    "####그리스어",
-    "####돌###",
-    "##이스라엘##",
-    "골로새#오###",
-    "짜##갈멜###",
-    "기드온#####",
-    "##유#####"
+    "########",
+    "########",
+    "########",
+    "#####비둘기",
+    "등###하늘#름",
+    "잔#여호와##나",
+    "대머리####무",
+    "##고수씨###"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "구스",
+      "answer": "비늘",
       "direction": "down",
-      "row": 0,
-      "col": 6,
+      "row": 3,
+      "col": 5,
       "length": 2,
-      "wordId": "cush"
+      "wordId": "scales"
     },
     {
       "number": 2,
-      "answer": "그돌라오멜",
-      "direction": "down",
-      "row": 1,
-      "col": 4,
-      "length": 5,
-      "wordId": "chedorlaomer"
+      "answer": "비둘기",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "dove"
     },
     {
       "number": 3,
-      "answer": "그리스어",
-      "direction": "across",
-      "row": 1,
-      "col": 4,
+      "answer": "기름나무",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
       "length": 4,
-      "wordId": "greek"
+      "wordId": "entry-기름나무"
     },
     {
       "number": 4,
-      "answer": "이새",
+      "answer": "등잔대",
       "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 2,
-      "wordId": "jesse"
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "lampstand"
     },
     {
       "number": 5,
-      "answer": "이스라엘",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "israel"
+      "answer": "하와",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "eve"
     },
     {
       "number": 6,
-      "answer": "골짜기",
-      "direction": "down",
+      "answer": "하늘",
+      "direction": "across",
       "row": 4,
-      "col": 0,
-      "length": 3,
-      "wordId": "valley"
+      "col": 4,
+      "length": 2,
+      "wordId": "entry-하늘"
     },
     {
       "number": 7,
-      "answer": "골로새",
-      "direction": "across",
-      "row": 4,
-      "col": 0,
+      "answer": "여리고",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
       "length": 3,
-      "wordId": "colossae"
+      "wordId": "jericho"
     },
     {
       "number": 8,
-      "answer": "갈멜",
+      "answer": "여호와",
       "direction": "across",
       "row": 5,
-      "col": 3,
-      "length": 2,
-      "wordId": "carmel-2"
+      "col": 2,
+      "length": 3,
+      "wordId": "jehovah"
     },
     {
       "number": 9,
-      "answer": "기드온",
+      "answer": "대머리",
       "direction": "across",
       "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "gideon"
+      "wordId": "baldness"
     },
     {
       "number": 10,
-      "answer": "온유",
-      "direction": "down",
-      "row": 6,
+      "answer": "고수씨",
+      "direction": "across",
+      "row": 7,
       "col": 2,
-      "length": 2,
-      "wordId": "mildness"
+      "length": 3,
+      "wordId": "entry-고수씨"
     }
   ]
 }
