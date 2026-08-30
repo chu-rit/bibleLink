@@ -213,7 +213,7 @@
     "id": "mamre",
     "word": "마므레",
     "definition": "아브라함과 동맹을 맺은 아모리 수장이자 헤브론 근처의 거룩한 나무가 있는 곳",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 14:13, 24",
       "창세기 13:18"
@@ -979,7 +979,7 @@
     "id": "dust",
     "word": "먼지",
     "definition": "물질의 미세한 입자로 성서에서 인간의 연약함과 죽음을 상징함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:7",
       "창세기 3:19"
@@ -989,7 +989,7 @@
     "id": "yoke",
     "word": "멍에",
     "definition": "짐을 매달거나 동물의 목에 얹는 나무 가로장으로 비유적으로 속박을 의미함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 9:4",
       "민수기 19:2"
@@ -1239,7 +1239,7 @@
     "id": "memphis",
     "word": "멤피스",
     "definition": "고대 이집트의 수도 중 하나로 나일 강 서쪽에 위치했던 도시",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "호세아 9:6",
       "이사야 19:13"
@@ -1404,7 +1404,7 @@
     "id": "moab",
     "word": "모압",
     "definition": "롯의 후손이 세운 나라로 이스라엘과 여러 차례 관계를 맺은 민족",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 19:30-38; 민수기 22:1-6"
     ]
@@ -1492,7 +1492,7 @@
     "id": "molech",
     "word": "몰렉",
     "definition": "암몬 사람들과 관련된 신으로 어린이를 희생제물로 바치는 우상 숭배의 대상",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기상 11:5, 7, 33",
       "사도행전 7:43"
@@ -1629,7 +1629,7 @@
     "id": "meditation",
     "word": "묵상",
     "definition": "과거 경험이나 현재 일을 깊이 생각하며 숙고하는 마음의 활동",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:63",
       "시편 19:14"
@@ -1639,7 +1639,7 @@
     "id": "tattoo",
     "word": "문신",
     "definition": "피부에 새긴 지워지지 않는 표시로 율법은 이스라엘에게 이를 금지함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 19:28",
       "신명기 14:1, 2"
@@ -2060,7 +2060,7 @@
     "id": "micah",
     "word": "미가",
     "definition": "유다와 이스라엘의 불의를 지적하고 베들레헴에서 나올 통치자를 예언한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "미가 3:8-12",
       "미가 5:2"
@@ -2214,7 +2214,7 @@
     "id": "mishael",
     "word": "미사엘",
     "definition": "고핫 계통 레위 사람으로 나답과 아비후의 시체를 옮긴 자이자 다니엘의 동무",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 6:18, 22",
       "레위기 10:1-5"
@@ -2243,7 +2243,7 @@
     "id": "art",
     "word": "미술",
     "definition": "회화와 조각 등 예술 분야로 성서에서는 하느님의 창조의 아름다움과 연관됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:9",
       "시편 139:14"
@@ -2342,7 +2342,7 @@
     "id": "madness",
     "word": "미침",
     "definition": "정신 착란이나 극도의 격노 심한 어리석음을 나타내는 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 4:33",
       "마가 5:1-17"
@@ -2398,7 +2398,7 @@
     "id": "miktam",
     "word": "믹담",
     "definition": "다윗의 여섯 편 시 머리글에 들어 있는 히브리어 단어로 기념글을 의미할 수 있음",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "시편 16편",
       "시편 56-60편"
@@ -2408,7 +2408,7 @@
     "id": "migdol",
     "word": "믹돌",
     "definition": "이집트의 장소로 이스라엘이 홍해를 건너기 전 마지막으로 진을 친 곳 근처",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 14:2",
       "민수기 33:5-8"

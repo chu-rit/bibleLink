@@ -137,7 +137,7 @@ mapFiles.forEach((file) => {
     }
   } else if (map.difficulty >= 2.6) {
     if (map.width !== 12 || map.height !== 12) fail('하드 맵은 12x12이어야 합니다');
-    if (map.cells.length !== 20) fail('하드 맵은 단어 20개여야 합니다');
+    if (map.cells.length !== 15) fail('하드 맵은 단어 15개여야 합니다');
     if (average < 2.6) fail(`하드 맵의 실제 평균 난이도(${average.toFixed(2)})가 2.6 이상이어야 합니다`);
   }
   console.log(

@@ -403,7 +403,7 @@
     "id": "adultery",
     "word": "간음",
     "definition": "결혼한 사람이 배우자가 아닌 이성과 자발적으로 성 관계를 갖는 것으로 율법이 금한 행위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:14",
       "마태 5:27, 28"
@@ -442,7 +442,7 @@
     "id": "carchemish",
     "word": "갈그미스",
     "definition": "유프라테스 강 상류에 있던 중요한 무역 중심지로 바빌론과 이집트 군대가 전투를 벌인 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "예레미야 46:2",
       "역대기하 35:20-24"
@@ -482,7 +482,7 @@
     "id": "caleb",
     "word": "갈렙",
     "definition": "약속의 땅을 정탐한 뒤 믿음으로 좋은 보고를 한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 13:6, 30",
       "여호수아 14:6-13"
@@ -704,7 +704,7 @@
     "id": "spelt",
     "word": "개밀",
     "definition": "질이 낮은 밀로 이집트에서 재배되었고 밭의 경계 울타리로도 심어진 곡물",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 9:32",
       "에스겔 4:9"
@@ -790,7 +790,7 @@
     "id": "gennesaret",
     "word": "게네사렛",
     "definition": "갈릴리 바다 북서쪽 연안의 비옥한 평야로 예수께서 기적으로 병을 고치신 지역",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "마태 14:34-36",
       "마가 6:53-56"
@@ -850,7 +850,7 @@
     "id": "gershon",
     "word": "게르손",
     "definition": "레위의 세 아들 가운데 첫째로 레위인 가운데 한 가문의 조상이 된 사람",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 6:16",
       "민수기 3:17, 21"
@@ -1003,7 +1003,7 @@
     "id": "lattice",
     "word": "격자창",
     "definition": "나무오리를 교차시켜 그물 모양으로 만든 것으로 창문을 가리는 데 사용된 물건",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "잠언 7:6"
     ]
@@ -1070,7 +1070,7 @@
     "id": "revelation",
     "word": "계시",
     "definition": "하느님이 자신의 뜻이나 목적을 사람에게 알려 주시는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 2:28",
       "갈라디아서 1:11, 12"
@@ -1157,7 +1157,7 @@
     "id": "corinth",
     "word": "고린도",
     "definition": "바울이 회중을 세우고 편지를 보낸 고대 그리스의 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 18:1-11"
     ]
@@ -1176,7 +1176,7 @@
     "id": "gomorrah",
     "word": "고모라",
     "definition": "사해 남단 근처에 있던 도시로 소돔과 함께 여호와의 심판으로 멸망한 곳",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 13:10, 12",
       "창세기 19:24, 28"
@@ -1186,7 +1186,7 @@
     "id": "gozan",
     "word": "고산",
     "definition": "아시리아 사람들에게 정복된 이스라엘 사람들이 끌려간 강 유역의 지역",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기하 17:6",
       "열왕기하 18:11"
@@ -1196,7 +1196,7 @@
     "id": "cosam",
     "word": "고삼",
     "definition": "다윗의 아들 나단의 자손으로 예수의 어머니 마리아의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "누가 3:28"
     ]
@@ -1244,7 +1244,7 @@
     "id": "kohath",
     "word": "고핫",
     "definition": "레위의 둘째 아들로 아므람·이스할·헤브론·웃시엘의 아버지이자 레위인 한 가문의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 46:11",
       "출애굽기 6:16, 18"
@@ -1254,7 +1254,7 @@
     "id": "golgotha",
     "word": "골고타",
     "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한복음 19:16-18"
     ]
@@ -1263,7 +1263,7 @@
     "id": "golan",
     "word": "골란",
     "definition": "므낫세 영토에 있던 바산의 도시로 도피 도시로 선정되고 레위인 도시가 된 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "신명기 4:41-43",
       "여호수아 20:2, 8"
@@ -1341,7 +1341,7 @@
     "id": "generosity",
     "word": "관대함",
     "definition": "자신이 가진 것을 아낌없이 나누고 다른 사람을 너그럽게 대하는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "고린도 후서 9:7; 디모데 전서 6:18"
     ]
@@ -1419,7 +1419,7 @@
     "id": "maggot",
     "word": "구더기",
     "definition": "알에서 부화된 지 얼마 안 된 유충으로 썩어 가는 물질에서 발견되는 파리의 애벌레",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 7:5, 17:14",
       "이사야 14:11"
@@ -1554,7 +1554,7 @@
     "id": "earring",
     "word": "귀고리",
     "definition": "장식용으로 귀에 다는 고리나 기타 장식품으로 코고리에도 쓰인 히브리어 단어와 관련된 물건",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 11:22",
       "출애굽기 32:2"
@@ -1564,7 +1564,7 @@
     "id": "cricket",
     "word": "귀뚜라미",
     "definition": "방아깨비와 유연관계가 있는 뛰는 곤충으로 레위기에서 정한 새로 식용이 허용된 곤충",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:22"
     ]
@@ -1897,7 +1897,7 @@
     "id": "industriousness",
     "word": "근면",
     "definition": "꾸준하고 끈기 있게 활동하는 것으로 게으름의 반대되는 성경적 덕목",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 10:4, 12:24",
       "골로새서 1:29"
@@ -2116,7 +2116,7 @@
     "id": "gideon",
     "word": "기드온",
     "definition": "적은 수의 군사로 미디안 군대를 물리친 이스라엘의 재판관",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사사기 6-7장"
     ]
@@ -2355,7 +2355,7 @@
     "id": "gilead",
     "word": "길르앗",
     "definition": "요르단 강 동쪽에 위치하며 목초지로 알려진 지역",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "민수기 32:1-5; 예레미야 8:22"
     ]
@@ -2541,7 +2541,7 @@
     "id": "ass",
     "word": "나귀",
     "definition": "단단한 굽을 가진 말과의 동물로 산악 지형에 적합한 짐바리 짐승",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 12:16",
       "창세기 22:3"
@@ -2570,7 +2570,7 @@
     "id": "nathan",
     "word": "나단",
     "definition": "다윗의 잘못을 비유로 지적하고 솔로몬의 왕위 계승을 지지한 예언자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 12:1-14",
       "열왕기상 1:11-14"
@@ -2599,7 +2599,7 @@
     "id": "trees",
     "word": "나무",
     "definition": "팔레스타인과 인접 지역에서 자라는 약 30종으로 성경에 언급된 식물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 6:6",
       "느헤미야 9:25"
@@ -2975,7 +2975,7 @@
     "id": "husband",
     "word": "남편",
     "definition": "결혼한 남자로 히브리어 이시와 그리스어 아네르로 표현되는 역할",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "호세아 2:16",
       "로마서 7:2"
@@ -3274,7 +3274,7 @@
     "id": "agriculture",
     "word": "농사",
     "definition": "땅을 경작하여 농작물을 생산하고 가축을 기르는 일로 에덴에서 시작된 활동",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:5, 15",
       "창세기 3:17-19"
@@ -3294,7 +3294,7 @@
     "id": "luke",
     "word": "누가",
     "definition": "바울과 함께 여행했으며 복음서와 사도행전의 기록자로 알려진 의사",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "골로새서 4:14",
       "누가복음 1:1-4"
@@ -3304,7 +3304,7 @@
     "id": "leaven",
     "word": "누룩",
     "definition": "반죽에 발효를 일으키는 물질로 성경에서 죄와 부패의 상징으로 자주 사용됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 12:15",
       "누가 13:21"
@@ -3798,7 +3798,7 @@
     "id": "leg",
     "word": "다리",
     "definition": "사람이나 동물이 몸을 지탱하고 걷는 데 쓰는 신체 부분으로 제물의 일부가 되기도 함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 8:22, 25-27",
       "레위기 7:32-34"
@@ -4019,7 +4019,7 @@
     "id": "adornment",
     "word": "단장",
     "definition": "장식하고 아름답게 치장하는 것으로 선한 목적이나 기만의 목적으로 할 수 있음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기상 16:29",
       "예레미야애가 5:12"
@@ -4126,7 +4126,7 @@
     "id": "pledge",
     "word": "담보",
     "definition": "꾸어 준 것을 갚겠다는 보증으로 채무자가 채권자에게 제공하는 개인 재산",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 22:26, 27",
       "신명기 24:12, 13"
@@ -4512,7 +4512,7 @@
     "id": "ax",
     "word": "도끼",
     "definition": "날이 있는 머리에 자루를 박아 만든 연장으로 나무나 돌을 자르고 무기로도 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 19:5",
       "이사야 10:15"
@@ -4551,7 +4551,7 @@
     "id": "thief",
     "word": "도둑",
     "definition": "남의 물건을 허가 없이 고의로 취하는 사람으로 대개 밤에 몰래 훔치는 자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 24:14",
       "마태 24:43"
@@ -4618,7 +4618,7 @@
     "id": "city",
     "word": "도시",
     "definition": "성읍이나 마을보다 큰 밀집된 정착 지역으로 히브리어 이르로 1100회가량 나옴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 1:26",
       "예레미야 49:25"
@@ -4657,7 +4657,7 @@
     "id": "citiesofrefuge",
     "word": "도피성",
     "definition": "실수로 사람을 죽인 이가 피의 복수자를 피해 보호받을 수 있던 도시",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "민수기 35:9-15; 여호수아 20:1-6"
     ]
@@ -4676,7 +4676,7 @@
     "id": "asp",
     "word": "독뱀",
     "definition": "유연관계가 없는 몇 종의 독사를 가리키는 일반적 이름",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "로마서 3:13",
       "시편 140:3"
@@ -4773,7 +4773,7 @@
     "id": "alliance",
     "word": "동맹",
     "definition": "서로 다른 파벌이나 국가가 혼인이나 합의나 협약으로 결합하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 20:35",
       "사사기 20:11"
@@ -4858,7 +4858,7 @@
     "id": "titus",
     "word": "디도",
     "definition": "바울의 동료로서 회중을 돕는 일을 맡았던 그리스도인",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디도서 1:4, 5"
     ]
@@ -4951,7 +4951,7 @@
     "id": "lamech",
     "word": "라멕",
     "definition": "노아의 아버지로 하느님이 인류에게 위로를 주실 것이라고 기대한 사람",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 5:28-31"
     ]
@@ -5132,7 +5132,7 @@
     "id": "rachel",
     "word": "라헬",
     "definition": "야곱이 사랑하여 아내로 맞이했으며 요셉과 베냐민의 어머니가 된 여자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 29:28-30",
       "창세기 35:16-20"
@@ -5377,7 +5377,7 @@
     "id": "leah",
     "word": "레아",
     "definition": "야곱의 첫째 아내로, 여러 아들과 딸 디나를 낳은 여자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 29:23-35",
       "창세기 30:17-21"
@@ -5387,7 +5387,7 @@
     "id": "levi",
     "word": "레위",
     "definition": "야곱의 아들로, 그의 후손은 성전 봉사와 관련된 일을 맡았다",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 29:34",
       "민수기 3:5-13"
@@ -5397,7 +5397,7 @@
     "id": "leviticus",
     "word": "레위기",
     "definition": "이스라엘의 숭배와 제사장 직무에 관한 율법을 담은 성경 책",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 1:1-3; 19:2"
     ]
@@ -5579,7 +5579,7 @@
     "id": "lois",
     "word": "로이스",
     "definition": "디모데의 할머니로 진실한 믿음을 가진 여자",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "디모데 후서 1:5"
     ]
@@ -5636,7 +5636,7 @@
     "id": "rufus",
     "word": "루포",
     "definition": "예수의 고통의 기둥을 지는 것을 돕게 된 시몬의 아들",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "마가 15:21",
       "로마서 16:13"
@@ -6305,7 +6305,7 @@
     "id": "mamre",
     "word": "마므레",
     "definition": "아브라함과 동맹을 맺은 아모리 수장이자 헤브론 근처의 거룩한 나무가 있는 곳",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 14:13, 24",
       "창세기 13:18"
@@ -7080,7 +7080,7 @@
     "id": "dust",
     "word": "먼지",
     "definition": "물질의 미세한 입자로 성서에서 인간의 연약함과 죽음을 상징함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:7",
       "창세기 3:19"
@@ -7090,7 +7090,7 @@
     "id": "yoke",
     "word": "멍에",
     "definition": "짐을 매달거나 동물의 목에 얹는 나무 가로장으로 비유적으로 속박을 의미함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 9:4",
       "민수기 19:2"
@@ -7340,7 +7340,7 @@
     "id": "memphis",
     "word": "멤피스",
     "definition": "고대 이집트의 수도 중 하나로 나일 강 서쪽에 위치했던 도시",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "호세아 9:6",
       "이사야 19:13"
@@ -7505,7 +7505,7 @@
     "id": "moab",
     "word": "모압",
     "definition": "롯의 후손이 세운 나라로 이스라엘과 여러 차례 관계를 맺은 민족",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 19:30-38; 민수기 22:1-6"
     ]
@@ -7593,7 +7593,7 @@
     "id": "molech",
     "word": "몰렉",
     "definition": "암몬 사람들과 관련된 신으로 어린이를 희생제물로 바치는 우상 숭배의 대상",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기상 11:5, 7, 33",
       "사도행전 7:43"
@@ -7730,7 +7730,7 @@
     "id": "meditation",
     "word": "묵상",
     "definition": "과거 경험이나 현재 일을 깊이 생각하며 숙고하는 마음의 활동",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:63",
       "시편 19:14"
@@ -7740,7 +7740,7 @@
     "id": "tattoo",
     "word": "문신",
     "definition": "피부에 새긴 지워지지 않는 표시로 율법은 이스라엘에게 이를 금지함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 19:28",
       "신명기 14:1, 2"
@@ -8161,7 +8161,7 @@
     "id": "micah",
     "word": "미가",
     "definition": "유다와 이스라엘의 불의를 지적하고 베들레헴에서 나올 통치자를 예언한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "미가 3:8-12",
       "미가 5:2"
@@ -8324,7 +8324,7 @@
     "id": "mishael",
     "word": "미사엘",
     "definition": "고핫 계통 레위 사람으로 나답과 아비후의 시체를 옮긴 자이자 다니엘의 동무",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 6:18, 22",
       "레위기 10:1-5"
@@ -8353,7 +8353,7 @@
     "id": "art",
     "word": "미술",
     "definition": "회화와 조각 등 예술 분야로 성서에서는 하느님의 창조의 아름다움과 연관됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:9",
       "시편 139:14"
@@ -8452,7 +8452,7 @@
     "id": "madness",
     "word": "미침",
     "definition": "정신 착란이나 극도의 격노 심한 어리석음을 나타내는 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 4:33",
       "마가 5:1-17"
@@ -8508,7 +8508,7 @@
     "id": "miktam",
     "word": "믹담",
     "definition": "다윗의 여섯 편 시 머리글에 들어 있는 히브리어 단어로 기념글을 의미할 수 있음",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "시편 16편",
       "시편 56-60편"
@@ -8518,7 +8518,7 @@
     "id": "migdol",
     "word": "믹돌",
     "definition": "이집트의 장소로 이스라엘이 홍해를 건너기 전 마지막으로 진을 친 곳 근처",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 14:2",
       "민수기 33:5-8"
@@ -8690,7 +8690,7 @@
     "id": "barnabas",
     "word": "바나바",
     "definition": "초기 회중에서 격려하는 일을 했으며 바울과 함께 전파 여행을 한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 4:36, 37",
       "사도행전 13:1-3"
@@ -8865,7 +8865,7 @@
     "id": "barak",
     "word": "바락",
     "definition": "납달리 게데스에 살던 아비노암의 아들로 드보라와 함께 가나안 왕 야빈을 물리친 재판관",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사사기 4:4-9",
       "사사기 5:9-18"
@@ -9581,7 +9581,7 @@
     "id": "balak",
     "word": "발락",
     "definition": "이스라엘을 두려워해 발람에게 저주를 부탁한 모압 왕",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 22-24장"
     ]
@@ -9599,7 +9599,7 @@
     "id": "balaam",
     "word": "발람",
     "definition": "이스라엘을 저주하려 했지만 자신의 나귀에게 책망을 들은 예언자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 22-24장"
     ]
@@ -9710,16 +9710,6 @@
     "difficulty": 1,
     "references": [
       "창세기 6:14-22"
-    ]
-  },
-  {
-    "id": "belly",
-    "word": "배",
-    "definition": "몸통 앞부분 중 갈비뼈 아래로 소화 기관이 들어 있는 복부",
-    "difficulty": 2,
-    "references": [
-      "사사기 3:21, 22",
-      "잠언 13:25"
     ]
   },
   {
@@ -9844,7 +9834,7 @@
     "id": "butter",
     "word": "버터",
     "definition": "우유를 흔들어 만든 반액체 유제품으로 고대에 귀한 식품이었음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 20:17",
       "사사기 5:25"
@@ -9883,7 +9873,7 @@
     "id": "entry-법정",
     "word": "법정",
     "definition": "유대인의 최고 OO이었던 산헤드린",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 33:22",
       "창세기 18:25"
@@ -9922,7 +9912,7 @@
     "id": "benjamin",
     "word": "베냐민",
     "definition": "야곱의 막내아들이며 이스라엘의 한 지파의 이름이 된 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 35:16-19"
     ]
@@ -9931,7 +9921,7 @@
     "id": "bethany",
     "word": "베다니",
     "definition": "마리아와 마르다와 나사로가 살았고 예수가 자주 방문한 마을",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한복음 11:1-6; 12:1-3"
     ]
@@ -9949,7 +9939,7 @@
     "id": "bethel",
     "word": "베델",
     "definition": "야곱이 하느님의 약속을 확인한 곳으로, 이스라엘의 중요한 장소가 된 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 28:10-19"
     ]
@@ -10034,7 +10024,7 @@
     "id": "berea",
     "word": "베레아",
     "definition": "바울의 전파를 들은 사람들이 성경을 자세히 살펴본 마케도니아의 도시",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사도행전 17:10-13"
     ]
@@ -10698,7 +10688,7 @@
     "id": "potiphar",
     "word": "보디발",
     "definition": "이집트 궁정 관리이자 파라오의 경호 대장으로 요셉을 산 주인",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 37:36",
       "창세기 39:1-6"
@@ -10814,7 +10804,7 @@
     "id": "surety",
     "word": "보증",
     "definition": "제 담보물을 받아들여 보관해 주십시오. 그 누가 저와 악수하여 저를 위해 OO해 주겠습니까?",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 119:122",
       "욥기 17:3"
@@ -10854,7 +10844,7 @@
     "id": "submissiveness",
     "word": "복종",
     "definition": "상위자나 법에 기꺼이 순응하여 굴복하는 것으로 예수의 순응도 포함됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "고린도전서 15:27, 28",
       "에베소서 5:24"
@@ -10864,7 +10854,7 @@
     "id": "nature",
     "word": "본성",
     "definition": "사물의 근본적 특성이나 사람의 타고난 성품을 가리키는 개념",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "야고보서 3:7",
       "창세기 1:20-28"
@@ -10884,7 +10874,7 @@
     "id": "dedication",
     "word": "봉헌",
     "definition": "신성한 목적으로 구별하거나 분리하는 것으로 히브리어 나자르에서 유래함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 15:31",
       "에스겔 14:7"
@@ -10950,7 +10940,7 @@
     "id": "bottle",
     "word": "부대",
     "definition": "물이나 기름 포도주 등을 담던 가죽 용기로 고대에 널리 사용됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 21:14",
       "여호수아 9:13"
@@ -11112,7 +11102,7 @@
     "id": "north",
     "word": "북쪽",
     "definition": "동쪽을 기준으로 왼쪽 방향이자 성경에서 하느님의 원천을 상징하기도 함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 14:15",
       "시편 107:3"
@@ -11142,7 +11132,7 @@
     "id": "strife",
     "word": "분쟁",
     "definition": "적의로 인해 다투는 것으로 미움과 분노가 원인이 됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 10:12",
       "잠언 15:18"
@@ -11152,7 +11142,7 @@
     "id": "sect",
     "word": "분파",
     "definition": "그리스어 하이레시스에서 유래한 말로 선택을 통해 분리된 집단을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 5:17",
       "사도행전 15:5"
@@ -11413,7 +11403,7 @@
     "id": "bethuel",
     "word": "브두엘",
     "definition": "아브라함의 조카로 나홀의 아들이자 리브가와 라반의 아버지",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 22:20, 22",
       "창세기 24:15, 24, 29"
@@ -11501,7 +11491,7 @@
     "id": "bezalel",
     "word": "브살렐",
     "definition": "장막의 수석 장인으로 여호와가 직접 임명한 유다 지파 기술자",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 31:1, 2",
       "역대기상 2:20"
@@ -11760,7 +11750,7 @@
     "id": "scales",
     "word": "비늘",
     "definition": "물고기와 파충류의 피부 보호 구조로 정한 것과 부정한 것의 구분 기준",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:9, 10, 12",
       "신명기 14:9, 10"
@@ -11770,7 +11760,7 @@
     "id": "silk",
     "word": "비단",
     "definition": "누에 고치에서 뽑은 섬유로 만든 아름답고 가벼운 고급 천",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "계시록 18:12",
       "에스겔 16:10, 13"
@@ -12065,7 +12055,7 @@
     "id": "philip",
     "word": "빌립",
     "definition": "나다나엘에게 메시아를 만났다고 알린 예수의 사도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한복음 1:43-46"
     ]
@@ -12200,7 +12190,7 @@
     "id": "apple",
     "word": "사과",
     "definition": "히브리어 탑푸아흐가 가리키는 향기로운 열매로 정확한 식물은 불확실함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 2:3, 5",
       "아가 8:5"
@@ -12517,7 +12507,7 @@
     "id": "shaphan",
     "word": "사반",
     "definition": "요시야 왕 시대에 율법 책을 읽고 왕에게 보고한 서기관",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 22:8-13"
     ]
@@ -12610,7 +12600,7 @@
     "id": "stag",
     "word": "사슴",
     "definition": "팔레스타인에 서식했던 정한 동물로 분류된 뿔 달린 포유류 짐승",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 12:15, 16, 22, 23",
       "신명기 14:4-6"
@@ -12747,7 +12737,7 @@
     "id": "midwife",
     "word": "산파",
     "definition": "히브리어로 아이를 낳는 것을 돕는 여자로 산고를 겪는 임산부를 도우는 역할",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 16:4",
       "창세기 35:16-19"
@@ -12767,7 +12757,7 @@
     "id": "coral",
     "word": "산호",
     "definition": "따뜻한 바닷물의 폴립이 만드는 석회질 퇴적물로 아름다운 가지를 친 보석",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 27:16",
       "욥기 28:18"
@@ -12919,7 +12909,7 @@
     "id": "murder",
     "word": "살인",
     "definition": "권한 없이 고의로 타인의 생명을 빼앗는 행위로 십계명이 금한 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:13",
       "로마서 5:12"
@@ -12985,7 +12975,7 @@
     "id": "samson",
     "word": "삼손",
     "definition": "특별한 서약 아래 태어나 블레셋 사람들과 싸운 이스라엘의 재판관",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사사기 13-16장"
     ]
@@ -13121,7 +13111,7 @@
     "id": "ivory",
     "word": "상아",
     "definition": "코끼리 등 동물의 엄니로 단단하고 조각이 쉬워 귀한 장식 재료로 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 10:22"
     ]
@@ -13130,7 +13120,7 @@
     "id": "merchant",
     "word": "상인",
     "definition": "이윤을 얻기 위해 사고팔거나 물물 교환하는 장사꾼",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 34:10",
       "창세기 23:16"
@@ -13140,7 +13130,7 @@
     "id": "engraving",
     "word": "새김",
     "definition": "나무나 금속 돌에 도안이나 글자를 새겨 넣는 기술",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 6:29, 32",
       "출애굽기 39:30"
@@ -13169,7 +13159,7 @@
     "id": "sandal",
     "word": "샌들",
     "definition": "가죽이나 나무로 된 납작한 바닥에 끈으로 발을 고정시킨 신발",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 16:10",
       "출애굽기 3:5"
@@ -13265,7 +13255,7 @@
     "id": "signature",
     "word": "서명",
     "definition": "본인임을 나타내는 표로 히브리어 알파벳 마지막 글자 타우로 표현됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 9:4, 6",
       "욥기 31:35"
@@ -13275,7 +13265,7 @@
     "id": "oath-2",
     "word": "서약",
     "definition": "발언의 진실성이나 약속을 확언하는 말로 하느님께 호소하는 행위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:8",
       "레위기 5:4"
@@ -13285,7 +13275,7 @@
     "id": "vow",
     "word": "서원",
     "definition": "하느님께 어떤 일을 하거나 하지 않겠다고 자발적으로 약속하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 30:2; 사사기 11:30, 31"
     ]
@@ -13294,7 +13284,7 @@
     "id": "west",
     "word": "서쪽",
     "definition": "히브리인들이 동쪽을 기준 삼을 때 뒤쪽에 해당하는 방향",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 9:12",
       "여호수아 1:4"
@@ -13304,7 +13294,7 @@
     "id": "pomegranate",
     "word": "석류",
     "definition": "적갈색 사과 모양의 열매로 과즙이 풍부하고 씨가 많이 든 과일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 8:2",
       "아가 4:3, 13"
@@ -13314,7 +13304,7 @@
     "id": "mason",
     "word": "석수",
     "definition": "벽돌이나 돌을 다듬어 쌓는 건축 장인으로 성전 건축에 참여한 직업",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기하 12:12",
       "사무엘하 5:11"
@@ -13344,7 +13334,7 @@
     "id": "goodwill",
     "word": "선의",
     "definition": "기뻐하는 상태나 호의로 하느님과 사람 사이의 선한 태도를 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 51:18",
       "시편 106:4"
@@ -13354,7 +13344,7 @@
     "id": "fable",
     "word": "설화",
     "definition": "거짓이나 꾸민 이야기로 그리스어 미토스로 번역된 허위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데전서 1:4",
       "디모데전서 4:7"
@@ -13401,7 +13391,7 @@
     "id": "walls",
     "word": "성벽",
     "definition": "방벽과 경계 표시 역할을 하는 돌이나 벽돌 구조물로 도시 방어에 사용됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 5:11",
       "열왕기상 6:2, 7"
@@ -13543,7 +13533,7 @@
     "id": "generation",
     "word": "세대",
     "definition": "거의 같은 시기에 태어난 사람 전체나 가계의 한 세대를 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 1:6",
       "마태 11:16"
@@ -13601,7 +13591,7 @@
     "id": "taxcollector",
     "word": "세리",
     "definition": "로마 정부를 위해 세금을 거두었으며 당시 유대인들에게 멸시받던 직업의 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 9:9-13",
       "누가복음 19:1-10"
@@ -13850,7 +13840,7 @@
     "id": "salt",
     "word": "소금",
     "definition": "염화나트륨 결정으로 맛을 내고 보존에 쓰이며 언약과 심판의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 14:3",
       "창세기 19:26"
@@ -14085,7 +14075,7 @@
     "id": "sedition",
     "word": "소요",
     "definition": "그리스어 스타시스로 분리해 서 있는 것을 의미하며 폭동이나 분쟁을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마가 15:7",
       "누가 23:19, 25"
@@ -14169,7 +14159,7 @@
     "id": "atonement",
     "word": "속죄",
     "definition": "죄를 덮거나 없애 하느님과의 관계를 회복하는 것과 관련된 마련",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 16:30",
       "로마서 5:11"
@@ -14209,7 +14199,7 @@
     "id": "finger",
     "word": "손가락",
     "definition": "손의 도구로 섬세한 일과 지시를 나타내며 하느님의 능력을 상징하기도 함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 2:8",
       "출애굽기 31:18"
@@ -14258,7 +14248,7 @@
     "id": "calf",
     "word": "송아지",
     "definition": "어린 소로 희생 제물이나 특별한 식탁에 사용된 가축",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 9:2, 3",
       "창세기 18:7, 8"
@@ -14336,7 +14326,7 @@
     "id": "wagon",
     "word": "수레",
     "definition": "고대의 나무로 만든 운송 수단으로 바퀴가 달린 짐바리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 6:14",
       "민수기 7:2-9"
@@ -14385,7 +14375,7 @@
     "id": "entry-수명",
     "word": "수명",
     "definition": "하느님의 원래 의도와 달리 아담의 죄로 인해 크게 제한된 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:15-17",
       "로마서 5:12"
@@ -14452,7 +14442,7 @@
     "id": "bull",
     "word": "수소",
     "definition": "성서에서 희생 제물과 농경에 사용된 수컷 소로 힘의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 21:28",
       "출애굽기 29:10"
@@ -14579,7 +14569,7 @@
     "id": "harvest",
     "word": "수확",
     "definition": "농작물을 거두어들이는 일로 성경에서 기쁨과 하느님의 축복을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 8:22",
       "시편 126:5, 6"
@@ -14626,7 +14616,7 @@
     "id": "obedience",
     "word": "순종",
     "definition": "권위 있는 이의 정당한 지시를 기꺼이 따르는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 15:22; 히브리서 5:8, 9"
     ]
@@ -14664,7 +14654,7 @@
     "id": "worship",
     "word": "숭배",
     "definition": "하느님을 창조주로 인정하고 그분에게 합당한 존경과 봉사를 드리는 일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 4:10; 요한복음 4:23, 24"
     ]
@@ -15325,7 +15315,7 @@
     "id": "entry-스알-야숩",
     "word": "스알야숩",
     "definition": "이사야의 맏아들로 아하스 왕 시대에 예언의 표징 역할을 한 아들",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사 7:1, 3",
       "사 8:18, 10:21"
@@ -15478,7 +15468,7 @@
     "id": "hour",
     "word": "시간",
     "definition": "그리스어 호라로 짧은 기간이나 하루의 한 부분을 가리키는 시간 단위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "느헤미야 9:3",
       "창세기 24:11"
@@ -15546,7 +15536,7 @@
     "id": "age",
     "word": "시대",
     "definition": "그리스어 아이온으로 사람 역사 속의 일정한 기간을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마가 3:29",
       "마태 21:19"
@@ -15962,7 +15952,7 @@
     "id": "meal",
     "word": "식사",
     "definition": "고대 이스라엘과 초기 그리스도인들에게 친교와 영적 유익의 기회가 된 음식 자리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 9:13",
       "사도행전 27:35"
@@ -16001,7 +15991,7 @@
     "id": "kidneys",
     "word": "신장",
     "definition": "등뼈 아래 한 쌍의 장기로 피를 걸러내며 비유적으로 내면의 깊은 부분을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 7:9",
       "계시록 2:23"
@@ -16088,7 +16078,7 @@
     "id": "songofsongs",
     "word": "아가",
     "definition": "결혼을 앞둔 남녀의 깨끗하고 변함없는 사랑을 노래한 시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 2:7; 8:6, 7"
     ]
@@ -16188,7 +16178,7 @@
     "id": "aaron",
     "word": "아론",
     "definition": "모세의 형이자 이스라엘의 첫 대제사장으로 임명된 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 4:14-16",
       "출애굽기 28:1"
@@ -16216,7 +16206,7 @@
     "id": "amaziah",
     "word": "아마샤",
     "definition": "에돔을 물리쳤지만 우상 숭배로 인해 어려움을 겪은 유다 왕",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 14:1-7"
     ]
@@ -16234,7 +16224,7 @@
     "id": "amonking",
     "word": "아몬",
     "definition": "아버지의 악한 행로를 따르다가 신하들에게 살해된 유다 왕",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 21:19-24"
     ]
@@ -16415,7 +16405,7 @@
     "id": "ammon",
     "word": "암몬",
     "definition": "롯의 후손이 세운 나라로 이스라엘과 자주 적대했던 민족",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 19:30-38; 신명기 23:3-6"
     ]
@@ -16460,7 +16450,7 @@
     "id": "jared",
     "word": "야렛",
     "definition": "에녹의 아버지이며 아담부터 노아까지 이어진 계보에 나오는 사람",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 5:15-20"
     ]
@@ -16469,7 +16459,7 @@
     "id": "japheth",
     "word": "야벳",
     "definition": "대홍수에서 생존한 노아의 아들 가운데 한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 9:18, 19"
     ]
@@ -16478,7 +16468,7 @@
     "id": "jairus",
     "word": "야이로",
     "definition": "죽은 딸을 살려 달라고 예수에게 부탁한 회당의 책임자",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "마가복음 5:21-43"
     ]
@@ -16505,7 +16495,7 @@
     "id": "enoch",
     "word": "에녹",
     "definition": "하느님과 함께 걸었으며 악한 세대 가운데서 충실함을 나타낸 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 5:21-24",
       "유다서 14, 15"
@@ -16524,7 +16514,7 @@
     "id": "edom",
     "word": "에돔",
     "definition": "에서의 후손이 세운 나라로 이스라엘 남동쪽에 있던 지역",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 36:8, 9; 민수기 20:14-21"
     ]
@@ -16579,7 +16569,7 @@
     "id": "esau",
     "word": "에서",
     "definition": "이삭과 리브가의 맏아들로, 장자권을 동생에게 넘긴 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 25:24-34"
     ]
@@ -16826,7 +16816,7 @@
     "id": "inspiration",
     "word": "영감",
     "definition": "하느님이 성경 필자들이 기록하도록 자신의 생각을 전달하신 작용",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데 후서 3:16, 17",
       "베드로 후서 1:20, 21"
@@ -16882,7 +16872,7 @@
     "id": "jehu",
     "word": "예후",
     "definition": "이스라엘의 왕이 되어 바알 숭배를 없애는 일을 시작한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기하 9:1-10; 10:18-28"
     ]
@@ -16901,7 +16891,7 @@
     "id": "orpah",
     "word": "오르바",
     "definition": "나오미의 며느리로 고향에 남기로 한 모압 여자",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "룻기 1:4-14"
     ]
@@ -16919,7 +16909,7 @@
     "id": "obed",
     "word": "오벳",
     "definition": "룻과 보아스의 아들로 다윗 왕의 할아버지가 된 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "룻기 4:13-17; 역대기상 2:12"
     ]
@@ -16937,7 +16927,7 @@
     "id": "mildness",
     "word": "온유",
     "definition": "힘이 있어도 다른 사람을 거칠게 대하지 않고 부드럽게 행동하는 특성",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 5:5",
       "갈라디아서 5:22, 23"
@@ -17058,7 +17048,7 @@
     "id": "joab",
     "word": "요압",
     "definition": "다윗의 군대 대장으로 여러 전쟁에서 이스라엘 군대를 지휘한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 8:16",
       "사무엘하 20:23"
@@ -17068,7 +17058,7 @@
     "id": "joel",
     "word": "요엘",
     "definition": "메뚜기 재앙을 계기로 회개를 촉구하고 영이 부어질 일을 예언한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요엘 1장",
       "요엘 2:28-32"
@@ -17105,7 +17095,7 @@
     "id": "ur",
     "word": "우르",
     "definition": "아브라함의 가족이 살았으며 그가 하느님의 부름을 받은 고대 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 11:27-31; 사도행전 7:2-4"
     ]
@@ -17132,7 +17122,7 @@
     "id": "uz",
     "word": "우스",
     "definition": "욥이 살았던 곳으로 알려진 지역",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "욥기 1:1"
     ]
@@ -17150,7 +17140,7 @@
     "id": "eunice",
     "word": "유니게",
     "definition": "디모데에게 성경 지식을 가르친 어머니",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사도행전 16:1; 디모데 후서 1:5; 3:15"
     ]
@@ -17178,7 +17168,7 @@
     "id": "eutychus",
     "word": "유두고",
     "definition": "바울의 긴 연설을 듣다가 잠들어 창문에서 떨어졌지만 살아난 청년",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사도행전 20:7-12"
     ]
@@ -17215,7 +17205,7 @@
     "id": "law",
     "word": "율법",
     "definition": "정부가 제정해 사람들에게 적용하는 원칙과 규정으로 모세 율법을 포함함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 6:5, 8",
       "이사야 33:22"
@@ -17225,7 +17215,7 @@
     "id": "ithamar",
     "word": "이다말",
     "definition": "아론의 아들로 성막의 여러 봉사와 관련된 제사장",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 28:1",
       "민수기 4:28"
@@ -17254,7 +17244,7 @@
     "id": "jesse",
     "word": "이새",
     "definition": "다윗의 아버지로 베들레헴에 살았던 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 16:1-13"
     ]
@@ -17337,7 +17327,7 @@
     "id": "gravel",
     "word": "자갈",
     "definition": "자잘한 돌멩이나 조약돌로 성경에서 해로운 결과의 비유에 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 20:17",
       "예레미야 애가 3:16"
@@ -17357,7 +17347,7 @@
     "id": "bag",
     "word": "자루",
     "definition": "곡식이나 식량 귀중품을 담는 가죽이나 천으로 만든 주머니",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "여호수아 9:4",
       "마태 9:17"
@@ -17396,7 +17386,7 @@
     "id": "embroidery",
     "word": "자수",
     "definition": "바늘로 천이나 가죽에 실로 무늬를 놓는 고대 장식 기술",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 35:30-35",
       "출애굽기 26:1, 36:8"
@@ -17416,7 +17406,7 @@
     "id": "freedom",
     "word": "자유",
     "definition": "하느님만이 절대적으로 가지시는 제한 없는 상태를 가리키는 개념",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 17:1",
       "예레미야 10:7, 10"
@@ -17435,7 +17425,7 @@
     "id": "entry-자제",
     "word": "자제",
     "definition": "자신의 성격 행동 말 생각을 규제하고 억제하는 하느님 영의 열매",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 43:31",
       "에스더 5:10"
@@ -17445,7 +17435,7 @@
     "id": "jackal",
     "word": "자칼",
     "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 9:11",
       "이사야 13:22"
@@ -17455,7 +17445,7 @@
     "id": "harpoon",
     "word": "작살",
     "definition": "큰 물고기를 찌르는 날카로운 촉이 달린 창 모양의 도구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 41:7"
     ]
@@ -17503,7 +17493,7 @@
     "id": "entry-장교",
     "word": "장교",
     "definition": "그리스도인이 된 최초의 할례받지 않은 이방인인 고넬료의 직책",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 8:5-13",
       "누가 7:1-9"
@@ -17513,7 +17503,7 @@
     "id": "tabernacletent",
     "word": "장막",
     "definition": "이스라엘 사람들이 광야에서 생활하거나 숭배 장소로 사용한 천막 형태의 구조물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 33:7-11; 히브리서 9:1-3"
     ]
@@ -17522,7 +17512,7 @@
     "id": "maturity",
     "word": "장성",
     "definition": "영적으로 성숙하여 교리에 현혹되지 않는 온전히 자란 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 4:11-14",
       "히브리서 5:11-6:2"
@@ -17542,7 +17532,7 @@
     "id": "birthright",
     "word": "장자",
     "definition": "가족의 맏아들이 상속과 가문의 책임에서 갖던 특별한 권리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 25:29-34; 신명기 21:15-17"
     ]
@@ -17551,7 +17541,7 @@
     "id": "marketplace",
     "word": "장터",
     "definition": "고대 도시에서 물건을 사고팔고 공공 집회가 열리던 광장",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 16:19-21",
       "사도행전 17:17-21"
@@ -17561,7 +17551,7 @@
     "id": "plague",
     "word": "재앙",
     "definition": "하느님이 반역이나 불순종에 대해 내리시는 타격이나 징벌",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 16:41-50",
       "스가랴 14:12, 15, 18"
@@ -17611,7 +17601,7 @@
     "id": "scales-2",
     "word": "저울",
     "definition": "물체의 무게를 재는 천칭 장치로 공정한 거래와 심판의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 32:10",
       "이사야 46:6"
@@ -17650,7 +17640,7 @@
     "id": "scorpion",
     "word": "전갈",
     "definition": "거미류에 속한 작은 절지동물로 꼬리에 독침을 가진 위험한 생물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "계시록 9:3, 5, 10",
       "신명기 8:15"
@@ -17679,7 +17669,7 @@
     "id": "herald",
     "word": "전령",
     "definition": "왕의 명령과 포고령을 공포하는 궁정 관리를 가리키는 직위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 3:4",
       "다니엘 5:29"
@@ -17718,7 +17708,7 @@
     "id": "portent",
     "word": "전조",
     "definition": "미래의 사건을 미리 보여 주는 표징이나 경이로운 일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 13:1-3",
       "열왕기상 13:1-5"
@@ -17728,7 +17718,7 @@
     "id": "tradition",
     "word": "전통",
     "definition": "부모에서 자녀로 전달되는 교리나 관행으로 그리스어 파라도시스에서 유래",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "고린도전서 11:2",
       "요한 2:1, 2"
@@ -17748,7 +17738,7 @@
     "id": "entry-절구",
     "word": "절구",
     "definition": "어리석은 자는 OO에 넣고 곡식 찧듯 공이로 찧어도, 그 어리석음이 벗겨지지 않는다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 11:7, 8",
       "출애굽기 27:20, 21"
@@ -17797,7 +17787,7 @@
     "id": "cleanness",
     "word": "정결",
     "definition": "하느님의 숭배에서 도덕적·의식적으로 깨끗한 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:44, 45; 시편 24:3, 4"
     ]
@@ -17873,7 +17863,7 @@
     "id": "offerings",
     "word": "제물",
     "definition": "아벨과 카인의 예부터 시작된 하느님께 바치는 예물의 관습",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 4:1-4",
       "창세기 8:18-22"
@@ -17931,7 +17921,7 @@
     "id": "carving",
     "word": "조각",
     "definition": "나무나 돌 금속을 빚거나 깎아 형상을 만드는 기술로 우상에도 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:4",
       "신명기 27:15"
@@ -17941,7 +17931,7 @@
     "id": "tribute",
     "word": "조공",
     "definition": "복속의 표시로 약국이나 통치자에게 바치는 돈이나 공물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 8:2, 6",
       "열왕기상 4:21"
@@ -17960,7 +17950,7 @@
     "id": "genealogy",
     "word": "족보",
     "definition": "사람의 조상이나 가계를 기술한 기록으로 성경에 정확히 보존됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 3:14, 15",
       "역대기상 5:17"
@@ -17980,7 +17970,7 @@
     "id": "boil",
     "word": "종기",
     "definition": "피부가 국부적으로 붓고 통증이 있는 병으로 이집트 재앙에 나옴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 9:8-11",
       "신명기 28:27, 35"
@@ -17999,7 +17989,7 @@
     "id": "paper",
     "word": "종이",
     "definition": "파피루스 식물을 얇게 잘라 만든 고대의 필기 도구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한둘째 12절"
     ]
@@ -18008,7 +17998,7 @@
     "id": "sovereignty",
     "word": "주권",
     "definition": "최고의 통치권이나 권력으로 하느님의 절대적 지배를 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 47:9",
       "시편 138:5"
@@ -18018,7 +18008,7 @@
     "id": "tin",
     "word": "주석",
     "definition": "녹는점이 낮은 푸른빛 흰색 금속으로 정련 과정에서 분리되는 찌꺼기",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 22:18, 20",
       "이사야 1:25"
@@ -18098,7 +18088,7 @@
     "id": "deed",
     "word": "증서",
     "definition": "부동산 양도 등에 필요한 법적 문서로 예레미야가 밭을 구입할 때 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 32:6-15"
     ]
@@ -18137,7 +18127,7 @@
     "id": "knowledge",
     "word": "지식",
     "definition": "사실을 알고 이해하며 하느님의 뜻을 분별하는 데 필요한 정보",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 2:6; 요한복음 17:3"
     ]
@@ -18155,7 +18145,7 @@
     "id": "district",
     "word": "지역",
     "definition": "행정 단위나 도시 주변 지방 또는 특정 경계 안의 지방을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "느헤미야 3:9, 12, 14-18",
       "느헤미야 1:3"
@@ -18165,7 +18155,7 @@
     "id": "hell",
     "word": "지옥",
     "definition": "일부 번역판에서 히브리어 셰올과 그리스어 하데스를 번역한 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": []
   },
   {
@@ -18181,7 +18171,7 @@
     "id": "earthquake",
     "word": "지진",
     "definition": "지구 내부의 힘으로 지면이 갑자기 진동하는 현상으로 심판에 자주 언급됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 19:11",
       "아모스 1:1"
@@ -18238,7 +18228,7 @@
     "id": "pearl",
     "word": "진주",
     "definition": "조개体内에 형성된 구형의 보석으로 가치가 높아 비유에 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데전서 2:9",
       "계시록 18:12, 16"
@@ -18248,7 +18238,7 @@
     "id": "entry-진통",
     "word": "진통",
     "definition": "출산에 따르는 고통으로 하와의 죄 이후 주어진 결과",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 10:22",
       "창세기 3:16"
@@ -18258,7 +18248,7 @@
     "id": "clay",
     "word": "진흙",
     "definition": "젖었을 때 모양을 바꿀 수 있고 말리면 단단해지는 미세한 흙",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 41:25",
       "욥기 38:14"
@@ -18277,7 +18267,7 @@
     "id": "entry-질투",
     "word": "질투",
     "definition": "평온한 마음은 몸에 생명을 주지만, OO는 뼈를 썩게 한다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 14:30",
       "스가랴 1:14"
@@ -18306,7 +18296,7 @@
     "id": "discipline",
     "word": "징계",
     "definition": "교육과 시정과 권고를 포함하는 훈련으로 하느님의 사랑의 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 3:11, 12",
       "신명기 8:3-5"
@@ -18325,7 +18315,7 @@
     "id": "stocks",
     "word": "차꼬",
     "definition": "수형자의 양발을 나무 형틀에 채우는 고대의 형구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 16:10",
       "예레미야 20:2, 3"
@@ -18344,7 +18334,7 @@
     "id": "praise",
     "word": "찬양",
     "definition": "하느님의 특성과 행동을 인정하며 그분을 높이는 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 150:1-6; 히브리서 13:15"
     ]
@@ -18353,7 +18343,7 @@
     "id": "sparrow",
     "word": "참새",
     "definition": "작은 회갈색 새로 떼지어 사는 가장 흔한 새로 하느님의 돌봄을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 10:29-31",
       "누가 12:6, 7"
@@ -18363,7 +18353,7 @@
     "id": "storehouse",
     "word": "창고",
     "definition": "곡식과 포도주 기름 귀금속을 비축해 두는 저장 시설",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기상 27:25",
       "역대기하 32:27, 28"
@@ -18373,7 +18363,7 @@
     "id": "harlot",
     "word": "창녀",
     "definition": "부부 관계 외의 성 관계에 상습적으로 연루된 여자를 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "계시록 17:1",
       "창세기 38:6-26"
@@ -18383,7 +18373,7 @@
     "id": "spearmen",
     "word": "창병",
     "definition": "창으로 무장한 군인으로 로마 점령군의 일부였던 보병",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 23:23"
     ]
@@ -18401,7 +18391,7 @@
     "id": "intestines",
     "word": "창자",
     "definition": "사람이나 동물의 내장이나 속을 가리키는 히브리어 케레브의 번역",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 12:9",
       "출애굽기 29:13"
@@ -18430,7 +18420,7 @@
     "id": "whip",
     "word": "채찍",
     "definition": "가죽 끈으로 된 노끈 형태의 도구로 사람이나 동물을 다루는 데 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 10:11, 14",
       "잠언 26:3"
@@ -18440,7 +18430,7 @@
     "id": "reproof",
     "word": "책망",
     "definition": "잘못을 인정하고 시정하도록 납득시키는 목적으로 하는 꾸짖음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 37:4",
       "레위기 19:17"
@@ -18450,7 +18440,7 @@
     "id": "virgin",
     "word": "처녀",
     "definition": "결혼이나 성 관계를 경험하지 않은 여자를 가리키는 히브리어 베툴라",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:16",
       "사사기 21:12"
@@ -18460,7 +18450,7 @@
     "id": "thunder",
     "word": "천둥",
     "definition": "번개 방전 후 가열된 공기의 팽창으로 발생하는 큰 소리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 28:26, 38:25",
       "사무엘상 2:10"
@@ -18488,7 +18478,7 @@
     "id": "philosophy",
     "word": "철학",
     "definition": "그리스어 필로소피아로 지혜에 대한 사랑을 의미하는 인간의 사색",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "골로새서 2:8",
       "사도행전 17:18"
@@ -18508,7 +18498,7 @@
     "id": "booth",
     "word": "초막",
     "definition": "나뭇가지와 잎으로 지은 임시 거처로 명절에 지음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 애가 2:6",
       "사도행전 15:16"
@@ -18527,7 +18517,7 @@
     "id": "vegetation",
     "word": "초목",
     "definition": "식물 전체를 가리키는 말로 셋째 창조 날에 만들어진 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 1:11-13",
       "창세기 2:5, 6"
@@ -18547,7 +18537,7 @@
     "id": "governor",
     "word": "총독",
     "definition": "군사력과 사법권을 가지고 관할 지역을 다스리는 통치자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "누가 2:1, 2",
       "느헤미야 5:15-18"
@@ -18557,7 +18547,7 @@
     "id": "festival",
     "word": "축제",
     "definition": "이스라엘이 하느님 숭배를 위해 지키는 정기적 잔치로 하그와 모에드로 불림",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 20:35",
       "레위기 23:2, 4"
@@ -18567,7 +18557,7 @@
     "id": "birth",
     "word": "출산",
     "definition": "히브리어 얄라드로 낳거나 아버지가 되는 것을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 4:1, 2",
       "창세기 16:15"
@@ -18587,7 +18577,7 @@
     "id": "loyalty",
     "word": "충성",
     "definition": "히브리어 하시드로 사랑에서 우러나온 변치 않는 친절과 헌신을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 18:25",
       "창세기 20:13, 21:23"
@@ -18606,7 +18596,7 @@
     "id": "integrity",
     "word": "충절",
     "definition": "히브리어 톰과 타밈으로 온전하고 흠 없는 상태를 가리키는 개념",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 25:30",
       "출애굽기 12:5"
@@ -18626,7 +18616,7 @@
     "id": "cheese",
     "word": "치즈",
     "definition": "젖을 엉기게 만든 유제품으로 욥이 창조주께 비유로 언급한 식품",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 10:10",
       "사무엘상 17:17, 18"
@@ -18655,7 +18645,7 @@
     "id": "kindness",
     "word": "친절",
     "definition": "다른 사람을 따뜻하고 사려 깊게 대하며 실제적인 도움을 베푸는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 4:32; 골로새서 3:12"
     ]
@@ -18664,7 +18654,7 @@
     "id": "entry-친척",
     "word": "친척",
     "definition": "보아스는 엘리멜렉의 OO이었기 때문에 룻을 도로살 권리를 가질 수 있었다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 35:16-19",
       "룻기 2:20"
@@ -18975,7 +18965,7 @@
     "id": "threshing",
     "word": "타작",
     "definition": "곡식을 줄기와 겨에서 떼어내는 작업으로 도리깨나 썰매로 수행함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사사기 6:11",
       "룻기 2:17"
@@ -19015,7 +19005,7 @@
     "id": "greed",
     "word": "탐욕",
     "definition": "과도하고 만족할 줄 모르는 욕망으로 그리스어 플레오넥시아로 표현됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 68:16",
       "출애굽기 20:17"
@@ -19141,7 +19131,7 @@
     "id": "fly",
     "word": "파리",
     "definition": "쌍날개곤충으로 이집트 재앙과 부패의 비유에 등장하는 벌레",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "전도서 10:1",
       "이사야 7:18, 19"
@@ -19239,7 +19229,7 @@
     "id": "entry-판결",
     "word": "판결",
     "definition": "두 여인이 한 아기를 두고 다툴 때 솔로몬이 내린 OO은 오늘날에도 그의 놀라운 지혜를 보여 준다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 8:15",
       "열왕기상 3:16-28"
@@ -19249,7 +19239,7 @@
     "id": "bracelet",
     "word": "팔찌",
     "definition": "팔목이나 팔뚝에 차는 장식용 고리로 고대에 남녀 모두가 찼음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:22, 30, 47",
       "민수기 31:50"
@@ -19336,7 +19326,7 @@
     "id": "letters",
     "word": "편지",
     "definition": "고대에 공무용 상업용 개인용으로 널리 사용된 통신 수단",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 11:14",
       "열왕기하 10:1, 2"
@@ -19364,7 +19354,7 @@
     "id": "captive",
     "word": "포로",
     "definition": "전쟁의 결과로 사로잡혀 끌려가거나 속박 아래 있는 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 21:1",
       "역대기상 5:21"
@@ -19384,7 +19374,7 @@
     "id": "leopard",
     "word": "표범",
     "definition": "연한 황갈색에 검은 점이 있는 대형 고양잇과 동물로 팔레스타인에 서식",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 13:23",
       "아가 4:8"
@@ -19394,7 +19384,7 @@
     "id": "sign",
     "word": "표징",
     "definition": "현재나 미래의 어떤 것을 지시하는 의미 있는 사물이나 특이한 표시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 1:14",
       "시편 19:1-4"
@@ -19512,7 +19502,7 @@
     "id": "hagar",
     "word": "하갈",
     "definition": "사라의 하녀였으며 아브라함의 아들 이스마엘의 어머니가 된 여자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 16:1-16; 21:9-21"
     ]
@@ -19771,7 +19761,7 @@
     "id": "haran",
     "word": "하란",
     "definition": "데라가 머물렀고 아브라함이 가나안으로 떠난 메소포타미아의 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 11:31, 32; 12:4, 5"
     ]
@@ -19894,7 +19884,7 @@
     "id": "haman",
     "word": "하만",
     "definition": "아각 사람 함므다다의 아들로 유대인 멸절을 꾀한 아말렉 왕족 출신",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스더 3:1"
     ]
@@ -20230,7 +20220,7 @@
     "id": "school",
     "word": "학교",
     "definition": "교육을 하는 기관으로 그리스어 스콜레에서 유래한 여가 때 하는 학습의 장",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 22:3",
       "사도행전 19:8-10"
@@ -20279,7 +20269,7 @@
     "id": "pupil-2",
     "word": "학생",
     "definition": "배우거나 교훈을 받는 사람으로 제자를 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "누가 6:40"
     ]
@@ -20288,7 +20278,7 @@
     "id": "hannah",
     "word": "한나",
     "definition": "아들을 달라고 기도한 뒤 사무엘을 낳아 하느님께 바친 여자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 1-2장"
     ]
@@ -20326,7 +20316,7 @@
     "id": "hallel",
     "word": "할렐",
     "definition": "여호와께 부르는 찬양의 노래로 시편 113-118편을 가리킴",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "시편 113-118편",
       "시편 136편"
@@ -20336,7 +20326,7 @@
     "id": "circumcision",
     "word": "할례",
     "definition": "아브라함과 맺은 계약의 표로 남자 아이의 포피를 자르는 의식",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 17:9-14"
     ]
@@ -20508,7 +20498,7 @@
     "id": "sponge",
     "word": "해면",
     "definition": "수생 동물의 골격으로 수분 흡수력이 좋고 질기며 탄력성이 있음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 27:48",
       "마가 15:36"
@@ -20538,7 +20528,7 @@
     "id": "censer",
     "word": "향로",
     "definition": "숭배에서 향을 태우는 데 사용한 용기",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 16:12, 13; 히브리서 9:4"
     ]
@@ -20547,7 +20537,7 @@
     "id": "spice",
     "word": "향료",
     "definition": "향기 좋은 식물에서 채취한 생산물로 몰약 유향 계피 등이 포함됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 30:23-25, 34-37",
       "요한 19:39, 40"
@@ -20567,7 +20557,7 @@
     "id": "dedication-2",
     "word": "헌신",
     "definition": "하느님의 뜻을 행하는 데 자신의 삶을 기꺼이 바치겠다는 결심",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "로마서 12:1, 2"
     ]
@@ -20576,7 +20566,7 @@
     "id": "backbiting",
     "word": "험담",
     "definition": "그리스어 카탈랄리아로 정당한 근거 없이 나쁘게 말하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "베드로전서 2:12, 3:16",
       "야고보서 4:11"
@@ -20643,7 +20633,7 @@
     "id": "herod",
     "word": "헤롯",
     "definition": "예수의 탄생 때 베들레헴의 어린아이들을 죽이라고 명령한 왕",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 2:1-18"
     ]
@@ -20749,7 +20739,7 @@
     "id": "hezron",
     "word": "헤스론",
     "definition": "르우벤의 아들이자 한 사람들의 선조",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 46:9",
       "출애굽기 6:14"
@@ -20951,7 +20941,7 @@
     "id": "porch",
     "word": "현관",
     "definition": "건축물 입구에 딸린 지붕 있는 부분으로 성전과 궁전에 있었음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 7:1, 6",
       "열왕기상 6:3"
@@ -20961,7 +20951,7 @@
     "id": "image",
     "word": "형상",
     "definition": "사람이나 사물의 표상이나 형체 또는 모양을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 22:20",
       "창세기 1:26, 27"
@@ -21067,7 +21057,7 @@
     "id": "horeb",
     "word": "호렙",
     "definition": "시나이 산과 동일시되는 참 하느님의 산으로 모세가 율법을 받은 곳",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 19:8",
       "출애굽기 33:6"
@@ -21203,7 +21193,7 @@
     "id": "hosea",
     "word": "호세아",
     "definition": "이스라엘의 불충실을 지적하면서도 하느님의 충성스러운 사랑을 전한 예언자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "호세아 1:1",
       "호세아 11:1-9"
@@ -21281,7 +21271,7 @@
     "id": "garland",
     "word": "화관",
     "definition": "머리에 쓰던 장식용 관으로 사마리아 심판 예언에 상징적으로 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 28:1-5",
       "에스겔 7:7, 10"
@@ -21291,7 +21281,7 @@
     "id": "oven",
     "word": "화덕",
     "definition": "빵을 굽거나 식품을 익히기 위해 가열하는 아궁이처럼 만든 도구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 6:30",
       "출애굽기 8:3"
@@ -21301,7 +21291,7 @@
     "id": "brazier",
     "word": "화로",
     "definition": "숯불을 담아 난방에 쓰는 다리가 달린 냄비 모양의 기구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 36:22, 23"
     ]
@@ -21329,7 +21319,7 @@
     "id": "reconciliation",
     "word": "화해",
     "definition": "다시 조화를 이루고 우호적 관계를 회복하는 것을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "로마서 5:10",
       "고린도전서 7:11"
@@ -21339,7 +21329,7 @@
     "id": "tribulation",
     "word": "환난",
     "definition": "그리스어 틀립시스로 고난이나 압박 상황으로 인한 고통을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한 16:21",
       "마태 24:9"
@@ -21349,7 +21339,7 @@
     "id": "vision",
     "word": "환상",
     "definition": "하느님이 자신의 목적을 알리기 위해 사람에게 보여 주신 특별한 장면",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 10:9-16; 계시록 1:1"
     ]
@@ -21378,7 +21368,7 @@
     "id": "stork",
     "word": "황새",
     "definition": "충성스러운 새로 히브리어 이름이 사랑의 친절을 나타내는 자라는 뜻",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:19",
       "신명기 14:18"
@@ -21398,7 +21388,7 @@
     "id": "torch",
     "word": "횃불",
     "definition": "손으로 들고 다니는 불로 수지 함유 나무나 기름 적신 물질에 불을 붙인 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 15:17",
       "사사기 7:16, 20"
@@ -21417,7 +21407,7 @@
     "id": "synagogue",
     "word": "회당",
     "definition": "유대인들이 모여 성경을 읽고 숭배와 교육을 하던 장소",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "누가복음 4:16-21",
       "사도행전 13:14-16"
@@ -21427,7 +21417,7 @@
     "id": "restoration",
     "word": "회복",
     "definition": "이전 상태로 되돌리는 것으로 그리스어 아포카타스타시스에 해당",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 3:20, 21",
       "사도행전 1:6"
@@ -21446,7 +21436,7 @@
     "id": "hospitality",
     "word": "후대",
     "definition": "손님이나 낯선 사람을 관대하게 맞아들여 환대하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 18:4",
       "창세기 24:15-25"
@@ -21466,7 +21456,7 @@
     "id": "hur",
     "word": "후르",
     "definition": "유다 자손으로 갈렙과 에브랏의 아들이자 브살렐의 조부",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 31:2, 35:30",
       "역대기상 2:19, 20"
@@ -21581,7 +21571,7 @@
     "id": "ebony",
     "word": "흑단",
     "definition": "검은 심재를 가진 단단한 목재로 에스겔에 언급된 무역품",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 27:15"
     ]
@@ -21590,7 +21580,7 @@
     "id": "jubilee",
     "word": "희년",
     "definition": "이스라엘에서 50년마다 땅과 사람에 관한 원래의 상태를 회복하도록 정한 해",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 25:8-24"
     ]
@@ -21626,7 +21616,7 @@
     "id": "hiram",
     "word": "히람",
     "definition": "두로 왕으로 솔로몬 성전 건축에 재목과 기술자를 제공한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 5:1, 10, 18",
       "사무엘하 5:11"
@@ -21636,7 +21626,7 @@
     "id": "hyssop",
     "word": "히솝",
     "definition": "정결 의식이나 유월절에 피를 바르는 데 사용된 식물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 12:22; 레위기 14:4-7; 요한복음 19:29"
     ]
@@ -21731,7 +21721,7 @@
     "id": "sinew",
     "word": "힘줄",
     "definition": "근육의 기초가 되는 희고 질긴 살의 줄",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 10:11",
       "욥기 40:15-18"

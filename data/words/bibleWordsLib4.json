@@ -90,7 +90,7 @@
     "id": "leg",
     "word": "다리",
     "definition": "사람이나 동물이 몸을 지탱하고 걷는 데 쓰는 신체 부분으로 제물의 일부가 되기도 함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 8:22, 25-27",
       "레위기 7:32-34"
@@ -311,7 +311,7 @@
     "id": "adornment",
     "word": "단장",
     "definition": "장식하고 아름답게 치장하는 것으로 선한 목적이나 기만의 목적으로 할 수 있음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기상 16:29",
       "예레미야애가 5:12"
@@ -418,7 +418,7 @@
     "id": "pledge",
     "word": "담보",
     "definition": "꾸어 준 것을 갚겠다는 보증으로 채무자가 채권자에게 제공하는 개인 재산",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 22:26, 27",
       "신명기 24:12, 13"
@@ -804,7 +804,7 @@
     "id": "ax",
     "word": "도끼",
     "definition": "날이 있는 머리에 자루를 박아 만든 연장으로 나무나 돌을 자르고 무기로도 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 19:5",
       "이사야 10:15"
@@ -843,7 +843,7 @@
     "id": "thief",
     "word": "도둑",
     "definition": "남의 물건을 허가 없이 고의로 취하는 사람으로 대개 밤에 몰래 훔치는 자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 24:14",
       "마태 24:43"
@@ -910,7 +910,7 @@
     "id": "city",
     "word": "도시",
     "definition": "성읍이나 마을보다 큰 밀집된 정착 지역으로 히브리어 이르로 1100회가량 나옴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 1:26",
       "예레미야 49:25"
@@ -949,7 +949,7 @@
     "id": "citiesofrefuge",
     "word": "도피성",
     "definition": "실수로 사람을 죽인 이가 피의 복수자를 피해 보호받을 수 있던 도시",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "민수기 35:9-15; 여호수아 20:1-6"
     ]
@@ -968,7 +968,7 @@
     "id": "asp",
     "word": "독뱀",
     "definition": "유연관계가 없는 몇 종의 독사를 가리키는 일반적 이름",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "로마서 3:13",
       "시편 140:3"
@@ -1065,7 +1065,7 @@
     "id": "alliance",
     "word": "동맹",
     "definition": "서로 다른 파벌이나 국가가 혼인이나 합의나 협약으로 결합하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 20:35",
       "사사기 20:11"
@@ -1150,7 +1150,7 @@
     "id": "titus",
     "word": "디도",
     "definition": "바울의 동료로서 회중을 돕는 일을 맡았던 그리스도인",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디도서 1:4, 5"
     ]

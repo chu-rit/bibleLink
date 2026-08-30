@@ -21,8 +21,9 @@ const size = option('size', 8);
 const targetWords = option('words', 10);
 const targetDifficulty = option('difficulty', 1.3);
 const seedCount = option('seeds', 20000);
-const longLength = option('long-length', 6);
-const longLimit = option('long-limit', 1);
+const minDifficulty = option('min-difficulty', 0);
+const longLength = option('long-length', 999);
+const longLimit = option('long-limit', 999);
 const outputFile = `crosswordMap${mapNumber}.json`;
 const isEasy = targetDifficulty <= 1.8;
 const isHard = targetDifficulty >= 2.6;
@@ -30,8 +31,8 @@ if (isEasy && (size !== 8 || targetWords !== 10 || targetDifficulty < 1)) {
   console.error('이지 맵 규칙: 8x8, 단어 10개, 평균 난이도 1.0~1.8을 사용하세요.');
   process.exit(1);
 }
-if (isHard && (size !== 12 || targetWords !== 20)) {
-  console.error('하드 맵 규칙: 12x12, 단어 20개, 평균 난이도 2.6 이상을 사용하세요.');
+if (isHard && (size !== 12 || targetWords !== 15)) {
+  console.error('하드 맵 규칙: 12x12, 단어 15개, 평균 난이도 2.6 이상을 사용하세요.');
   process.exit(1);
 }
 
@@ -200,10 +201,11 @@ let best = null;
 for (let seed = 1; seed <= seedCount; seed += 1) {
   const result = build(seed);
   if (!result) continue;
+  if (result.average < minDifficulty) continue;
   if (!best || result.fresh > best.fresh || (result.fresh === best.fresh && result.average < best.average)) {
     best = result;
   }
-  if (best.fresh === targetWords && best.average <= targetDifficulty) break;
+  if (best.fresh === targetWords && best.average <= targetDifficulty && best.average >= minDifficulty) break;
 }
 
 if (!best) {

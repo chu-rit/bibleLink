@@ -3,7 +3,7 @@
     "id": "gravel",
     "word": "자갈",
     "definition": "자잘한 돌멩이나 조약돌로 성경에서 해로운 결과의 비유에 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 20:17",
       "예레미야 애가 3:16"
@@ -23,7 +23,7 @@
     "id": "bag",
     "word": "자루",
     "definition": "곡식이나 식량 귀중품을 담는 가죽이나 천으로 만든 주머니",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "여호수아 9:4",
       "마태 9:17"
@@ -62,7 +62,7 @@
     "id": "embroidery",
     "word": "자수",
     "definition": "바늘로 천이나 가죽에 실로 무늬를 놓는 고대 장식 기술",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 35:30-35",
       "출애굽기 26:1, 36:8"
@@ -82,7 +82,7 @@
     "id": "freedom",
     "word": "자유",
     "definition": "하느님만이 절대적으로 가지시는 제한 없는 상태를 가리키는 개념",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 17:1",
       "예레미야 10:7, 10"
@@ -101,7 +101,7 @@
     "id": "entry-자제",
     "word": "자제",
     "definition": "자신의 성격 행동 말 생각을 규제하고 억제하는 하느님 영의 열매",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 43:31",
       "에스더 5:10"
@@ -111,7 +111,7 @@
     "id": "jackal",
     "word": "자칼",
     "definition": "여우와 비슷한 들개로 폐허와 황무지를 상징하는 데 자주 쓰이는 동물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 9:11",
       "이사야 13:22"
@@ -121,7 +121,7 @@
     "id": "harpoon",
     "word": "작살",
     "definition": "큰 물고기를 찌르는 날카로운 촉이 달린 창 모양의 도구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 41:7"
     ]
@@ -169,7 +169,7 @@
     "id": "entry-장교",
     "word": "장교",
     "definition": "그리스도인이 된 최초의 할례받지 않은 이방인인 고넬료의 직책",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 8:5-13",
       "누가 7:1-9"
@@ -179,7 +179,7 @@
     "id": "tabernacletent",
     "word": "장막",
     "definition": "이스라엘 사람들이 광야에서 생활하거나 숭배 장소로 사용한 천막 형태의 구조물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 33:7-11; 히브리서 9:1-3"
     ]
@@ -188,7 +188,7 @@
     "id": "maturity",
     "word": "장성",
     "definition": "영적으로 성숙하여 교리에 현혹되지 않는 온전히 자란 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 4:11-14",
       "히브리서 5:11-6:2"
@@ -208,7 +208,7 @@
     "id": "birthright",
     "word": "장자",
     "definition": "가족의 맏아들이 상속과 가문의 책임에서 갖던 특별한 권리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 25:29-34; 신명기 21:15-17"
     ]
@@ -217,7 +217,7 @@
     "id": "marketplace",
     "word": "장터",
     "definition": "고대 도시에서 물건을 사고팔고 공공 집회가 열리던 광장",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 16:19-21",
       "사도행전 17:17-21"
@@ -227,7 +227,7 @@
     "id": "plague",
     "word": "재앙",
     "definition": "하느님이 반역이나 불순종에 대해 내리시는 타격이나 징벌",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 16:41-50",
       "스가랴 14:12, 15, 18"
@@ -277,7 +277,7 @@
     "id": "scales-2",
     "word": "저울",
     "definition": "물체의 무게를 재는 천칭 장치로 공정한 거래와 심판의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 32:10",
       "이사야 46:6"
@@ -316,7 +316,7 @@
     "id": "scorpion",
     "word": "전갈",
     "definition": "거미류에 속한 작은 절지동물로 꼬리에 독침을 가진 위험한 생물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "계시록 9:3, 5, 10",
       "신명기 8:15"
@@ -345,7 +345,7 @@
     "id": "herald",
     "word": "전령",
     "definition": "왕의 명령과 포고령을 공포하는 궁정 관리를 가리키는 직위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 3:4",
       "다니엘 5:29"
@@ -384,7 +384,7 @@
     "id": "portent",
     "word": "전조",
     "definition": "미래의 사건을 미리 보여 주는 표징이나 경이로운 일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 13:1-3",
       "열왕기상 13:1-5"
@@ -394,7 +394,7 @@
     "id": "tradition",
     "word": "전통",
     "definition": "부모에서 자녀로 전달되는 교리나 관행으로 그리스어 파라도시스에서 유래",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "고린도전서 11:2",
       "요한 2:1, 2"
@@ -414,7 +414,7 @@
     "id": "entry-절구",
     "word": "절구",
     "definition": "어리석은 자는 OO에 넣고 곡식 찧듯 공이로 찧어도, 그 어리석음이 벗겨지지 않는다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 11:7, 8",
       "출애굽기 27:20, 21"
@@ -463,7 +463,7 @@
     "id": "cleanness",
     "word": "정결",
     "definition": "하느님의 숭배에서 도덕적·의식적으로 깨끗한 상태",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:44, 45; 시편 24:3, 4"
     ]
@@ -539,7 +539,7 @@
     "id": "offerings",
     "word": "제물",
     "definition": "아벨과 카인의 예부터 시작된 하느님께 바치는 예물의 관습",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 4:1-4",
       "창세기 8:18-22"
@@ -597,7 +597,7 @@
     "id": "carving",
     "word": "조각",
     "definition": "나무나 돌 금속을 빚거나 깎아 형상을 만드는 기술로 우상에도 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:4",
       "신명기 27:15"
@@ -607,7 +607,7 @@
     "id": "tribute",
     "word": "조공",
     "definition": "복속의 표시로 약국이나 통치자에게 바치는 돈이나 공물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 8:2, 6",
       "열왕기상 4:21"
@@ -626,7 +626,7 @@
     "id": "genealogy",
     "word": "족보",
     "definition": "사람의 조상이나 가계를 기술한 기록으로 성경에 정확히 보존됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 3:14, 15",
       "역대기상 5:17"
@@ -646,7 +646,7 @@
     "id": "boil",
     "word": "종기",
     "definition": "피부가 국부적으로 붓고 통증이 있는 병으로 이집트 재앙에 나옴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 9:8-11",
       "신명기 28:27, 35"
@@ -665,7 +665,7 @@
     "id": "paper",
     "word": "종이",
     "definition": "파피루스 식물을 얇게 잘라 만든 고대의 필기 도구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한둘째 12절"
     ]
@@ -674,7 +674,7 @@
     "id": "sovereignty",
     "word": "주권",
     "definition": "최고의 통치권이나 권력으로 하느님의 절대적 지배를 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 47:9",
       "시편 138:5"
@@ -684,7 +684,7 @@
     "id": "tin",
     "word": "주석",
     "definition": "녹는점이 낮은 푸른빛 흰색 금속으로 정련 과정에서 분리되는 찌꺼기",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 22:18, 20",
       "이사야 1:25"
@@ -764,7 +764,7 @@
     "id": "deed",
     "word": "증서",
     "definition": "부동산 양도 등에 필요한 법적 문서로 예레미야가 밭을 구입할 때 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 32:6-15"
     ]
@@ -803,7 +803,7 @@
     "id": "knowledge",
     "word": "지식",
     "definition": "사실을 알고 이해하며 하느님의 뜻을 분별하는 데 필요한 정보",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 2:6; 요한복음 17:3"
     ]
@@ -821,7 +821,7 @@
     "id": "district",
     "word": "지역",
     "definition": "행정 단위나 도시 주변 지방 또는 특정 경계 안의 지방을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "느헤미야 3:9, 12, 14-18",
       "느헤미야 1:3"
@@ -831,7 +831,7 @@
     "id": "hell",
     "word": "지옥",
     "definition": "일부 번역판에서 히브리어 셰올과 그리스어 하데스를 번역한 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": []
   },
   {
@@ -847,7 +847,7 @@
     "id": "earthquake",
     "word": "지진",
     "definition": "지구 내부의 힘으로 지면이 갑자기 진동하는 현상으로 심판에 자주 언급됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 19:11",
       "아모스 1:1"
@@ -904,7 +904,7 @@
     "id": "pearl",
     "word": "진주",
     "definition": "조개体内에 형성된 구형의 보석으로 가치가 높아 비유에 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데전서 2:9",
       "계시록 18:12, 16"
@@ -914,7 +914,7 @@
     "id": "entry-진통",
     "word": "진통",
     "definition": "출산에 따르는 고통으로 하와의 죄 이후 주어진 결과",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 10:22",
       "창세기 3:16"
@@ -924,7 +924,7 @@
     "id": "clay",
     "word": "진흙",
     "definition": "젖었을 때 모양을 바꿀 수 있고 말리면 단단해지는 미세한 흙",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 41:25",
       "욥기 38:14"
@@ -943,7 +943,7 @@
     "id": "entry-질투",
     "word": "질투",
     "definition": "평온한 마음은 몸에 생명을 주지만, OO는 뼈를 썩게 한다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 14:30",
       "스가랴 1:14"
@@ -972,7 +972,7 @@
     "id": "discipline",
     "word": "징계",
     "definition": "교육과 시정과 권고를 포함하는 훈련으로 하느님의 사랑의 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 3:11, 12",
       "신명기 8:3-5"

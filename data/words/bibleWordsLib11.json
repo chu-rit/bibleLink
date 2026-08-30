@@ -3,7 +3,7 @@
     "id": "stocks",
     "word": "차꼬",
     "definition": "수형자의 양발을 나무 형틀에 채우는 고대의 형구",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 16:10",
       "예레미야 20:2, 3"
@@ -22,7 +22,7 @@
     "id": "praise",
     "word": "찬양",
     "definition": "하느님의 특성과 행동을 인정하며 그분을 높이는 표현",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 150:1-6; 히브리서 13:15"
     ]
@@ -31,7 +31,7 @@
     "id": "sparrow",
     "word": "참새",
     "definition": "작은 회갈색 새로 떼지어 사는 가장 흔한 새로 하느님의 돌봄을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태 10:29-31",
       "누가 12:6, 7"
@@ -41,7 +41,7 @@
     "id": "storehouse",
     "word": "창고",
     "definition": "곡식과 포도주 기름 귀금속을 비축해 두는 저장 시설",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기상 27:25",
       "역대기하 32:27, 28"
@@ -51,7 +51,7 @@
     "id": "harlot",
     "word": "창녀",
     "definition": "부부 관계 외의 성 관계에 상습적으로 연루된 여자를 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "계시록 17:1",
       "창세기 38:6-26"
@@ -61,7 +61,7 @@
     "id": "spearmen",
     "word": "창병",
     "definition": "창으로 무장한 군인으로 로마 점령군의 일부였던 보병",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 23:23"
     ]
@@ -79,7 +79,7 @@
     "id": "intestines",
     "word": "창자",
     "definition": "사람이나 동물의 내장이나 속을 가리키는 히브리어 케레브의 번역",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 12:9",
       "출애굽기 29:13"
@@ -108,7 +108,7 @@
     "id": "whip",
     "word": "채찍",
     "definition": "가죽 끈으로 된 노끈 형태의 도구로 사람이나 동물을 다루는 데 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "역대기하 10:11, 14",
       "잠언 26:3"
@@ -118,7 +118,7 @@
     "id": "reproof",
     "word": "책망",
     "definition": "잘못을 인정하고 시정하도록 납득시키는 목적으로 하는 꾸짖음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 37:4",
       "레위기 19:17"
@@ -128,7 +128,7 @@
     "id": "virgin",
     "word": "처녀",
     "definition": "결혼이나 성 관계를 경험하지 않은 여자를 가리키는 히브리어 베툴라",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:16",
       "사사기 21:12"
@@ -138,7 +138,7 @@
     "id": "thunder",
     "word": "천둥",
     "definition": "번개 방전 후 가열된 공기의 팽창으로 발생하는 큰 소리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 28:26, 38:25",
       "사무엘상 2:10"
@@ -166,7 +166,7 @@
     "id": "philosophy",
     "word": "철학",
     "definition": "그리스어 필로소피아로 지혜에 대한 사랑을 의미하는 인간의 사색",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "골로새서 2:8",
       "사도행전 17:18"
@@ -186,7 +186,7 @@
     "id": "booth",
     "word": "초막",
     "definition": "나뭇가지와 잎으로 지은 임시 거처로 명절에 지음",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 애가 2:6",
       "사도행전 15:16"
@@ -205,7 +205,7 @@
     "id": "vegetation",
     "word": "초목",
     "definition": "식물 전체를 가리키는 말로 셋째 창조 날에 만들어진 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 1:11-13",
       "창세기 2:5, 6"
@@ -225,7 +225,7 @@
     "id": "governor",
     "word": "총독",
     "definition": "군사력과 사법권을 가지고 관할 지역을 다스리는 통치자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "누가 2:1, 2",
       "느헤미야 5:15-18"
@@ -235,7 +235,7 @@
     "id": "festival",
     "word": "축제",
     "definition": "이스라엘이 하느님 숭배를 위해 지키는 정기적 잔치로 하그와 모에드로 불림",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 20:35",
       "레위기 23:2, 4"
@@ -245,7 +245,7 @@
     "id": "birth",
     "word": "출산",
     "definition": "히브리어 얄라드로 낳거나 아버지가 되는 것을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 4:1, 2",
       "창세기 16:15"
@@ -265,7 +265,7 @@
     "id": "loyalty",
     "word": "충성",
     "definition": "히브리어 하시드로 사랑에서 우러나온 변치 않는 친절과 헌신을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 18:25",
       "창세기 20:13, 21:23"
@@ -284,7 +284,7 @@
     "id": "integrity",
     "word": "충절",
     "definition": "히브리어 톰과 타밈으로 온전하고 흠 없는 상태를 가리키는 개념",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 25:30",
       "출애굽기 12:5"
@@ -304,7 +304,7 @@
     "id": "cheese",
     "word": "치즈",
     "definition": "젖을 엉기게 만든 유제품으로 욥이 창조주께 비유로 언급한 식품",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 10:10",
       "사무엘상 17:17, 18"
@@ -333,7 +333,7 @@
     "id": "kindness",
     "word": "친절",
     "definition": "다른 사람을 따뜻하고 사려 깊게 대하며 실제적인 도움을 베푸는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에베소서 4:32; 골로새서 3:12"
     ]
@@ -342,7 +342,7 @@
     "id": "entry-친척",
     "word": "친척",
     "definition": "보아스는 엘리멜렉의 OO이었기 때문에 룻을 도로살 권리를 가질 수 있었다.",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 35:16-19",
       "룻기 2:20"

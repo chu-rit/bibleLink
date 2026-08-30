@@ -42,7 +42,7 @@
     "id": "apple",
     "word": "사과",
     "definition": "히브리어 탑푸아흐가 가리키는 향기로운 열매로 정확한 식물은 불확실함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 2:3, 5",
       "아가 8:5"
@@ -359,7 +359,7 @@
     "id": "shaphan",
     "word": "사반",
     "definition": "요시야 왕 시대에 율법 책을 읽고 왕에게 보고한 서기관",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 22:8-13"
     ]
@@ -452,7 +452,7 @@
     "id": "stag",
     "word": "사슴",
     "definition": "팔레스타인에 서식했던 정한 동물로 분류된 뿔 달린 포유류 짐승",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "신명기 12:15, 16, 22, 23",
       "신명기 14:4-6"
@@ -589,7 +589,7 @@
     "id": "midwife",
     "word": "산파",
     "definition": "히브리어로 아이를 낳는 것을 돕는 여자로 산고를 겪는 임산부를 도우는 역할",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 16:4",
       "창세기 35:16-19"
@@ -609,7 +609,7 @@
     "id": "coral",
     "word": "산호",
     "definition": "따뜻한 바닷물의 폴립이 만드는 석회질 퇴적물로 아름다운 가지를 친 보석",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 27:16",
       "욥기 28:18"
@@ -761,7 +761,7 @@
     "id": "murder",
     "word": "살인",
     "definition": "권한 없이 고의로 타인의 생명을 빼앗는 행위로 십계명이 금한 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:13",
       "로마서 5:12"
@@ -827,7 +827,7 @@
     "id": "samson",
     "word": "삼손",
     "definition": "특별한 서약 아래 태어나 블레셋 사람들과 싸운 이스라엘의 재판관",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사사기 13-16장"
     ]
@@ -963,7 +963,7 @@
     "id": "ivory",
     "word": "상아",
     "definition": "코끼리 등 동물의 엄니로 단단하고 조각이 쉬워 귀한 장식 재료로 쓰임",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 10:22"
     ]
@@ -972,7 +972,7 @@
     "id": "merchant",
     "word": "상인",
     "definition": "이윤을 얻기 위해 사고팔거나 물물 교환하는 장사꾼",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 34:10",
       "창세기 23:16"
@@ -991,7 +991,7 @@
     "id": "engraving",
     "word": "새김",
     "definition": "나무나 금속 돌에 도안이나 글자를 새겨 넣는 기술",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기상 6:29, 32",
       "출애굽기 39:30"
@@ -1011,7 +1011,7 @@
     "id": "sandal",
     "word": "샌들",
     "definition": "가죽이나 나무로 된 납작한 바닥에 끈으로 발을 고정시킨 신발",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 16:10",
       "출애굽기 3:5"
@@ -1107,7 +1107,7 @@
     "id": "signature",
     "word": "서명",
     "definition": "본인임을 나타내는 표로 히브리어 알파벳 마지막 글자 타우로 표현됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "에스겔 9:4, 6",
       "욥기 31:35"
@@ -1117,7 +1117,7 @@
     "id": "vow",
     "word": "서원",
     "definition": "하느님께 어떤 일을 하거나 하지 않겠다고 자발적으로 약속하는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 30:2; 사사기 11:30, 31"
     ]
@@ -1126,7 +1126,7 @@
     "id": "west",
     "word": "서쪽",
     "definition": "히브리인들이 동쪽을 기준 삼을 때 뒤쪽에 해당하는 방향",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 9:12",
       "여호수아 1:4"
@@ -1136,7 +1136,7 @@
     "id": "pomegranate",
     "word": "석류",
     "definition": "적갈색 사과 모양의 열매로 과즙이 풍부하고 씨가 많이 든 과일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 8:2",
       "아가 4:3, 13"
@@ -1146,7 +1146,7 @@
     "id": "mason",
     "word": "석수",
     "definition": "벽돌이나 돌을 다듬어 쌓는 건축 장인으로 성전 건축에 참여한 직업",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기하 12:12",
       "사무엘하 5:11"
@@ -1176,7 +1176,7 @@
     "id": "goodwill",
     "word": "선의",
     "definition": "기뻐하는 상태나 호의로 하느님과 사람 사이의 선한 태도를 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 51:18",
       "시편 106:4"
@@ -1186,7 +1186,7 @@
     "id": "fable",
     "word": "설화",
     "definition": "거짓이나 꾸민 이야기로 그리스어 미토스로 번역된 허위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데전서 1:4",
       "디모데전서 4:7"
@@ -1365,7 +1365,7 @@
     "id": "generation",
     "word": "세대",
     "definition": "거의 같은 시기에 태어난 사람 전체나 가계의 한 세대를 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 1:6",
       "마태 11:16"
@@ -1423,7 +1423,7 @@
     "id": "taxcollector",
     "word": "세리",
     "definition": "로마 정부를 위해 세금을 거두었으며 당시 유대인들에게 멸시받던 직업의 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 9:9-13",
       "누가복음 19:1-10"
@@ -1672,7 +1672,7 @@
     "id": "salt",
     "word": "소금",
     "definition": "염화나트륨 결정으로 맛을 내고 보존에 쓰이며 언약과 심판의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 14:3",
       "창세기 19:26"
@@ -1981,7 +1981,7 @@
     "id": "atonement",
     "word": "속죄",
     "definition": "죄를 덮거나 없애 하느님과의 관계를 회복하는 것과 관련된 마련",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 16:30",
       "로마서 5:11"
@@ -2021,7 +2021,7 @@
     "id": "finger",
     "word": "손가락",
     "definition": "손의 도구로 섬세한 일과 지시를 나타내며 하느님의 능력을 상징하기도 함",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "이사야 2:8",
       "출애굽기 31:18"
@@ -2070,7 +2070,7 @@
     "id": "calf",
     "word": "송아지",
     "definition": "어린 소로 희생 제물이나 특별한 식탁에 사용된 가축",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 9:2, 3",
       "창세기 18:7, 8"
@@ -2148,7 +2148,7 @@
     "id": "wagon",
     "word": "수레",
     "definition": "고대의 나무로 만든 운송 수단으로 바퀴가 달린 짐바리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 6:14",
       "민수기 7:2-9"
@@ -2197,7 +2197,7 @@
     "id": "entry-수명",
     "word": "수명",
     "definition": "하느님의 원래 의도와 달리 아담의 죄로 인해 크게 제한된 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:15-17",
       "로마서 5:12"
@@ -2264,7 +2264,7 @@
     "id": "bull",
     "word": "수소",
     "definition": "성서에서 희생 제물과 농경에 사용된 수컷 소로 힘의 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 21:28",
       "출애굽기 29:10"
@@ -2391,7 +2391,7 @@
     "id": "harvest",
     "word": "수확",
     "definition": "농작물을 거두어들이는 일로 성경에서 기쁨과 하느님의 축복을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 8:22",
       "시편 126:5, 6"
@@ -2438,7 +2438,7 @@
     "id": "obedience",
     "word": "순종",
     "definition": "권위 있는 이의 정당한 지시를 기꺼이 따르는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 15:22; 히브리서 5:8, 9"
     ]
@@ -2476,7 +2476,7 @@
     "id": "worship",
     "word": "숭배",
     "definition": "하느님을 창조주로 인정하고 그분에게 합당한 존경과 봉사를 드리는 일",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 4:10; 요한복음 4:23, 24"
     ]
@@ -3137,7 +3137,7 @@
     "id": "entry-스알-야숩",
     "word": "스알야숩",
     "definition": "이사야의 맏아들로 아하스 왕 시대에 예언의 표징 역할을 한 아들",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "사 7:1, 3",
       "사 8:18, 10:21"
@@ -3290,7 +3290,7 @@
     "id": "hour",
     "word": "시간",
     "definition": "그리스어 호라로 짧은 기간이나 하루의 한 부분을 가리키는 시간 단위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "느헤미야 9:3",
       "창세기 24:11"
@@ -3358,7 +3358,7 @@
     "id": "age",
     "word": "시대",
     "definition": "그리스어 아이온으로 사람 역사 속의 일정한 기간을 가리키는 말",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마가 3:29",
       "마태 21:19"
@@ -3774,7 +3774,7 @@
     "id": "meal",
     "word": "식사",
     "definition": "고대 이스라엘과 초기 그리스도인들에게 친교와 영적 유익의 기회가 된 음식 자리",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 9:13",
       "사도행전 27:35"
@@ -3890,7 +3890,7 @@
     "id": "oath-2",
     "word": "서약",
     "definition": "발언의 진실성이나 약속을 확언하는 말로 하느님께 호소하는 행위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 24:8",
       "레위기 5:4"
@@ -3900,7 +3900,7 @@
     "id": "sedition",
     "word": "소요",
     "definition": "그리스어 스타시스로 분리해 서 있는 것을 의미하며 폭동이나 분쟁을 가리킴",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마가 15:7",
       "누가 23:19, 25"
@@ -3910,7 +3910,7 @@
     "id": "kidneys",
     "word": "신장",
     "definition": "등뼈 아래 한 쌍의 장기로 피를 걸러내며 비유적으로 내면의 깊은 부분을 상징",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "시편 7:9",
       "계시록 2:23"

@@ -1,157 +1,110 @@
 {
-  "id": "crossword-map-081",
-  "title": "N-4",
-  "difficulty": 2,
-  "width": 10,
-  "height": 10,
+  "id": "crossword-map-008",
+  "title": "E-8",
+  "difficulty": 1.1,
+  "width": 8,
+  "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####격####",
-    "###선견자####",
-    "##공의#창병###",
-    "불멸성###거###",
-    "##퇴###도#마곡",
-    "######시브온#",
-    "#######다##",
-    "#######히람#",
-    "#####브나야##",
-    "######병###"
+    "######침대",
+    "#######제",
+    "#######사",
+    "#####제사장",
+    "구###나단##",
+    "슬#바늘귀###",
+    "꿰#나#####",
+    "미스바#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "격자창",
-      "direction": "down",
+      "answer": "침대",
+      "direction": "across",
       "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "lattice"
+      "col": 6,
+      "length": 2,
+      "wordId": "bed"
     },
     {
       "number": 2,
-      "answer": "선견자",
-      "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 3,
-      "wordId": "seer"
+      "answer": "대제사장",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "highpriest"
     },
     {
       "number": 3,
-      "answer": "선의",
+      "answer": "제단",
       "direction": "down",
-      "row": 1,
-      "col": 3,
+      "row": 3,
+      "col": 5,
       "length": 2,
-      "wordId": "goodwill"
+      "wordId": "altar"
     },
     {
       "number": 4,
-      "answer": "공의",
+      "answer": "제사장",
       "direction": "across",
-      "row": 2,
-      "col": 2,
-      "length": 2,
-      "wordId": "justice"
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "priest"
     },
     {
       "number": 5,
-      "answer": "공성퇴",
+      "answer": "구슬꿰미",
       "direction": "down",
-      "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "entry-공성퇴"
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "beads"
     },
     {
       "number": 6,
-      "answer": "창병",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
+      "answer": "나귀",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
       "length": 2,
-      "wordId": "spearmen"
+      "wordId": "ass"
     },
     {
       "number": 7,
-      "answer": "병거도시",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 4,
-      "wordId": "entry-병거 도시"
+      "answer": "나단",
+      "direction": "across",
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "nathan"
     },
     {
       "number": 8,
-      "answer": "불멸성",
+      "answer": "바늘귀",
       "direction": "across",
-      "row": 3,
-      "col": 0,
+      "row": 5,
+      "col": 2,
       "length": 3,
-      "wordId": "immortality"
+      "wordId": "entry-바늘귀"
     },
     {
       "number": 9,
-      "answer": "마온",
+      "answer": "바나바",
       "direction": "down",
-      "row": 4,
-      "col": 8,
-      "length": 2,
-      "wordId": "maon"
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "barnabas"
     },
     {
       "number": 10,
-      "answer": "마곡",
-      "direction": "across",
-      "row": 4,
-      "col": 8,
-      "length": 2,
-      "wordId": "magog"
-    },
-    {
-      "number": 11,
-      "answer": "시브온",
-      "direction": "across",
-      "row": 5,
-      "col": 6,
-      "length": 3,
-      "wordId": "zibeon"
-    },
-    {
-      "number": 12,
-      "answer": "브다히야",
-      "direction": "down",
-      "row": 5,
-      "col": 7,
-      "length": 4,
-      "wordId": "pethahiah"
-    },
-    {
-      "number": 13,
-      "answer": "히람",
+      "answer": "미스바",
       "direction": "across",
       "row": 7,
-      "col": 7,
-      "length": 2,
-      "wordId": "hiram"
-    },
-    {
-      "number": 14,
-      "answer": "브나야",
-      "direction": "across",
-      "row": 8,
-      "col": 5,
+      "col": 0,
       "length": 3,
-      "wordId": "benaiah"
-    },
-    {
-      "number": 15,
-      "answer": "나병",
-      "direction": "down",
-      "row": 8,
-      "col": 6,
-      "length": 2,
-      "wordId": "leprosy"
+      "wordId": "mizpah"
     }
   ]
 }

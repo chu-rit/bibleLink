@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-139",
-  "title": "N-7",
-  "difficulty": 2,
+  "id": "crossword-map-019",
+  "title": "N-9",
+  "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "철학#느######",
-    "#기름부음#####",
-    "#야#스#####호",
-    "###심판대###세",
-    "#####리카오니아",
-    "###기록관#바#서",
-    "###름###댜##",
-    "###나답#####",
-    "##나무######",
-    "사르곤#######"
+    "#######힛데겔",
+    "########베#",
+    "######라기스#",
+    "#####라못###",
+    "######길#요#",
+    "####환#르우엘#",
+    "차#향#시므앗###",
+    "데살로니가#####",
+    "#마#네######",
+    "##소베렛#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "철학",
+      "answer": "힛데겔",
       "direction": "across",
       "row": 0,
-      "col": 0,
-      "length": 2,
-      "wordId": "philosophy"
+      "col": 7,
+      "length": 3,
+      "wordId": "hiddekel"
     },
     {
       "number": 2,
-      "answer": "학기야",
+      "answer": "데베스",
       "direction": "down",
       "row": 0,
-      "col": 1,
+      "col": 8,
       "length": 3,
-      "wordId": "haggiah"
+      "wordId": "thebez"
     },
     {
       "number": 3,
-      "answer": "느부스심",
+      "answer": "라못길르앗",
       "direction": "down",
-      "row": 0,
-      "col": 3,
-      "length": 4,
-      "wordId": "nephushesim"
+      "row": 2,
+      "col": 6,
+      "length": 5,
+      "wordId": "entry-라못-길르앗"
     },
     {
       "number": 4,
-      "answer": "기름부음",
+      "answer": "라기스",
       "direction": "across",
-      "row": 1,
-      "col": 1,
-      "length": 4,
-      "wordId": "anointing"
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "lachish"
     },
     {
       "number": 5,
-      "answer": "호세아서",
-      "direction": "down",
-      "row": 2,
-      "col": 9,
-      "length": 4,
-      "wordId": "entry-호세아서"
+      "answer": "라못",
+      "direction": "across",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "ramoth"
     },
     {
       "number": 6,
-      "answer": "심판대",
-      "direction": "across",
-      "row": 3,
-      "col": 3,
-      "length": 3,
-      "wordId": "judgment"
+      "answer": "요엘",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 2,
+      "wordId": "joel"
     },
     {
       "number": 7,
-      "answer": "대리관",
+      "answer": "환시가",
       "direction": "down",
-      "row": 3,
-      "col": 5,
+      "row": 5,
+      "col": 4,
       "length": 3,
-      "wordId": "deputy"
+      "wordId": "visionary"
     },
     {
       "number": 8,
-      "answer": "리카오니아",
+      "answer": "르우엘",
       "direction": "across",
-      "row": 4,
-      "col": 5,
-      "length": 5,
-      "wordId": "lycaonia"
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "reuel"
     },
     {
       "number": 9,
-      "answer": "오바댜",
+      "answer": "차데",
       "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 3,
-      "wordId": "obadiah"
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "tsadheh"
     },
     {
       "number": 10,
-      "answer": "기록관",
-      "direction": "across",
-      "row": 5,
-      "col": 3,
-      "length": 3,
-      "wordId": "recorder"
+      "answer": "향로",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "censer"
     },
     {
       "number": 11,
-      "answer": "기름나무",
-      "direction": "down",
-      "row": 5,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-기름나무"
+      "answer": "시므앗",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "shimeath"
     },
     {
       "number": 12,
-      "answer": "나답",
+      "answer": "데살로니가",
       "direction": "across",
       "row": 7,
-      "col": 3,
-      "length": 2,
-      "wordId": "nadab"
+      "col": 0,
+      "length": 5,
+      "wordId": "thessalonica"
     },
     {
       "number": 13,
-      "answer": "나무",
-      "direction": "across",
-      "row": 8,
-      "col": 2,
+      "answer": "살마",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
       "length": 2,
-      "wordId": "trees"
+      "wordId": "salma"
     },
     {
       "number": 14,
-      "answer": "나곤",
+      "answer": "니네베",
       "direction": "down",
-      "row": 8,
-      "col": 2,
-      "length": 2,
-      "wordId": "nacon"
+      "row": 7,
+      "col": 3,
+      "length": 3,
+      "wordId": "nineveh"
     },
     {
       "number": 15,
-      "answer": "사르곤",
+      "answer": "소베렛",
       "direction": "across",
       "row": 9,
-      "col": 0,
+      "col": 2,
       "length": 3,
-      "wordId": "sargon"
+      "wordId": "sophereth"
     }
   ]
 }

@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-158",
+  "id": "crossword-map-002",
   "title": "E-2",
   "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####머##",
-    "####그리스도",
-    "######불#",
-    "####바빌론#",
-    "####늘###",
-    "##까마귀###",
-    "승천#르####",
-    "#막게다####"
+    "######구#",
+    "####그리스어",
+    "####돌###",
+    "##이스라엘##",
+    "골로새#오###",
+    "짜##갈멜###",
+    "기드온#####",
+    "##유#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "머리",
+      "answer": "구스",
       "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 6,
       "length": 2,
-      "wordId": "head"
+      "wordId": "cush"
     },
     {
       "number": 2,
-      "answer": "그리스도",
+      "answer": "그돌라오멜",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 5,
+      "wordId": "chedorlaomer"
+    },
+    {
+      "number": 3,
+      "answer": "그리스어",
       "direction": "across",
       "row": 1,
       "col": 4,
       "length": 4,
-      "wordId": "christ"
-    },
-    {
-      "number": 3,
-      "answer": "스불론",
-      "direction": "down",
-      "row": 1,
-      "col": 6,
-      "length": 3,
-      "wordId": "zebulun"
+      "wordId": "greek"
     },
     {
       "number": 4,
-      "answer": "바늘귀",
+      "answer": "이새",
       "direction": "down",
       "row": 3,
-      "col": 4,
-      "length": 3,
-      "wordId": "entry-바늘귀"
+      "col": 2,
+      "length": 2,
+      "wordId": "jesse"
     },
     {
       "number": 5,
-      "answer": "바빌론",
+      "answer": "이스라엘",
       "direction": "across",
       "row": 3,
-      "col": 4,
-      "length": 3,
-      "wordId": "babylon"
+      "col": 2,
+      "length": 4,
+      "wordId": "israel"
     },
     {
       "number": 6,
-      "answer": "까마귀",
-      "direction": "across",
-      "row": 5,
-      "col": 2,
+      "answer": "골짜기",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
       "length": 3,
-      "wordId": "raven"
+      "wordId": "valley"
     },
     {
       "number": 7,
-      "answer": "마르다",
-      "direction": "down",
-      "row": 5,
-      "col": 3,
+      "answer": "골로새",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
       "length": 3,
-      "wordId": "martha"
+      "wordId": "colossae"
     },
     {
       "number": 8,
-      "answer": "승천",
+      "answer": "갈멜",
       "direction": "across",
-      "row": 6,
-      "col": 0,
+      "row": 5,
+      "col": 3,
       "length": 2,
-      "wordId": "ascension"
+      "wordId": "carmel-2"
     },
     {
       "number": 9,
-      "answer": "천막",
-      "direction": "down",
+      "answer": "기드온",
+      "direction": "across",
       "row": 6,
-      "col": 1,
-      "length": 2,
-      "wordId": "tent"
+      "col": 0,
+      "length": 3,
+      "wordId": "gideon"
     },
     {
       "number": 10,
-      "answer": "막게다",
-      "direction": "across",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "makkedah"
+      "answer": "온유",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "mildness"
     }
   ]
 }

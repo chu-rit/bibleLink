@@ -1,157 +1,110 @@
 {
-  "id": "crossword-map-131",
-  "title": "N-3",
-  "difficulty": 2.1,
-  "width": 10,
-  "height": 10,
+  "id": "crossword-map-007",
+  "title": "E-7",
+  "difficulty": 1.1,
+  "width": 8,
+  "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######소할#",
-    "##세#####해면",
-    "소금바다#블랄리야#",
-    "돔##마#라#브##",
-    "##비스요댜#가슴띠",
-    "###쿠######",
-    "###스미닛####",
-    "####틸#####",
-    "###키레네####",
-    "####네#####"
+    "#####채##",
+    "#####석##",
+    "#####장막#",
+    "######벨#",
+    "####아브라함",
+    "##바빌론###",
+    "#아벨#####",
+    "험담######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "소할",
-      "direction": "across",
+      "answer": "채석장",
+      "direction": "down",
       "row": 0,
-      "col": 7,
-      "length": 2,
-      "wordId": "zohar"
+      "col": 5,
+      "length": 3,
+      "wordId": "quarry"
     },
     {
       "number": 2,
-      "answer": "할해야",
-      "direction": "down",
-      "row": 0,
-      "col": 8,
-      "length": 3,
-      "wordId": "harhaiah"
+      "answer": "장막",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "tabernacletent"
     },
     {
       "number": 3,
-      "answer": "세바",
+      "answer": "막벨라",
       "direction": "down",
-      "row": 1,
-      "col": 2,
-      "length": 2,
-      "wordId": "sheba"
+      "row": 2,
+      "col": 6,
+      "length": 3,
+      "wordId": "machpelah"
     },
     {
       "number": 4,
-      "answer": "해면",
-      "direction": "across",
-      "row": 1,
-      "col": 8,
+      "answer": "아론",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
       "length": 2,
-      "wordId": "sponge"
+      "wordId": "aaron"
     },
     {
       "number": 5,
-      "answer": "소금바다",
+      "answer": "아브라함",
       "direction": "across",
-      "row": 2,
-      "col": 0,
+      "row": 4,
+      "col": 4,
       "length": 4,
-      "wordId": "entry-소금 바다"
+      "wordId": "abraham"
     },
     {
       "number": 6,
-      "answer": "소돔",
-      "direction": "down",
-      "row": 2,
-      "col": 0,
-      "length": 2,
-      "wordId": "sodom"
+      "answer": "바빌론",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "babylon"
     },
     {
       "number": 7,
-      "answer": "다마스쿠스",
+      "answer": "바벨",
       "direction": "down",
-      "row": 2,
-      "col": 3,
-      "length": 5,
-      "wordId": "damascus"
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "babel"
     },
     {
       "number": 8,
-      "answer": "블라댜",
-      "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "pelatiah"
+      "answer": "아벨",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "abel"
     },
     {
       "number": 9,
-      "answer": "블랄리야",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 4,
-      "wordId": "pelaliah"
+      "answer": "아담",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "adam"
     },
     {
       "number": 10,
-      "answer": "리브가",
-      "direction": "down",
-      "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "rebecca"
-    },
-    {
-      "number": 11,
-      "answer": "비스요댜",
+      "answer": "험담",
       "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 4,
-      "wordId": "biziothiah"
-    },
-    {
-      "number": 12,
-      "answer": "가슴띠",
-      "direction": "across",
-      "row": 4,
-      "col": 7,
-      "length": 3,
-      "wordId": "breastband"
-    },
-    {
-      "number": 13,
-      "answer": "스미닛",
-      "direction": "across",
-      "row": 6,
-      "col": 3,
-      "length": 3,
-      "wordId": "sheminith"
-    },
-    {
-      "number": 14,
-      "answer": "미틸레네",
-      "direction": "down",
-      "row": 6,
-      "col": 4,
-      "length": 4,
-      "wordId": "mitylene"
-    },
-    {
-      "number": 15,
-      "answer": "키레네",
-      "direction": "across",
-      "row": 8,
-      "col": 3,
-      "length": 3,
-      "wordId": "cyrene"
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "backbiting"
     }
   ]
 }

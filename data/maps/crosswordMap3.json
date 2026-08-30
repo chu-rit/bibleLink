@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-159",
+  "id": "crossword-map-003",
   "title": "E-3",
   "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####병###",
-    "####거짓말#",
-    "######라#",
-    "등#며###기적",
-    "잔#느헤미야서#",
-    "대머리#움###",
-    "#리######",
-    "#털######"
+    "###학개서##",
+    "####구#포#",
+    "###그리스도#",
+    "###리##나답",
+    "##에스더#무#",
+    "###도####",
+    "#유대인####",
+    "바다######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "병거",
-      "direction": "down",
+      "answer": "학개서",
+      "direction": "across",
       "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "chariot"
+      "col": 3,
+      "length": 3,
+      "wordId": "entry-학개서"
     },
     {
       "number": 2,
-      "answer": "거짓말",
-      "direction": "across",
-      "row": 1,
+      "answer": "개구리",
+      "direction": "down",
+      "row": 0,
       "col": 4,
       "length": 3,
-      "wordId": "lie"
+      "wordId": "frog"
     },
     {
       "number": 3,
-      "answer": "말라기서",
+      "answer": "포도나무",
       "direction": "down",
       "row": 1,
       "col": 6,
       "length": 4,
-      "wordId": "entry-말라기서"
+      "wordId": "vine"
     },
     {
       "number": 4,
-      "answer": "등잔대",
+      "answer": "그리스도인",
       "direction": "down",
-      "row": 3,
-      "col": 0,
-      "length": 3,
-      "wordId": "lampstand"
+      "row": 2,
+      "col": 3,
+      "length": 5,
+      "wordId": "christian"
     },
     {
       "number": 5,
-      "answer": "며느리",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 3,
-      "wordId": "entry-며느리"
+      "answer": "그리스도",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 4,
+      "wordId": "christ"
     },
     {
       "number": 6,
-      "answer": "기적",
+      "answer": "나답",
       "direction": "across",
       "row": 3,
       "col": 6,
       "length": 2,
-      "wordId": "miracles"
+      "wordId": "nadab"
     },
     {
       "number": 7,
-      "answer": "느헤미야서",
+      "answer": "에스더",
       "direction": "across",
       "row": 4,
       "col": 2,
-      "length": 5,
-      "wordId": "entry-느헤미야서"
+      "length": 3,
+      "wordId": "esther"
     },
     {
       "number": 8,
-      "answer": "미움",
-      "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "hate"
+      "answer": "유대인",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "jews"
     },
     {
       "number": 9,
-      "answer": "대머리",
-      "direction": "across",
-      "row": 5,
-      "col": 0,
-      "length": 3,
-      "wordId": "baldness"
+      "answer": "유다",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 2,
+      "wordId": "judah"
     },
     {
       "number": 10,
-      "answer": "머리털",
-      "direction": "down",
-      "row": 5,
-      "col": 1,
-      "length": 3,
-      "wordId": "hair"
+      "answer": "바다",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "sea"
     }
   ]
 }

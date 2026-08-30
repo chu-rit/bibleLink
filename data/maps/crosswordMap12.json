@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-162",
-  "title": "E-6",
-  "difficulty": 1,
-  "width": 8,
-  "height": 8,
+  "id": "crossword-map-012",
+  "title": "N-2",
+  "difficulty": 2,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######길",
-    "######보리",
-    "#####도#기",
-    "####사마리아",
-    "###바울###",
-    "#눈멀다####",
-    "#동######",
-    "겨자######"
+    "#긴느도이#####",
+    "#네#피######",
+    "헬렛#도##복###",
+    "렘##시라저수조##",
+    "#####주#공성퇴",
+    "######세#전#",
+    "#####아리마대#",
+    "#####도##장#",
+    "#####니####",
+    "###마세야####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "길리기아",
-      "direction": "down",
+      "answer": "긴느도이",
+      "direction": "across",
       "row": 0,
-      "col": 7,
+      "col": 1,
       "length": 4,
-      "wordId": "cilicia"
+      "wordId": "ginnethoi"
     },
     {
       "number": 2,
-      "answer": "보리",
-      "direction": "across",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "barley"
+      "answer": "긴네렛",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 3,
+      "wordId": "chinnereth"
     },
     {
       "number": 3,
-      "answer": "도마",
+      "answer": "도피도시",
       "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 2,
-      "wordId": "thomas"
+      "row": 0,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-도피 도시"
     },
     {
       "number": 4,
-      "answer": "사마리아",
+      "answer": "헬렛",
       "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 4,
-      "wordId": "samaria"
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "heled"
     },
     {
       "number": 5,
-      "answer": "사울",
+      "answer": "헬렘",
       "direction": "down",
-      "row": 3,
-      "col": 4,
+      "row": 2,
+      "col": 0,
       "length": 2,
-      "wordId": "saul"
+      "wordId": "helem"
     },
     {
       "number": 6,
-      "answer": "바울",
-      "direction": "across",
-      "row": 4,
-      "col": 3,
+      "answer": "복수",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
       "length": 2,
-      "wordId": "paul"
+      "wordId": "vengeance"
     },
     {
       "number": 7,
-      "answer": "바다",
-      "direction": "down",
-      "row": 4,
+      "answer": "시라저수조",
+      "direction": "across",
+      "row": 3,
       "col": 3,
-      "length": 2,
-      "wordId": "sea"
+      "length": 5,
+      "wordId": "entry-시라 저수조"
     },
     {
       "number": 8,
-      "answer": "눈멀다",
-      "direction": "across",
-      "row": 5,
-      "col": 1,
-      "length": 3,
-      "wordId": "blindness"
+      "answer": "저주",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 2,
+      "wordId": "entry-저주"
     },
     {
       "number": 9,
-      "answer": "눈동자",
+      "answer": "조공",
       "direction": "down",
-      "row": 5,
-      "col": 1,
-      "length": 3,
-      "wordId": "pupil"
+      "row": 3,
+      "col": 7,
+      "length": 2,
+      "wordId": "tribute"
     },
     {
       "number": 10,
-      "answer": "겨자",
+      "answer": "공성퇴",
       "direction": "across",
-      "row": 7,
-      "col": 0,
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "entry-공성퇴"
+    },
+    {
+      "number": 11,
+      "answer": "성전대장",
+      "direction": "down",
+      "row": 4,
+      "col": 8,
+      "length": 4,
+      "wordId": "entry-성전 대장"
+    },
+    {
+      "number": 12,
+      "answer": "세리",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
       "length": 2,
-      "wordId": "mustard"
+      "wordId": "taxcollector"
+    },
+    {
+      "number": 13,
+      "answer": "아리마대",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 4,
+      "wordId": "arimathea"
+    },
+    {
+      "number": 14,
+      "answer": "아도니야",
+      "direction": "down",
+      "row": 6,
+      "col": 5,
+      "length": 4,
+      "wordId": "adonijah"
+    },
+    {
+      "number": 15,
+      "answer": "마세야",
+      "direction": "across",
+      "row": 9,
+      "col": 3,
+      "length": 3,
+      "wordId": "mahseiah"
     }
   ]
 }

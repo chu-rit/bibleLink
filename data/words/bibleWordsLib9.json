@@ -3,7 +3,7 @@
     "id": "songofsongs",
     "word": "아가",
     "definition": "결혼을 앞둔 남녀의 깨끗하고 변함없는 사랑을 노래한 시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "아가 2:7; 8:6, 7"
     ]
@@ -103,7 +103,7 @@
     "id": "aaron",
     "word": "아론",
     "definition": "모세의 형이자 이스라엘의 첫 대제사장으로 임명된 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 4:14-16",
       "출애굽기 28:1"
@@ -131,7 +131,7 @@
     "id": "amaziah",
     "word": "아마샤",
     "definition": "에돔을 물리쳤지만 우상 숭배로 인해 어려움을 겪은 유다 왕",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 14:1-7"
     ]
@@ -149,7 +149,7 @@
     "id": "amonking",
     "word": "아몬",
     "definition": "아버지의 악한 행로를 따르다가 신하들에게 살해된 유다 왕",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "열왕기하 21:19-24"
     ]
@@ -330,7 +330,7 @@
     "id": "ammon",
     "word": "암몬",
     "definition": "롯의 후손이 세운 나라로 이스라엘과 자주 적대했던 민족",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 19:30-38; 신명기 23:3-6"
     ]
@@ -375,7 +375,7 @@
     "id": "jared",
     "word": "야렛",
     "definition": "에녹의 아버지이며 아담부터 노아까지 이어진 계보에 나오는 사람",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 5:15-20"
     ]
@@ -384,7 +384,7 @@
     "id": "japheth",
     "word": "야벳",
     "definition": "대홍수에서 생존한 노아의 아들 가운데 한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 9:18, 19"
     ]
@@ -393,7 +393,7 @@
     "id": "jairus",
     "word": "야이로",
     "definition": "죽은 딸을 살려 달라고 예수에게 부탁한 회당의 책임자",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "마가복음 5:21-43"
     ]
@@ -420,7 +420,7 @@
     "id": "enoch",
     "word": "에녹",
     "definition": "하느님과 함께 걸었으며 악한 세대 가운데서 충실함을 나타낸 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 5:21-24",
       "유다서 14, 15"
@@ -439,7 +439,7 @@
     "id": "edom",
     "word": "에돔",
     "definition": "에서의 후손이 세운 나라로 이스라엘 남동쪽에 있던 지역",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 36:8, 9; 민수기 20:14-21"
     ]
@@ -494,7 +494,7 @@
     "id": "esau",
     "word": "에서",
     "definition": "이삭과 리브가의 맏아들로, 장자권을 동생에게 넘긴 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 25:24-34"
     ]
@@ -741,7 +741,7 @@
     "id": "inspiration",
     "word": "영감",
     "definition": "하느님이 성경 필자들이 기록하도록 자신의 생각을 전달하신 작용",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "디모데 후서 3:16, 17",
       "베드로 후서 1:20, 21"
@@ -797,7 +797,7 @@
     "id": "jehu",
     "word": "예후",
     "definition": "이스라엘의 왕이 되어 바알 숭배를 없애는 일을 시작한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "열왕기하 9:1-10; 10:18-28"
     ]
@@ -816,7 +816,7 @@
     "id": "orpah",
     "word": "오르바",
     "definition": "나오미의 며느리로 고향에 남기로 한 모압 여자",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "룻기 1:4-14"
     ]
@@ -834,7 +834,7 @@
     "id": "obed",
     "word": "오벳",
     "definition": "룻과 보아스의 아들로 다윗 왕의 할아버지가 된 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "룻기 4:13-17; 역대기상 2:12"
     ]
@@ -852,7 +852,7 @@
     "id": "mildness",
     "word": "온유",
     "definition": "힘이 있어도 다른 사람을 거칠게 대하지 않고 부드럽게 행동하는 특성",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "마태복음 5:5",
       "갈라디아서 5:22, 23"
@@ -973,7 +973,7 @@
     "id": "joab",
     "word": "요압",
     "definition": "다윗의 군대 대장으로 여러 전쟁에서 이스라엘 군대를 지휘한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 8:16",
       "사무엘하 20:23"
@@ -983,7 +983,7 @@
     "id": "joel",
     "word": "요엘",
     "definition": "메뚜기 재앙을 계기로 회개를 촉구하고 영이 부어질 일을 예언한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요엘 1장",
       "요엘 2:28-32"
@@ -1020,7 +1020,7 @@
     "id": "ur",
     "word": "우르",
     "definition": "아브라함의 가족이 살았으며 그가 하느님의 부름을 받은 고대 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 11:27-31; 사도행전 7:2-4"
     ]
@@ -1047,7 +1047,7 @@
     "id": "uz",
     "word": "우스",
     "definition": "욥이 살았던 곳으로 알려진 지역",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "욥기 1:1"
     ]
@@ -1065,7 +1065,7 @@
     "id": "eunice",
     "word": "유니게",
     "definition": "디모데에게 성경 지식을 가르친 어머니",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사도행전 16:1; 디모데 후서 1:5; 3:15"
     ]
@@ -1093,7 +1093,7 @@
     "id": "eutychus",
     "word": "유두고",
     "definition": "바울의 긴 연설을 듣다가 잠들어 창문에서 떨어졌지만 살아난 청년",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "사도행전 20:7-12"
     ]
@@ -1139,7 +1139,7 @@
     "id": "ithamar",
     "word": "이다말",
     "definition": "아론의 아들로 성막의 여러 봉사와 관련된 제사장",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 28:1",
       "민수기 4:28"
@@ -1168,7 +1168,7 @@
     "id": "jesse",
     "word": "이새",
     "definition": "다윗의 아버지로 베들레헴에 살았던 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘상 16:1-13"
     ]

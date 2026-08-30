@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-163",
-  "title": "E-7",
-  "difficulty": 1,
-  "width": 8,
-  "height": 8,
+  "id": "crossword-map-013",
+  "title": "N-3",
+  "difficulty": 1.9,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####나일#",
-    "#####다##",
-    "#####나사로",
-    "#성#미가엘##",
-    "#막벨라####",
-    "##사#####",
-    "예루살렘####",
-    "#비######"
+    "#######에##",
+    "######미스만나",
+    "#######겔#다",
+    "#########나",
+    "#######옷니엘",
+    "#####가렙#게#",
+    "##작##데#우르#",
+    "마헬살랄하스바스##",
+    "귀###수#람###",
+    "##소시바더####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "나다나엘",
+      "answer": "에스겔",
       "direction": "down",
       "row": 0,
-      "col": 5,
+      "col": 7,
+      "length": 3,
+      "wordId": "ezekiel"
+    },
+    {
+      "number": 2,
+      "answer": "미스만나",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 4,
+      "wordId": "mishmannah"
+    },
+    {
+      "number": 3,
+      "answer": "나다나엘",
+      "direction": "down",
+      "row": 1,
+      "col": 9,
       "length": 4,
       "wordId": "nathanael"
     },
     {
-      "number": 2,
-      "answer": "나일",
-      "direction": "across",
-      "row": 0,
-      "col": 5,
-      "length": 2,
-      "wordId": "nile"
-    },
-    {
-      "number": 3,
-      "answer": "나사로",
-      "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "lazarus"
-    },
-    {
       "number": 4,
-      "answer": "성막",
-      "direction": "down",
-      "row": 3,
-      "col": 1,
-      "length": 2,
-      "wordId": "tabernacle"
+      "answer": "옷니엘",
+      "direction": "across",
+      "row": 4,
+      "col": 7,
+      "length": 3,
+      "wordId": "othniel"
     },
     {
       "number": 5,
-      "answer": "미라",
+      "answer": "니게르",
       "direction": "down",
-      "row": 3,
-      "col": 3,
-      "length": 2,
-      "wordId": "myra"
+      "row": 4,
+      "col": 8,
+      "length": 3,
+      "wordId": "niger"
     },
     {
       "number": 6,
-      "answer": "미가엘",
-      "direction": "across",
-      "row": 3,
-      "col": 3,
+      "answer": "가데스",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
       "length": 3,
-      "wordId": "michael"
+      "wordId": "kadesh"
     },
     {
       "number": 7,
-      "answer": "막벨라",
+      "answer": "가렙",
       "direction": "across",
-      "row": 4,
-      "col": 1,
-      "length": 3,
-      "wordId": "machpelah"
+      "row": 5,
+      "col": 5,
+      "length": 2,
+      "wordId": "gareb"
     },
     {
       "number": 8,
-      "answer": "벨사살",
+      "answer": "작살",
       "direction": "down",
-      "row": 4,
+      "row": 6,
       "col": 2,
-      "length": 3,
-      "wordId": "belshazzar"
+      "length": 2,
+      "wordId": "harpoon"
     },
     {
       "number": 9,
-      "answer": "예루살렘",
-      "direction": "across",
+      "answer": "우스",
+      "direction": "down",
       "row": 6,
-      "col": 0,
-      "length": 4,
-      "wordId": "jerusalem"
+      "col": 7,
+      "length": 2,
+      "wordId": "uz"
     },
     {
       "number": 10,
-      "answer": "루비",
-      "direction": "down",
+      "answer": "우르",
+      "direction": "across",
       "row": 6,
-      "col": 1,
+      "col": 7,
       "length": 2,
-      "wordId": "ruby"
+      "wordId": "ur"
+    },
+    {
+      "number": 11,
+      "answer": "마헬살랄하스바스",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 8,
+      "wordId": "entry-마헬-살랄-하스-바스"
+    },
+    {
+      "number": 12,
+      "answer": "마귀",
+      "direction": "down",
+      "row": 7,
+      "col": 0,
+      "length": 2,
+      "wordId": "devil"
+    },
+    {
+      "number": 13,
+      "answer": "하수바",
+      "direction": "down",
+      "row": 7,
+      "col": 4,
+      "length": 3,
+      "wordId": "hashubah"
+    },
+    {
+      "number": 14,
+      "answer": "바람",
+      "direction": "down",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "wind"
+    },
+    {
+      "number": 15,
+      "answer": "소시바더",
+      "direction": "across",
+      "row": 9,
+      "col": 2,
+      "length": 4,
+      "wordId": "sosipater"
     }
   ]
 }

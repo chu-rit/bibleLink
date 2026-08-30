@@ -23,7 +23,7 @@
     "id": "ass",
     "word": "나귀",
     "definition": "단단한 굽을 가진 말과의 동물로 산악 지형에 적합한 짐바리 짐승",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 12:16",
       "창세기 22:3"
@@ -52,7 +52,7 @@
     "id": "nathan",
     "word": "나단",
     "definition": "다윗의 잘못을 비유로 지적하고 솔로몬의 왕위 계승을 지지한 예언자",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사무엘하 12:1-14",
       "열왕기상 1:11-14"
@@ -81,7 +81,7 @@
     "id": "trees",
     "word": "나무",
     "definition": "팔레스타인과 인접 지역에서 자라는 약 30종으로 성경에 언급된 식물",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "예레미야 6:6",
       "느헤미야 9:25"
@@ -457,7 +457,7 @@
     "id": "husband",
     "word": "남편",
     "definition": "결혼한 남자로 히브리어 이시와 그리스어 아네르로 표현되는 역할",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "호세아 2:16",
       "로마서 7:2"
@@ -756,7 +756,7 @@
     "id": "agriculture",
     "word": "농사",
     "definition": "땅을 경작하여 농작물을 생산하고 가축을 기르는 일로 에덴에서 시작된 활동",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "창세기 2:5, 15",
       "창세기 3:17-19"
@@ -776,7 +776,7 @@
     "id": "luke",
     "word": "누가",
     "definition": "바울과 함께 여행했으며 복음서와 사도행전의 기록자로 알려진 의사",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "골로새서 4:14",
       "누가복음 1:1-4"
@@ -786,7 +786,7 @@
     "id": "leaven",
     "word": "누룩",
     "definition": "반죽에 발효를 일으키는 물질로 성경에서 죄와 부패의 상징으로 자주 사용됨",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 12:15",
       "누가 13:21"

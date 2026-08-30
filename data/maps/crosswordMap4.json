@@ -1,110 +1,110 @@
 {
-  "id": "crossword-map-160",
+  "id": "crossword-map-004",
   "title": "E-4",
   "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####멤피스#",
-    "######바벨",
-    "######냐#",
-    "####미가서#",
-    "##가데스###",
-    "병#브#바빌론#",
-    "거머리#####",
-    "##엘#####"
+    "####학###",
+    "###무교절축제",
+    "귀##화#구#물",
+    "뚜#사과####",
+    "라#무#####",
+    "미가엘#####",
+    "#나######",
+    "#안######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "멤피스",
-      "direction": "across",
+      "answer": "학교",
+      "direction": "down",
       "row": 0,
       "col": 4,
-      "length": 3,
-      "wordId": "memphis"
+      "length": 2,
+      "wordId": "school"
     },
     {
       "number": 2,
-      "answer": "스바냐서",
-      "direction": "down",
-      "row": 0,
-      "col": 6,
-      "length": 4,
-      "wordId": "entry-스바냐서"
+      "answer": "무교절축제",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-무교절 축제"
     },
     {
       "number": 3,
-      "answer": "바벨",
-      "direction": "across",
+      "answer": "무화과",
+      "direction": "down",
       "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "babel"
+      "col": 3,
+      "length": 3,
+      "wordId": "fig"
     },
     {
       "number": 4,
-      "answer": "미가서",
-      "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 3,
-      "wordId": "entry-미가서"
+      "answer": "절구",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 2,
+      "wordId": "entry-절구"
     },
     {
       "number": 5,
-      "answer": "미스바",
+      "answer": "제물",
       "direction": "down",
-      "row": 3,
-      "col": 4,
-      "length": 3,
-      "wordId": "mizpah"
+      "row": 1,
+      "col": 7,
+      "length": 2,
+      "wordId": "offerings"
     },
     {
       "number": 6,
-      "answer": "가데스",
-      "direction": "across",
-      "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "kadesh"
+      "answer": "귀뚜라미",
+      "direction": "down",
+      "row": 2,
+      "col": 0,
+      "length": 4,
+      "wordId": "cricket"
     },
     {
       "number": 7,
-      "answer": "가브리엘",
-      "direction": "down",
-      "row": 4,
+      "answer": "사과",
+      "direction": "across",
+      "row": 3,
       "col": 2,
-      "length": 4,
-      "wordId": "gabriel"
+      "length": 2,
+      "wordId": "apple"
     },
     {
       "number": 8,
-      "answer": "병거",
+      "answer": "사무엘",
       "direction": "down",
-      "row": 5,
-      "col": 0,
-      "length": 2,
-      "wordId": "chariot"
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "samuel"
     },
     {
       "number": 9,
-      "answer": "바빌론",
+      "answer": "미가엘",
       "direction": "across",
       "row": 5,
-      "col": 4,
+      "col": 0,
       "length": 3,
-      "wordId": "babylon"
+      "wordId": "michael"
     },
     {
       "number": 10,
-      "answer": "거머리",
-      "direction": "across",
-      "row": 6,
-      "col": 0,
+      "answer": "가나안",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
       "length": 3,
-      "wordId": "leech"
+      "wordId": "canaan"
     }
   ]
 }

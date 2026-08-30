@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-164",
-  "title": "E-8",
-  "difficulty": 1,
-  "width": 8,
-  "height": 8,
+  "id": "crossword-map-014",
+  "title": "N-4",
+  "difficulty": 1.9,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####제###",
-    "##감독자#종#",
-    "###수#면류관",
-    "##그리스도##",
-    "##리##칼##",
-    "그리스어####",
-    "##도#####",
-    "#카인#####"
+    "##드#######",
+    "#화로#######",
+    "##비#######",
+    "##모세######",
+    "###군######",
+    "###도마#하길라#",
+    "####하우란#부대",
+    "##밀#나#####",
+    "그데로다임#####",
+    "룹##윗######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "제자",
+      "answer": "드로비모",
       "direction": "down",
       "row": 0,
-      "col": 4,
-      "length": 2,
-      "wordId": "disciple"
+      "col": 2,
+      "length": 4,
+      "wordId": "trophimus"
     },
     {
       "number": 2,
-      "answer": "감독자",
+      "answer": "화로",
       "direction": "across",
       "row": 1,
-      "col": 2,
-      "length": 3,
-      "wordId": "overseer"
+      "col": 1,
+      "length": 2,
+      "wordId": "brazier"
     },
     {
       "number": 3,
-      "answer": "독수리",
-      "direction": "down",
-      "row": 1,
-      "col": 3,
-      "length": 3,
-      "wordId": "eagle"
+      "answer": "모세",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 2,
+      "wordId": "moses"
     },
     {
       "number": 4,
-      "answer": "종류",
+      "answer": "세군도",
       "direction": "down",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "kind"
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "secundus"
     },
     {
       "number": 5,
-      "answer": "면류관",
+      "answer": "도마",
       "direction": "across",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "crown"
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "thomas"
     },
     {
       "number": 6,
-      "answer": "면도칼",
+      "answer": "마하나임",
       "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "razor"
+      "row": 5,
+      "col": 4,
+      "length": 4,
+      "wordId": "mahanaim"
     },
     {
       "number": 7,
-      "answer": "그리스도",
-      "direction": "across",
-      "row": 3,
-      "col": 2,
-      "length": 4,
-      "wordId": "christ"
+      "answer": "하란",
+      "direction": "down",
+      "row": 5,
+      "col": 6,
+      "length": 2,
+      "wordId": "haran"
     },
     {
       "number": 8,
-      "answer": "그리스도인",
-      "direction": "down",
-      "row": 3,
-      "col": 2,
-      "length": 5,
-      "wordId": "christian"
+      "answer": "하길라",
+      "direction": "across",
+      "row": 5,
+      "col": 6,
+      "length": 3,
+      "wordId": "hachilah"
     },
     {
       "number": 9,
-      "answer": "그리스어",
-      "direction": "across",
+      "answer": "라부",
+      "direction": "down",
       "row": 5,
-      "col": 0,
-      "length": 4,
-      "wordId": "greek"
+      "col": 8,
+      "length": 2,
+      "wordId": "raphu"
     },
     {
       "number": 10,
-      "answer": "카인",
+      "answer": "하우란",
       "direction": "across",
-      "row": 7,
-      "col": 1,
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "hauran"
+    },
+    {
+      "number": 11,
+      "answer": "부대",
+      "direction": "across",
+      "row": 6,
+      "col": 8,
       "length": 2,
-      "wordId": "cain"
+      "wordId": "bottle"
+    },
+    {
+      "number": 12,
+      "answer": "밀로",
+      "direction": "down",
+      "row": 7,
+      "col": 2,
+      "length": 2,
+      "wordId": "millo"
+    },
+    {
+      "number": 13,
+      "answer": "그데로다임",
+      "direction": "across",
+      "row": 8,
+      "col": 0,
+      "length": 5,
+      "wordId": "gederothaim"
+    },
+    {
+      "number": 14,
+      "answer": "그룹",
+      "direction": "down",
+      "row": 8,
+      "col": 0,
+      "length": 2,
+      "wordId": "cherub"
+    },
+    {
+      "number": 15,
+      "answer": "다윗",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 2,
+      "wordId": "david"
     }
   ]
 }

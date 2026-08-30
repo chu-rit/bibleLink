@@ -1,204 +1,110 @@
 {
   "id": "crossword-map-009",
-  "title": "H-1",
-  "difficulty": 2.6,
-  "width": 12,
-  "height": 12,
+  "title": "E-9",
+  "difficulty": 1.1,
+  "width": 8,
+  "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#########가#바",
-    "#########세에라",
-    "#######막비스##",
-    "########디###",
-    "####글라우디아###",
-    "##드##아######",
-    "보그루#나다나엘####",
-    "##실로암#비#####",
-    "니골라##구스#####",
-    "#호##########",
-    "#세산#가#######",
-    "##호로나임######"
+    "######후르",
+    "####갈빗대#",
+    "###호렙###",
+    "###세####",
+    "#마노아####",
+    "편지######",
+    "#막게다####",
+    "#때######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "가세스",
+      "answer": "후대",
       "direction": "down",
       "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "gases"
+      "col": 6,
+      "length": 2,
+      "wordId": "hospitality"
     },
     {
       "number": 2,
-      "answer": "바라",
-      "direction": "down",
+      "answer": "후르",
+      "direction": "across",
       "row": 0,
-      "col": 11,
+      "col": 6,
       "length": 2,
-      "wordId": "parah"
+      "wordId": "hur"
     },
     {
       "number": 3,
-      "answer": "세에라",
+      "answer": "갈빗대",
       "direction": "across",
       "row": 1,
-      "col": 9,
+      "col": 4,
       "length": 3,
-      "wordId": "sheerah"
+      "wordId": "rib"
     },
     {
       "number": 4,
-      "answer": "막비스",
-      "direction": "across",
-      "row": 2,
-      "col": 7,
-      "length": 3,
-      "wordId": "magbish"
+      "answer": "갈렙",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 2,
+      "wordId": "caleb"
     },
     {
       "number": 5,
-      "answer": "비디아",
-      "direction": "down",
+      "answer": "호렙",
+      "direction": "across",
       "row": 2,
-      "col": 8,
-      "length": 3,
-      "wordId": "bithiah"
+      "col": 3,
+      "length": 2,
+      "wordId": "horeb"
     },
     {
       "number": 6,
-      "answer": "글라우디아",
-      "direction": "across",
-      "row": 4,
-      "col": 4,
-      "length": 5,
-      "wordId": "claudia"
+      "answer": "호세아",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "hosea"
     },
     {
       "number": 7,
-      "answer": "라아다",
-      "direction": "down",
+      "answer": "마노아",
+      "direction": "across",
       "row": 4,
-      "col": 5,
+      "col": 1,
       "length": 3,
-      "wordId": "laadah"
+      "wordId": "manoah"
     },
     {
       "number": 8,
-      "answer": "드루실라",
+      "answer": "마지막때",
       "direction": "down",
-      "row": 5,
-      "col": 2,
+      "row": 4,
+      "col": 1,
       "length": 4,
-      "wordId": "drusilla"
+      "wordId": "entry-마지막 때"
     },
     {
       "number": 9,
-      "answer": "보그루",
+      "answer": "편지",
       "direction": "across",
-      "row": 6,
+      "row": 5,
       "col": 0,
-      "length": 3,
-      "wordId": "bocheru"
+      "length": 2,
+      "wordId": "letters"
     },
     {
       "number": 10,
-      "answer": "나암",
-      "direction": "down",
-      "row": 6,
-      "col": 4,
-      "length": 2,
-      "wordId": "naam"
-    },
-    {
-      "number": 11,
-      "answer": "나다나엘",
+      "answer": "막게다",
       "direction": "across",
       "row": 6,
-      "col": 4,
-      "length": 4,
-      "wordId": "nathanael"
-    },
-    {
-      "number": 12,
-      "answer": "나비스",
-      "direction": "down",
-      "row": 6,
-      "col": 6,
-      "length": 3,
-      "wordId": "naphish"
-    },
-    {
-      "number": 13,
-      "answer": "실로암",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "siloam"
-    },
-    {
-      "number": 14,
-      "answer": "니골라",
-      "direction": "across",
-      "row": 8,
-      "col": 0,
-      "length": 3,
-      "wordId": "nicolaus"
-    },
-    {
-      "number": 15,
-      "answer": "골호세",
-      "direction": "down",
-      "row": 8,
       "col": 1,
       "length": 3,
-      "wordId": "colhozeh"
-    },
-    {
-      "number": 16,
-      "answer": "구스",
-      "direction": "across",
-      "row": 8,
-      "col": 5,
-      "length": 2,
-      "wordId": "cush"
-    },
-    {
-      "number": 17,
-      "answer": "세산",
-      "direction": "across",
-      "row": 10,
-      "col": 1,
-      "length": 2,
-      "wordId": "sheshan"
-    },
-    {
-      "number": 18,
-      "answer": "산호",
-      "direction": "down",
-      "row": 10,
-      "col": 2,
-      "length": 2,
-      "wordId": "coral"
-    },
-    {
-      "number": 19,
-      "answer": "가나",
-      "direction": "down",
-      "row": 10,
-      "col": 4,
-      "length": 2,
-      "wordId": "cana"
-    },
-    {
-      "number": 20,
-      "answer": "호로나임",
-      "direction": "across",
-      "row": 11,
-      "col": 2,
-      "length": 4,
-      "wordId": "horonaim"
+      "wordId": "makkedah"
     }
   ]
 }

@@ -1,157 +1,157 @@
 {
-  "id": "crossword-map-113",
-  "title": "N-6",
+  "id": "crossword-map-018",
+  "title": "N-8",
   "difficulty": 2.2,
   "width": 10,
   "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###마하시옷##레",
-    "###르#삭###기",
-    "##각다귀#부드러움",
-    "####고모라###",
-    "#푸테올리#####",
-    "###리######",
-    "묵##브엘#####",
-    "상속재산######",
-    "#죄########",
-    "#일########"
+    "####비라돈###",
+    "####하#####",
+    "하가바#히스기야##",
+    "##니므롯#둥###",
+    "######머###",
+    "###바알살리사#스",
+    "###느###아굴라",
+    "###질#사아난#야",
+    "#####냥#님##",
+    "####빌개####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "마하시옷",
+      "answer": "비라돈",
       "direction": "across",
       "row": 0,
-      "col": 3,
-      "length": 4,
-      "wordId": "mahazioth"
+      "col": 4,
+      "length": 3,
+      "wordId": "pirathon"
     },
     {
       "number": 2,
-      "answer": "마르다",
+      "answer": "비하히롯",
       "direction": "down",
       "row": 0,
-      "col": 3,
-      "length": 3,
-      "wordId": "martha"
+      "col": 4,
+      "length": 4,
+      "wordId": "pihahiroth"
     },
     {
       "number": 3,
-      "answer": "시삭",
-      "direction": "down",
-      "row": 0,
-      "col": 5,
-      "length": 2,
-      "wordId": "shishak"
+      "answer": "하가바",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "hagabah"
     },
     {
       "number": 4,
-      "answer": "레기움",
+      "answer": "바니",
       "direction": "down",
-      "row": 0,
-      "col": 9,
-      "length": 3,
-      "wordId": "rhegium"
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "bani"
     },
     {
       "number": 5,
-      "answer": "각다귀",
+      "answer": "히스기야",
       "direction": "across",
       "row": 2,
-      "col": 2,
-      "length": 3,
-      "wordId": "gnat"
+      "col": 4,
+      "length": 4,
+      "wordId": "hezekiah"
     },
     {
       "number": 6,
-      "answer": "귀고리",
+      "answer": "기둥머리",
       "direction": "down",
       "row": 2,
-      "col": 4,
-      "length": 3,
-      "wordId": "earring"
+      "col": 6,
+      "length": 4,
+      "wordId": "capital"
     },
     {
       "number": 7,
-      "answer": "부라",
-      "direction": "down",
-      "row": 2,
-      "col": 6,
-      "length": 2,
-      "wordId": "purah"
+      "answer": "니므롯",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "nimrod"
     },
     {
       "number": 8,
-      "answer": "부드러움",
+      "answer": "바알살리사",
       "direction": "across",
-      "row": 2,
-      "col": 6,
-      "length": 4,
-      "wordId": "gentleness"
+      "row": 5,
+      "col": 3,
+      "length": 5,
+      "wordId": "entry-바알-살리사"
     },
     {
       "number": 9,
-      "answer": "고모라",
-      "direction": "across",
-      "row": 3,
-      "col": 4,
+      "answer": "바느질",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
       "length": 3,
-      "wordId": "gomorrah"
+      "wordId": "sewing"
     },
     {
       "number": 10,
-      "answer": "푸테올리",
-      "direction": "across",
-      "row": 4,
-      "col": 1,
+      "answer": "사아난님",
+      "direction": "down",
+      "row": 5,
+      "col": 7,
       "length": 4,
-      "wordId": "puteoli"
+      "wordId": "zaanannim"
     },
     {
       "number": 11,
-      "answer": "올리브산",
+      "answer": "스라야",
       "direction": "down",
-      "row": 4,
-      "col": 3,
-      "length": 4,
-      "wordId": "olivesmount"
+      "row": 5,
+      "col": 9,
+      "length": 3,
+      "wordId": "seraiah"
     },
     {
       "number": 12,
-      "answer": "묵상",
-      "direction": "down",
+      "answer": "아굴라",
+      "direction": "across",
       "row": 6,
-      "col": 0,
-      "length": 2,
-      "wordId": "meditation"
+      "col": 7,
+      "length": 3,
+      "wordId": "aquila"
     },
     {
       "number": 13,
-      "answer": "브엘",
+      "answer": "사아난",
       "direction": "across",
-      "row": 6,
-      "col": 3,
-      "length": 2,
-      "wordId": "entry-브엘"
+      "row": 7,
+      "col": 5,
+      "length": 3,
+      "wordId": "zaanan"
     },
     {
       "number": 14,
-      "answer": "상속재산",
-      "direction": "across",
+      "answer": "사냥개",
+      "direction": "down",
       "row": 7,
-      "col": 0,
-      "length": 4,
-      "wordId": "inheritance"
+      "col": 5,
+      "length": 3,
+      "wordId": "greyhound"
     },
     {
       "number": 15,
-      "answer": "속죄일",
-      "direction": "down",
-      "row": 7,
-      "col": 1,
-      "length": 3,
-      "wordId": "dayofatonement"
+      "answer": "빌개",
+      "direction": "across",
+      "row": 9,
+      "col": 4,
+      "length": 2,
+      "wordId": "bilgai"
     }
   ]
 }

@@ -1,157 +1,110 @@
 {
-  "id": "crossword-map-153",
-  "title": "N-2",
-  "difficulty": 2,
-  "width": 10,
-  "height": 10,
+  "id": "crossword-map-006",
+  "title": "E-6",
+  "difficulty": 1.1,
+  "width": 8,
+  "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########세#",
-    "#######바르낙",
-    "#####보라다##",
-    "####장관####",
-    "###성막#####",
-    "##성전######",
-    "###대######",
-    "용#화장품#####",
-    "서기관#######",
-    "#돔########"
+    "###납####",
+    "###달###멧",
+    "#사마리아##돼",
+    "#다##가마우지",
+    "갈리오#####",
+    "매#######",
+    "기도######",
+    "#시######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "세르",
+      "answer": "납달리",
       "direction": "down",
       "row": 0,
-      "col": 8,
-      "length": 2,
-      "wordId": "zer"
+      "col": 3,
+      "length": 3,
+      "wordId": "naphtali"
     },
     {
       "number": 2,
-      "answer": "바다",
+      "answer": "멧돼지",
       "direction": "down",
       "row": 1,
       "col": 7,
-      "length": 2,
-      "wordId": "sea"
+      "length": 3,
+      "wordId": "boar"
     },
     {
       "number": 3,
-      "answer": "바르낙",
-      "direction": "across",
-      "row": 1,
-      "col": 7,
+      "answer": "사다리",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
       "length": 3,
-      "wordId": "parnach"
+      "wordId": "ladder"
     },
     {
       "number": 4,
-      "answer": "보관",
-      "direction": "down",
+      "answer": "사마리아",
+      "direction": "across",
       "row": 2,
-      "col": 5,
-      "length": 2,
-      "wordId": "custody"
+      "col": 1,
+      "length": 4,
+      "wordId": "samaria"
     },
     {
       "number": 5,
-      "answer": "보라다",
-      "direction": "across",
+      "answer": "아가",
+      "direction": "down",
       "row": 2,
-      "col": 5,
-      "length": 3,
-      "wordId": "poratha"
+      "col": 4,
+      "length": 2,
+      "wordId": "songofsongs"
     },
     {
       "number": 6,
-      "answer": "장막",
-      "direction": "down",
+      "answer": "가마우지",
+      "direction": "across",
       "row": 3,
       "col": 4,
-      "length": 2,
-      "wordId": "tabernacletent"
+      "length": 4,
+      "wordId": "cormorant"
     },
     {
       "number": 7,
-      "answer": "장관",
+      "answer": "갈리오",
       "direction": "across",
-      "row": 3,
-      "col": 4,
-      "length": 2,
-      "wordId": "prefect"
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "gallio"
     },
     {
       "number": 8,
-      "answer": "성전대장",
+      "answer": "갈매기",
       "direction": "down",
       "row": 4,
-      "col": 3,
-      "length": 4,
-      "wordId": "entry-성전 대장"
+      "col": 0,
+      "length": 3,
+      "wordId": "gull"
     },
     {
       "number": 9,
-      "answer": "성막",
+      "answer": "기도",
       "direction": "across",
-      "row": 4,
-      "col": 3,
+      "row": 6,
+      "col": 0,
       "length": 2,
-      "wordId": "tabernacle"
+      "wordId": "prayer"
     },
     {
       "number": 10,
-      "answer": "성전",
-      "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 2,
-      "wordId": "temple"
-    },
-    {
-      "number": 11,
-      "answer": "용서",
+      "answer": "도시",
       "direction": "down",
-      "row": 7,
-      "col": 0,
-      "length": 2,
-      "wordId": "forgiveness"
-    },
-    {
-      "number": 12,
-      "answer": "화장품",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "cosmetics"
-    },
-    {
-      "number": 13,
-      "answer": "화관",
-      "direction": "down",
-      "row": 7,
-      "col": 2,
-      "length": 2,
-      "wordId": "garland"
-    },
-    {
-      "number": 14,
-      "answer": "서기관",
-      "direction": "across",
-      "row": 8,
-      "col": 0,
-      "length": 3,
-      "wordId": "scribes"
-    },
-    {
-      "number": 15,
-      "answer": "기돔",
-      "direction": "down",
-      "row": 8,
+      "row": 6,
       "col": 1,
       "length": 2,
-      "wordId": "gidom"
+      "wordId": "city"
     }
   ]
 }

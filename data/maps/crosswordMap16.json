@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-166",
-  "title": "E-10",
-  "difficulty": 1.1,
-  "width": 8,
-  "height": 8,
+  "id": "crossword-map-016",
+  "title": "N-6",
+  "difficulty": 2.2,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#######학",
-    "#####모#개",
-    "####호세아서",
-    "######브#",
-    "######라마",
-    "####거룩함#",
-    "##유대인###",
-    "풍자향#####"
+    "#########마",
+    "#######머#아",
+    "##마###브리스가",
+    "##드#####토#",
+    "나사렛##티베리아스",
+    "오#####냐#파#",
+    "미그론#미냐민###",
+    "#리##사#####",
+    "#스알디엘#####",
+    "#보#도######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "학개서",
+      "answer": "마아가",
       "direction": "down",
       "row": 0,
-      "col": 7,
+      "col": 9,
       "length": 3,
-      "wordId": "entry-학개서"
+      "wordId": "maacah"
     },
     {
       "number": 2,
-      "answer": "모세",
+      "answer": "머리",
       "direction": "down",
       "row": 1,
-      "col": 5,
+      "col": 7,
       "length": 2,
-      "wordId": "moses"
+      "wordId": "head"
     },
     {
       "number": 3,
-      "answer": "호세아서",
-      "direction": "across",
+      "answer": "마드렛",
+      "direction": "down",
       "row": 2,
-      "col": 4,
-      "length": 4,
-      "wordId": "entry-호세아서"
+      "col": 2,
+      "length": 3,
+      "wordId": "matred"
     },
     {
       "number": 4,
-      "answer": "아브라함",
-      "direction": "down",
+      "answer": "브리스가",
+      "direction": "across",
       "row": 2,
       "col": 6,
       "length": 4,
-      "wordId": "abraham"
+      "wordId": "prisca"
     },
     {
       "number": 5,
-      "answer": "라마",
-      "direction": "across",
-      "row": 4,
-      "col": 6,
-      "length": 2,
-      "wordId": "ramah"
+      "answer": "스토아파",
+      "direction": "down",
+      "row": 2,
+      "col": 8,
+      "length": 4,
+      "wordId": "stoics"
     },
     {
       "number": 6,
-      "answer": "거룩함",
-      "direction": "across",
-      "row": 5,
-      "col": 4,
+      "answer": "나오미",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
       "length": 3,
-      "wordId": "holiness"
+      "wordId": "naomi"
     },
     {
       "number": 7,
-      "answer": "거인",
-      "direction": "down",
-      "row": 5,
-      "col": 4,
-      "length": 2,
-      "wordId": "giant"
+      "answer": "나사렛",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "nazareth"
     },
     {
       "number": 8,
-      "answer": "유대인",
+      "answer": "티베리아스",
       "direction": "across",
-      "row": 6,
-      "col": 2,
-      "length": 3,
-      "wordId": "jews"
+      "row": 4,
+      "col": 5,
+      "length": 5,
+      "wordId": "tiberias"
     },
     {
       "number": 9,
-      "answer": "유향",
+      "answer": "베냐민",
       "direction": "down",
-      "row": 6,
-      "col": 2,
-      "length": 2,
-      "wordId": "frankincense"
+      "row": 4,
+      "col": 6,
+      "length": 3,
+      "wordId": "benjamin"
     },
     {
       "number": 10,
-      "answer": "풍자향",
+      "answer": "미그론",
       "direction": "across",
-      "row": 7,
+      "row": 6,
       "col": 0,
       "length": 3,
-      "wordId": "galbanum"
+      "wordId": "migron"
+    },
+    {
+      "number": 11,
+      "answer": "그리스보",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
+      "length": 4,
+      "wordId": "crispus"
+    },
+    {
+      "number": 12,
+      "answer": "미냐민",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "miniamin"
+    },
+    {
+      "number": 13,
+      "answer": "미사엘",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "mishael"
+    },
+    {
+      "number": 14,
+      "answer": "스알디엘",
+      "direction": "across",
+      "row": 8,
+      "col": 1,
+      "length": 4,
+      "wordId": "shealtiel"
+    },
+    {
+      "number": 15,
+      "answer": "디도",
+      "direction": "down",
+      "row": 8,
+      "col": 3,
+      "length": 2,
+      "wordId": "titus"
     }
   ]
 }

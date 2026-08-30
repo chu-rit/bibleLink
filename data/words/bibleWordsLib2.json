@@ -403,7 +403,7 @@
     "id": "adultery",
     "word": "간음",
     "definition": "결혼한 사람이 배우자가 아닌 이성과 자발적으로 성 관계를 갖는 것으로 율법이 금한 행위",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "출애굽기 20:14",
       "마태 5:27, 28"
@@ -442,7 +442,7 @@
     "id": "carchemish",
     "word": "갈그미스",
     "definition": "유프라테스 강 상류에 있던 중요한 무역 중심지로 바빌론과 이집트 군대가 전투를 벌인 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "예레미야 46:2",
       "역대기하 35:20-24"
@@ -482,7 +482,7 @@
     "id": "caleb",
     "word": "갈렙",
     "definition": "약속의 땅을 정탐한 뒤 믿음으로 좋은 보고를 한 사람",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "민수기 13:6, 30",
       "여호수아 14:6-13"
@@ -713,7 +713,7 @@
     "id": "spelt",
     "word": "개밀",
     "definition": "질이 낮은 밀로 이집트에서 재배되었고 밭의 경계 울타리로도 심어진 곡물",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "출애굽기 9:32",
       "에스겔 4:9"
@@ -799,7 +799,7 @@
     "id": "gennesaret",
     "word": "게네사렛",
     "definition": "갈릴리 바다 북서쪽 연안의 비옥한 평야로 예수께서 기적으로 병을 고치신 지역",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "마태 14:34-36",
       "마가 6:53-56"
@@ -859,7 +859,7 @@
     "id": "gershon",
     "word": "게르손",
     "definition": "레위의 세 아들 가운데 첫째로 레위인 가운데 한 가문의 조상이 된 사람",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "출애굽기 6:16",
       "민수기 3:17, 21"
@@ -1012,7 +1012,7 @@
     "id": "lattice",
     "word": "격자창",
     "definition": "나무오리를 교차시켜 그물 모양으로 만든 것으로 창문을 가리는 데 사용된 물건",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "잠언 7:6"
     ]
@@ -1079,7 +1079,7 @@
     "id": "revelation",
     "word": "계시",
     "definition": "하느님이 자신의 뜻이나 목적을 사람에게 알려 주시는 것",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "다니엘 2:28",
       "갈라디아서 1:11, 12"
@@ -1166,7 +1166,7 @@
     "id": "corinth",
     "word": "고린도",
     "definition": "바울이 회중을 세우고 편지를 보낸 고대 그리스의 도시",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사도행전 18:1-11"
     ]
@@ -1185,7 +1185,7 @@
     "id": "gomorrah",
     "word": "고모라",
     "definition": "사해 남단 근처에 있던 도시로 소돔과 함께 여호와의 심판으로 멸망한 곳",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "창세기 13:10, 12",
       "창세기 19:24, 28"
@@ -1195,7 +1195,7 @@
     "id": "gozan",
     "word": "고산",
     "definition": "아시리아 사람들에게 정복된 이스라엘 사람들이 끌려간 강 유역의 지역",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "열왕기하 17:6",
       "열왕기하 18:11"
@@ -1205,7 +1205,7 @@
     "id": "cosam",
     "word": "고삼",
     "definition": "다윗의 아들 나단의 자손으로 예수의 어머니 마리아의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "누가 3:28"
     ]
@@ -1253,7 +1253,7 @@
     "id": "kohath",
     "word": "고핫",
     "definition": "레위의 둘째 아들로 아므람·이스할·헤브론·웃시엘의 아버지이자 레위인 한 가문의 조상",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "창세기 46:11",
       "출애굽기 6:16, 18"
@@ -1263,7 +1263,7 @@
     "id": "golgotha",
     "word": "골고타",
     "definition": "예수가 처형된 장소로, 해골터라는 뜻을 가진 곳",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "요한복음 19:16-18"
     ]
@@ -1272,7 +1272,7 @@
     "id": "golan",
     "word": "골란",
     "definition": "므낫세 영토에 있던 바산의 도시로 도피 도시로 선정되고 레위인 도시가 된 곳",
-    "difficulty": 1,
+    "difficulty": 2,
     "references": [
       "신명기 4:41-43",
       "여호수아 20:2, 8"
@@ -1350,7 +1350,7 @@
     "id": "generosity",
     "word": "관대함",
     "definition": "자신이 가진 것을 아낌없이 나누고 다른 사람을 너그럽게 대하는 태도",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "고린도 후서 9:7; 디모데 전서 6:18"
     ]
@@ -1428,7 +1428,7 @@
     "id": "maggot",
     "word": "구더기",
     "definition": "알에서 부화된 지 얼마 안 된 유충으로 썩어 가는 물질에서 발견되는 파리의 애벌레",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "욥기 7:5, 17:14",
       "이사야 14:11"
@@ -1563,7 +1563,7 @@
     "id": "earring",
     "word": "귀고리",
     "definition": "장식용으로 귀에 다는 고리나 기타 장식품으로 코고리에도 쓰인 히브리어 단어와 관련된 물건",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 11:22",
       "출애굽기 32:2"
@@ -1573,7 +1573,7 @@
     "id": "cricket",
     "word": "귀뚜라미",
     "definition": "방아깨비와 유연관계가 있는 뛰는 곤충으로 레위기에서 정한 새로 식용이 허용된 곤충",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "레위기 11:22"
     ]
@@ -1915,7 +1915,7 @@
     "id": "industriousness",
     "word": "근면",
     "definition": "꾸준하고 끈기 있게 활동하는 것으로 게으름의 반대되는 성경적 덕목",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "잠언 10:4, 12:24",
       "골로새서 1:29"
@@ -2134,7 +2134,7 @@
     "id": "gideon",
     "word": "기드온",
     "definition": "적은 수의 군사로 미디안 군대를 물리친 이스라엘의 재판관",
-    "difficulty": 2,
+    "difficulty": 1,
     "references": [
       "사사기 6-7장"
     ]
@@ -2373,7 +2373,7 @@
     "id": "gilead",
     "word": "길르앗",
     "definition": "요르단 강 동쪽에 위치하며 목초지로 알려진 지역",
-    "difficulty": 3,
+    "difficulty": 2,
     "references": [
       "민수기 32:1-5; 예레미야 8:22"
     ]

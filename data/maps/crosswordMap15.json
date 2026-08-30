@@ -1,110 +1,157 @@
 {
-  "id": "crossword-map-165",
-  "title": "E-9",
-  "difficulty": 1,
-  "width": 8,
-  "height": 8,
+  "id": "crossword-map-015",
+  "title": "N-5",
+  "difficulty": 1.9,
+  "width": 10,
+  "height": 10,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "#####갈매기",
-    "###번#릴#쁨",
-    "###개구리##",
-    "####덩###",
-    "##달팽이###",
-    "##란#####",
-    "이집트#####",
-    "삭#######"
+    "#######아비야",
+    "######라합#렛",
+    "#####마핫###",
+    "#####리####",
+    "####지아####",
+    "##안디옥#####",
+    "미#드#######",
+    "카멜레온######",
+    "#레########",
+    "상아########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "갈릴리",
-      "direction": "down",
-      "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "galilee"
-    },
-    {
-      "number": 2,
-      "answer": "갈매기",
-      "direction": "across",
-      "row": 0,
-      "col": 5,
-      "length": 3,
-      "wordId": "gull"
-    },
-    {
-      "number": 3,
-      "answer": "기쁨",
+      "answer": "아합",
       "direction": "down",
       "row": 0,
       "col": 7,
       "length": 2,
-      "wordId": "joy"
+      "wordId": "ahab"
+    },
+    {
+      "number": 2,
+      "answer": "아비야",
+      "direction": "across",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "abijah"
+    },
+    {
+      "number": 3,
+      "answer": "야렛",
+      "direction": "down",
+      "row": 0,
+      "col": 9,
+      "length": 2,
+      "wordId": "jared"
     },
     {
       "number": 4,
-      "answer": "번개",
+      "answer": "라핫",
       "direction": "down",
       "row": 1,
-      "col": 3,
+      "col": 6,
       "length": 2,
-      "wordId": "lightning"
+      "wordId": "lahad"
     },
     {
       "number": 5,
-      "answer": "개구리",
+      "answer": "라합",
       "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "frog"
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "rahab"
     },
     {
       "number": 6,
-      "answer": "구덩이",
+      "answer": "마리아",
       "direction": "down",
       "row": 2,
-      "col": 4,
+      "col": 5,
       "length": 3,
-      "wordId": "pit"
+      "wordId": "mary"
     },
     {
       "number": 7,
-      "answer": "달란트",
-      "direction": "down",
-      "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "talent"
+      "answer": "마핫",
+      "direction": "across",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "mahath"
     },
     {
       "number": 8,
-      "answer": "달팽이",
-      "direction": "across",
+      "answer": "지옥",
+      "direction": "down",
       "row": 4,
-      "col": 2,
-      "length": 3,
-      "wordId": "snail"
+      "col": 4,
+      "length": 2,
+      "wordId": "hell"
     },
     {
       "number": 9,
-      "answer": "이집트",
+      "answer": "지아",
       "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 3,
-      "wordId": "egypt"
+      "row": 4,
+      "col": 4,
+      "length": 2,
+      "wordId": "zia"
     },
     {
       "number": 10,
-      "answer": "이삭",
+      "answer": "안드레",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "andrew"
+    },
+    {
+      "number": 11,
+      "answer": "안디옥",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "antioch"
+    },
+    {
+      "number": 12,
+      "answer": "미카",
       "direction": "down",
       "row": 6,
       "col": 0,
       "length": 2,
-      "wordId": "isaac"
+      "wordId": "mica"
+    },
+    {
+      "number": 13,
+      "answer": "카멜레온",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "chameleon"
+    },
+    {
+      "number": 14,
+      "answer": "멜레아",
+      "direction": "down",
+      "row": 7,
+      "col": 1,
+      "length": 3,
+      "wordId": "melea"
+    },
+    {
+      "number": 15,
+      "answer": "상아",
+      "direction": "across",
+      "row": 9,
+      "col": 0,
+      "length": 2,
+      "wordId": "ivory"
     }
   ]
 }
