@@ -273,5 +273,5 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#fff', fontSize: 15, fontWeight: '800' },
   closeButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#53708d', fontSize: 15, fontWeight: '800' },
-  adContainer: { alignItems: 'center', height: 50, marginTop: 4 },
+  adContainer: { alignItems: 'center', height: 50, marginTop: 4, marginBottom: 12 },
 });
