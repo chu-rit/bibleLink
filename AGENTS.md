@@ -1,133 +1,53 @@
 # Bible Link - AI 코딩 규칙
 
-## 프로젝트 개요
-- Expo 기반 React Native 성경 단어 퍼즐 게임 "Bible Link"
-- 패키지 매니저: npm
-- 언어: JavaScript (TypeScript 아님)
-- 현재 앱 진입점: `App.js`
-- 퍼즐 데이터: `data/crosswordMap1.json`
+## 절대 규칙
+- **`data/bibleWordsLib1.json`을 직접 편집하지 않는다.** 모든 단어 수정은 해당 초성의 Lib2~Lib15 원본 파일에서 수행한 뒤 `npm run merge:lib1`으로 갱신한다. Lib1을 직접 수정하면 다음 병합 시 사라진다.
+- Web, iOS, Android 모두에서 동작하는지 먼저 검토한다.
+- 추측하지 않는다. 확신이 없으면 관련 파일을 먼저 읽는다. 파일 확인은 `read`/`grep` 도구를 사용하며 Node 명령어로 읽지 않는다.
+- 요청하지 않은 commit, push, 배포, 빌드, 개발 서버 시작은 하지 않는다.
 
-## 중요 규칙
-- 코드를 작성하기 전에 Web, iOS, Android 모두에서 정상 동작할지 검토한다.
-- 프로젝트 구조나 로직을 추측하지 않는다.
-- 확신할 수 없는 경우 관련 파일을 먼저 읽고 판단한다.
-- 파일 내용 확인은 `read`와 `grep` 등 직접 파일 도구를 사용하며, Node 명령어로 파일을 읽지 않는다.
-- 기존 구현 의도를 임의로 변경하지 않는다.
-- 현재 저장소의 실제 Expo, React Native 버전을 기준으로 작업한다.
-- SDK 업그레이드는 요청받은 경우에만 검토한다.
+## 프로젝트 개요
+- Expo 기반 React Native 성경 단어 퍼즐 게임. JavaScript, npm.
+- 진입점: `App.js`, 맵 선택: `screens/MapSelectScreen.js`
+- 데이터: `data/words/`(단어), `data/maps/`(맵), `data/crosswordMaps.js`(맵 목록)
+- 스크립트: `scripts/mergeLib1.js`, `scripts/generateMap.js`, `scripts/validateMaps.js`
+- 배포: `.github/workflows/deploy-pages.yml` (GitHub Pages, base URL `/bibleLink`)
 
 ## 코드 수정 원칙
-- 요청한 기능과 관련 없는 파일은 수정하지 않는다.
-- 기존 로직을 불필요하게 리팩토링하지 않는다.
-- 동작하는 코드를 임의로 개선하지 않는다.
-- 최소한의 변경으로 문제를 해결한다.
-- 기존 변수명, 함수명, 파일 구조를 유지한다.
-- 새 파일이나 의존성은 반드시 필요한 경우에만 추가한다.
-- 기존 주석은 유지하고, 요청이 없는 한 주석을 추가하거나 삭제하지 않는다.
-
-## React Native 규칙
-- React Native APP 호환성을 항상 우선 고려한다.
-- `Platform.OS` 분기는 반드시 필요한 경우에만 사용한다.
-- Expo Go에서 동작 가능한 구현을 우선 고려한다.
-- 스타일 수정 시 기존 디자인과 UI를 유지한다.
-- Web에서 지원되지 않는 Native Module은 사용하지 않는다.
-- 키보드, 화면 크기, 터치 입력이 Web, iOS, Android에서 자연스럽게 동작하는지 확인한다.
-
-## 라이브러리 규칙
-- 새로운 라이브러리 추가는 반드시 필요한 경우에만 제안한다.
-- 이미 구현 가능한 기능이면 기존 라이브러리와 React Native 기본 기능을 우선 사용한다.
-- 새 라이브러리를 추가하기 전에 현재 Expo SDK 및 React Native 버전과 Web 호환성을 확인한다.
-- 의존성 설치가 필요하면 `npx expo install`을 우선 사용한다.
-- 보안 취약점이나 호환성 문제를 우회하기 위해 보안 설정을 변경하지 않는다.
-
-## 현재 기술 스택
-- Expo SDK: `package.json` 기준 현재 버전 유지
-- React Native: `package.json` 기준 현재 버전 유지
-- React: `package.json` 기준 현재 버전 유지
-- React Native Web: `package.json` 기준 현재 버전 유지
-- 추가 라이브러리는 설치 전 호환성을 확인한다.
-
-## 프로젝트 구조
-- `App.js` - 루트 앱 및 퍼즐 화면
-- `MapSelectScreen.js` - 맵 선택 화면
-- `data/` - 퍼즐 데이터 JSON
-- `data/crosswordMaps.js` - 앱에서 사용하는 맵 목록
-- `scripts/validateMaps.js` - 맵 규칙 및 단어 사용 검증
-- `app.json` - Expo 앱 설정
-- `.github/workflows/deploy-pages.yml` - GitHub Pages 웹 배포
-
-프로젝트 구조를 확장할 때는 먼저 기존 구조와 사용 패턴을 확인하고, 관련 기능에 필요한 최소한의 파일만 추가한다.
-
-## 퍼즐 데이터 규칙
-- 홀로 다른 단어와 전혀 교차하지 않는 단어는 맵에 추가하지 않는다.
-- 단어를 추가하거나 배치할 때 열린 칸 4개가 2×2 정사각형으로 채워지는 구조는 만들지 않는다.
-- 교차하지 않는 서로 관련 없는 단어의 글자는 상하좌우로 맞닿지 않게 한다.
-- 같은 방향의 단어는 서로 겹치거나 다른 단어의 마지막 글자에 이어 붙이지 않는다. 세로 단어끼리, 가로 단어끼리 끝과 시작이 맞닿지 않게 한다.
-- EASY 맵은 연결된 단어들의 실제 평균 난이도 1.0~1.8, `difficulty` 1.8 이하, 8×8 크기, 단어 10개로 구성한다.
-- NORMAL 맵은 연결된 단어들의 실제 평균 난이도 1.9~2.5, 10×10 크기, 단어 15개로 구성한다.
-- HARD 맵은 연결된 단어들의 실제 평균 난이도 2.6 이상, 12×12 크기, 단어 15개로 구성한다.
-- `wordId`는 `data/bibleWordsLib1.json`의 `id`와 연결하고, 생성·수정 후 `npm run validate:maps`로 맵 구조와 단어 사용을 검증한다.
-- 새 맵은 `data/crosswordMap<번호>.json`으로 추가하고 `data/crosswordMaps.js`의 목록에 등록한다.
-- 새 맵의 단어는 기존 맵에서 사용하지 않은 단어를 우선 선택한다. 교차 배치를 위해 불가피한 경우에만 재사용하며, 한 단어는 전체 맵에서 최대 2회까지만 사용한다.
-- 재사용 단어는 두 번째 맵에서 `clue`를 추가해 원본 정의보다 살짝 더 어려운 문제 문구로 표시한다. 첫 번째 맵에서는 원본 `definition`을 그대로 사용한다.
-- 문제 문구는 정답을 그대로 노출하지 않으며, 성경적 맥락을 활용해 적절한 난이도를 유지한다.
-- 단어 또는 문제 문구 수정 시 퍼즐 동작과 자동 채우기 기능이 계속 작동하는지 확인한다.
-- 기존 퍼즐 배치를 변경하지 않고 문제 문구만 수정할 때는 관련 `clue`만 변경한다.
-- 맵을 재생성하거나 수정할 때 `id`를 새로운 값으로 교체한다.
+- 요청과 관련 없는 파일은 수정하지 않는다. 최소 변경으로 해결한다.
+- 기존 로직·변수명·함수명·파일 구조·주석을 유지한다. 동작하는 코드를 임의로 개선하지 않는다.
+- 새 파일·의존성은 반드시 필요한 경우에만 추가한다. 의존성 설치는 `npx expo install`을 우선한다.
+- 들여쓰기 2공백, 함수형 컴포넌트+hooks, 정적 스타일은 `StyleSheet.create`, UI 텍스트는 기존 한국어 문체 유지.
+- `Platform.OS` 분기, Web 미지원 Native Module은 필요시에만. Expo Go 호환 우선.
 
 ## 단어 데이터 규칙
-- `data/bibleWordsLib1.json`은 `data/bibleWordsLib2.json`~`data/bibleWordsLib15.json`을 병합한 통합 라이브러리로 `npm run merge:lib1`로 생성되며, 직접 편집하지 않는다. 단어 정의·참조·난이도 등 모든 수정은 해당 초성의 Lib2~Lib15 원본 파일에서 수행한 뒤 `npm run merge:lib1`으로 Lib1을 갱신한다. Lib1을 직접 수정하면 다음 병합 시 수정 내용이 사라진다.
-- 초성별 라이브러리 매핑: Lib2(가), Lib3(나), Lib4(다), Lib5(라), Lib6(마), Lib7(바), Lib8(사), Lib9(아), Lib10(자), Lib11(차), Lib12(카), Lib13(타), Lib14(파), Lib15(하).
-- `npm run validate:maps`와 `npm run generate:map`은 실행 전 자동으로 Lib1 병합을 수행한다.
-- 맵의 `wordId`는 단어 데이터의 `id`와 연결하며, 두 값이 일치하는지 확인한다.
-- 맵의 `clue`가 비어 있거나 없으면 연결된 단어 데이터의 `definition`을 표시한다.
-- 맵의 `clue`와 `definition`이 완전히 같으면 `clue`를 중복 저장하지 않는다.
-- `sourceUrl`은 단어 데이터에 저장하지 않는다. 필요한 경우 `word`를 URL 인코딩해 WOL 검색 URL을 동적으로 생성한다.
-- WOL(jw.org)의 통찰책에 등록된 단어만 추가한다.
-- 단어는 순수 한글로만 구성하며, 띄어쓰기·괄호 등 한글 외 문자는 제거한다.
-- 한글 외 문자 제거 후 별개의 단어가 합쳐지는 경우, 앞 단어를 기준으로 등록한다.
-- 2글자 이상인 단어만 등록하며, 하나의 단어는 한 번만 등록한다.
-- 기존 단어와 `id` 또는 `word`가 중복되는 단어는 추가하지 않는다.
-- 한글 한 글자로만 이루어진 단어는 등록하지 않는다.
-- 정의는 정답을 그대로 드러내거나 답을 대놓고 알려주는 방식으로 작성하지 않는다.
-- 단어 정보와 문제 문구를 수정할 때 기존 `id`, `wordId`, 퍼즐 배치의 관계를 임의로 변경하지 않는다.
-- 단어 데이터를 추가하거나 수정할 때 기존 JSON 항목의 줄바꿈, 들여쓰기, 필드 순서, 배열 표기 형식을 그대로 유지한다.
-- 여러 단어를 추가할 때에도 각 항목을 기존처럼 여러 줄로 작성하며 한 줄짜리 축약 형식으로 바꾸지 않는다.
+- Lib1은 Lib2~Lib15 병합 파일. 직접 편집 금지. 수정은 원본 Lib 파일에서 후 `npm run merge:lib1` 실행.
+- 초성별 매핑: Lib2(가) Lib3(나) Lib4(다) Lib5(라) Lib6(마) Lib7(바) Lib8(사) Lib9(아) Lib10(자) Lib11(차) Lib12(카) Lib13(타) Lib14(파) Lib15(하).
+- `npm run validate:maps`와 `npm run generate:map`은 실행 전 자동으로 Lib1 병합 수행.
+- WOL(jw.org) 통찰책에 등록된 단어만 추가. 순수 한글 2글자 이상, 중복(`id`/`word`) 불가, 한 글자 단어 불가.
+- 한글 외 문자 제거 후 별개 단어가 합쳐지면 앞 단어 기준으로 등록.
+- 정의는 정답을 직접 드러내지 않고 성경적 맥락 활용. `sourceUrl`은 저장하지 않는다.
+- 기존 `id`, `wordId`, 퍼즐 배치 관계를 임의로 변경하지 않는다.
+- JSON 항목의 줄바꿈, 들여쓰기, 필드 순서, 배열 형식을 유지. 한 줄 축약 형식 금지.
 
-## 단어 난이도 기준
-- difficulty 1: 일상어 및 성경 핵심 개념·인물로 일반인도 쉽게 아는 단어.
-- difficulty 2: 성경에 자주 등장하지만 일반인에게는 다소 생소한 인물·지명·개념.
-- difficulty 3: 성경 족보, obscure 지명, 전문 용어 등 전문 지식이 필요한 단어.
+## 퍼즐 데이터 규칙
+- `wordId`는 Lib1의 `id`와 연결. 맵 생성·수정 후 `npm run validate:maps`로 검증.
+- 새 맵은 `data/maps/crosswordMap<번호>.json`으로 추가하고 `data/crosswordMaps.js`에 등록. 재생성·수정 시 `id`를 새 값으로 교체.
+- 단어는 미사용 단어 우선 선택, 불가피한 재사용은 전체 맵에서 최대 2회. 재사용 시 두 번째 맵에 `clue` 추가.
+- 금지 구조: 교차 없는 홀로 단어, 2×2 정사각형, 관련 없는 단어의 상하좌우 맞닿음, 같은 방향 단어의 겹침·끝말잇기.
+- EASY: 평균 1.0~1.8, difficulty 1.8 이하, 8×8, 10단어.
+- NORMAL: 평균 1.9~2.5, 10×10, 15단어.
+- HARD: 평균 2.6 이상, 12×12, 15단어.
+- `clue`가 비어 있으면 `definition` 사용. `clue`==`definition`이면 중복 저장 안 함.
+- 기존 배치 유지하며 문구만 수정할 때는 관련 `clue`만 변경.
 
-## 코드 스타일
-- 들여쓰기: 2공백
-- 함수형 컴포넌트와 hooks 사용
-- 불필요한 주석과 문서 작성 금지
-- UI 텍스트는 기존 프로젝트의 한국어 문체를 유지한다.
-- 동적 스타일은 인라인을 허용한다.
-- 정적 스타일은 `StyleSheet.create`를 사용한다.
-- 최소한의 집중된 수정을 지향한다.
+## 단어 난이도
+- 1: 일상어·성경 핵심 개념·인물. 2: 자주 등장하지만 생소한 인물·지명·개념. 3: 족보·obscure 지명·전문 용어.
 
-## 개발 명령어
-- 의존성 설치: `npm ci`
-- Web 개발 서버: `npm run web`
-- 캐시를 삭제한 Expo 개발 서버: `npx expo start -c`
-- Web 정적 빌드: `npm run build:web`
-- 맵 검증: `npm run validate:maps`
+## 검증
+- JSON 변경 후 파싱 유효성 확인. 맵 변경 후 `npm run validate:maps` 실행.
+- `npm run build:web`은 명시적 요청 시에만. 빌드 실패 시 원인 확인 후 최소 범위 수정.
+- `git diff`/`git status`로 변경 범위 확인.
 
-## GitHub Pages 배포
-- 배포 대상 브랜치: `master`
-- 배포 워크플로: `.github/workflows/deploy-pages.yml`
-- Expo Web base URL: `/bibleLink`
-- 웹 빌드 결과물: `dist/`
-- 배포 관련 파일을 수정한 경우 JSON 유효성, 웹 빌드, GitHub Actions 설정을 확인한다.
-
-## 검증 원칙
-- 변경 후 관련 JSON 파일을 파싱해 유효성을 확인한다.
-- 맵 데이터를 추가하거나 수정한 뒤에는 `npm run validate:maps`를 실행해 규칙 위반과 단어 재사용을 확인한다.
-- 사용자가 명시적으로 요청한 경우에만 `npm run build:web`을 실행한다.
-- 사용자가 명시적으로 요청한 경우에만 빌드, 배포, 검증 서버 실행을 수행한다.
-- 개발 서버(`npx expo start`, `npm run web` 등) 시작 및 재시작은 사용자가 직접 수행하므로 요청하지 않는다.
-- 변경 범위를 `git diff`와 `git status`로 확인한다.
-- 테스트나 빌드 실패 시 원인을 확인한 후 최소 범위로 수정한다.
-- 사용자가 요청하지 않은 commit, push, 배포는 수행하지 않는다.
+## 명령어
+- 설치: `npm ci` | Web: `npm run web` | 빌드: `npm run build:web` | 검증: `npm run validate:maps` | 캐시 서버: `npx expo start -c`
