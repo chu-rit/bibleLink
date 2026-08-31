@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFonts } from 'expo-font';
 import crosswordMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
@@ -30,6 +31,10 @@ const isWordSearchPath = Platform.OS === 'web' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    UhBeeGmin2: require('./assets/fonts/UhBeeGmin2.ttf'),
+    UhBeeGmin2Bold: require('./assets/fonts/UhBeeGmin2Bold.ttf'),
+  });
   const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
   const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'mapSelect');
   const [selectedMap, setSelectedMap] = useState(null);
@@ -104,7 +109,7 @@ export default function App() {
     [answersByMap]
   );
 
-  if (!loaded) return null;
+  if (!loaded || !fontsLoaded) return null;
 
   if (screen === 'wordSearch') {
     return (

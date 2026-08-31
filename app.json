@@ -8,7 +8,9 @@
     "android": {
       "softwareKeyboardLayoutMode": "resize"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "web": {
       "bundler": "metro",
       "output": "single",
@@ -16,6 +18,9 @@
     },
     "experiments": {
       "baseUrl": "/bibleLink"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
