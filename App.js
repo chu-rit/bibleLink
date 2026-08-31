@@ -142,6 +142,19 @@ export default function App() {
             try { localStorage.setItem('masterMode', next ? '1' : '0'); } catch {}
           }
         }}
+        onCompleteMap={masterMode ? (mapId) => {
+          const map = crosswordMaps.find((m) => m.id === mapId);
+          if (!map) return;
+          const answers = {};
+          map.cells.forEach((cell, index) => {
+            answers[index] = cell.answer;
+          });
+          setAnswersByMap((prev) => {
+            const next = { ...prev, [mapId]: answers };
+            try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
+            return next;
+          });
+        } : undefined}
       />
     );
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Modal, Platform, Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Switch, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
@@ -45,7 +45,7 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, masterMode }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, masterMode }) {
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
@@ -53,6 +53,30 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
+  const adRef = useRef(null);
+
+  useEffect(() => {
+    if (!isWeb || !adRef.current) return;
+    const ins = document.createElement('ins');
+    ins.className = 'kakao_ad_area';
+    ins.style.display = 'none';
+    ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
+    ins.setAttribute('data-ad-width', '320');
+    ins.setAttribute('data-ad-height', '50');
+    adRef.current.appendChild(ins);
+    if (!document.querySelector('script[src*="ba.min.js"]')) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    return () => {
+      if (adRef.current && adRef.current.contains(ins)) {
+        adRef.current.removeChild(ins);
+      }
+    };
+  }, [isWeb]);
 
   const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
   const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
@@ -74,6 +98,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <Pressable
         key={map.id}
         onPress={() => onSelect(map)}
+        onLongPress={masterMode && onCompleteMap ? () => onCompleteMap(map.id) : undefined}
         style={[styles.tile, tileStyle, isComplete && styles.tileComplete]}
       >
         <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
@@ -181,6 +206,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545')}
       </ScrollView>
 
+      {isWeb && <View ref={adRef} style={styles.adContainer} />}
+
       <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
         <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
@@ -246,4 +273,5 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#fff', fontSize: 15, fontWeight: '800' },
   closeButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#53708d', fontSize: 15, fontWeight: '800' },
+  adContainer: { alignItems: 'center', height: 50, marginTop: 4 },
 });

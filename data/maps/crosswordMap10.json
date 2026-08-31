@@ -1,110 +1,110 @@
 {
-  "id": "20260830_010",
+  "id": "20260831_019",
   "title": "E-10",
-  "difficulty": 1.2,
+  "difficulty": 1.4,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "###겸#발꿈치",
-    "###손가락##",
-    "####브###",
-    "####리###",
-    "비#다니엘###",
-    "베다니#####",
-    "셋#엘#####",
-    "##서쪽####"
+    "###납####",
+    "###달###멧",
+    "#사마리아##돼",
+    "#다##가마우지",
+    "갈리오#####",
+    "매#######",
+    "기도######",
+    "#시######"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "겸손",
+      "answer": "납달리",
       "direction": "down",
       "row": 0,
       "col": 3,
-      "length": 2,
-      "wordId": "humility"
+      "length": 3,
+      "wordId": "naphtali"
     },
     {
       "number": 2,
-      "answer": "발락",
+      "answer": "멧돼지",
       "direction": "down",
-      "row": 0,
-      "col": 5,
-      "length": 2,
-      "wordId": "balak"
+      "row": 1,
+      "col": 7,
+      "length": 3,
+      "wordId": "boar"
     },
     {
       "number": 3,
-      "answer": "발꿈치",
-      "direction": "across",
-      "row": 0,
-      "col": 5,
+      "answer": "사다리",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
       "length": 3,
-      "wordId": "heel"
+      "wordId": "ladder"
     },
     {
       "number": 4,
-      "answer": "손가락",
+      "answer": "사마리아",
       "direction": "across",
-      "row": 1,
-      "col": 3,
-      "length": 3,
-      "wordId": "finger"
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "samaria"
     },
     {
       "number": 5,
-      "answer": "가브리엘",
+      "answer": "아가",
       "direction": "down",
-      "row": 1,
+      "row": 2,
       "col": 4,
-      "length": 4,
-      "wordId": "gabriel"
+      "length": 2,
+      "wordId": "songofsongs"
     },
     {
       "number": 6,
-      "answer": "비베셋",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 3,
-      "wordId": "pibeseth"
+      "answer": "가마우지",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "cormorant"
     },
     {
       "number": 7,
-      "answer": "다니엘",
+      "answer": "갈리오",
       "direction": "across",
       "row": 4,
-      "col": 2,
+      "col": 0,
       "length": 3,
-      "wordId": "daniel"
+      "wordId": "gallio"
     },
     {
       "number": 8,
-      "answer": "다니엘서",
+      "answer": "갈매기",
       "direction": "down",
       "row": 4,
-      "col": 2,
-      "length": 4,
-      "wordId": "entry-다니엘서"
+      "col": 0,
+      "length": 3,
+      "wordId": "gull"
     },
     {
       "number": 9,
-      "answer": "베다니",
+      "answer": "기도",
       "direction": "across",
-      "row": 5,
+      "row": 6,
       "col": 0,
-      "length": 3,
-      "wordId": "bethany"
+      "length": 2,
+      "wordId": "prayer"
     },
     {
       "number": 10,
-      "answer": "서쪽",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
+      "answer": "도시",
+      "direction": "down",
+      "row": 6,
+      "col": 1,
       "length": 2,
-      "wordId": "west"
+      "wordId": "city"
     }
   ]
 }
