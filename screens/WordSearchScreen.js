@@ -163,7 +163,7 @@ export default function WordSearchScreen({ onBack }) {
             value={query}
             onChangeText={setQuery}
             placeholder="단어에 포함된 글자를 입력하세요"
-            placeholderTextColor="#9aa3ad"
+            placeholderTextColor="#a89880"
             autoCapitalize="none"
             autoCorrect={false}
             style={styles.searchInput}
@@ -218,40 +218,40 @@ export default function WordSearchScreen({ onBack }) {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  safeArea: { flex: 1, backgroundColor: '#f0ebe0' },
   webSafeArea: { height: '100vh' },
   container: { flex: 1, padding: 16 },
-  backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
-  backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
+  backButton: { borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderColor: '#e0d8c8' },
+  backButtonText: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
-  title: { flex: 1, color: '#172536', fontSize: 18, fontWeight: '800', marginHorizontal: 10 },
-  badge: { backgroundColor: '#e2edf6', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
-  badgeText: { color: '#315d7f', fontSize: 12, fontWeight: '700' },
-  searchBox: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 14, paddingHorizontal: 12, borderWidth: 1, borderColor: '#e7edf2', marginBottom: 10 },
-  searchInput: { flex: 1, height: 44, color: '#20384d', fontSize: 15, backgroundColor: '#fbfdff' },
+  title: { flex: 1, color: '#2e2418', fontSize: 18, fontWeight: '800', marginHorizontal: 10 },
+  badge: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1, borderColor: '#e0d8c8' },
+  badgeText: { color: '#7a5c3a', fontSize: 12, fontWeight: '700' },
+  searchBox: { flexDirection: 'row', alignItems: 'center', borderRadius: 14, paddingHorizontal: 12, borderWidth: 1, borderColor: '#e0d8c8', marginBottom: 10 },
+  searchInput: { flex: 1, height: 44, color: '#3a2e1f', fontSize: 15 },
   clearButton: { paddingHorizontal: 8, paddingVertical: 6 },
-  clearButtonText: { color: '#6b7c8d', fontSize: 12, fontWeight: '700' },
-  resultCount: { color: '#647487', fontSize: 12, fontWeight: '700', marginBottom: 8 },
+  clearButtonText: { color: '#8a7560', fontSize: 12, fontWeight: '700' },
+  resultCount: { color: '#8a7560', fontSize: 12, fontWeight: '700', marginBottom: 8 },
   list: { flex: 1, minHeight: 0, overflow: 'scroll' },
   listContent: { paddingBottom: 24 },
-  wordCard: { backgroundColor: '#fff', borderRadius: 16, padding: 14, marginBottom: 10, borderWidth: 1, borderColor: '#e7edf2' },
-  usedWordCard: { borderColor: '#c9dcec', backgroundColor: '#f3f8fc' },
+  wordCard: { borderRadius: 16, padding: 14, marginBottom: 10, borderWidth: 1, borderColor: '#e0d8c8' },
+  usedWordCard: { borderColor: '#7a5c3a', borderWidth: 1.5, backgroundColor: 'transparent' },
   wordCopy: { flex: 1 },
   wordHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 },
-  wordText: { color: '#172536', fontSize: 17, fontWeight: '800' },
-  usageBadge: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 8, paddingVertical: 3 },
-  usageBadgeText: { color: '#fff', fontSize: 11, fontWeight: '800' },
-  definition: { color: '#34485d', fontSize: 13, lineHeight: 19 },
+  wordText: { color: '#2e2418', fontSize: 17, fontWeight: '800' },
+  usageBadge: { backgroundColor: 'transparent', borderWidth: 1, borderColor: '#7a5c3a', borderRadius: 12, paddingHorizontal: 8, paddingVertical: 3 },
+  usageBadgeText: { color: '#7a5c3a', fontSize: 11, fontWeight: '800' },
+  definition: { color: '#5a4a35', fontSize: 13, lineHeight: 19 },
   mapUsageRow: { flexDirection: 'row', alignItems: 'flex-start', marginTop: 8 },
-  mapUsageLabel: { color: '#5d89a7', fontSize: 11, fontWeight: '800', marginRight: 8 },
-  mapUsageText: { flex: 1, color: '#647487', fontSize: 11, lineHeight: 16 },
+  mapUsageLabel: { color: '#7a6450', fontSize: 11, fontWeight: '800', marginRight: 8 },
+  mapUsageText: { flex: 1, color: '#8a7560', fontSize: 11, lineHeight: 16 },
   metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
-  metaText: { color: '#8a99a8', fontSize: 11, fontWeight: '600' },
-  loadingMore: { color: '#8a99a8', fontSize: 12, fontWeight: '700', textAlign: 'center', paddingVertical: 16 },
-  statsPanel: { backgroundColor: '#fff', borderRadius: 14, padding: 12, borderWidth: 1, borderColor: '#e7edf2', marginTop: 8 },
+  metaText: { color: '#a89880', fontSize: 11, fontWeight: '600' },
+  loadingMore: { color: '#a89880', fontSize: 12, fontWeight: '700', textAlign: 'center', paddingVertical: 16 },
+  statsPanel: { borderRadius: 14, padding: 12, borderWidth: 1, borderColor: '#e0d8c8', marginTop: 8 },
   statRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 4 },
   statDot: { width: 8, height: 8, borderRadius: 4, marginRight: 8 },
-  statLabel: { color: '#172536', fontSize: 12, fontWeight: '800', width: 60 },
-  statValue: { color: '#34485d', fontSize: 12, fontWeight: '700', flex: 1 },
-  statPercent: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
+  statLabel: { color: '#2e2418', fontSize: 12, fontWeight: '800', width: 60 },
+  statValue: { color: '#5a4a35', fontSize: 12, fontWeight: '700', flex: 1 },
+  statPercent: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
 });

@@ -87,7 +87,7 @@ function AnswerCard({
               setInput(text);
             }}
             placeholder="정답을 입력하세요"
-            placeholderTextColor="#9aa3ad"
+            placeholderTextColor="#a89880"
             autoFocus
             autoCapitalize="none"
             maxLength={slot.length}
@@ -151,12 +151,12 @@ function AnswerCard({
 const styles = StyleSheet.create({
   answerCard: {
     width: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.82)',
+    backgroundColor: 'rgba(253, 251, 246, 0.88)',
     borderRadius: 20,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#e7edf2',
-    shadowColor: '#17324d',
+    borderColor: '#e0d8c8',
+    shadowColor: '#3a2e1f',
     shadowOpacity: 0.12,
     shadowRadius: 16,
     shadowOffset: { width: 0, height: -4 },
@@ -164,31 +164,31 @@ const styles = StyleSheet.create({
   },
   hintBox: { position: 'absolute', top: 4, right: 4, zIndex: 1, maxWidth: 160 },
   hintButton: { backgroundColor: '#e08a3c', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 5, alignItems: 'center', justifyContent: 'center' },
-  hintButtonText: { color: '#fff', fontSize: 11, fontWeight: '800' },
+  hintButtonText: { color: '#fdfbf6', fontSize: 11, fontWeight: '800' },
   hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },
   selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
-  selectedDirection: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
+  selectedDirection: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
-  clue: { color: '#34485d', fontSize: 14, lineHeight: 18, fontWeight: '700' },
+  clue: { color: '#5a4a35', fontSize: 14, lineHeight: 18, fontWeight: '700' },
   actionRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
   answerInputWrap: { flex: 1, position: 'relative' },
-  answerInput: { borderWidth: 1, borderColor: '#cbd8e2', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#20384d', fontSize: 16, backgroundColor: '#fbfdff' },
+  answerInput: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 12, paddingHorizontal: 12, height: 42, color: '#3a2e1f', fontSize: 16, backgroundColor: '#fdfbf6' },
   answerInputWithClear: { paddingRight: 36 },
   clearInputButton: { position: 'absolute', top: 1, right: 1, width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
-  clearInputButtonText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
+  clearInputButtonText: { color: '#a89880', fontSize: 24, lineHeight: 26, fontWeight: '500' },
   answerInputHidden: { color: 'transparent' },
-  answerInputCorrect: { borderColor: '#3c9a72', backgroundColor: '#e7f6ee' },
+  answerInputCorrect: { borderColor: '#3c9a72', backgroundColor: '#ece8dc' },
   answerInputWrong: { borderColor: '#d64545', backgroundColor: '#fdeaea' },
   wrongTextOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', paddingHorizontal: 12 },
   wrongText: { fontSize: 16, fontWeight: '600', color: '#d64545' },
-  primaryButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 16, height: 42, alignItems: 'center', justifyContent: 'center' },
+  primaryButton: { backgroundColor: '#7a5c3a', borderRadius: 12, paddingHorizontal: 16, height: 42, alignItems: 'center', justifyContent: 'center' },
   primaryButtonCorrect: { backgroundColor: '#3c9a72' },
   primaryButtonWrong: { backgroundColor: '#d64545' },
-  primaryButtonDisabled: { backgroundColor: '#a3b3c2' },
-  primaryButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
+  primaryButtonDisabled: { backgroundColor: '#c8b898' },
+  primaryButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
   emptySelection: { alignItems: 'center' },
-  emptySelectionTitle: { color: '#315d7f', fontSize: 14, fontWeight: '800' },
-  emptySelectionText: { color: '#647487', fontSize: 12, lineHeight: 17, marginTop: 4, textAlign: 'center' },
+  emptySelectionTitle: { color: '#7a5c3a', fontSize: 14, fontWeight: '800' },
+  emptySelectionText: { color: '#8a7560', fontSize: 12, lineHeight: 17, marginTop: 4, textAlign: 'center' },
 });
 
 export default AnswerCard;

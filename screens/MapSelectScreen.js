@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Modal, Platform, Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Switch, Text, View, useWindowDimensions } from 'react-native';
+import { Animated, Easing, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
 const COLUMNS = 4;
@@ -8,8 +8,11 @@ const STROKE = 5;
 const SIZE = (RADIUS + STROKE) * 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
+const BG_IMAGE = require('../assets/BG.png');
+const LOGO_IMAGE = require('../assets/LOGO.png');
+
 function Gauge({ percent, number, isComplete }) {
-  const color = isComplete ? '#3c9a72' : '#4d8cba';
+  const color = '#7a5c3a';
   const offset = CIRCUMFERENCE * (1 - percent / 100);
   return (
     <View style={styles.gauge}>
@@ -18,9 +21,9 @@ function Gauge({ percent, number, isComplete }) {
           cx={SIZE / 2}
           cy={SIZE / 2}
           r={RADIUS}
-          stroke="#e9eef3"
+          stroke="#e0d8c8"
           strokeWidth={STROKE}
-          fill="none"
+          fill="#fdfbf6"
         />
         <Circle
           cx={SIZE / 2}
@@ -48,12 +51,26 @@ function Gauge({ percent, number, isComplete }) {
 export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, masterMode }) {
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
+  const toggleAnim = useRef(new Animated.Value(hideSolved ? 1 : 0)).current;
   const { width: windowWidth } = useWindowDimensions();
   const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
   const adRef = useRef(null);
+
+  const toggleHideSolved = () => {
+    setHideSolved((v) => {
+      const next = !v;
+      Animated.timing(toggleAnim, {
+        toValue: next ? 1 : 0,
+        duration: 200,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: false,
+      }).start();
+      return next;
+    });
+  };
 
   useEffect(() => {
     if (!isWeb || !adRef.current) return;
@@ -121,10 +138,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         <View style={styles.sectionBlock}>
           <View style={styles.sectionHeader}>
             <View style={styles.sectionCopy}>
-              <Text style={[styles.sectionEyebrow, { color: accent }]}>{eyebrow}</Text>
+              <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
             </View>
-            <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
-              <Text style={[styles.sectionBadgeText, { color: accent }]}>{sectionMaps.length}개 맵</Text>
+            <View style={styles.sectionBadge}>
+              <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
             </View>
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.masterScroll}>
@@ -142,10 +159,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <View>
         <View style={styles.sectionHeader}>
           <View style={styles.sectionCopy}>
-            <Text style={[styles.sectionEyebrow, { color: accent }]}>{eyebrow}</Text>
+            <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
           </View>
           <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
-            <Text style={[styles.sectionBadgeText, { color: accent }]}>{sectionMaps.length}개 맵</Text>
+            <Text style={[styles.sectionBadgeText, { color: accent }]}>{solvedCount}/{sectionMaps.length}</Text>
           </View>
         </View>
         <View style={styles.tileGrid}>
@@ -159,19 +176,23 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   };
 
   return (
-    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
+    <ImageBackground
+      source={BG_IMAGE}
+      resizeMode="cover"
+      style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}
+    >
       <StatusBar barStyle="dark-content" />
       <View style={[styles.header, isSmallScreen && styles.headerSmall]}>
-        <Text style={[styles.brandTitle, isSmallScreen && styles.brandTitleSmall]}>BIBLE LINK</Text>
+        <Image source={LOGO_IMAGE} style={[styles.brandLogo, isSmallScreen && styles.brandLogoSmall]} resizeMode="contain" />
         <Pressable onPress={() => setShowSettings(true)} style={styles.settingsButton}>
           <Svg width={22} height={22} viewBox="0 0 24 24">
             <Path
               d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
-              fill="none" stroke="#53708d" strokeWidth="2"
+              fill="none" stroke="#7a6450" strokeWidth="2"
             />
             <Path
               d="M19.4 13a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"
-              fill="none" stroke="#53708d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+              fill="none" stroke="#7a6450" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             />
           </Svg>
         </Pressable>
@@ -189,12 +210,28 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
       <View style={styles.toggleRow}>
         <Text style={styles.toggleLabel}>푼 퍼즐 가리기</Text>
-        <Switch
-          value={hideSolved}
-          onValueChange={setHideSolved}
-          trackColor={{ false: '#d4dde6', true: '#315d7f' }}
-          thumbColor={hideSolved ? '#fff' : '#fff'}
-        />
+        <Pressable
+          onPress={toggleHideSolved}
+          accessibilityRole="switch"
+          accessibilityState={{ checked: hideSolved }}
+        >
+          <Animated.View style={[styles.toggleSwitch, { borderColor: toggleAnim.interpolate({ inputRange: [0, 1], outputRange: ['#c8b898', '#7a5c3a'] }) }]}>
+            <Animated.View
+              style={[
+                styles.toggleThumb,
+                {
+                  backgroundColor: toggleAnim.interpolate({ inputRange: [0, 1], outputRange: ['#c8b898', '#7a5c3a'] }),
+                  transform: [{
+                    translateX: toggleAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, 20],
+                    }),
+                  }],
+                },
+              ]}
+            />
+          </Animated.View>
+        </Pressable>
       </View>
 
       <ScrollView
@@ -227,51 +264,53 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           </Pressable>
         </Pressable>
       </Modal>
-    </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, minHeight: '100%', backgroundColor: '#f6f8fb' },
+  safeArea: { flex: 1, minHeight: '100%' },
   webSafeArea: { height: '100vh', width: '100%', maxWidth: 480, alignSelf: 'center' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
   headerSmall: { paddingHorizontal: 14, paddingTop: 14, marginBottom: 10 },
-  brandTitle: { color: '#172536', fontSize: 32, fontWeight: '800', letterSpacing: 1 },
-  brandTitleSmall: { fontSize: 22, letterSpacing: 0.5 },
-  settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#e9f0f6' },
+  brandLogo: { width: 180, height: 40 },
+  brandLogoSmall: { width: 140, height: 32 },
+  settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#f0ebe0' },
   toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 12 },
-  toggleLabel: { color: '#53708d', fontSize: 12, fontWeight: '700', marginRight: 8 },
-  searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#315d7f', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
+  toggleLabel: { color: '#7a6450', fontSize: 12, fontWeight: '700', marginRight: 8 },
+  toggleSwitch: { width: 44, height: 24, borderRadius: 12, borderWidth: 1.5, borderColor: '#c8b898', justifyContent: 'center', padding: 2 },
+  toggleThumb: { width: 18, height: 18, borderRadius: 9, backgroundColor: '#c8b898' },
+  searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1.5, borderColor: '#7a5c3a', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntrySmall: { padding: 14, marginHorizontal: 14, marginBottom: 10, borderRadius: 14 },
   searchEntryCopy: { flex: 1, paddingRight: 12 },
-  searchEntryTitle: { color: '#fff', fontSize: 17, fontWeight: '800' },
-  searchEntryMeta: { color: '#cfe0ee', fontSize: 12, marginTop: 6, lineHeight: 17 },
-  searchEntryArrow: { color: '#fff', fontSize: 24, fontWeight: '800' },
-  scrollView: { flex: 1, backgroundColor: '#f6f8fb' },
+  searchEntryTitle: { color: '#7a5c3a', fontSize: 17, fontWeight: '800' },
+  searchEntryMeta: { color: '#7a6450', fontSize: 12, marginTop: 6, lineHeight: 17 },
+  searchEntryArrow: { color: '#7a5c3a', fontSize: 24, fontWeight: '800' },
+  scrollView: { flex: 1 },
   scrollViewContent: { paddingHorizontal: 20, paddingBottom: 40 },
   scrollViewContentSmall: { paddingHorizontal: 14, paddingBottom: 28 },
   sectionHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14, marginTop: 8, paddingHorizontal: 4 },
   sectionCopy: { flex: 1, alignItems: 'flex-start' },
-  sectionEyebrow: { fontSize: 11, fontWeight: '800', letterSpacing: 2, textAlign: 'left' },
-  sectionTitle: { color: '#172536', fontSize: 20, fontWeight: '800', marginTop: 2, textAlign: 'left' },
-  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start' },
-  sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right' },
+  sectionEyebrow: { fontSize: 11, fontWeight: '800', letterSpacing: 2, textAlign: 'left', color: '#7a6450' },
+  sectionTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginTop: 2, textAlign: 'left' },
+  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1, borderColor: '#e0d8c8' },
+  sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right', color: '#7a6450' },
   tileGrid: { flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 8 },
   masterScroll: { marginBottom: 12 },
   masterTileRow: { flexDirection: 'row' },
   tile: { aspectRatio: 1, alignItems: 'center', justifyContent: 'center', padding: 4 },
-  tileComplete: { backgroundColor: '#e7f6ee', borderRadius: 16 },
+  tileComplete: { backgroundColor: '#ece8dc', borderRadius: 16 },
   gauge: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },
   gaugeSvg: { position: 'absolute' },
   gaugeInner: { alignItems: 'center', justifyContent: 'center' },
-  gaugeNumber: { color: '#172536', fontSize: 18, fontWeight: '800' },
-  gaugePercent: { color: '#647487', fontSize: 9, fontWeight: '700', marginTop: 1 },
+  gaugeNumber: { color: '#2e2418', fontSize: 18, fontWeight: '800' },
+  gaugePercent: { color: '#8a7560', fontSize: 9, fontWeight: '700', marginTop: 1 },
   modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', alignItems: 'center' },
-  modalContent: { backgroundColor: '#fff', borderRadius: 20, padding: 24, width: '80%', maxWidth: 320, alignItems: 'stretch' },
-  modalTitle: { color: '#172536', fontSize: 20, fontWeight: '800', marginBottom: 20, textAlign: 'center' },
+  modalContent: { backgroundColor: '#fdfbf6', borderRadius: 20, padding: 24, width: '80%', maxWidth: 320, alignItems: 'stretch' },
+  modalTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginBottom: 20, textAlign: 'center' },
   resetButton: { backgroundColor: '#d64545', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 12 },
-  resetButtonText: { color: '#fff', fontSize: 15, fontWeight: '800' },
-  closeButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
-  closeButtonText: { color: '#53708d', fontSize: 15, fontWeight: '800' },
+  resetButtonText: { color: '#fdfbf6', fontSize: 15, fontWeight: '800' },
+  closeButton: { backgroundColor: '#f0ebe0', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
+  closeButtonText: { color: '#7a6450', fontSize: 15, fontWeight: '800' },
   adContainer: { alignItems: 'center', height: 50, marginTop: 4, marginBottom: 12 },
 });

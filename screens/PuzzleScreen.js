@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Animated,
   Easing,
+  ImageBackground,
   Keyboard,
   Modal,
   Platform,
   Pressable,
-  SafeAreaView,
   StatusBar,
   Switch,
   StyleSheet,
@@ -25,6 +25,8 @@ import {
   getOpenCellCount,
 } from '../utils';
 import AnswerCard from './AnswerCard';
+
+const BG_IMAGE = require('../assets/BG.png');
 
 const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
@@ -327,7 +329,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [filledCellCount, totalCellCount]);
 
   return (
-    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
+    <ImageBackground
+      source={BG_IMAGE}
+      resizeMode="cover"
+      style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}
+    >
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
           <View style={styles.header}>
@@ -362,8 +368,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                   <Switch
                     value={autoFill}
                     onValueChange={toggleAutoFill}
-                    trackColor={{ false: '#d8e1e8', true: '#9cc8e4' }}
-                    thumbColor={autoFill ? '#315d7f' : '#f7fafc'}
+                    trackColor={{ false: '#e0d8c8', true: '#c8b898' }}
+                    thumbColor={autoFill ? '#7a5c3a' : '#fdfbf6'}
                     accessibilityLabel="정답 자동 채우기"
                   />
                 </View>
@@ -540,12 +546,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </View>
         </View>
       </Modal>
-    </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  safeArea: { flex: 1 },
   webSafeArea: { maxWidth: 480, alignSelf: 'center', width: '100%' },
   flex: { flex: 1 },
   container: { flex: 1, padding: 16, position: 'relative' },
@@ -553,57 +559,57 @@ const styles = StyleSheet.create({
     marginTop: 8,
     alignSelf: 'stretch',
   },
-  backButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
-  backButtonText: { color: '#5d89a7', fontSize: 12, fontWeight: '800' },
+  backButton: { backgroundColor: '#f0ebe0', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
+  backButtonText: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
-  mapTitle: { flex: 1, color: '#172536', fontSize: 16, fontWeight: '800', marginHorizontal: 10 },
+  mapTitle: { flex: 1, color: '#2e2418', fontSize: 16, fontWeight: '800', marginHorizontal: 10 },
   headerBadges: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  badge: { backgroundColor: '#e2edf6', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
-  badgeText: { color: '#315d7f', fontSize: 12, fontWeight: '700' },
+  badge: { backgroundColor: '#ece6d8', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
+  badgeText: { color: '#7a5c3a', fontSize: 12, fontWeight: '700' },
   hintBadge: { backgroundColor: '#fdf0e3', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 8 },
   hintBadgeText: { color: '#e08a3c', fontSize: 12, fontWeight: '700' },
-  statusRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 16, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10, borderWidth: 1, borderColor: '#e7edf2' },
+  statusRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fdfbf6', borderRadius: 16, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10, borderWidth: 1, borderColor: '#e0d8c8' },
   progressColumn: { flex: 1, paddingRight: 12 },
   autoFillBox: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  autoFillLabel: { color: '#647487', fontSize: 12, fontWeight: '700' },
+  autoFillLabel: { color: '#8a7560', fontSize: 12, fontWeight: '700' },
   progressRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 6 },
-  progressLabel: { color: '#647487', fontSize: 13, fontWeight: '600' },
-  progressValue: { color: '#315d7f', fontSize: 13, fontWeight: '800' },
-  progressTrack: { height: 8, backgroundColor: '#e9eef3', borderRadius: 8, overflow: 'hidden' },
-  progressFill: { height: '100%', backgroundColor: '#4d8cba', borderRadius: 8 },
+  progressLabel: { color: '#8a7560', fontSize: 13, fontWeight: '600' },
+  progressValue: { color: '#7a5c3a', fontSize: 13, fontWeight: '800' },
+  progressTrack: { height: 8, backgroundColor: '#e8e0d0', borderRadius: 8, overflow: 'hidden' },
+  progressFill: { height: '100%', backgroundColor: '#a8845a', borderRadius: 8 },
   boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
   boardClip: { overflow: 'hidden', height: '100%' },
   board: {
-    backgroundColor: '#fff',
+    backgroundColor: '#fdfbf6',
   },
   boardClip: {
     overflow: 'hidden',
     height: '100%',
     borderWidth: 2,
-    borderColor: '#315d7f',
+    borderColor: '#7a5c3a',
     borderRadius: 8,
-    shadowColor: '#17324d',
+    shadowColor: '#3a2e1f',
     shadowOpacity: 0.1,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 2 },
     elevation: 4,
   },
   gridRow: { flexDirection: 'row' },
-  cell: { width: 36, height: 36, borderWidth: 0.5, borderColor: '#c4d2de', backgroundColor: '#fdfefe', alignItems: 'center', justifyContent: 'center' },
-  blockedCell: { backgroundColor: '#2a3f54', borderColor: '#2a3f54' },
-  selectedCell: { backgroundColor: '#dff1ff', borderColor: '#4d8cba', borderWidth: 2 },
-  cellText: { color: '#234963', fontSize: 20, fontWeight: '800' },
-  previewText: { color: '#b8c4d0' },
+  cell: { width: 36, height: 36, borderWidth: 0.5, borderColor: '#d8cdb8', backgroundColor: '#fdfbf6', alignItems: 'center', justifyContent: 'center' },
+  blockedCell: { backgroundColor: '#3a2e1f', borderColor: '#3a2e1f' },
+  selectedCell: { backgroundColor: '#f0e8d8', borderColor: '#a8845a', borderWidth: 2 },
+  cellText: { color: '#3a2e1f', fontSize: 20, fontWeight: '800' },
+  previewText: { color: '#c8bba8' },
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fff', borderRadius: 20, padding: 24, alignItems: 'center' },
+  clearModalCard: { width: '100%', maxWidth: 360, backgroundColor: '#fdfbf6', borderRadius: 20, padding: 24, alignItems: 'center' },
   clearModalCloseButton: { position: 'absolute', top: 8, right: 8, width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
   clearModalCloseText: { color: '#8b98a5', fontSize: 24, lineHeight: 26, fontWeight: '500' },
-  clearModalTitle: { color: '#315d7f', fontSize: 22, fontWeight: '800' },
-  clearModalText: { color: '#647487', fontSize: 14, marginTop: 8, marginBottom: 20 },
-  clearModalButton: { backgroundColor: '#315d7f', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },
-  clearModalButtonText: { color: '#fff', fontSize: 14, fontWeight: '800' },
+  clearModalTitle: { color: '#7a5c3a', fontSize: 22, fontWeight: '800' },
+  clearModalText: { color: '#8a7560', fontSize: 14, marginTop: 8, marginBottom: 20 },
+  clearModalButton: { backgroundColor: '#7a5c3a', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },
+  clearModalButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
 });
 
 export default PuzzleScreen;
