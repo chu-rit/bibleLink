@@ -76,9 +76,8 @@
 - 맵을 재생성하거나 수정할 때 `id`를 새로운 값으로 교체한다.
 
 ## 단어 데이터 규칙
-- `data/bibleWordsLib1.json`은 `data/bibleWordsLib2.json`~`data/bibleWordsLib15.json`을 병합한 통합 라이브러리로, `npm run merge:lib1`로 생성한다.
+- `data/bibleWordsLib1.json`은 `data/bibleWordsLib2.json`~`data/bibleWordsLib15.json`을 병합한 통합 라이브러리로 `npm run merge:lib1`로 생성되며, 직접 편집하지 않는다. 단어 정의·참조·난이도 등 모든 수정은 해당 초성의 Lib2~Lib15 원본 파일에서 수행한 뒤 `npm run merge:lib1`으로 Lib1을 갱신한다. Lib1을 직접 수정하면 다음 병합 시 수정 내용이 사라진다.
 - 초성별 라이브러리 매핑: Lib2(가), Lib3(나), Lib4(다), Lib5(라), Lib6(마), Lib7(바), Lib8(사), Lib9(아), Lib10(자), Lib11(차), Lib12(카), Lib13(타), Lib14(파), Lib15(하).
-- 단어 추가·수정은 해당 초성의 Lib2~Lib15 파일에서 직접 편집한 뒤 `npm run merge:lib1`으로 Lib1을 갱신한다.
 - `npm run validate:maps`와 `npm run generate:map`은 실행 전 자동으로 Lib1 병합을 수행한다.
 - 맵의 `wordId`는 단어 데이터의 `id`와 연결하며, 두 값이 일치하는지 확인한다.
 - 맵의 `clue`가 비어 있거나 없으면 연결된 단어 데이터의 `definition`을 표시한다.
