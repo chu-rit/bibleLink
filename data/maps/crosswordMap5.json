@@ -1,110 +1,110 @@
 {
-  "id": "20260830_005",
+  "id": "20260831_017",
   "title": "E-5",
-  "difficulty": 1.2,
+  "difficulty": 1,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "####광야##",
-    "####주#레위",
-    "###길리기아#",
-    "###보#록##",
-    "여호수아####",
-    "#세######",
-    "#아######",
-    "#서약#####"
+    "########",
+    "########",
+    "####세###",
+    "###형상###",
+    "##구제#생##",
+    "##덩#광명체#",
+    "##이사야###",
+    "###울####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "광주리",
+      "answer": "세상",
       "direction": "down",
-      "row": 0,
+      "row": 2,
       "col": 4,
-      "length": 3,
-      "wordId": "basket"
+      "length": 2,
+      "wordId": "world"
     },
     {
       "number": 2,
-      "answer": "광야",
+      "answer": "형제",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "brother"
+    },
+    {
+      "number": 3,
+      "answer": "형상",
       "direction": "across",
-      "row": 0,
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "image"
+    },
+    {
+      "number": 4,
+      "answer": "구덩이",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 3,
+      "wordId": "pit"
+    },
+    {
+      "number": 5,
+      "answer": "구제",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "relief"
+    },
+    {
+      "number": 6,
+      "answer": "생명",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
+      "length": 2,
+      "wordId": "life"
+    },
+    {
+      "number": 7,
+      "answer": "광야",
+      "direction": "down",
+      "row": 5,
       "col": 4,
       "length": 2,
       "wordId": "wilderness"
     },
     {
-      "number": 3,
-      "answer": "레아",
-      "direction": "down",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "leah"
-    },
-    {
-      "number": 4,
-      "answer": "레위",
-      "direction": "across",
-      "row": 1,
-      "col": 6,
-      "length": 2,
-      "wordId": "levi"
-    },
-    {
-      "number": 5,
-      "answer": "길리기아",
-      "direction": "across",
-      "row": 2,
-      "col": 3,
-      "length": 4,
-      "wordId": "cilicia"
-    },
-    {
-      "number": 6,
-      "answer": "길보아",
-      "direction": "down",
-      "row": 2,
-      "col": 3,
-      "length": 3,
-      "wordId": "gilboa"
-    },
-    {
-      "number": 7,
-      "answer": "기록",
-      "direction": "down",
-      "row": 2,
-      "col": 5,
-      "length": 2,
-      "wordId": "writing"
-    },
-    {
       "number": 8,
-      "answer": "여호수아",
+      "answer": "광명체",
       "direction": "across",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "joshua"
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "luminary"
     },
     {
       "number": 9,
-      "answer": "호세아서",
-      "direction": "down",
-      "row": 4,
-      "col": 1,
-      "length": 4,
-      "wordId": "entry-호세아서"
+      "answer": "이사야",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "isaiah"
     },
     {
       "number": 10,
-      "answer": "서약",
-      "direction": "across",
-      "row": 7,
-      "col": 1,
+      "answer": "사울",
+      "direction": "down",
+      "row": 6,
+      "col": 3,
       "length": 2,
-      "wordId": "oath-2"
+      "wordId": "saul"
     }
   ]
 }

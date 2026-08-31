@@ -49,9 +49,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
-  const isSmallScreen = (windowWidth || 375) < 480;
+  const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
-  const masterTileWidth = Math.floor((windowWidth || 375) / 5) - 12;
+  const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
+  const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
 
   const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
   const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
@@ -89,7 +90,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
     const revealedMaps = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
-    const columns = 5;
+    const columns = isSmallScreen ? 4 : 5;
     if (masterMode) {
       return (
         <View style={styles.sectionBlock}>
@@ -205,7 +206,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%', backgroundColor: '#f6f8fb' },
-  webSafeArea: { height: '100vh' },
+  webSafeArea: { height: '100vh', width: '100%', maxWidth: 480, alignSelf: 'center' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
   headerSmall: { paddingHorizontal: 14, paddingTop: 14, marginBottom: 10 },
   brandTitle: { color: '#172536', fontSize: 32, fontWeight: '800', letterSpacing: 1 },

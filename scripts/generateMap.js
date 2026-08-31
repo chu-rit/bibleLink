@@ -156,7 +156,7 @@ function build(seed) {
       random
     ).sort((a, b) => {
       if (a.uses !== b.uses) return a.uses - b.uses;
-      return needHigher ? b.difficulty - a.difficulty : a.difficulty - b.difficulty;
+      return 0;
     });
 
     let placed = null;
@@ -195,8 +195,9 @@ function build(seed) {
 }
 
 let best = null;
+const seedOffset = Math.floor(Math.random() * 1000000);
 for (let seed = 1; seed <= seedCount; seed += 1) {
-  const result = build(seed);
+  const result = build(seed + seedOffset);
   if (!result) continue;
   if (result.average < minDifficulty) continue;
   if (!best || result.fresh > best.fresh || (result.fresh === best.fresh && result.average < best.average)) {

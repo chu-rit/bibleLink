@@ -1,5 +1,5 @@
 {
-  "id": "20260830_031",
+  "id": "20260831_005",
   "title": "E-2",
   "difficulty": 1.1,
   "width": 8,
@@ -7,104 +7,104 @@
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
     "########",
+    "#총##거짓말#",
+    "감독자#머#라#",
+    "##갈릴리#기둥",
+    "#####에서#",
+    "#####녹##",
     "########",
-    "########",
-    "#####비둘기",
-    "등###하늘#름",
-    "잔#여호와##나",
-    "대머리####무",
-    "##고수씨###"
+    "########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "비늘",
+      "answer": "총독",
       "direction": "down",
-      "row": 3,
-      "col": 5,
+      "row": 1,
+      "col": 1,
       "length": 2,
-      "wordId": "scales"
+      "wordId": "governor"
     },
     {
       "number": 2,
-      "answer": "비둘기",
-      "direction": "across",
-      "row": 3,
-      "col": 5,
+      "answer": "거머리",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
       "length": 3,
-      "wordId": "dove"
+      "wordId": "leech"
     },
     {
       "number": 3,
-      "answer": "기름나무",
-      "direction": "down",
-      "row": 3,
-      "col": 7,
-      "length": 4,
-      "wordId": "entry-기름나무"
+      "answer": "거짓말",
+      "direction": "across",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "lie"
     },
     {
       "number": 4,
-      "answer": "등잔대",
+      "answer": "말라기서",
       "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 3,
-      "wordId": "lampstand"
+      "row": 1,
+      "col": 6,
+      "length": 4,
+      "wordId": "entry-말라기서"
     },
     {
       "number": 5,
-      "answer": "하와",
-      "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "eve"
+      "answer": "감독자",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "overseer"
     },
     {
       "number": 6,
-      "answer": "하늘",
-      "direction": "across",
-      "row": 4,
-      "col": 4,
+      "answer": "자갈",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
       "length": 2,
-      "wordId": "entry-하늘"
+      "wordId": "gravel"
     },
     {
       "number": 7,
-      "answer": "여리고",
-      "direction": "down",
-      "row": 5,
+      "answer": "갈릴리",
+      "direction": "across",
+      "row": 3,
       "col": 2,
       "length": 3,
-      "wordId": "jericho"
+      "wordId": "galilee"
     },
     {
       "number": 8,
-      "answer": "여호와",
+      "answer": "기둥",
       "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "jehovah"
+      "row": 3,
+      "col": 6,
+      "length": 2,
+      "wordId": "pillar"
     },
     {
       "number": 9,
-      "answer": "대머리",
+      "answer": "에서",
       "direction": "across",
-      "row": 6,
-      "col": 0,
-      "length": 3,
-      "wordId": "baldness"
+      "row": 4,
+      "col": 5,
+      "length": 2,
+      "wordId": "esau"
     },
     {
       "number": 10,
-      "answer": "고수씨",
-      "direction": "across",
-      "row": 7,
-      "col": 2,
-      "length": 3,
-      "wordId": "entry-고수씨"
+      "answer": "에녹",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
+      "length": 2,
+      "wordId": "enoch"
     }
   ]
 }

@@ -65,7 +65,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
-  const boardWidth = Math.max(200, (windowWidth || 0) - 32);
+  const effectiveWidth = Platform.OS === 'web' ? Math.min(windowWidth || 0, 480) : (windowWidth || 0);
+  const boardWidth = Math.max(200, effectiveWidth - 32);
   const availableHeight = isKeyboardVisible
     ? (Platform.OS === 'web' && webViewportHeight
       ? webViewportHeight
@@ -243,7 +244,6 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
   const toggleAutoFill = (enabled) => {
     setAutoFill(enabled);
-    setAnswers(enabled ? Object.fromEntries(crosswordMap.cells.map((item, index) => [index, item.answer])) : {});
   };
 
   const submitAnswer = () => {
@@ -275,13 +275,20 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
     for (const { item, index } of positions) {
       const solved = answers[index];
-      if (!solved) continue;
+      if (!solved) {
+        if (autoFill) {
+          const offset = item.direction === 'across' ? colIndex - item.col : rowIndex - item.row;
+          const letter = normalize(item.answer)[offset];
+          if (letter) return { letter, preview: true };
+        }
+        continue;
+      }
       const offset = item.direction === 'across' ? colIndex - item.col : rowIndex - item.row;
       const letter = normalize(solved)[offset];
-      if (letter) return letter;
+      if (letter) return { letter, preview: false };
     }
 
-    return '';
+    return { letter: '', preview: false };
   };
 
   const isSelectedCell = (rowIndex, colIndex) => {
@@ -320,7 +327,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   }, [filledCellCount, totalCellCount]);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
           <View style={styles.header}>
@@ -413,9 +420,15 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                           style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
                         >
                           {isOpen && (
-                            <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }]}>
-                              {getCellText(rowIndex, colIndex)}
-                            </Text>
+                            (() => {
+                              const { letter, preview } = getCellText(rowIndex, colIndex);
+                              if (!letter) return null;
+                              return (
+                                <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }, preview && styles.previewText]}>
+                                  {letter}
+                                </Text>
+                              );
+                            })()
                           )}
                         </Pressable>
                       );
@@ -533,6 +546,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f6f8fb' },
+  webSafeArea: { maxWidth: 480, alignSelf: 'center', width: '100%' },
   flex: { flex: 1 },
   container: { flex: 1, padding: 16, position: 'relative' },
   answerCardContainer: {
@@ -579,6 +593,7 @@ const styles = StyleSheet.create({
   blockedCell: { backgroundColor: '#2a3f54', borderColor: '#2a3f54' },
   selectedCell: { backgroundColor: '#dff1ff', borderColor: '#4d8cba', borderWidth: 2 },
   cellText: { color: '#234963', fontSize: 20, fontWeight: '800' },
+  previewText: { color: '#b8c4d0' },
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
