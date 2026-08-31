@@ -25,6 +25,8 @@ import {
   getOpenCellCount,
 } from '../utils';
 import AnswerCard from './AnswerCard';
+import HandwrittenText from '../components/HandwrittenText';
+import glyphPathsData from '../data/glyphPaths.json';
 
 const BG_IMAGE = require('../assets/BG.png');
 
@@ -59,6 +61,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [webViewportHeight, setWebViewportHeight] = useState(null);
   const [answerCardHeight, setAnswerCardHeight] = useState(0);
   const [showClearModal, setShowClearModal] = useState(false);
+  const [animatedCells, setAnimatedCells] = useState({});
   const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const inputRef = useRef(null);
@@ -257,6 +260,34 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       setIsCorrect(true);
       setIsWrong(false);
       inputRef.current?.blur();
+
+      const cellMap = {};
+      let cumulativeDelay = 0;
+      const perSubDuration = 400;
+      for (let i = 0; i < slot.length; i++) {
+        const r = slot.direction === 'across' ? slot.row : slot.row + i;
+        const c = slot.direction === 'across' ? slot.col + i : slot.col;
+        const ch = [...slot.answer][i];
+        const glyph = glyphPathsData[ch];
+        const subCount = glyph?.subs?.length || 1;
+        // 이미 다른 단어로 채워져 있는 셀은 제외
+        const cellAlreadyFilled = Object.keys(answers).some((slotIdx) => {
+          if (Number(slotIdx) === selectedSlot) return false;
+          const otherSlot = crosswordMap.cells[Number(slotIdx)];
+          if (!otherSlot) return false;
+          const end = otherSlot.direction === 'across' ? otherSlot.col + otherSlot.length : otherSlot.col;
+          const bottom = otherSlot.direction === 'down' ? otherSlot.row + otherSlot.length : otherSlot.row;
+          return otherSlot.direction === 'across'
+            ? (r === otherSlot.row && c >= otherSlot.col && c < end)
+            : (c === otherSlot.col && r >= otherSlot.row && r < bottom);
+        });
+        if (cellAlreadyFilled) continue;
+        cellMap[`${r}-${c}`] = { delay: cumulativeDelay };
+        cumulativeDelay += subCount * (perSubDuration / 2) + perSubDuration;
+      }
+      setAnimatedCells(cellMap);
+      const totalDuration = cumulativeDelay + perSubDuration;
+      setTimeout(() => setAnimatedCells({}), totalDuration + 200);
     } else {
       triggerWrong();
     }
@@ -324,7 +355,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     if (totalCellCount > 0 && !hasShownClearRef.current) {
       hasShownClearRef.current = true;
       Keyboard.dismiss();
-      setShowClearModal(true);
+      const timer = setTimeout(() => setShowClearModal(true), 1500);
+      return () => clearTimeout(timer);
     }
   }, [filledCellCount, totalCellCount]);
 
@@ -429,10 +461,24 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                             (() => {
                               const { letter, preview } = getCellText(rowIndex, colIndex);
                               if (!letter) return null;
+                              const cellFontSize = Math.max(12, Math.floor(cellSize * 0.55));
+                              const cellKey = `${rowIndex}-${colIndex}`;
+                              const animData = animatedCells[cellKey];
+                              const shouldAnimate = !preview && Boolean(animData);
+                              const animDelay = shouldAnimate ? animData.delay : 0;
                               return (
-                                <Text style={[styles.cellText, { fontSize: Math.max(12, Math.floor(cellSize * 0.55)) }, preview && styles.previewText]}>
-                                  {letter}
-                                </Text>
+                                <HandwrittenText
+                                  key={`${cellKey}-${letter}`}
+                                  text={letter}
+                                  fontSize={cellFontSize}
+                                  color={preview ? '#c8bba8' : '#3a2e1f'}
+                                  duration={400}
+                                  stagger={0}
+                                  strokeWidth={2}
+                                  animate={shouldAnimate}
+                                  delay={animDelay}
+                                  style={styles.cellText}
+                                />
                               );
                             })()
                           )}
@@ -598,8 +644,7 @@ const styles = StyleSheet.create({
   cell: { width: 36, height: 36, borderWidth: 0.5, borderColor: '#d8cdb8', backgroundColor: '#fdfbf6', alignItems: 'center', justifyContent: 'center' },
   blockedCell: { backgroundColor: '#3a2e1f', borderColor: '#3a2e1f' },
   selectedCell: { backgroundColor: '#f0e8d8', borderColor: '#a8845a', borderWidth: 2 },
-  cellText: { color: '#3a2e1f', fontSize: 20, fontWeight: '800', fontFamily: 'UhBeeGmin2Bold' },
-  previewText: { color: '#c8bba8', fontFamily: 'UhBeeGmin2' },
+  cellText: {},
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
