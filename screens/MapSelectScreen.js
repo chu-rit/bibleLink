@@ -115,7 +115,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
     const revealedMaps = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
-    const columns = isSmallScreen ? 4 : 5;
+    const columns = 5;
     if (masterMode) {
       return (
         <View style={styles.sectionBlock}>
@@ -273,5 +273,5 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#fff', fontSize: 15, fontWeight: '800' },
   closeButton: { backgroundColor: '#e9f0f6', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#53708d', fontSize: 15, fontWeight: '800' },
-  adContainer: { alignItems: 'center', height: 50, marginTop: 4 },
+  adContainer: { alignItems: 'center', height: 50, marginTop: 4, marginBottom: 12 },
 });
