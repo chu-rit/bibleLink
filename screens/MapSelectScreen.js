@@ -95,7 +95,10 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     if (!isWeb || !adRef.current) return;
     const ins = document.createElement('ins');
     ins.className = 'kakao_ad_area';
-    ins.style.display = 'none';
+    ins.style.display = 'block';
+    ins.style.width = '320px';
+    ins.style.height = '50px';
+    ins.style.margin = '0 auto';
     ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
     ins.setAttribute('data-ad-width', '320');
     ins.setAttribute('data-ad-height', '50');
@@ -358,5 +361,5 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
   closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
-  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', height: 50, marginTop: 4, marginBottom: 12 },
+  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', minHeight: 50, marginTop: 4, marginBottom: 12 },
 });
