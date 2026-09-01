@@ -92,26 +92,36 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   };
 
   useEffect(() => {
-    if (!isWeb || !adRef.current) return;
-    const ins = document.createElement('ins');
-    ins.className = 'kakao_ad_area';
-    ins.style.display = 'block';
-    ins.style.width = '320px';
-    ins.style.height = '50px';
-    ins.style.margin = '0 auto';
-    ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
-    ins.setAttribute('data-ad-width', '320');
-    ins.setAttribute('data-ad-height', '50');
-    adRef.current.appendChild(ins);
-    if (!document.querySelector('script[src*="ba.min.js"]')) {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    if (!isWeb) return;
+    let ins;
+    let script;
+    const timer = setTimeout(() => {
+      if (!adRef.current) return;
+      ins = document.createElement('ins');
+      ins.className = 'kakao_ad_area';
+      ins.style.display = 'block';
+      ins.style.width = '320px';
+      ins.style.height = '50px';
+      ins.style.margin = '0 auto';
+      ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
+      ins.setAttribute('data-ad-width', '320');
+      ins.setAttribute('data-ad-height', '50');
+      adRef.current.appendChild(ins);
+      if (!document.querySelector('script[src*="ba.min.js"]')) {
+        script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
+        script.async = true;
+        document.body.appendChild(script);
+      } else {
+        if (typeof window !== 'undefined' && window.adfit) {
+          window.adfit.render();
+        }
+      }
+    }, 100);
     return () => {
-      if (adRef.current && adRef.current.contains(ins)) {
+      clearTimeout(timer);
+      if (adRef.current && ins && adRef.current.contains(ins)) {
         adRef.current.removeChild(ins);
       }
     };
