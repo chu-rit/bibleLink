@@ -1,110 +1,110 @@
 {
-  "id": "20260830_008",
+  "id": "20260901_002",
   "title": "E-8",
   "difficulty": 1.2,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "######침대",
-    "#######제",
-    "#######사",
-    "#####제사장",
-    "구###나단##",
-    "슬#바늘귀###",
-    "꿰#나#####",
-    "미스바#####"
+    "########",
+    "###사####",
+    "###본성###",
+    "####벽돌##",
+    "#####포로#",
+    "###제사장##",
+    "#눈동자####",
+    "##물#####"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "침대",
-      "direction": "across",
-      "row": 0,
-      "col": 6,
+      "answer": "사본",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
       "length": 2,
-      "wordId": "bed"
+      "wordId": "zaphon"
     },
     {
       "number": 2,
-      "answer": "대제사장",
-      "direction": "down",
-      "row": 0,
-      "col": 7,
-      "length": 4,
-      "wordId": "highpriest"
+      "answer": "본성",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 2,
+      "wordId": "nature"
     },
     {
       "number": 3,
-      "answer": "제단",
+      "answer": "성벽",
       "direction": "down",
-      "row": 3,
-      "col": 5,
+      "row": 2,
+      "col": 4,
       "length": 2,
-      "wordId": "altar"
+      "wordId": "walls"
     },
     {
       "number": 4,
-      "answer": "제사장",
+      "answer": "벽돌",
       "direction": "across",
       "row": 3,
+      "col": 4,
+      "length": 2,
+      "wordId": "brick"
+    },
+    {
+      "number": 5,
+      "answer": "돌포장",
+      "direction": "down",
+      "row": 3,
       "col": 5,
+      "length": 3,
+      "wordId": "entry-돌포장"
+    },
+    {
+      "number": 6,
+      "answer": "포로",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 2,
+      "wordId": "captive"
+    },
+    {
+      "number": 7,
+      "answer": "제자",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 2,
+      "wordId": "disciple"
+    },
+    {
+      "number": 8,
+      "answer": "제사장",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
       "length": 3,
       "wordId": "priest"
     },
     {
-      "number": 5,
-      "answer": "구슬꿰미",
-      "direction": "down",
-      "row": 4,
-      "col": 0,
-      "length": 4,
-      "wordId": "beads"
-    },
-    {
-      "number": 6,
-      "answer": "나귀",
-      "direction": "down",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "ass"
-    },
-    {
-      "number": 7,
-      "answer": "나단",
-      "direction": "across",
-      "row": 4,
-      "col": 4,
-      "length": 2,
-      "wordId": "nathan"
-    },
-    {
-      "number": 8,
-      "answer": "바늘귀",
-      "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 3,
-      "wordId": "entry-바늘귀"
-    },
-    {
       "number": 9,
-      "answer": "바나바",
-      "direction": "down",
-      "row": 5,
-      "col": 2,
+      "answer": "눈동자",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
       "length": 3,
-      "wordId": "barnabas"
+      "wordId": "pupil"
     },
     {
       "number": 10,
-      "answer": "미스바",
-      "direction": "across",
-      "row": 7,
-      "col": 0,
-      "length": 3,
-      "wordId": "mizpah"
+      "answer": "동물",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "animals"
     }
   ]
 }

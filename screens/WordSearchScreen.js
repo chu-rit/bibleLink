@@ -66,11 +66,22 @@ export default function WordSearchScreen({ onBack }) {
   }, []);
 
   const results = useMemo(() => {
-    const keyword = normalize(query);
+    const raw = normalize(query);
+    const xMatch = raw.match(/^(x+)(.*)$/i);
+    const isExclusion = Boolean(xMatch);
+    const excludeIndex = xMatch ? xMatch[1].length - 1 : -1;
+    const keyword = xMatch ? xMatch[2] : raw;
     const list = bibleWords
       .map((item) => ({ ...item, usage: getUsage(item.id), mapTitles: getMapTitles(item.id) }))
       .filter((item) => {
-        if (!keyword) return true;
+        if (!keyword && !isExclusion) return true;
+        if (isExclusion) {
+          if (!keyword) return true;
+          const word = normalize(item.word);
+          if (!word.includes(keyword)) return false;
+          if (word.startsWith(keyword, excludeIndex)) return false;
+          return true;
+        }
         return normalize(item.word).includes(keyword);
       })
       .sort((a, b) => {
@@ -162,7 +173,7 @@ export default function WordSearchScreen({ onBack }) {
           <TextInput
             value={query}
             onChangeText={setQuery}
-            placeholder="단어에 포함된 글자를 입력하세요"
+            placeholder="단어에 포함된 글자 입력 · x글자: 해당 위치 제외"
             placeholderTextColor="#a89880"
             autoCapitalize="none"
             autoCorrect={false}
