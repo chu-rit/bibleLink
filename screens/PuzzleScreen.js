@@ -490,7 +490,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
             </View>
 
-            {hasActiveSlot && (
+            {hasActiveSlot ? (
               <View
                 style={[
                   styles.answerCardContainer,
@@ -557,6 +557,13 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                   }}
                   inputRef={inputRef}
                 />
+              </View>
+            ) : (
+              <View style={[styles.answerCardContainer, { position: 'absolute', left: 0, right: 0, bottom: 0 }]} pointerEvents="none">
+                <View style={styles.emptySelection}>
+                  <Text style={styles.emptySelectionTitle}>퍼즐판의 칸을 눌러 보세요</Text>
+                  <Text style={styles.emptySelectionText}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
+                </View>
               </View>
             )}
           </View>
@@ -645,6 +652,9 @@ const styles = StyleSheet.create({
   blockedCell: { backgroundColor: '#3a2e1f', borderColor: '#3a2e1f' },
   selectedCell: { backgroundColor: '#f0e8d8', borderColor: '#a8845a', borderWidth: 2 },
   cellText: {},
+  emptySelection: { backgroundColor: '#fdfbf6', borderRadius: 16, padding: 20, alignItems: 'center', borderWidth: 1, borderColor: '#e0d8c8' },
+  emptySelectionTitle: { color: '#7a6450', fontSize: 15, fontWeight: '700', marginBottom: 6 },
+  emptySelectionText: { color: '#a89880', fontSize: 13, textAlign: 'center' },
   clue: { color: '#34485d', fontSize: 13, lineHeight: 19 },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   clearModalOverlay: { flex: 1, backgroundColor: 'rgba(23, 37, 54, 0.45)', alignItems: 'center', justifyContent: 'center', padding: 24 },
