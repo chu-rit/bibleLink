@@ -44,6 +44,41 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return undefined;
+    const preventContextMenu = (event) => event.preventDefault();
+    const body = document.body;
+    const root = document.getElementById('root');
+    const previous = {
+      bodyUserSelect: body.style.userSelect,
+      bodyWebkitUserSelect: body.style.webkitUserSelect,
+      bodyWebkitTouchCallout: body.style.webkitTouchCallout,
+      rootUserSelect: root?.style.userSelect || '',
+      rootWebkitUserSelect: root?.style.webkitUserSelect || '',
+      rootWebkitTouchCallout: root?.style.webkitTouchCallout || '',
+    };
+    body.style.userSelect = 'none';
+    body.style.webkitUserSelect = 'none';
+    body.style.webkitTouchCallout = 'none';
+    if (root) {
+      root.style.userSelect = 'none';
+      root.style.webkitUserSelect = 'none';
+      root.style.webkitTouchCallout = 'none';
+    }
+    document.addEventListener('contextmenu', preventContextMenu);
+    return () => {
+      body.style.userSelect = previous.bodyUserSelect;
+      body.style.webkitUserSelect = previous.bodyWebkitUserSelect;
+      body.style.webkitTouchCallout = previous.bodyWebkitTouchCallout;
+      if (root) {
+        root.style.userSelect = previous.rootUserSelect;
+        root.style.webkitUserSelect = previous.rootWebkitUserSelect;
+        root.style.webkitTouchCallout = previous.rootWebkitTouchCallout;
+      }
+      document.removeEventListener('contextmenu', preventContextMenu);
+    };
+  }, []);
+
+  useEffect(() => {
     if (Platform.OS !== 'web' || typeof window === 'undefined') return undefined;
     const onHashChange = () => {
       const hash = window.location.hash || '';
