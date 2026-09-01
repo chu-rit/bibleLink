@@ -161,8 +161,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           <View style={styles.sectionCopy}>
             <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
           </View>
-          <View style={[styles.sectionBadge, { backgroundColor: accent + '1a' }]}>
-            <Text style={[styles.sectionBadgeText, { color: accent }]}>{solvedCount}/{sectionMaps.length}</Text>
+          <View style={styles.sectionBadge}>
+            <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
           </View>
         </View>
         <View style={styles.tileGrid}>
