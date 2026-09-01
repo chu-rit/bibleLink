@@ -52,12 +52,31 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const toggleAnim = useRef(new Animated.Value(hideSolved ? 1 : 0)).current;
-  const { width: windowWidth } = useWindowDimensions();
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
   const adRef = useRef(null);
+  const [viewportHeight, setViewportHeight] = useState(windowHeight);
+
+  useEffect(() => {
+    if (!isWeb) return undefined;
+    const update = () => setViewportHeight(window.innerHeight);
+    update();
+    window.addEventListener('resize', update);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', update);
+      window.visualViewport.addEventListener('scroll', update);
+    }
+    return () => {
+      window.removeEventListener('resize', update);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', update);
+        window.visualViewport.removeEventListener('scroll', update);
+      }
+    };
+  }, [isWeb]);
 
   const toggleHideSolved = () => {
     setHideSolved((v) => {
@@ -236,7 +255,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}
+      style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: 480, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
       <View style={[styles.header, isSmallScreen && styles.headerSmall]}>
@@ -326,7 +345,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%' },
-  webSafeArea: { height: '100vh', width: '100%', maxWidth: 480, alignSelf: 'center' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
   headerSmall: { paddingHorizontal: 14, paddingTop: 14, marginBottom: 10 },
   brandLogo: { width: 180, height: 40 },
