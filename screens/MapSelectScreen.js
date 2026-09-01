@@ -358,5 +358,5 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
   closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
-  adContainer: { alignItems: 'center', height: 50, marginTop: 4, marginBottom: 12 },
+  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', height: 50, marginTop: 4, marginBottom: 12 },
 });
