@@ -230,7 +230,7 @@ export default function WordSearchScreen({ onBack }) {
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#f0ebe0' },
-  webSafeArea: { height: '100vh' },
+  webSafeArea: { height: '100vh', width: '100%', maxWidth: 480, alignSelf: 'center' },
   container: { flex: 1, padding: 16 },
   backButton: { borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderColor: '#e0d8c8' },
   backButtonText: { color: '#7a6450', fontSize: 12, fontWeight: '800' },

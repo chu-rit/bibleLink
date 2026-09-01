@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Easing, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, Animated, Easing, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
 const COLUMNS = 4;
@@ -48,7 +48,7 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, masterMode }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode }) {
   const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const toggleAnim = useRef(new Animated.Value(hideSolved ? 1 : 0)).current;
@@ -70,6 +70,25 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       }).start();
       return next;
     });
+  };
+
+  const confirmResetProgress = () => {
+    const reset = () => {
+      if (onResetProgress) onResetProgress(!hideSolved);
+      setShowSettings(false);
+    };
+    if (Platform.OS === 'web' && typeof window !== 'undefined') {
+      if (window.confirm('모든 진행 데이터를 초기화하시겠습니까?')) reset();
+    } else {
+      Alert.alert(
+        '진행 데이터 초기화',
+        '모든 퍼즐의 진행 데이터가 삭제됩니다. 계속하시겠습니까?',
+        [
+          { text: '취소', style: 'cancel' },
+          { text: '초기화', style: 'destructive', onPress: reset },
+        ]
+      );
+    }
   };
 
   useEffect(() => {
@@ -104,7 +123,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     return match ? match[2] : '';
   };
 
-  const renderTile = (map, columns) => {
+  const renderTile = (map, columns, isDimmed) => {
     const progress = progressByMap?.[map.id] || { filled: 0, total: map.cells.length };
     const percent = progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
     const isComplete = percent === 100;
@@ -115,8 +134,26 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <Pressable
         key={map.id}
         onPress={() => onSelect(map)}
-        onLongPress={masterMode && onCompleteMap ? () => onCompleteMap(map.id) : undefined}
-        style={[styles.tile, tileStyle, isComplete && styles.tileComplete]}
+        onLongPress={masterMode && onCompleteMap
+          ? () => onCompleteMap(map.id)
+          : !masterMode && isComplete && onResetMap
+            ? () => {
+              const reset = () => onResetMap(map.id);
+              if (Platform.OS === 'web' && typeof window !== 'undefined') {
+                if (window.confirm('클리어 데이터를 지우고 다시하시겠습니까?')) reset();
+              } else {
+                Alert.alert(
+                  '맵 초기화',
+                  '클리어 데이터를 지우고 다시하시겠습니까?',
+                  [
+                    { text: '취소', style: 'cancel' },
+                    { text: '확인', onPress: reset },
+                  ]
+                );
+              }
+            }
+            : undefined}
+        style={[styles.tile, tileStyle, isComplete && styles.tileComplete, isDimmed && styles.tileDimmed]}
       >
         <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
       </Pressable>
@@ -131,7 +168,20 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const renderSection = (eyebrow, title, sectionMaps, accent) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
-    const revealedMaps = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
+    const baseRevealed = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
+    const dimmedIds = new Set();
+    let revealedMaps = baseRevealed;
+    if (hideSolved) {
+      const unsolved = baseRevealed.filter((m) => getPercent(m) !== 100);
+      const solved = baseRevealed.filter((m) => getPercent(m) === 100);
+      if (unsolved.length < 5) {
+        const fillers = solved.slice(-(5 - unsolved.length));
+        revealedMaps = [...fillers, ...unsolved];
+        fillers.forEach((m) => dimmedIds.add(m.id));
+      } else {
+        revealedMaps = unsolved;
+      }
+    }
     const columns = 5;
     if (masterMode) {
       return (
@@ -146,10 +196,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.masterScroll}>
             <View style={styles.masterTileRow}>
-              {revealedMaps.map((map) => {
-                if (hideSolved && getPercent(map) === 100) return null;
-                return renderTile(map, 1);
-              })}
+              {revealedMaps.map((map) => renderTile(map, 1, dimmedIds.has(map.id)))}
             </View>
           </ScrollView>
         </View>
@@ -166,10 +213,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           </View>
         </View>
         <View style={styles.tileGrid}>
-          {revealedMaps.map((map) => {
-            if (hideSolved && getPercent(map) === 100) return null;
-            return renderTile(map, columns);
-          })}
+          {revealedMaps.map((map) => renderTile(map, columns, dimmedIds.has(map.id)))}
         </View>
       </View>
     );
@@ -248,13 +292,12 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
         <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+            <Text style={styles.modalEyebrow}>BIBLE LINK</Text>
             <Text style={styles.modalTitle}>설정</Text>
+            <Text style={styles.modalDescription}>퍼즐 진행 상태를 관리할 수 있습니다</Text>
             <Pressable
               style={styles.resetButton}
-              onPress={() => {
-                if (onResetProgress) onResetProgress(!hideSolved);
-                setShowSettings(false);
-              }}
+              onPress={confirmResetProgress}
             >
               <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
             </Pressable>
@@ -300,17 +343,20 @@ const styles = StyleSheet.create({
   masterTileRow: { flexDirection: 'row' },
   tile: { aspectRatio: 1, alignItems: 'center', justifyContent: 'center', padding: 4 },
   tileComplete: { backgroundColor: '#ece8dc', borderRadius: 16 },
+  tileDimmed: { opacity: 0.35 },
   gauge: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },
   gaugeSvg: { position: 'absolute' },
   gaugeInner: { alignItems: 'center', justifyContent: 'center' },
   gaugeNumber: { color: '#2e2418', fontSize: 18, fontWeight: '800' },
   gaugePercent: { color: '#8a7560', fontSize: 9, fontWeight: '700', marginTop: 1 },
-  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', alignItems: 'center' },
-  modalContent: { backgroundColor: '#fdfbf6', borderRadius: 20, padding: 24, width: '80%', maxWidth: 320, alignItems: 'stretch' },
-  modalTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginBottom: 20, textAlign: 'center' },
-  resetButton: { backgroundColor: '#d64545', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 12 },
-  resetButtonText: { color: '#fdfbf6', fontSize: 15, fontWeight: '800' },
-  closeButton: { backgroundColor: '#f0ebe0', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
-  closeButtonText: { color: '#7a6450', fontSize: 15, fontWeight: '800' },
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(46,36,24,0.28)', justifyContent: 'center', alignItems: 'center', padding: 20 },
+  modalContent: { backgroundColor: '#fdfbf6', borderRadius: 24, padding: 24, width: '100%', maxWidth: 340, alignItems: 'stretch', borderWidth: 1, borderColor: '#e0d8c8', shadowColor: '#2e2418', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.14, shadowRadius: 18, elevation: 8 },
+  modalEyebrow: { color: '#a89880', fontSize: 10, fontWeight: '800', letterSpacing: 2, textAlign: 'center', marginBottom: 6 },
+  modalTitle: { color: '#2e2418', fontSize: 22, fontWeight: '800', marginBottom: 6, textAlign: 'center' },
+  modalDescription: { color: '#8a7560', fontSize: 12, textAlign: 'center', marginBottom: 22 },
+  resetButton: { backgroundColor: '#fdfbf6', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 10, borderWidth: 1.5, borderColor: '#d64545' },
+  resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
+  closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
+  closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
   adContainer: { alignItems: 'center', height: 50, marginTop: 4, marginBottom: 12 },
 });

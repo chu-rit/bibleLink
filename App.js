@@ -150,13 +150,40 @@ export default function App() {
         onCompleteMap={masterMode ? (mapId) => {
           const map = crosswordMaps.find((m) => m.id === mapId);
           if (!map) return;
-          const answers = {};
-          map.cells.forEach((cell, index) => {
-            answers[index] = cell.answer;
-          });
           setAnswersByMap((prev) => {
-            const next = { ...prev, [mapId]: answers };
+            const next = { ...prev };
+            const currentAnswers = prev[mapId] || {};
+            const isComplete = getFilledCellCount(map, currentAnswers) === getOpenCellCount(map);
+            if (isComplete) {
+              delete next[mapId];
+            } else {
+              const answers = {};
+              map.cells.forEach((cell, index) => {
+                answers[index] = cell.answer;
+              });
+              next[mapId] = answers;
+            }
             try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
+            return next;
+          });
+        } : undefined}
+        onResetMap={!masterMode ? (mapId) => {
+          setAnswersByMap((prev) => {
+            const next = { ...prev };
+            delete next[mapId];
+            AsyncStorage.setItem('answersByMap', JSON.stringify(next)).catch(() => {});
+            return next;
+          });
+          setHintPointsByMap((prev) => {
+            const next = { ...prev };
+            delete next[mapId];
+            AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
+            return next;
+          });
+          setHintedSlotsByMap((prev) => {
+            const next = { ...prev };
+            delete next[mapId];
+            AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
             return next;
           });
         } : undefined}
