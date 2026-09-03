@@ -214,7 +214,7 @@
     "id": "sharuhen",
     "word": "사루헨",
     "definition": "시므온 지파의 도시로 실힘 또는 사아라임이라고도 불림",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "여호수아 19:1, 6",
       "여호수아 15:32"
@@ -234,7 +234,7 @@
     "id": "zarethan",
     "word": "사르단",
     "definition": "요르단 강변의 도시로 여호수아가 강을 건널 때 물이 쌓인 지점 근처",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "여호수아 3:16",
       "열왕기상 7:46"
@@ -254,7 +254,7 @@
     "id": "sarid",
     "word": "사릿",
     "definition": "스불론 경계의 도시로 므깃도 북쪽에 위치한 곳",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "여호수아 19:10, 12"
     ]
@@ -310,7 +310,7 @@
     "id": "samos",
     "word": "사모스",
     "definition": "소아시아 서부 해안 근처 에게 해의 섬으로 바울이 들른 곳",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "사도행전 20:15"
     ]
@@ -319,7 +319,7 @@
     "id": "samothrace",
     "word": "사모트라케",
     "definition": "에게 해 북동부의 산이 많은 섬으로 바울이 트로아스에서 건너간 곳",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "사도행전 16:11"
     ]
@@ -386,7 +386,7 @@
     "id": "zaphon",
     "word": "사본",
     "definition": "“지켜보다”를 의미하는 어근에서 유래한 이름으로, 갓 지파에게 할당된 도시. 일부 번역판에선 북쪽이라는 의미로도 쓰인다",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "여호수아 13:24, 27",
       "사사기 12:1"
@@ -406,7 +406,7 @@
     "id": "shaphir",
     "word": "사빌",
     "definition": "유다에 있던 장소로 미가의 심판 예언에 언급된 성읍",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "미가 1:11"
     ]
@@ -461,7 +461,7 @@
     "id": "zaanan",
     "word": "사아난",
     "definition": "미가 예언에 언급된 유다 세펠라의 성읍으로 스난과 동일시됨",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "미가 1:11",
       "여호수아 15:37"
@@ -481,7 +481,7 @@
     "id": "shaaraim",
     "word": "사아라임",
     "definition": "세펠라의 유다 도시로 다윗이 골리앗을 이긴 후 블레셋 시체가 흩어진 곳까지",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "여호수아 15:20, 33, 36",
       "사무엘상 17:52"
@@ -684,7 +684,7 @@
     "id": "salecah",
     "word": "살르가",
     "definition": "바산 동쪽 경계의 도시로 옥의 영토 일부이자 갓 사람들이 살게 된 곳",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "신명기 3:8, 10",
       "여호수아 12:4, 5"
@@ -723,7 +723,7 @@
     "id": "zalmonah",
     "word": "살모나",
     "definition": "이스라엘이 호르 산을 떠나 부논으로 가기 전 진을 쳤던 광야의 장소",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "민수기 33:41, 42"
     ]
@@ -732,7 +732,7 @@
     "id": "salmone",
     "word": "살모네",
     "definition": "크레타 동쪽 끝의 곶으로 바울이 로마로 가는 항해 중 지나간 곳",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "사도행전 27:7"
     ]
@@ -1468,7 +1468,7 @@
     "id": "zebedee",
     "word": "세베대",
     "definition": "사도 야고보와 요한의 아버지로 갈릴리에서 어부로 일한 사람",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "마태복음 4:21, 22"
     ]
@@ -1691,7 +1691,7 @@
     "id": "entry-소금 도시",
     "word": "소금도시",
     "definition": "광야에 있던 유다의 도시로 사해 북서쪽 연안 근처에 위치함",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "여호수아 15:61, 62"
     ]
@@ -1886,7 +1886,7 @@
     "id": "zoan",
     "word": "소안",
     "definition": "헤브론보다 7년 먼저 세워진 고대 이집트 도시로 파라오의 거처가 있던 곳",
-    "difficulty": 2,
+    "difficulty": 3,
     "references": [
       "민수기 13:22",
       "시편 78:12, 43"
@@ -3763,7 +3763,7 @@
     "id": "shikkeron",
     "word": "식그론",
     "definition": "유다 경계에 있던 장소로 에그론 북서쪽에 있던 곳",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "여호수아 15:1, 11"
     ]
@@ -3840,7 +3840,7 @@
     "id": "shiloah",
     "word": "실로아",
     "definition": "예루살렘에 있던 수로나 운하로 기혼 샘에서 흘러내린 물길",
-    "difficulty": 2,
+    "difficulty": 4,
     "references": [
       "이사야 8:6"
     ]
