@@ -1,0 +1,110 @@
+{
+  "id": "20260903_009",
+  "title": "N-3",
+  "difficulty": 1.9,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###이스라엘#",
+    "##셸#토#리#",
+    "#갈라디아#에#",
+    "#고##파#셀#",
+    "부리망#####",
+    "정#대리관###",
+    "함#######",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "이스라엘",
+      "direction": "across",
+      "row": 0,
+      "col": 3,
+      "length": 4,
+      "wordId": "israel"
+    },
+    {
+      "number": 2,
+      "answer": "스토아파",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "stoics"
+    },
+    {
+      "number": 3,
+      "answer": "엘리에셀",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "eliezer"
+    },
+    {
+      "number": 4,
+      "answer": "셸라",
+      "direction": "down",
+      "row": 1,
+      "col": 2,
+      "length": 2,
+      "wordId": "shelah"
+    },
+    {
+      "number": 5,
+      "answer": "갈라디아",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "galatia"
+    },
+    {
+      "number": 6,
+      "answer": "갈고리",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 3,
+      "wordId": "hook"
+    },
+    {
+      "number": 7,
+      "answer": "부리망",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "muzzle"
+    },
+    {
+      "number": 8,
+      "answer": "부정함",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 3,
+      "wordId": "uncleanness"
+    },
+    {
+      "number": 9,
+      "answer": "망대",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "tower"
+    },
+    {
+      "number": 10,
+      "answer": "대리관",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "deputy"
+    }
+  ]
+}

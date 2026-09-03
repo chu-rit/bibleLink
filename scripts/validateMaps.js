@@ -129,16 +129,18 @@ mapFiles.forEach((file) => {
     map.difficulty = computedDifficulty;
     fs.writeFileSync(path.join(mapsDir, file), `${JSON.stringify(map, null, 2)}\n`, 'utf8');
   }
+  if (map.width !== 8 || map.height !== 8) fail('맵은 8x8이어야 합니다');
+  if (map.cells.length !== 10) fail('맵은 단어 10개여야 합니다');
   if (map.difficulty <= EASY_MAX_DIFFICULTY) {
-    if (map.width !== 8 || map.height !== 8) fail('이지 맵은 8x8이어야 합니다');
-    if (map.cells.length !== 10) fail('이지 맵은 단어 10개여야 합니다');
     if (average < 1 || average > EASY_MAX_DIFFICULTY) {
       fail(`이지 맵의 실제 평균 난이도(${average.toFixed(2)})가 1.0~1.8 범위를 벗어납니다`);
     }
   } else if (map.difficulty >= 2.6) {
-    if (map.width !== 12 || map.height !== 12) fail('하드 맵은 12x12이어야 합니다');
-    if (map.cells.length !== 15) fail('하드 맵은 단어 15개여야 합니다');
     if (average < 2.6) fail(`하드 맵의 실제 평균 난이도(${average.toFixed(2)})가 2.6 이상이어야 합니다`);
+  } else {
+    if (average < 1.9 || average > 2.5) {
+      fail(`노말 맵의 실제 평균 난이도(${average.toFixed(2)})가 1.9~2.5 범위를 벗어납니다`);
+    }
   }
   console.log(
     `${file}: ${map.width}x${map.height}, 단어 ${map.cells.length}개, 평균 난이도 ${average.toFixed(2)}`

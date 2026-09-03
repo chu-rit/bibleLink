@@ -1,0 +1,110 @@
+{
+  "id": "20260903_008",
+  "title": "N-2",
+  "difficulty": 2,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########",
+    "#리######",
+    "#브######",
+    "#가데스####",
+    "##살#####",
+    "바돌로매#피##",
+    "란#니#시리아#",
+    "##가야바#사#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "리브가",
+      "direction": "down",
+      "row": 1,
+      "col": 1,
+      "length": 3,
+      "wordId": "rebecca"
+    },
+    {
+      "number": 2,
+      "answer": "가데스",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "kadesh"
+    },
+    {
+      "number": 3,
+      "answer": "데살로니가",
+      "direction": "down",
+      "row": 3,
+      "col": 2,
+      "length": 5,
+      "wordId": "thessalonica"
+    },
+    {
+      "number": 4,
+      "answer": "바돌로매",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 4,
+      "wordId": "bartholomew"
+    },
+    {
+      "number": 5,
+      "answer": "바란",
+      "direction": "down",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "paran"
+    },
+    {
+      "number": 6,
+      "answer": "피리",
+      "direction": "down",
+      "row": 5,
+      "col": 5,
+      "length": 2,
+      "wordId": "entry-피리"
+    },
+    {
+      "number": 7,
+      "answer": "시리아",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 3,
+      "wordId": "syria"
+    },
+    {
+      "number": 8,
+      "answer": "시바",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "ziphah"
+    },
+    {
+      "number": 9,
+      "answer": "아사",
+      "direction": "down",
+      "row": 6,
+      "col": 6,
+      "length": 2,
+      "wordId": "asa"
+    },
+    {
+      "number": 10,
+      "answer": "가야바",
+      "direction": "across",
+      "row": 7,
+      "col": 2,
+      "length": 3,
+      "wordId": "caiaphas"
+    }
+  ]
+}

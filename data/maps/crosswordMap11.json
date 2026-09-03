@@ -1,0 +1,110 @@
+{
+  "id": "20260903_006",
+  "title": "N-1",
+  "difficulty": 1.8,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "###여#파수대",
+    "###호#라##",
+    "우스#아레오바고",
+    "#보세스##카#",
+    "#이###므나헴",
+    "불임####무#",
+    "########",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "여호아스",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 4,
+      "wordId": "jehoash"
+    },
+    {
+      "number": 2,
+      "answer": "파라오",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "pharaoh"
+    },
+    {
+      "number": 3,
+      "answer": "파수대",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "watchtower"
+    },
+    {
+      "number": 4,
+      "answer": "우스",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "uz"
+    },
+    {
+      "number": 5,
+      "answer": "스보이임",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "zeboiim"
+    },
+    {
+      "number": 6,
+      "answer": "아레오바고",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 5,
+      "wordId": "areopagus"
+    },
+    {
+      "number": 7,
+      "answer": "바카나무",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 4,
+      "wordId": "baca"
+    },
+    {
+      "number": 8,
+      "answer": "보세스",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 3,
+      "wordId": "bozez"
+    },
+    {
+      "number": 9,
+      "answer": "므나헴",
+      "direction": "across",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "menahem"
+    },
+    {
+      "number": 10,
+      "answer": "불임",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 2,
+      "wordId": "barrenness"
+    }
+  ]
+}

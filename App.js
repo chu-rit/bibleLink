@@ -169,18 +169,13 @@ export default function App() {
         onWordSearch={masterMode ? () => {
           setScreen('wordSearch');
         } : undefined}
-        onResetProgress={(hideSolvedOff) => {
+        onResetProgress={() => {
           setAnswersByMap({});
           setHintPointsByMap({});
           setHintedSlotsByMap({});
           AsyncStorage.removeItem('answersByMap').catch(() => {});
           AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
           AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
-          if (hideSolvedOff) {
-            const next = !masterMode;
-            setMasterMode(next);
-            try { localStorage.setItem('masterMode', next ? '1' : '0'); } catch {}
-          }
         }}
         onCompleteMap={masterMode ? (mapId) => {
           const map = crosswordMaps.find((m) => m.id === mapId);

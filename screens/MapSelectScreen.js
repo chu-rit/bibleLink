@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, Animated, Easing, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
 const COLUMNS = 4;
@@ -49,9 +49,7 @@ function Gauge({ percent, number, isComplete }) {
 }
 
 export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode }) {
-  const [hideSolved, setHideSolved] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
-  const toggleAnim = useRef(new Animated.Value(hideSolved ? 1 : 0)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
@@ -78,22 +76,9 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     };
   }, [isWeb]);
 
-  const toggleHideSolved = () => {
-    setHideSolved((v) => {
-      const next = !v;
-      Animated.timing(toggleAnim, {
-        toValue: next ? 1 : 0,
-        duration: 200,
-        easing: Easing.out(Easing.ease),
-        useNativeDriver: false,
-      }).start();
-      return next;
-    });
-  };
-
   const confirmResetProgress = () => {
     const reset = () => {
-      if (onResetProgress) onResetProgress(!hideSolved);
+      if (onResetProgress) onResetProgress();
       setShowSettings(false);
     };
     if (Platform.OS === 'web' && typeof window !== 'undefined') {
@@ -146,9 +131,9 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     };
   }, [isWeb]);
 
-  const easyMaps = maps.filter((m) => m.difficulty <= 1.8);
-  const normalMaps = maps.filter((m) => m.difficulty > 1.8 && m.difficulty < 2.6);
-  const hardMaps = maps.filter((m) => m.difficulty >= 2.6);
+  const easyMaps = maps.filter((m) => m.title?.startsWith('E-'));
+  const normalMaps = maps.filter((m) => m.title?.startsWith('N-'));
+  const hardMaps = maps.filter((m) => m.title?.startsWith('H-'));
 
   const mapNumber = (map) => {
     const match = /^([A-Z])-(\d+)$/.exec(map.title || '');
@@ -161,7 +146,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const isComplete = percent === 100;
     const tileStyle = columns === 1
       ? { width: masterTileWidth, marginRight: 8 }
-      : { flexBasis: `${100 / columns}%` };
+      : { width: `${Math.floor(100 / columns)}%`, maxWidth: `${Math.floor(100 / columns)}%` };
     return (
       <Pressable
         key={map.id}
@@ -199,41 +184,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
   const renderSection = (eyebrow, title, sectionMaps, accent) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
-    const revealCount = Math.min(5 + solvedCount, sectionMaps.length);
-    const baseRevealed = masterMode ? sectionMaps : sectionMaps.slice(0, revealCount);
     const dimmedIds = new Set();
-    let revealedMaps = baseRevealed;
-    if (hideSolved) {
-      const unsolved = baseRevealed.filter((m) => getPercent(m) !== 100);
-      const solved = baseRevealed.filter((m) => getPercent(m) === 100);
-      if (unsolved.length < 5) {
-        const fillers = solved.slice(-(5 - unsolved.length));
-        revealedMaps = [...fillers, ...unsolved];
-        fillers.forEach((m) => dimmedIds.add(m.id));
-      } else {
-        revealedMaps = unsolved;
-      }
-    }
     const columns = 5;
-    if (masterMode) {
-      return (
-        <View style={styles.sectionBlock}>
-          <View style={styles.sectionHeader}>
-            <View style={styles.sectionCopy}>
-              <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
-            </View>
-            <View style={styles.sectionBadge}>
-              <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
-            </View>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.masterScroll}>
-            <View style={styles.masterTileRow}>
-              {revealedMaps.map((map) => renderTile(map, 1, dimmedIds.has(map.id)))}
-            </View>
-          </ScrollView>
-        </View>
-      );
-    }
     return (
       <View>
         <View style={styles.sectionHeader}>
@@ -245,7 +197,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           </View>
         </View>
         <View style={styles.tileGrid}>
-          {revealedMaps.map((map) => renderTile(map, columns, dimmedIds.has(map.id)))}
+          {sectionMaps.map((map) => renderTile(map, columns, dimmedIds.has(map.id)))}
         </View>
       </View>
     );
@@ -283,32 +235,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
           <Text style={styles.searchEntryArrow}>›</Text>
         </Pressable>
       )}
-
-      <View style={styles.toggleRow}>
-        <Text style={styles.toggleLabel}>푼 퍼즐 가리기</Text>
-        <Pressable
-          onPress={toggleHideSolved}
-          accessibilityRole="switch"
-          accessibilityState={{ checked: hideSolved }}
-        >
-          <Animated.View style={[styles.toggleSwitch, { borderColor: toggleAnim.interpolate({ inputRange: [0, 1], outputRange: ['#c8b898', '#7a5c3a'] }) }]}>
-            <Animated.View
-              style={[
-                styles.toggleThumb,
-                {
-                  backgroundColor: toggleAnim.interpolate({ inputRange: [0, 1], outputRange: ['#c8b898', '#7a5c3a'] }),
-                  transform: [{
-                    translateX: toggleAnim.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [0, 20],
-                    }),
-                  }],
-                },
-              ]}
-            />
-          </Animated.View>
-        </Pressable>
-      </View>
 
       <ScrollView
         style={styles.scrollView}
@@ -350,10 +276,6 @@ const styles = StyleSheet.create({
   brandLogo: { width: 180, height: 40 },
   brandLogoSmall: { width: 140, height: 32 },
   settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#f0ebe0' },
-  toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, marginBottom: 12 },
-  toggleLabel: { color: '#7a6450', fontSize: 12, fontWeight: '700', marginRight: 8 },
-  toggleSwitch: { width: 44, height: 24, borderRadius: 12, borderWidth: 1.5, borderColor: '#c8b898', justifyContent: 'center', padding: 2 },
-  toggleThumb: { width: 18, height: 18, borderRadius: 9, backgroundColor: '#c8b898' },
   searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1.5, borderColor: '#7a5c3a', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntrySmall: { padding: 14, marginHorizontal: 14, marginBottom: 10, borderRadius: 14 },
   searchEntryCopy: { flex: 1, paddingRight: 12 },
@@ -369,7 +291,7 @@ const styles = StyleSheet.create({
   sectionTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginTop: 2, textAlign: 'left' },
   sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1, borderColor: '#e0d8c8' },
   sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right', color: '#7a6450' },
-  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 8 },
+  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', width: '100%', paddingBottom: 8 },
   masterScroll: { marginBottom: 12 },
   masterTileRow: { flexDirection: 'row' },
   tile: { aspectRatio: 1, alignItems: 'center', justifyContent: 'center', padding: 4 },

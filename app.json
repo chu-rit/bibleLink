@@ -5,8 +5,13 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "icon": "./assets/ICON.png",
     "android": {
-      "softwareKeyboardLayoutMode": "resize"
+      "softwareKeyboardLayoutMode": "resize",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/ICON.png",
+        "backgroundColor": "#ffffff"
+      }
     },
     "assetBundlePatterns": [
       "**/*"
@@ -14,7 +19,8 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "pwa": true
+      "pwa": true,
+      "favicon": "./assets/ICON.png"
     },
     "experiments": {
       "baseUrl": "/bibleLink"

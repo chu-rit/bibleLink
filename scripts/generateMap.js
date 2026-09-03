@@ -24,15 +24,25 @@ const seedCount = option('seeds', 20000);
 const minDifficulty = option('min-difficulty', 0);
 const longLength = option('long-length', 999);
 const longLimit = option('long-limit', 999);
+const maxDiff3 = option('max-diff3', 999);
 const outputFile = `crosswordMap${mapNumber}.json`;
 const isEasy = targetDifficulty <= 1.8;
+const isNormal = targetDifficulty > 1.8 && targetDifficulty < 2.6;
 const isHard = targetDifficulty >= 2.6;
-if (isEasy && (size !== 8 || targetWords !== 10 || targetDifficulty < 1)) {
-  console.error('이지 맵 규칙: 8x8, 단어 10개, 평균 난이도 1.0~1.8을 사용하세요.');
+if (size !== 8 || targetWords !== 10) {
+  console.error('맵 규칙: 8x8, 단어 10개를 사용하세요.');
   process.exit(1);
 }
-if (isHard && (size !== 12 || targetWords !== 15)) {
-  console.error('하드 맵 규칙: 12x12, 단어 15개, 평균 난이도 2.6 이상을 사용하세요.');
+if (isEasy && targetDifficulty < 1) {
+  console.error('이지 맵 규칙: 평균 난이도 1.0~1.8을 사용하세요.');
+  process.exit(1);
+}
+if (isNormal && (targetDifficulty < 1.9 || targetDifficulty > 2.5)) {
+  console.error('노말 맵 규칙: 평균 난이도 1.9~2.5를 사용하세요.');
+  process.exit(1);
+}
+if (isHard && targetDifficulty < 2.6) {
+  console.error('하드 맵 규칙: 평균 난이도 2.6 이상을 사용하세요.');
   process.exit(1);
 }
 
@@ -144,6 +154,7 @@ function build(seed) {
   while (list.length < targetWords) {
     const total = list.reduce((sum, item) => sum + item.difficulty, 0);
     const longCount = list.filter((item) => item.letters.length >= longLength).length;
+    const diff3Count = list.filter((item) => item.difficulty >= 3).length;
     const currentAvg = list.length ? total / list.length : 0;
     const needHigher = currentAvg < targetDifficulty;
     const candidates = shuffle(
@@ -151,7 +162,8 @@ function build(seed) {
         (item) =>
           !list.some((placed) => placed.id === item.id) &&
           (total + item.difficulty) / (list.length + 1) <= targetDifficulty &&
-          (item.letters.length < longLength || longCount < longLimit)
+          (item.letters.length < longLength || longCount < longLimit) &&
+          (item.difficulty < 3 || diff3Count < maxDiff3)
       ),
       random
     ).sort((a, b) => {
@@ -214,7 +226,7 @@ if (!best) {
 const ordered = [...best.list].sort((a, b) => a.row - b.row || a.col - b.col);
 
 // 난이도별 시리즈 번호 계산 (E-1, N-1, H-1 형식)
-const prefix = size === 8 ? 'E' : size === 10 ? 'N' : 'H';
+const prefix = isEasy ? 'E' : isHard ? 'H' : 'N';
 const outputFilePath = path.join(mapsDir, outputFile);
 const fileExists = fs.existsSync(outputFilePath);
 
@@ -228,10 +240,10 @@ if (fileExists) {
     .filter(f => /^crosswordMap\d+\.json$/.test(f) && f !== outputFile)
     .map(f => {
       const m = JSON.parse(fs.readFileSync(path.join(mapsDir, f), 'utf8'));
-      return { file: f, width: m.width, title: m.title };
+      return { file: f, title: m.title };
     });
-  const sameSizeCount = existingMaps.filter(m => m.width === size).length;
-  title = `${prefix}-${sameSizeCount + 1}`;
+  const sameTitlePrefixCount = existingMaps.filter((m) => m.title?.startsWith(`${prefix}-`)).length;
+  title = `${prefix}-${sameTitlePrefixCount + 1}`;
 }
 
 // id 생성: 날짜 기반 (YYYYMMDD_NNN) 형식, 카운터 파일로 삭제 후 재생성 충돌 방지
