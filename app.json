@@ -19,8 +19,7 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "pwa": true,
-      "favicon": "./assets/ICON.png"
+      "pwa": true
     },
     "experiments": {
       "baseUrl": "/bibleLink"

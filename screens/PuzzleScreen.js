@@ -49,6 +49,11 @@ const isMasterMode = Platform.OS === 'web' &&
   (isLocalhost || webPath.includes('/master') || getMasterModeFromStorage());
 
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint, masterMode }) {
+  const prevMapIdRef = useRef(null);
+  const mapChanged = prevMapIdRef.current !== crosswordMap?.id;
+  if (mapChanged) {
+    prevMapIdRef.current = crosswordMap?.id;
+  }
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [answers, setAnswers] = useState(initialAnswers || {});
   const [input, setInput] = useState('');
@@ -62,7 +67,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [answerCardHeight, setAnswerCardHeight] = useState(0);
   const [showClearModal, setShowClearModal] = useState(false);
   const [animatedCells, setAnimatedCells] = useState({});
-  const hasShownClearRef = useRef(getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap));
+  const hasShownClearRef = useRef(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const inputRef = useRef(null);
   const shakeAnim = useRef(new Animated.Value(0)).current;
@@ -80,6 +85,21 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const headerHeight = 160;
   const maxBoardHeight = (windowHeight || 0) - headerHeight;
   const cellSizeRef = useRef(null);
+
+  // Reset map-specific state when crosswordMap changes (derived state pattern)
+  if (mapChanged) {
+    setAnswers(initialAnswers || {});
+    setInput('');
+    setIsCorrect(false);
+    setIsWrong(false);
+    setAutoFill(false);
+    setSelectedSlot(null);
+    setShowClearModal(false);
+    setAnimatedCells({});
+    cellSizeRef.current = null;
+    hasShownClearRef.current = getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap);
+  }
+
   if (cellSizeRef.current === null) {
     cellSizeRef.current = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
       ? Math.max(8, Math.min(
@@ -92,6 +112,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const cellSize = cellSizeRef.current;
   const exactBoardWidth = cellSize * (crosswordMap.width || 1) + 4;
   const boardHeight = cellSize * (crosswordMap.height || 1) + 4;
+
+  const instanceIdRef = useRef(null);
+  if (instanceIdRef.current === null) {
+    instanceIdRef.current = Math.random().toString(36).slice(2, 8);
+  }
+  useEffect(() => {
+    return () => {};
+  }, []);
 
   useEffect(() => {
     onAnswersChange?.(crosswordMap.id, answers);

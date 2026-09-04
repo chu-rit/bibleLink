@@ -1,5 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Platform } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import PageFlipper from '@laffy1309/react-native-page-flipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
 import crosswordMaps from './data/maps/crosswordMaps';
@@ -29,6 +31,42 @@ const isMasterModeByUrl = Platform.OS === 'web' &&
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
+
+const PAGE_DATA = ['mapSelect', 'puzzle'];
+const EMPTY_MAP = {
+  id: '__empty__',
+  title: '',
+  difficulty: 1,
+  width: 8,
+  height: 8,
+  grid: Array.from({ length: 8 }, () => '########'),
+  cells: [],
+};
+
+class PageFlipperBoundary extends React.Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('[PageFlipperBoundary] ERROR');
+    console.error('[PageFlipperBoundary] error.message', error?.message);
+    console.error('[PageFlipperBoundary] error.stack', error?.stack);
+    console.error('[PageFlipperBoundary] componentStack', errorInfo?.componentStack);
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+    if (!previousState.hasError && this.state.hasError) {
+      console.log('[PageFlipperBoundary] FALLBACK RENDERED');
+    }
+  }
+
+  render() {
+    return this.state.hasError ? this.props.fallback : this.props.children;
+  }
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -144,96 +182,184 @@ export default function App() {
     [answersByMap]
   );
 
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const flipperRef = useRef(null);
+  const flipperIndexRef = useRef(0);
+  const navigationCommandRef = useRef(0);
+  const animationActiveRef = useRef(false);
+  const pageWidth = Math.min(windowWidth || 375, 480);
+  const pageHeight = Math.min(windowHeight || Math.round(pageWidth * 20 / 9), Math.round(pageWidth * 20 / 9));
+  const pageIndex = screen === 'puzzle' && selectedMap ? 1 : 0;
+
+  useEffect(() => {
+    if (!loaded || !fontsLoaded) return undefined;
+    const currentIndex = flipperIndexRef.current;
+    const difference = pageIndex - currentIndex;
+    if (difference === 1) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.nextPage?.();
+    } else if (difference === -1) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.previousPage?.();
+    } else if (difference !== 0) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.goToPage?.(pageIndex);
+    }
+    return undefined;
+  }, [loaded, fontsLoaded, pageIndex, screen]);
+
   if (!loaded || !fontsLoaded) return null;
 
   if (screen === 'wordSearch') {
-    return (
-      <WordSearchScreen
-        onBack={() => {
-          setScreen('mapSelect');
-        }}
-      />
-    );
+    return <WordSearchScreen onBack={() => setScreen('mapSelect')} />;
   }
 
-  if (screen !== 'puzzle' || !selectedMap) {
-    return (
-      <MapSelectScreen
-        maps={crosswordMaps}
-        progressByMap={progressByMap}
-        masterMode={masterMode}
-        onSelect={(map) => {
-          setSelectedMap(map);
-          setScreen('puzzle');
-        }}
-        onWordSearch={masterMode ? () => {
-          setScreen('wordSearch');
-        } : undefined}
-        onResetProgress={() => {
-          setAnswersByMap({});
-          setHintPointsByMap({});
-          setHintedSlotsByMap({});
-          AsyncStorage.removeItem('answersByMap').catch(() => {});
-          AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
-          AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
-        }}
-        onCompleteMap={masterMode ? (mapId) => {
-          const map = crosswordMaps.find((m) => m.id === mapId);
-          if (!map) return;
-          setAnswersByMap((prev) => {
-            const next = { ...prev };
-            const currentAnswers = prev[mapId] || {};
-            const isComplete = getFilledCellCount(map, currentAnswers) === getOpenCellCount(map);
-            if (isComplete) {
-              delete next[mapId];
-            } else {
-              const answers = {};
-              map.cells.forEach((cell, index) => {
-                answers[index] = cell.answer;
-              });
-              next[mapId] = answers;
-            }
-            try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
-            return next;
-          });
-        } : undefined}
-        onResetMap={!masterMode ? (mapId) => {
-          setAnswersByMap((prev) => {
-            const next = { ...prev };
+  const mapPage = (
+    <MapSelectScreen
+      maps={crosswordMaps}
+      progressByMap={progressByMap}
+      masterMode={masterMode}
+      onSelect={(map) => {
+        setSelectedMap(map);
+        setScreen('puzzle');
+      }}
+      onWordSearch={masterMode ? () => {
+        setScreen('wordSearch');
+      } : undefined}
+      onResetProgress={() => {
+        setAnswersByMap({});
+        setHintPointsByMap({});
+        setHintedSlotsByMap({});
+        AsyncStorage.removeItem('answersByMap').catch(() => {});
+        AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
+        AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
+      }}
+      onCompleteMap={masterMode ? (mapId) => {
+        const map = crosswordMaps.find((m) => m.id === mapId);
+        if (!map) return;
+        setAnswersByMap((prev) => {
+          const next = { ...prev };
+          const currentAnswers = prev[mapId] || {};
+          const isComplete = getFilledCellCount(map, currentAnswers) === getOpenCellCount(map);
+          if (isComplete) {
             delete next[mapId];
-            AsyncStorage.setItem('answersByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-          setHintPointsByMap((prev) => {
-            const next = { ...prev };
-            delete next[mapId];
-            AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-          setHintedSlotsByMap((prev) => {
-            const next = { ...prev };
-            delete next[mapId];
-            AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-        } : undefined}
-      />
-    );
-  }
+          } else {
+            const answers = {};
+            map.cells.forEach((cell, index) => {
+              answers[index] = cell.answer;
+            });
+            next[mapId] = answers;
+          }
+          try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
+          return next;
+        });
+      } : undefined}
+      onResetMap={!masterMode ? (mapId) => {
+        setAnswersByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('answersByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+        setHintPointsByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+        setHintedSlotsByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+      } : undefined}
+    />
+  );
 
-  return (
+  const puzzlePage = (
     <PuzzleScreen
-      crosswordMap={selectedMap}
-      initialAnswers={answersByMap[selectedMap.id]}
+      crosswordMap={selectedMap || EMPTY_MAP}
+      initialAnswers={selectedMap ? answersByMap[selectedMap.id] : {}}
       onAnswersChange={handleAnswersChange}
-      hintPoints={hintPointsByMap[selectedMap.id] ?? 3}
-      hintedSlots={hintedSlotsByMap[selectedMap.id] || {}}
+      hintPoints={selectedMap ? hintPointsByMap[selectedMap.id] ?? 3 : 0}
+      hintedSlots={selectedMap ? hintedSlotsByMap[selectedMap.id] || {} : {}}
       onUseHint={handleUseHint}
       masterMode={masterMode}
       onBack={() => {
-        setSelectedMap(null);
         setScreen('mapSelect');
       }}
     />
+  );
+  const currentPage = pageIndex === 1 ? puzzlePage : mapPage;
+
+  const renderPageContent = (pageId) => (
+    <PageContent pageId={pageId} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
+  );
+
+  return (
+    <GestureHandlerRootView style={styles.root}>
+      <PageFlipperBoundary fallback={currentPage}>
+        <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight }]}>
+          <PageFlipper
+          ref={flipperRef}
+          data={PAGE_DATA}
+          pageSize={{ width: pageWidth, height: pageHeight }}
+          portrait
+          singleImageMode
+          pressable={false}
+          contentContainerStyle={styles.flipperContainer}
+          onFlipStart={(direction) => {
+            animationActiveRef.current = true;
+          }}
+          onFlippedEnd={(index) => {
+            animationActiveRef.current = false;
+            flipperIndexRef.current = index;
+            const syncedScreen = index === 1 ? 'puzzle' : 'mapSelect';
+            if (screen !== syncedScreen) {
+              setScreen(syncedScreen);
+            }
+          }}
+          renderPage={renderPageContent}
+          />
+        </View>
+        </PageFlipperBoundary>
+    </GestureHandlerRootView>
+  );
+}
+
+const styles = StyleSheet.create({
+  root: { flex: 1, minHeight: '100%' },
+  flipperContainer: { flex: 1, width: '100%', height: '100%' },
+  flipperFrame: { flex: 1 },
+});
+
+function PageContent({ pageId, mapPage, puzzlePage, pageWidth, pageHeight }) {
+  const mapVisible = pageId === 'mapSelect';
+  return (
+    <View
+      style={{
+        width: pageWidth,
+        height: pageHeight,
+        position: 'relative',
+      }}
+    >
+      <View
+        style={[
+          StyleSheet.absoluteFillObject,
+          { opacity: mapVisible ? 1 : 0, pointerEvents: mapVisible ? 'auto' : 'none' },
+        ]}
+      >
+        {mapPage}
+      </View>
+      <View
+        style={[
+          StyleSheet.absoluteFillObject,
+          { opacity: mapVisible ? 0 : 1, pointerEvents: mapVisible ? 'none' : 'auto' },
+        ]}
+      >
+        {puzzlePage}
+      </View>
+    </View>
   );
 }

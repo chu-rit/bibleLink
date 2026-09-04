@@ -58,9 +58,20 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const adRef = useRef(null);
   const [viewportHeight, setViewportHeight] = useState(windowHeight);
 
+  const msInstanceIdRef = useRef(null);
+  if (msInstanceIdRef.current === null) {
+    msInstanceIdRef.current = Math.random().toString(36).slice(2, 8);
+  }
+  useEffect(() => {
+    return () => {};
+  }, []);
+
   useEffect(() => {
     if (!isWeb) return undefined;
-    const update = () => setViewportHeight(window.innerHeight);
+    const update = () => {
+      const frameWidth = Math.min(window.innerWidth, 480);
+      setViewportHeight(Math.min(window.innerHeight, Math.round(frameWidth * 20 / 9)));
+    };
     update();
     window.addEventListener('resize', update);
     if (window.visualViewport) {
@@ -96,7 +107,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   };
 
   useEffect(() => {
-    if (!isWeb) return;
+    if (!isWeb || (typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname))) return undefined;
     let ins;
     let script;
     const timer = setTimeout(() => {

@@ -17,14 +17,20 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
+    "@laffy1309/react-native-page-flipper": "^1.0.2",
     "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "^54.0.0",
     "expo-font": "~14.0.12",
+    "expo-linear-gradient": "~15.0.8",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-gesture-handler": "~2.28.0",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-reanimated": "~4.1.1",
     "react-native-svg": "15.12.1",
-    "react-native-web": "^0.21.0"
+    "react-native-web": "^0.21.0",
+    "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
     "opentype.js": "^2.0.0"
