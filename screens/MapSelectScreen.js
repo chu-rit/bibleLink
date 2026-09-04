@@ -55,7 +55,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
-  const adRef = useRef(null);
   const [viewportHeight, setViewportHeight] = useState(windowHeight);
 
   const msInstanceIdRef = useRef(null);
@@ -105,40 +104,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       );
     }
   };
-
-  useEffect(() => {
-    if (!isWeb || (typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname))) return undefined;
-    let ins;
-    let script;
-    const timer = setTimeout(() => {
-      if (!adRef.current) return;
-      if (document.querySelector('.kakao_ad_area')) return;
-      ins = document.createElement('ins');
-      ins.className = 'kakao_ad_area';
-      ins.style.display = 'block';
-      ins.style.width = '320px';
-      ins.style.height = '50px';
-      ins.style.margin = '0 auto';
-      ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
-      ins.setAttribute('data-ad-width', '320');
-      ins.setAttribute('data-ad-height', '50');
-      adRef.current.appendChild(ins);
-      if (!document.querySelector('script[src*="ba.min.js"]')) {
-        script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
-        script.async = true;
-        document.body.appendChild(script);
-      } else {
-        if (typeof window !== 'undefined' && window.adfit) {
-          window.adfit.render();
-        }
-      }
-    }, 100);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isWeb]);
 
   const easyMaps = maps.filter((m) => m.title?.startsWith('E-'));
   const normalMaps = maps.filter((m) => m.title?.startsWith('N-'));
@@ -254,8 +219,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545')}
       </ScrollView>
 
-      {isWeb && <View ref={adRef} style={styles.adContainer} />}
-
       <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
         <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
@@ -320,5 +283,4 @@ const styles = StyleSheet.create({
   resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
   closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
-  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', minHeight: 50, marginTop: 4, marginBottom: 12 },
 });

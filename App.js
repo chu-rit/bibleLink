@@ -324,6 +324,7 @@ export default function App() {
           />
         </View>
         </PageFlipperBoundary>
+      {screen === 'mapSelect' && <AdBanner />}
     </GestureHandlerRootView>
   );
 }
@@ -332,7 +333,44 @@ const styles = StyleSheet.create({
   root: { flex: 1, minHeight: '100%' },
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
   flipperFrame: { flex: 1 },
+  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', minHeight: 50, marginTop: 4, marginBottom: 12 },
 });
+
+function AdBanner() {
+  const adRef = useRef(null);
+  useEffect(() => {
+    if (Platform.OS !== 'web' || (typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname))) return undefined;
+    let ins;
+    let script;
+    const timer = setTimeout(() => {
+      if (!adRef.current) return;
+      if (document.querySelector('.kakao_ad_area')) return;
+      ins = document.createElement('ins');
+      ins.className = 'kakao_ad_area';
+      ins.style.display = 'block';
+      ins.style.width = '320px';
+      ins.style.height = '50px';
+      ins.style.margin = '0 auto';
+      ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
+      ins.setAttribute('data-ad-width', '320');
+      ins.setAttribute('data-ad-height', '50');
+      adRef.current.appendChild(ins);
+      if (!document.querySelector('script[src*="ba.min.js"]')) {
+        script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
+        script.async = true;
+        document.body.appendChild(script);
+      } else {
+        if (typeof window !== 'undefined' && window.adfit) {
+          window.adfit.render();
+        }
+      }
+    }, 100);
+    return () => { clearTimeout(timer); };
+  }, []);
+  return <View ref={adRef} style={styles.adContainer} />;
+}
 
 function PageContent({ pageId, mapPage, puzzlePage, pageWidth, pageHeight }) {
   const mapVisible = pageId === 'mapSelect';
