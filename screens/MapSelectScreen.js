@@ -23,7 +23,7 @@ function Gauge({ percent, number, isComplete }) {
           r={RADIUS}
           stroke="#e0d8c8"
           strokeWidth={STROKE}
-          fill="#fdfbf6"
+          fill="none"
         />
         <Circle
           cx={SIZE / 2}
@@ -144,7 +144,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
               }
             }
             : undefined}
-        style={[styles.tile, tileStyle, isComplete && styles.tileComplete, isDimmed && styles.tileDimmed]}
+        style={[styles.tile, tileStyle, isDimmed && styles.tileDimmed]}
       >
         <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
       </Pressable>
@@ -261,7 +261,6 @@ const styles = StyleSheet.create({
   masterScroll: { marginBottom: 12 },
   masterTileRow: { flexDirection: 'row' },
   tile: { aspectRatio: 1, alignItems: 'center', justifyContent: 'center', padding: 4 },
-  tileComplete: { backgroundColor: '#ece8dc', borderRadius: 16 },
   tileDimmed: { opacity: 0.35 },
   gauge: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },
   gaugeSvg: { position: 'absolute' },

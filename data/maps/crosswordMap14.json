@@ -1,0 +1,110 @@
+{
+  "id": "20260905_003",
+  "title": "N-4",
+  "difficulty": 2,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########",
+    "########",
+    "####그###",
+    "####모###",
+    "###보스라#리",
+    "##소고#아모스",
+    "####라마#트",
+    "####먀#미라"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "그모스",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "chemosh"
+    },
+    {
+      "number": 2,
+      "answer": "보스라",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 3,
+      "wordId": "bozrah"
+    },
+    {
+      "number": 3,
+      "answer": "보고",
+      "direction": "down",
+      "row": 4,
+      "col": 3,
+      "length": 2,
+      "wordId": "treasury"
+    },
+    {
+      "number": 4,
+      "answer": "라아마",
+      "direction": "down",
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "raamah"
+    },
+    {
+      "number": 5,
+      "answer": "리스트라",
+      "direction": "down",
+      "row": 4,
+      "col": 7,
+      "length": 4,
+      "wordId": "lystra"
+    },
+    {
+      "number": 6,
+      "answer": "소고",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "entry-소고"
+    },
+    {
+      "number": 7,
+      "answer": "아모스",
+      "direction": "across",
+      "row": 5,
+      "col": 5,
+      "length": 3,
+      "wordId": "amos"
+    },
+    {
+      "number": 8,
+      "answer": "라마",
+      "direction": "across",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "ramah"
+    },
+    {
+      "number": 9,
+      "answer": "라먀",
+      "direction": "down",
+      "row": 6,
+      "col": 4,
+      "length": 2,
+      "wordId": "ramiah"
+    },
+    {
+      "number": 10,
+      "answer": "미라",
+      "direction": "across",
+      "row": 7,
+      "col": 6,
+      "length": 2,
+      "wordId": "myra"
+    }
+  ]
+}

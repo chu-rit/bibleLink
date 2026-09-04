@@ -1,0 +1,110 @@
+{
+  "id": "20260905_004",
+  "title": "N-5",
+  "difficulty": 2,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#정강이#하사엘",
+    "니##세펠라#리",
+    "므헤다벨##대사",
+    "롯#윗#####",
+    "########",
+    "########",
+    "########",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "정강이",
+      "direction": "across",
+      "row": 0,
+      "col": 1,
+      "length": 3,
+      "wordId": "shank"
+    },
+    {
+      "number": 2,
+      "answer": "이세벨",
+      "direction": "down",
+      "row": 0,
+      "col": 3,
+      "length": 3,
+      "wordId": "jezebel"
+    },
+    {
+      "number": 3,
+      "answer": "하라",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "hara"
+    },
+    {
+      "number": 4,
+      "answer": "하사엘",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 3,
+      "wordId": "hazael"
+    },
+    {
+      "number": 5,
+      "answer": "엘리사",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 3,
+      "wordId": "elisha"
+    },
+    {
+      "number": 6,
+      "answer": "니므롯",
+      "direction": "down",
+      "row": 1,
+      "col": 0,
+      "length": 3,
+      "wordId": "nimrod"
+    },
+    {
+      "number": 7,
+      "answer": "세펠라",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 3,
+      "wordId": "shephelah"
+    },
+    {
+      "number": 8,
+      "answer": "므헤다벨",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 4,
+      "wordId": "mehetabel"
+    },
+    {
+      "number": 9,
+      "answer": "다윗",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "david"
+    },
+    {
+      "number": 10,
+      "answer": "대사",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "ambassador"
+    }
+  ]
+}
