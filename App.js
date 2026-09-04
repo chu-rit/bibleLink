@@ -332,7 +332,7 @@ export default function App() {
 const styles = StyleSheet.create({
   root: { flex: 1, minHeight: '100%' },
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
-  flipperFrame: { flex: 1 },
+  flipperFrame: { width: '100%', alignItems: 'center' },
   adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', minHeight: 50, marginTop: 4, marginBottom: 12 },
 });
 
