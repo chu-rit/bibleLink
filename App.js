@@ -332,8 +332,8 @@ export default function App() {
 const styles = StyleSheet.create({
   root: { flex: 1, minHeight: '100%' },
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
-  flipperFrame: { width: '100%', alignItems: 'center' },
-  adContainer: { width: '100%', alignItems: 'center', justifyContent: 'center', minHeight: 50, marginTop: 4, marginBottom: 12 },
+  flipperFrame: { flex: 1 },
+  adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
 });
 
 function AdBanner() {
