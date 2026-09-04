@@ -324,7 +324,7 @@ export default function App() {
           />
         </View>
         </PageFlipperBoundary>
-      {screen === 'mapSelect' && <AdBanner />}
+      <AdBanner />
     </GestureHandlerRootView>
   );
 }
