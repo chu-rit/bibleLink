@@ -112,7 +112,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     let script;
     const timer = setTimeout(() => {
       if (!adRef.current) return;
-      if (document.querySelector('.kakao_ad_area')) return;
+      if (adRef.current.querySelector('.kakao_ad_area')) return;
       ins = document.createElement('ins');
       ins.className = 'kakao_ad_area';
       ins.style.display = 'block';
@@ -137,9 +137,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     }, 100);
     return () => {
       clearTimeout(timer);
-      if (adRef.current && ins && adRef.current.contains(ins)) {
-        adRef.current.removeChild(ins);
-      }
     };
   }, [isWeb]);
 
