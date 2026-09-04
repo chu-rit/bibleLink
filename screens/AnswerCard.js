@@ -10,6 +10,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 
 function AnswerCard({
   slot,
@@ -33,6 +34,8 @@ function AnswerCard({
   onFocusInput,
   onBlurInput,
   inputRef,
+  crossSlots,
+  onToggleDirection,
 }) {
   if (!slot) {
     return (
@@ -47,29 +50,47 @@ function AnswerCard({
 
   return (
     <View style={styles.answerCard}>
-      {!isCorrect && (
-        <View style={styles.hintBox}>
-          {isHinted ? (
-            <Text style={styles.hintReference} numberOfLines={2}>{hintReferences}</Text>
-          ) : (
-            <Pressable
-              onPress={() => onUseHint?.(selectedSlot)}
-              disabled={hintPoints <= 0}
-              style={[
-                styles.hintButton,
-                hintPoints <= 0 && styles.primaryButtonDisabled,
-              ]}
-            >
-              <Text style={styles.hintButtonText}>
-                {hintPoints <= 0 ? '없음' : '힌트'}
-              </Text>
+      <View style={styles.selectedHeader}>
+        <View style={styles.selectedHeaderLeft}>
+          <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
+          {crossSlots && crossSlots.length > 1 && (
+            <Pressable onPress={onToggleDirection} style={styles.toggleButton}>
+              {slot.direction === 'across' ? (
+                <Svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <Path d="M12 4L12 20" />
+                  <Path d="M8 16L12 20L16 16" />
+                </Svg>
+              ) : (
+                <Svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <Path d="M4 12L20 12" />
+                  <Path d="M16 8L20 12L16 16" />
+                </Svg>
+              )}
+              <Text style={styles.toggleButtonText}>전환</Text>
             </Pressable>
           )}
         </View>
-      )}
-      <View style={styles.selectedHeader}>
-        <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
-        {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
+        <View style={styles.selectedHeaderRight}>
+          {!isCorrect && (
+            isHinted ? (
+              <Text style={styles.hintReference} numberOfLines={2}>{hintReferences}</Text>
+            ) : (
+              <Pressable
+                onPress={() => onUseHint?.(selectedSlot)}
+                disabled={hintPoints <= 0}
+                style={[
+                  styles.hintButton,
+                  hintPoints <= 0 && styles.primaryButtonDisabled,
+                ]}
+              >
+                <Text style={styles.hintButtonText}>
+                  {hintPoints <= 0 ? '없음' : '힌트'}
+                </Text>
+              </Pressable>
+            )
+          )}
+          {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
+        </View>
       </View>
       <Text style={styles.clue}>{clue}</Text>
       <View style={styles.actionRow}>
@@ -167,6 +188,10 @@ const styles = StyleSheet.create({
   hintButtonText: { color: '#fdfbf6', fontSize: 11, fontWeight: '800' },
   hintReference: { color: '#e08a3c', fontSize: 11, fontWeight: '700', textAlign: 'right' },
   selectedHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
+  selectedHeaderLeft: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  selectedHeaderRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  toggleButton: { backgroundColor: '#e0d8c8', borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3, borderWidth: 1.5, borderColor: '#7a5c3a', flexDirection: 'row', alignItems: 'center', gap: 3 },
+  toggleButtonText: { color: '#7a5c3a', fontSize: 11, fontWeight: '800' },
   selectedDirection: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
   check: { color: '#3c9a72', fontSize: 11, fontWeight: '800', marginLeft: 8 },
   clue: { color: '#5a4a35', fontSize: 14, lineHeight: 18, fontWeight: '700' },

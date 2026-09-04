@@ -55,6 +55,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     prevMapIdRef.current = crosswordMap?.id;
   }
   const [selectedSlot, setSelectedSlot] = useState(null);
+  const [activeCell, setActiveCell] = useState(null);
   const [answers, setAnswers] = useState(initialAnswers || {});
   const [input, setInput] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
@@ -272,8 +273,41 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     if (!matchingSlots.length) return;
     const currentIndex = matchingSlots.findIndex(({ index }) => index === selectedSlot);
     const nextSlot = matchingSlots[currentIndex < 0 ? 0 : (currentIndex + 1) % matchingSlots.length];
+    setActiveCell({ row: rowIndex, col: colIndex });
     chooseSlot(nextSlot.index);
   };
+
+  const toggleDirection = () => {
+    if (selectedSlot === null || !slot || !activeCell) return;
+    const matchingSlots = crosswordMap.cells
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => {
+        const end = item.direction === 'across' ? item.col + item.length : item.col;
+        const bottom = item.direction === 'down' ? item.row + item.length : item.row;
+        return (
+          (item.direction === 'across' && activeCell.row === item.row && activeCell.col >= item.col && activeCell.col < end) ||
+          (item.direction === 'down' && activeCell.col === item.col && activeCell.row >= item.row && activeCell.row < bottom)
+        );
+      });
+    if (matchingSlots.length <= 1) return;
+    const currentIndex = matchingSlots.findIndex(({ index }) => index === selectedSlot);
+    const nextSlot = matchingSlots[(currentIndex + 1) % matchingSlots.length];
+    chooseSlot(nextSlot.index);
+  };
+
+  const crossSlots = useMemo(() => {
+    if (!slot || !activeCell) return [];
+    return crosswordMap.cells
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => {
+        const end = item.direction === 'across' ? item.col + item.length : item.col;
+        const bottom = item.direction === 'down' ? item.row + item.length : item.row;
+        return (
+          (item.direction === 'across' && activeCell.row === item.row && activeCell.col >= item.col && activeCell.col < end) ||
+          (item.direction === 'down' && activeCell.col === item.col && activeCell.row >= item.row && activeCell.row < bottom)
+        );
+      });
+  }, [crosswordMap, slot, activeCell]);
 
   const toggleAutoFill = (enabled) => {
     setAutoFill(enabled);
@@ -288,6 +322,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       setIsCorrect(true);
       setIsWrong(false);
       inputRef.current?.blur();
+      Keyboard.dismiss();
 
       const cellMap = {};
       let cumulativeDelay = 0;
@@ -467,6 +502,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                     {[...row].map((value, colIndex) => {
                       const isOpen = openCells[`${rowIndex}-${colIndex}`];
                       const selected = isOpen && isSelectedCell(rowIndex, colIndex);
+                      const isActive = selected && activeCell && activeCell.row === rowIndex && activeCell.col === colIndex;
                       return (
                         <Pressable
                           key={`${rowIndex}-${colIndex}`}
@@ -483,7 +519,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                             }
                             selectCell(rowIndex, colIndex);
                           }}
-                          style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell]}
+                          style={[styles.cell, { width: cellSize, height: cellSize }, !isOpen && styles.blockedCell, selected && styles.selectedCell, isActive && styles.activeCell]}
                         >
                           {isOpen && (
                             (() => {
@@ -584,6 +620,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                     if (Platform.OS !== 'web') setIsKeyboardVisible(false);
                   }}
                   inputRef={inputRef}
+                  crossSlots={crossSlots}
+                  onToggleDirection={toggleDirection}
                 />
               </View>
             ) : (
@@ -679,6 +717,7 @@ const styles = StyleSheet.create({
   cell: { width: 36, height: 36, borderWidth: 0.5, borderColor: '#d8cdb8', backgroundColor: '#fdfbf6', alignItems: 'center', justifyContent: 'center' },
   blockedCell: { backgroundColor: '#3a2e1f', borderColor: '#3a2e1f' },
   selectedCell: { backgroundColor: '#f0e8d8', borderColor: '#a8845a', borderWidth: 2 },
+  activeCell: { backgroundColor: '#e8d5b8', borderColor: '#7a5c3a', borderWidth: 2.5 },
   cellText: {},
   emptySelectionContainer: { width: '100%', marginTop: 8 },
   emptySelection: { backgroundColor: '#fdfbf6', borderRadius: 16, padding: 20, alignItems: 'center', borderWidth: 1, borderColor: '#e0d8c8' },
