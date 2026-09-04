@@ -48,7 +48,7 @@ const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (isLocalhost || webPath.includes('/master') || getMasterModeFromStorage());
 
-function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint, masterMode }) {
+function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint, masterMode, onToggleMasterMode }) {
   const prevMapIdRef = useRef(null);
   const mapChanged = prevMapIdRef.current !== crosswordMap?.id;
   if (mapChanged) {
@@ -68,7 +68,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const [answerCardHeight, setAnswerCardHeight] = useState(0);
   const [showClearModal, setShowClearModal] = useState(false);
   const [animatedCells, setAnimatedCells] = useState({});
+  const [toast, setToast] = useState({ visible: false, message: '' });
   const hasShownClearRef = useRef(null);
+  const toastAnim = useRef(new Animated.Value(0)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const inputRef = useRef(null);
   const shakeAnim = useRef(new Animated.Value(0)).current;
@@ -313,8 +315,29 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     setAutoFill(enabled);
   };
 
+  const showToast = (message) => {
+    setToast({ visible: true, message });
+    Animated.timing(toastAnim, { toValue: 1, duration: 200, useNativeDriver: true }).start();
+    setTimeout(() => {
+      Animated.timing(toastAnim, { toValue: 0, duration: 200, useNativeDriver: true }).start(() => {
+        setToast({ visible: false, message: '' });
+      });
+    }, 2000);
+  };
+
   const submitAnswer = () => {
     if (!slot || !input) return;
+
+    if (crosswordMap.title === 'E-1' && normalize(input) === '마스터') {
+      onToggleMasterMode?.();
+      const next = !masterMode;
+      showToast(`마스터 모드 ${next ? '활성화' : '비활성화'}`);
+      setInput('');
+      setIsWrong(false);
+      inputRef.current?.blur();
+      Keyboard.dismiss();
+      return;
+    }
 
     if (normalize(input) === normalize(slot.answer)) {
       setAnswers((current) => ({ ...current, [selectedSlot]: slot.answer }));
@@ -437,6 +460,17 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     >
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
+          {toast.visible && (
+            <Animated.View
+              pointerEvents="none"
+              style={[
+                styles.toastContainer,
+                { opacity: toastAnim, transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [-20, 0] }) }] },
+              ]}
+            >
+              <Text style={styles.toastText}>{toast.message}</Text>
+            </Animated.View>
+          )}
           <View style={styles.header}>
             <Pressable onPress={onBack} style={styles.backButton}>
               <Text style={styles.backButtonText}>맵 선택</Text>
@@ -739,6 +773,8 @@ const styles = StyleSheet.create({
   clearModalText: { color: '#8a7560', fontSize: 14, marginTop: 8, marginBottom: 20 },
   clearModalButton: { backgroundColor: '#7a5c3a', borderRadius: 12, paddingHorizontal: 18, paddingVertical: 12 },
   clearModalButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
+  toastContainer: { position: 'absolute', top: 60, left: 20, right: 20, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(46, 36, 24, 0.85)', borderRadius: 20, paddingHorizontal: 18, paddingVertical: 10, zIndex: 100, shadowColor: '#2e2418', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8, elevation: 8 },
+  toastText: { color: '#fdfbf6', fontSize: 13, fontWeight: '700' },
 });
 
 export default PuzzleScreen;

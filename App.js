@@ -75,6 +75,16 @@ export default function App() {
   });
   const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
   const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'mapSelect');
+
+  const toggleMasterMode = () => {
+    setMasterMode((prev) => {
+      const next = !prev;
+      if (Platform.OS === 'web' && typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        try { localStorage.setItem('masterMode', next ? '1' : '0'); } catch {}
+      }
+      return next;
+    });
+  };
   const [selectedMap, setSelectedMap] = useState(null);
   const [answersByMap, setAnswersByMap] = useState({});
   const [hintPointsByMap, setHintPointsByMap] = useState({});
@@ -286,6 +296,7 @@ export default function App() {
       hintedSlots={selectedMap ? hintedSlotsByMap[selectedMap.id] || {} : {}}
       onUseHint={handleUseHint}
       masterMode={masterMode}
+      onToggleMasterMode={toggleMasterMode}
       onBack={() => {
         setScreen('mapSelect');
       }}
