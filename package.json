@@ -13,7 +13,8 @@
     "merge:lib1": "node scripts/mergeLib1.js",
     "extract:glyphs": "node scripts/extractGlyphPaths.js",
     "validate:maps": "node scripts/mergeLib1.js && node scripts/validateMaps.js",
-    "generate:map": "node scripts/mergeLib1.js && node scripts/generateMap.js"
+    "generate:map": "node scripts/mergeLib1.js && node scripts/generateMap.js",
+    "postinstall": "npx patch-package"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
@@ -33,6 +34,7 @@
     "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
-    "opentype.js": "^2.0.0"
+    "opentype.js": "^2.0.0",
+    "patch-package": "^8.0.1"
   }
 }
