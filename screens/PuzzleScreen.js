@@ -323,6 +323,12 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       setIsWrong(false);
       inputRef.current?.blur();
       Keyboard.dismiss();
+      setSelectedSlot(null);
+      setInput('');
+      setActiveCell(null);
+      setSelectedSlot(null);
+      setInput('');
+      setActiveCell(null);
 
       const cellMap = {};
       let cumulativeDelay = 0;
