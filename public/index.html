@@ -13,15 +13,37 @@
   <link rel="icon" type="image/png" href="ICON.png">
   <link rel="apple-touch-icon" href="ICON.png">
   <style>
+    @font-face { font-family: 'UhBeeGmin2'; src: url('UhBeeGmin2.ttf') format('truetype'); }
     html, body { margin: 0; padding: 0; width: 100%; height: 100%; position: fixed; overflow: hidden; overscroll-behavior: none; background: #f6f8fb; }
     #root { width: min(100%, 480px); height: min(100dvh, calc(min(100vw, 480px) * 20 / 9)); margin: 0 auto; overflow: hidden; background: #f6f8fb; }
     @media (max-width: 480px) {
       html, body { position: static; height: auto; min-height: 100%; overflow: auto; }
       #root { height: min(100dvh, calc(100vw * 20 / 9)); overflow: hidden; }
     }
+    #loading-screen { position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: min(100%, 480px); height: min(100dvh, calc(min(100vw, 480px) * 20 / 9)); display: flex; flex-direction: column; align-items: center; justify-content: center; background-image: url('BG.png'); background-size: cover; background-position: center; z-index: 9999; transition: opacity 0.3s ease; }
+    #loading-screen.fade-out { opacity: 0; pointer-events: none; }
+    #loading-icon { width: min(70vw, 280px); height: min(70vw, 280px); object-fit: contain; }
+    #loading-status { margin-top: 24px; font-size: 20px; color: #7a5c3a; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; }
+    @media (max-width: 480px) {
+      #loading-screen { height: min(100dvh, calc(100vw * 20 / 9)); }
+    }
+    @media (min-width: 481px) { #loading-icon { width: 240px; height: 240px; } }
   </style>
 </head>
 <body>
   <div id="root"></div>
+  <div id="loading-screen">
+    <img id="loading-icon" src="ICON_NOBG.png" alt="Bible Link">
+    <div id="loading-status">데이터를 불러오는 중...</div>
+  </div>
+  <script>
+    (function() {
+      var ls = document.getElementById('loading-screen');
+      function hideLoading() {
+        if (ls) { ls.classList.add('fade-out'); setTimeout(function(){ if(ls && ls.parentNode) ls.parentNode.removeChild(ls); }, 300); }
+      }
+      window.__removeLoadingScreen = hideLoading;
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,1652 @@
+[
+  {
+    "id": "20260830_001",
+    "title": "E-1",
+    "difficulty": 1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "####요###",
+      "####나사로#",
+      "###느#무##",
+      "###헤#엘리야",
+      "###미가서##",
+      "예레미야####",
+      "#위#서원###",
+      "#기름#####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "요나",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 2,
+        "wordId": "jonah"
+      },
+      {
+        "number": 2,
+        "answer": "나사로",
+        "direction": "across",
+        "row": 1,
+        "col": 4,
+        "length": 3,
+        "wordId": "lazarus"
+      },
+      {
+        "number": 3,
+        "answer": "사무엘서",
+        "direction": "down",
+        "row": 1,
+        "col": 5,
+        "length": 4,
+        "wordId": "entry-사무엘서"
+      },
+      {
+        "number": 4,
+        "answer": "느헤미야서",
+        "direction": "down",
+        "row": 2,
+        "col": 3,
+        "length": 5,
+        "wordId": "entry-느헤미야서"
+      },
+      {
+        "number": 5,
+        "answer": "엘리야",
+        "direction": "across",
+        "row": 3,
+        "col": 5,
+        "length": 3,
+        "wordId": "elijah"
+      },
+      {
+        "number": 6,
+        "answer": "미가서",
+        "direction": "across",
+        "row": 4,
+        "col": 3,
+        "length": 3,
+        "wordId": "entry-미가서"
+      },
+      {
+        "number": 7,
+        "answer": "예레미야",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 4,
+        "wordId": "jeremiah"
+      },
+      {
+        "number": 8,
+        "answer": "레위기",
+        "direction": "down",
+        "row": 5,
+        "col": 1,
+        "length": 3,
+        "wordId": "leviticus"
+      },
+      {
+        "number": 9,
+        "answer": "서원",
+        "direction": "across",
+        "row": 6,
+        "col": 3,
+        "length": 2,
+        "wordId": "vow"
+      },
+      {
+        "number": 10,
+        "answer": "기름",
+        "direction": "across",
+        "row": 7,
+        "col": 1,
+        "length": 2,
+        "wordId": "fat"
+      }
+    ]
+  },
+  {
+    "id": "20260831_005",
+    "title": "E-2",
+    "difficulty": 1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "#총##거짓말#",
+      "감독자#머#라#",
+      "##갈릴리#기둥",
+      "#####에서#",
+      "#####녹##",
+      "########",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "총독",
+        "direction": "down",
+        "row": 1,
+        "col": 1,
+        "length": 2,
+        "wordId": "governor"
+      },
+      {
+        "number": 2,
+        "answer": "거머리",
+        "direction": "down",
+        "row": 1,
+        "col": 4,
+        "length": 3,
+        "wordId": "leech"
+      },
+      {
+        "number": 3,
+        "answer": "거짓말",
+        "direction": "across",
+        "row": 1,
+        "col": 4,
+        "length": 3,
+        "wordId": "lie"
+      },
+      {
+        "number": 4,
+        "answer": "말라기서",
+        "direction": "down",
+        "row": 1,
+        "col": 6,
+        "length": 4,
+        "wordId": "entry-말라기서"
+      },
+      {
+        "number": 5,
+        "answer": "감독자",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 3,
+        "wordId": "overseer"
+      },
+      {
+        "number": 6,
+        "answer": "자갈",
+        "direction": "down",
+        "row": 2,
+        "col": 2,
+        "length": 2,
+        "wordId": "gravel"
+      },
+      {
+        "number": 7,
+        "answer": "갈릴리",
+        "direction": "across",
+        "row": 3,
+        "col": 2,
+        "length": 3,
+        "wordId": "galilee"
+      },
+      {
+        "number": 8,
+        "answer": "기둥",
+        "direction": "across",
+        "row": 3,
+        "col": 6,
+        "length": 2,
+        "wordId": "pillar"
+      },
+      {
+        "number": 9,
+        "answer": "에서",
+        "direction": "across",
+        "row": 4,
+        "col": 5,
+        "length": 2,
+        "wordId": "esau"
+      },
+      {
+        "number": 10,
+        "answer": "에녹",
+        "direction": "down",
+        "row": 4,
+        "col": 5,
+        "length": 2,
+        "wordId": "enoch"
+      }
+    ]
+  },
+  {
+    "id": "20260830_003",
+    "title": "E-3",
+    "difficulty": 1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "###학개서##",
+      "####구#포#",
+      "###그리스도#",
+      "###리##나병",
+      "##에스더#무#",
+      "###도####",
+      "#유대인####",
+      "바다######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "학개서",
+        "direction": "across",
+        "row": 0,
+        "col": 3,
+        "length": 3,
+        "wordId": "entry-학개서"
+      },
+      {
+        "number": 2,
+        "answer": "개구리",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 3,
+        "wordId": "frog"
+      },
+      {
+        "number": 3,
+        "answer": "포도나무",
+        "direction": "down",
+        "row": 1,
+        "col": 6,
+        "length": 4,
+        "wordId": "vine"
+      },
+      {
+        "number": 4,
+        "answer": "그리스도인",
+        "direction": "down",
+        "row": 2,
+        "col": 3,
+        "length": 5,
+        "wordId": "christian"
+      },
+      {
+        "number": 5,
+        "answer": "그리스도",
+        "direction": "across",
+        "row": 2,
+        "col": 3,
+        "length": 4,
+        "wordId": "christ"
+      },
+      {
+        "number": 6,
+        "answer": "나병",
+        "direction": "across",
+        "row": 3,
+        "col": 6,
+        "length": 2,
+        "wordId": "leprosy"
+      },
+      {
+        "number": 7,
+        "answer": "에스더",
+        "direction": "across",
+        "row": 4,
+        "col": 2,
+        "length": 3,
+        "wordId": "esther"
+      },
+      {
+        "number": 8,
+        "answer": "유대인",
+        "direction": "across",
+        "row": 6,
+        "col": 1,
+        "length": 3,
+        "wordId": "jews"
+      },
+      {
+        "number": 9,
+        "answer": "유다",
+        "direction": "down",
+        "row": 6,
+        "col": 1,
+        "length": 2,
+        "wordId": "judah"
+      },
+      {
+        "number": 10,
+        "answer": "바다",
+        "direction": "across",
+        "row": 7,
+        "col": 0,
+        "length": 2,
+        "wordId": "sea"
+      }
+    ]
+  },
+  {
+    "id": "20260830_004",
+    "title": "E-4",
+    "difficulty": 1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "####학###",
+      "###무교절축제",
+      "귀##화#구#물",
+      "뚜#사과####",
+      "라#무#####",
+      "미가엘#####",
+      "#나######",
+      "#안######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "학교",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 2,
+        "wordId": "school"
+      },
+      {
+        "number": 2,
+        "answer": "무교절축제",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 5,
+        "wordId": "entry-무교절 축제"
+      },
+      {
+        "number": 3,
+        "answer": "무화과",
+        "direction": "down",
+        "row": 1,
+        "col": 3,
+        "length": 3,
+        "wordId": "fig"
+      },
+      {
+        "number": 4,
+        "answer": "절구",
+        "direction": "down",
+        "row": 1,
+        "col": 5,
+        "length": 2,
+        "wordId": "entry-절구"
+      },
+      {
+        "number": 5,
+        "answer": "제물",
+        "direction": "down",
+        "row": 1,
+        "col": 7,
+        "length": 2,
+        "wordId": "offerings"
+      },
+      {
+        "number": 6,
+        "answer": "귀뚜라미",
+        "direction": "down",
+        "row": 2,
+        "col": 0,
+        "length": 4,
+        "wordId": "cricket"
+      },
+      {
+        "number": 7,
+        "answer": "사과",
+        "direction": "across",
+        "row": 3,
+        "col": 2,
+        "length": 2,
+        "wordId": "apple"
+      },
+      {
+        "number": 8,
+        "answer": "사무엘",
+        "direction": "down",
+        "row": 3,
+        "col": 2,
+        "length": 3,
+        "wordId": "samuel"
+      },
+      {
+        "number": 9,
+        "answer": "미가엘",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 3,
+        "wordId": "michael"
+      },
+      {
+        "number": 10,
+        "answer": "가나안",
+        "direction": "down",
+        "row": 5,
+        "col": 1,
+        "length": 3,
+        "wordId": "canaan"
+      }
+    ]
+  },
+  {
+    "id": "20260831_017",
+    "title": "E-5",
+    "difficulty": 1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "########",
+      "####세###",
+      "###형상###",
+      "##구제#생##",
+      "##덩#광명체#",
+      "##이사야###",
+      "###울####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "세상",
+        "direction": "down",
+        "row": 2,
+        "col": 4,
+        "length": 2,
+        "wordId": "world"
+      },
+      {
+        "number": 2,
+        "answer": "형제",
+        "direction": "down",
+        "row": 3,
+        "col": 3,
+        "length": 2,
+        "wordId": "brother"
+      },
+      {
+        "number": 3,
+        "answer": "형상",
+        "direction": "across",
+        "row": 3,
+        "col": 3,
+        "length": 2,
+        "wordId": "image"
+      },
+      {
+        "number": 4,
+        "answer": "구덩이",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 3,
+        "wordId": "pit"
+      },
+      {
+        "number": 5,
+        "answer": "구제",
+        "direction": "across",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "relief"
+      },
+      {
+        "number": 6,
+        "answer": "생명",
+        "direction": "down",
+        "row": 4,
+        "col": 5,
+        "length": 2,
+        "wordId": "life"
+      },
+      {
+        "number": 7,
+        "answer": "광야",
+        "direction": "down",
+        "row": 5,
+        "col": 4,
+        "length": 2,
+        "wordId": "wilderness"
+      },
+      {
+        "number": 8,
+        "answer": "광명체",
+        "direction": "across",
+        "row": 5,
+        "col": 4,
+        "length": 3,
+        "wordId": "luminary"
+      },
+      {
+        "number": 9,
+        "answer": "이사야",
+        "direction": "across",
+        "row": 6,
+        "col": 2,
+        "length": 3,
+        "wordId": "isaiah"
+      },
+      {
+        "number": 10,
+        "answer": "사울",
+        "direction": "down",
+        "row": 6,
+        "col": 3,
+        "length": 2,
+        "wordId": "saul"
+      }
+    ]
+  },
+  {
+    "id": "20260831_018",
+    "title": "E-6",
+    "difficulty": 1.1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "###겸#발꿈치",
+      "###손가락##",
+      "####브###",
+      "####리###",
+      "##다니엘###",
+      "베다니#####",
+      "델#엘#####",
+      "##서쪽####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "겸손",
+        "direction": "down",
+        "row": 0,
+        "col": 3,
+        "length": 2,
+        "wordId": "humility"
+      },
+      {
+        "number": 2,
+        "answer": "발락",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 2,
+        "wordId": "balak"
+      },
+      {
+        "number": 3,
+        "answer": "발꿈치",
+        "direction": "across",
+        "row": 0,
+        "col": 5,
+        "length": 3,
+        "wordId": "heel"
+      },
+      {
+        "number": 4,
+        "answer": "손가락",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 3,
+        "wordId": "finger"
+      },
+      {
+        "number": 5,
+        "answer": "가브리엘",
+        "direction": "down",
+        "row": 1,
+        "col": 4,
+        "length": 4,
+        "wordId": "gabriel"
+      },
+      {
+        "number": 6,
+        "answer": "베델",
+        "direction": "down",
+        "row": 5,
+        "col": 0,
+        "length": 2,
+        "wordId": "bethel"
+      },
+      {
+        "number": 7,
+        "answer": "다니엘",
+        "direction": "across",
+        "row": 4,
+        "col": 2,
+        "length": 3,
+        "wordId": "daniel"
+      },
+      {
+        "number": 8,
+        "answer": "다니엘서",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 4,
+        "wordId": "entry-다니엘서"
+      },
+      {
+        "number": 9,
+        "answer": "베다니",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 3,
+        "wordId": "bethany"
+      },
+      {
+        "number": 10,
+        "answer": "서쪽",
+        "direction": "across",
+        "row": 7,
+        "col": 2,
+        "length": 2,
+        "wordId": "west"
+      }
+    ]
+  },
+  {
+    "id": "20260830_007",
+    "title": "E-7",
+    "difficulty": 1.2,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "#####채##",
+      "#####석##",
+      "#####장막#",
+      "######벨#",
+      "####아브라함",
+      "##바빌론###",
+      "#아벨#####",
+      "험담######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "채석장",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 3,
+        "wordId": "quarry"
+      },
+      {
+        "number": 2,
+        "answer": "장막",
+        "direction": "across",
+        "row": 2,
+        "col": 5,
+        "length": 2,
+        "wordId": "tabernacletent"
+      },
+      {
+        "number": 3,
+        "answer": "막벨라",
+        "direction": "down",
+        "row": 2,
+        "col": 6,
+        "length": 3,
+        "wordId": "machpelah"
+      },
+      {
+        "number": 4,
+        "answer": "아론",
+        "direction": "down",
+        "row": 4,
+        "col": 4,
+        "length": 2,
+        "wordId": "aaron"
+      },
+      {
+        "number": 5,
+        "answer": "아브라함",
+        "direction": "across",
+        "row": 4,
+        "col": 4,
+        "length": 4,
+        "wordId": "abraham"
+      },
+      {
+        "number": 6,
+        "answer": "바빌론",
+        "direction": "across",
+        "row": 5,
+        "col": 2,
+        "length": 3,
+        "wordId": "babylon"
+      },
+      {
+        "number": 7,
+        "answer": "바벨",
+        "direction": "down",
+        "row": 5,
+        "col": 2,
+        "length": 2,
+        "wordId": "babel"
+      },
+      {
+        "number": 8,
+        "answer": "아벨",
+        "direction": "across",
+        "row": 6,
+        "col": 1,
+        "length": 2,
+        "wordId": "abel"
+      },
+      {
+        "number": 9,
+        "answer": "아담",
+        "direction": "down",
+        "row": 6,
+        "col": 1,
+        "length": 2,
+        "wordId": "adam"
+      },
+      {
+        "number": 10,
+        "answer": "험담",
+        "direction": "across",
+        "row": 7,
+        "col": 0,
+        "length": 2,
+        "wordId": "backbiting"
+      }
+    ]
+  },
+  {
+    "id": "20260901_002",
+    "title": "E-8",
+    "difficulty": 1.4,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "###사####",
+      "###본성###",
+      "####벽돌##",
+      "#####포로#",
+      "###제사장##",
+      "#눈동자####",
+      "##물#####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "사본",
+        "direction": "down",
+        "row": 1,
+        "col": 3,
+        "length": 2,
+        "wordId": "zaphon"
+      },
+      {
+        "number": 2,
+        "answer": "본성",
+        "direction": "across",
+        "row": 2,
+        "col": 3,
+        "length": 2,
+        "wordId": "nature"
+      },
+      {
+        "number": 3,
+        "answer": "성벽",
+        "direction": "down",
+        "row": 2,
+        "col": 4,
+        "length": 2,
+        "wordId": "walls"
+      },
+      {
+        "number": 4,
+        "answer": "벽돌",
+        "direction": "across",
+        "row": 3,
+        "col": 4,
+        "length": 2,
+        "wordId": "brick"
+      },
+      {
+        "number": 5,
+        "answer": "돌포장",
+        "direction": "down",
+        "row": 3,
+        "col": 5,
+        "length": 3,
+        "wordId": "entry-돌포장"
+      },
+      {
+        "number": 6,
+        "answer": "포로",
+        "direction": "across",
+        "row": 4,
+        "col": 5,
+        "length": 2,
+        "wordId": "captive"
+      },
+      {
+        "number": 7,
+        "answer": "제자",
+        "direction": "down",
+        "row": 5,
+        "col": 3,
+        "length": 2,
+        "wordId": "disciple"
+      },
+      {
+        "number": 8,
+        "answer": "제사장",
+        "direction": "across",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "priest"
+      },
+      {
+        "number": 9,
+        "answer": "눈동자",
+        "direction": "across",
+        "row": 6,
+        "col": 1,
+        "length": 3,
+        "wordId": "pupil"
+      },
+      {
+        "number": 10,
+        "answer": "동물",
+        "direction": "down",
+        "row": 6,
+        "col": 2,
+        "length": 2,
+        "wordId": "animals"
+      }
+    ]
+  },
+  {
+    "id": "20260830_009",
+    "title": "E-9",
+    "difficulty": 1.4,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "######후르",
+      "####갈빗대#",
+      "###호렙###",
+      "###세####",
+      "#마노아####",
+      "편지######",
+      "#막게다####",
+      "#때######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "후대",
+        "direction": "down",
+        "row": 0,
+        "col": 6,
+        "length": 2,
+        "wordId": "hospitality"
+      },
+      {
+        "number": 2,
+        "answer": "후르",
+        "direction": "across",
+        "row": 0,
+        "col": 6,
+        "length": 2,
+        "wordId": "hur"
+      },
+      {
+        "number": 3,
+        "answer": "갈빗대",
+        "direction": "across",
+        "row": 1,
+        "col": 4,
+        "length": 3,
+        "wordId": "rib"
+      },
+      {
+        "number": 4,
+        "answer": "갈렙",
+        "direction": "down",
+        "row": 1,
+        "col": 4,
+        "length": 2,
+        "wordId": "caleb"
+      },
+      {
+        "number": 5,
+        "answer": "호렙",
+        "direction": "across",
+        "row": 2,
+        "col": 3,
+        "length": 2,
+        "wordId": "horeb"
+      },
+      {
+        "number": 6,
+        "answer": "호세아",
+        "direction": "down",
+        "row": 2,
+        "col": 3,
+        "length": 3,
+        "wordId": "hosea"
+      },
+      {
+        "number": 7,
+        "answer": "마노아",
+        "direction": "across",
+        "row": 4,
+        "col": 1,
+        "length": 3,
+        "wordId": "manoah"
+      },
+      {
+        "number": 8,
+        "answer": "마지막때",
+        "direction": "down",
+        "row": 4,
+        "col": 1,
+        "length": 4,
+        "wordId": "entry-마지막 때"
+      },
+      {
+        "number": 9,
+        "answer": "편지",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 2,
+        "wordId": "letters"
+      },
+      {
+        "number": 10,
+        "answer": "막게다",
+        "direction": "across",
+        "row": 6,
+        "col": 1,
+        "length": 3,
+        "wordId": "makkedah"
+      }
+    ]
+  },
+  {
+    "id": "20260831_019",
+    "title": "E-10",
+    "difficulty": 1.4,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "###납####",
+      "###달###멧",
+      "#사마리아##돼",
+      "#다##가마우지",
+      "갈리오#####",
+      "매#######",
+      "기도######",
+      "#시######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "납달리",
+        "direction": "down",
+        "row": 0,
+        "col": 3,
+        "length": 3,
+        "wordId": "naphtali"
+      },
+      {
+        "number": 2,
+        "answer": "멧돼지",
+        "direction": "down",
+        "row": 1,
+        "col": 7,
+        "length": 3,
+        "wordId": "boar"
+      },
+      {
+        "number": 3,
+        "answer": "사다리",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 3,
+        "wordId": "ladder"
+      },
+      {
+        "number": 4,
+        "answer": "사마리아",
+        "direction": "across",
+        "row": 2,
+        "col": 1,
+        "length": 4,
+        "wordId": "samaria"
+      },
+      {
+        "number": 5,
+        "answer": "아가",
+        "direction": "down",
+        "row": 2,
+        "col": 4,
+        "length": 2,
+        "wordId": "songofsongs"
+      },
+      {
+        "number": 6,
+        "answer": "가마우지",
+        "direction": "across",
+        "row": 3,
+        "col": 4,
+        "length": 4,
+        "wordId": "cormorant"
+      },
+      {
+        "number": 7,
+        "answer": "갈리오",
+        "direction": "across",
+        "row": 4,
+        "col": 0,
+        "length": 3,
+        "wordId": "gallio"
+      },
+      {
+        "number": 8,
+        "answer": "갈매기",
+        "direction": "down",
+        "row": 4,
+        "col": 0,
+        "length": 3,
+        "wordId": "gull"
+      },
+      {
+        "number": 9,
+        "answer": "기도",
+        "direction": "across",
+        "row": 6,
+        "col": 0,
+        "length": 2,
+        "wordId": "prayer"
+      },
+      {
+        "number": 10,
+        "answer": "도시",
+        "direction": "down",
+        "row": 6,
+        "col": 1,
+        "length": 2,
+        "wordId": "city"
+      }
+    ]
+  },
+  {
+    "id": "20260903_006",
+    "title": "N-1",
+    "difficulty": 1.8,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "###여#파수대",
+      "###호#라##",
+      "우스#아레오바고",
+      "#보세스##카#",
+      "#이###므나헴",
+      "불임####무#",
+      "########",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "여호아스",
+        "direction": "down",
+        "row": 0,
+        "col": 3,
+        "length": 4,
+        "wordId": "jehoash"
+      },
+      {
+        "number": 2,
+        "answer": "파라오",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 3,
+        "wordId": "pharaoh"
+      },
+      {
+        "number": 3,
+        "answer": "파수대",
+        "direction": "across",
+        "row": 0,
+        "col": 5,
+        "length": 3,
+        "wordId": "watchtower"
+      },
+      {
+        "number": 4,
+        "answer": "우스",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 2,
+        "wordId": "uz"
+      },
+      {
+        "number": 5,
+        "answer": "스보이임",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 4,
+        "wordId": "zeboiim"
+      },
+      {
+        "number": 6,
+        "answer": "아레오바고",
+        "direction": "across",
+        "row": 2,
+        "col": 3,
+        "length": 5,
+        "wordId": "areopagus"
+      },
+      {
+        "number": 7,
+        "answer": "바카나무",
+        "direction": "down",
+        "row": 2,
+        "col": 6,
+        "length": 4,
+        "wordId": "baca"
+      },
+      {
+        "number": 8,
+        "answer": "보세스",
+        "direction": "across",
+        "row": 3,
+        "col": 1,
+        "length": 3,
+        "wordId": "bozez"
+      },
+      {
+        "number": 9,
+        "answer": "므나헴",
+        "direction": "across",
+        "row": 4,
+        "col": 5,
+        "length": 3,
+        "wordId": "menahem"
+      },
+      {
+        "number": 10,
+        "answer": "불임",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 2,
+        "wordId": "barrenness"
+      }
+    ]
+  },
+  {
+    "id": "20260903_008",
+    "title": "N-2",
+    "difficulty": 2,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "#리######",
+      "#브######",
+      "#가데스####",
+      "##살#####",
+      "바돌로매#피##",
+      "란#니#시리아#",
+      "##가야바#사#"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "리브가",
+        "direction": "down",
+        "row": 1,
+        "col": 1,
+        "length": 3,
+        "wordId": "rebecca"
+      },
+      {
+        "number": 2,
+        "answer": "가데스",
+        "direction": "across",
+        "row": 3,
+        "col": 1,
+        "length": 3,
+        "wordId": "kadesh"
+      },
+      {
+        "number": 3,
+        "answer": "데살로니가",
+        "direction": "down",
+        "row": 3,
+        "col": 2,
+        "length": 5,
+        "wordId": "thessalonica"
+      },
+      {
+        "number": 4,
+        "answer": "바돌로매",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 4,
+        "wordId": "bartholomew"
+      },
+      {
+        "number": 5,
+        "answer": "바란",
+        "direction": "down",
+        "row": 5,
+        "col": 0,
+        "length": 2,
+        "wordId": "paran"
+      },
+      {
+        "number": 6,
+        "answer": "피리",
+        "direction": "down",
+        "row": 5,
+        "col": 5,
+        "length": 2,
+        "wordId": "entry-피리"
+      },
+      {
+        "number": 7,
+        "answer": "시리아",
+        "direction": "across",
+        "row": 6,
+        "col": 4,
+        "length": 3,
+        "wordId": "syria"
+      },
+      {
+        "number": 8,
+        "answer": "시바",
+        "direction": "down",
+        "row": 6,
+        "col": 4,
+        "length": 2,
+        "wordId": "ziphah"
+      },
+      {
+        "number": 9,
+        "answer": "아사",
+        "direction": "down",
+        "row": 6,
+        "col": 6,
+        "length": 2,
+        "wordId": "asa"
+      },
+      {
+        "number": 10,
+        "answer": "가야바",
+        "direction": "across",
+        "row": 7,
+        "col": 2,
+        "length": 3,
+        "wordId": "caiaphas"
+      }
+    ]
+  },
+  {
+    "id": "20260903_009",
+    "title": "N-3",
+    "difficulty": 1.9,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "###이스라엘#",
+      "##셸#토#리#",
+      "#갈라디아#에#",
+      "#고##파#셀#",
+      "부리망#####",
+      "정#대리관###",
+      "함#######",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "이스라엘",
+        "direction": "across",
+        "row": 0,
+        "col": 3,
+        "length": 4,
+        "wordId": "israel"
+      },
+      {
+        "number": 2,
+        "answer": "스토아파",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 4,
+        "wordId": "stoics"
+      },
+      {
+        "number": 3,
+        "answer": "엘리에셀",
+        "direction": "down",
+        "row": 0,
+        "col": 6,
+        "length": 4,
+        "wordId": "eliezer"
+      },
+      {
+        "number": 4,
+        "answer": "셸라",
+        "direction": "down",
+        "row": 1,
+        "col": 2,
+        "length": 2,
+        "wordId": "shelah"
+      },
+      {
+        "number": 5,
+        "answer": "갈라디아",
+        "direction": "across",
+        "row": 2,
+        "col": 1,
+        "length": 4,
+        "wordId": "galatia"
+      },
+      {
+        "number": 6,
+        "answer": "갈고리",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 3,
+        "wordId": "hook"
+      },
+      {
+        "number": 7,
+        "answer": "부리망",
+        "direction": "across",
+        "row": 4,
+        "col": 0,
+        "length": 3,
+        "wordId": "muzzle"
+      },
+      {
+        "number": 8,
+        "answer": "부정함",
+        "direction": "down",
+        "row": 4,
+        "col": 0,
+        "length": 3,
+        "wordId": "uncleanness"
+      },
+      {
+        "number": 9,
+        "answer": "망대",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "tower"
+      },
+      {
+        "number": 10,
+        "answer": "대리관",
+        "direction": "across",
+        "row": 5,
+        "col": 2,
+        "length": 3,
+        "wordId": "deputy"
+      }
+    ]
+  },
+  {
+    "id": "20260905_019",
+    "title": "N-4",
+    "difficulty": 1.9,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "####바알므온",
+      "###바퀴##유",
+      "####벌###",
+      "###베레아#미",
+      "#####라기스",
+      "###아굴라#라",
+      "###합#트#임",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "바알므온",
+        "direction": "across",
+        "row": 0,
+        "col": 4,
+        "length": 4,
+        "wordId": "entry-바알-므온"
+      },
+      {
+        "number": 2,
+        "answer": "바퀴벌레",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 4,
+        "wordId": "cockroach"
+      },
+      {
+        "number": 3,
+        "answer": "온유",
+        "direction": "down",
+        "row": 0,
+        "col": 7,
+        "length": 2,
+        "wordId": "mildness"
+      },
+      {
+        "number": 4,
+        "answer": "바퀴",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 2,
+        "wordId": "wheel"
+      },
+      {
+        "number": 5,
+        "answer": "베레아",
+        "direction": "across",
+        "row": 3,
+        "col": 3,
+        "length": 3,
+        "wordId": "berea"
+      },
+      {
+        "number": 6,
+        "answer": "아라라트",
+        "direction": "down",
+        "row": 3,
+        "col": 5,
+        "length": 4,
+        "wordId": "ararat"
+      },
+      {
+        "number": 7,
+        "answer": "미스라임",
+        "direction": "down",
+        "row": 3,
+        "col": 7,
+        "length": 4,
+        "wordId": "mizraim"
+      },
+      {
+        "number": 8,
+        "answer": "라기스",
+        "direction": "across",
+        "row": 4,
+        "col": 5,
+        "length": 3,
+        "wordId": "lachish"
+      },
+      {
+        "number": 9,
+        "answer": "아굴라",
+        "direction": "across",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "aquila"
+      },
+      {
+        "number": 10,
+        "answer": "아합",
+        "direction": "down",
+        "row": 5,
+        "col": 3,
+        "length": 2,
+        "wordId": "ahab"
+      }
+    ]
+  },
+  {
+    "id": "20260905_004",
+    "title": "N-5",
+    "difficulty": 2,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "#정강이#하사엘",
+      "니##세펠라#리",
+      "므헤다벨##대사",
+      "롯#윗#####",
+      "########",
+      "########",
+      "########",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "정강이",
+        "direction": "across",
+        "row": 0,
+        "col": 1,
+        "length": 3,
+        "wordId": "shank"
+      },
+      {
+        "number": 2,
+        "answer": "이세벨",
+        "direction": "down",
+        "row": 0,
+        "col": 3,
+        "length": 3,
+        "wordId": "jezebel"
+      },
+      {
+        "number": 3,
+        "answer": "하라",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 2,
+        "wordId": "hara"
+      },
+      {
+        "number": 4,
+        "answer": "하사엘",
+        "direction": "across",
+        "row": 0,
+        "col": 5,
+        "length": 3,
+        "wordId": "hazael"
+      },
+      {
+        "number": 5,
+        "answer": "엘리사",
+        "direction": "down",
+        "row": 0,
+        "col": 7,
+        "length": 3,
+        "wordId": "elisha"
+      },
+      {
+        "number": 6,
+        "answer": "니므롯",
+        "direction": "down",
+        "row": 1,
+        "col": 0,
+        "length": 3,
+        "wordId": "nimrod"
+      },
+      {
+        "number": 7,
+        "answer": "세펠라",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 3,
+        "wordId": "shephelah"
+      },
+      {
+        "number": 8,
+        "answer": "므헤다벨",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 4,
+        "wordId": "mehetabel"
+      },
+      {
+        "number": 9,
+        "answer": "다윗",
+        "direction": "down",
+        "row": 2,
+        "col": 2,
+        "length": 2,
+        "wordId": "david"
+      },
+      {
+        "number": 10,
+        "answer": "대사",
+        "direction": "across",
+        "row": 2,
+        "col": 6,
+        "length": 2,
+        "wordId": "ambassador"
+      }
+    ]
+  }
+]

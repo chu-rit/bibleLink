@@ -7,7 +7,11 @@ export const formatReferenceByChapter = (reference) => reference.replace(/(ì‹œíŽ
   return (psalms || '') + p1 + suffix;
 });
 
-export const wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
+export let wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
+
+export function setWordData(words) {
+  wordDataById = Object.fromEntries(words.map((item) => [item.id, item]));
+}
 
 export const averageDifficulty = (map) => {
   const values = map.cells.map((cell) => wordDataById[cell.wordId]?.difficulty).filter(Boolean);

@@ -11,27 +11,27 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import bibleWords from '../data/words/bibleWordsLib1.json';
-import crosswordMaps from '../data/maps/crosswordMaps';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
 
-const usageCount = (() => {
-  const counts = new Map();
-  crosswordMaps.forEach((map) => {
-    map.cells.forEach((cell) => {
-      counts.set(cell.wordId, (counts.get(cell.wordId) || 0) + 1);
+export default function WordSearchScreen({ maps, words, onBack }) {
+  const bibleWords = words || [];
+  const crosswordMaps = maps || [];
+
+  const usageCount = useMemo(() => {
+    const counts = new Map();
+    crosswordMaps.forEach((map) => {
+      map.cells.forEach((cell) => {
+        counts.set(cell.wordId, (counts.get(cell.wordId) || 0) + 1);
+      });
     });
-  });
-  return counts;
-})();
+    return counts;
+  }, [crosswordMaps]);
 
-const getUsage = (id) => usageCount.get(id) || 0;
-const getMapTitles = (wordId) => crosswordMaps
-  .filter((map) => map.cells.some((cell) => cell.wordId === wordId))
-  .map((map) => map.title);
-
-export default function WordSearchScreen({ onBack }) {
+  const getUsage = (id) => usageCount.get(id) || 0;
+  const getMapTitles = useCallback((wordId) => crosswordMaps
+    .filter((map) => map.cells.some((cell) => cell.wordId === wordId))
+    .map((map) => map.title), [crosswordMaps]);
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export default function WordSearchScreen({ onBack }) {
         return a.word.localeCompare(b.word, 'ko');
       });
     return list;
-  }, [query]);
+  }, [query, bibleWords, crosswordMaps, getMapTitles]);
 
   const PAGE_SIZE = 100;
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -113,7 +113,7 @@ export default function WordSearchScreen({ onBack }) {
 
   const totalUsed = useMemo(
     () => bibleWords.filter((item) => getUsage(item.id) > 0).length,
-    []
+    [bibleWords, usageCount]
   );
 
   const diffStats = useMemo(() => {
@@ -125,7 +125,7 @@ export default function WordSearchScreen({ onBack }) {
       if (getUsage(item.id) > 0) stats[d].used++;
     });
     return stats;
-  }, []);
+  }, [bibleWords, usageCount]);
 
   const renderItem = ({ item }) => (
     <View style={[styles.wordCard, item.usage > 0 && styles.usedWordCard]}>

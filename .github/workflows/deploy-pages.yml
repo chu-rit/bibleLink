@@ -34,6 +34,16 @@ jobs:
       - name: Build Expo web app
         run: npm run build:web
 
+      - name: Build remote data files
+        run: npm run build:data
+
+      - name: Copy remote data to dist
+        run: |
+          mkdir -p dist/data/words dist/data/maps
+          cp data/manifest.json dist/data/manifest.json
+          cp data/words/bibleWordsLib1.json dist/data/words/bibleWordsLib1.json
+          cp data/maps/crosswordMaps.json dist/data/maps/crosswordMaps.json
+
       - name: Copy index.html to 404.html for SPA routing
         run: cp dist/index.html dist/404.html
 

@@ -1,14 +1,25 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { Animated, Image, Platform, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import PageFlipper from '@laffy1309/react-native-page-flipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
-import crosswordMaps from './data/maps/crosswordMaps';
+import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
-import { getFilledCellCount, getOpenCellCount } from './utils';
+import { getFilledCellCount, getOpenCellCount, setWordData } from './utils';
+import { loadAppData } from './utils/dataLoader';
+
+const ICON_ASSET = require('./assets/ICON.png');
+const ICON_NOBG_ASSET = require('./assets/ICON_NOBG.png');
+const BG_ASSET = require('./assets/BG.png');
+
+const LOADING_STATUS_TEXT = {
+  loading: '데이터를 불러오는 중...',
+  checking: '최신 데이터를 확인하는 중...',
+  downloading: '업데이트를 다운로드하는 중...',
+};
 
 const isLocalhost = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
@@ -75,6 +86,10 @@ export default function App() {
   });
   const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
   const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'mapSelect');
+  const [appMaps, setAppMaps] = useState(bundledMaps);
+  const [appWords, setAppWords] = useState(null);
+  const [dataStatus, setDataStatus] = useState('loading');
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const toggleMasterMode = () => {
     setMasterMode((prev) => {
@@ -90,6 +105,36 @@ export default function App() {
   const [hintPointsByMap, setHintPointsByMap] = useState({});
   const [hintedSlotsByMap, setHintedSlotsByMap] = useState({});
   const [loaded, setLoaded] = useState(false);
+
+  // 원격 데이터 로딩
+  useEffect(() => {
+    let cancelled = false;
+    const startTime = Date.now();
+    const MIN_LOADING_TIME = 3000;
+    loadAppData((status) => {
+      if (!cancelled) {
+        setDataStatus(status);
+      }
+    }).then(({ words, maps }) => {
+      if (cancelled) return;
+      const elapsed = Date.now() - startTime;
+      const wait = Math.max(0, MIN_LOADING_TIME - elapsed);
+      setTimeout(() => {
+        if (cancelled) return;
+        setWordData(words);
+        setAppWords(words);
+        setAppMaps(maps);
+        setDataLoaded(true);
+      }, wait);
+    }).catch((err) => {
+      const elapsed = Date.now() - startTime;
+      const wait = Math.max(0, MIN_LOADING_TIME - elapsed);
+      setTimeout(() => {
+        if (!cancelled) setDataLoaded(true);
+      }, wait);
+    });
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     if (Platform.OS !== 'web' || typeof document === 'undefined') return undefined;
@@ -183,13 +228,13 @@ export default function App() {
   const progressByMap = useMemo(
     () =>
       Object.fromEntries(
-        crosswordMaps.map((map) => {
+        appMaps.map((map) => {
           const answers = answersByMap[map.id] || {};
           const filled = getFilledCellCount(map, answers);
           return [map.id, { filled, total: getOpenCellCount(map) }];
         })
       ),
-    [answersByMap]
+    [answersByMap, appMaps]
   );
 
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -200,6 +245,10 @@ export default function App() {
   const pageWidth = Math.min(windowWidth || 375, 480);
   const pageHeight = Math.min(windowHeight || Math.round(pageWidth * 20 / 9), Math.round(pageWidth * 20 / 9));
   const pageIndex = screen === 'puzzle' && selectedMap ? 1 : 0;
+
+  // Loading overlay fade-out
+  const loadingOverlayOpacity = useRef(new Animated.Value(1)).current;
+  const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(true);
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
@@ -218,15 +267,30 @@ export default function App() {
     return undefined;
   }, [loaded, fontsLoaded, pageIndex, screen]);
 
-  if (!loaded || !fontsLoaded) return null;
+  // Loading overlay fade-out (dataLoaded 시)
+  useEffect(() => {
+    if (!dataLoaded) return;
+    Animated.timing(loadingOverlayOpacity, {
+      toValue: 0,
+      duration: 600,
+      useNativeDriver: true,
+    }).start(() => {
+      setLoadingOverlayVisible(false);
+    });
+    // HTML 로딩 화면 제거
+    if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
+      window.__removeLoadingScreen();
+      window.__removeLoadingScreen = null;
+    }
+  }, [dataLoaded, loadingOverlayOpacity]);
 
-  if (screen === 'wordSearch') {
-    return <WordSearchScreen onBack={() => setScreen('mapSelect')} />;
+  if (screen === 'wordSearch' && dataLoaded) {
+    return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
   }
 
   const mapPage = (
     <MapSelectScreen
-      maps={crosswordMaps}
+      maps={appMaps}
       progressByMap={progressByMap}
       masterMode={masterMode}
       onSelect={(map) => {
@@ -245,7 +309,7 @@ export default function App() {
         AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
       }}
       onCompleteMap={masterMode ? (mapId) => {
-        const map = crosswordMaps.find((m) => m.id === mapId);
+        const map = appMaps.find((m) => m.id === mapId);
         if (!map) return;
         setAnswersByMap((prev) => {
           const next = { ...prev };
@@ -331,8 +395,25 @@ export default function App() {
               setScreen(syncedScreen);
             }
           }}
+          onInitialized={() => {
+            flipperIndexRef.current = 0;
+          }}
           renderPage={renderPageContent}
           />
+          {loadingOverlayVisible && (
+            <Animated.View
+              pointerEvents={dataLoaded ? 'none' : 'auto'}
+              style={[StyleSheet.absoluteFillObject, { opacity: loadingOverlayOpacity, zIndex: 100 }]}
+            >
+              <View style={{ width: pageWidth, height: pageHeight, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' }}>
+                <Image source={BG_ASSET} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' }} />
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <Image source={ICON_NOBG_ASSET} style={{ width: Math.min(windowWidth * 0.7, 280), height: Math.min(windowWidth * 0.7, 280), resizeMode: 'contain', marginBottom: 24 }} />
+                  <Text style={{ fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' }}>{LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading}</Text>
+                </View>
+              </View>
+            </Animated.View>
+          )}
         </View>
         </PageFlipperBoundary>
       <AdBanner />
@@ -386,27 +467,11 @@ function AdBanner() {
 function PageContent({ pageId, mapPage, puzzlePage, pageWidth, pageHeight }) {
   const mapVisible = pageId === 'mapSelect';
   return (
-    <View
-      style={{
-        width: pageWidth,
-        height: pageHeight,
-        position: 'relative',
-      }}
-    >
-      <View
-        style={[
-          StyleSheet.absoluteFillObject,
-          { opacity: mapVisible ? 1 : 0, pointerEvents: mapVisible ? 'auto' : 'none' },
-        ]}
-      >
+    <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
+      <View style={[StyleSheet.absoluteFillObject, { opacity: mapVisible ? 1 : 0, pointerEvents: mapVisible ? 'auto' : 'none' }]}>
         {mapPage}
       </View>
-      <View
-        style={[
-          StyleSheet.absoluteFillObject,
-          { opacity: mapVisible ? 0 : 1, pointerEvents: mapVisible ? 'none' : 'auto' },
-        ]}
-      >
+      <View style={[StyleSheet.absoluteFillObject, { opacity: mapVisible ? 0 : 1, pointerEvents: mapVisible ? 'none' : 'auto' }]}>
         {puzzlePage}
       </View>
     </View>
