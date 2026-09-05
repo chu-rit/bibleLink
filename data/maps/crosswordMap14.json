@@ -1,110 +1,110 @@
 {
-  "id": "20260905_003",
+  "id": "20260905_019",
   "title": "N-4",
-  "difficulty": 2,
+  "difficulty": 1.9,
   "width": 8,
   "height": 8,
   "sourceData": "./bibleWordsLib1.json",
   "grid": [
-    "########",
-    "########",
-    "####그###",
-    "####모###",
-    "###보스라#리",
-    "##소고#아모스",
-    "####라마#트",
-    "####먀#미라"
+    "####바알므온",
+    "###바퀴##유",
+    "####벌###",
+    "###베레아#미",
+    "#####라기스",
+    "###아굴라#라",
+    "###합#트#임",
+    "########"
   ],
   "cells": [
     {
       "number": 1,
-      "answer": "그모스",
-      "direction": "down",
-      "row": 2,
+      "answer": "바알므온",
+      "direction": "across",
+      "row": 0,
       "col": 4,
-      "length": 3,
-      "wordId": "chemosh"
+      "length": 4,
+      "wordId": "entry-바알-므온"
     },
     {
       "number": 2,
-      "answer": "보스라",
-      "direction": "across",
-      "row": 4,
-      "col": 3,
-      "length": 3,
-      "wordId": "bozrah"
+      "answer": "바퀴벌레",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "cockroach"
     },
     {
       "number": 3,
-      "answer": "보고",
+      "answer": "온유",
       "direction": "down",
-      "row": 4,
-      "col": 3,
+      "row": 0,
+      "col": 7,
       "length": 2,
-      "wordId": "treasury"
+      "wordId": "mildness"
     },
     {
       "number": 4,
-      "answer": "라아마",
-      "direction": "down",
-      "row": 4,
-      "col": 5,
-      "length": 3,
-      "wordId": "raamah"
+      "answer": "바퀴",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 2,
+      "wordId": "wheel"
     },
     {
       "number": 5,
-      "answer": "리스트라",
-      "direction": "down",
-      "row": 4,
-      "col": 7,
-      "length": 4,
-      "wordId": "lystra"
+      "answer": "베레아",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 3,
+      "wordId": "berea"
     },
     {
       "number": 6,
-      "answer": "소고",
-      "direction": "across",
-      "row": 5,
-      "col": 2,
-      "length": 2,
-      "wordId": "entry-소고"
+      "answer": "아라라트",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 4,
+      "wordId": "ararat"
     },
     {
       "number": 7,
-      "answer": "아모스",
-      "direction": "across",
-      "row": 5,
-      "col": 5,
-      "length": 3,
-      "wordId": "amos"
+      "answer": "미스라임",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 4,
+      "wordId": "mizraim"
     },
     {
       "number": 8,
-      "answer": "라마",
+      "answer": "라기스",
       "direction": "across",
-      "row": 6,
-      "col": 4,
-      "length": 2,
-      "wordId": "ramah"
+      "row": 4,
+      "col": 5,
+      "length": 3,
+      "wordId": "lachish"
     },
     {
       "number": 9,
-      "answer": "라먀",
-      "direction": "down",
-      "row": 6,
-      "col": 4,
-      "length": 2,
-      "wordId": "ramiah"
+      "answer": "아굴라",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "aquila"
     },
     {
       "number": 10,
-      "answer": "미라",
-      "direction": "across",
-      "row": 7,
-      "col": 6,
+      "answer": "아합",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
       "length": 2,
-      "wordId": "myra"
+      "wordId": "ahab"
     }
   ]
 }
