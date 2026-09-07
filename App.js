@@ -407,7 +407,7 @@ export default function App() {
             flipperIndexRef.current = 0;
             if (pageIndex !== 0) {
               navigationCommandRef.current += 1;
-              flipperRef.current?.goToPage?.(pageIndex);
+              setTimeout(() => flipperRef.current?.goToPage?.(pageIndex), 0);
             }
           }}
           renderPage={renderPageContent}
