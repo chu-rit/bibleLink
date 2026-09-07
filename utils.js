@@ -9,10 +9,13 @@ export const formatReferenceByChapter = (reference) => reference.replace(/(시�
 
 export const PAGE_ASPECT_RATIO = 20 / 9;
 
-// 화면 비율(9:20)을 유지하면서 창 안에 들어가는 최대 페이지 폭
+// 좁은 화면(모바일)에서는 창 폭을 그대로 쓰고, 넓은 화면에서는 9:20 비율을 유지하는 최대 폭
+export const MOBILE_MAX_WIDTH = 480;
+
 export const getPageWidth = (windowWidth, windowHeight) => {
   const width = windowWidth || 375;
   const height = windowHeight || Math.round(width * PAGE_ASPECT_RATIO);
+  if (width <= MOBILE_MAX_WIDTH) return width;
   return Math.min(width, Math.round(height / PAGE_ASPECT_RATIO));
 };
 
