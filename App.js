@@ -401,6 +401,10 @@ export default function App() {
           }}
           onInitialized={() => {
             flipperIndexRef.current = 0;
+            if (pageIndex !== 0) {
+              navigationCommandRef.current += 1;
+              flipperRef.current?.goToPage?.(pageIndex);
+            }
           }}
           renderPage={renderPageContent}
           />
