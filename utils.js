@@ -7,6 +7,15 @@ export const formatReferenceByChapter = (reference) => reference.replace(/(시�
   return (psalms || '') + p1 + suffix;
 });
 
+export const PAGE_ASPECT_RATIO = 20 / 9;
+
+// 화면 비율(9:20)을 유지하면서 창 안에 들어가는 최대 페이지 폭
+export const getPageWidth = (windowWidth, windowHeight) => {
+  const width = windowWidth || 375;
+  const height = windowHeight || Math.round(width * PAGE_ASPECT_RATIO);
+  return Math.min(width, Math.round(height / PAGE_ASPECT_RATIO));
+};
+
 export let wordDataById = Object.fromEntries(bibleWords.map((item) => [item.id, item]));
 
 export function setWordData(words) {

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Alert, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
+import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const COLUMNS = 4;
 const RADIUS = 28;
@@ -53,7 +54,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
-  const effectiveWidth = isWeb ? Math.min(windowWidth || 375, 480) : (windowWidth || 375);
+  const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
   const [viewportHeight, setViewportHeight] = useState(windowHeight);
 
@@ -68,8 +69,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   useEffect(() => {
     if (!isWeb) return undefined;
     const update = () => {
-      const frameWidth = Math.min(window.innerWidth, 480);
-      setViewportHeight(Math.min(window.innerHeight, Math.round(frameWidth * 20 / 9)));
+      const frameWidth = getPageWidth(window.innerWidth, window.innerHeight);
+      setViewportHeight(Math.round(frameWidth * PAGE_ASPECT_RATIO));
     };
     update();
     window.addEventListener('resize', update);
@@ -181,7 +182,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: 480, alignSelf: 'center' }]}
+      style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
       <View style={[styles.header, isSmallScreen && styles.headerSmall]}>

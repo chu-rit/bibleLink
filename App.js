@@ -8,7 +8,7 @@ import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
-import { getFilledCellCount, getOpenCellCount, setWordData } from './utils';
+import { PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
 const ICON_ASSET = require('./assets/ICON.png');
@@ -244,8 +244,8 @@ export default function App() {
   const navigationCommandRef = useRef(0);
   const animationActiveRef = useRef(false);
   const returnFromLoadingTimerRef = useRef(null);
-  const pageWidth = Math.min(windowWidth || 375, 480);
-  const pageHeight = Math.min(windowHeight || Math.round(pageWidth * 20 / 9), Math.round(pageWidth * 20 / 9));
+  const pageWidth = getPageWidth(windowWidth, windowHeight);
+  const pageHeight = Math.round(pageWidth * PAGE_ASPECT_RATIO);
   const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
 
   useEffect(() => {

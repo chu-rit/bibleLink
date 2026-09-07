@@ -23,6 +23,7 @@ import {
   formatMapTitle,
   getFilledCellCount,
   getOpenCellCount,
+  getPageWidth,
 } from '../utils';
 import AnswerCard from './AnswerCard';
 import HandwrittenText from '../components/HandwrittenText';
@@ -78,7 +79,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
-  const effectiveWidth = Platform.OS === 'web' ? Math.min(windowWidth || 0, 480) : (windowWidth || 0);
+  const effectiveWidth = Platform.OS === 'web' ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 0);
   const boardWidth = Math.max(200, effectiveWidth - 32);
   const availableHeight = isKeyboardVisible
     ? (Platform.OS === 'web' && webViewportHeight
@@ -456,7 +457,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}
+      style={[styles.safeArea, Platform.OS === 'web' && [styles.webSafeArea, { maxWidth: effectiveWidth }]]}
     >
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
@@ -711,7 +712,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1 },
-  webSafeArea: { maxWidth: 480, alignSelf: 'center', width: '100%' },
+  webSafeArea: { alignSelf: 'center', width: '100%' },
   flex: { flex: 1 },
   container: { flex: 1, padding: 16, position: 'relative' },
   answerCardContainer: {
