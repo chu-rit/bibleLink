@@ -243,6 +243,7 @@ export default function App() {
   const flipperIndexRef = useRef(0);
   const navigationCommandRef = useRef(0);
   const animationActiveRef = useRef(false);
+  const returningFromLoadingRef = useRef(false);
   const pageWidth = Math.min(windowWidth || 375, 480);
   const pageHeight = Math.min(windowHeight || Math.round(pageWidth * 20 / 9), Math.round(pageWidth * 20 / 9));
   const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
@@ -395,8 +396,15 @@ export default function App() {
               if (screen !== 'mapSelect') {
                 setScreen('mapSelect');
               }
+              if (returningFromLoadingRef.current) return;
+              returningFromLoadingRef.current = true;
               navigationCommandRef.current += 1;
-              setTimeout(() => flipperRef.current?.nextPage?.(), 0);
+              setTimeout(() => {
+                returningFromLoadingRef.current = false;
+                if (flipperIndexRef.current === 0) {
+                  flipperRef.current?.goToPage?.(1);
+                }
+              }, 0);
               return;
             }
             if (screen !== syncedScreen) {
