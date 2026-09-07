@@ -392,7 +392,11 @@ export default function App() {
             flipperIndexRef.current = index;
             const syncedScreen = SCREEN_BY_PAGE_INDEX[index] || 'mapSelect';
             if (syncedScreen === 'loading' && dataLoaded) {
-              setScreen('mapSelect');
+              if (screen !== 'mapSelect') {
+                setScreen('mapSelect');
+              }
+              navigationCommandRef.current += 1;
+              setTimeout(() => flipperRef.current?.nextPage?.(), 0);
               return;
             }
             if (screen !== syncedScreen) {
