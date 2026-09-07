@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Image, Platform, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Platform, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import PageFlipper from '@laffy1309/react-native-page-flipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -43,7 +43,8 @@ const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
-const PAGE_DATA = ['mapSelect', 'puzzle'];
+const PAGE_DATA = ['loading', 'mapSelect', 'puzzle'];
+const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle'];
 const EMPTY_MAP = {
   id: '__empty__',
   title: '',
@@ -85,7 +86,7 @@ export default function App() {
     UhBeeGmin2Bold: require('./assets/fonts/UhBeeGmin2Bold.ttf'),
   });
   const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
-  const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'mapSelect');
+  const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'loading');
   const [appMaps, setAppMaps] = useState(bundledMaps);
   const [appWords, setAppWords] = useState(null);
   const [dataStatus, setDataStatus] = useState('loading');
@@ -244,11 +245,7 @@ export default function App() {
   const animationActiveRef = useRef(false);
   const pageWidth = Math.min(windowWidth || 375, 480);
   const pageHeight = Math.min(windowHeight || Math.round(pageWidth * 20 / 9), Math.round(pageWidth * 20 / 9));
-  const pageIndex = screen === 'puzzle' && selectedMap ? 1 : 0;
-
-  // Loading overlay fade-out
-  const loadingOverlayOpacity = useRef(new Animated.Value(1)).current;
-  const [loadingOverlayVisible, setLoadingOverlayVisible] = useState(true);
+  const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
@@ -267,22 +264,16 @@ export default function App() {
     return undefined;
   }, [loaded, fontsLoaded, pageIndex, screen]);
 
-  // Loading overlay fade-out (dataLoaded 시)
+  // 로딩 완료 시 맵 선택 페이지로 넘김
   useEffect(() => {
     if (!dataLoaded) return;
-    Animated.timing(loadingOverlayOpacity, {
-      toValue: 0,
-      duration: 600,
-      useNativeDriver: true,
-    }).start(() => {
-      setLoadingOverlayVisible(false);
-    });
+    setScreen((prev) => (prev === 'loading' ? 'mapSelect' : prev));
     // HTML 로딩 화면 제거
     if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
       window.__removeLoadingScreen();
       window.__removeLoadingScreen = null;
     }
-  }, [dataLoaded, loadingOverlayOpacity]);
+  }, [dataLoaded]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
@@ -366,10 +357,19 @@ export default function App() {
       }}
     />
   );
-  const currentPage = pageIndex === 1 ? puzzlePage : mapPage;
+  const loadingPage = (
+    <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
+      <Image source={BG_ASSET} style={styles.loadingBackground} />
+      <View style={styles.loadingContent}>
+        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: Math.min(windowWidth * 0.7, 280), height: Math.min(windowWidth * 0.7, 280) }]} />
+        <Text style={styles.loadingText}>{LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading}</Text>
+      </View>
+    </View>
+  );
+  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 2 ? puzzlePage : mapPage);
 
   const renderPageContent = (pageId) => (
-    <PageContent pageId={pageId} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
+    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
   );
 
   return (
@@ -390,7 +390,11 @@ export default function App() {
           onFlippedEnd={(index) => {
             animationActiveRef.current = false;
             flipperIndexRef.current = index;
-            const syncedScreen = index === 1 ? 'puzzle' : 'mapSelect';
+            const syncedScreen = SCREEN_BY_PAGE_INDEX[index] || 'mapSelect';
+            if (syncedScreen === 'loading' && dataLoaded) {
+              setScreen('mapSelect');
+              return;
+            }
             if (screen !== syncedScreen) {
               setScreen(syncedScreen);
             }
@@ -400,20 +404,6 @@ export default function App() {
           }}
           renderPage={renderPageContent}
           />
-          {loadingOverlayVisible && (
-            <Animated.View
-              pointerEvents={dataLoaded ? 'none' : 'auto'}
-              style={[StyleSheet.absoluteFillObject, { opacity: loadingOverlayOpacity, zIndex: 100 }]}
-            >
-              <View style={{ width: pageWidth, height: pageHeight, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' }}>
-                <Image source={BG_ASSET} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' }} />
-                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                  <Image source={ICON_NOBG_ASSET} style={{ width: Math.min(windowWidth * 0.7, 280), height: Math.min(windowWidth * 0.7, 280), resizeMode: 'contain', marginBottom: 24 }} />
-                  <Text style={{ fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' }}>{LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading}</Text>
-                </View>
-              </View>
-            </Animated.View>
-          )}
         </View>
         </PageFlipperBoundary>
       <AdBanner />
@@ -426,6 +416,11 @@ const styles = StyleSheet.create({
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
   flipperFrame: { flex: 1 },
   adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
+  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' },
+  loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
+  loadingContent: { alignItems: 'center', justifyContent: 'center' },
+  loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
+  loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' },
 });
 
 function AdBanner() {
@@ -464,14 +459,19 @@ function AdBanner() {
   return <View ref={adRef} style={styles.adContainer} />;
 }
 
-function PageContent({ pageId, mapPage, puzzlePage, pageWidth, pageHeight }) {
+function PageContent({ pageId, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
+  const loadingVisible = pageId === 'loading';
   const mapVisible = pageId === 'mapSelect';
+  const puzzleVisible = pageId === 'puzzle';
   return (
     <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
+      <View style={[StyleSheet.absoluteFillObject, { opacity: loadingVisible ? 1 : 0, pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
+        {loadingPage}
+      </View>
       <View style={[StyleSheet.absoluteFillObject, { opacity: mapVisible ? 1 : 0, pointerEvents: mapVisible ? 'auto' : 'none' }]}>
         {mapPage}
       </View>
-      <View style={[StyleSheet.absoluteFillObject, { opacity: mapVisible ? 0 : 1, pointerEvents: mapVisible ? 'none' : 'auto' }]}>
+      <View style={[StyleSheet.absoluteFillObject, { opacity: puzzleVisible ? 1 : 0, pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
         {puzzlePage}
       </View>
     </View>
