@@ -91,6 +91,7 @@ export default function App() {
   const [appWords, setAppWords] = useState(null);
   const [dataStatus, setDataStatus] = useState('loading');
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [hasBeenToPuzzle, setHasBeenToPuzzle] = useState(false);
 
   const toggleMasterMode = () => {
     setMasterMode((prev) => {
@@ -245,8 +246,12 @@ export default function App() {
   const animationActiveRef = useRef(false);
   const returnFromLoadingTimerRef = useRef(null);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
-  const pageHeight = Math.round(pageWidth * PAGE_ASPECT_RATIO);
+  const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), windowHeight);
   const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
+
+  useEffect(() => {
+    if (screen === 'puzzle' && !hasBeenToPuzzle) setHasBeenToPuzzle(true);
+  }, [screen, hasBeenToPuzzle]);
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
@@ -370,7 +375,7 @@ export default function App() {
   const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 2 ? puzzlePage : mapPage);
 
   const renderPageContent = (pageId) => (
-    <PageContent pageId={pageId} dataLoaded={dataLoaded} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
+    <PageContent pageId={pageId} hasBeenToPuzzle={hasBeenToPuzzle} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
   );
 
   return (
@@ -479,10 +484,11 @@ function AdBanner() {
   return <View ref={adRef} style={styles.adContainer} />;
 }
 
-function PageContent({ pageId, dataLoaded, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
+function PageContent({ pageId, hasBeenToPuzzle, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
   // 데이터 로딩이 끝나면 로딩 페이지 자리에도 맵 선택을 그려서 페이지 넘김 중 로딩 화면이 비치지 않게 한다
-  const loadingVisible = pageId === 'loading' && !dataLoaded;
-  const mapVisible = pageId === 'mapSelect' || (pageId === 'loading' && dataLoaded);
+  // 단, 첫 로딩→맵 전환에서는 아직 퍼즐에 진입한 적이 없으므로 로딩 페이지를 유지한다
+  const loadingVisible = pageId === 'loading' && !hasBeenToPuzzle;
+  const mapVisible = pageId === 'mapSelect' || (pageId === 'loading' && hasBeenToPuzzle);
   const puzzleVisible = pageId === 'puzzle';
   return (
     <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
