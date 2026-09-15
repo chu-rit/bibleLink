@@ -8,7 +8,7 @@ import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
-import { PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
+import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
 const ICON_ASSET = require('./assets/ICON.png');
@@ -243,7 +243,6 @@ export default function App() {
   const flipperIndexRef = useRef(0);
   const navigationCommandRef = useRef(0);
   const animationActiveRef = useRef(false);
-  const returnFromLoadingTimerRef = useRef(null);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
   const pageHeight = Math.round(pageWidth * PAGE_ASPECT_RATIO);
   const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
@@ -267,14 +266,18 @@ export default function App() {
 
   // 로딩 완료 시 맵 선택 페이지로 넘김
   useEffect(() => {
-    if (!dataLoaded) return;
-    setScreen((prev) => (prev === 'loading' ? 'mapSelect' : prev));
+    if (!dataLoaded || !fontsLoaded) return undefined;
+    const goMapSelect = () => setScreen((prev) => (prev === 'loading' ? 'mapSelect' : prev));
     // HTML 로딩 화면 제거
     if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
       window.__removeLoadingScreen();
       window.__removeLoadingScreen = null;
+      const timer = setTimeout(goMapSelect, 400);
+      return () => clearTimeout(timer);
     }
-  }, [dataLoaded]);
+    goMapSelect();
+    return undefined;
+  }, [dataLoaded, fontsLoaded]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
@@ -358,19 +361,21 @@ export default function App() {
       }}
     />
   );
+  const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
+  const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
   const loadingPage = (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image source={BG_ASSET} style={styles.loadingBackground} />
       <View style={styles.loadingContent}>
-        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: Math.min(windowWidth * 0.7, 280), height: Math.min(windowWidth * 0.7, 280) }]} />
-        <Text style={styles.loadingText}>{LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading}</Text>
+        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize }]} />
+        <Text style={styles.loadingText}>{loadingStatusText}</Text>
       </View>
     </View>
   );
   const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 2 ? puzzlePage : mapPage);
 
   const renderPageContent = (pageId) => (
-    <PageContent pageId={pageId} dataLoaded={dataLoaded} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
+    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
   );
 
   return (
@@ -392,25 +397,6 @@ export default function App() {
             animationActiveRef.current = false;
             flipperIndexRef.current = index;
             const syncedScreen = SCREEN_BY_PAGE_INDEX[index] || 'mapSelect';
-            if (syncedScreen === 'loading' && dataLoaded) {
-              if (screen !== 'mapSelect') {
-                setScreen('mapSelect');
-              }
-              if (returnFromLoadingTimerRef.current) return;
-              navigationCommandRef.current += 1;
-              let attempts = 0;
-              const returnToMapSelect = () => {
-                returnFromLoadingTimerRef.current = null;
-                if (flipperIndexRef.current !== 0) return;
-                flipperRef.current?.goToPage?.(1);
-                attempts += 1;
-                if (attempts < 10) {
-                  returnFromLoadingTimerRef.current = setTimeout(returnToMapSelect, 120);
-                }
-              };
-              returnFromLoadingTimerRef.current = setTimeout(returnToMapSelect, 0);
-              return;
-            }
             if (screen !== syncedScreen) {
               setScreen(syncedScreen);
             }
@@ -479,10 +465,9 @@ function AdBanner() {
   return <View ref={adRef} style={styles.adContainer} />;
 }
 
-function PageContent({ pageId, dataLoaded, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
-  // 데이터 로딩이 끝나면 로딩 페이지 자리에도 맵 선택을 그려서 페이지 넘김 중 로딩 화면이 비치지 않게 한다
-  const loadingVisible = pageId === 'loading' && !dataLoaded;
-  const mapVisible = pageId === 'mapSelect' || (pageId === 'loading' && dataLoaded);
+function PageContent({ pageId, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
+  const loadingVisible = pageId === 'loading';
+  const mapVisible = pageId === 'mapSelect';
   const puzzleVisible = pageId === 'puzzle';
   return (
     <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
