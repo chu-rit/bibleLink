@@ -1,0 +1,110 @@
+{
+  "id": "20260915_016",
+  "title": "H-3",
+  "difficulty": 3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#####나함#",
+    "###메얄곤##",
+    "#바#덱####",
+    "#르#암####",
+    "#고#마스길##",
+    "#스마#아###",
+    "##스마랴###",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "나곤",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "nacon"
+    },
+    {
+      "number": 2,
+      "answer": "나함",
+      "direction": "across",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "naham"
+    },
+    {
+      "number": 3,
+      "answer": "메얄곤",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 3,
+      "wordId": "entry-메-얄곤"
+    },
+    {
+      "number": 4,
+      "answer": "메덱암마",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "entry-메덱-암마"
+    },
+    {
+      "number": 5,
+      "answer": "바르고스",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 4,
+      "wordId": "barkos"
+    },
+    {
+      "number": 6,
+      "answer": "마스길",
+      "direction": "across",
+      "row": 4,
+      "col": 3,
+      "length": 3,
+      "wordId": "maskil"
+    },
+    {
+      "number": 7,
+      "answer": "스아랴",
+      "direction": "down",
+      "row": 4,
+      "col": 4,
+      "length": 3,
+      "wordId": "sheariah"
+    },
+    {
+      "number": 8,
+      "answer": "스마",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 2,
+      "wordId": "shema"
+    },
+    {
+      "number": 9,
+      "answer": "마스",
+      "direction": "down",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "mash"
+    },
+    {
+      "number": 10,
+      "answer": "스마랴",
+      "direction": "across",
+      "row": 6,
+      "col": 2,
+      "length": 3,
+      "wordId": "shemariah"
+    }
+  ]
+}

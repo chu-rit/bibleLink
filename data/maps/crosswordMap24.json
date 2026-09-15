@@ -1,0 +1,110 @@
+{
+  "id": "20260915_017",
+  "title": "H-4",
+  "difficulty": 3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########",
+    "########",
+    "####브에리#",
+    "####소#노가",
+    "##수#디##담",
+    "#스바니야###",
+    "사밧#게####",
+    "#월#르####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "브소디야",
+      "direction": "down",
+      "row": 2,
+      "col": 4,
+      "length": 4,
+      "wordId": "besodeiah"
+    },
+    {
+      "number": 2,
+      "answer": "브에리",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "beeri"
+    },
+    {
+      "number": 3,
+      "answer": "리노",
+      "direction": "down",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "linus"
+    },
+    {
+      "number": 4,
+      "answer": "노가",
+      "direction": "across",
+      "row": 3,
+      "col": 6,
+      "length": 2,
+      "wordId": "nogah"
+    },
+    {
+      "number": 5,
+      "answer": "가담",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 2,
+      "wordId": "gatam"
+    },
+    {
+      "number": 6,
+      "answer": "수바",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "suphah"
+    },
+    {
+      "number": 7,
+      "answer": "스바니야",
+      "direction": "across",
+      "row": 5,
+      "col": 1,
+      "length": 4,
+      "wordId": "shebaniah"
+    },
+    {
+      "number": 8,
+      "answer": "스밧월",
+      "direction": "down",
+      "row": 5,
+      "col": 1,
+      "length": 3,
+      "wordId": "shebat"
+    },
+    {
+      "number": 9,
+      "answer": "니게르",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "niger"
+    },
+    {
+      "number": 10,
+      "answer": "사밧",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "shaphat"
+    }
+  ]
+}

@@ -157,7 +157,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     return progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
   };
 
-  const renderSection = (eyebrow, title, sectionMaps, accent) => {
+  const renderSection = (eyebrow, title, sectionMaps, accent, beta) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const dimmedIds = new Set();
     const columns = 5;
@@ -165,7 +165,14 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <View>
         <View style={styles.sectionHeader}>
           <View style={styles.sectionCopy}>
-            <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
+            <View style={styles.sectionEyebrowRow}>
+              <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
+              {beta && (
+                <View style={styles.betaBadge}>
+                  <Text style={styles.betaBadgeText}>BETA</Text>
+                </View>
+              )}
+            </View>
           </View>
           <View style={styles.sectionBadge}>
             <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
@@ -211,7 +218,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       >
         {renderSection('EASY', '기초 성경 단어', easyMaps, '#3c9a72')}
         {normalMaps.length > 0 && renderSection('NORMAL', '중급 성경 단어', normalMaps, '#e08a3c')}
-        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545')}
+        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545', true)}
       </ScrollView>
 
       <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
@@ -254,9 +261,12 @@ const styles = StyleSheet.create({
   scrollViewContentSmall: { paddingHorizontal: 14, paddingBottom: 28 },
   sectionHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14, marginTop: 8, paddingHorizontal: 4 },
   sectionCopy: { flex: 1, alignItems: 'flex-start' },
-  sectionEyebrow: { fontSize: 11, fontWeight: '800', letterSpacing: 2, textAlign: 'left', color: '#7a6450' },
+  sectionEyebrow: { fontSize: 16, fontWeight: '800', letterSpacing: 2, textAlign: 'left', color: '#7a6450' },
+  sectionEyebrowRow: { flexDirection: 'row', alignItems: 'center' },
+  betaBadge: { marginLeft: 10, borderRadius: 12, paddingHorizontal: 9, paddingVertical: 3, borderWidth: 1.5, borderColor: '#7a6450' },
+  betaBadgeText: { fontSize: 11, fontWeight: '800', letterSpacing: 1, color: '#7a6450' },
   sectionTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginTop: 2, textAlign: 'left' },
-  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1, borderColor: '#e0d8c8' },
+  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1.5, borderColor: '#7a6450' },
   sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right', color: '#7a6450' },
   tileGrid: { flexDirection: 'row', flexWrap: 'wrap', width: '100%', paddingBottom: 8 },
   masterScroll: { marginBottom: 12 },

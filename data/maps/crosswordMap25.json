@@ -1,0 +1,110 @@
+{
+  "id": "20260915_020",
+  "title": "H-5",
+  "difficulty": 3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "#######도",
+    "#####브리다",
+    "###믹달엘#와",
+    "###므#라#후",
+    "구#하닷#해##",
+    "니므림#베로다#",
+    "#####이##",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "도다와후",
+      "direction": "down",
+      "row": 0,
+      "col": 7,
+      "length": 4,
+      "wordId": "dodavahu"
+    },
+    {
+      "number": 2,
+      "answer": "브리다",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "perida"
+    },
+    {
+      "number": 3,
+      "answer": "브엘라해로이",
+      "direction": "down",
+      "row": 1,
+      "col": 5,
+      "length": 6,
+      "wordId": "entry-브엘-라해-로이"
+    },
+    {
+      "number": 4,
+      "answer": "믹달엘",
+      "direction": "across",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "entry-믹달-엘"
+    },
+    {
+      "number": 5,
+      "answer": "믹므닷",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "michmethath"
+    },
+    {
+      "number": 6,
+      "answer": "구니",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 2,
+      "wordId": "guni"
+    },
+    {
+      "number": 7,
+      "answer": "하닷",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "hadad"
+    },
+    {
+      "number": 8,
+      "answer": "하림",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "harim"
+    },
+    {
+      "number": 9,
+      "answer": "니므림",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "nimrim"
+    },
+    {
+      "number": 10,
+      "answer": "베로다",
+      "direction": "across",
+      "row": 5,
+      "col": 4,
+      "length": 3,
+      "wordId": "berothah"
+    }
+  ]
+}

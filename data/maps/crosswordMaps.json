@@ -2198,5 +2198,555 @@
         "wordId": "entry-담무스월"
       }
     ]
+  },
+  {
+    "id": "20260915_014",
+    "title": "H-1",
+    "difficulty": 3,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "##보디베라##",
+      "##그#재###",
+      "#하루스#할##",
+      "#탓#비#해##",
+      "##호다위야##",
+      "기스바#####",
+      "########",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "보디베라",
+        "direction": "across",
+        "row": 0,
+        "col": 2,
+        "length": 4,
+        "wordId": "potiphera"
+      },
+      {
+        "number": 2,
+        "answer": "보그루",
+        "direction": "down",
+        "row": 0,
+        "col": 2,
+        "length": 3,
+        "wordId": "bocheru"
+      },
+      {
+        "number": 3,
+        "answer": "베재",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 2,
+        "wordId": "bezai"
+      },
+      {
+        "number": 4,
+        "answer": "하루스",
+        "direction": "across",
+        "row": 2,
+        "col": 1,
+        "length": 3,
+        "wordId": "haruz"
+      },
+      {
+        "number": 5,
+        "answer": "하탓",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 2,
+        "wordId": "hathath"
+      },
+      {
+        "number": 6,
+        "answer": "스비다",
+        "direction": "down",
+        "row": 2,
+        "col": 3,
+        "length": 3,
+        "wordId": "zebidah"
+      },
+      {
+        "number": 7,
+        "answer": "할해야",
+        "direction": "down",
+        "row": 2,
+        "col": 5,
+        "length": 3,
+        "wordId": "harhaiah"
+      },
+      {
+        "number": 8,
+        "answer": "호다위야",
+        "direction": "across",
+        "row": 4,
+        "col": 2,
+        "length": 4,
+        "wordId": "hodaviah"
+      },
+      {
+        "number": 9,
+        "answer": "호바",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "hobah"
+      },
+      {
+        "number": 10,
+        "answer": "기스바",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 3,
+        "wordId": "gishpa"
+      }
+    ]
+  },
+  {
+    "id": "20260915_019",
+    "title": "H-2",
+    "difficulty": 3,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "######미#",
+      "####쉬#스난",
+      "##무#므후만#",
+      "##시브온#나#",
+      "###다####",
+      "###히스갸##",
+      "#학기야####",
+      "##돔#####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "미스만나",
+        "direction": "down",
+        "row": 0,
+        "col": 6,
+        "length": 4,
+        "wordId": "mishmannah"
+      },
+      {
+        "number": 2,
+        "answer": "쉬므온",
+        "direction": "down",
+        "row": 1,
+        "col": 4,
+        "length": 3,
+        "wordId": "shimeon"
+      },
+      {
+        "number": 3,
+        "answer": "스난",
+        "direction": "across",
+        "row": 1,
+        "col": 6,
+        "length": 2,
+        "wordId": "zenan"
+      },
+      {
+        "number": 4,
+        "answer": "무시",
+        "direction": "down",
+        "row": 2,
+        "col": 2,
+        "length": 2,
+        "wordId": "mushi"
+      },
+      {
+        "number": 5,
+        "answer": "므후만",
+        "direction": "across",
+        "row": 2,
+        "col": 4,
+        "length": 3,
+        "wordId": "mehuman"
+      },
+      {
+        "number": 6,
+        "answer": "시브온",
+        "direction": "across",
+        "row": 3,
+        "col": 2,
+        "length": 3,
+        "wordId": "zibeon"
+      },
+      {
+        "number": 7,
+        "answer": "브다히야",
+        "direction": "down",
+        "row": 3,
+        "col": 3,
+        "length": 4,
+        "wordId": "pethahiah"
+      },
+      {
+        "number": 8,
+        "answer": "히스갸",
+        "direction": "across",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "hizkiah"
+      },
+      {
+        "number": 9,
+        "answer": "학기야",
+        "direction": "across",
+        "row": 6,
+        "col": 1,
+        "length": 3,
+        "wordId": "haggiah"
+      },
+      {
+        "number": 10,
+        "answer": "기돔",
+        "direction": "down",
+        "row": 6,
+        "col": 2,
+        "length": 2,
+        "wordId": "gidom"
+      }
+    ]
+  },
+  {
+    "id": "20260915_016",
+    "title": "H-3",
+    "difficulty": 3,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "#####나함#",
+      "###메얄곤##",
+      "#바#덱####",
+      "#르#암####",
+      "#고#마스길##",
+      "#스마#아###",
+      "##스마랴###",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "나곤",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 2,
+        "wordId": "nacon"
+      },
+      {
+        "number": 2,
+        "answer": "나함",
+        "direction": "across",
+        "row": 0,
+        "col": 5,
+        "length": 2,
+        "wordId": "naham"
+      },
+      {
+        "number": 3,
+        "answer": "메얄곤",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 3,
+        "wordId": "entry-메-얄곤"
+      },
+      {
+        "number": 4,
+        "answer": "메덱암마",
+        "direction": "down",
+        "row": 1,
+        "col": 3,
+        "length": 4,
+        "wordId": "entry-메덱-암마"
+      },
+      {
+        "number": 5,
+        "answer": "바르고스",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 4,
+        "wordId": "barkos"
+      },
+      {
+        "number": 6,
+        "answer": "마스길",
+        "direction": "across",
+        "row": 4,
+        "col": 3,
+        "length": 3,
+        "wordId": "maskil"
+      },
+      {
+        "number": 7,
+        "answer": "스아랴",
+        "direction": "down",
+        "row": 4,
+        "col": 4,
+        "length": 3,
+        "wordId": "sheariah"
+      },
+      {
+        "number": 8,
+        "answer": "스마",
+        "direction": "across",
+        "row": 5,
+        "col": 1,
+        "length": 2,
+        "wordId": "shema"
+      },
+      {
+        "number": 9,
+        "answer": "마스",
+        "direction": "down",
+        "row": 5,
+        "col": 2,
+        "length": 2,
+        "wordId": "mash"
+      },
+      {
+        "number": 10,
+        "answer": "스마랴",
+        "direction": "across",
+        "row": 6,
+        "col": 2,
+        "length": 3,
+        "wordId": "shemariah"
+      }
+    ]
+  },
+  {
+    "id": "20260915_017",
+    "title": "H-4",
+    "difficulty": 3,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "########",
+      "####브에리#",
+      "####소#노가",
+      "##수#디##담",
+      "#스바니야###",
+      "사밧#게####",
+      "#월#르####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "브소디야",
+        "direction": "down",
+        "row": 2,
+        "col": 4,
+        "length": 4,
+        "wordId": "besodeiah"
+      },
+      {
+        "number": 2,
+        "answer": "브에리",
+        "direction": "across",
+        "row": 2,
+        "col": 4,
+        "length": 3,
+        "wordId": "beeri"
+      },
+      {
+        "number": 3,
+        "answer": "리노",
+        "direction": "down",
+        "row": 2,
+        "col": 6,
+        "length": 2,
+        "wordId": "linus"
+      },
+      {
+        "number": 4,
+        "answer": "노가",
+        "direction": "across",
+        "row": 3,
+        "col": 6,
+        "length": 2,
+        "wordId": "nogah"
+      },
+      {
+        "number": 5,
+        "answer": "가담",
+        "direction": "down",
+        "row": 3,
+        "col": 7,
+        "length": 2,
+        "wordId": "gatam"
+      },
+      {
+        "number": 6,
+        "answer": "수바",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "suphah"
+      },
+      {
+        "number": 7,
+        "answer": "스바니야",
+        "direction": "across",
+        "row": 5,
+        "col": 1,
+        "length": 4,
+        "wordId": "shebaniah"
+      },
+      {
+        "number": 8,
+        "answer": "스밧월",
+        "direction": "down",
+        "row": 5,
+        "col": 1,
+        "length": 3,
+        "wordId": "shebat"
+      },
+      {
+        "number": 9,
+        "answer": "니게르",
+        "direction": "down",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "niger"
+      },
+      {
+        "number": 10,
+        "answer": "사밧",
+        "direction": "across",
+        "row": 6,
+        "col": 0,
+        "length": 2,
+        "wordId": "shaphat"
+      }
+    ]
+  },
+  {
+    "id": "20260915_020",
+    "title": "H-5",
+    "difficulty": 3,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "#######도",
+      "#####브리다",
+      "###믹달엘#와",
+      "###므#라#후",
+      "구#하닷#해##",
+      "니므림#베로다#",
+      "#####이##",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "도다와후",
+        "direction": "down",
+        "row": 0,
+        "col": 7,
+        "length": 4,
+        "wordId": "dodavahu"
+      },
+      {
+        "number": 2,
+        "answer": "브리다",
+        "direction": "across",
+        "row": 1,
+        "col": 5,
+        "length": 3,
+        "wordId": "perida"
+      },
+      {
+        "number": 3,
+        "answer": "브엘라해로이",
+        "direction": "down",
+        "row": 1,
+        "col": 5,
+        "length": 6,
+        "wordId": "entry-브엘-라해-로이"
+      },
+      {
+        "number": 4,
+        "answer": "믹달엘",
+        "direction": "across",
+        "row": 2,
+        "col": 3,
+        "length": 3,
+        "wordId": "entry-믹달-엘"
+      },
+      {
+        "number": 5,
+        "answer": "믹므닷",
+        "direction": "down",
+        "row": 2,
+        "col": 3,
+        "length": 3,
+        "wordId": "michmethath"
+      },
+      {
+        "number": 6,
+        "answer": "구니",
+        "direction": "down",
+        "row": 4,
+        "col": 0,
+        "length": 2,
+        "wordId": "guni"
+      },
+      {
+        "number": 7,
+        "answer": "하닷",
+        "direction": "across",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "hadad"
+      },
+      {
+        "number": 8,
+        "answer": "하림",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "harim"
+      },
+      {
+        "number": 9,
+        "answer": "니므림",
+        "direction": "across",
+        "row": 5,
+        "col": 0,
+        "length": 3,
+        "wordId": "nimrim"
+      },
+      {
+        "number": 10,
+        "answer": "베로다",
+        "direction": "across",
+        "row": 5,
+        "col": 4,
+        "length": 3,
+        "wordId": "berothah"
+      }
+    ]
   }
 ]
