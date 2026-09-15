@@ -1648,5 +1648,555 @@
         "wordId": "ambassador"
       }
     ]
+  },
+  {
+    "id": "20260915_006",
+    "title": "N-6",
+    "difficulty": 2.1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "나손######",
+      "#가디#####",
+      "바락######",
+      "#너#몰타###",
+      "아비멜렉####",
+      "폴#######",
+      "로이스#####",
+      "스#올#####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "나손",
+        "direction": "across",
+        "row": 0,
+        "col": 0,
+        "length": 2,
+        "wordId": "nahshon"
+      },
+      {
+        "number": 2,
+        "answer": "손가락너비",
+        "direction": "down",
+        "row": 0,
+        "col": 1,
+        "length": 5,
+        "wordId": "fingerbreadth"
+      },
+      {
+        "number": 3,
+        "answer": "가디",
+        "direction": "across",
+        "row": 1,
+        "col": 1,
+        "length": 2,
+        "wordId": "gadi"
+      },
+      {
+        "number": 4,
+        "answer": "바락",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 2,
+        "wordId": "barak"
+      },
+      {
+        "number": 5,
+        "answer": "몰렉",
+        "direction": "down",
+        "row": 3,
+        "col": 3,
+        "length": 2,
+        "wordId": "molech"
+      },
+      {
+        "number": 6,
+        "answer": "몰타",
+        "direction": "across",
+        "row": 3,
+        "col": 3,
+        "length": 2,
+        "wordId": "malta"
+      },
+      {
+        "number": 7,
+        "answer": "아비멜렉",
+        "direction": "across",
+        "row": 4,
+        "col": 0,
+        "length": 4,
+        "wordId": "abimelech"
+      },
+      {
+        "number": 8,
+        "answer": "아폴로스",
+        "direction": "down",
+        "row": 4,
+        "col": 0,
+        "length": 4,
+        "wordId": "apollos"
+      },
+      {
+        "number": 9,
+        "answer": "로이스",
+        "direction": "across",
+        "row": 6,
+        "col": 0,
+        "length": 3,
+        "wordId": "lois"
+      },
+      {
+        "number": 10,
+        "answer": "스올",
+        "direction": "down",
+        "row": 6,
+        "col": 2,
+        "length": 2,
+        "wordId": "sheol"
+      }
+    ]
+  },
+  {
+    "id": "20260915_007",
+    "title": "N-7",
+    "difficulty": 1.9,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "##바디매오##",
+      "조#늘##벳새다",
+      "각다귀####마",
+      "#볼#데카폴리스",
+      "###메###쿠",
+      "###드###스",
+      "###리####",
+      "###오####"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "바디매오",
+        "direction": "across",
+        "row": 0,
+        "col": 2,
+        "length": 4,
+        "wordId": "bartimaeus"
+      },
+      {
+        "number": 2,
+        "answer": "바늘귀",
+        "direction": "down",
+        "row": 0,
+        "col": 2,
+        "length": 3,
+        "wordId": "entry-바늘귀"
+      },
+      {
+        "number": 3,
+        "answer": "오벳",
+        "direction": "down",
+        "row": 0,
+        "col": 5,
+        "length": 2,
+        "wordId": "obed"
+      },
+      {
+        "number": 4,
+        "answer": "조각",
+        "direction": "down",
+        "row": 1,
+        "col": 0,
+        "length": 2,
+        "wordId": "carving"
+      },
+      {
+        "number": 5,
+        "answer": "벳새다",
+        "direction": "across",
+        "row": 1,
+        "col": 5,
+        "length": 3,
+        "wordId": "bethsaida"
+      },
+      {
+        "number": 6,
+        "answer": "다마스쿠스",
+        "direction": "down",
+        "row": 1,
+        "col": 7,
+        "length": 5,
+        "wordId": "damascus"
+      },
+      {
+        "number": 7,
+        "answer": "각다귀",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 3,
+        "wordId": "gnat"
+      },
+      {
+        "number": 8,
+        "answer": "다볼",
+        "direction": "down",
+        "row": 2,
+        "col": 1,
+        "length": 2,
+        "wordId": "tabor"
+      },
+      {
+        "number": 9,
+        "answer": "데카폴리스",
+        "direction": "across",
+        "row": 3,
+        "col": 3,
+        "length": 5,
+        "wordId": "decapolis"
+      },
+      {
+        "number": 10,
+        "answer": "데메드리오",
+        "direction": "down",
+        "row": 3,
+        "col": 3,
+        "length": 5,
+        "wordId": "demetrius"
+      }
+    ]
+  },
+  {
+    "id": "20260915_009",
+    "title": "N-8",
+    "difficulty": 1.9,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "길##파트모스#",
+      "보금자리##불뱀",
+      "아#비#헤스론#",
+      "#####루##",
+      "###스라야##",
+      "########",
+      "########"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "길보아",
+        "direction": "down",
+        "row": 1,
+        "col": 0,
+        "length": 3,
+        "wordId": "gilboa"
+      },
+      {
+        "number": 2,
+        "answer": "파트모스",
+        "direction": "across",
+        "row": 1,
+        "col": 3,
+        "length": 4,
+        "wordId": "patmos"
+      },
+      {
+        "number": 3,
+        "answer": "파리",
+        "direction": "down",
+        "row": 1,
+        "col": 3,
+        "length": 2,
+        "wordId": "fly"
+      },
+      {
+        "number": 4,
+        "answer": "스불론",
+        "direction": "down",
+        "row": 1,
+        "col": 6,
+        "length": 3,
+        "wordId": "zebulun"
+      },
+      {
+        "number": 5,
+        "answer": "보금자리",
+        "direction": "across",
+        "row": 2,
+        "col": 0,
+        "length": 4,
+        "wordId": "nest"
+      },
+      {
+        "number": 6,
+        "answer": "자비",
+        "direction": "down",
+        "row": 2,
+        "col": 2,
+        "length": 2,
+        "wordId": "mercy"
+      },
+      {
+        "number": 7,
+        "answer": "불뱀",
+        "direction": "across",
+        "row": 2,
+        "col": 6,
+        "length": 2,
+        "wordId": "entry-불뱀"
+      },
+      {
+        "number": 8,
+        "answer": "헤스론",
+        "direction": "across",
+        "row": 3,
+        "col": 4,
+        "length": 3,
+        "wordId": "hezron"
+      },
+      {
+        "number": 9,
+        "answer": "스루야",
+        "direction": "down",
+        "row": 3,
+        "col": 5,
+        "length": 3,
+        "wordId": "zeruiah"
+      },
+      {
+        "number": 10,
+        "answer": "스라야",
+        "direction": "across",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "seraiah"
+      }
+    ]
+  },
+  {
+    "id": "20260915_010",
+    "title": "N-9",
+    "difficulty": 2.1,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "##므깃도#카#",
+      "####피#멜#",
+      "##빌라도#레#",
+      "#델라#시므온#",
+      "##델#####",
+      "##비가####",
+      "모리아#####",
+      "레#######"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "므깃도",
+        "direction": "across",
+        "row": 0,
+        "col": 2,
+        "length": 3,
+        "wordId": "megiddo"
+      },
+      {
+        "number": 2,
+        "answer": "도피도시",
+        "direction": "down",
+        "row": 0,
+        "col": 4,
+        "length": 4,
+        "wordId": "entry-도피 도시"
+      },
+      {
+        "number": 3,
+        "answer": "카멜레온",
+        "direction": "down",
+        "row": 0,
+        "col": 6,
+        "length": 4,
+        "wordId": "chameleon"
+      },
+      {
+        "number": 4,
+        "answer": "빌라도",
+        "direction": "across",
+        "row": 2,
+        "col": 2,
+        "length": 3,
+        "wordId": "pilate"
+      },
+      {
+        "number": 5,
+        "answer": "빌라델비아",
+        "direction": "down",
+        "row": 2,
+        "col": 2,
+        "length": 5,
+        "wordId": "philadelphia"
+      },
+      {
+        "number": 6,
+        "answer": "델라",
+        "direction": "across",
+        "row": 3,
+        "col": 1,
+        "length": 2,
+        "wordId": "telah"
+      },
+      {
+        "number": 7,
+        "answer": "시므온",
+        "direction": "across",
+        "row": 3,
+        "col": 4,
+        "length": 3,
+        "wordId": "simeon"
+      },
+      {
+        "number": 8,
+        "answer": "비가",
+        "direction": "across",
+        "row": 5,
+        "col": 2,
+        "length": 2,
+        "wordId": "dirge"
+      },
+      {
+        "number": 9,
+        "answer": "모리아",
+        "direction": "across",
+        "row": 6,
+        "col": 0,
+        "length": 3,
+        "wordId": "moriah"
+      },
+      {
+        "number": 10,
+        "answer": "모레",
+        "direction": "down",
+        "row": 6,
+        "col": 0,
+        "length": 2,
+        "wordId": "moreh"
+      }
+    ]
+  },
+  {
+    "id": "20260915_013",
+    "title": "N-10",
+    "difficulty": 1.9,
+    "width": 8,
+    "height": 8,
+    "sourceData": "./bibleWordsLib1.json",
+    "grid": [
+      "########",
+      "########",
+      "#####우##",
+      "####페르시아",
+      "##초#레##카",
+      "##막데스##이",
+      "###벳#맛디아",
+      "담무스월##도#"
+    ],
+    "cells": [
+      {
+        "number": 1,
+        "answer": "우르",
+        "direction": "down",
+        "row": 2,
+        "col": 5,
+        "length": 2,
+        "wordId": "ur"
+      },
+      {
+        "number": 2,
+        "answer": "페레스",
+        "direction": "down",
+        "row": 3,
+        "col": 4,
+        "length": 3,
+        "wordId": "peres"
+      },
+      {
+        "number": 3,
+        "answer": "페르시아",
+        "direction": "across",
+        "row": 3,
+        "col": 4,
+        "length": 4,
+        "wordId": "persia"
+      },
+      {
+        "number": 4,
+        "answer": "아카이아",
+        "direction": "down",
+        "row": 3,
+        "col": 7,
+        "length": 4,
+        "wordId": "achaia"
+      },
+      {
+        "number": 5,
+        "answer": "초막",
+        "direction": "down",
+        "row": 4,
+        "col": 2,
+        "length": 2,
+        "wordId": "booth"
+      },
+      {
+        "number": 6,
+        "answer": "막데스",
+        "direction": "across",
+        "row": 5,
+        "col": 2,
+        "length": 3,
+        "wordId": "maktesh"
+      },
+      {
+        "number": 7,
+        "answer": "데벳월",
+        "direction": "down",
+        "row": 5,
+        "col": 3,
+        "length": 3,
+        "wordId": "tebeth"
+      },
+      {
+        "number": 8,
+        "answer": "맛디아",
+        "direction": "across",
+        "row": 6,
+        "col": 5,
+        "length": 3,
+        "wordId": "matthias"
+      },
+      {
+        "number": 9,
+        "answer": "디도",
+        "direction": "down",
+        "row": 6,
+        "col": 6,
+        "length": 2,
+        "wordId": "titus"
+      },
+      {
+        "number": 10,
+        "answer": "담무스월",
+        "direction": "across",
+        "row": 7,
+        "col": 0,
+        "length": 4,
+        "wordId": "entry-담무스월"
+      }
+    ]
   }
 ]

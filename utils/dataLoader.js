@@ -124,6 +124,15 @@ function isRemoteNewer(remoteVersion, localVersion) {
  * status: 'remote' | 'cache' | 'bundled'
  */
 export async function loadAppData(onStatus) {
+  // 로컬 개발 환경에서는 번들 데이터 우선
+  if (
+    Platform.OS === 'web' &&
+    typeof window !== 'undefined' &&
+    ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)
+  ) {
+    return { words: bundledWords, maps: bundledMaps, status: 'bundled' };
+  }
+
   // 1. 캐시 읽기
   const cache = await readCache();
 

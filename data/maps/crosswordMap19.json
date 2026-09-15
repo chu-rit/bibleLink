@@ -1,0 +1,110 @@
+{
+  "id": "20260915_010",
+  "title": "N-9",
+  "difficulty": 2.1,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##므깃도#카#",
+    "####피#멜#",
+    "##빌라도#레#",
+    "#델라#시므온#",
+    "##델#####",
+    "##비가####",
+    "모리아#####",
+    "레#######"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "므깃도",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "megiddo"
+    },
+    {
+      "number": 2,
+      "answer": "도피도시",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 4,
+      "wordId": "entry-도피 도시"
+    },
+    {
+      "number": 3,
+      "answer": "카멜레온",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "chameleon"
+    },
+    {
+      "number": 4,
+      "answer": "빌라도",
+      "direction": "across",
+      "row": 2,
+      "col": 2,
+      "length": 3,
+      "wordId": "pilate"
+    },
+    {
+      "number": 5,
+      "answer": "빌라델비아",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 5,
+      "wordId": "philadelphia"
+    },
+    {
+      "number": 6,
+      "answer": "델라",
+      "direction": "across",
+      "row": 3,
+      "col": 1,
+      "length": 2,
+      "wordId": "telah"
+    },
+    {
+      "number": 7,
+      "answer": "시므온",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "simeon"
+    },
+    {
+      "number": 8,
+      "answer": "비가",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 2,
+      "wordId": "dirge"
+    },
+    {
+      "number": 9,
+      "answer": "모리아",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "moriah"
+    },
+    {
+      "number": 10,
+      "answer": "모레",
+      "direction": "down",
+      "row": 6,
+      "col": 0,
+      "length": 2,
+      "wordId": "moreh"
+    }
+  ]
+}

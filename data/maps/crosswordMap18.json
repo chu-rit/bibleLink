@@ -1,0 +1,110 @@
+{
+  "id": "20260915_009",
+  "title": "N-8",
+  "difficulty": 1.9,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########",
+    "길##파트모스#",
+    "보금자리##불뱀",
+    "아#비#헤스론#",
+    "#####루##",
+    "###스라야##",
+    "########",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "길보아",
+      "direction": "down",
+      "row": 1,
+      "col": 0,
+      "length": 3,
+      "wordId": "gilboa"
+    },
+    {
+      "number": 2,
+      "answer": "파트모스",
+      "direction": "across",
+      "row": 1,
+      "col": 3,
+      "length": 4,
+      "wordId": "patmos"
+    },
+    {
+      "number": 3,
+      "answer": "파리",
+      "direction": "down",
+      "row": 1,
+      "col": 3,
+      "length": 2,
+      "wordId": "fly"
+    },
+    {
+      "number": 4,
+      "answer": "스불론",
+      "direction": "down",
+      "row": 1,
+      "col": 6,
+      "length": 3,
+      "wordId": "zebulun"
+    },
+    {
+      "number": 5,
+      "answer": "보금자리",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 4,
+      "wordId": "nest"
+    },
+    {
+      "number": 6,
+      "answer": "자비",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "mercy"
+    },
+    {
+      "number": 7,
+      "answer": "불뱀",
+      "direction": "across",
+      "row": 2,
+      "col": 6,
+      "length": 2,
+      "wordId": "entry-불뱀"
+    },
+    {
+      "number": 8,
+      "answer": "헤스론",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "hezron"
+    },
+    {
+      "number": 9,
+      "answer": "스루야",
+      "direction": "down",
+      "row": 3,
+      "col": 5,
+      "length": 3,
+      "wordId": "zeruiah"
+    },
+    {
+      "number": 10,
+      "answer": "스라야",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "seraiah"
+    }
+  ]
+}
