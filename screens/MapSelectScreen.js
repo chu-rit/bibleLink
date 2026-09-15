@@ -70,7 +70,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     if (!isWeb) return undefined;
     const update = () => {
       const frameWidth = getPageWidth(window.innerWidth, window.innerHeight);
-      setViewportHeight(Math.round(frameWidth * PAGE_ASPECT_RATIO));
+      setViewportHeight(Math.min(Math.round(frameWidth * PAGE_ASPECT_RATIO), window.innerHeight));
     };
     update();
     window.addEventListener('resize', update);

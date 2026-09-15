@@ -244,7 +244,7 @@ export default function App() {
   const navigationCommandRef = useRef(0);
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
-  const pageHeight = Math.round(pageWidth * PAGE_ASPECT_RATIO);
+  const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
   const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
 
   useEffect(() => {
