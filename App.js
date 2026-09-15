@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Platform, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,6 +8,7 @@ import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
+import DailyWordScreen from './screens/DailyWordScreen';
 import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
@@ -264,23 +265,22 @@ export default function App() {
     return undefined;
   }, [loaded, fontsLoaded, pageIndex, screen]);
 
-  // 로딩 완료 시 맵 선택 페이지로 넘김
+  // 로딩 완료 시 HTML 오버레이만 제거하고 로딩 페이지에 머무름 (사용자 입력으로 진입)
   useEffect(() => {
     if (!dataLoaded || !fontsLoaded) return undefined;
-    const goMapSelect = () => setScreen((prev) => (prev === 'loading' ? 'mapSelect' : prev));
-    // HTML 로딩 화면 제거
     if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
       window.__removeLoadingScreen();
       window.__removeLoadingScreen = null;
-      const timer = setTimeout(goMapSelect, 400);
-      return () => clearTimeout(timer);
     }
-    goMapSelect();
     return undefined;
   }, [dataLoaded, fontsLoaded]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
+  }
+
+  if (screen === 'dailyWord') {
+    return <DailyWordScreen onBack={() => setScreen('loading')} />;
   }
 
   const mapPage = (
@@ -362,13 +362,25 @@ export default function App() {
     />
   );
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
+  const loadingReady = dataLoaded && fontsLoaded;
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
+  const handleDailyWord = () => setScreen('dailyWord');
   const loadingPage = (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image source={BG_ASSET} style={styles.loadingBackground} />
       <View style={styles.loadingContent}>
-        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize }]} />
-        <Text style={styles.loadingText}>{loadingStatusText}</Text>
+        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: -24 }] }]} />
+        {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
+        {loadingReady && (
+          <View style={styles.menuButtons}>
+            <Pressable style={styles.menuButton} onPress={() => setScreen('mapSelect')}>
+              <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
+            </Pressable>
+            <Pressable style={styles.menuButton} onPress={handleDailyWord}>
+              <Text style={styles.menuButtonText}>오늘의 단어</Text>
+            </Pressable>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -427,6 +439,9 @@ const styles = StyleSheet.create({
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
   loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' },
+  menuButtons: { marginTop: 32, alignItems: 'center' },
+  menuButton: { width: 240, backgroundColor: '#fdfbf6', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
+  menuButtonText: { color: '#7a5c3a', fontSize: 16, fontWeight: '800' },
 });
 
 function AdBanner() {
