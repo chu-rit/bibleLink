@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
+import { Alert, ImageBackground, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Svg, { Circle } from 'react-native-svg';
+import AppHeader from '../components/AppHeader';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const COLUMNS = 4;
@@ -10,7 +11,6 @@ const SIZE = (RADIUS + STROKE) * 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const BG_IMAGE = require('../assets/BG.png');
-const LOGO_IMAGE = require('../assets/LOGO.png');
 
 function Gauge({ percent, number, isComplete }) {
   const color = '#7a5c3a';
@@ -49,7 +49,7 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode, onBack }) {
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isSmallScreen = true;
@@ -192,15 +192,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
-      <View style={[styles.header, isSmallScreen && styles.headerSmall]}>
-        <Image source={LOGO_IMAGE} style={[styles.brandLogo, isSmallScreen && styles.brandLogoSmall]} resizeMode="contain" />
-        <Pressable onPress={() => setShowSettings(true)} style={styles.settingsButton}>
-          <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <Path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-            <Path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-          </Svg>
-        </Pressable>
-      </View>
+      <AppHeader onBack={onBack} onSettings={() => setShowSettings(true)} />
+      <View style={styles.headerSpacer} />
 
       {onWordSearch && (
         <Pressable onPress={onWordSearch} style={[styles.searchEntry, isSmallScreen && styles.searchEntrySmall]}>
@@ -245,11 +238,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%' },
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
-  headerSmall: { paddingHorizontal: 14, paddingTop: 14, marginBottom: 10 },
-  brandLogo: { width: 180, height: 40 },
-  brandLogoSmall: { width: 140, height: 32 },
-  settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#f0ebe0' },
+  headerSpacer: { height: 16 },
   searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1.5, borderColor: '#7a5c3a', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntrySmall: { padding: 14, marginHorizontal: 14, marginBottom: 10, borderRadius: 14 },
   searchEntryCopy: { flex: 1, paddingRight: 12 },

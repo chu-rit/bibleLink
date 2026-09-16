@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Animated, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -44,8 +44,8 @@ const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
-const PAGE_DATA = ['loading', 'mapSelect', 'puzzle'];
-const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle'];
+const PAGE_DATA = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
+const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
   id: '__empty__',
   title: '',
@@ -246,7 +246,7 @@ export default function App() {
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
   const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
-  const pageIndex = screen === 'loading' ? 0 : (screen === 'puzzle' && selectedMap ? 2 : 1);
+  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
@@ -275,12 +275,22 @@ export default function App() {
     return undefined;
   }, [dataLoaded, fontsLoaded]);
 
+  const iconLiftAnim = useRef(new Animated.Value(0)).current;
+  const menuFadeAnim = useRef(new Animated.Value(0)).current;
+  const menuRiseAnim = useRef(new Animated.Value(16)).current;
+
+  useEffect(() => {
+    if (!dataLoaded || !fontsLoaded) return undefined;
+    Animated.parallel([
+      Animated.timing(iconLiftAnim, { toValue: -36, duration: 450, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      Animated.timing(menuFadeAnim, { toValue: 1, duration: 400, delay: 120, useNativeDriver: true }),
+      Animated.timing(menuRiseAnim, { toValue: 0, duration: 400, delay: 120, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+    ]).start();
+    return undefined;
+  }, [dataLoaded, fontsLoaded]);
+
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
-  }
-
-  if (screen === 'dailyWord') {
-    return <DailyWordScreen onBack={() => setScreen('loading')} />;
   }
 
   const mapPage = (
@@ -288,6 +298,7 @@ export default function App() {
       maps={appMaps}
       progressByMap={progressByMap}
       masterMode={masterMode}
+      onBack={() => setScreen('loading')}
       onSelect={(map) => {
         setSelectedMap(map);
         setScreen('puzzle');
@@ -361,6 +372,11 @@ export default function App() {
       }}
     />
   );
+
+  const dailyWordPage = (
+    <DailyWordScreen onBack={() => setScreen('loading')} />
+  );
+
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
   const loadingReady = dataLoaded && fontsLoaded;
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
@@ -369,25 +385,26 @@ export default function App() {
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image source={BG_ASSET} style={styles.loadingBackground} />
       <View style={styles.loadingContent}>
-        <Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: -24 }] }]} />
+        <Animated.Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]} />
         {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
-        {loadingReady && (
-          <View style={styles.menuButtons}>
-            <Pressable style={styles.menuButton} onPress={() => setScreen('mapSelect')}>
-              <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
-            </Pressable>
-            <Pressable style={styles.menuButton} onPress={handleDailyWord}>
-              <Text style={styles.menuButtonText}>오늘의 단어</Text>
-            </Pressable>
-          </View>
-        )}
+        <Animated.View
+          style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
+          pointerEvents={loadingReady ? 'auto' : 'none'}
+        >
+          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
+            <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
+          </Pressable>
+          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
+            <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
+          </Pressable>
+        </Animated.View>
       </View>
     </View>
   );
-  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 2 ? puzzlePage : mapPage);
+  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
 
   const renderPageContent = (pageId) => (
-    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} pageWidth={pageWidth} pageHeight={pageHeight} />
+    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} dailyWordPage={dailyWordPage} pageWidth={pageWidth} pageHeight={pageHeight} />
   );
 
   return (
@@ -440,7 +457,8 @@ const styles = StyleSheet.create({
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
   loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' },
   menuButtons: { marginTop: 32, alignItems: 'center' },
-  menuButton: { width: 240, backgroundColor: '#fdfbf6', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
+  menuButton: { width: 240, borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
+  menuButtonPressed: { backgroundColor: 'rgba(122, 92, 58, 0.12)', transform: [{ scale: 0.97 }] },
   menuButtonText: { color: '#7a5c3a', fontSize: 16, fontWeight: '800' },
 });
 
@@ -480,10 +498,11 @@ function AdBanner() {
   return <View ref={adRef} style={styles.adContainer} />;
 }
 
-function PageContent({ pageId, loadingPage, mapPage, puzzlePage, pageWidth, pageHeight }) {
+function PageContent({ pageId, loadingPage, mapPage, puzzlePage, dailyWordPage, pageWidth, pageHeight }) {
   const loadingVisible = pageId === 'loading';
   const mapVisible = pageId === 'mapSelect';
   const puzzleVisible = pageId === 'puzzle';
+  const dailyWordVisible = pageId === 'dailyWord';
   return (
     <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
       <View style={[StyleSheet.absoluteFillObject, { opacity: loadingVisible ? 1 : 0, pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
@@ -494,6 +513,9 @@ function PageContent({ pageId, loadingPage, mapPage, puzzlePage, pageWidth, page
       </View>
       <View style={[StyleSheet.absoluteFillObject, { opacity: puzzleVisible ? 1 : 0, pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
         {puzzlePage}
+      </View>
+      <View style={[StyleSheet.absoluteFillObject, { opacity: dailyWordVisible ? 1 : 0, pointerEvents: dailyWordVisible ? 'auto' : 'none' }]}>
+        {dailyWordPage}
       </View>
     </View>
   );
