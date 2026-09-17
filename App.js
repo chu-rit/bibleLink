@@ -374,7 +374,7 @@ export default function App() {
   );
 
   const dailyWordPage = (
-    <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} />
+    <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
   );
 
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;

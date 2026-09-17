@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, ImageBackground, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import AppHeader from '../components/AppHeader';
+import MapSettingsScreen from './MapSettingsScreen';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const COLUMNS = 4;
@@ -86,25 +87,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       }
     };
   }, [isWeb]);
-
-  const confirmResetProgress = () => {
-    const reset = () => {
-      if (onResetProgress) onResetProgress();
-      setShowSettings(false);
-    };
-    if (Platform.OS === 'web' && typeof window !== 'undefined') {
-      if (window.confirm('모든 진행 데이터를 초기화하시겠습니까?')) reset();
-    } else {
-      Alert.alert(
-        '진행 데이터 초기화',
-        '모든 퍼즐의 진행 데이터가 삭제됩니다. 계속하시겠습니까?',
-        [
-          { text: '취소', style: 'cancel' },
-          { text: '초기화', style: 'destructive', onPress: reset },
-        ]
-      );
-    }
-  };
 
   const easyMaps = maps.filter((m) => m.title?.startsWith('E-'));
   const normalMaps = maps.filter((m) => m.title?.startsWith('N-'));
@@ -214,26 +196,11 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545', true)}
       </ScrollView>
 
-      {showSettings && (
-        <Modal visible transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
-          <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
-            <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
-              <Text style={styles.modalEyebrow}>BIBLE LINK</Text>
-              <Text style={styles.modalTitle}>설정</Text>
-              <Text style={styles.modalDescription}>퍼즐 진행 상태를 관리할 수 있습니다</Text>
-              <Pressable
-                style={styles.resetButton}
-                onPress={confirmResetProgress}
-              >
-                <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
-              </Pressable>
-              <Pressable style={styles.closeButton} onPress={() => setShowSettings(false)}>
-                <Text style={styles.closeButtonText}>닫기</Text>
-              </Pressable>
-            </Pressable>
-          </Pressable>
-        </Modal>
-      )}
+      <MapSettingsScreen
+        visible={showSettings}
+        onClose={() => setShowSettings(false)}
+        onResetProgress={onResetProgress}
+      />
     </ImageBackground>
   );
 }
@@ -269,13 +236,4 @@ const styles = StyleSheet.create({
   gaugeInner: { alignItems: 'center', justifyContent: 'center' },
   gaugeNumber: { color: '#2e2418', fontSize: 18, fontWeight: '800' },
   gaugePercent: { color: '#8a7560', fontSize: 9, fontWeight: '700', marginTop: 1 },
-  modalOverlay: { flex: 1, backgroundColor: 'rgba(46,36,24,0.28)', justifyContent: 'center', alignItems: 'center', padding: 20 },
-  modalContent: { backgroundColor: '#fdfbf6', borderRadius: 24, padding: 24, width: '100%', maxWidth: 340, alignItems: 'stretch', borderWidth: 1, borderColor: '#e0d8c8', shadowColor: '#2e2418', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.14, shadowRadius: 18, elevation: 8 },
-  modalEyebrow: { color: '#a89880', fontSize: 10, fontWeight: '800', letterSpacing: 2, textAlign: 'center', marginBottom: 6 },
-  modalTitle: { color: '#2e2418', fontSize: 22, fontWeight: '800', marginBottom: 6, textAlign: 'center' },
-  modalDescription: { color: '#8a7560', fontSize: 12, textAlign: 'center', marginBottom: 22 },
-  resetButton: { backgroundColor: '#fdfbf6', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 10, borderWidth: 1.5, borderColor: '#d64545' },
-  resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
-  closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
-  closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
 });

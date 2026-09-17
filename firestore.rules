@@ -8,18 +8,11 @@ service cloud.firestore {
       allow write: if false; // GitHub Actions 서비스 계정만
     }
 
-    // 랭킹: 읽기는 모두, 쓰기는 인증된 사용자 본인만
+    // 랭킹: 읽기와 신규 등록은 모두 허용
     match /rankings/{docId} {
       allow read: if true;
-      allow create: if request.auth != null
-        && request.resource.data.userId == request.auth.uid;
+      allow create: if true;
       allow update, delete: if false; // 수정/삭제 불가
-    }
-
-    // 사용자: 본인만 읽기/쓰기
-    match /users/{userId} {
-      allow read, write: if request.auth != null
-        && userId == request.auth.uid;
     }
   }
 }

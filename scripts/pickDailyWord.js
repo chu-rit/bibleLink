@@ -49,9 +49,8 @@ async function main() {
   // 최근 출제 이력으로 중복 회피
   const recent = await db.collection('dailyWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
   const used = new Set(recent.docs.map((d) => d.data().wordId));
-  // 난이도 1 풀 우선, 소진 시 난이도 2 사용
-  let pool = words.filter((w) => w.difficulty === 1 && !used.has(w.id));
-  if (!pool.length) pool = words.filter((w) => !used.has(w.id));
+  // 난이도 1~2 풀, 최근 50일 출제 단어 제외
+  let pool = words.filter((w) => w.difficulty <= 2 && !used.has(w.id));
   if (!pool.length) throw new Error('출제 가능한 단어가 없습니다. 단어집을 추가하세요');
   const pick = pool[Math.floor(Math.random() * pool.length)];
 

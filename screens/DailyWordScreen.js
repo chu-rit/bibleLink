@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import AppHeader from '../components/AppHeader';
-import { clearGameState, ensureAuthUser, fetchRankings, getTodayWord, getUser, loadGameState, saveGameState, saveUser, submitResult, todayKey } from '../utils/dailyWord';
+import DailyWordSettingsScreen from './DailyWordSettingsScreen';
+import RankingScreen from './RankingScreen';
+import { clearGameState, fetchRankings, getOrCreateUser, getTodayWord, getUser, loadGameState, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const BG_IMAGE = require('../assets/BG.png');
@@ -49,6 +51,9 @@ function getFeedback(guess, target) {
 
 // 페이지 플리퍼가 같은 페이지를 여러 인스턴스로 렌더링하므로
 // 인스턴스 간 단어가 달라지는 깜빡임을 막기 위해 선택 단어를 공유한다
+// 여러 인스턴스가 동시에 마운트되어도 닉네임 유도 모달은 한 번만 뜬다
+let nicknamePromptShown = false;
+
 let currentEntry = null;
 let entryPromise = null;
 function getCurrentEntry() {
@@ -61,20 +66,20 @@ function getCurrentEntry() {
   return entryPromise;
 }
 
-export default function DailyWordScreen({ onBack, masterMode }) {
+export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [entry, setEntry] = useState(currentEntry);
   const [guesses, setGuesses] = useState([]);
   const [input, setInput] = useState('');
   const [over, setOver] = useState(false);
   const [won, setWon] = useState(false);
   const [message, setMessage] = useState('');
-  const [showNickname, setShowNickname] = useState(false);
-  const [nicknameInput, setNicknameInput] = useState('');
   const [showRankings, setShowRankings] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [settingsPrompt, setSettingsPrompt] = useState(false);
   const [rankings, setRankings] = useState([]);
+  const [myRank, setMyRank] = useState(null);
   const inputRef = useRef(null);
   const startedAtRef = useRef(Date.now());
-  const pendingSubmitRef = useRef(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
@@ -96,6 +101,31 @@ export default function DailyWordScreen({ onBack, masterMode }) {
     });
     return () => { mounted = false; };
   }, []);
+
+  // 닉네임 미설정(NONAME)이면 화면 진입 시 닉네임 설정부터 유도
+  // PageFlipper가 모든 페이지를 미리 마운트하므로 실제 활성화된 경우에만 검사한다
+  useEffect(() => {
+    if (!isActive) {
+      nicknamePromptShown = false;
+      return undefined;
+    }
+    if (nicknamePromptShown) return undefined;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      getUser().then((user) => {
+        if (cancelled || nicknamePromptShown) return;
+        if (!user?.nickname || user.nickname === 'NONAME') {
+          nicknamePromptShown = true;
+          setSettingsPrompt(true);
+          setShowSettings(true);
+        }
+      });
+    }, 600);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [isActive]);
 
   const target = useMemo(() => (entry ? decomposeInput(entry.name) : []), [entry]);
   const inputJamo = useMemo(() => decomposeInput(input.normalize('NFC')), [input]);
@@ -150,36 +180,32 @@ export default function DailyWordScreen({ onBack, masterMode }) {
     setTimeout(() => inputRef.current?.focus(), 50);
   };
 
-  // 게임 종료 시 랭킹 제출 — 닉네임이 없으면 먼저 묻는다
+  // 정답 제출 시 랭킹 등록 후 순위판 표시
   const finishGame = async (attempts, success) => {
-    const userId = await ensureAuthUser();
-    if (!userId) return;
+    if (!success) return;
+    const dateKey = todayKey();
     const duration = Math.round((Date.now() - startedAtRef.current) / 1000);
-    const submit = (nickname) =>
-      submitResult(todayKey(), { userId, nickname, attempts, success, duration });
-    const user = await getUser();
-    if (user?.userId === userId && user?.nickname) {
-      submit(user.nickname);
-    } else {
-      pendingSubmitRef.current = submit;
-      setShowNickname(true);
+    const user = await getOrCreateUser();
+    const nickname = user?.nickname || 'NONAME';
+    const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration });
+    if (!registered.ok) {
+      setMessage(`랭킹 등록에 실패했습니다. (${registered.error})`);
+      return;
     }
-  };
-
-  const confirmNickname = async () => {
-    const nickname = nicknameInput.trim();
-    if (!nickname) return;
-    const userId = await ensureAuthUser();
-    if (userId) await saveUser({ userId, nickname });
-    setShowNickname(false);
-    await pendingSubmitRef.current?.(nickname);
-    pendingSubmitRef.current = null;
+    const result = await fetchRankings(dateKey, user.userId);
+    setRankings(result.rankings);
+    setMyRank(result.myRank);
+    setShowRankings(true);
   };
 
   const openRankings = async () => {
     setRankings(null);
+    setMyRank(null);
     setShowRankings(true);
-    setRankings(await fetchRankings(todayKey()));
+    const user = await getUser();
+    const result = await fetchRankings(todayKey(), user?.userId);
+    setRankings(result.rankings);
+    setMyRank(result.myRank);
   };
 
   // 마스터 모드 전용: 같은 단어로 다시 시작
@@ -243,7 +269,7 @@ export default function DailyWordScreen({ onBack, masterMode }) {
       style={[styles.container, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <AppHeader onBack={onBack} />
+        <AppHeader onBack={onBack} onSettings={() => { setSettingsPrompt(false); setShowSettings(true); }} />
 
         <View style={styles.centerWrap}>
           <ScrollView style={styles.scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
@@ -265,78 +291,38 @@ export default function DailyWordScreen({ onBack, masterMode }) {
                   {`/${MAX_ATTEMPTS}회 시도`}
                 </Text>
               </View>
-              {!over ? (
-                <View style={styles.actionButtons}>
-                  {masterMode && (
-                    <Pressable onPress={resetGame} style={styles.resetButton}>
-                      <Text style={styles.resetButtonText}>초기화</Text>
-                    </Pressable>
-                  )}
+              <View style={styles.actionButtons}>
+                {masterMode && (
+                  <Pressable onPress={resetGame} style={styles.resetButton}>
+                    <Text style={styles.resetButtonText}>초기화</Text>
+                  </Pressable>
+                )}
+                {!over ? (
                   <Pressable onPress={submitGuess} style={styles.button}>
                     <Text style={styles.buttonText}>입력</Text>
                   </Pressable>
-                </View>
-              ) : (
-                <View style={styles.actionButtons}>
+                ) : (
                   <Pressable onPress={openRankings} style={styles.button}>
                     <Text style={styles.buttonText}>랭킹</Text>
                   </Pressable>
-                </View>
-              )}
+                )}
+              </View>
             </View>
             </View>
           </ScrollView>
         </View>
 
-        {showNickname && (
-        <Modal visible transparent animationType="fade">
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalCard}>
-              <Text style={styles.modalTitle}>닉네임 입력</Text>
-              <Text style={styles.modalDesc}>랭킹에 표시할 이름을 입력하세요.</Text>
-              <TextInput
-                style={styles.modalInput}
-                value={nicknameInput}
-                onChangeText={setNicknameInput}
-                placeholder="닉네임"
-                maxLength={12}
-                autoFocus
-                onSubmitEditing={confirmNickname}
-              />
-              <Pressable onPress={confirmNickname} style={styles.button}>
-                <Text style={styles.buttonText}>확인</Text>
-              </Pressable>
-            </View>
-          </View>
-        </Modal>
-        )}
-        {showRankings && (
-        <Modal visible transparent animationType="fade">
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalCard}>
-              <Text style={styles.modalTitle}>오늘의 랭킹</Text>
-              <ScrollView style={styles.rankList}>
-                {rankings === null ? (
-                  <Text style={styles.modalDesc}>불러오는 중...</Text>
-                ) : rankings.length === 0 ? (
-                  <Text style={styles.modalDesc}>아직 기록이 없습니다.</Text>
-                ) : (
-                  rankings.map((r, i) => (
-                    <View key={i} style={styles.rankRow}>
-                      <Text style={styles.rankNum}>{i + 1}</Text>
-                      <Text style={styles.rankName} numberOfLines={1}>{r.nickname}</Text>
-                      <Text style={styles.rankInfo}>{r.success ? `${r.attempts}회` : '실패'} · {r.duration}초</Text>
-                    </View>
-                  ))
-                )}
-              </ScrollView>
-              <Pressable onPress={() => setShowRankings(false)} style={styles.button}>
-                <Text style={styles.buttonText}>닫기</Text>
-              </Pressable>
-            </View>
-          </View>
-        </Modal>
-        )}
+        <RankingScreen
+          visible={showRankings}
+          rankings={rankings}
+          myRank={myRank}
+          onClose={() => setShowRankings(false)}
+        />
+        <DailyWordSettingsScreen
+          visible={showSettings}
+          prompt={settingsPrompt}
+          onClose={() => setShowSettings(false)}
+        />
       </KeyboardAvoidingView>
     </ImageBackground>
   );
@@ -379,14 +365,4 @@ const styles = StyleSheet.create({
   actionButtons: { flexDirection: 'row', gap: 8 },
   button: { borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, backgroundColor: '#7a5c3a' },
   buttonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
-  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', alignItems: 'center', justifyContent: 'center', padding: 24 },
-  modalCard: { width: '100%', maxWidth: 340, backgroundColor: '#fdfbf6', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 16, padding: 20, gap: 12 },
-  modalTitle: { color: '#3a2e1f', fontSize: 17, fontWeight: '800' },
-  modalDesc: { color: '#7a6450', fontSize: 13 },
-  modalInput: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 8, color: '#3a2e1f', fontSize: 15 },
-  rankList: { maxHeight: 300 },
-  rankRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 6 },
-  rankNum: { width: 24, color: '#7a5c3a', fontSize: 14, fontWeight: '800' },
-  rankName: { flex: 1, color: '#3a2e1f', fontSize: 14, fontWeight: '700' },
-  rankInfo: { color: '#7a6450', fontSize: 13 },
 });

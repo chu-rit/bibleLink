@@ -1,5 +1,4 @@
 import { getApps, initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Firebase 콘솔 > 프로젝트 설정 > 웹 앱에서 발급받은 값
@@ -20,4 +19,3 @@ if (isFirebaseConfigured) {
 }
 
 export const db = app ? getFirestore(app) : null;
-export const auth = app ? getAuth(app) : null;
