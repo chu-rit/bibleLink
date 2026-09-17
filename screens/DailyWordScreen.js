@@ -288,7 +288,8 @@ export default function DailyWordScreen({ onBack, masterMode }) {
           </ScrollView>
         </View>
 
-        <Modal visible={showNickname} transparent animationType="fade">
+        {showNickname && (
+        <Modal visible transparent animationType="fade">
           <View style={styles.modalOverlay}>
             <View style={styles.modalCard}>
               <Text style={styles.modalTitle}>닉네임 입력</Text>
@@ -308,8 +309,9 @@ export default function DailyWordScreen({ onBack, masterMode }) {
             </View>
           </View>
         </Modal>
-
-        <Modal visible={showRankings} transparent animationType="fade">
+        )}
+        {showRankings && (
+        <Modal visible transparent animationType="fade">
           <View style={styles.modalOverlay}>
             <View style={styles.modalCard}>
               <Text style={styles.modalTitle}>오늘의 랭킹</Text>
@@ -334,6 +336,7 @@ export default function DailyWordScreen({ onBack, masterMode }) {
             </View>
           </View>
         </Modal>
+        )}
       </KeyboardAvoidingView>
     </ImageBackground>
   );

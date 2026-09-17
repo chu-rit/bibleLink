@@ -677,8 +677,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </Pressable>
       </View>
 
+      {showClearModal && (
       <Modal
-        visible={showClearModal}
+        visible
         transparent
         animationType="fade"
         onRequestClose={() => setShowClearModal(false)}
@@ -706,6 +707,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
           </View>
         </View>
       </Modal>
+      )}
     </ImageBackground>
   );
 }

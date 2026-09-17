@@ -505,16 +505,16 @@ function PageContent({ pageId, loadingPage, mapPage, puzzlePage, dailyWordPage, 
   const dailyWordVisible = pageId === 'dailyWord';
   return (
     <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
-      <View style={[StyleSheet.absoluteFillObject, { opacity: loadingVisible ? 1 : 0, pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
+      <View style={[StyleSheet.absoluteFillObject, { display: loadingVisible ? 'flex' : 'none', pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
         {loadingPage}
       </View>
-      <View style={[StyleSheet.absoluteFillObject, { opacity: mapVisible ? 1 : 0, pointerEvents: mapVisible ? 'auto' : 'none' }]}>
+      <View style={[StyleSheet.absoluteFillObject, { display: mapVisible ? 'flex' : 'none', pointerEvents: mapVisible ? 'auto' : 'none' }]}>
         {mapPage}
       </View>
-      <View style={[StyleSheet.absoluteFillObject, { opacity: puzzleVisible ? 1 : 0, pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
+      <View style={[StyleSheet.absoluteFillObject, { display: puzzleVisible ? 'flex' : 'none', pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
         {puzzlePage}
       </View>
-      <View style={[StyleSheet.absoluteFillObject, { opacity: dailyWordVisible ? 1 : 0, pointerEvents: dailyWordVisible ? 'auto' : 'none' }]}>
+      <View style={[StyleSheet.absoluteFillObject, { display: dailyWordVisible ? 'flex' : 'none', pointerEvents: dailyWordVisible ? 'auto' : 'none' }]}>
         {dailyWordPage}
       </View>
     </View>

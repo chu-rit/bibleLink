@@ -214,24 +214,26 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
         {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545', true)}
       </ScrollView>
 
-      <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
-        <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
-          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
-            <Text style={styles.modalEyebrow}>BIBLE LINK</Text>
-            <Text style={styles.modalTitle}>설정</Text>
-            <Text style={styles.modalDescription}>퍼즐 진행 상태를 관리할 수 있습니다</Text>
-            <Pressable
-              style={styles.resetButton}
-              onPress={confirmResetProgress}
-            >
-              <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
-            </Pressable>
-            <Pressable style={styles.closeButton} onPress={() => setShowSettings(false)}>
-              <Text style={styles.closeButtonText}>닫기</Text>
+      {showSettings && (
+        <Modal visible transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
+          <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
+            <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+              <Text style={styles.modalEyebrow}>BIBLE LINK</Text>
+              <Text style={styles.modalTitle}>설정</Text>
+              <Text style={styles.modalDescription}>퍼즐 진행 상태를 관리할 수 있습니다</Text>
+              <Pressable
+                style={styles.resetButton}
+                onPress={confirmResetProgress}
+              >
+                <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
+              </Pressable>
+              <Pressable style={styles.closeButton} onPress={() => setShowSettings(false)}>
+                <Text style={styles.closeButtonText}>닫기</Text>
+              </Pressable>
             </Pressable>
           </Pressable>
-        </Pressable>
-      </Modal>
+        </Modal>
+      )}
     </ImageBackground>
   );
 }
