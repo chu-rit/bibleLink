@@ -1,0 +1,110 @@
+{
+  "id": "20260915_014",
+  "title": "H-1",
+  "difficulty": 3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##보디베라##",
+    "##그#재###",
+    "#하루스#할##",
+    "#탓#비#해##",
+    "##호다위야##",
+    "기스바#####",
+    "########",
+    "########"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "보디베라",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 4,
+      "wordId": "potiphera"
+    },
+    {
+      "number": 2,
+      "answer": "보그루",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "bocheru"
+    },
+    {
+      "number": 3,
+      "answer": "베재",
+      "direction": "down",
+      "row": 0,
+      "col": 4,
+      "length": 2,
+      "wordId": "bezai"
+    },
+    {
+      "number": 4,
+      "answer": "하루스",
+      "direction": "across",
+      "row": 2,
+      "col": 1,
+      "length": 3,
+      "wordId": "haruz"
+    },
+    {
+      "number": 5,
+      "answer": "하탓",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "hathath"
+    },
+    {
+      "number": 6,
+      "answer": "스비다",
+      "direction": "down",
+      "row": 2,
+      "col": 3,
+      "length": 3,
+      "wordId": "zebidah"
+    },
+    {
+      "number": 7,
+      "answer": "할해야",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 3,
+      "wordId": "harhaiah"
+    },
+    {
+      "number": 8,
+      "answer": "호다위야",
+      "direction": "across",
+      "row": 4,
+      "col": 2,
+      "length": 4,
+      "wordId": "hodaviah"
+    },
+    {
+      "number": 9,
+      "answer": "호바",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "hobah"
+    },
+    {
+      "number": 10,
+      "answer": "기스바",
+      "direction": "across",
+      "row": 5,
+      "col": 0,
+      "length": 3,
+      "wordId": "gishpa"
+    }
+  ]
+}

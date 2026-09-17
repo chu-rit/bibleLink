@@ -1,0 +1,650 @@
+[
+  {
+    "id": "david",
+    "name": "다윗",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "목동이었던 왕"
+  },
+  {
+    "id": "paul",
+    "name": "바울",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "길을 가다 회심한 사람"
+  },
+  {
+    "id": "john",
+    "name": "요한",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "섬에서 계시를 받은 사람"
+  },
+  {
+    "id": "james",
+    "name": "야고보",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "칼에 죽은 사도"
+  },
+  {
+    "id": "philip",
+    "name": "빌립",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "요한복음에 등장",
+    "hint3": "나다나엘을 데려온 제자"
+  },
+  {
+    "id": "mary",
+    "name": "마리아",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "천사에게서 소식을 들은 여인"
+  },
+  {
+    "id": "martha",
+    "name": "마르다",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "집안일로 분주했던 여자"
+  },
+  {
+    "id": "rachel",
+    "name": "라헬",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "오래 기다려 아들을 얻은 여인"
+  },
+  {
+    "id": "rahab",
+    "name": "라합",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "진홍색 줄을 창에 매단 여자"
+  },
+  {
+    "id": "laban",
+    "name": "라반",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "딸 둘을 한 남자에게 준 아버지"
+  },
+  {
+    "id": "saul",
+    "name": "사울",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "나귀를 찾아 나선 사람"
+  },
+  {
+    "id": "samson",
+    "name": "삼손",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사사기에 등장",
+    "hint3": "사자를 죽인 사람"
+  },
+  {
+    "id": "adam",
+    "name": "아담",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "동산을 돌보라는 명령을 받은 사람"
+  },
+  {
+    "id": "aaron",
+    "name": "아론",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "동생의 말을 대신 전한 사람"
+  },
+  {
+    "id": "abel",
+    "name": "아벨",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "양치는 사람"
+  },
+  {
+    "id": "jacob",
+    "name": "야곱",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "아들이 열둘인 사람"
+  },
+  {
+    "id": "joseph",
+    "name": "요셉",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "감옥에서 꿈을 해석한 사람"
+  },
+  {
+    "id": "isaiah",
+    "name": "이사야",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "스랍이 숯으로 입에 댄 예언자"
+  },
+  {
+    "id": "isaac",
+    "name": "이삭",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "해 질 무렵 들에서 묵상하던 사람"
+  },
+  {
+    "id": "enoch",
+    "name": "에녹",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "365년을 산 사람"
+  },
+  {
+    "id": "hannah",
+    "name": "한나",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "기도로 아들을 얻은 어머니"
+  },
+  {
+    "id": "herod",
+    "name": "헤롯",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "점성술사들을 속이려 한 왕"
+  },
+  {
+    "id": "joel",
+    "name": "요엘",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "메뚜기 떼를 묘사한 예언자"
+  },
+  {
+    "id": "joab",
+    "name": "요압",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "왕의 아들을 죽인 장군"
+  },
+  {
+    "id": "barnabas",
+    "name": "바나바",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "밭을 팔아 바친 사람"
+  },
+  {
+    "id": "balaam",
+    "name": "발람",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "민수기에 등장",
+    "hint3": "나귀에게 책망받은 사람"
+  },
+  {
+    "id": "balak",
+    "name": "발락",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "민수기에 등장",
+    "hint3": "저주를 청한 왕"
+  },
+  {
+    "id": "lazarus",
+    "name": "나사로",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "요한복음에 등장",
+    "hint3": "무덤에서 나온 사람"
+  },
+  {
+    "id": "cain",
+    "name": "카인",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "땅을 경작하는 사람"
+  },
+  {
+    "id": "satan",
+    "name": "사탄",
+    "difficulty": 1,
+    "hint1": "기타",
+    "hint2": "욥기에 등장",
+    "hint3": "의로운 사람을 시험한 자"
+  },
+  {
+    "id": "nathan",
+    "name": "나단",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "비유로 왕을 지적한 예언자"
+  },
+  {
+    "id": "hagar",
+    "name": "하갈",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "광야에서 천사를 만난 여자"
+  },
+  {
+    "id": "simon",
+    "name": "시몬",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "세 번 부인한 제자"
+  },
+  {
+    "id": "pharaoh",
+    "name": "파라오",
+    "difficulty": 1,
+    "hint1": "기타",
+    "hint2": "창세기에 등장",
+    "hint3": "마음이 완고해진 통치자"
+  },
+  {
+    "id": "baal",
+    "name": "바알",
+    "difficulty": 1,
+    "hint1": "기타",
+    "hint2": "사사기에 등장",
+    "hint3": "예언자 450명이 산에서 불러 본 신"
+  },
+  {
+    "id": "cyrus",
+    "name": "키루스",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "에스라에 등장",
+    "hint3": "포로들을 돌려보낸 왕"
+  },
+  {
+    "id": "ahab",
+    "name": "아합",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "남의 포도원을 탐낸 왕"
+  },
+  {
+    "id": "josiah",
+    "name": "요시야",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "율법 책을 듣고 옷을 찢은 왕"
+  },
+  {
+    "id": "deborah",
+    "name": "드보라",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사사기에 등장",
+    "hint3": "나무 아래서 재판한 여자"
+  },
+  {
+    "id": "naomi",
+    "name": "나오미",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "룻기에 등장",
+    "hint3": "다른 이름으로 불러 달라고 한 여인"
+  },
+  {
+    "id": "rebecca",
+    "name": "리브가",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "낙타에게 물을 길어 준 여자"
+  },
+  {
+    "id": "boaz",
+    "name": "보아스",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "룻기에 등장",
+    "hint3": "밭에서 곡식을 줍는 여인을 후대한 사람"
+  },
+  {
+    "id": "michal",
+    "name": "미갈",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "남편을 창문으로 도피시킨 여자"
+  },
+  {
+    "id": "barabbas",
+    "name": "바라바",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "군중이 풀어 주라 한 죄수"
+  },
+  {
+    "id": "eli",
+    "name": "엘리",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "아들들을 제지하지 못한 제사장"
+  },
+  {
+    "id": "uriah",
+    "name": "우리야",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "집에 내려가기를 거부한 병사"
+  },
+  {
+    "id": "haman",
+    "name": "하만",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "에스더에 등장",
+    "hint3": "자기가 세운 것에 매달린 사람"
+  },
+  {
+    "id": "hiram",
+    "name": "히람",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "왕궁과 성전 자재를 보내 준 왕"
+  },
+  {
+    "id": "zechariah",
+    "name": "스가랴",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "밤에 여덟 환상을 본 사람"
+  },
+  {
+    "id": "zephaniah",
+    "name": "스바냐",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "심판의 날을 선포한 예언자"
+  },
+  {
+    "id": "amos",
+    "name": "아모스",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "돌무화과나무를 가꾸던 예언자"
+  },
+  {
+    "id": "nahum",
+    "name": "나훔",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "한 도시의 멸망을 예언한 사람"
+  },
+  {
+    "id": "obadiah",
+    "name": "오바댜",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "이웃 나라의 멸망을 예언한 사람"
+  },
+  {
+    "id": "haggai",
+    "name": "학개",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "집을 지으라고 촉구한 예언자"
+  },
+  {
+    "id": "caiaphas",
+    "name": "가야바",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "'한 사람이 죽는 것이 낫다'고 한 제사장"
+  },
+  {
+    "id": "sodom",
+    "name": "소돔",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "불로 멸망한 도시"
+  },
+  {
+    "id": "gomorrah",
+    "name": "고모라",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "다른 도시와 함께 불타버린 도시"
+  },
+  {
+    "id": "babel",
+    "name": "바벨",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "탑을 쌓던 도시"
+  },
+  {
+    "id": "redsea",
+    "name": "홍해",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "사람들이 건너간 바다"
+  },
+  {
+    "id": "moab",
+    "name": "모압",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "기근 때 한 가족이 이주한 땅"
+  },
+  {
+    "id": "ammon",
+    "name": "암몬",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "한 왕의 첫 승리 상대가 된 나라"
+  },
+  {
+    "id": "nile",
+    "name": "나일",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "물이 변한 강"
+  },
+  {
+    "id": "sinai",
+    "name": "시나이",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "율법이 주어진 산"
+  },
+  {
+    "id": "zion",
+    "name": "시온",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "왕이 빼앗은 산성"
+  },
+  {
+    "id": "sidon",
+    "name": "시돈",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "과부의 집에 예언자가 머문 지방"
+  },
+  {
+    "id": "syria",
+    "name": "시리아",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "나병 장군이 살던 나라"
+  },
+  {
+    "id": "gilgal",
+    "name": "길갈",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "강에서 가져온 돌 열두 개가 세워진 곳"
+  },
+  {
+    "id": "nain",
+    "name": "나인",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "장송 행렬을 만난 도시"
+  },
+  {
+    "id": "dothan",
+    "name": "도단",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "소년이 형들에게 팔린 곳"
+  },
+  {
+    "id": "moriah",
+    "name": "모리아",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "아버지가 아들을 바치려 한 산"
+  },
+  {
+    "id": "malta",
+    "name": "몰타",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "사람이 독사에게 물린 섬"
+  },
+  {
+    "id": "mizpah",
+    "name": "미스바",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "백성이 모여 단식한 곳"
+  },
+  {
+    "id": "bashan",
+    "name": "바산",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "민수기에 등장",
+    "hint3": "르바임의 마지막 왕이 다스린 땅"
+  },
+  {
+    "id": "shushan",
+    "name": "수산",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "느헤미야에 등장",
+    "hint3": "한 왕비의 이야기가 벌어진 도시"
+  },
+  {
+    "id": "shiloh",
+    "name": "실로",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "제비로 땅을 나눈 곳"
+  },
+  {
+    "id": "horeb",
+    "name": "호렙",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "예언자가 피해 간 산"
+  },
+  {
+    "id": "haran",
+    "name": "하란",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "조카가 외삼촌에게 도망친 곳"
+  },
+  {
+    "id": "hazor",
+    "name": "하솔",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "정복자가 불태운 도시"
+  },
+  {
+    "id": "goshen",
+    "name": "고센",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "재앙이 빗나간 지역"
+  },
+  {
+    "id": "edom",
+    "name": "에돔",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "통과를 거부한 나라"
+  },
+  {
+    "id": "sharon",
+    "name": "샤론",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "이사야에 등장",
+    "hint3": "해안을 따라 펼쳐진 평야"
+  }
+]

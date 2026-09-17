@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 출제 단어: 읽기만 가능
+    match /dailyWords/{date} {
+      allow read: if true;
+      allow write: if false; // GitHub Actions 서비스 계정만
+    }
+
+    // 랭킹: 읽기와 신규 등록은 모두 허용
+    match /rankings/{docId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if false; // 수정/삭제 불가
+    }
+  }
+}

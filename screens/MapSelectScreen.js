@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, ImageBackground, Image, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
+import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Svg, { Circle } from 'react-native-svg';
+import AppHeader from '../components/AppHeader';
+import MapSettingsScreen from './MapSettingsScreen';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const COLUMNS = 4;
@@ -10,7 +12,6 @@ const SIZE = (RADIUS + STROKE) * 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const BG_IMAGE = require('../assets/BG.png');
-const LOGO_IMAGE = require('../assets/LOGO.png');
 
 function Gauge({ percent, number, isComplete }) {
   const color = '#7a5c3a';
@@ -49,7 +50,7 @@ function Gauge({ percent, number, isComplete }) {
   );
 }
 
-export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode }) {
+export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode, onBack }) {
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isSmallScreen = true;
@@ -70,7 +71,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     if (!isWeb) return undefined;
     const update = () => {
       const frameWidth = getPageWidth(window.innerWidth, window.innerHeight);
-      setViewportHeight(Math.round(frameWidth * PAGE_ASPECT_RATIO));
+      setViewportHeight(Math.min(Math.round(frameWidth * PAGE_ASPECT_RATIO), window.innerHeight));
     };
     update();
     window.addEventListener('resize', update);
@@ -86,25 +87,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       }
     };
   }, [isWeb]);
-
-  const confirmResetProgress = () => {
-    const reset = () => {
-      if (onResetProgress) onResetProgress();
-      setShowSettings(false);
-    };
-    if (Platform.OS === 'web' && typeof window !== 'undefined') {
-      if (window.confirm('모든 진행 데이터를 초기화하시겠습니까?')) reset();
-    } else {
-      Alert.alert(
-        '진행 데이터 초기화',
-        '모든 퍼즐의 진행 데이터가 삭제됩니다. 계속하시겠습니까?',
-        [
-          { text: '취소', style: 'cancel' },
-          { text: '초기화', style: 'destructive', onPress: reset },
-        ]
-      );
-    }
-  };
 
   const easyMaps = maps.filter((m) => m.title?.startsWith('E-'));
   const normalMaps = maps.filter((m) => m.title?.startsWith('N-'));
@@ -157,7 +139,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     return progress.total ? Math.round((progress.filled / progress.total) * 100) : 0;
   };
 
-  const renderSection = (eyebrow, title, sectionMaps, accent) => {
+  const renderSection = (eyebrow, title, sectionMaps, accent, beta) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const dimmedIds = new Set();
     const columns = 5;
@@ -165,7 +147,14 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       <View>
         <View style={styles.sectionHeader}>
           <View style={styles.sectionCopy}>
-            <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
+            <View style={styles.sectionEyebrowRow}>
+              <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
+              {beta && (
+                <View style={styles.betaBadge}>
+                  <Text style={styles.betaBadgeText}>BETA</Text>
+                </View>
+              )}
+            </View>
           </View>
           <View style={styles.sectionBadge}>
             <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
@@ -185,15 +174,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
-      <View style={[styles.header, isSmallScreen && styles.headerSmall]}>
-        <Image source={LOGO_IMAGE} style={[styles.brandLogo, isSmallScreen && styles.brandLogoSmall]} resizeMode="contain" />
-        <Pressable onPress={() => setShowSettings(true)} style={styles.settingsButton}>
-          <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <Path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-            <Path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-          </Svg>
-        </Pressable>
-      </View>
+      <AppHeader onBack={onBack} onSettings={() => setShowSettings(true)} />
+      <View style={styles.headerSpacer} />
 
       {onWordSearch && (
         <Pressable onPress={onWordSearch} style={[styles.searchEntry, isSmallScreen && styles.searchEntrySmall]}>
@@ -211,38 +193,21 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
       >
         {renderSection('EASY', '기초 성경 단어', easyMaps, '#3c9a72')}
         {normalMaps.length > 0 && renderSection('NORMAL', '중급 성경 단어', normalMaps, '#e08a3c')}
-        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545')}
+        {hardMaps.length > 0 && renderSection('HARD', '고급 성경 단어', hardMaps, '#d64545', true)}
       </ScrollView>
 
-      <Modal visible={showSettings} transparent animationType="fade" onRequestClose={() => setShowSettings(false)}>
-        <Pressable style={styles.modalOverlay} onPress={() => setShowSettings(false)}>
-          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
-            <Text style={styles.modalEyebrow}>BIBLE LINK</Text>
-            <Text style={styles.modalTitle}>설정</Text>
-            <Text style={styles.modalDescription}>퍼즐 진행 상태를 관리할 수 있습니다</Text>
-            <Pressable
-              style={styles.resetButton}
-              onPress={confirmResetProgress}
-            >
-              <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
-            </Pressable>
-            <Pressable style={styles.closeButton} onPress={() => setShowSettings(false)}>
-              <Text style={styles.closeButtonText}>닫기</Text>
-            </Pressable>
-          </Pressable>
-        </Pressable>
-      </Modal>
+      <MapSettingsScreen
+        visible={showSettings}
+        onClose={() => setShowSettings(false)}
+        onResetProgress={onResetProgress}
+      />
     </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%' },
-  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 20, marginBottom: 16 },
-  headerSmall: { paddingHorizontal: 14, paddingTop: 14, marginBottom: 10 },
-  brandLogo: { width: 180, height: 40 },
-  brandLogoSmall: { width: 140, height: 32 },
-  settingsButton: { padding: 6, borderRadius: 10, backgroundColor: '#f0ebe0' },
+  headerSpacer: { height: 16 },
   searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1.5, borderColor: '#7a5c3a', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntrySmall: { padding: 14, marginHorizontal: 14, marginBottom: 10, borderRadius: 14 },
   searchEntryCopy: { flex: 1, paddingRight: 12 },
@@ -254,9 +219,12 @@ const styles = StyleSheet.create({
   scrollViewContentSmall: { paddingHorizontal: 14, paddingBottom: 28 },
   sectionHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14, marginTop: 8, paddingHorizontal: 4 },
   sectionCopy: { flex: 1, alignItems: 'flex-start' },
-  sectionEyebrow: { fontSize: 11, fontWeight: '800', letterSpacing: 2, textAlign: 'left', color: '#7a6450' },
+  sectionEyebrow: { fontSize: 16, fontWeight: '800', letterSpacing: 2, textAlign: 'left', color: '#7a6450' },
+  sectionEyebrowRow: { flexDirection: 'row', alignItems: 'center' },
+  betaBadge: { marginLeft: 10, borderRadius: 12, paddingHorizontal: 9, paddingVertical: 3, borderWidth: 1.5, borderColor: '#7a6450' },
+  betaBadgeText: { fontSize: 11, fontWeight: '800', letterSpacing: 1, color: '#7a6450' },
   sectionTitle: { color: '#2e2418', fontSize: 20, fontWeight: '800', marginTop: 2, textAlign: 'left' },
-  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1, borderColor: '#e0d8c8' },
+  sectionBadge: { borderRadius: 16, paddingHorizontal: 10, paddingVertical: 6, alignSelf: 'flex-start', borderWidth: 1.5, borderColor: '#7a6450' },
   sectionBadgeText: { fontSize: 11, fontWeight: '800', textAlign: 'right', color: '#7a6450' },
   tileGrid: { flexDirection: 'row', flexWrap: 'wrap', width: '100%', paddingBottom: 8 },
   masterScroll: { marginBottom: 12 },
@@ -268,13 +236,4 @@ const styles = StyleSheet.create({
   gaugeInner: { alignItems: 'center', justifyContent: 'center' },
   gaugeNumber: { color: '#2e2418', fontSize: 18, fontWeight: '800' },
   gaugePercent: { color: '#8a7560', fontSize: 9, fontWeight: '700', marginTop: 1 },
-  modalOverlay: { flex: 1, backgroundColor: 'rgba(46,36,24,0.28)', justifyContent: 'center', alignItems: 'center', padding: 20 },
-  modalContent: { backgroundColor: '#fdfbf6', borderRadius: 24, padding: 24, width: '100%', maxWidth: 340, alignItems: 'stretch', borderWidth: 1, borderColor: '#e0d8c8', shadowColor: '#2e2418', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.14, shadowRadius: 18, elevation: 8 },
-  modalEyebrow: { color: '#a89880', fontSize: 10, fontWeight: '800', letterSpacing: 2, textAlign: 'center', marginBottom: 6 },
-  modalTitle: { color: '#2e2418', fontSize: 22, fontWeight: '800', marginBottom: 6, textAlign: 'center' },
-  modalDescription: { color: '#8a7560', fontSize: 12, textAlign: 'center', marginBottom: 22 },
-  resetButton: { backgroundColor: '#fdfbf6', borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginBottom: 10, borderWidth: 1.5, borderColor: '#d64545' },
-  resetButtonText: { color: '#c13d3d', fontSize: 14, fontWeight: '800' },
-  closeButton: { backgroundColor: '#7a5c3a', borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
-  closeButtonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
 });

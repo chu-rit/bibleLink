@@ -1,14 +1,18 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Platform, StyleSheet, Text, View } from 'react-native';
+import { Animated, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
 import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
-import { getFilledCellCount, getOpenCellCount, setWordData } from './utils';
+import DailyWordScreen from './screens/DailyWordScreen';
+import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
+const ICON_ASSET = require('./assets/ICON.png');
 const ICON_NOBG_ASSET = require('./assets/ICON_NOBG.png');
 const BG_ASSET = require('./assets/BG.png');
 
@@ -39,6 +43,43 @@ const isMasterModeByUrl = Platform.OS === 'web' &&
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
+
+const PAGE_DATA = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
+const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
+const EMPTY_MAP = {
+  id: '__empty__',
+  title: '',
+  difficulty: 1,
+  width: 8,
+  height: 8,
+  grid: Array.from({ length: 8 }, () => '########'),
+  cells: [],
+};
+
+class PageFlipperBoundary extends React.Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('[PageFlipperBoundary] ERROR');
+    console.error('[PageFlipperBoundary] error.message', error?.message);
+    console.error('[PageFlipperBoundary] error.stack', error?.stack);
+    console.error('[PageFlipperBoundary] componentStack', errorInfo?.componentStack);
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+    if (!previousState.hasError && this.state.hasError) {
+      console.log('[PageFlipperBoundary] FALLBACK RENDERED');
+    }
+  }
+
+  render() {
+    return this.state.hasError ? this.props.fallback : this.props.children;
+  }
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -87,7 +128,7 @@ export default function App() {
         setAppMaps(maps);
         setDataLoaded(true);
       }, wait);
-    }).catch(() => {
+    }).catch((err) => {
       const elapsed = Date.now() - startTime;
       const wait = Math.max(0, MIN_LOADING_TIME - elapsed);
       setTimeout(() => {
@@ -198,125 +239,227 @@ export default function App() {
     [answersByMap, appMaps]
   );
 
-  // 로딩 완료 시 맵 선택 페이지로 전환
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const flipperRef = useRef(null);
+  const flipperIndexRef = useRef(0);
+  const navigationCommandRef = useRef(0);
+  const animationActiveRef = useRef(false);
+  const pageWidth = getPageWidth(windowWidth, windowHeight);
+  const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
+  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
+
   useEffect(() => {
-    if (!dataLoaded) return;
-    setScreen((prev) => (prev === 'loading' ? 'mapSelect' : prev));
+    if (!loaded || !fontsLoaded) return undefined;
+    const currentIndex = flipperIndexRef.current;
+    const difference = pageIndex - currentIndex;
+    if (difference === 1) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.nextPage?.();
+    } else if (difference === -1) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.previousPage?.();
+    } else if (difference !== 0) {
+      navigationCommandRef.current += 1;
+      flipperRef.current?.goToPage?.(pageIndex);
+    }
+    return undefined;
+  }, [loaded, fontsLoaded, pageIndex, screen]);
+
+  // 로딩 완료 시 HTML 오버레이만 제거하고 로딩 페이지에 머무름 (사용자 입력으로 진입)
+  useEffect(() => {
+    if (!dataLoaded || !fontsLoaded) return undefined;
     if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
       window.__removeLoadingScreen();
       window.__removeLoadingScreen = null;
     }
-  }, [dataLoaded]);
+    return undefined;
+  }, [dataLoaded, fontsLoaded]);
 
-  if (!loaded || !fontsLoaded || screen === 'loading') {
-    return (
-      <View style={styles.loadingPage}>
-        <Image source={BG_ASSET} style={styles.loadingBackground} />
-        <View style={styles.loadingContent}>
-          <Image source={ICON_NOBG_ASSET} style={styles.loadingIcon} />
-          <Text style={styles.loadingText}>{LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading}</Text>
-        </View>
-      </View>
-    );
-  }
+  const iconLiftAnim = useRef(new Animated.Value(0)).current;
+  const menuFadeAnim = useRef(new Animated.Value(0)).current;
+  const menuRiseAnim = useRef(new Animated.Value(16)).current;
+
+  useEffect(() => {
+    if (!dataLoaded || !fontsLoaded) return undefined;
+    Animated.parallel([
+      Animated.timing(iconLiftAnim, { toValue: -36, duration: 450, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      Animated.timing(menuFadeAnim, { toValue: 1, duration: 400, delay: 120, useNativeDriver: true }),
+      Animated.timing(menuRiseAnim, { toValue: 0, duration: 400, delay: 120, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+    ]).start();
+    return undefined;
+  }, [dataLoaded, fontsLoaded]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
   }
 
-  if (screen === 'puzzle' && selectedMap) {
-    return (
-      <>
-        <PuzzleScreen
-          crosswordMap={selectedMap}
-          initialAnswers={answersByMap[selectedMap.id]}
-          onAnswersChange={handleAnswersChange}
-          hintPoints={hintPointsByMap[selectedMap.id] ?? 3}
-          hintedSlots={hintedSlotsByMap[selectedMap.id] || {}}
-          onUseHint={handleUseHint}
-          masterMode={masterMode}
-          onToggleMasterMode={toggleMasterMode}
-          onBack={() => setScreen('mapSelect')}
-        />
-        <AdBanner />
-      </>
-    );
-  }
+  const mapPage = (
+    <MapSelectScreen
+      maps={appMaps}
+      progressByMap={progressByMap}
+      masterMode={masterMode}
+      onBack={() => setScreen('loading')}
+      onSelect={(map) => {
+        setSelectedMap(map);
+        setScreen('puzzle');
+      }}
+      onWordSearch={masterMode ? () => {
+        setScreen('wordSearch');
+      } : undefined}
+      onResetProgress={() => {
+        setAnswersByMap({});
+        setHintPointsByMap({});
+        setHintedSlotsByMap({});
+        AsyncStorage.removeItem('answersByMap').catch(() => {});
+        AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
+        AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
+      }}
+      onCompleteMap={masterMode ? (mapId) => {
+        const map = appMaps.find((m) => m.id === mapId);
+        if (!map) return;
+        setAnswersByMap((prev) => {
+          const next = { ...prev };
+          const currentAnswers = prev[mapId] || {};
+          const isComplete = getFilledCellCount(map, currentAnswers) === getOpenCellCount(map);
+          if (isComplete) {
+            delete next[mapId];
+          } else {
+            const answers = {};
+            map.cells.forEach((cell, index) => {
+              answers[index] = cell.answer;
+            });
+            next[mapId] = answers;
+          }
+          try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
+          return next;
+        });
+      } : undefined}
+      onResetMap={!masterMode ? (mapId) => {
+        setAnswersByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('answersByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+        setHintPointsByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+        setHintedSlotsByMap((prev) => {
+          const next = { ...prev };
+          delete next[mapId];
+          AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
+          return next;
+        });
+      } : undefined}
+    />
+  );
+
+  const puzzlePage = (
+    <PuzzleScreen
+      crosswordMap={selectedMap || EMPTY_MAP}
+      initialAnswers={selectedMap ? answersByMap[selectedMap.id] : {}}
+      onAnswersChange={handleAnswersChange}
+      hintPoints={selectedMap ? hintPointsByMap[selectedMap.id] ?? 3 : 0}
+      hintedSlots={selectedMap ? hintedSlotsByMap[selectedMap.id] || {} : {}}
+      onUseHint={handleUseHint}
+      masterMode={masterMode}
+      onToggleMasterMode={toggleMasterMode}
+      onBack={() => {
+        setScreen('mapSelect');
+      }}
+    />
+  );
+
+  const dailyWordPage = (
+    <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
+  );
+
+  const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
+  const loadingReady = dataLoaded && fontsLoaded;
+  const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
+  const handleDailyWord = () => setScreen('dailyWord');
+  const loadingPage = (
+    <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
+      <Image source={BG_ASSET} style={styles.loadingBackground} />
+      <View style={styles.loadingContent}>
+        <Animated.Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]} />
+        {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
+        <Animated.View
+          style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
+          pointerEvents={loadingReady ? 'auto' : 'none'}
+        >
+          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
+            <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
+          </Pressable>
+          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
+            <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
+          </Pressable>
+        </Animated.View>
+      </View>
+    </View>
+  );
+  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
+
+  const renderPageContent = (pageId) => (
+    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} dailyWordPage={dailyWordPage} pageWidth={pageWidth} pageHeight={pageHeight} />
+  );
 
   return (
-    <>
-      <MapSelectScreen
-        maps={appMaps}
-        progressByMap={progressByMap}
-        masterMode={masterMode}
-        onSelect={(map) => {
-          setSelectedMap(map);
-          setScreen('puzzle');
-        }}
-        onWordSearch={masterMode ? () => {
-          setScreen('wordSearch');
-        } : undefined}
-        onResetProgress={() => {
-          setAnswersByMap({});
-          setHintPointsByMap({});
-          setHintedSlotsByMap({});
-          AsyncStorage.removeItem('answersByMap').catch(() => {});
-          AsyncStorage.removeItem('hintPointsByMap').catch(() => {});
-          AsyncStorage.removeItem('hintedSlotsByMap').catch(() => {});
-        }}
-        onCompleteMap={masterMode ? (mapId) => {
-          const map = appMaps.find((m) => m.id === mapId);
-          if (!map) return;
-          setAnswersByMap((prev) => {
-            const next = { ...prev };
-            const currentAnswers = prev[mapId] || {};
-            const isComplete = getFilledCellCount(map, currentAnswers) === getOpenCellCount(map);
-            if (isComplete) {
-              delete next[mapId];
-            } else {
-              const answers = {};
-              map.cells.forEach((cell, index) => {
-                answers[index] = cell.answer;
-              });
-              next[mapId] = answers;
+    <GestureHandlerRootView style={styles.root}>
+      <PageFlipperBoundary fallback={currentPage}>
+        <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight }]}>
+          <PageFlipper
+          ref={flipperRef}
+          data={PAGE_DATA}
+          pageSize={{ width: pageWidth, height: pageHeight }}
+          portrait
+          singleImageMode
+          pressable={false}
+          contentContainerStyle={styles.flipperContainer}
+          onFlipStart={(direction) => {
+            animationActiveRef.current = true;
+          }}
+          onFlippedEnd={(index) => {
+            animationActiveRef.current = false;
+            flipperIndexRef.current = index;
+            const syncedScreen = SCREEN_BY_PAGE_INDEX[index] || 'mapSelect';
+            if (screen !== syncedScreen) {
+              setScreen(syncedScreen);
             }
-            try { AsyncStorage.setItem('answersByMap', JSON.stringify(next)); } catch {}
-            return next;
-          });
-        } : undefined}
-        onResetMap={!masterMode ? (mapId) => {
-          setAnswersByMap((prev) => {
-            const next = { ...prev };
-            delete next[mapId];
-            AsyncStorage.setItem('answersByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-          setHintPointsByMap((prev) => {
-            const next = { ...prev };
-            delete next[mapId];
-            AsyncStorage.setItem('hintPointsByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-          setHintedSlotsByMap((prev) => {
-            const next = { ...prev };
-            delete next[mapId];
-            AsyncStorage.setItem('hintedSlotsByMap', JSON.stringify(next)).catch(() => {});
-            return next;
-          });
-        } : undefined}
-      />
+          }}
+          onInitialized={() => {
+            flipperIndexRef.current = 0;
+            if (pageIndex !== 0) {
+              navigationCommandRef.current += 1;
+              setTimeout(() => flipperRef.current?.goToPage?.(pageIndex), 0);
+            }
+          }}
+          renderPage={renderPageContent}
+          />
+        </View>
+        </PageFlipperBoundary>
       <AdBanner />
-    </>
+    </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
-  loadingPage: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' },
+  root: { flex: 1, minHeight: '100%' },
+  flipperContainer: { flex: 1, width: '100%', height: '100%' },
+  flipperFrame: { flex: 1 },
+  adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
+  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
-  loadingIcon: { width: 280, height: 280, resizeMode: 'contain', marginBottom: 24 },
+  loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
   loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' },
-  adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
+  menuButtons: { marginTop: 32, alignItems: 'center' },
+  menuButton: { width: 240, borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
+  menuButtonPressed: { backgroundColor: 'rgba(122, 92, 58, 0.12)', transform: [{ scale: 0.97 }] },
+  menuButtonText: { color: '#7a5c3a', fontSize: 16, fontWeight: '800' },
 });
 
 function AdBanner() {
@@ -353,4 +496,27 @@ function AdBanner() {
     return () => { clearTimeout(timer); };
   }, []);
   return <View ref={adRef} style={styles.adContainer} />;
+}
+
+function PageContent({ pageId, loadingPage, mapPage, puzzlePage, dailyWordPage, pageWidth, pageHeight }) {
+  const loadingVisible = pageId === 'loading';
+  const mapVisible = pageId === 'mapSelect';
+  const puzzleVisible = pageId === 'puzzle';
+  const dailyWordVisible = pageId === 'dailyWord';
+  return (
+    <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
+      <View style={[StyleSheet.absoluteFillObject, { display: loadingVisible ? 'flex' : 'none', pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
+        {loadingPage}
+      </View>
+      <View style={[StyleSheet.absoluteFillObject, { display: mapVisible ? 'flex' : 'none', pointerEvents: mapVisible ? 'auto' : 'none' }]}>
+        {mapPage}
+      </View>
+      <View style={[StyleSheet.absoluteFillObject, { display: puzzleVisible ? 'flex' : 'none', pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
+        {puzzlePage}
+      </View>
+      <View style={[StyleSheet.absoluteFillObject, { display: dailyWordVisible ? 'flex' : 'none', pointerEvents: dailyWordVisible ? 'auto' : 'none' }]}>
+        {dailyWordPage}
+      </View>
+    </View>
+  );
 }

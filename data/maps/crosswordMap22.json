@@ -1,0 +1,110 @@
+{
+  "id": "20260915_019",
+  "title": "H-2",
+  "difficulty": 3,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "######미#",
+    "####쉬#스난",
+    "##무#므후만#",
+    "##시브온#나#",
+    "###다####",
+    "###히스갸##",
+    "#학기야####",
+    "##돔#####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "미스만나",
+      "direction": "down",
+      "row": 0,
+      "col": 6,
+      "length": 4,
+      "wordId": "mishmannah"
+    },
+    {
+      "number": 2,
+      "answer": "쉬므온",
+      "direction": "down",
+      "row": 1,
+      "col": 4,
+      "length": 3,
+      "wordId": "shimeon"
+    },
+    {
+      "number": 3,
+      "answer": "스난",
+      "direction": "across",
+      "row": 1,
+      "col": 6,
+      "length": 2,
+      "wordId": "zenan"
+    },
+    {
+      "number": 4,
+      "answer": "무시",
+      "direction": "down",
+      "row": 2,
+      "col": 2,
+      "length": 2,
+      "wordId": "mushi"
+    },
+    {
+      "number": 5,
+      "answer": "므후만",
+      "direction": "across",
+      "row": 2,
+      "col": 4,
+      "length": 3,
+      "wordId": "mehuman"
+    },
+    {
+      "number": 6,
+      "answer": "시브온",
+      "direction": "across",
+      "row": 3,
+      "col": 2,
+      "length": 3,
+      "wordId": "zibeon"
+    },
+    {
+      "number": 7,
+      "answer": "브다히야",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 4,
+      "wordId": "pethahiah"
+    },
+    {
+      "number": 8,
+      "answer": "히스갸",
+      "direction": "across",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "hizkiah"
+    },
+    {
+      "number": 9,
+      "answer": "학기야",
+      "direction": "across",
+      "row": 6,
+      "col": 1,
+      "length": 3,
+      "wordId": "haggiah"
+    },
+    {
+      "number": 10,
+      "answer": "기돔",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "gidom"
+    }
+  ]
+}

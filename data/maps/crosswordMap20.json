@@ -1,0 +1,110 @@
+{
+  "id": "20260915_013",
+  "title": "N-10",
+  "difficulty": 1.9,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "########",
+    "########",
+    "#####우##",
+    "####페르시아",
+    "##초#레##카",
+    "##막데스##이",
+    "###벳#맛디아",
+    "담무스월##도#"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "우르",
+      "direction": "down",
+      "row": 2,
+      "col": 5,
+      "length": 2,
+      "wordId": "ur"
+    },
+    {
+      "number": 2,
+      "answer": "페레스",
+      "direction": "down",
+      "row": 3,
+      "col": 4,
+      "length": 3,
+      "wordId": "peres"
+    },
+    {
+      "number": 3,
+      "answer": "페르시아",
+      "direction": "across",
+      "row": 3,
+      "col": 4,
+      "length": 4,
+      "wordId": "persia"
+    },
+    {
+      "number": 4,
+      "answer": "아카이아",
+      "direction": "down",
+      "row": 3,
+      "col": 7,
+      "length": 4,
+      "wordId": "achaia"
+    },
+    {
+      "number": 5,
+      "answer": "초막",
+      "direction": "down",
+      "row": 4,
+      "col": 2,
+      "length": 2,
+      "wordId": "booth"
+    },
+    {
+      "number": 6,
+      "answer": "막데스",
+      "direction": "across",
+      "row": 5,
+      "col": 2,
+      "length": 3,
+      "wordId": "maktesh"
+    },
+    {
+      "number": 7,
+      "answer": "데벳월",
+      "direction": "down",
+      "row": 5,
+      "col": 3,
+      "length": 3,
+      "wordId": "tebeth"
+    },
+    {
+      "number": 8,
+      "answer": "맛디아",
+      "direction": "across",
+      "row": 6,
+      "col": 5,
+      "length": 3,
+      "wordId": "matthias"
+    },
+    {
+      "number": 9,
+      "answer": "디도",
+      "direction": "down",
+      "row": 6,
+      "col": 6,
+      "length": 2,
+      "wordId": "titus"
+    },
+    {
+      "number": 10,
+      "answer": "담무스월",
+      "direction": "across",
+      "row": 7,
+      "col": 0,
+      "length": 4,
+      "wordId": "entry-담무스월"
+    }
+  ]
+}

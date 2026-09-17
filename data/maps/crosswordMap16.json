@@ -1,0 +1,110 @@
+{
+  "id": "20260915_006",
+  "title": "N-6",
+  "difficulty": 2.1,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "나손######",
+    "#가디#####",
+    "바락######",
+    "#너#몰타###",
+    "아비멜렉####",
+    "폴#######",
+    "로이스#####",
+    "스#올#####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "나손",
+      "direction": "across",
+      "row": 0,
+      "col": 0,
+      "length": 2,
+      "wordId": "nahshon"
+    },
+    {
+      "number": 2,
+      "answer": "손가락너비",
+      "direction": "down",
+      "row": 0,
+      "col": 1,
+      "length": 5,
+      "wordId": "fingerbreadth"
+    },
+    {
+      "number": 3,
+      "answer": "가디",
+      "direction": "across",
+      "row": 1,
+      "col": 1,
+      "length": 2,
+      "wordId": "gadi"
+    },
+    {
+      "number": 4,
+      "answer": "바락",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 2,
+      "wordId": "barak"
+    },
+    {
+      "number": 5,
+      "answer": "몰렉",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "molech"
+    },
+    {
+      "number": 6,
+      "answer": "몰타",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 2,
+      "wordId": "malta"
+    },
+    {
+      "number": 7,
+      "answer": "아비멜렉",
+      "direction": "across",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "abimelech"
+    },
+    {
+      "number": 8,
+      "answer": "아폴로스",
+      "direction": "down",
+      "row": 4,
+      "col": 0,
+      "length": 4,
+      "wordId": "apollos"
+    },
+    {
+      "number": 9,
+      "answer": "로이스",
+      "direction": "across",
+      "row": 6,
+      "col": 0,
+      "length": 3,
+      "wordId": "lois"
+    },
+    {
+      "number": 10,
+      "answer": "스올",
+      "direction": "down",
+      "row": 6,
+      "col": 2,
+      "length": 2,
+      "wordId": "sheol"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "20260915_007",
+  "title": "N-7",
+  "difficulty": 1.9,
+  "width": 8,
+  "height": 8,
+  "sourceData": "./bibleWordsLib1.json",
+  "grid": [
+    "##바디매오##",
+    "조#늘##벳새다",
+    "각다귀####마",
+    "#볼#데카폴리스",
+    "###메###쿠",
+    "###드###스",
+    "###리####",
+    "###오####"
+  ],
+  "cells": [
+    {
+      "number": 1,
+      "answer": "바디매오",
+      "direction": "across",
+      "row": 0,
+      "col": 2,
+      "length": 4,
+      "wordId": "bartimaeus"
+    },
+    {
+      "number": 2,
+      "answer": "바늘귀",
+      "direction": "down",
+      "row": 0,
+      "col": 2,
+      "length": 3,
+      "wordId": "entry-바늘귀"
+    },
+    {
+      "number": 3,
+      "answer": "오벳",
+      "direction": "down",
+      "row": 0,
+      "col": 5,
+      "length": 2,
+      "wordId": "obed"
+    },
+    {
+      "number": 4,
+      "answer": "조각",
+      "direction": "down",
+      "row": 1,
+      "col": 0,
+      "length": 2,
+      "wordId": "carving"
+    },
+    {
+      "number": 5,
+      "answer": "벳새다",
+      "direction": "across",
+      "row": 1,
+      "col": 5,
+      "length": 3,
+      "wordId": "bethsaida"
+    },
+    {
+      "number": 6,
+      "answer": "다마스쿠스",
+      "direction": "down",
+      "row": 1,
+      "col": 7,
+      "length": 5,
+      "wordId": "damascus"
+    },
+    {
+      "number": 7,
+      "answer": "각다귀",
+      "direction": "across",
+      "row": 2,
+      "col": 0,
+      "length": 3,
+      "wordId": "gnat"
+    },
+    {
+      "number": 8,
+      "answer": "다볼",
+      "direction": "down",
+      "row": 2,
+      "col": 1,
+      "length": 2,
+      "wordId": "tabor"
+    },
+    {
+      "number": 9,
+      "answer": "데카폴리스",
+      "direction": "across",
+      "row": 3,
+      "col": 3,
+      "length": 5,
+      "wordId": "decapolis"
+    },
+    {
+      "number": 10,
+      "answer": "데메드리오",
+      "direction": "down",
+      "row": 3,
+      "col": 3,
+      "length": 5,
+      "wordId": "demetrius"
+    }
+  ]
+}
