@@ -5,7 +5,7 @@
 - 매일 하나의 단어가 전체 사용자에게 동일하게 출제 (하루 경계 = KST 23:00)
 - 출제 단어 풀: `data/words2/dailyWords.json` (81개)
   - 기존 `data/words/`(Lib2~Lib15)에서 자모 완전 분해 기준 5~6개, 난이도 1~2, 인명/지명/도시명 등 명칭으로 쓰이는 단어만 추출하여 구성
-- 순위 시스템 포함 예정 (시도 횟수, 소요 시간 기준) — 미구현
+- 순위 시스템 포함 (시도 횟수, 소요 시간 기준) — 구현됨, Firestore 연동 대기
 
 ## 화면 구성 (구현됨)
 - 페이지 플리퍼 마지막 장(인덱스 3)으로 편입: 로딩 → 맵 선택 → 퍼즐 → 오늘의 단어
@@ -172,9 +172,17 @@ service cloud.firestore {
 - `.github/workflows/daily-word.yml` — 일일 출제 워크플로
 - `firestore.rules` — Firestore 보안 규칙
 
+### 랭킹·공유 (구현됨 — 간단 버전)
+- 게임 종료 시 결과를 `rankings/{date}_{userId}`에 자동 제출 (익명 인증 uid, 1일 1회)
+- 닉네임은 첫 제출 시 1회 묻고 `AsyncStorage`에 저장
+- 종료 후 "랭킹" 버튼 → 당일 랭킹 모달 (성공 우선 → 시도 적은 순 → 소요 시간 순, 상위 100)
+- 공유 기능은 일단 제거됨 — 재도입 시 이모지 그리드(🟩🟨⬛) + 시스템 공유 시트(카카오톡 포함) 방식이었음
+- 별도 `RankingScreen` 없이 모달로 처리
+- Firestore 호출(단어 조회·랭킹·익명 로그인)은 전부 3초 타임아웃 — 응답 없으면 폴백/빈 결과로 진행
+- 랭킹 버튼은 모달을 즉시 열고 "불러오는 중..." 표시 후 데이터 채움
+
 ### 미구현
-- `screens/RankingScreen.js` — 일일 랭킹 화면
-- 익명 인증 + 닉네임, 결과 `rankings` 제출, 결과 공유(이모지 그리드)
+- 어제 랭킹 조회, 본인 순위 강조, 카카오 SDK 직접 연동(카카오 개발자 앱 키 필요)
 
 ### DailyWordScreen (구현된 기능)
 1. `getTodayWord()`로 오늘 단어 조회 — 모듈 레벨 공유 Promise로 여러 인스턴스가 동일 단어 표시
@@ -184,9 +192,16 @@ service cloud.firestore {
    - 초록: 정확한 위치
    - 노랑: 포함되나 위치 다름
    - 회색: 없는 자모
-5. 시도 횟수: 최대 4회
+5. 시도 횟수: 최대 4회 — `N/4회 시도` 큰 숫자로 표시
 6. 힌트 단계별 공개 (실패 직후 힌트 1→2→3)
 7. 실패 시 정답 공개
+8. 지난 시도 줄 + 입력 중인 줄만 표시 (빈 줄 미표시), 게임 종료 후에도 지난 시도는 유지
+9. 버튼: 진행 중 "입력"만 표시, 종료 후 "랭킹" (새 게임·포기하기·공유하기 버튼 없음)
+10. 마스터 모드(`masterMode` prop, App.js 기존 로직 공유): "입력" 왼쪽에 "초기화" 버튼 — 당일 저장 내역 삭제 후 같은 단어로 재시작. 랭킹 재제출은 규칙상 차단됨
+
+### 게임 진행 내역 저장 (구현됨)
+- 시도할 때마다 `AsyncStorage` `dailyWordGame_{날짜키}`에 `{wordId, guesses, over, won, message, startedAt}` 저장
+- 같은 날짜·같은 단어면 복원, 날짜/단어 변경 시 자동 새 게임
 
 ### 입력 규칙 (구현됨)
 - 완성형 글자(`가-힣`)는 자모로 완전 분해해 타일 입력
@@ -244,16 +259,25 @@ service cloud.firestore {
 - 키보드 입력: 기존 PuzzleScreen의 TextInput 패턴 참고
 
 ## 구현 현황
+
+### 앱 코드 — 전부 완료
 1. [x] `data/words2/` 데일리 워드 라이브러리 구성 (81개, 힌트 jw.org 검증 완료)
 2. [x] Firebase 프로젝트 생성 + `firebase` 패키지 설치 + `firebaseConfig.js` 작성
-3. [ ] Firestore 활성화 + `firestore.rules` 적용 (수동)
-4. [ ] 서비스 계정 키 → GitHub Secrets `FIREBASE_SERVICE_ACCOUNT` (수동)
-5. [x] GitHub Actions 일일 출제 워크플로 (`daily-word.yml` + `pickDailyWord.js`)
-6. [x] `utils/dailyWord.js` 구현 (조회/캐시/폴백)
-7. [x] `screens/DailyWordScreen.js` 구현
-8. [x] `App.js` 페이지 플리퍼 마지막 장 편입 + `components/AppHeader.js`
-9. [ ] `screens/RankingScreen.js` + 익명 인증 + 결과 제출 (향후)
-10. [ ] Web/iOS/Android 호환성 검증 (Firestore 연동 후)
+3. [x] GitHub Actions 일일 출제 워크플로 (`daily-word.yml` + `pickDailyWord.js`)
+4. [x] `utils/dailyWord.js` 구현 (조회/캐시/폴백/진행 내역 저장/랭킹, Firestore 호출 3초 타임아웃)
+5. [x] `screens/DailyWordScreen.js` 구현 (게임+랭킹 모달+공유+마스터 초기화)
+6. [x] `App.js` 페이지 플리퍼 마지막 장 편입 + `components/AppHeader.js`
+
+### Firebase 콘솔 수동 작업 — 랭킹·자동 출제 활성화에 필요
+1. [ ] Firestore Database 생성 (`asia-northeast3`) + 규칙 탭에 `firestore.rules` 적용
+2. [ ] Authentication → 익명 로그인 활성화 (랭킹 제출에 필수)
+3. [ ] 서비스 계정 키 → GitHub Secrets `FIREBASE_SERVICE_ACCOUNT` (자동 출제에 필수)
+4. [ ] 첫 출제 테스트 — Actions 워크플로 수동 실행 또는 `dailyWords/{날짜키}` 문서 수동 생성
+
+> 콘솔 작업 전까지는 로컬 폴백(날짜 시드)으로 동작 — 게임은 되고 전 유저 동일 단어지만, 랭킹 제출은 조용히 실패한다.
+
+### 검증
+- [ ] Web/iOS/Android 호환성 검증 (Firestore 연동 후)
 
 ## 보안 고려사항
 - Firebase config는 공개되어도 안전 (보안 규칙으로 보호)

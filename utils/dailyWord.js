@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { doc, getDoc } from 'firebase/firestore';
-import { db, isFirebaseConfigured } from '../firebaseConfig';
+import { signInAnonymously } from 'firebase/auth';
+import { collection, doc, getDoc, getDocs, query, setDoc, where } from 'firebase/firestore';
+import { auth, db, isFirebaseConfigured } from '../firebaseConfig';
 import localWords from '../data/words2/dailyWords.json';
 
 const CACHE_PREFIX = 'dailyWord_';
@@ -31,6 +32,14 @@ export async function saveGameState(dateKey, state) {
     await AsyncStorage.setItem(GAME_PREFIX + dateKey, JSON.stringify(state));
   } catch {
     // 저장 실패해도 계속 진행
+  }
+}
+
+export async function clearGameState(dateKey) {
+  try {
+    await AsyncStorage.removeItem(GAME_PREFIX + dateKey);
+  } catch {
+    // 실패해도 계속 진행
   }
 }
 
@@ -74,6 +83,71 @@ async function writeCache(dateKey, wordId) {
  * 우선순위: 로컬 캐시 -> Firestore dailyWords/{date} -> 날짜 시드 로컬 선정
  * 반환: { entry, source } source: 'cache' | 'remote' | 'local'
  */
+const USER_KEY = 'dailyWordUser';
+
+export async function getUser() {
+  try {
+    const raw = await AsyncStorage.getItem(USER_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function saveUser(user) {
+  try {
+    await AsyncStorage.setItem(USER_KEY, JSON.stringify(user));
+  } catch {
+    // 저장 실패해도 계속 진행
+  }
+}
+
+// 익명 인증 uid 확보 (미설정/실패 시 null)
+export async function ensureAuthUser() {
+  try {
+    if (!isFirebaseConfigured || !auth) return null;
+    if (auth.currentUser) return auth.currentUser.uid;
+    const cred = await withTimeout(signInAnonymously(auth), FIRESTORE_TIMEOUT_MS);
+    return cred.user.uid;
+  } catch {
+    return null;
+  }
+}
+
+// 게임 결과 제출. 문서 ID를 {date}_{userId}로 고정해 하루 1회 제출
+export async function submitResult(dateKey, { userId, nickname, attempts, success, duration }) {
+  if (!db || !userId) return false;
+  try {
+    await withTimeout(setDoc(doc(db, 'rankings', `${dateKey}_${userId}`), {
+      date: dateKey,
+      userId,
+      nickname,
+      attempts,
+      success,
+      duration,
+      submittedAt: new Date().toISOString(),
+    }), FIRESTORE_TIMEOUT_MS);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// 당일 랭킹 조회 — 성공 우선, 시도 적은 순, 소요 시간 짧은 순
+export async function fetchRankings(dateKey) {
+  if (!db) return [];
+  try {
+    const q = query(collection(db, 'rankings'), where('date', '==', dateKey));
+    const snap = await withTimeout(getDocs(q), FIRESTORE_TIMEOUT_MS);
+    return snap.docs
+      .map((d) => d.data())
+      .sort((a, b) => Number(b.success) - Number(a.success) || a.attempts - b.attempts || a.duration - b.duration)
+      .slice(0, 100);
+  } catch {
+    return [];
+  }
+}
+
 export async function getTodayWord() {
   const dateKey = todayKey();
 
