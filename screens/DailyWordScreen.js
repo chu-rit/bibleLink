@@ -188,10 +188,13 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     const duration = Math.round((Date.now() - startedAtRef.current) / 1000);
     const user = await getOrCreateUser();
     const nickname = user?.nickname || 'NONAME';
-    const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration });
-    if (!registered.ok) {
-      setMessage(`랭킹 등록에 실패했습니다. (${registered.error})`);
-      return;
+    // 테스트용 MASTER 닉네임은 랭킹에 등록하지 않는다
+    if (nickname !== 'MASTER') {
+      const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration });
+      if (!registered.ok) {
+        setMessage(`랭킹 등록에 실패했습니다. (${registered.error})`);
+        return;
+      }
     }
     const result = await fetchRankings(dateKey, user.userId);
     setRankings(result.rankings);
