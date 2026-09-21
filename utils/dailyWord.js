@@ -45,9 +45,114 @@ export async function clearGameState(dateKey) {
   }
 }
 
+const STREAK_KEY = 'dailyWordStreak';
+
+function prevDateKey(dateKey) {
+  const [y, m, d] = dateKey.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d - 1)).toISOString().slice(0, 10);
+}
+
+// 연승 기록: { streak, lastWinDate, lastLostDate }
+// 승리: 어제 이겼으면 +1, 아니면 1부터. 같은 날 재승리(마스터 초기화)는 중복 카운트 안 함
+// 패배: lastLostDate만 기록하고 streak는 유지 — 같은 날 초기화 후 재승리하면 이어지도록
+export async function recordDailyResult(dateKey, won) {
+  try {
+    const raw = await AsyncStorage.getItem(STREAK_KEY);
+    const saved = raw ? JSON.parse(raw) : {};
+    let { streak = 0, lastWinDate, lastLostDate } = saved;
+    if (won) {
+      if (lastWinDate !== dateKey) {
+        streak = lastWinDate === prevDateKey(dateKey) ? streak + 1 : 1;
+        lastWinDate = dateKey;
+      }
+      if (lastLostDate === dateKey) lastLostDate = undefined;
+    } else {
+      lastLostDate = dateKey;
+    }
+    await AsyncStorage.setItem(STREAK_KEY, JSON.stringify({ streak, lastWinDate, lastLostDate }));
+    return streak;
+  } catch {
+    return 0;
+  }
+}
+
+// 화면에 표시할 현재 연승. 오늘 실패했거나 마지막 승리가 어제보다 전이면(하루 이상 건너뜀) 0
+export async function getDailyStreak(dateKey = todayKey()) {
+  try {
+    const raw = await AsyncStorage.getItem(STREAK_KEY);
+    if (!raw) return 0;
+    const { streak = 0, lastWinDate, lastLostDate } = JSON.parse(raw);
+    if (lastLostDate === dateKey) return 0;
+    if (lastWinDate === dateKey || lastWinDate === prevDateKey(dateKey)) return streak;
+    return 0;
+  } catch {
+    return 0;
+  }
+}
+
+// 서버 이력이 계산한 연승으로 로컬값을 덮어쓴다 (조작·드리프트 자동 교정)
+export async function overrideDailyStreak(dateKey, streak) {
+  try {
+    await AsyncStorage.setItem(STREAK_KEY, JSON.stringify({ streak, lastWinDate: dateKey }));
+  } catch {
+    // 실패해도 계속 진행
+  }
+}
+
+// 내 랭킹 이력에서 "어제까지 연속으로 성공한 일수"를 계산
+// day 필드는 규칙이 서버 시간과 대조해 검증하므로 과거 날짜를 소급해 채울 수 없다
+// 반환 null이면 조회 실패 — 호출 측에서 로컬 연승으로 폴백
+export async function fetchStreakBeforeToday(userId) {
+  if (!db || !userId) return null;
+  try {
+    const q = query(collection(db, 'rankings'), where('userId', '==', userId));
+    const snap = await withTimeout(getDocs(q), FIRESTORE_TIMEOUT_MS);
+    const days = new Set(
+      snap.docs
+        .map((d) => d.data())
+        .filter((entry) => entry.success)
+        .map((entry) => entry.day)
+        .filter(Number.isInteger)
+    );
+    let day = todayDayNum() - 1;
+    let streak = 0;
+    while (days.has(day)) {
+      streak += 1;
+      day -= 1;
+    }
+    return streak;
+  } catch {
+    return null;
+  }
+}
+
+// 서버 시간과 기기 시계의 차이(ms). getTodayWord() 첫 호출 때 1회 동기화하고
+// 실패하면 0으로 두어 기기 시간을 그대로 사용한다
+let serverOffsetMs = 0;
+let timeSyncPromise = null;
+
+// Firestore에 ping 문서를 쓰고 읽어 서버 시각을 구한다 (애드블록/오프라인이면 기기 시간 폴백)
+async function syncServerTime() {
+  if (!db) return;
+  try {
+    const ref = await withTimeout(addDoc(collection(db, 'timePings'), { t: serverTimestamp() }), FIRESTORE_TIMEOUT_MS);
+    const snap = await withTimeout(getDoc(ref), FIRESTORE_TIMEOUT_MS);
+    const t = snap.data()?.t;
+    if (t?.toMillis) serverOffsetMs = t.toMillis() - Date.now();
+  } catch {
+    // 동기화 실패 시 기기 시간 사용
+  }
+}
+
 // KST(UTC+9) 밤 11시를 하루 경계로 하는 날짜 키 (23시에 다음 날 단어로 전환)
+// 서버 시간 동기화가 된 뒤에는 서버 기준으로 계산된다
 export function todayKey(now = new Date()) {
-  return new Date(now.getTime() + 10 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return new Date(now.getTime() + serverOffsetMs + 10 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+// todayKey와 같은 경계의 날짜 번호 — Firestore 규칙이 서버 시간과 대조해 미래 날짜 제출을 차단한다
+function todayDayNum() {
+  return Math.floor((Date.now() + serverOffsetMs + 10 * 60 * 60 * 1000) / 86400000);
 }
 
 // 날짜 시드로 동일한 단어를 결정하는 폴백 (오프라인·미설정 시 모든 유저 동일)
@@ -172,16 +277,18 @@ export async function getOrCreateUser() {
 }
 
 // 게임 결과 제출. 정답 확인 후 바로 기록
-export async function submitResult(dateKey, { userId, nickname, attempts, success, duration }) {
+export async function submitResult(dateKey, { userId, nickname, attempts, success, duration, streak }) {
   if (!db) return { ok: false, error: 'firebase-not-configured' };
   try {
     await withTimeout(addDoc(collection(db, 'rankings'), {
       date: CACHE_VERSION + '_' + dateKey,
+      day: todayDayNum(),
       userId,
       nickname,
       attempts,
       success,
       duration,
+      streak,
       submittedAt: serverTimestamp(),
     }), FIRESTORE_SUBMIT_TIMEOUT_MS);
     return { ok: true };
@@ -192,11 +299,12 @@ export async function submitResult(dateKey, { userId, nickname, attempts, succes
 }
 
 // 당일 랭킹 조회 — 정답 제출 시각이 빠른 순
-export async function fetchRankings(dateKey, userId) {
+// 조회 키는 규칙으로 서버 오늘이 검증되는 day 필드를 사용한다
+export async function fetchRankings(userId) {
   const empty = { rankings: [], myRank: null };
   if (!db) return empty;
   try {
-    const q = query(collection(db, 'rankings'), where('date', '==', CACHE_VERSION + '_' + dateKey));
+    const q = query(collection(db, 'rankings'), where('day', '==', todayDayNum()));
     const snap = await withTimeout(getDocs(q), FIRESTORE_TIMEOUT_MS);
     const toMillis = (value) => {
       if (value?.toMillis) return value.toMillis();
@@ -217,6 +325,8 @@ export async function fetchRankings(dateKey, userId) {
 }
 
 export async function getTodayWord() {
+  if (!timeSyncPromise) timeSyncPromise = syncServerTime();
+  await timeSyncPromise;
   const dateKey = todayKey();
 
   const cached = await readCache(dateKey);

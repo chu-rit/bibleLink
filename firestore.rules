@@ -8,11 +8,18 @@ service cloud.firestore {
       allow write: if false; // GitHub Actions 서비스 계정만
     }
 
-    // 랭킹: 읽기와 신규 등록은 모두 허용
+    // 랭킹: 읽기 허용, 신규 등록은 서버 기준 오늘(KST 23시 경계)의 day 값만 허용
     match /rankings/{docId} {
       allow read: if true;
-      allow create: if true;
+      allow create: if request.resource.data.day == math.floor((request.time.toMillis() + 36000000) / 86400000);
       allow update, delete: if false; // 수정/삭제 불가
+    }
+
+    // 서버 시간 확인용 ping: 생성만 허용, 미래 시각 위조 차단
+    match /timePings/{docId} {
+      allow read: if true;
+      allow create: if request.resource.data.t <= request.time;
+      allow update, delete: if false;
     }
   }
 }

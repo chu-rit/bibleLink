@@ -18,6 +18,7 @@ export default function RankingScreen({ visible, rankings, myRank, onClose }) {
           {rank === 1 && <Text style={styles.leader}>FIRST</Text>}
           {ranking.isMine && <Text style={styles.mine}>나</Text>}
         </View>
+        {ranking.streak > 0 && <Text style={styles.streak}>연속 {ranking.streak}일</Text>}
         <Text style={styles.info}>{ranking.attempts}회</Text>
       </View>
     );
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
   leader: { color: '#d8a326', fontSize: 9, fontWeight: '900', letterSpacing: 0.8 },
   mine: { color: '#3c9a72', fontSize: 10, fontWeight: '900' },
   info: { color: '#7a6450', fontSize: 13, fontWeight: '800' },
+  streak: { color: '#e08a3c', fontSize: 11, fontWeight: '800' },
   myRankSection: { marginTop: 10, paddingTop: 10, borderTopWidth: 1, borderTopColor: '#e0d8c8' },
   myRankLabel: { color: '#7a6450', fontSize: 11, fontWeight: '800', marginBottom: 6 },
   emptyState: { alignItems: 'center', justifyContent: 'center', paddingVertical: 42, paddingHorizontal: 16 },

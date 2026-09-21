@@ -88,7 +88,8 @@ dailyWords/{date}
 ### rankings 컬렉션
 ```
 rankings/{자동ID} (addDoc으로 생성, 문서 ID 자동)
-  - date: "v4_2026-08-31" (CACHE_VERSION_날짜키 — 버전 올리면 구 기록은 자연스럽게 안 보임)
+  - date: "v4_2026-08-31" (CACHE_VERSION_날짜키 — 사람이 읽기용 표시 필드)
+  - day: 20290 (날짜 번호 — 조회 키이자 규칙 검증 대상. 규칙이 서버 오늘과 일치해야만 생성 허용해 미래 날짜 선점 차단)
   - userId: "로컬 생성 기기 ID" (익명 인증 아님, AsyncStorage 저장)
   - nickname: "사용자 닉네임" (미설정 시 NONAME)
   - attempts: 4 (시도 횟수)
@@ -113,11 +114,18 @@ service cloud.firestore {
       allow write: if false; // GitHub Actions 서비스 계정만
     }
 
-    // 랭킹: 읽기와 신규 등록은 모두 허용 (익명 인증 미사용, fruitBox와 동일 방식)
+    // 랭킹: 읽기 허용, 신규 등록은 서버 기준 오늘(KST 23시 경계)의 day 값만 허용
     match /rankings/{docId} {
       allow read: if true;
-      allow create: if true;
+      allow create: if request.resource.data.day == math.floor((request.time.toMillis() + 36000000) / 86400000);
       allow update, delete: if false; // 수정/삭제 불가
+    }
+
+    // 서버 시간 확인용 ping: 생성만 허용, 미래 시각 위조 차단
+    match /timePings/{docId} {
+      allow read: if true;
+      allow create: if request.resource.data.t <= request.time;
+      allow update, delete: if false;
     }
   }
 }
@@ -127,6 +135,12 @@ service cloud.firestore {
 - 날짜 키: `new Date(now + 10시간)`의 UTC 날짜 — KST 23:00에 익일 키로 전환
 - 클라이언트(`utils/dailyWord.js` `todayKey()`)와 출제 스크립트(`scripts/pickDailyWord.js`)가 동일 계산 사용
 - 출제: KST 23:00에 익일 단어 문서 생성 → 앱은 같은 시각부터 새 단어 조회
+
+### 서버 시간 동기화 (구현됨)
+- `getTodayWord()` 첫 호출 시 `timePings` 컬렉션에 `serverTimestamp()` 문서를 쓰고 읽어 `서버시각 - 기기시각` 오프셋을 계산
+- 이후 `todayKey()`는 `기기시각 + 오프셋` 기준 — 기기 시계 조작으로 날짜 경계를 넘기는 것을 차단
+- 동기화 실패(오프라인/애드블록 차단) 시 오프셋 0 → 기기 시간 폴백
+- `timePings` 문서는 누적됨 — 콘솔에서 `t` 필드 TTL 정책을 켜면 자동 삭제 (선택)
 
 ## GitHub Actions 워크플로 (구현됨)
 
@@ -193,6 +207,17 @@ service cloud.firestore {
 ### 게임 진행 내역 저장 (구현됨)
 - 시도할 때마다 `AsyncStorage` `dailyWordGame_{날짜키}`에 `{wordId, guesses, over, won, message, startedAt}` 저장
 - 같은 날짜·같은 단어면 복원, 날짜/단어 변경 시 자동 새 게임
+
+### 연승 (구현됨)
+- `AsyncStorage` `dailyWordStreak`에 `{streak, lastWinDate, lastLostDate}` 로컬 저장 — Firebase 없이도 동작
+- 승리 시: `lastWinDate`가 어제면 `streak+1`, 아니면 1부터. 같은 날 재승리(마스터 초기화)는 중복 카운트 안 함
+- 패배 시: `lastLostDate`만 기록하고 `streak`는 유지 — 같은 날 초기화 후 재승리하면 연승이 이어짐
+- 표시값(`getDailyStreak`): 오늘 실패했거나 `lastWinDate`가 어제보다 전이면(하루 이상 건너뜀) 0 — 어제 이기고 오늘 미플레이는 연승 생존
+- 표시 위치: 게임 화면 시도 횟수 아래 `연속 N일 정답`, 랭킹 각 행 `연속 N일` (구 문서는 streak 필드 없어 미표시)
+- 랭킹 문서에 `streak` 필드로 함께 저장
+- **랭킹 등록 연승은 서버 이력 기반**: `fetchStreakBeforeToday()`가 내 `rankings` 문서의 `day`를 모아 어제까지 연속 성공 일수를 계산 → +1해서 제출. `day`는 규칙이 서버 시간과 대조해 검증하므로 과거 날짜를 소급해 연승을 부풀릴 수 없음 (연승을 속이려면 실제로 매일 제출해야 함). 조회 실패 시 로컬 연승으로 폴백
+- 서버 연승과 로컬 연승이 다르면 `overrideDailyStreak()`로 로컬을 서버값으로 덮어써 조작·드리프트 자동 교정
+- 단, `success` 자체는 여전히 자기 보고식 — "안 풀고 이겼다고 매일 제출"은 막지 못함 (원리적 한계)
 
 ### 입력 규칙 (구현됨)
 - 완성형 글자(`가-힣`)는 자모로 완전 분해해 타일 입력

@@ -3,7 +3,7 @@ import { ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, Scro
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import RankingScreen from './RankingScreen';
-import { clearGameState, fetchRankings, getOrCreateUser, getTodayWord, getUser, loadGameState, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
+import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const BG_IMAGE = require('../assets/BG.png');
@@ -79,6 +79,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [settingsPrompt, setSettingsPrompt] = useState(false);
   const [rankings, setRankings] = useState([]);
   const [myRank, setMyRank] = useState(null);
+  const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
   const startedAtRef = useRef(Date.now());
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -99,6 +100,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         setMessage(saved.message || '');
         if (saved.startedAt) startedAtRef.current = saved.startedAt;
       }
+      const currentStreak = await getDailyStreak();
+      if (mounted) setStreak(currentStreak);
     });
     return () => { mounted = false; };
   }, []);
@@ -181,22 +184,32 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     setTimeout(() => inputRef.current?.focus(), 50);
   };
 
-  // 정답 제출 시 랭킹 등록 후 순위판 표시
+  // 게임 종료 시 연승 갱신 후, 정답이면 랭킹 등록 후 순위판 표시
   const finishGame = async (attempts, success) => {
-    if (!success) return;
     const dateKey = todayKey();
+    const nextStreak = await recordDailyResult(dateKey, success);
+    setStreak(await getDailyStreak(dateKey));
+    if (!success) return;
     const duration = Math.round((Date.now() - startedAtRef.current) / 1000);
     const user = await getOrCreateUser();
     const nickname = user?.nickname || 'NONAME';
     // 테스트용 MASTER 닉네임은 랭킹에 등록하지 않는다
     if (nickname !== 'MASTER') {
-      const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration });
+      // 랭킹에 등록하는 연승은 서버 이력으로 계산 — 과거 날짜 소급이 불가능해 조작보다 신뢰할 수 있다
+      // 조회 실패 시 로컬 연승으로 폴백
+      const priorStreak = await fetchStreakBeforeToday(user.userId);
+      const streakToSubmit = priorStreak !== null ? priorStreak + 1 : nextStreak;
+      if (priorStreak !== null) {
+        await overrideDailyStreak(dateKey, streakToSubmit);
+        setStreak(streakToSubmit);
+      }
+      const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration, streak: streakToSubmit });
       if (!registered.ok) {
         setMessage(`랭킹 등록에 실패했습니다. (${registered.error})`);
         return;
       }
     }
-    const result = await fetchRankings(dateKey, user.userId);
+    const result = await fetchRankings(user.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
     setShowRankings(true);
@@ -207,7 +220,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     setMyRank(null);
     setShowRankings(true);
     const user = await getUser();
-    const result = await fetchRankings(todayKey(), user?.userId);
+    const result = await fetchRankings(user?.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
   };
@@ -294,6 +307,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                   <Text style={styles.attemptsCount}>{guesses.length}</Text>
                   {`/${MAX_ATTEMPTS}회 시도`}
                 </Text>
+                {streak > 0 && <Text style={styles.streak}>연속 {streak}일 정답</Text>}
               </View>
               <View style={styles.actionButtons}>
                 {masterMode && (
@@ -363,6 +377,10 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                   <Text style={styles.helpItemTitle}>새 단어</Text>
                   <Text style={styles.helpItemText}>매일 밤 11시에 새 단어로 바뀌며, 모든 사람에게 같은 단어가 출제됩니다.</Text>
                 </View>
+                <View style={styles.helpItem}>
+                  <Text style={styles.helpItemTitle}>연속 정답</Text>
+                  <Text style={styles.helpItemText}>매일 정답을 맞히면 연속 기록이 쌓입니다. 하루를 건너뛰거나 맞히지 못하면 초기화됩니다.</Text>
+                </View>
               </ScrollView>
             </View>
           </View>
@@ -404,6 +422,7 @@ const styles = StyleSheet.create({
   status: { color: '#7a6450', fontSize: 13 },
   attempts: { color: '#7a6450', fontSize: 15, fontWeight: '700', marginTop: 4 },
   attemptsCount: { color: '#7a5c3a', fontSize: 26, fontWeight: '800' },
+  streak: { color: '#e08a3c', fontSize: 12, fontWeight: '800', marginTop: 2 },
   resetButton: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, backgroundColor: '#f0ebe0' },
   resetButtonText: { color: '#7a6450', fontSize: 14, fontWeight: '700' },
   actionButtons: { flexDirection: 'row', gap: 8 },
