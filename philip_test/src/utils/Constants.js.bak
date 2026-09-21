@@ -1,0 +1,25 @@
+import { Image as RNImage } from 'react-native';
+
+export const Image = RNImage;
+
+// 흰색 7페이지 (공식 예제와 동일한 구조, 이미지 대신 흰색 View)
+export const WHITE_PAGES = [
+  '#ffffff',
+  '#ffffff',
+  '#ffffff',
+  '#ffffff',
+  '#ffffff',
+  '#ffffff',
+  '#ffffff',
+];
+
+// 무지개색 7페이지
+export const MANGA_PAGES = [
+  '#ff0000',
+  '#ff8800',
+  '#ffff00',
+  '#00ff00',
+  '#00ffff',
+  '#0000ff',
+  '#8800ff',
+];
