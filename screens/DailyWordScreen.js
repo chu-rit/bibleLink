@@ -209,7 +209,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         return;
       }
     }
-    const result = await fetchRankings(user.userId);
+    const result = await fetchRankings(dateKey, user.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
     setShowRankings(true);
@@ -220,7 +220,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     setMyRank(null);
     setShowRankings(true);
     const user = await getUser();
-    const result = await fetchRankings(user?.userId);
+    const result = await fetchRankings(todayKey(), user?.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
   };

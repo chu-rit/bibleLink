@@ -300,19 +300,33 @@ export async function submitResult(dateKey, { userId, nickname, attempts, succes
 
 // 당일 랭킹 조회 — 정답 제출 시각이 빠른 순
 // 조회 키는 규칙으로 서버 오늘이 검증되는 day 필드를 사용한다
-export async function fetchRankings(userId) {
+// day 필드가 없는 구형 문서는 date 문자열 일치로 함께 조회한다
+// (day 없는 문서는 새 규칙으로 생성 불가라 위조 경로가 없다)
+export async function fetchRankings(dateKey, userId) {
   const empty = { rankings: [], myRank: null };
   if (!db) return empty;
   try {
-    const q = query(collection(db, 'rankings'), where('day', '==', todayDayNum()));
-    const snap = await withTimeout(getDocs(q), FIRESTORE_TIMEOUT_MS);
+    const day = todayDayNum();
+    const legacyDate = CACHE_VERSION + '_' + dateKey;
+    const rankingsRef = collection(db, 'rankings');
+    const [byDay, byDate] = await Promise.all([
+      withTimeout(getDocs(query(rankingsRef, where('day', '==', day))), FIRESTORE_TIMEOUT_MS),
+      withTimeout(getDocs(query(rankingsRef, where('date', '==', legacyDate))), FIRESTORE_TIMEOUT_MS),
+    ]);
     const toMillis = (value) => {
       if (value?.toMillis) return value.toMillis();
       const parsed = Date.parse(value || '');
       return Number.isNaN(parsed) ? Number.MAX_SAFE_INTEGER : parsed;
     };
-    const sorted = snap.docs
-      .map((d) => d.data())
+    const seen = new Set();
+    const sorted = [...byDay.docs, ...byDate.docs]
+      .filter((docSnap) => {
+        if (seen.has(docSnap.id)) return false;
+        seen.add(docSnap.id);
+        const entry = docSnap.data();
+        return entry.day === day || (!Number.isInteger(entry.day) && entry.date === legacyDate);
+      })
+      .map((docSnap) => docSnap.data())
       .filter((entry) => entry.success)
       .sort((a, b) => toMillis(a.submittedAt) - toMillis(b.submittedAt));
     const rankings = sorted.slice(0, 10).map((entry) => ({ ...entry, isMine: entry.userId === userId }));
