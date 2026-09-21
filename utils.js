@@ -2,10 +2,17 @@ import bibleWords from './data/words/bibleWordsLib1.json';
 
 export const normalize = (value) => value.replace(/\s/g, '').trim();
 
-export const formatReferenceByChapter = (reference) => reference.replace(/(시편\s+)?(\d+):\d+(?:-\d+)?(?:,\s*\d+)*/g, (match, psalms, p1) => {
-  const suffix = psalms ? '편' : '장';
-  return (psalms || '') + p1 + suffix;
-});
+export const formatReferenceByChapter = (reference) => reference.split(';').map((segment) => {
+  const trimmed = segment.trim();
+  if (!trimmed.includes(':')) return trimmed;
+  const match = trimmed.match(/^([^\d]*?)\s*(\d.*)$/);
+  if (!match) return trimmed;
+  const book = match[1].trim();
+  const suffix = book.startsWith('시편') ? '편' : '장';
+  const chapters = [...new Set([...match[2].matchAll(/(\d+)\s*:/g)].map((chapterMatch) => chapterMatch[1]))];
+  if (!chapters.length) return trimmed;
+  return [book, chapters.map((chapter) => `${chapter}${suffix}`).join(', ')].filter(Boolean).join(' ');
+}).join('; ');
 
 export const PAGE_ASPECT_RATIO = 20 / 9;
 
