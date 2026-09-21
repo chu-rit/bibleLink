@@ -1,10 +1,15 @@
 import React from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { prevDateKey, todayKey } from '../utils/dailyWord';
 
 const MEDAL_COLORS = ['#d8a326', '#9a9a9a', '#b87333'];
 
-export default function RankingScreen({ visible, rankings, myRank, onClose }) {
+export default function RankingScreen({ visible, rankings, myRank, dateKey, onSelectDate, onClose }) {
   const showMyRank = myRank && myRank.rank > 10;
+  const today = todayKey();
+  const yesterday = prevDateKey(today);
+  const isToday = dateKey === today;
+  const isYesterday = dateKey === yesterday;
 
   const renderRow = (ranking, index, rank) => {
     const medalColor = MEDAL_COLORS[index];
@@ -31,10 +36,18 @@ export default function RankingScreen({ visible, rankings, myRank, onClose }) {
           <View style={styles.header}>
             <View>
               <Text style={styles.eyebrow}>DAILY WORD</Text>
-              <Text style={styles.title}>오늘의 랭킹</Text>
+              <Text style={styles.title}>{isYesterday ? '어제의 랭킹' : '오늘의 랭킹'}</Text>
             </View>
             <Pressable style={styles.closeIconButton} onPress={onClose} hitSlop={8}>
               <Text style={styles.closeIconText}>×</Text>
+            </Pressable>
+          </View>
+          <View style={styles.tabs}>
+            <Pressable onPress={() => onSelectDate?.(yesterday)} style={[styles.tab, isYesterday && styles.tabActive]}>
+              <Text style={[styles.tabText, isYesterday && styles.tabTextActive]}>어제</Text>
+            </Pressable>
+            <Pressable onPress={() => onSelectDate?.(today)} style={[styles.tab, isToday && styles.tabActive]}>
+              <Text style={[styles.tabText, isToday && styles.tabTextActive]}>오늘</Text>
             </Pressable>
           </View>
           <Text style={styles.subtitle}>정답을 먼저 맞힌 순서로 표시됩니다</Text>
@@ -79,6 +92,11 @@ const styles = StyleSheet.create({
   closeIconButton: { width: 32, height: 32, borderRadius: 10, borderWidth: 1, borderColor: '#d8cdb8', backgroundColor: '#f0ebe0', alignItems: 'center', justifyContent: 'center' },
   closeIconText: { color: '#7a6450', fontSize: 22, lineHeight: 24, fontWeight: '500' },
   subtitle: { color: '#7a6450', fontSize: 12, marginTop: 8 },
+  tabs: { flexDirection: 'row', gap: 8, marginTop: 12 },
+  tab: { flex: 1, borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 10, paddingVertical: 7, backgroundColor: '#f0ebe0', alignItems: 'center' },
+  tabActive: { backgroundColor: '#7a5c3a', borderColor: '#7a5c3a' },
+  tabText: { color: '#7a6450', fontSize: 13, fontWeight: '800' },
+  tabTextActive: { color: '#fdfbf6' },
   list: { marginTop: 14 },
   listContent: { paddingBottom: 2, gap: 8 },
   row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f7f2e8', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 14, paddingVertical: 10, paddingHorizontal: 10, gap: 10 },

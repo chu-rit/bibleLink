@@ -47,7 +47,7 @@ export async function clearGameState(dateKey) {
 
 const STREAK_KEY = 'dailyWordStreak';
 
-function prevDateKey(dateKey) {
+export function prevDateKey(dateKey) {
   const [y, m, d] = dateKey.split('-').map(Number);
   return new Date(Date.UTC(y, m - 1, d - 1)).toISOString().slice(0, 10);
 }
@@ -153,6 +153,12 @@ export function todayKey(now = new Date()) {
 // todayKey와 같은 경계의 날짜 번호 — Firestore 규칙이 서버 시간과 대조해 미래 날짜 제출을 차단한다
 function todayDayNum() {
   return Math.floor((Date.now() + serverOffsetMs + 10 * 60 * 60 * 1000) / 86400000);
+}
+
+// dateKey의 날짜 번호 — 어제 등 과거 날짜 랭킹 조회용
+function dayNumForKey(dateKey) {
+  const [y, m, d] = dateKey.split('-').map(Number);
+  return Date.UTC(y, m - 1, d) / 86400000;
 }
 
 // 날짜 시드로 동일한 단어를 결정하는 폴백 (오프라인·미설정 시 모든 유저 동일)
@@ -306,7 +312,7 @@ export async function fetchRankings(dateKey, userId) {
   const empty = { rankings: [], myRank: null };
   if (!db) return empty;
   try {
-    const day = todayDayNum();
+    const day = dayNumForKey(dateKey);
     const legacyDate = CACHE_VERSION + '_' + dateKey;
     const rankingsRef = collection(db, 'rankings');
     const [byDay, byDate] = await Promise.all([

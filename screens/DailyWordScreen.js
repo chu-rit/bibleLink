@@ -79,6 +79,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [settingsPrompt, setSettingsPrompt] = useState(false);
   const [rankings, setRankings] = useState([]);
   const [myRank, setMyRank] = useState(null);
+  const [rankingDate, setRankingDate] = useState(null);
   const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
   const startedAtRef = useRef(Date.now());
@@ -212,17 +213,29 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     const result = await fetchRankings(dateKey, user.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
+    setRankingDate(dateKey);
     setShowRankings(true);
   };
 
-  const openRankings = async () => {
+  const loadRankings = async (dateKey) => {
     setRankings(null);
     setMyRank(null);
-    setShowRankings(true);
     const user = await getUser();
-    const result = await fetchRankings(todayKey(), user?.userId);
+    const result = await fetchRankings(dateKey, user?.userId);
     setRankings(result.rankings);
     setMyRank(result.myRank);
+  };
+
+  const openRankings = () => {
+    const dateKey = todayKey();
+    setRankingDate(dateKey);
+    setShowRankings(true);
+    loadRankings(dateKey);
+  };
+
+  const selectRankingDate = (dateKey) => {
+    setRankingDate(dateKey);
+    loadRankings(dateKey);
   };
 
   // 마스터 모드 전용: 같은 단어로 다시 시작
@@ -315,15 +328,14 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                     <Text style={styles.resetButtonText}>초기화</Text>
                   </Pressable>
                 )}
-                {!over ? (
+                {!over && (
                   <Pressable onPress={submitGuess} style={styles.button}>
                     <Text style={styles.buttonText}>입력</Text>
                   </Pressable>
-                ) : (
-                  <Pressable onPress={openRankings} style={styles.button}>
-                    <Text style={styles.buttonText}>랭킹</Text>
-                  </Pressable>
                 )}
+                <Pressable onPress={openRankings} style={styles.button}>
+                  <Text style={styles.buttonText}>랭킹</Text>
+                </Pressable>
               </View>
             </View>
             </View>
@@ -334,6 +346,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
           visible={showRankings}
           rankings={rankings}
           myRank={myRank}
+          dateKey={rankingDate}
+          onSelectDate={selectRankingDate}
           onClose={() => setShowRankings(false)}
         />
         <DailyWordSettingsScreen
