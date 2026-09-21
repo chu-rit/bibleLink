@@ -90,6 +90,7 @@ dailyWords/{date}
 rankings/{자동ID} (addDoc으로 생성, 문서 ID 자동)
   - date: "v4_2026-08-31" (CACHE_VERSION_날짜키 — 사람이 읽기용 표시 필드)
   - day: 20290 (날짜 번호 — 조회 키이자 규칙 검증 대상. 규칙이 서버 오늘과 일치해야만 생성 허용해 미래 날짜 선점 차단)
+  - 조회는 day 일치 + 구형 문서용 date 일치 병행 (day 없는 문서는 새 규칙으로 생성 불가라 위조 경로 없음)
   - userId: "로컬 생성 기기 ID" (익명 인증 아님, AsyncStorage 저장)
   - nickname: "사용자 닉네임" (미설정 시 NONAME)
   - attempts: 4 (시도 횟수)
