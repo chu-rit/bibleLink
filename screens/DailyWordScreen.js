@@ -10,6 +10,8 @@ import validWordsData from '../data/words2/validWords.json';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
+// 웹 하단 카카오 광고 배너(320x50)와 겹치지 않게 키보드를 올린다
+const AD_BANNER_HEIGHT = 50;
 
 // 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
 const VALID_WORD_SETS = { 5: new Set(validWordsData['5']), 6: new Set(validWordsData['6']) };
@@ -372,7 +374,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         </View>
 
         {!over && (
-          <View style={styles.keyboardWrap}>
+          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT }]}>
             {toast ? (
               <View style={styles.toast} pointerEvents="none">
                 <Text style={styles.toastText}>{toast}</Text>
@@ -476,15 +478,15 @@ const styles = StyleSheet.create({
   toast: { position: 'absolute', bottom: '100%', marginBottom: 8, left: 0, right: 0, alignItems: 'center', zIndex: 10 },
   toastText: { backgroundColor: '#3a2e1f', color: '#fdfbf6', fontSize: 14, fontWeight: '800', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 999, overflow: 'hidden', shadowColor: '#3a2e1f', shadowOpacity: 0.25, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 },
   hiddenInput: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0 },
-  hintCard: { backgroundColor: '#f7f2e8', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 10, padding: 12, marginTop: 8 },
-  hintLabel: { color: '#e08a3c', fontSize: 11, fontWeight: '800', marginBottom: 4 },
-  hintText: { color: '#3a2e1f', fontSize: 14, fontWeight: '700', lineHeight: 20 },
+  hintCard: { backgroundColor: '#f7f2e8', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 10, padding: 12, marginTop: 8, flexDirection: 'row', alignItems: 'center' },
+  hintLabel: { color: '#e08a3c', fontSize: 11, fontWeight: '800', marginRight: 8 },
+  hintText: { color: '#3a2e1f', fontSize: 14, fontWeight: '700', lineHeight: 20, flex: 1 },
   actions: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginTop: 12 },
-  statusWrap: { flex: 1 },
+  statusWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: 8 },
   status: { color: '#7a6450', fontSize: 13 },
-  attempts: { color: '#7a6450', fontSize: 15, fontWeight: '700', marginTop: 4 },
+  attempts: { color: '#7a6450', fontSize: 15, fontWeight: '700' },
   attemptsCount: { color: '#7a5c3a', fontSize: 26, fontWeight: '800' },
-  streak: { color: '#e08a3c', fontSize: 12, fontWeight: '800', marginTop: 2 },
+  streak: { color: '#e08a3c', fontSize: 12, fontWeight: '800' },
   resetButton: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, backgroundColor: '#f0ebe0' },
   resetButtonText: { color: '#7a6450', fontSize: 14, fontWeight: '700' },
   actionButtons: { flexDirection: 'row', gap: 8 },
