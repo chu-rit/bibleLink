@@ -5,7 +5,7 @@ import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import RankingScreen from './RankingScreen';
 import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
-import { PAGE_ASPECT_RATIO, getBottomSafeArea, getPageWidth } from '../utils';
+import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 import validWordsData from '../data/words2/validWords.json';
 
 const BG_IMAGE = require('../assets/BG.png');
@@ -374,7 +374,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         </View>
 
         {!over && (
-          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT + getBottomSafeArea() }]}>
+          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT }]}>
             {toast ? (
               <View style={styles.toast} pointerEvents="none">
                 <Text style={styles.toastText}>{toast}</Text>
