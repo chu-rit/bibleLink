@@ -50,7 +50,6 @@ export default function RankingScreen({ visible, rankings, myRank, dateKey, onSe
               <Text style={[styles.tabText, isToday && styles.tabTextActive]}>오늘</Text>
             </Pressable>
           </View>
-          <Text style={styles.subtitle}>정답을 먼저 맞힌 순서로 표시됩니다</Text>
 
           <ScrollView style={styles.list} contentContainerStyle={styles.listContent}>
             {rankings === null ? (
@@ -91,7 +90,6 @@ const styles = StyleSheet.create({
   title: { color: '#3a2e1f', fontSize: 22, fontWeight: '900', marginTop: 4 },
   closeIconButton: { width: 32, height: 32, borderRadius: 10, borderWidth: 1, borderColor: '#d8cdb8', backgroundColor: '#f0ebe0', alignItems: 'center', justifyContent: 'center' },
   closeIconText: { color: '#7a6450', fontSize: 22, lineHeight: 24, fontWeight: '500' },
-  subtitle: { color: '#7a6450', fontSize: 12, marginTop: 8 },
   tabs: { flexDirection: 'row', gap: 8, marginTop: 12 },
   tab: { flex: 1, borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 10, paddingVertical: 7, backgroundColor: '#f0ebe0', alignItems: 'center' },
   tabActive: { backgroundColor: '#7a5c3a', borderColor: '#7a5c3a' },

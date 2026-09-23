@@ -248,7 +248,8 @@ async function writeCache(dateKey, wordId) {
 
 /**
  * 오늘의 단어 조회
- * 우선순위: 로컬 캐시 -> Firestore dailyWords/{date} -> 날짜 시드 로컬 선정
+ * 우선순위: Firestore dailyWords/{date} -> 로컬 캐시 -> 날짜 시드 로컬 선정
+ * 서버 단어를 항상 먼저 확인해, 서버에서 단어를 바꾸면 캐시를 교체한다
  * 반환: { entry, source } source: 'cache' | 'remote' | 'local'
  */
 const USER_KEY = 'dailyWordUser';
@@ -349,16 +350,15 @@ export async function getTodayWord() {
   await timeSyncPromise;
   const dateKey = todayKey();
 
-  const cached = await readCache(dateKey);
-  if (cached) return { entry: cached, source: 'cache' };
-
   if (isFirebaseConfigured && db) {
     try {
       const snap = await withTimeout(getDoc(doc(db, 'dailyWords', dateKey)), FIRESTORE_TIMEOUT_MS);
       if (snap.exists()) {
         const entry = localWords.find((w) => w.id === snap.data().wordId);
         if (entry) {
-          await writeCache(dateKey, entry.id);
+          const cached = await readCache(dateKey);
+          // 서버 단어가 바뀌었으면 캐시를 교체해 모든 사용자가 같은 단어를 보게 한다
+          if (cached?.id !== entry.id) await writeCache(dateKey, entry.id);
           return { entry, source: 'remote' };
         }
       }
@@ -366,6 +366,9 @@ export async function getTodayWord() {
       // 네트워크 오류 시 폴백
     }
   }
+
+  const cached = await readCache(dateKey);
+  if (cached) return { entry: cached, source: 'cache' };
 
   return { entry: getLocalWord(dateKey), source: 'local' };
 }

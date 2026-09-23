@@ -15,7 +15,8 @@
     "extract:glyphs": "node scripts/extractGlyphPaths.js",
     "validate:maps": "node scripts/mergeLib1.js && node scripts/validateMaps.js",
     "generate:map": "node scripts/mergeLib1.js && node scripts/generateMap.js",
-    "add:daily-word": "node scripts/addDailyWord.js"
+    "add:daily-word": "node scripts/addDailyWord.js",
+    "build:valid-words": "node scripts/buildValidWords.js"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",

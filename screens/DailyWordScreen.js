@@ -2,12 +2,17 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
+import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import RankingScreen from './RankingScreen';
 import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
+import validWordsData from '../data/words2/validWords.json';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
+
+// 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
+const VALID_WORD_SETS = { 5: new Set(validWordsData['5']), 6: new Set(validWordsData['6']) };
 
 const INITIALS = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
 const VOWELS = ['ㅏ','ㅏㅣ','ㅑ','ㅑㅣ','ㅓ','ㅓㅣ','ㅕ','ㅕㅣ','ㅗ','ㅗㅏ','ㅗㅏㅣ','ㅗㅣ','ㅛ','ㅜ','ㅜㅓ','ㅜㅓㅣ','ㅜㅣ','ㅠ','ㅡ','ㅡㅣ','ㅣ'];
@@ -73,6 +78,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [over, setOver] = useState(false);
   const [won, setWon] = useState(false);
   const [message, setMessage] = useState('');
+  const [toast, setToast] = useState('');
   const [showRankings, setShowRankings] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
@@ -83,6 +89,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
   const startedAtRef = useRef(Date.now());
+  const toastTimerRef = useRef(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
@@ -98,7 +105,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         setGuesses(saved.guesses || []);
         setOver(Boolean(saved.over));
         setWon(Boolean(saved.won));
-        setMessage(saved.message || '');
+        setMessage(saved.over && !saved.won ? saved.message || '' : '');
         if (saved.startedAt) startedAtRef.current = saved.startedAt;
       }
       const currentStreak = await getDailyStreak();
@@ -154,27 +161,36 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
   const hints = [entry.hint1, entry.hint2, entry.hint3];
 
+  // 입력 검증 실패 등은 토스트로 띄워 확실히 눈에 띄게 한다
+  const showToast = (text) => {
+    setToast(text);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setToast(''), 1600);
+  };
+
   const submitGuess = () => {
     if (over) return;
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
     const word = input.replace(/[\s\u200B-\u200D\uFEFF]/g, '').normalize('NFC');
     if (!word) return;
     if (!/^[가-힣ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ]+$/.test(word)) {
-      setMessage('한글로 입력하세요.');
+      showToast('한글로 입력하세요.');
       return;
     }
     const values = decomposeInput(word);
     if (values.length !== target.length) {
-      setMessage(`자모 ${target.length}개인 단어를 입력하세요. (입력한 단어: ${values.length}개)`);
+      showToast(`자모 ${target.length}개인 단어를 입력하세요.`);
+      return;
+    }
+    if (!VALID_WORD_SETS[target.length]?.has(word)) {
+      showToast('사전에 없는 단어입니다.');
       return;
     }
     const feedback = getFeedback(values, target);
     const next = [...guesses, { values, states: feedback }];
     const success = feedback.every((s) => s === 'green');
     const done = success || next.length >= MAX_ATTEMPTS;
-    const nextMessage = success
-      ? `정답입니다! ${next.length}번 만에 맞혔습니다.`
-      : done ? `정답은 ${entry.name}입니다.` : '';
+    const nextMessage = done && !success ? `정답은 ${entry.name}입니다.` : '';
     setGuesses(next);
     setInput('');
     setOver(done);
@@ -256,6 +272,17 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     </View>
   );
 
+  // 커스텀 자모 키보드: 자모 1개씩 추가/삭제 (시스템 키보드는 띄우지 않는다)
+  const pressJamo = (jamo) => {
+    if (over || inputJamo.length >= target.length) return;
+    setInput((prev) => prev + jamo);
+  };
+
+  const backspace = () => {
+    if (over || !inputJamo.length) return;
+    setInput(inputJamo.slice(0, -1).join(''));
+  };
+
   const renderBoard = () => (
     <View style={styles.inputRowWrap}>
       <View style={styles.history}>
@@ -284,6 +311,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
           autoCapitalize="none"
           autoCorrect={false}
           caretHidden
+          inputMode="none"
+          showSoftInputOnFocus={false}
           returnKeyType="done"
           onSubmitEditing={submitGuess}
           style={styles.hiddenInput}
@@ -320,7 +349,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                   <Text style={styles.attemptsCount}>{guesses.length}</Text>
                   {`/${MAX_ATTEMPTS}회 시도`}
                 </Text>
-                {streak > 0 && <Text style={styles.streak}>연속 {streak}일 정답</Text>}
+                {streak > 0 && <Text style={styles.streak}>{streak}번째 연승중!</Text>}
               </View>
               <View style={styles.actionButtons}>
                 {masterMode && (
@@ -341,6 +370,22 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
             </View>
           </ScrollView>
         </View>
+
+        {!over && (
+          <View style={styles.keyboardWrap}>
+            {toast ? (
+              <View style={styles.toast} pointerEvents="none">
+                <Text style={styles.toastText}>{toast}</Text>
+              </View>
+            ) : null}
+            <JamoKeyboard
+              keyStates={buildKeyStates(guesses)}
+              onKey={pressJamo}
+              onBackspace={backspace}
+              disabled={over}
+            />
+          </View>
+        )}
 
         <RankingScreen
           visible={showRankings}
@@ -421,12 +466,15 @@ const styles = StyleSheet.create({
   cell_green: { borderColor: '#3c9a72', backgroundColor: '#3c9a72' },
   cell_yellow: { borderColor: '#e08a3c', backgroundColor: '#e08a3c' },
   cell_gray: { borderColor: '#b8a88f', backgroundColor: '#b8a88f' },
-  cellText: { fontSize: 24, fontWeight: '700', color: '#3a2e1f' },
+  cellText: { fontSize: 24, fontWeight: '700', color: '#3a2e1f', fontFamily: 'UhBeeGmin2' },
   cellText_empty: { color: '#3a2e1f' },
   cellText_green: { color: '#fdfbf6' },
   cellText_yellow: { color: '#fdfbf6' },
   cellText_gray: { color: '#fdfbf6' },
   inputRowWrap: { position: 'relative' },
+  keyboardWrap: { position: 'relative' },
+  toast: { position: 'absolute', bottom: '100%', marginBottom: 8, left: 0, right: 0, alignItems: 'center', zIndex: 10 },
+  toastText: { backgroundColor: '#3a2e1f', color: '#fdfbf6', fontSize: 14, fontWeight: '800', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 999, overflow: 'hidden', shadowColor: '#3a2e1f', shadowOpacity: 0.25, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 },
   hiddenInput: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0 },
   hintCard: { backgroundColor: '#f7f2e8', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 10, padding: 12, marginTop: 8 },
   hintLabel: { color: '#e08a3c', fontSize: 11, fontWeight: '800', marginBottom: 4 },
