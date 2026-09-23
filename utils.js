@@ -19,6 +19,12 @@ export const PAGE_ASPECT_RATIO = 20 / 9;
 // 좁은 화면(모바일)에서는 창 폭을 그대로 쓰고, 넓은 화면에서는 9:20 비율을 유지하는 최대 폭
 export const MOBILE_MAX_WIDTH = 480;
 
+// 홈 화면에 설치된 PWA(standalone) 여부 — 이 모드에서는 하단 safe-area까지 화면이 확장된다
+export const isStandalonePWA = () => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
+};
+
 export const getPageWidth = (windowWidth, windowHeight) => {
   const width = windowWidth || 375;
   const height = windowHeight || Math.round(width * PAGE_ASPECT_RATIO);
