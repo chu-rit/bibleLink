@@ -5,15 +5,13 @@ import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import RankingScreen from './RankingScreen';
 import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
-import { PAGE_ASPECT_RATIO, getPageWidth, isStandalonePWA } from '../utils';
+import { PAGE_ASPECT_RATIO, getBottomSafeArea, getPageWidth } from '../utils';
 import validWordsData from '../data/words2/validWords.json';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
 // 웹 하단 카카오 광고 배너(320x50)와 겹치지 않게 키보드를 올린다
 const AD_BANNER_HEIGHT = 50;
-// PWA에서는 홈 인디케이터 safe-area까지 배너가 겹치므로 추가로 올린다
-const PWA_SAFE_AREA = 34;
 
 // 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
 const VALID_WORD_SETS = { 5: new Set(validWordsData['5']), 6: new Set(validWordsData['6']) };
@@ -376,7 +374,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         </View>
 
         {!over && (
-          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT + (isStandalonePWA() ? PWA_SAFE_AREA : 0) }]}>
+          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT + getBottomSafeArea() }]}>
             {toast ? (
               <View style={styles.toast} pointerEvents="none">
                 <Text style={styles.toastText}>{toast}</Text>

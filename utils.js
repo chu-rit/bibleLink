@@ -25,6 +25,19 @@ export const isStandalonePWA = () => {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
 };
 
+// 웹에서 하단 safe-area-inset-bottom 실제 픽셀 값 (iOS 홈 인디케이터 등)
+export const getBottomSafeArea = () => {
+  if (typeof document === 'undefined') return 0;
+  const el = document.createElement('div');
+  el.style.paddingBottom = 'env(safe-area-inset-bottom)';
+  el.style.position = 'absolute';
+  el.style.visibility = 'hidden';
+  document.body.appendChild(el);
+  const value = parseFloat(window.getComputedStyle(el).paddingBottom) || 0;
+  el.remove();
+  return value;
+};
+
 export const getPageWidth = (windowWidth, windowHeight) => {
   const width = windowWidth || 375;
   const height = windowHeight || Math.round(width * PAGE_ASPECT_RATIO);
