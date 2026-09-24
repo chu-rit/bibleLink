@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
@@ -97,6 +98,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const startedAtRef = useRef(Date.now());
   const toastTimerRef = useRef(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
   const viewportHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight) : windowHeight;
@@ -331,7 +333,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.container, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      style={[styles.container, { paddingTop: insets.top }, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <AppHeader onBack={onBack} onHelp={() => setShowHelp(true)} onSettings={() => { setSettingsPrompt(false); setShowSettings(true); }} />

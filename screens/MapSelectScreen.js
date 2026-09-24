@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 import AppHeader from '../components/AppHeader';
 import MapSettingsScreen from './MapSettingsScreen';
@@ -53,6 +54,7 @@ function Gauge({ percent, number, isComplete }) {
 export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode, onBack }) {
   const [showSettings, setShowSettings] = useState(false);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   const isSmallScreen = true;
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
@@ -171,7 +173,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      style={[styles.safeArea, { paddingTop: insets.top }, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
       <AppHeader onBack={onBack} onSettings={() => setShowSettings(true)} />

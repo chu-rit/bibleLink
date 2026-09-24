@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import appConfig from '../app.json';
 
 export default function SettingsScreen({ visible, onClose, title, description, children }) {
   return (
@@ -13,6 +14,7 @@ export default function SettingsScreen({ visible, onClose, title, description, c
           <Text style={styles.title}>{title}</Text>
           {description ? <Text style={styles.description}>{description}</Text> : null}
           <View style={styles.content}>{children}</View>
+          <Text style={styles.version}>v{appConfig.expo.version}</Text>
         </Pressable>
       </Pressable>
     </Modal>
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
   title: { color: '#3a2e1f', fontSize: 17, fontWeight: '800' },
   description: { color: '#7a6450', fontSize: 13 },
   content: { gap: 12 },
+  version: { color: '#7a6450', fontSize: 12, fontWeight: '600', textAlign: 'right' },
   closeButton: { position: 'absolute', top: 12, right: 12, width: 32, height: 32, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 8, backgroundColor: '#f0ebe0', zIndex: 1 },
   closeButtonText: { color: '#7a6450', fontSize: 22, lineHeight: 24, fontWeight: '500' },
 });

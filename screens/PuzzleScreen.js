@@ -15,6 +15,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   normalize,
   formatReferenceByChapter,
@@ -73,6 +74,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const hasShownClearRef = useRef(null);
   const toastAnim = useRef(new Animated.Value(0)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   const inputRef = useRef(null);
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(1)).current;
@@ -457,7 +459,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, Platform.OS === 'web' && [styles.webSafeArea, { maxWidth: effectiveWidth }]]}
+      style={[styles.safeArea, { paddingTop: insets.top }, Platform.OS === 'web' && [styles.webSafeArea, { maxWidth: effectiveWidth }]]}
     >
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>

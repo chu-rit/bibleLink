@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
@@ -82,6 +83,14 @@ class PageFlipperBoundary extends React.Component {
 }
 
 export default function App() {
+  return (
+    <SafeAreaProvider style={{ flex: 1, height: '100%' }}>
+      <AppContent />
+    </SafeAreaProvider>
+  );
+}
+
+function AppContent() {
   const [fontsLoaded] = useFonts({
     UhBeeGmin2: require('./assets/fonts/UhBeeGmin2.ttf'),
     UhBeeGmin2Bold: require('./assets/fonts/UhBeeGmin2Bold.ttf'),
@@ -289,11 +298,7 @@ export default function App() {
     return undefined;
   }, [dataLoaded, fontsLoaded]);
 
-  if (screen === 'wordSearch' && dataLoaded) {
-    return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
-  }
-
-  const mapPage = (
+  const mapPage = useMemo(() => (
     <MapSelectScreen
       maps={appMaps}
       progressByMap={progressByMap}
@@ -355,9 +360,9 @@ export default function App() {
         });
       } : undefined}
     />
-  );
+  ), [appMaps, progressByMap, masterMode]);
 
-  const puzzlePage = (
+  const puzzlePage = useMemo(() => (
     <PuzzleScreen
       crosswordMap={selectedMap || EMPTY_MAP}
       initialAnswers={selectedMap ? answersByMap[selectedMap.id] : {}}
@@ -371,17 +376,17 @@ export default function App() {
         setScreen('mapSelect');
       }}
     />
-  );
+  ), [selectedMap, answersByMap, hintPointsByMap, hintedSlotsByMap, masterMode]);
 
-  const dailyWordPage = (
+  const dailyWordPage = useMemo(() => (
     <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
-  );
+  ), [masterMode, screen]);
 
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
   const loadingReady = dataLoaded && fontsLoaded;
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
   const handleDailyWord = () => setScreen('dailyWord');
-  const loadingPage = (
+  const loadingPage = useMemo(() => (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image source={BG_ASSET} style={styles.loadingBackground} />
       <View style={styles.loadingContent}>
@@ -400,7 +405,12 @@ export default function App() {
         </Animated.View>
       </View>
     </View>
-  );
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
+
+  if (screen === 'wordSearch' && dataLoaded) {
+    return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
+  }
+
   const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
 
   const renderPageContent = (pageId) => (
