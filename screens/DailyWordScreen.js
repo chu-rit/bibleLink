@@ -13,9 +13,6 @@ const MAX_ATTEMPTS = 4;
 // 웹 하단 카카오 광고 배너(320x50)와 겹치지 않게 키보드를 올린다
 const AD_BANNER_HEIGHT = 50;
 
-// 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
-const VALID_WORD_SETS = { 5: new Set(validWordsData['5']), 6: new Set(validWordsData['6']) };
-
 const INITIALS = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
 const VOWELS = ['ㅏ','ㅏㅣ','ㅑ','ㅑㅣ','ㅓ','ㅓㅣ','ㅕ','ㅕㅣ','ㅗ','ㅗㅏ','ㅗㅏㅣ','ㅗㅣ','ㅛ','ㅜ','ㅜㅓ','ㅜㅓㅣ','ㅜㅣ','ㅠ','ㅡ','ㅡㅣ','ㅣ'];
 const FINALS = ['','ㄱ','ㄱㄱ','ㄱㅅ','ㄴ','ㄴㅈ','ㄴㅎ','ㄷ','ㄹ','ㄹㄱ','ㄹㅁ','ㄹㅂ','ㄹㅅ','ㄹㅌ','ㄹㅍ','ㄹㅎ','ㅁ','ㅂ','ㅂㅅ','ㅅ','ㅅㅅ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
@@ -35,6 +32,13 @@ function decomposeInput(text) {
   }
   return result;
 }
+
+// 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
+// 키보드 입력은 자모 단위라, 사전도 자모로 분해해 비교한다
+const VALID_WORD_SETS = {
+  5: new Set(validWordsData['5'].map((w) => decomposeInput(w).join(''))),
+  6: new Set(validWordsData['6'].map((w) => decomposeInput(w).join(''))),
+};
 
 function getFeedback(guess, target) {
   const feedback = Array(guess.length).fill('gray');
@@ -184,7 +188,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       showToast(`자모 ${target.length}개인 단어를 입력하세요.`);
       return;
     }
-    if (!VALID_WORD_SETS[target.length]?.has(word)) {
+    if (!VALID_WORD_SETS[target.length]?.has(values.join(''))) {
       showToast('사전에 없는 단어입니다.');
       return;
     }

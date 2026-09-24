@@ -11,6 +11,13 @@
       "resizeMode": "contain",
       "backgroundColor": "#f6f8fb"
     },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.churit.biblelink",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
     "android": {
       "softwareKeyboardLayoutMode": "resize",
       "adaptiveIcon": {
@@ -31,6 +38,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "88a2aecd-1a65-4447-bf99-f0d11a366c5b"
+      }
+    },
+    "owner": "churit"
   }
 }
