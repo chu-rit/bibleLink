@@ -105,13 +105,13 @@ function AnswerCard({
             ref={inputRef}
             value={input}
             onChangeText={(text) => {
-              setInput(text);
+              // maxLength prop은 한글 IME 조합 중 마지막 글자를 씹는 버그가 있어 JS에서 제한한다
+              setInput(text.slice(0, slot.length));
             }}
             placeholder="정답을 입력하세요"
             placeholderTextColor="#a89880"
             autoFocus
             autoCapitalize="none"
-            maxLength={slot.length}
             style={[
               styles.answerInput,
               input && styles.answerInputWithClear,
