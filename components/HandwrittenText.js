@@ -74,7 +74,7 @@ function HandwrittenText({ text, color = '#3a2e1f', fontSize = 20, duration = 40
               key={`${ch}-${i}-${si}`}
               sub={sub}
               bb={glyph.bb}
-              delay={delay + i * stagger + si * (duration / 3)}
+              delay={delay + i * stagger + (sub.gi ?? si) * (duration / 3)}
               duration={duration}
               color={color}
               scale={scale}

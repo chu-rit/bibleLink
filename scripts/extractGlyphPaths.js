@@ -134,12 +134,11 @@ chars.forEach((ch) => {
           });
           groups[best].push(s);
         });
-        // 자모 그룹이 하나도 비지 않았을 때만 채택 (초성→중성→종성 순서 유지)
-        const regroupedSubs = groups.filter((g) => g.length > 0).map((g) => ({
-          d: g.map((s) => s.d).join(''),
-          x1: Math.min(...g.map((s) => s.x1)), y1: Math.min(...g.map((s) => s.y1)),
-          x2: Math.max(...g.map((s) => s.x2)), y2: Math.max(...g.map((s) => s.y2)),
-        }));
+        // 윤곽은 겹침 획이 구멍으로 뚫리지 않도록 각각 유지하고,
+        // 자모 그룹 인덱스(gi)만 붙여 쓰기 순서만 자모 단위로 맞춘다
+        const regroupedSubs = groups.filter((g) => g.length > 0).flatMap((g, gi) =>
+          g.map((s) => ({ ...s, gi }))
+        );
         merged.length = 0;
         merged.push(...regroupedSubs);
         regrouped = groups.every((g) => g.length > 0);
