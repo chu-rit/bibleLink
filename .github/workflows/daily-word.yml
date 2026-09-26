@@ -3,7 +3,12 @@ name: 오늘의 단어 출제
 on:
   schedule:
     - cron: '0 14 * * *' # 매일 KST 23:00 (UTC 14:00) — 밤 11시에 익일 단어 출제
-  workflow_dispatch: # 수동 실행 허용
+  workflow_dispatch: # 수동 실행 — word에 wordId/name 입력 시 그 단어로 강제 출제
+    inputs:
+      word:
+        description: '강제 출제할 단어 id 또는 이름 (비우면 랜덤)'
+        required: false
+        type: string
 
 jobs:
   pick:
@@ -19,6 +24,6 @@ jobs:
       - run: npm ci --ignore-scripts
 
       - name: 오늘의 단어 선정 및 Firestore 기록
-        run: node scripts/pickDailyWord.js
+        run: node scripts/pickDailyWord.js ${{ inputs.word }}
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
