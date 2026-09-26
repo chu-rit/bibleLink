@@ -45,7 +45,6 @@ const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
-const PAGE_DATA = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
   id: '__empty__',
@@ -250,29 +249,20 @@ function AppContent() {
 
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const flipperRef = useRef(null);
-  const flipperIndexRef = useRef(0);
-  const navigationCommandRef = useRef(0);
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
   const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
   const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
+  const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
+  const [flipPages, setFlipPages] = useState([currentPageId]);
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
-    const currentIndex = flipperIndexRef.current;
-    const difference = pageIndex - currentIndex;
-    if (difference === 1) {
-      navigationCommandRef.current += 1;
-      flipperRef.current?.nextPage?.();
-    } else if (difference === -1) {
-      navigationCommandRef.current += 1;
-      flipperRef.current?.previousPage?.();
-    } else if (difference !== 0) {
-      navigationCommandRef.current += 1;
-      flipperRef.current?.goToPage?.(pageIndex);
-    }
+    if (flipPages.length > 1 || flipPages[0] === currentPageId) return undefined;
+    flipperRef.current?.goToPageDeferred?.(1);
+    setFlipPages([flipPages[0], currentPageId]);
     return undefined;
-  }, [loaded, fontsLoaded, pageIndex, screen]);
+  }, [loaded, fontsLoaded, currentPageId, flipPages, pageIndex]);
 
   // 로딩 완료 시 HTML 오버레이만 제거하고 로딩 페이지에 머무름 (사용자 입력으로 진입)
   useEffect(() => {
@@ -414,16 +404,19 @@ function AppContent() {
   const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
 
   const renderPageContent = (pageId) => (
-    <PageContent pageId={pageId} loadingPage={loadingPage} mapPage={mapPage} puzzlePage={puzzlePage} dailyWordPage={dailyWordPage} pageWidth={pageWidth} pageHeight={pageHeight} />
+    <View style={{ width: pageWidth, height: pageHeight }}>
+      {pageId === 'loading' ? loadingPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage))}
+    </View>
   );
 
   return (
     <GestureHandlerRootView style={styles.root}>
       <PageFlipperBoundary fallback={currentPage}>
+        <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
         <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight }]}>
           <PageFlipper
           ref={flipperRef}
-          data={PAGE_DATA}
+          data={flipPages}
           pageSize={{ width: pageWidth, height: pageHeight }}
           portrait
           singleImageMode
@@ -434,18 +427,7 @@ function AppContent() {
           }}
           onFlippedEnd={(index) => {
             animationActiveRef.current = false;
-            flipperIndexRef.current = index;
-            const syncedScreen = SCREEN_BY_PAGE_INDEX[index] || 'mapSelect';
-            if (screen !== syncedScreen) {
-              setScreen(syncedScreen);
-            }
-          }}
-          onInitialized={() => {
-            flipperIndexRef.current = 0;
-            if (pageIndex !== 0) {
-              navigationCommandRef.current += 1;
-              setTimeout(() => flipperRef.current?.goToPage?.(pageIndex), 0);
-            }
+            setFlipPages([flipPages[index]]);
           }}
           renderPage={renderPageContent}
           />
@@ -461,7 +443,7 @@ const styles = StyleSheet.create({
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
   flipperFrame: { flex: 1 },
   adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
-  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: '#f6f8fb' },
+  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
@@ -508,25 +490,3 @@ function AdBanner() {
   return <View ref={adRef} style={styles.adContainer} />;
 }
 
-function PageContent({ pageId, loadingPage, mapPage, puzzlePage, dailyWordPage, pageWidth, pageHeight }) {
-  const loadingVisible = pageId === 'loading';
-  const mapVisible = pageId === 'mapSelect';
-  const puzzleVisible = pageId === 'puzzle';
-  const dailyWordVisible = pageId === 'dailyWord';
-  return (
-    <View style={{ width: pageWidth, height: pageHeight, position: 'relative' }}>
-      <View style={[StyleSheet.absoluteFillObject, { display: loadingVisible ? 'flex' : 'none', pointerEvents: loadingVisible ? 'auto' : 'none' }]}>
-        {loadingPage}
-      </View>
-      <View style={[StyleSheet.absoluteFillObject, { display: mapVisible ? 'flex' : 'none', pointerEvents: mapVisible ? 'auto' : 'none' }]}>
-        {mapPage}
-      </View>
-      <View style={[StyleSheet.absoluteFillObject, { display: puzzleVisible ? 'flex' : 'none', pointerEvents: puzzleVisible ? 'auto' : 'none' }]}>
-        {puzzlePage}
-      </View>
-      <View style={[StyleSheet.absoluteFillObject, { display: dailyWordVisible ? 'flex' : 'none', pointerEvents: dailyWordVisible ? 'auto' : 'none' }]}>
-        {dailyWordPage}
-      </View>
-    </View>
-  );
-}

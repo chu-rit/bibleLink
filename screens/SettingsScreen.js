@@ -14,7 +14,7 @@ export default function SettingsScreen({ visible, onClose, title, description, c
           <Text style={styles.title}>{title}</Text>
           {description ? <Text style={styles.description}>{description}</Text> : null}
           <View style={styles.content}>{children}</View>
-          <Text style={styles.version}>v{appConfig.expo.version}</Text>
+          <Text style={styles.version}>v{appConfig.expo.version}-d</Text>
         </Pressable>
       </Pressable>
     </Modal>

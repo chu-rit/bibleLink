@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Animated, ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
@@ -95,6 +95,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [rankingDate, setRankingDate] = useState(null);
   const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
   const startedAtRef = useRef(Date.now());
   const toastTimerRef = useRef(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -102,6 +103,10 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
   const viewportHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight) : windowHeight;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, { toValue: 1, duration: 150, useNativeDriver: true }).start();
+  }, [fadeAnim]);
 
   useEffect(() => {
     let mounted = true;
@@ -330,6 +335,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   );
 
   return (
+    <Animated.View style={[styles.flex, { opacity: fadeAnim }]}>
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
@@ -454,6 +460,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         </Modal>
       </KeyboardAvoidingView>
     </ImageBackground>
+    </Animated.View>
   );
 }
 
