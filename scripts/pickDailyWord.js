@@ -7,6 +7,7 @@
  *   FIREBASE_SERVICE_ACCOUNT - 서비스 계정 JSON (전체 문자열)
  */
 const admin = require('firebase-admin');
+const { getFirestore, FieldValue } = require('firebase-admin/firestore');
 const words = require('../data/words2/dailyWords.json');
 
 const RECENT_DAYS = 50;
@@ -33,8 +34,8 @@ async function main() {
   const sa = process.env.FIREBASE_SERVICE_ACCOUNT;
   if (!sa) throw new Error('FIREBASE_SERVICE_ACCOUNT 환경 변수가 없습니다');
 
-  admin.initializeApp({ credential: admin.credential.cert(JSON.parse(sa)) });
-  const db = admin.firestore();
+  admin.initializeApp({ credential: admin.cert(JSON.parse(sa)) });
+  const db = getFirestore();
 
   // KST 기준 날짜 (밤 11시 롤오버: 23시에 익일 단어 출제)
   const date = new Date(Date.now() + 10 * 60 * 60 * 1000).toISOString().slice(0, 10);
@@ -60,7 +61,7 @@ async function main() {
     word: pick.name,
     length: jamoLength(pick.name),
     hints: [pick.hint1, pick.hint2, pick.hint3],
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    createdAt: FieldValue.serverTimestamp(),
   });
   console.log(`${date}: 출제 완료 (${pick.id} ${pick.name})`);
 }
