@@ -127,6 +127,18 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     return () => { mounted = false; };
   }, []);
 
+  // 화면 진입 때마다 서버 시간을 다시 맞추고, 서버 기준 오늘 단어와 다르면 새 문제로 교체한다
+  // (PageFlipper가 페이지를 미리 마운트해두어 최초 로드 이후 날짜가 바뀔 수 있다)
+  useEffect(() => {
+    if (!isActive || !entry) return undefined;
+    let mounted = true;
+    getTodayWord().then(({ entry: fresh }) => {
+      if (!mounted || !fresh || fresh.id === entry.id) return;
+      applyFreshEntry(fresh);
+    });
+    return () => { mounted = false; };
+  }, [isActive]);
+
   // 닉네임 미설정(NONAME)이면 화면 진입 시 닉네임 설정부터 유도
   // PageFlipper가 모든 페이지를 미리 마운트하므로 실제 활성화된 경우에만 검사한다
   useEffect(() => {
@@ -172,6 +184,28 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     );
   }
 
+  // 서버 기준 오늘 단어가 바뀌었을 때 새 문제로 교체하고 진행 내역을 초기화한다
+  const applyFreshEntry = async (fresh) => {
+    currentEntry = fresh;
+    entryPromise = Promise.resolve(fresh);
+    setEntry(fresh);
+    setGuesses([]);
+    setOver(false);
+    setWon(false);
+    setMessage('');
+    setInput('');
+    startedAtRef.current = Date.now();
+    const saved = await loadGameState(todayKey(), fresh.id);
+    if (saved) {
+      setGuesses(saved.guesses || []);
+      setOver(Boolean(saved.over));
+      setWon(Boolean(saved.won));
+      setMessage(saved.over && !saved.won ? saved.message || '' : '');
+      if (saved.startedAt) startedAtRef.current = saved.startedAt;
+    }
+    setStreak(await getDailyStreak());
+  };
+
   const hints = [entry.hint1, entry.hint2, entry.hint3];
 
   // 입력 검증 실패 등은 토스트로 띄워 확실히 눈에 띄게 한다
@@ -181,8 +215,15 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     toastTimerRef.current = setTimeout(() => setToast(''), 1600);
   };
 
-  const submitGuess = () => {
+  const submitGuess = async () => {
     if (over) return;
+    // 시도할 때마다 서버 시간으로 오늘 문제가 맞는지 확인 — 날짜가 바뀌었으면 새 문제로 교체
+    const { entry: fresh } = await getTodayWord();
+    if (fresh && fresh.id !== entry.id) {
+      showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
+      await applyFreshEntry(fresh);
+      return;
+    }
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
     const word = input.replace(/[\s\u200B-\u200D\uFEFF]/g, '').normalize('NFC');
     if (!word) return;
@@ -232,6 +273,13 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       if (priorStreak !== null) {
         await overrideDailyStreak(dateKey, streakToSubmit);
         setStreak(streakToSubmit);
+      }
+      // 랭킹 등록 직전에 서버 시간으로 오늘 문제를 재확인 — 날짜가 바뀌었으면 등록하지 않고 새 문제로 교체
+      const { entry: fresh } = await getTodayWord();
+      if (fresh && fresh.id !== entry.id) {
+        showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
+        await applyFreshEntry(fresh);
+        return;
       }
       const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration, streak: streakToSubmit });
       if (!registered.ok) {

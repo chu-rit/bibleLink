@@ -126,10 +126,11 @@ export async function fetchStreakBeforeToday(userId) {
   }
 }
 
-// 서버 시간과 기기 시계의 차이(ms). getTodayWord() 첫 호출 때 1회 동기화하고
-// 실패하면 0으로 두어 기기 시간을 그대로 사용한다
+// 서버 시간과 기기 시계의 차이(ms). 화면 진입 등 getTodayWord() 호출 때마다 다시 맞춰
+// 앱이 켜진 채로 날짜가 바뀌어도 서버 기준 최신 날짜의 문제가 나오도록 한다.
+// 실패하면 이전 오프셋(없으면 0)을 유지해 기기 시간을 그대로 사용한다
 let serverOffsetMs = 0;
-let timeSyncPromise = null;
+let timeSyncInFlight = null;
 
 // Firestore에 ping 문서를 쓰고 읽어 서버 시각을 구한다 (애드블록/오프라인이면 기기 시간 폴백)
 async function syncServerTime() {
@@ -142,6 +143,14 @@ async function syncServerTime() {
   } catch {
     // 동기화 실패 시 기기 시간 사용
   }
+}
+
+// 동시 호출은 진행 중인 동기화를 공유하고, 호출마다 새로 동기화한다
+function ensureTimeSync() {
+  if (!timeSyncInFlight) {
+    timeSyncInFlight = syncServerTime().finally(() => { timeSyncInFlight = null; });
+  }
+  return timeSyncInFlight;
 }
 
 // KST(UTC+9) 밤 11시를 하루 경계로 하는 날짜 키 (23시에 다음 날 단어로 전환)
@@ -346,8 +355,7 @@ export async function fetchRankings(dateKey, userId) {
 }
 
 export async function getTodayWord() {
-  if (!timeSyncPromise) timeSyncPromise = syncServerTime();
-  await timeSyncPromise;
+  await ensureTimeSync();
   const dateKey = todayKey();
 
   if (isFirebaseConfigured && db) {
