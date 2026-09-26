@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
@@ -81,6 +82,7 @@ function getCurrentEntry() {
 export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [entry, setEntry] = useState(currentEntry);
   const [loadFailed, setLoadFailed] = useState(false);
+  const [reloading, setReloading] = useState(false);
   const [guesses, setGuesses] = useState([]);
   const [input, setInput] = useState('');
   const [over, setOver] = useState(false);
@@ -181,6 +183,23 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const solved = guesses.length > 0 && guesses[guesses.length - 1].states.every((s) => s === 'green');
   const visibleHints = Math.min(guesses.length - (solved ? 1 : 0), 3);
 
+  // 업데이트 유도 화면의 새로고침 — OTA가 있으면 받아서 적용하고 재시작한다
+  const reloadApp = async () => {
+    if (reloading) return;
+    setReloading(true);
+    try {
+      if (Platform.OS === 'web') {
+        window.location.reload();
+        return;
+      }
+      const update = await Updates.checkForUpdateAsync();
+      if (update.isAvailable) await Updates.fetchUpdateAsync();
+      await Updates.reloadAsync();
+    } catch {
+      setReloading(false);
+    }
+  };
+
   if (!entry) {
     return (
       <ImageBackground
@@ -191,6 +210,11 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         <AppHeader onBack={onBack} />
         <View style={styles.loadingWrap}>
           <Text style={styles.status}>{loadFailed ? '앱 업데이트가 필요합니다.' : '불러오는 중...'}</Text>
+          {loadFailed && (
+            <Pressable style={styles.reloadBtn} onPress={reloadApp} disabled={reloading}>
+              <Text style={styles.reloadBtnText}>{reloading ? '업데이트 확인 중...' : '새로고침'}</Text>
+            </Pressable>
+          )}
         </View>
       </ImageBackground>
     );
@@ -538,6 +562,8 @@ const styles = StyleSheet.create({
 
   centerWrap: { flex: 1, justifyContent: 'center' },
   loadingWrap: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  reloadBtn: { marginTop: 16, backgroundColor: '#3a2e1f', borderRadius: 10, paddingHorizontal: 24, paddingVertical: 12 },
+  reloadBtnText: { color: '#fdfbf6', fontSize: 15, fontWeight: '600' },
   scroll: { flexGrow: 0 },
   content: { paddingHorizontal: 16, paddingBottom: 20 },
   panel: { backgroundColor: 'rgba(253, 251, 246, 0.88)', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 20, padding: 20, shadowColor: '#3a2e1f', shadowOpacity: 0.12, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
