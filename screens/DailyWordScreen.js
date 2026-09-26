@@ -244,6 +244,16 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     const next = [...guesses, { values, states: feedback }];
     const success = feedback.every((s) => s === 'green');
     const done = success || next.length >= MAX_ATTEMPTS;
+    // 정답을 맞췄을 때 서버 기준으로 재검증 — 오늘 문제가 맞고 입력 정답과 서버 정답이
+    // 일치할 때만 랭킹 등록·연승 갱신을 진행한다. 하나라도 다르면 새 문제로 교체
+    if (success) {
+      const serverWord = fresh ? String(fresh.name).replace(/[\s​-‍﻿]/g, '').normalize('NFC') : '';
+      if (!fresh || word !== serverWord) {
+        showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
+        if (fresh) await applyFreshEntry(fresh);
+        return;
+      }
+    }
     const nextMessage = done && !success ? `정답은 ${entry.name}입니다.` : '';
     setGuesses(next);
     setInput('');
@@ -273,13 +283,6 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       if (priorStreak !== null) {
         await overrideDailyStreak(dateKey, streakToSubmit);
         setStreak(streakToSubmit);
-      }
-      // 랭킹 등록 직전에 서버 시간으로 오늘 문제를 재확인 — 날짜가 바뀌었으면 등록하지 않고 새 문제로 교체
-      const { entry: fresh } = await getTodayWord();
-      if (fresh && fresh.id !== entry.id) {
-        showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
-        await applyFreshEntry(fresh);
-        return;
       }
       const registered = await submitResult(dateKey, { userId: user.userId, nickname, attempts, success, duration, streak: streakToSubmit });
       if (!registered.ok) {
