@@ -50,10 +50,15 @@ async function main() {
   // 최근 출제 이력으로 중복 회피
   const recent = await db.collection('dailyWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
   const used = new Set(recent.docs.map((d) => d.data().wordId));
+  // 인자로 wordId/name을 주면 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
+  const forced = process.argv[2];
   // 난이도 1~2 풀, 최근 50일 출제 단어 제외
   let pool = words.filter((w) => w.difficulty <= 2 && !used.has(w.id));
   if (!pool.length) throw new Error('출제 가능한 단어가 없습니다. 단어집을 추가하세요');
-  const pick = pool[Math.floor(Math.random() * pool.length)];
+  const pick = forced
+    ? words.find((w) => w.id === forced || w.name === forced)
+    : pool[Math.floor(Math.random() * pool.length)];
+  if (!pick) throw new Error(`단어를 찾을 수 없습니다: ${forced}`);
 
   await docRef.set({
     date,
