@@ -84,7 +84,68 @@ chars.forEach((ch) => {
         ...outer,
         d: outer.d + subBounds.filter((s) => isInside(s, outer)).map((s) => s.d).join(''),
       }));
-    // 쓰기 순서 정렬: 초성(위쪽) → 중성(위쪽/오른쪽) → 종성(아래쪽)
+    // 자모 단위 병합: 음절을 유니코드 분해해 자모 글리프(U+1100~)의 bbox를 구하고,
+    // 각 윤곽을 가장 많이 겹치는 자모에 배정한다 (자모 글리프는 합성 위치로 설계됨)
+    const code = ch.codePointAt(0);
+    let regrouped = false;
+    if (code >= 0xac00 && code <= 0xd7a3) {
+      const rel = code - 0xac00;
+      const jamoCodes = [0x1100 + Math.floor(rel / 588), 0x1161 + Math.floor((rel % 588) / 28)];
+      if (rel % 28 !== 0) jamoCodes.push(0x11a7 + (rel % 28));
+      // 자모 글리프는 합성 위치로 설계됨 — 자모의 윤곽별 bbox를 구하고,
+      // 각 윤곽을 IoU가 가장 큰 자모에 배정한다 (겹침이 없으면 bbox 거리가 가장 가까운 쪽)
+      const jamoBoxes = jamoCodes.map((jc) => {
+        const jg = font.charToGlyph(String.fromCodePoint(jc));
+        if (!jg || jg.index === 0) return null;
+        const jp = jg.getPath(0, y72, 72);
+        jp.commands.forEach((cmd) => {
+          ['x', 'y', 'x1', 'y1', 'x2', 'y2'].forEach((k) => {
+            if (typeof cmd[k] === 'number') cmd[k] = Math.round(cmd[k] * 100) / 100;
+          });
+        });
+        return jp.toPathData(2).split(/(?=M)/).filter((s) => s.trim().length > 2).map((sp) => {
+          const nums = sp.match(/-?\d+\.?\d*/g);
+          const xs = [], ys = [];
+          for (let i = 0; i < nums.length; i++) {
+            const v = parseFloat(nums[i]);
+            if (i % 2 === 0) xs.push(v); else ys.push(v);
+          }
+          return { x1: Math.min(...xs), y1: Math.min(...ys), x2: Math.max(...xs), y2: Math.max(...ys) };
+        });
+      });
+      if (jamoBoxes.every((bx) => bx && bx.length > 0)) {
+        const groups = jamoBoxes.map(() => []);
+        merged.forEach((s) => {
+          const sArea = Math.max(1, (s.x2 - s.x1) * (s.y2 - s.y1));
+          let best = 0, bestIou = -1, bestGap = Infinity;
+          jamoBoxes.forEach((boxes, ji) => {
+            boxes.forEach((jb) => {
+              const iw = Math.max(0, Math.min(s.x2, jb.x2) - Math.max(s.x1, jb.x1));
+              const ih = Math.max(0, Math.min(s.y2, jb.y2) - Math.max(s.y1, jb.y1));
+              const inter = iw * ih;
+              const union = sArea + (jb.x2 - jb.x1) * (jb.y2 - jb.y1) - inter;
+              const iou = inter / Math.max(1, union);
+              const gap = Math.max(0, Math.max(s.x1 - jb.x2, jb.x1 - s.x2)) +
+                Math.max(0, Math.max(s.y1 - jb.y2, jb.y1 - s.y2));
+              if (iou > bestIou || (iou === bestIou && gap < bestGap)) {
+                bestIou = iou; bestGap = gap; best = ji;
+              }
+            });
+          });
+          groups[best].push(s);
+        });
+        // 자모 그룹이 하나도 비지 않았을 때만 채택 (초성→중성→종성 순서 유지)
+        const regroupedSubs = groups.filter((g) => g.length > 0).map((g) => ({
+          d: g.map((s) => s.d).join(''),
+          x1: Math.min(...g.map((s) => s.x1)), y1: Math.min(...g.map((s) => s.y1)),
+          x2: Math.max(...g.map((s) => s.x2)), y2: Math.max(...g.map((s) => s.y2)),
+        }));
+        merged.length = 0;
+        merged.push(...regroupedSubs);
+        regrouped = groups.every((g) => g.length > 0);
+      }
+    }
+    // regroup 실패 시 폴백 정렬: 초성(위쪽) → 중성(위쪽/오른쪽) → 종성(아래쪽)
     // 1. 글리프의 수직 중앙값 기준으로 위쪽/아래쪽 그룹 분할
     // 2. 위쪽 그룹: x1 기준 정렬 (초성이 왼쪽, 중성이 오른쪽)
     // 3. 아래쪽 그룹: x1 기준 정렬 (종성)
@@ -93,7 +154,7 @@ chars.forEach((ch) => {
     const lower = merged.filter((s) => (s.y1 + s.y2) / 2 >= glyphMidY + 5);
     upper.sort((a, b) => a.x1 - b.x1);
     lower.sort((a, b) => a.x1 - b.x1);
-    const sorted = [...upper, ...lower];
+    const sorted = regrouped ? merged : [...upper, ...lower];
     glyphPaths[ch] = { d: pathData, len: approxLen, w: advanceWidth, bb: { x1: bb.x1, y1: bb.y1, x2: bb.x2, y2: bb.y2 }, subs: sorted };
     count++;
   }
