@@ -70,9 +70,9 @@ let currentEntry = null;
 let entryPromise = null;
 function getCurrentEntry() {
   if (!entryPromise) {
-    entryPromise = getTodayWord().then(({ entry }) => {
-      currentEntry = entry;
-      return entry;
+    entryPromise = getTodayWord().then((result) => {
+      currentEntry = result.entry;
+      return result;
     });
   }
   return entryPromise;
@@ -80,6 +80,7 @@ function getCurrentEntry() {
 
 export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [entry, setEntry] = useState(currentEntry);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [guesses, setGuesses] = useState([]);
   const [input, setInput] = useState('');
   const [over, setOver] = useState(false);
@@ -110,8 +111,12 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
   useEffect(() => {
     let mounted = true;
-    getCurrentEntry().then(async (loaded) => {
+    getCurrentEntry().then(async ({ entry: loaded }) => {
       if (!mounted) return;
+      if (!loaded) {
+        setLoadFailed(true);
+        return;
+      }
       setEntry(loaded);
       const saved = await loadGameState(todayKey(), loaded.id);
       if (mounted && saved) {
@@ -132,8 +137,15 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   useEffect(() => {
     if (!isActive || !entry) return undefined;
     let mounted = true;
-    getTodayWord().then(({ entry: fresh }) => {
-      if (!mounted || !fresh || fresh.id === entry.id) return;
+    getTodayWord().then(({ entry: fresh, source }) => {
+      if (!mounted) return;
+      // 서버가 이 버전에 없는 단어를 지정하면 다른 문제를 풀 수 없게 차단한다
+      if (source === 'stale') {
+        setEntry(null);
+        setLoadFailed(true);
+        return;
+      }
+      if (!fresh || fresh.id === entry.id) return;
       applyFreshEntry(fresh);
     });
     return () => { mounted = false; };
@@ -178,7 +190,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       >
         <AppHeader onBack={onBack} />
         <View style={styles.loadingWrap}>
-          <Text style={styles.status}>불러오는 중...</Text>
+          <Text style={styles.status}>{loadFailed ? '앱 업데이트가 필요합니다.' : '불러오는 중...'}</Text>
         </View>
       </ImageBackground>
     );
@@ -187,7 +199,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   // 서버 기준 오늘 단어가 바뀌었을 때 새 문제로 교체하고 진행 내역을 초기화한다
   const applyFreshEntry = async (fresh) => {
     currentEntry = fresh;
-    entryPromise = Promise.resolve(fresh);
+    entryPromise = Promise.resolve({ entry: fresh, source: 'remote' });
     setEntry(fresh);
     setGuesses([]);
     setOver(false);
@@ -218,7 +230,12 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const submitGuess = async () => {
     if (over) return;
     // 시도할 때마다 서버 시간으로 오늘 문제가 맞는지 확인 — 날짜가 바뀌었으면 새 문제로 교체
-    const { entry: fresh } = await getTodayWord();
+    const { entry: fresh, source } = await getTodayWord();
+    if (source === 'stale') {
+      setEntry(null);
+      setLoadFailed(true);
+      return;
+    }
     if (fresh && fresh.id !== entry.id) {
       showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
       await applyFreshEntry(fresh);

@@ -48,6 +48,14 @@
 ## 단어 난이도
 - 1: 일상어·성경 핵심 개념·인물. 2: 자주 등장하지만 생소한 인물·지명·개념. 3: 족보·obscure 지명·전문 용어.
 
+## 오늘의 단어(Daily Word) 데이터 규칙
+- 풀 데이터: `data/words2/dailyWords.json`. 직접 편집 금지 — `npm run add:daily-word <id> <name> <난이도> <힌트1> <힌트2> <힌트3>`로만 추가한다. 이 스크립트가 `id`/`name` 중복 검사와 `CACHE_VERSION` 증가(전 기기 캐시 갱신)를 함께 수행한다.
+- **난이도는 1~2만.** 출제 풀은 서버(`scripts/pickDailyWord.js`)와 로컬 폴백(`utils/dailyWord.js`) 모두 `difficulty <= 2`로 필터하므로 3은 절대 출제되지 않는다.
+- **자모 수는 5 또는 6만.** `VALID_WORD_SETS`에 5자모/6자모 세트만 있어 다른 길이는 추측 입력 시 "사전에 없는 단어"로 막혀 풀 수 없다.
+- **추가하는 단어가 유효 추측 사전(`data/words2/validWords.json`)에 포함돼 있어야 한다** — 없으면 정답 자체를 입력할 수 없다. Lib1에 있는 단어면 `npm run build:valid-words`로 갱신, 없으면 `data/words2/5word.txt` 또는 `6word.txt`에 추가 후 같은 명령으로 갱신.
+- 서버 `dailyWords/{dateKey}` 문서에는 `wordId`만 저장되고, 정답 텍스트는 클라이언트가 번들된 `dailyWords.json`에서 `wordId`로 조회한다. Firestore 규칙상 `read: true`라 비밀 데이터가 아니다.
+- 랭킹 제출 검증은 클라이언트에서 수행한다: 서버 시간 동기화 → `wordId` 일치 확인 → 입력 정답과 entry.name 비교. Firestore 규칙은 `day` 값만 서버 시간과 대조하고 정답 여부는 검증하지 않는다.
+
 ## 검증
 - JSON 변경 후 파싱 유효성 확인. 맵 변경 후 `npm run validate:maps` 실행.
 - `npm run build:web`은 명시적 요청 시에만. 빌드 실패 시 원인 확인 후 최소 범위 수정.

@@ -170,74 +170,6 @@ function dayNumForKey(dateKey) {
   return Date.UTC(y, m - 1, d) / 86400000;
 }
 
-// 날짜 시드로 동일한 단어를 결정하는 폴백 (오프라인·미설정 시 모든 유저 동일)
-// 난이도 1~2 풀에서 날짜 시드로 랜덤 선정하되, 최근 50일 동안 출제된 단어는
-// 사용 이력에서 제외해 같은 단어가 50일 안에 다시 나오지 않는다.
-// (제외 기간을 풀 크기에 가깝게 하면 후보가 1개만 남아 랜덤이 안 되므로 여유를 둔다)
-const RECENT_EXCLUDE_DAYS = 50;
-const PICKS_EPOCH = '2026-09-19';
-const ORDER_SEED = 'daily-word-order-v1';
-
-function wordHash(text) {
-  let h = 0;
-  for (const ch of text) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  h ^= h >>> 16;
-  h = Math.imul(h, 0x7feb352d) >>> 0;
-  h ^= h >>> 15;
-  h = Math.imul(h, 0x846ca68b) >>> 0;
-  h ^= h >>> 16;
-  return h >>> 0;
-}
-
-function daysBetween(fromKey, toKey) {
-  const [fy, fm, fd] = fromKey.split('-').map(Number);
-  const [ty, tm, td] = toKey.split('-').map(Number);
-  return Math.round((Date.UTC(ty, tm - 1, td) - Date.UTC(fy, fm - 1, fd)) / 86400000);
-}
-
-function mulberry32(seed) {
-  let a = seed;
-  return () => {
-    a = (a + 0x6D2B79F5) >>> 0;
-    let t = a;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function nextDateKey(dateKey) {
-  const [y, m, d] = dateKey.split('-').map(Number);
-  return new Date(Date.UTC(y, m - 1, d + 1)).toISOString().slice(0, 10);
-}
-
-// 최근 실제 출제 단어를 사용 이력 초기값으로 둔다. 윈도우에서 밀려나면 자동 복귀
-const SEED_RECENT_PICKS = ['abel', 'jacob', 'joseph'];
-
-function seededIndex(dateKey) {
-  const pool = localWords.filter((w) => w.difficulty <= 2);
-  const excludeDays = Math.min(RECENT_EXCLUDE_DAYS, pool.length - 2);
-  const picks = [...SEED_RECENT_PICKS];
-  const pickFor = (key) => {
-    // 사용 이력에서 오래된 것부터 빠지는 슬라이딩 윈도우
-    const recentIds = new Set(picks.slice(-excludeDays));
-    const candidates = pool.filter((w) => !recentIds.has(w.id));
-    const usable = candidates.length > 0 ? candidates : pool;
-    const rand = mulberry32(wordHash(ORDER_SEED + key));
-    return usable[Math.floor(rand() * usable.length)];
-  };
-  let key = PICKS_EPOCH;
-  while (key < dateKey) {
-    picks.push(pickFor(key).id);
-    key = nextDateKey(key);
-  }
-  return pickFor(dateKey);
-}
-
-export function getLocalWord(dateKey = todayKey()) {
-  return seededIndex(dateKey);
-}
-
 async function readCache(dateKey) {
   try {
     const wordId = await AsyncStorage.getItem(CACHE_PREFIX + CACHE_VERSION + '_' + dateKey);
@@ -259,7 +191,8 @@ async function writeCache(dateKey, wordId) {
  * 오늘의 단어 조회
  * 우선순위: Firestore dailyWords/{date} -> 로컬 캐시 -> 날짜 시드 로컬 선정
  * 서버 단어를 항상 먼저 확인해, 서버에서 단어를 바꾸면 캐시를 교체한다
- * 반환: { entry, source } source: 'cache' | 'remote' | 'local'
+ * 반환: { entry, source } source: 'remote' | 'cache' | 'stale' | 'unavailable'
+ * 'stale' = 서버가 이 버전에 없는 단어를 지정(업데이트 필요), 'unavailable' = 서버·캐시 모두 없음
  */
 const USER_KEY = 'dailyWordUser';
 
@@ -369,14 +302,17 @@ export async function getTodayWord() {
           if (cached?.id !== entry.id) await writeCache(dateKey, entry.id);
           return { entry, source: 'remote' };
         }
+        // 서버가 지정한 단어가 이 앱 버전의 단어집에 없음 — 구버전이 다른 문제를
+        // 풀지 못하게 업데이트를 유도한다
+        return { entry: null, source: 'stale' };
       }
     } catch {
-      // 네트워크 오류 시 폴백
+      // 네트워크 오류 시 캐시 폴백
     }
   }
 
   const cached = await readCache(dateKey);
   if (cached) return { entry: cached, source: 'cache' };
 
-  return { entry: getLocalWord(dateKey), source: 'local' };
+  return { entry: null, source: 'unavailable' };
 }
