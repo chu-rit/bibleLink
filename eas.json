@@ -7,13 +7,15 @@
     "development": {
       "developmentClient": true,
       "distribution": "store",
+      "channel": "development",
       "ios": {
         "credentialsSource": "remote"
       }
     },
     "preview": {
       "distribution": "internal",
-      "autoIncrement": true
+      "autoIncrement": true,
+      "channel": "preview"
     },
     "production": {
       "autoIncrement": true,

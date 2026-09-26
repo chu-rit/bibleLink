@@ -76,6 +76,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const inputRef = useRef(null);
+  const boardAreaRef = useRef(null);
+  const [boardAreaBottomY, setBoardAreaBottomY] = useState(0);
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const translateYAnim = useRef(new Animated.Value(0)).current;
@@ -233,6 +235,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       { iterations: 5 }
     ).start(() => shakeAnim.setValue(0));
   };
+
+  const belowBoardSpace = Math.max(0, (windowHeight || 0) - boardAreaBottomY);
+  const keyboardCardOffset = Math.max(0, keyboardHeight - belowBoardSpace);
 
   const slot = crosswordMap.cells[selectedSlot];
   const wordData = wordDataById[slot?.wordId];
@@ -528,6 +533,14 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             }}
           >
           <View
+            ref={boardAreaRef}
+            onLayout={() => {
+              boardAreaRef.current?.measureInWindow?.((x, y, w, h) => {
+                if (typeof y === 'number' && typeof h === 'number') {
+                  setBoardAreaBottomY(y + h);
+                }
+              });
+            }}
             style={[
               styles.boardArea,
               {
@@ -610,7 +623,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                   isKeyboardVisible && {
                     [layerBelow ? 'bottom' : 'top']: Platform.OS === 'web'
                       ? Math.max(0, (windowHeight || window.innerHeight) - (webViewportHeight || windowHeight || window.innerHeight))
-                      : keyboardHeight,
+                      : (layerBelow ? keyboardCardOffset : 0),
                   },
                 ]}
                 pointerEvents="auto"

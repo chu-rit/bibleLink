@@ -93,6 +93,7 @@ function AppContent() {
   const [fontsLoaded] = useFonts({
     UhBeeGmin2: require('./assets/fonts/UhBeeGmin2.ttf'),
     UhBeeGmin2Bold: require('./assets/fonts/UhBeeGmin2Bold.ttf'),
+    NotoSansKR: require('./assets/fonts/NotoSansKR.ttf'),
   });
   const [masterMode, setMasterMode] = useState(isMasterModeByUrl || getMasterModeFromStorage());
   const [screen, setScreen] = useState(isWordSearchPath && (isMasterModeByUrl || getMasterModeFromStorage()) ? 'wordSearch' : 'loading');
@@ -255,10 +256,13 @@ function AppContent() {
   const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
+  const [flipReversed, setFlipReversed] = useState(false);
 
   useEffect(() => {
     if (!loaded || !fontsLoaded) return undefined;
     if (flipPages.length > 1 || flipPages[0] === currentPageId) return undefined;
+    const forward = pageIndex > SCREEN_BY_PAGE_INDEX.indexOf(flipPages[0]);
+    setFlipReversed(!forward);
     flipperRef.current?.goToPageDeferred?.(1);
     setFlipPages([flipPages[0], currentPageId]);
     return undefined;
@@ -404,7 +408,7 @@ function AppContent() {
   const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
 
   const renderPageContent = (pageId) => (
-    <View style={{ width: pageWidth, height: pageHeight }}>
+    <View style={{ width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }}>
       {pageId === 'loading' ? loadingPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage))}
     </View>
   );
@@ -413,7 +417,7 @@ function AppContent() {
     <GestureHandlerRootView style={styles.root}>
       <PageFlipperBoundary fallback={currentPage}>
         <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
-        <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight }]}>
+        <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }]}>
           <PageFlipper
           ref={flipperRef}
           data={flipPages}
@@ -427,6 +431,7 @@ function AppContent() {
           }}
           onFlippedEnd={(index) => {
             animationActiveRef.current = false;
+            setFlipReversed(false);
             setFlipPages([flipPages[index]]);
           }}
           renderPage={renderPageContent}
@@ -447,7 +452,7 @@ const styles = StyleSheet.create({
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
-  loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'UhBeeGmin2' },
+  loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'NotoSansKR' },
   menuButtons: { marginTop: 32, alignItems: 'center' },
   menuButton: { width: 240, borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
   menuButtonPressed: { backgroundColor: 'rgba(122, 92, 58, 0.12)', transform: [{ scale: 0.97 }] },

@@ -50,7 +50,7 @@ function SubPath({ sub, bb, delay, duration, color, scale, offsetX, fontSize, an
       </Defs>
       <G clipPath={`url(#${clipId})`}>
         <G transform={`translate(${tx}, ${ty}) scale(${scale}, ${scale})`}>
-          <Path d={sub.d} fill={color} />
+          <Path d={sub.d} fill={color} fillRule="evenodd" />
         </G>
       </G>
     </G>
@@ -74,7 +74,7 @@ function HandwrittenText({ text, color = '#3a2e1f', fontSize = 20, duration = 40
               key={`${ch}-${i}-${si}`}
               sub={sub}
               bb={glyph.bb}
-              delay={delay + i * stagger + si * (duration / 2)}
+              delay={delay + i * stagger + si * (duration / 3)}
               duration={duration}
               color={color}
               scale={scale}

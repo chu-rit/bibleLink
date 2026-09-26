@@ -481,7 +481,7 @@ const styles = StyleSheet.create({
   cell_green: { borderColor: '#3c9a72', backgroundColor: '#3c9a72' },
   cell_yellow: { borderColor: '#e08a3c', backgroundColor: '#e08a3c' },
   cell_gray: { borderColor: '#b8a88f', backgroundColor: '#b8a88f' },
-  cellText: { fontSize: 24, fontWeight: '700', color: '#3a2e1f', fontFamily: 'UhBeeGmin2' },
+  cellText: { fontSize: 24, fontWeight: '400', color: '#3a2e1f', fontFamily: 'NotoSansKR' },
   cellText_empty: { color: '#3a2e1f' },
   cellText_green: { color: '#fdfbf6' },
   cellText_yellow: { color: '#fdfbf6' },

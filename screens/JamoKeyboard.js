@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   key: { flex: 1, height: 56, borderRadius: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fdfbf6', borderWidth: 1, borderColor: '#d8cdb8' },
   keySpacer: { flex: 1 },
   keyPressed: { opacity: 0.5 },
-  keyText: { color: '#3a2e1f', fontSize: 20, fontWeight: '700', fontFamily: 'UhBeeGmin2' },
+  keyText: { color: '#3a2e1f', fontSize: 20, fontWeight: '400', fontFamily: 'NotoSansKR' },
   key_green: { backgroundColor: '#3c9a72', borderColor: '#3c9a72' },
   key_yellow: { backgroundColor: '#e08a3c', borderColor: '#e08a3c' },
   key_gray: { backgroundColor: '#b8a88f', borderColor: '#b8a88f' },
