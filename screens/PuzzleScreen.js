@@ -28,7 +28,6 @@ import {
 } from '../utils';
 import AnswerCard from './AnswerCard';
 import HandwrittenText from '../components/HandwrittenText';
-import glyphPathsData from '../data/glyphPaths.json';
 
 const BG_IMAGE = require('../assets/BG.png');
 
@@ -49,6 +48,61 @@ const getMasterModeFromStorage = () => {
 const isMasterMode = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (isLocalhost || webPath.includes('/master') || getMasterModeFromStorage());
+
+const BURST_PARTICLES = [0, 60, 120, 180, 240, 300];
+
+function CellBurst({ size }) {
+  const ring = useRef(new Animated.Value(0)).current;
+  const sparks = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(ring, { toValue: 1, duration: 550, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+    Animated.timing(sparks, { toValue: 1, duration: 500, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
+  }, []);
+
+  const half = size / 2;
+  const ringSize = size * 1.1;
+  return (
+    <View style={[StyleSheet.absoluteFill, { alignItems: 'center', justifyContent: 'center' }]} pointerEvents="none">
+      <Animated.View
+        style={{
+          position: 'absolute',
+          width: ringSize,
+          height: ringSize,
+          borderRadius: ringSize / 2,
+          borderWidth: 2.5,
+          borderColor: '#e8a13c',
+          opacity: ring.interpolate({ inputRange: [0, 1], outputRange: [0.9, 0] }),
+          transform: [{ scale: ring.interpolate({ inputRange: [0, 1], outputRange: [0.4, 1.9] }) }],
+        }}
+      />
+      {BURST_PARTICLES.map((angle) => {
+        const rad = (angle * Math.PI) / 180;
+        const dist = size * 0.9;
+        return (
+          <Animated.View
+            key={angle}
+            style={{
+              position: 'absolute',
+              left: half - 2,
+              top: half - 2,
+              width: 4,
+              height: 4,
+              borderRadius: 2,
+              backgroundColor: '#e8a13c',
+              opacity: sparks.interpolate({ inputRange: [0, 0.7, 1], outputRange: [1, 0.8, 0] }),
+              transform: [
+                { translateX: sparks.interpolate({ inputRange: [0, 1], outputRange: [0, Math.cos(rad) * dist] }) },
+                { translateY: sparks.interpolate({ inputRange: [0, 1], outputRange: [0, Math.sin(rad) * dist] }) },
+                { scale: sparks.interpolate({ inputRange: [0, 1], outputRange: [1.4, 0.2] }) },
+              ],
+            }}
+          />
+        );
+      })}
+    </View>
+  );
+}
 
 function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, hintPoints, hintedSlots, onUseHint, masterMode, onToggleMasterMode }) {
   const prevMapIdRef = useRef(null);
@@ -362,14 +416,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
       setActiveCell(null);
 
       const cellMap = {};
-      let cumulativeDelay = 0;
-      const perSubDuration = 400;
       for (let i = 0; i < slot.length; i++) {
         const r = slot.direction === 'across' ? slot.row : slot.row + i;
         const c = slot.direction === 'across' ? slot.col + i : slot.col;
-        const ch = [...slot.answer][i];
-        const glyph = glyphPathsData[ch];
-        const subCount = glyph?.subs?.length || 1;
         // 이미 다른 단어로 채워져 있는 셀은 제외
         const cellAlreadyFilled = Object.keys(answers).some((slotIdx) => {
           if (Number(slotIdx) === selectedSlot) return false;
@@ -382,12 +431,10 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             : (c === otherSlot.col && r >= otherSlot.row && r < bottom);
         });
         if (cellAlreadyFilled) continue;
-        cellMap[`${r}-${c}`] = { delay: cumulativeDelay };
-        cumulativeDelay += subCount * (perSubDuration / 2) + perSubDuration;
+        cellMap[`${r}-${c}`] = { delay: 0 };
       }
       setAnimatedCells(cellMap);
-      const totalDuration = cumulativeDelay + perSubDuration;
-      setTimeout(() => setAnimatedCells({}), totalDuration + 200);
+      setTimeout(() => setAnimatedCells({}), 1000);
     } else {
       triggerWrong();
     }
@@ -587,6 +634,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                               const shouldAnimate = !preview && Boolean(animData);
                               const animDelay = shouldAnimate ? animData.delay : 0;
                               return (
+                                <>
+                                {shouldAnimate && <CellBurst size={cellSize} />}
                                 <HandwrittenText
                                   key={`${cellKey}-${letter}`}
                                   text={letter}
@@ -599,6 +648,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                                   delay={animDelay}
                                   style={styles.cellText}
                                 />
+                                </>
                               );
                             })()
                           )}
