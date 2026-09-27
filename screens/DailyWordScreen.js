@@ -487,12 +487,19 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                 <Pressable onPress={openRankings} style={styles.button}>
                   <Text style={styles.buttonText}>랭킹</Text>
                 </Pressable>
-                <Pressable onPress={() => setChallengeMode(true)} style={styles.button}>
-                  <Text style={styles.buttonText}>챌린지</Text>
-                </Pressable>
               </View>
             </View>
             </View>
+
+            {over && (
+            <Pressable onPress={() => setChallengeMode(true)} style={({ pressed }) => [styles.challengeButton, pressed && styles.challengeButtonPressed]}>
+              <View style={styles.challengeButtonInner}>
+                <Text style={styles.challengeEyebrow}>CHALLENGE</Text>
+                <Text style={styles.challengeTitle}>오늘의 단어 챌린지</Text>
+              </View>
+              <Text style={styles.challengeArrow}>›</Text>
+            </Pressable>
+            )}
           </ScrollView>
         </View>
 
@@ -618,6 +625,13 @@ const styles = StyleSheet.create({
   actionButtons: { flexDirection: 'row', gap: 8 },
   button: { borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, backgroundColor: '#7a5c3a' },
   buttonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
+  challengeButton: { marginTop: 14, backgroundColor: '#3a2e1f', borderRadius: 16, borderWidth: 1, borderColor: '#3a2e1f', paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', shadowColor: '#3a2e1f', shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 6 },
+  challengeButtonPressed: { opacity: 0.85, transform: [{ scale: 0.98 }] },
+  challengeButtonInner: { flex: 1 },
+  challengeEyebrow: { color: '#e08a3c', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 },
+  challengeTitle: { color: '#fdfbf6', fontSize: 17, fontWeight: '900', marginTop: 2 },
+
+  challengeArrow: { color: '#e08a3c', fontSize: 26, fontWeight: '700', marginLeft: 10 },
   helpOverlay: { flex: 1, backgroundColor: 'rgba(58,46,31,0.35)', alignItems: 'center', justifyContent: 'center', padding: 20 },
   helpCard: { width: '100%', maxWidth: 360, maxHeight: 480, backgroundColor: '#fdfbf6', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 24, padding: 20, shadowColor: '#3a2e1f', shadowOpacity: 0.16, shadowRadius: 20, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
   helpHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' },

@@ -28,7 +28,7 @@ const sets = { 5: new Set(), 6: new Set(), 7: new Set(), 8: new Set(), 9: new Se
 const outPath = path.join(dir, 'validWords.json');
 
 // 원본 txt가 없으면 기존 validWords.json의 5/6자모 목록을 그대로 이어받는다
-for (const n of [5, 6, 7]) {
+for (const n of [5, 6, 7, 8, 9, 10]) {
   const txtPath = path.join(dir, `${n}word.txt`);
   if (fs.existsSync(txtPath)) {
     fs.readFileSync(txtPath, 'utf8')
