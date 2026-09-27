@@ -1,6 +1,7 @@
 /**
  * 오늘의 단어 출제 스크립트 (GitHub Actions용)
- * - KST 23:00에 실행, Firestore dailyWords/{date} 문서 생성
+ * - 매일 실행, Firestore dailyWords/{익일 날짜} 문서를 미리 생성
+ *   (GitHub cron이 몇 시간 지연돼도 롤오버 전에 문서가 있도록 하루 앞서 출제)
  * - 최근 50일 출제 이력과 중복되지 않는 단어를 랜덤 선정
  *
  * 필요한 환경 변수:
@@ -37,8 +38,8 @@ async function main() {
   admin.initializeApp({ credential: admin.cert(JSON.parse(sa)) });
   const db = getFirestore();
 
-  // KST 기준 날짜 (밤 11시 롤오버: 23시에 익일 단어 출제)
-  const date = new Date(Date.now() + 10 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  // KST 기준 "내일" 날짜 (밤 11시 롤오버 기준 +10시간, 거기서 하루 뒤 문서를 미리 만든다)
+  const date = new Date(Date.now() + 34 * 60 * 60 * 1000).toISOString().slice(0, 10);
   const docRef = db.collection('dailyWords').doc(date);
 
   const existing = await docRef.get();
