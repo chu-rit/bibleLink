@@ -18,9 +18,9 @@ function withTimeout(promise, ms) {
 }
 
 /** 날짜별 게임 진행 내역 저장/복원. 같은 날 같은 단어일 때만 복원된다 */
-export async function loadGameState(dateKey, wordId) {
+export async function loadGameState(dateKey, wordId, prefix = GAME_PREFIX) {
   try {
-    const raw = await AsyncStorage.getItem(GAME_PREFIX + dateKey);
+    const raw = await AsyncStorage.getItem(prefix + dateKey);
     if (!raw) return null;
     const saved = JSON.parse(raw);
     return saved.wordId === wordId ? saved : null;
@@ -29,17 +29,17 @@ export async function loadGameState(dateKey, wordId) {
   }
 }
 
-export async function saveGameState(dateKey, state) {
+export async function saveGameState(dateKey, state, prefix = GAME_PREFIX) {
   try {
-    await AsyncStorage.setItem(GAME_PREFIX + dateKey, JSON.stringify(state));
+    await AsyncStorage.setItem(prefix + dateKey, JSON.stringify(state));
   } catch {
     // 저장 실패해도 계속 진행
   }
 }
 
-export async function clearGameState(dateKey) {
+export async function clearGameState(dateKey, prefix = GAME_PREFIX) {
   try {
-    await AsyncStorage.removeItem(GAME_PREFIX + dateKey);
+    await AsyncStorage.removeItem(prefix + dateKey);
   } catch {
     // 실패해도 계속 진행
   }

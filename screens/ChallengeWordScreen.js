@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
@@ -6,6 +6,7 @@ import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 import challengeWordsData from '../data/words2/challengeWords.json';
 import validWordsData from '../data/words2/validWords.json';
+import { loadGameState, saveGameState, todayKey } from '../utils/dailyWord';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
@@ -63,6 +64,7 @@ function getFeedback(guess, target) {
 
 // 테스트용 하드코딩 단어 — 서버 출제 연동 전까지 임시로 사용한다
 // KST 23시(하루 경계) 기준으로 번갈아 출제해 날짜 전환을 테스트할 수 있다
+const CHALLENGE_PREFIX = 'challengeWordGame_';
 const TEST_WORDS = ['게하시', '므깃도'];
 const TEST_ENTRIES = TEST_WORDS.map((name) => challengeWordsData.find((w) => w.name === name)).filter(Boolean);
 
@@ -83,6 +85,7 @@ export default function ChallengeWordScreen({ onBack }) {
   const [toast, setToast] = useState('');
   const inputRef = useRef(null);
   const toastTimerRef = useRef(null);
+  const startedAtRef = useRef(Date.now());
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -91,6 +94,20 @@ export default function ChallengeWordScreen({ onBack }) {
   const viewportHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight) : windowHeight;
 
   const target = useMemo(() => decomposeInput(entry.name), [entry]);
+
+  // 챌린지 진행 내역은 일일 모드와 섞이지 않게 별도 접두어로 날짜별 저장한다
+  useEffect(() => {
+    let mounted = true;
+    loadGameState(todayKey(), entry.id, CHALLENGE_PREFIX).then((saved) => {
+      if (!mounted || !saved) return;
+      setGuesses(saved.guesses || []);
+      setOver(Boolean(saved.over));
+      setWon(Boolean(saved.won));
+      setMessage(saved.over ? saved.message || '' : '');
+      if (saved.startedAt) startedAtRef.current = saved.startedAt;
+    });
+    return () => { mounted = false; };
+  }, []);
   const inputJamo = useMemo(() => decomposeInput(input.normalize('NFC')), [input]);
   const solved = guesses.length > 0 && guesses[guesses.length - 1].states.every((s) => s === 'green');
   const visibleHints = Math.min(guesses.length - (solved ? 1 : 0), 3);
@@ -131,6 +148,7 @@ export default function ChallengeWordScreen({ onBack }) {
     setOver(done);
     setWon(success);
     setMessage(nextMessage);
+    saveGameState(todayKey(), { wordId: entry.id, guesses: next, over: done, won: success, message: nextMessage, startedAt: startedAtRef.current }, CHALLENGE_PREFIX);
     setTimeout(() => inputRef.current?.focus(), 50);
   };
 
