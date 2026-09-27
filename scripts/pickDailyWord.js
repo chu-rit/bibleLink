@@ -1,7 +1,7 @@
 /**
  * 오늘의 단어 출제 스크립트 (GitHub Actions용)
- * - 매일 실행, Firestore dailyWords/{익일 날짜} 문서를 미리 생성
- *   (GitHub cron이 몇 시간 지연돼도 롤오버 전에 문서가 있도록 하루 앞서 출제)
+ * - 매일 실행, Firestore dailyWords/{익일~3일 후} 문서를 미리 생성
+ *   (GitHub cron 지연·실패가 있어도 며칠치 버퍼로 롤오버 공백을 방지)
  * - 최근 50일 출제 이력과 중복되지 않는 단어를 랜덤 선정
  *
  * 필요한 환경 변수:
@@ -38,38 +38,44 @@ async function main() {
   admin.initializeApp({ credential: admin.cert(JSON.parse(sa)) });
   const db = getFirestore();
 
-  // KST 기준 "내일" 날짜 (밤 11시 롤오버 기준 +10시간, 거기서 하루 뒤 문서를 미리 만든다)
-  const date = new Date(Date.now() + 34 * 60 * 60 * 1000).toISOString().slice(0, 10);
-  const docRef = db.collection('dailyWords').doc(date);
-
-  const existing = await docRef.get();
-  if (existing.exists) {
-    console.log(`${date}: 이미 출제됨 (${existing.data().wordId})`);
-    return;
-  }
-
-  // 최근 출제 이력으로 중복 회피
+  // 최근 출제 이력으로 중복 회피 (이번 실행에서 뽑은 것도 중복 금지)
   const recent = await db.collection('dailyWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
   const used = new Set(recent.docs.map((d) => d.data().wordId));
-  // 인자로 wordId/name을 주면 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
+  // 인자로 wordId/name을 주면 첫 번째 대상 날짜에 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
   const forced = process.argv[2];
-  // 난이도 1~2 풀, 최근 50일 출제 단어 제외
-  let pool = words.filter((w) => w.difficulty <= 2 && !used.has(w.id));
-  if (!pool.length) throw new Error('출제 가능한 단어가 없습니다. 단어집을 추가하세요');
-  const pick = forced
-    ? words.find((w) => w.id === forced || w.name === forced)
-    : pool[Math.floor(Math.random() * pool.length)];
-  if (!pick) throw new Error(`단어를 찾을 수 없습니다: ${forced}`);
+  let forcedUsed = false;
 
-  await docRef.set({
-    date,
-    wordId: pick.id,
-    word: pick.name,
-    length: jamoLength(pick.name),
-    hints: [pick.hint1, pick.hint2, pick.hint3],
-    createdAt: FieldValue.serverTimestamp(),
-  });
-  console.log(`${date}: 출제 완료 (${pick.id} ${pick.name})`);
+  // KST 밤 11시 롤오버 기준(+10시간) 익일부터 3일치 문서를 미리 만든다
+  for (let i = 1; i <= 3; i += 1) {
+    const date = new Date(Date.now() + (10 + 24 * i) * 60 * 60 * 1000).toISOString().slice(0, 10);
+    const docRef = db.collection('dailyWords').doc(date);
+
+    const existing = await docRef.get();
+    if (existing.exists) {
+      console.log(`${date}: 이미 출제됨 (${existing.data().wordId})`);
+      continue;
+    }
+
+    // 난이도 1~2 풀, 최근 50일 출제 단어 제외
+    const pool = words.filter((w) => w.difficulty <= 2 && !used.has(w.id));
+    if (!pool.length) throw new Error('출제 가능한 단어가 없습니다. 단어집을 추가하세요');
+    const pick = (forced && !forcedUsed)
+      ? words.find((w) => w.id === forced || w.name === forced)
+      : pool[Math.floor(Math.random() * pool.length)];
+    if (!pick) throw new Error(`단어를 찾을 수 없습니다: ${forced}`);
+    forcedUsed = true;
+
+    await docRef.set({
+      date,
+      wordId: pick.id,
+      word: pick.name,
+      length: jamoLength(pick.name),
+      hints: [pick.hint1, pick.hint2, pick.hint3],
+      createdAt: FieldValue.serverTimestamp(),
+    });
+    used.add(pick.id);
+    console.log(`${date}: 출제 완료 (${pick.id} ${pick.name})`);
+  }
 }
 
 main().catch((err) => {
