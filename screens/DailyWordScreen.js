@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
+import ChallengeWordScreen from './ChallengeWordScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import RankingScreen from './RankingScreen';
 import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
@@ -92,6 +93,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const [showRankings, setShowRankings] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  const [challengeMode, setChallengeMode] = useState(false);
   const [settingsPrompt, setSettingsPrompt] = useState(false);
   const [rankings, setRankings] = useState([]);
   const [myRank, setMyRank] = useState(null);
@@ -241,6 +243,11 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     }
     setStreak(await getDailyStreak());
   };
+
+  // 챌린지 모드로 전환 — 뒤로 가면 일일 모드로 복귀한다
+  if (challengeMode) {
+    return <ChallengeWordScreen onBack={() => setChallengeMode(false)} />;
+  }
 
   const hints = [entry.hint1, entry.hint2, entry.hint3];
 
@@ -479,6 +486,9 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
                 )}
                 <Pressable onPress={openRankings} style={styles.button}>
                   <Text style={styles.buttonText}>랭킹</Text>
+                </Pressable>
+                <Pressable onPress={() => setChallengeMode(true)} style={styles.button}>
+                  <Text style={styles.buttonText}>챌린지</Text>
                 </Pressable>
               </View>
             </View>

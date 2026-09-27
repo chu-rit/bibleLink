@@ -23,24 +23,32 @@ function jamoLength(word) {
 }
 
 const dir = path.join(__dirname, '..', 'data', 'words2');
-const sets = { 5: new Set(), 6: new Set() };
+const sets = { 5: new Set(), 6: new Set(), 7: new Set(), 8: new Set(), 9: new Set(), 10: new Set() };
 
-for (const n of [5, 6]) {
-  fs.readFileSync(path.join(dir, `${n}word.txt`), 'utf8')
-    .split(/\r?\n/)
-    .map((s) => s.trim())
-    .filter(Boolean)
-    .forEach((w) => sets[n].add(w));
+const outPath = path.join(dir, 'validWords.json');
+
+// 원본 txt가 없으면 기존 validWords.json의 5/6자모 목록을 그대로 이어받는다
+for (const n of [5, 6, 7]) {
+  const txtPath = path.join(dir, `${n}word.txt`);
+  if (fs.existsSync(txtPath)) {
+    fs.readFileSync(txtPath, 'utf8')
+      .split(/\r?\n/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .forEach((w) => sets[n].add(w));
+  } else if (fs.existsSync(outPath)) {
+    const existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    (existing[n] || []).forEach((w) => sets[n].add(w));
+  }
 }
 
 const lib1 = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'words', 'bibleWordsLib1.json'), 'utf8'));
 lib1.forEach((w) => {
   const word = (w.word || '').trim();
   const n = jamoLength(word);
-  if (n === 5 || n === 6) sets[n].add(word);
+  if (n >= 5 && n <= 10) sets[n].add(word);
 });
 
-const out = { 5: [...sets[5]].sort(), 6: [...sets[6]].sort() };
-const outPath = path.join(dir, 'validWords.json');
+const out = Object.fromEntries(Object.entries(sets).map(([n, s]) => [n, [...s].sort()]));
 fs.writeFileSync(outPath, JSON.stringify(out), 'utf8');
-console.log(`5자모 ${out[5].length}개, 6자모 ${out[6].length}개 -> ${outPath}`);
+console.log(Object.entries(out).map(([n, s]) => `${n}자모 ${s.length}개`).join(', ') + ` -> ${outPath}`);
