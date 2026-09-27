@@ -262,7 +262,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     }
     if (fresh && fresh.id !== entry.id) {
       showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
-      await applyFreshEntry(fresh);
+      // 토스트가 보일 시간을 주고 서버 연결 상태로 앱을 새로고침한다
+      setTimeout(() => reloadApp(), 900);
       return;
     }
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
@@ -299,7 +300,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       const serverWord = String(serverEntry.name).replace(/[\s​-‍﻿]/g, '').normalize('NFC');
       if (serverEntry.id !== entry.id || values.join('') !== decomposeInput(serverWord).join('')) {
         showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
-        if (serverEntry.id !== entry.id) await applyFreshEntry(serverEntry);
+        setTimeout(() => reloadApp(), 900);
         return;
       }
     }
