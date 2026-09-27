@@ -288,10 +288,18 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     // 정답을 맞췄을 때 서버 기준으로 재검증 — 오늘 문제가 맞고 입력 정답과 서버 정답이
     // 일치할 때만 랭킹 등록·연승 갱신을 진행한다. 하나라도 다르면 새 문제로 교체
     if (success) {
-      const serverWord = fresh ? String(fresh.name).replace(/[\s​-‍﻿]/g, '').normalize('NFC') : '';
-      if (!fresh || word !== serverWord) {
+      let serverEntry = fresh;
+      // 조회가 순간 실패한 경우 한 번 더 시도 — 확인 불가와 문제 불일치를 섞지 않는다
+      if (!serverEntry) ({ entry: serverEntry } = await getTodayWord());
+      if (!serverEntry) {
+        showToast('서버와 연결할 수 없습니다. 잠시 후 다시 시도하세요.');
+        return;
+      }
+      // 자모 키보드 입력은 날자모(ㅂㅏㄹㄹㅏㅁ)라 문자열 비교가 안 되므로 자모 분해로 비교한다
+      const serverWord = String(serverEntry.name).replace(/[\s​-‍﻿]/g, '').normalize('NFC');
+      if (serverEntry.id !== entry.id || values.join('') !== decomposeInput(serverWord).join('')) {
         showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
-        if (fresh) await applyFreshEntry(fresh);
+        if (serverEntry.id !== entry.id) await applyFreshEntry(serverEntry);
         return;
       }
     }
