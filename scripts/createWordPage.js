@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const distDir = path.join(__dirname, '..', 'dist');
+const assetsDir = path.join(__dirname, '..', 'assets');
+for (const asset of ['ICON.png', 'ICON_NOBG.png', 'BG.png']) {
+  fs.copyFileSync(path.join(assetsDir, asset), path.join(distDir, asset));
+}
 const source = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 const wordDir = path.join(distDir, 'word');
 
