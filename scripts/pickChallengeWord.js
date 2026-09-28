@@ -13,6 +13,8 @@ const { getFirestore, FieldValue } = require('firebase-admin/firestore');
 const words = require('../data/words2/challengeWords.json');
 
 const RECENT_DAYS = 100;
+// 서버 출제 전 테스트 기간에 화면에 하드코딩으로 출제된 단어 — 이미 본 단어로 간주해 재출제를 막는다
+const TEST_PICKED = ['gehazi', 'megiddo'];
 
 async function main() {
   const sa = process.env.FIREBASE_SERVICE_ACCOUNT;
@@ -23,7 +25,7 @@ async function main() {
 
   // 최근 출제 이력으로 중복 회피 (이번 실행에서 뽑은 것도 중복 금지)
   const recent = await db.collection('challengeWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
-  const used = new Set(recent.docs.map((d) => d.data().wordId));
+  const used = new Set([...recent.docs.map((d) => d.data().wordId), ...TEST_PICKED]);
   // 인자로 wordId/name을 주면 첫 번째 대상 날짜에 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
   const forced = process.argv[2];
   let forcedUsed = false;
