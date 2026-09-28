@@ -48,18 +48,19 @@ export async function clearGameState(dateKey, prefix = GAME_PREFIX) {
 }
 
 const STREAK_KEY = 'dailyWordStreak';
+const CHALLENGE_STREAK_KEY = 'challengeWordStreak';
 
 export function prevDateKey(dateKey) {
   const [y, m, d] = dateKey.split('-').map(Number);
   return new Date(Date.UTC(y, m - 1, d - 1)).toISOString().slice(0, 10);
 }
 
-// 연승 기록: { streak, lastWinDate, lastLostDate }
+// 연승 기록: { streak, lastWinDate, lastLostDate } (일반 모드·챌린지 모드 공용, 키만 다름)
 // 승리: 어제 이겼으면 +1, 아니면 1부터. 같은 날 재승리(마스터 초기화)는 중복 카운트 안 함
 // 패배: lastLostDate만 기록하고 streak는 유지 — 같은 날 초기화 후 재승리하면 이어지도록
-export async function recordDailyResult(dateKey, won) {
+async function recordResult(dateKey, won, streakKey) {
   try {
-    const raw = await AsyncStorage.getItem(STREAK_KEY);
+    const raw = await AsyncStorage.getItem(streakKey);
     const saved = raw ? JSON.parse(raw) : {};
     let { streak = 0, lastWinDate, lastLostDate } = saved;
     if (won) {
@@ -71,7 +72,7 @@ export async function recordDailyResult(dateKey, won) {
     } else {
       lastLostDate = dateKey;
     }
-    await AsyncStorage.setItem(STREAK_KEY, JSON.stringify({ streak, lastWinDate, lastLostDate }));
+    await AsyncStorage.setItem(streakKey, JSON.stringify({ streak, lastWinDate, lastLostDate }));
     return streak;
   } catch {
     return 0;
@@ -79,9 +80,9 @@ export async function recordDailyResult(dateKey, won) {
 }
 
 // 화면에 표시할 현재 연승. 오늘 실패했거나 마지막 승리가 어제보다 전이면(하루 이상 건너뜀) 0
-export async function getDailyStreak(dateKey = todayKey()) {
+async function getStreak(dateKey, streakKey) {
   try {
-    const raw = await AsyncStorage.getItem(STREAK_KEY);
+    const raw = await AsyncStorage.getItem(streakKey);
     if (!raw) return 0;
     const { streak = 0, lastWinDate, lastLostDate } = JSON.parse(raw);
     if (lastLostDate === dateKey) return 0;
@@ -93,21 +94,45 @@ export async function getDailyStreak(dateKey = todayKey()) {
 }
 
 // 서버 이력이 계산한 연승으로 로컬값을 덮어쓴다 (조작·드리프트 자동 교정)
-export async function overrideDailyStreak(dateKey, streak) {
+async function overrideStreak(dateKey, streak, streakKey) {
   try {
-    await AsyncStorage.setItem(STREAK_KEY, JSON.stringify({ streak, lastWinDate: dateKey }));
+    await AsyncStorage.setItem(streakKey, JSON.stringify({ streak, lastWinDate: dateKey }));
   } catch {
     // 실패해도 계속 진행
   }
 }
 
+export function recordDailyResult(dateKey, won) {
+  return recordResult(dateKey, won, STREAK_KEY);
+}
+
+export function recordChallengeResult(dateKey, won) {
+  return recordResult(dateKey, won, CHALLENGE_STREAK_KEY);
+}
+
+export function getDailyStreak(dateKey = todayKey()) {
+  return getStreak(dateKey, STREAK_KEY);
+}
+
+export function getChallengeStreak(dateKey = todayKey()) {
+  return getStreak(dateKey, CHALLENGE_STREAK_KEY);
+}
+
+export function overrideDailyStreak(dateKey, streak) {
+  return overrideStreak(dateKey, streak, STREAK_KEY);
+}
+
+export function overrideChallengeStreak(dateKey, streak) {
+  return overrideStreak(dateKey, streak, CHALLENGE_STREAK_KEY);
+}
+
 // 내 랭킹 이력에서 "어제까지 연속으로 성공한 일수"를 계산
 // day 필드는 규칙이 서버 시간과 대조해 검증하므로 과거 날짜를 소급해 채울 수 없다
 // 반환 null이면 조회 실패 — 호출 측에서 로컬 연승으로 폴백
-export async function fetchStreakBeforeToday(userId) {
+async function fetchStreakBefore(collectionName, userId) {
   if (!db || !userId) return null;
   try {
-    const q = query(collection(db, 'rankings'), where('userId', '==', userId));
+    const q = query(collection(db, collectionName), where('userId', '==', userId));
     const snap = await withTimeout(getDocs(q), FIRESTORE_TIMEOUT_MS);
     const days = new Set(
       snap.docs
@@ -126,6 +151,14 @@ export async function fetchStreakBeforeToday(userId) {
   } catch {
     return null;
   }
+}
+
+export function fetchStreakBeforeToday(userId) {
+  return fetchStreakBefore('rankings', userId);
+}
+
+export function fetchChallengeStreakBeforeToday(userId) {
+  return fetchStreakBefore('challengeRankings', userId);
 }
 
 // 서버 시간과 기기 시계의 차이(ms). 화면 진입 등 getTodayWord() 호출 때마다 다시 맞춰
@@ -227,12 +260,12 @@ export async function getOrCreateUser() {
   return nextUser;
 }
 
-// 게임 결과 제출. 정답 확인 후 바로 기록
-export async function submitResult(dateKey, { userId, nickname, attempts, success, duration, streak }) {
+// 게임 결과 제출. 정답 확인 후 바로 기록 (일반 모드·챌린지 모드 공용)
+async function submitResultTo(collectionName, versionPrefix, dateKey, { userId, nickname, attempts, success, duration, streak }) {
   if (!db) return { ok: false, error: 'firebase-not-configured' };
   try {
-    await withTimeout(addDoc(collection(db, 'rankings'), {
-      date: CACHE_VERSION + '_' + dateKey,
+    await withTimeout(addDoc(collection(db, collectionName), {
+      date: versionPrefix + dateKey,
       day: todayDayNum(),
       userId,
       nickname,
@@ -249,17 +282,25 @@ export async function submitResult(dateKey, { userId, nickname, attempts, succes
   }
 }
 
+export function submitResult(dateKey, data) {
+  return submitResultTo('rankings', CACHE_VERSION + '_', dateKey, data);
+}
+
+export function submitChallengeResult(dateKey, data) {
+  return submitResultTo('challengeRankings', CHALLENGE_CACHE_PREFIX, dateKey, data);
+}
+
 // 당일 랭킹 조회 — 정답 제출 시각이 빠른 순
 // 조회 키는 규칙으로 서버 오늘이 검증되는 day 필드를 사용한다
 // day 필드가 없는 구형 문서는 date 문자열 일치로 함께 조회한다
 // (day 없는 문서는 새 규칙으로 생성 불가라 위조 경로가 없다)
-export async function fetchRankings(dateKey, userId) {
+async function fetchRankingsFrom(collectionName, versionPrefix, dateKey, userId) {
   const empty = { rankings: [], myRank: null };
   if (!db) return empty;
   try {
     const day = dayNumForKey(dateKey);
-    const legacyDate = CACHE_VERSION + '_' + dateKey;
-    const rankingsRef = collection(db, 'rankings');
+    const legacyDate = versionPrefix + dateKey;
+    const rankingsRef = collection(db, collectionName);
     const [byDay, byDate] = await Promise.all([
       withTimeout(getDocs(query(rankingsRef, where('day', '==', day))), FIRESTORE_TIMEOUT_MS),
       withTimeout(getDocs(query(rankingsRef, where('date', '==', legacyDate))), FIRESTORE_TIMEOUT_MS),
@@ -287,6 +328,14 @@ export async function fetchRankings(dateKey, userId) {
   } catch {
     return empty;
   }
+}
+
+export function fetchRankings(dateKey, userId) {
+  return fetchRankingsFrom('rankings', CACHE_VERSION + '_', dateKey, userId);
+}
+
+export function fetchChallengeRankings(dateKey, userId) {
+  return fetchRankingsFrom('challengeRankings', CHALLENGE_CACHE_PREFIX, dateKey, userId);
 }
 
 /**

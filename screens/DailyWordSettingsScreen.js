@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, TextInput } from 'react-native';
 import SettingsScreen from './SettingsScreen';
 import { getOrCreateUser, getUser, saveUser } from '../utils/dailyWord';
 
-export default function DailyWordSettingsScreen({ visible, prompt, onClose }) {
+export default function DailyWordSettingsScreen({ visible, prompt, onClose, title = '오늘의 단어 설정' }) {
   const [nickname, setNickname] = useState('NONAME');
   const [isFocused, setIsFocused] = useState(false);
   const focusedRef = useRef(false);
@@ -43,7 +43,7 @@ export default function DailyWordSettingsScreen({ visible, prompt, onClose }) {
     <SettingsScreen
       visible={visible}
       onClose={onClose}
-      title={prompt ? '닉네임 설정' : '오늘의 단어 설정'}
+      title={prompt ? '닉네임 설정' : title}
     >
       {prompt && <Text style={styles.promptText}>랭킹에 표시될 닉네임을 설정해주세요</Text>}
       <Text style={styles.label}>닉네임</Text>

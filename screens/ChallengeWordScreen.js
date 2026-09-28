@@ -3,10 +3,13 @@ import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, S
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
+import WordHelpModal from '../components/WordHelpModal';
+import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
+import RankingScreen from './RankingScreen';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 import validWordsData from '../data/words2/validWords.json';
-import { getChallengeWord, loadGameState, saveGameState, todayKey } from '../utils/dailyWord';
+import { clearGameState, fetchChallengeRankings, fetchChallengeStreakBeforeToday, getChallengeStreak, getChallengeWord, getOrCreateUser, getUser, loadGameState, overrideChallengeStreak, recordChallengeResult, saveGameState, submitChallengeResult, todayKey } from '../utils/dailyWord';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
@@ -16,8 +19,11 @@ const AD_BANNER_HEIGHT = 50;
 const INITIALS = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
 const VOWELS = ['ㅏ','ㅏㅣ','ㅑ','ㅑㅣ','ㅓ','ㅓㅣ','ㅕ','ㅕㅣ','ㅗ','ㅗㅏ','ㅗㅏㅣ','ㅗㅣ','ㅛ','ㅜ','ㅜㅓ','ㅜㅓㅣ','ㅜㅣ','ㅠ','ㅡ','ㅡㅣ','ㅣ'];
 const FINALS = ['','ㄱ','ㄱㄱ','ㄱㅅ','ㄴ','ㄴㅈ','ㄴㅎ','ㄷ','ㄹ','ㄹㄱ','ㄹㅁ','ㄹㅂ','ㄹㅅ','ㄹㅌ','ㄹㅍ','ㄹㅎ','ㅁ','ㅂ','ㅂㅅ','ㅅ','ㅅㅅ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
-const INITIAL_EXPANSION = { 'ㄲ': 'ㄱㄱ', 'ㄸ': 'ㄷㄷ', 'ㅃ': 'ㅂㅂ', 'ㅆ': 'ㅅㅅ', 'ㅉ': 'ㅈㅈ' };
-const ATOMIC_JAMO = /^[ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ]$/;
+const COMPATIBILITY_JAMO = {
+  'ㄲ': 'ㄱㄱ', 'ㄸ': 'ㄷㄷ', 'ㅃ': 'ㅂㅂ', 'ㅆ': 'ㅅㅅ', 'ㅉ': 'ㅈㅈ',
+  'ㄳ': 'ㄱㅅ', 'ㄵ': 'ㄴㅈ', 'ㄶ': 'ㄴㅎ', 'ㄺ': 'ㄹㄱ', 'ㄻ': 'ㄹㅁ', 'ㄼ': 'ㄹㅂ', 'ㄽ': 'ㄹㅅ', 'ㄾ': 'ㄹㅌ', 'ㄿ': 'ㄹㅍ', 'ㅀ': 'ㄹㅎ', 'ㅄ': 'ㅂㅅ',
+  'ㅐ': 'ㅏㅣ', 'ㅒ': 'ㅑㅣ', 'ㅔ': 'ㅓㅣ', 'ㅖ': 'ㅕㅣ', 'ㅘ': 'ㅗㅏ', 'ㅙ': 'ㅗㅏㅣ', 'ㅚ': 'ㅗㅣ', 'ㅝ': 'ㅜㅓ', 'ㅞ': 'ㅜㅓㅣ', 'ㅟ': 'ㅜㅣ', 'ㅢ': 'ㅡㅣ',
+};
 
 function decomposeInput(text) {
   const result = [];
@@ -25,12 +31,16 @@ function decomposeInput(text) {
     const code = ch.charCodeAt(0) - 0xAC00;
     if (code >= 0 && code <= 11171) {
       const initial = INITIALS[Math.floor(code / 588)];
-      result.push(...(INITIAL_EXPANSION[initial] || initial), ...VOWELS[Math.floor((code % 588) / 28)], ...FINALS[code % 28]);
-    } else if (ATOMIC_JAMO.test(ch)) {
-      result.push(ch);
+      result.push(...(COMPATIBILITY_JAMO[initial] || initial), ...VOWELS[Math.floor((code % 588) / 28)], ...FINALS[code % 28]);
+    } else if (/^[ㄱ-ㅎㅏ-ㅣ]$/.test(ch)) {
+      result.push(...(COMPATIBILITY_JAMO[ch] || ch));
     }
   }
   return result;
+}
+
+function normalizeInput(value) {
+  return value.replace(/[\s\u200B-\u200D\uFEFF]/g, '').normalize('NFC');
 }
 
 // 자모 수별 유효 추측 사전 (7~10자모, Lib1 합본 — buildValidWords.js 생성)
@@ -64,7 +74,7 @@ function getFeedback(guess, target) {
 
 const CHALLENGE_PREFIX = 'challengeWordGame_';
 
-export default function ChallengeWordScreen({ onBack }) {
+export default function ChallengeWordScreen({ onBack, masterMode }) {
   const [entry, setEntry] = useState(null);
   const [loadState, setLoadState] = useState('loading');
   const [reloading, setReloading] = useState(false);
@@ -74,6 +84,13 @@ export default function ChallengeWordScreen({ onBack }) {
   const [won, setWon] = useState(false);
   const [message, setMessage] = useState('');
   const [toast, setToast] = useState('');
+  const [showRankings, setShowRankings] = useState(false);
+  const [rankings, setRankings] = useState([]);
+  const [myRank, setMyRank] = useState(null);
+  const [rankingDate, setRankingDate] = useState(null);
+  const [streak, setStreak] = useState(0);
+  const [showSettings, setShowSettings] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const inputRef = useRef(null);
   const toastTimerRef = useRef(null);
   const startedAtRef = useRef(Date.now());
@@ -98,16 +115,28 @@ export default function ChallengeWordScreen({ onBack }) {
       }
       setEntry(loaded);
       const saved = await loadGameState(todayKey(), loaded.id, CHALLENGE_PREFIX);
-      if (!mounted || !saved) return;
-      setGuesses(saved.guesses || []);
-      setOver(Boolean(saved.over));
-      setWon(Boolean(saved.won));
-      setMessage(saved.over ? saved.message || '' : '');
-      if (saved.startedAt) startedAtRef.current = saved.startedAt;
+      if (mounted && saved) {
+        setGuesses(saved.guesses || []);
+        setOver(Boolean(saved.over));
+        setWon(Boolean(saved.won));
+        setMessage(saved.over ? saved.message || '' : '');
+        if (saved.startedAt) startedAtRef.current = saved.startedAt;
+      }
+      const currentStreak = await getChallengeStreak();
+      if (mounted) setStreak(currentStreak);
     });
     return () => { mounted = false; };
   }, []);
   const inputJamo = useMemo(() => decomposeInput(input.normalize('NFC')), [input]);
+  const handleInputChange = (value) => {
+    const normalized = normalizeInput(value);
+    if (!/^[가-힣ㄱ-ㅎㅏ-ㅣ]*$/.test(normalized)) {
+      setInput(normalized);
+      return;
+    }
+    const values = decomposeInput(normalized);
+    setInput(values.length > target.length ? values.slice(0, target.length).join('') : normalized);
+  };
   const solved = guesses.length > 0 && guesses[guesses.length - 1].states.every((s) => s === 'green');
   const visibleHints = Math.min(guesses.length - (solved ? 1 : 0), 3);
   const hints = entry ? [entry.hint1, entry.hint2, entry.hint3] : [];
@@ -176,9 +205,9 @@ export default function ChallengeWordScreen({ onBack }) {
       return;
     }
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
-    const word = input.replace(/[\s​-‍﻿]/g, '').normalize('NFC');
+    const word = normalizeInput(input);
     if (!word) return;
-    if (!/^[가-힣ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ]+$/.test(word)) {
+    if (!/^[가-힣ㄱ-ㅎㅏ-ㅣ]+$/.test(word)) {
       showToast('한글로 입력하세요.');
       return;
     }
@@ -195,13 +224,97 @@ export default function ChallengeWordScreen({ onBack }) {
     const next = [...guesses, { values, states: feedback }];
     const success = feedback.every((s) => s === 'green');
     const done = success || next.length >= MAX_ATTEMPTS;
-    const nextMessage = done ? (success ? '정답입니다!' : `정답은 ${entry.name}입니다.`) : '';
+    // 정답을 맞췄을 때 서버 기준으로 재검증 — 오늘 문제가 맞고 입력 정답과 서버 정답이
+    // 일치할 때만 랭킹 등록을 진행한다. 하나라도 다르면 새 문제로 교체
+    if (success) {
+      let serverEntry = fresh;
+      // 조회가 순간 실패한 경우 한 번 더 시도 — 확인 불가와 문제 불일치를 섞지 않는다
+      if (!serverEntry) ({ entry: serverEntry } = await getChallengeWord());
+      if (!serverEntry) {
+        showToast('서버와 연결할 수 없습니다. 잠시 후 다시 시도하세요.');
+        return;
+      }
+      // 자모 키보드 입력은 날자모(ㅂㅏㄹㄹㅏㅁ)라 문자열 비교가 안 되므로 자모 분해로 비교한다
+      const serverWord = String(serverEntry.name).replace(/[\s​-‍﻿]/g, '').normalize('NFC');
+      if (serverEntry.id !== entry.id || values.join('') !== decomposeInput(serverWord).join('')) {
+        showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
+        setTimeout(() => reloadApp(), 900);
+        return;
+      }
+    }
+    const nextMessage = done && !success ? `정답은 ${entry.name}입니다.` : '';
     setGuesses(next);
     setInput('');
     setOver(done);
     setWon(success);
     setMessage(nextMessage);
     saveGameState(todayKey(), { wordId: entry.id, guesses: next, over: done, won: success, message: nextMessage, startedAt: startedAtRef.current }, CHALLENGE_PREFIX);
+    if (done) finishGame(next.length, success);
+    setTimeout(() => inputRef.current?.focus(), 50);
+  };
+
+  // 게임 종료 시 연승 갱신 후, 정답이면 랭킹 등록 후 순위판 표시
+  const finishGame = async (attempts, success) => {
+    const dateKey = todayKey();
+    const nextStreak = await recordChallengeResult(dateKey, success);
+    setStreak(await getChallengeStreak(dateKey));
+    if (!success) return;
+    const duration = Math.round((Date.now() - startedAtRef.current) / 1000);
+    const user = await getOrCreateUser();
+    const nickname = user?.nickname || 'NONAME';
+    // 테스트용 MASTER 닉네임은 랭킹에 등록하지 않는다
+    if (nickname !== 'MASTER') {
+      // 랭킹에 등록하는 연승은 서버 이력으로 계산 — 과거 날짜 소급이 불가능해 조작보다 신뢰할 수 있다
+      // 조회 실패 시 로컬 연승으로 폴백
+      const priorStreak = await fetchChallengeStreakBeforeToday(user.userId);
+      const streakToSubmit = priorStreak !== null ? priorStreak + 1 : nextStreak;
+      if (priorStreak !== null) {
+        await overrideChallengeStreak(dateKey, streakToSubmit);
+        setStreak(streakToSubmit);
+      }
+      const registered = await submitChallengeResult(dateKey, { userId: user.userId, nickname, attempts, success, duration, streak: streakToSubmit });
+      if (!registered.ok) {
+        setMessage(`랭킹 등록에 실패했습니다. (${registered.error})`);
+        return;
+      }
+    }
+    const result = await fetchChallengeRankings(dateKey, user.userId);
+    setRankings(result.rankings);
+    setMyRank(result.myRank);
+    setRankingDate(dateKey);
+    setShowRankings(true);
+  };
+
+  const loadRankings = async (dateKey) => {
+    setRankings(null);
+    setMyRank(null);
+    const user = await getUser();
+    const result = await fetchChallengeRankings(dateKey, user?.userId);
+    setRankings(result.rankings);
+    setMyRank(result.myRank);
+  };
+
+  const openRankings = () => {
+    const dateKey = todayKey();
+    setRankingDate(dateKey);
+    setShowRankings(true);
+    loadRankings(dateKey);
+  };
+
+  const selectRankingDate = (dateKey) => {
+    setRankingDate(dateKey);
+    loadRankings(dateKey);
+  };
+
+  // 마스터 모드 전용: 같은 단어로 다시 시작
+  const resetGame = () => {
+    clearGameState(todayKey(), CHALLENGE_PREFIX);
+    startedAtRef.current = Date.now();
+    setGuesses([]);
+    setInput('');
+    setOver(false);
+    setWon(false);
+    setMessage('');
     setTimeout(() => inputRef.current?.focus(), 50);
   };
 
@@ -213,8 +326,8 @@ export default function ChallengeWordScreen({ onBack }) {
 
   // 커스텀 자모 키보드: 자모 1개씩 추가/삭제 (시스템 키보드는 띄우지 않는다)
   const pressJamo = (jamo) => {
-    if (over || inputJamo.length >= target.length) return;
-    setInput((prev) => prev + jamo);
+    if (over) return;
+    setInput((prev) => (decomposeInput(prev.normalize('NFC')).length < target.length ? prev + jamo : prev));
   };
 
   const backspace = () => {
@@ -246,7 +359,7 @@ export default function ChallengeWordScreen({ onBack }) {
         <TextInput
           ref={inputRef}
           value={input}
-          onChangeText={setInput}
+          onChangeText={handleInputChange}
           autoCapitalize="none"
           autoCorrect={false}
           caretHidden
@@ -268,7 +381,7 @@ export default function ChallengeWordScreen({ onBack }) {
       style={[styles.container, { paddingTop: insets.top }, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <AppHeader onBack={onBack} />
+        <AppHeader onBack={onBack} onHelp={() => setShowHelp(true)} onSettings={() => setShowSettings(true)} />
 
         <View style={styles.centerWrap}>
           <ScrollView style={styles.scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
@@ -290,13 +403,22 @@ export default function ChallengeWordScreen({ onBack }) {
                   <Text style={styles.attemptsCount}>{guesses.length}</Text>
                   {`/${MAX_ATTEMPTS}회 시도`}
                 </Text>
+                {streak > 0 && <Text style={styles.streak}>{streak}번째 연승중!</Text>}
               </View>
               <View style={styles.actionButtons}>
+                {masterMode && (
+                  <Pressable onPress={resetGame} style={styles.resetButton}>
+                    <Text style={styles.resetButtonText}>초기화</Text>
+                  </Pressable>
+                )}
                 {!over && (
                   <Pressable onPress={submitGuess} style={styles.button}>
                     <Text style={styles.buttonText}>입력</Text>
                   </Pressable>
                 )}
+                <Pressable onPress={openRankings} style={styles.button}>
+                  <Text style={styles.buttonText}>랭킹</Text>
+                </Pressable>
               </View>
             </View>
             </View>
@@ -318,6 +440,22 @@ export default function ChallengeWordScreen({ onBack }) {
             />
           </View>
         )}
+
+        <RankingScreen
+          visible={showRankings}
+          rankings={rankings}
+          myRank={myRank}
+          dateKey={rankingDate}
+          onSelectDate={selectRankingDate}
+          onClose={() => setShowRankings(false)}
+          eyebrow="CHALLENGE"
+        />
+        <DailyWordSettingsScreen
+          visible={showSettings}
+          onClose={() => setShowSettings(false)}
+          title="챌린지 설정"
+        />
+        <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} eyebrow="CHALLENGE" />
       </KeyboardAvoidingView>
     </ImageBackground>
     </Animated.View>
@@ -362,6 +500,9 @@ const styles = StyleSheet.create({
   status: { color: '#7a6450', fontSize: 13 },
   attempts: { color: '#7a6450', fontSize: 15, fontWeight: '700' },
   attemptsCount: { color: '#7a5c3a', fontSize: 26, fontWeight: '800' },
+  streak: { color: '#e08a3c', fontSize: 12, fontWeight: '800' },
+  resetButton: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, backgroundColor: '#f0ebe0' },
+  resetButtonText: { color: '#7a6450', fontSize: 14, fontWeight: '700' },
   actionButtons: { flexDirection: 'row', gap: 8 },
   button: { borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, backgroundColor: '#7a5c3a' },
   buttonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },

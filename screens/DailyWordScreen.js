@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, ImageBackground, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
+import WordHelpModal from '../components/WordHelpModal';
 import DailyWordSettingsScreen from './DailyWordSettingsScreen';
 import ChallengeWordScreen from './ChallengeWordScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
@@ -19,8 +20,11 @@ const AD_BANNER_HEIGHT = 50;
 const INITIALS = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
 const VOWELS = ['ㅏ','ㅏㅣ','ㅑ','ㅑㅣ','ㅓ','ㅓㅣ','ㅕ','ㅕㅣ','ㅗ','ㅗㅏ','ㅗㅏㅣ','ㅗㅣ','ㅛ','ㅜ','ㅜㅓ','ㅜㅓㅣ','ㅜㅣ','ㅠ','ㅡ','ㅡㅣ','ㅣ'];
 const FINALS = ['','ㄱ','ㄱㄱ','ㄱㅅ','ㄴ','ㄴㅈ','ㄴㅎ','ㄷ','ㄹ','ㄹㄱ','ㄹㅁ','ㄹㅂ','ㄹㅅ','ㄹㅌ','ㄹㅍ','ㄹㅎ','ㅁ','ㅂ','ㅂㅅ','ㅅ','ㅅㅅ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
-const INITIAL_EXPANSION = { 'ㄲ': 'ㄱㄱ', 'ㄸ': 'ㄷㄷ', 'ㅃ': 'ㅂㅂ', 'ㅆ': 'ㅅㅅ', 'ㅉ': 'ㅈㅈ' };
-const ATOMIC_JAMO = /^[ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ]$/;
+const COMPATIBILITY_JAMO = {
+  'ㄲ': 'ㄱㄱ', 'ㄸ': 'ㄷㄷ', 'ㅃ': 'ㅂㅂ', 'ㅆ': 'ㅅㅅ', 'ㅉ': 'ㅈㅈ',
+  'ㄳ': 'ㄱㅅ', 'ㄵ': 'ㄴㅈ', 'ㄶ': 'ㄴㅎ', 'ㄺ': 'ㄹㄱ', 'ㄻ': 'ㄹㅁ', 'ㄼ': 'ㄹㅂ', 'ㄽ': 'ㄹㅅ', 'ㄾ': 'ㄹㅌ', 'ㄿ': 'ㄹㅍ', 'ㅀ': 'ㄹㅎ', 'ㅄ': 'ㅂㅅ',
+  'ㅐ': 'ㅏㅣ', 'ㅒ': 'ㅑㅣ', 'ㅔ': 'ㅓㅣ', 'ㅖ': 'ㅕㅣ', 'ㅘ': 'ㅗㅏ', 'ㅙ': 'ㅗㅏㅣ', 'ㅚ': 'ㅗㅣ', 'ㅝ': 'ㅜㅓ', 'ㅞ': 'ㅜㅓㅣ', 'ㅟ': 'ㅜㅣ', 'ㅢ': 'ㅡㅣ',
+};
 
 function decomposeInput(text) {
   const result = [];
@@ -28,12 +32,16 @@ function decomposeInput(text) {
     const code = ch.charCodeAt(0) - 0xAC00;
     if (code >= 0 && code <= 11171) {
       const initial = INITIALS[Math.floor(code / 588)];
-      result.push(...(INITIAL_EXPANSION[initial] || initial), ...VOWELS[Math.floor((code % 588) / 28)], ...FINALS[code % 28]);
-    } else if (ATOMIC_JAMO.test(ch)) {
-      result.push(ch);
+      result.push(...(COMPATIBILITY_JAMO[initial] || initial), ...VOWELS[Math.floor((code % 588) / 28)], ...FINALS[code % 28]);
+    } else if (/^[ㄱ-ㅎㅏ-ㅣ]$/.test(ch)) {
+      result.push(...(COMPATIBILITY_JAMO[ch] || ch));
     }
   }
   return result;
+}
+
+function normalizeInput(value) {
+  return value.replace(/[\s\u200B-\u200D\uFEFF]/g, '').normalize('NFC');
 }
 
 // 자모 수별 유효 추측 사전 (5word/6word.txt + Lib1 합본, buildValidWords.js 생성)
@@ -182,6 +190,15 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
   const target = useMemo(() => (entry ? decomposeInput(entry.name) : []), [entry]);
   const inputJamo = useMemo(() => decomposeInput(input.normalize('NFC')), [input]);
+  const handleInputChange = (value) => {
+    const normalized = normalizeInput(value);
+    if (!/^[가-힣ㄱ-ㅎㅏ-ㅣ]*$/.test(normalized)) {
+      setInput(normalized);
+      return;
+    }
+    const values = decomposeInput(normalized);
+    setInput(values.length > target.length ? values.slice(0, target.length).join('') : normalized);
+  };
   const solved = guesses.length > 0 && guesses[guesses.length - 1].states.every((s) => s === 'green');
   const visibleHints = Math.min(guesses.length - (solved ? 1 : 0), 3);
 
@@ -246,7 +263,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
   // 챌린지 모드로 전환 — 뒤로 가면 일일 모드로 복귀한다
   if (challengeMode) {
-    return <ChallengeWordScreen onBack={() => setChallengeMode(false)} />;
+    return <ChallengeWordScreen onBack={() => setChallengeMode(false)} masterMode={masterMode} />;
   }
 
   const hints = [entry.hint1, entry.hint2, entry.hint3];
@@ -274,9 +291,9 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       return;
     }
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
-    const word = input.replace(/[\s\u200B-\u200D\uFEFF]/g, '').normalize('NFC');
+    const word = normalizeInput(input);
     if (!word) return;
-    if (!/^[가-힣ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ]+$/.test(word)) {
+    if (!/^[가-힣ㄱ-ㅎㅏ-ㅣ]+$/.test(word)) {
       showToast('한글로 입력하세요.');
       return;
     }
@@ -395,8 +412,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
   // 커스텀 자모 키보드: 자모 1개씩 추가/삭제 (시스템 키보드는 띄우지 않는다)
   const pressJamo = (jamo) => {
-    if (over || inputJamo.length >= target.length) return;
-    setInput((prev) => prev + jamo);
+    if (over) return;
+    setInput((prev) => (decomposeInput(prev.normalize('NFC')).length < target.length ? prev + jamo : prev));
   };
 
   const backspace = () => {
@@ -428,7 +445,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         <TextInput
           ref={inputRef}
           value={input}
-          onChangeText={setInput}
+          onChangeText={handleInputChange}
           autoCapitalize="none"
           autoCorrect={false}
           caretHidden
@@ -532,50 +549,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
           prompt={settingsPrompt}
           onClose={() => setShowSettings(false)}
         />
-        <Modal visible={showHelp} transparent animationType="fade" onRequestClose={() => setShowHelp(false)}>
-          <View style={styles.helpOverlay}>
-            <View style={styles.helpCard}>
-              <View style={styles.helpHeader}>
-                <View>
-                  <Text style={styles.helpEyebrow}>DAILY WORD</Text>
-                  <Text style={styles.helpTitle}>게임 방법</Text>
-                </View>
-                <Pressable style={styles.helpCloseIcon} onPress={() => setShowHelp(false)} hitSlop={8}>
-                  <Text style={styles.helpCloseIconText}>×</Text>
-                </Pressable>
-              </View>
-              <ScrollView style={styles.helpList} contentContainerStyle={styles.helpListContent}>
-                <View style={styles.helpItem}>
-                  <Text style={styles.helpItemTitle}>색상의 의미</Text>
-                  <View style={styles.helpLegendItem}>
-                    <View style={[styles.helpDot, styles.cell_green]} />
-                    <Text style={styles.helpItemText}>자모와 위치가 모두 맞음</Text>
-                  </View>
-                  <View style={styles.helpLegendItem}>
-                    <View style={[styles.helpDot, styles.cell_yellow]} />
-                    <Text style={styles.helpItemText}>자모는 맞지만 위치가 다름</Text>
-                  </View>
-                  <View style={styles.helpLegendItem}>
-                    <View style={[styles.helpDot, styles.cell_gray]} />
-                    <Text style={styles.helpItemText}>단어에 없는 자모</Text>
-                  </View>
-                </View>
-                <View style={styles.helpItem}>
-                  <Text style={styles.helpItemTitle}>자모 풀이</Text>
-                  <Text style={styles.helpItemText}>복합 모음(ㅐ, ㅞ 등), 쌍자음(ㄲ, ㅆ 등), 겹받침(ㄳ, ㅄ 등)은 풀어서 사용됩니다.</Text>
-                </View>
-                <View style={styles.helpItem}>
-                  <Text style={styles.helpItemTitle}>새 단어</Text>
-                  <Text style={styles.helpItemText}>매일 밤 11시에 새 단어로 바뀌며, 모든 사람에게 같은 단어가 출제됩니다.</Text>
-                </View>
-                <View style={styles.helpItem}>
-                  <Text style={styles.helpItemTitle}>연속 정답</Text>
-                  <Text style={styles.helpItemText}>매일 정답을 맞히면 연속 기록이 쌓입니다. 하루를 건너뛰거나 맞히지 못하면 초기화됩니다.</Text>
-                </View>
-              </ScrollView>
-            </View>
-          </View>
-        </Modal>
+        <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} />
       </KeyboardAvoidingView>
     </ImageBackground>
     </Animated.View>
@@ -625,26 +599,11 @@ const styles = StyleSheet.create({
   actionButtons: { flexDirection: 'row', gap: 8 },
   button: { borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, backgroundColor: '#7a5c3a' },
   buttonText: { color: '#fdfbf6', fontSize: 14, fontWeight: '800' },
-  challengeButton: { marginTop: 14, backgroundColor: '#3a2e1f', borderRadius: 16, borderWidth: 1, borderColor: '#3a2e1f', paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', shadowColor: '#3a2e1f', shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 6 },
+  challengeButton: { marginTop: 14, backgroundColor: '#f0ebe0', borderRadius: 16, borderWidth: 1, borderColor: '#d8cdb8', paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', shadowColor: '#3a2e1f', shadowOpacity: 0.1, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 4 },
   challengeButtonPressed: { opacity: 0.85, transform: [{ scale: 0.98 }] },
   challengeButtonInner: { flex: 1 },
   challengeEyebrow: { color: '#e08a3c', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 },
-  challengeTitle: { color: '#fdfbf6', fontSize: 17, fontWeight: '900', marginTop: 2 },
+  challengeTitle: { color: '#3a2e1f', fontSize: 17, fontWeight: '900', marginTop: 2 },
 
   challengeArrow: { color: '#e08a3c', fontSize: 26, fontWeight: '700', marginLeft: 10 },
-  helpOverlay: { flex: 1, backgroundColor: 'rgba(58,46,31,0.35)', alignItems: 'center', justifyContent: 'center', padding: 20 },
-  helpCard: { width: '100%', maxWidth: 360, maxHeight: 480, backgroundColor: '#fdfbf6', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 24, padding: 20, shadowColor: '#3a2e1f', shadowOpacity: 0.16, shadowRadius: 20, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
-  helpHeader: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' },
-  helpEyebrow: { color: '#e08a3c', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 },
-  helpTitle: { color: '#3a2e1f', fontSize: 22, fontWeight: '900', marginTop: 4 },
-  helpCloseIcon: { width: 32, height: 32, borderRadius: 10, borderWidth: 1, borderColor: '#d8cdb8', backgroundColor: '#f0ebe0', alignItems: 'center', justifyContent: 'center' },
-  helpCloseIconText: { color: '#7a6450', fontSize: 22, lineHeight: 24, fontWeight: '500' },
-  helpList: { marginTop: 14 },
-  helpListContent: { paddingBottom: 2, gap: 10 },
-  helpItem: { backgroundColor: '#f7f2e8', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12 },
-  helpItemTitle: { color: '#7a5c3a', fontSize: 13, fontWeight: '900', marginBottom: 4 },
-  helpItemText: { color: '#7a6450', fontSize: 13, lineHeight: 19 },
-  helpLegendItem: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 },
-  helpDot: { width: 12, height: 12, borderRadius: 4, borderWidth: 1 },
-
 });

@@ -4,7 +4,7 @@ import { prevDateKey, todayKey } from '../utils/dailyWord';
 
 const MEDAL_COLORS = ['#d8a326', '#9a9a9a', '#b87333'];
 
-export default function RankingScreen({ visible, rankings, myRank, dateKey, onSelectDate, onClose }) {
+export default function RankingScreen({ visible, rankings, myRank, dateKey, onSelectDate, onClose, eyebrow = 'DAILY WORD' }) {
   const showMyRank = myRank && myRank.rank > 10;
   const today = todayKey();
   const yesterday = prevDateKey(today);
@@ -35,7 +35,7 @@ export default function RankingScreen({ visible, rankings, myRank, dateKey, onSe
         <View style={styles.card}>
           <View style={styles.header}>
             <View>
-              <Text style={styles.eyebrow}>DAILY WORD</Text>
+              <Text style={styles.eyebrow}>{eyebrow}</Text>
               <Text style={styles.title}>{isYesterday ? '어제의 랭킹' : '오늘의 랭킹'}</Text>
             </View>
             <Pressable style={styles.closeIconButton} onPress={onClose} hitSlop={8}>
