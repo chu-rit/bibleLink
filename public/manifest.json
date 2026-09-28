@@ -1,6 +1,6 @@
 {
-  "name": "Bible Link",
-  "short_name": "Bible Link",
+  "name": "Biblink",
+  "short_name": "Biblink",
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",

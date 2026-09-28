@@ -10,7 +10,7 @@ export default function SettingsScreen({ visible, onClose, title, description, c
           <Pressable style={styles.closeButton} onPress={onClose} hitSlop={8}>
             <Text style={styles.closeButtonText}>×</Text>
           </Pressable>
-          <Text style={styles.eyebrow}>BIBLE LINK</Text>
+          <Text style={styles.eyebrow}>Biblink</Text>
           <Text style={styles.title}>{title}</Text>
           {description ? <Text style={styles.description}>{description}</Text> : null}
           <View style={styles.content}>{children}</View>
