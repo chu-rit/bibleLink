@@ -13,8 +13,12 @@ const { getFirestore, FieldValue } = require('firebase-admin/firestore');
 const words = require('../data/words2/challengeWords.json');
 
 const RECENT_DAYS = 100;
-// 서버 출제 전 테스트 기간에 화면에 하드코딩으로 출제된 단어 — 이미 본 단어로 간주해 재출제를 막는다
-const TEST_PICKED = ['gehazi', 'megiddo'];
+// 서버 출제 전 테스트 기간에 화면에 하드코딩으로 출제된 단어
+// 과거 날짜 이력으로 심어 최근 100일 제외 창에 포함시키고, 이후엔 자연스럽게 재출제되게 한다
+const SEED_PICKS = [
+  { date: '2026-09-26', wordId: 'gehazi' },
+  { date: '2026-09-27', wordId: 'megiddo' },
+];
 
 async function main() {
   const sa = process.env.FIREBASE_SERVICE_ACCOUNT;
@@ -23,9 +27,18 @@ async function main() {
   admin.initializeApp({ credential: admin.cert(JSON.parse(sa)) });
   const db = getFirestore();
 
+  // 테스트 출제분을 과거 날짜 이력으로 한 번 심어둔다 (이미 있으면 건너뜀)
+  for (const seed of SEED_PICKS) {
+    const ref = db.collection('challengeWords').doc(seed.date);
+    if (!(await ref.get()).exists) {
+      await ref.set({ date: seed.date, wordId: seed.wordId, createdAt: FieldValue.serverTimestamp() });
+      console.log(`${seed.date}: 테스트 출제분 이력 심기 (${seed.wordId})`);
+    }
+  }
+
   // 최근 출제 이력으로 중복 회피 (이번 실행에서 뽑은 것도 중복 금지)
   const recent = await db.collection('challengeWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
-  const used = new Set([...recent.docs.map((d) => d.data().wordId), ...TEST_PICKED]);
+  const used = new Set(recent.docs.map((d) => d.data().wordId));
   // 인자로 wordId/name을 주면 첫 번째 대상 날짜에 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
   const forced = process.argv[2];
   let forcedUsed = false;
