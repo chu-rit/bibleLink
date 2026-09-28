@@ -643,7 +643,7 @@
     "id": "nephilim",
     "name": "네피림",
     "difficulty": 2,
-    "hint1": "기타",
+    "hint1": "집단 이름",
     "hint2": "창세기에 등장",
     "hint3": "타락한 천사들의 자손인 거인"
   },
@@ -651,7 +651,7 @@
     "id": "midian",
     "name": "미디안",
     "difficulty": 2,
-    "hint1": "기타",
+    "hint1": "집단 이름",
     "hint2": "창세기에 등장",
     "hint3": "이스라엘과 충돌한 아브라함 후손 민족"
   },
@@ -659,7 +659,7 @@
     "id": "pharisees",
     "name": "바리새파",
     "difficulty": 2,
-    "hint1": "기타",
+    "hint1": "집단 이름",
     "hint2": "마태복음에 등장",
     "hint3": "예수와 자주 논쟁한 유대교 분파"
   },
@@ -667,7 +667,7 @@
     "id": "philistines",
     "name": "블레셋",
     "difficulty": 2,
-    "hint1": "기타",
+    "hint1": "집단 이름",
     "hint2": "사무엘상에 등장",
     "hint3": "이스라엘과 자주 전쟁한 민족"
   },
@@ -675,7 +675,7 @@
     "id": "sadducees",
     "name": "사두개파",
     "difficulty": 1,
-    "hint1": "기타",
+    "hint1": "집단 이름",
     "hint2": "마태복음에 등장",
     "hint3": "부활을 믿지 않은 제사장 계층 분파"
   },
@@ -688,22 +688,6 @@
     "hint3": "그리스 최고의 거짓 신"
   },
   {
-    "id": "christ",
-    "name": "그리스도",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "마태복음에 등장",
-    "hint3": "기름부음받은 자라는 뜻의 칭호"
-  },
-  {
-    "id": "messiah",
-    "name": "메시아",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "다니엘에 등장",
-    "hint3": "기름부어 임명된 분을 가리키는 칭호"
-  },
-  {
     "id": "molech",
     "name": "몰렉",
     "difficulty": 2,
@@ -712,91 +696,907 @@
     "hint3": "자식을 불에 태워 바치던 신"
   },
   {
-    "id": "revelationbook",
-    "name": "계시록",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "자기 이름을 딴 책에 등장",
-    "hint3": "미래의 목적을 알려 주신 책"
+    "id": "gedaliah",
+    "name": "그달리야",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "유다의 총독으로 임명됐다 살해됨"
   },
   {
-    "id": "leviticus",
-    "name": "레위기",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "자기 이름을 딴 책에 등장",
-    "hint3": "제사장 직무의 율법을 담은 책"
-  },
-  {
-    "id": "numbers",
-    "name": "민수기",
+    "id": "nicodemus",
+    "name": "니고데모",
     "difficulty": 2,
-    "hint1": "기타",
+    "hint1": "사람 이름",
+    "hint2": "요한복음에 등장",
+    "hint3": "밤에 예수를 찾아온 유대인 지도자"
+  },
+  {
+    "id": "thaddaeus",
+    "name": "다대오",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "마가복음에 등장",
+    "hint3": "열두 사도 중 한 사람"
+  },
+  {
+    "id": "darius",
+    "name": "다리우스",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "다니엘에 등장",
+    "hint3": "바빌론을 다스린 페르시아 왕"
+  },
+  {
+    "id": "drusilla",
+    "name": "드루실라",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "총독 펠릭스의 아내"
+  },
+  {
+    "id": "timothy",
+    "name": "디모데",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울과 함께 전한 젊은 동료"
+  },
+  {
+    "id": "malachi",
+    "name": "말라기",
+    "difficulty": 2,
+    "hint1": "사람 이름",
     "hint2": "자기 이름을 딴 책에 등장",
-    "hint3": "광야 생활과 인구 조사의 기록"
+    "hint3": "히브리어 성경 마지막 예언자"
   },
   {
-    "id": "entry-사무엘서",
-    "name": "사무엘서",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "역대기상에 등장",
-    "hint3": "왕권의 시작을 기록한 두 책"
+    "id": "matthias",
+    "name": "맛디아",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "유다의 빈자리를 채운 사도"
   },
   {
-    "id": "entry-스가랴서",
-    "name": "스가랴서",
-    "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "스가랴에 등장",
-    "hint3": "성전 재건을 격려한 예언서"
+    "id": "mephibosheth",
+    "name": "므비보셋",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "다윗의 식탁에서 먹은 요나단의 아들"
   },
   {
-    "id": "genesis",
-    "name": "창세기",
+    "id": "bartimaeus",
+    "name": "바디매오",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "마가복음에 등장",
+    "hint3": "눈먼 거지로 예수를 불렀던 사람"
+  },
+  {
+    "id": "barzillai",
+    "name": "바르실래",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "늙어서도 다윗을 도운 길르앗 사람"
+  },
+  {
+    "id": "entry-바-예수",
+    "name": "바예수",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울에게 저주받은 주술사"
+  },
+  {
+    "id": "bernice",
+    "name": "베르니케",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "페스투스를 방문한 헤롯의 딸"
+  },
+  {
+    "id": "entry-벤-하닷",
+    "name": "벤하닷",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "시리아 왕 세 명의 이름"
+  },
+  {
+    "id": "boanerges",
+    "name": "보아너게",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "마가복음에 등장",
+    "hint3": "우뢰의 아들이라는 별명"
+  },
+  {
+    "id": "prisca",
+    "name": "브리스가",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울과 함께 일한 아굴라의 아내"
+  },
+  {
+    "id": "salome",
+    "name": "살로메",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "마가복음에 등장",
+    "hint3": "예수를 섬긴 여자 중 한 사람"
+  },
+  {
+    "id": "sapphira",
+    "name": "삽비라",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "헌금을 속이다 죽은 여자"
+  },
+  {
+    "id": "zebedee",
+    "name": "세베대",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "야고보와 요한의 어부 아버지"
+  },
+  {
+    "id": "sosthenes",
+    "name": "소스데네",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "무리에게 맞은 회당 주임 관리"
+  },
+  {
+    "id": "sceva",
+    "name": "스게와",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "아들들이 악귀 쫓기를 하다 당함"
+  },
+  {
+    "id": "stephen",
+    "name": "스데반",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "믿음 때문에 순교한 초기 성원"
+  },
+  {
+    "id": "simeon",
+    "name": "시므온",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "성전에서 아기 예수를 안은 노인"
+  },
+  {
+    "id": "aquila",
+    "name": "아굴라",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울의 천막 만드는 동료"
+  },
+  {
+    "id": "ananias",
+    "name": "아나니아",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "재산을 속이다 심판받은 사람"
+  },
+  {
+    "id": "athaliah",
+    "name": "아달랴",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "왕위를 차지하려 한 왕비"
+  },
+  {
+    "id": "adonijah",
+    "name": "아도니야",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "스스로 왕이 되려 한 다윗의 아들"
+  },
+  {
+    "id": "abner",
+    "name": "아브넬",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "사울의 군대 대장"
+  },
+  {
+    "id": "abraham",
+    "name": "아브라함",
     "difficulty": 1,
-    "hint1": "기타",
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "믿음으로 고향을 떠난 족장"
+  },
+  {
+    "id": "abigail",
+    "name": "아비가일",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "지혜로 다윗의 분노를 가라앉힌 여자"
+  },
+  {
+    "id": "apollos",
+    "name": "아폴로스",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "언변 좋고 성경에 정통한 전파자"
+  },
+  {
+    "id": "andrew",
+    "name": "안드레",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "요한복음에 등장",
+    "hint3": "베드로의 형제인 사도"
+  },
+  {
+    "id": "absalom",
+    "name": "압살롬",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "아버지에게 반역한 다윗의 아들"
+  },
+  {
+    "id": "ezekiel",
+    "name": "에스겔",
+    "difficulty": 1,
+    "hint1": "사람 이름",
     "hint2": "자기 이름을 딴 책에 등장",
-    "hint3": "창조와 인류의 초기 역사의 책"
+    "hint3": "유배지에서 환상을 본 제사장"
   },
   {
-    "id": "entry-탈출기",
-    "name": "탈출기",
+    "id": "esther",
+    "name": "에스더",
     "difficulty": 1,
-    "hint1": "기타",
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "유대인을 구한 페르시아 왕비"
+  },
+  {
+    "id": "ezra",
+    "name": "에스라",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "백성에게 율법을 가르친 제사장"
+  },
+  {
+    "id": "elkanah",
+    "name": "엘가나",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "사무엘의 아버지"
+  },
+  {
+    "id": "elisha",
+    "name": "엘리사",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "엘리야의 겉옷을 물려받은 예언자"
+  },
+  {
+    "id": "elijah",
+    "name": "엘리야",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "바알 숭배에 맞선 예언자"
+  },
+  {
+    "id": "elihu",
+    "name": "엘리후",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "욥기에 등장",
+    "hint3": "욥과 세 친구에게 말한 젊은이"
+  },
+  {
+    "id": "jeroboam",
+    "name": "여로보암",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "금송아지를 세운 북왕국 첫 왕"
+  },
+  {
+    "id": "jehoram",
+    "name": "여호람",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "유다와 이스라엘의 왕 이름"
+  },
+  {
+    "id": "jehoshaphat",
+    "name": "여호사밧",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "역대기하에 등장",
+    "hint3": "노래하는 자들을 앞세운 유다 왕"
+  },
+  {
+    "id": "joshua",
+    "name": "여호수아",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "약속의 땅으로 이끈 지도자"
+  },
+  {
+    "id": "jehoash",
+    "name": "여호아스",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "7세에 왕이 된 유다 왕"
+  },
+  {
+    "id": "jehoiachin",
+    "name": "여호야긴",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "바빌론에 끌려갔다 석방된 왕"
+  },
+  {
+    "id": "jehoiakim",
+    "name": "여호야김",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "예레미야에 등장",
+    "hint3": "예레미야의 두루마리를 불태운 왕"
+  },
+  {
+    "id": "jehoiada",
+    "name": "여호야다",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "참숭배 회복을 이끈 대제사장"
+  },
+  {
+    "id": "jeremiah",
+    "name": "예레미야",
+    "difficulty": 1,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "예루살렘 멸망을 경고한 예언자"
+  },
+  {
+    "id": "onesimus",
+    "name": "오네시모",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "빌레몬서에 등장",
+    "hint3": "바울을 통해 그리스도인이 된 종"
+  },
+  {
+    "id": "othniel",
+    "name": "옷니엘",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사사기에 등장",
+    "hint3": "이스라엘의 첫 번째 재판관"
+  },
+  {
+    "id": "jonathan",
+    "name": "요나단",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "다윗과 우정을 나눈 사울의 아들"
+  },
+  {
+    "id": "jonadab",
+    "name": "요나답",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "레갑 사람들의 조상"
+  },
+  {
+    "id": "joanna",
+    "name": "요안나",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "자기 소유로 예수를 섬긴 여자"
+  },
+  {
+    "id": "uzziah",
+    "name": "웃시야",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "역대기하에 등장",
+    "hint3": "제사장 일을 침범해 나병 걸린 왕"
+  },
+  {
+    "id": "eunice",
+    "name": "유니게",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "디모데에게 성경을 가르친 어머니"
+  },
+  {
+    "id": "ithamar",
+    "name": "이다말",
+    "difficulty": 2,
+    "hint1": "사람 이름",
     "hint2": "출애굽기에 등장",
-    "hint3": "이집트 탈출을 기록한 책"
+    "hint3": "성막 봉사를 맡은 아론의 아들"
   },
   {
-    "id": "entry-학개서",
-    "name": "학개서",
+    "id": "jezebel",
+    "name": "이세벨",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "바알 숭배를 퍼뜨린 아합의 아내"
+  },
+  {
+    "id": "ishmael",
+    "name": "이스마엘",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "열두 수장의 아버지가 된 사람"
+  },
+  {
+    "id": "ishbosheth",
+    "name": "이스보셋",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "사무엘하에 등장",
+    "hint3": "사울 뒤를 이은 왕"
+  },
+  {
+    "id": "hymenaeus",
+    "name": "후메내오",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "디모데후서에 등장",
+    "hint3": "거짓 교리를 가르친 배교자"
+  },
+  {
+    "id": "hazael",
+    "name": "하사엘",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "엘리사가 왕 될 것을 예언한 신하"
+  },
+  {
+    "id": "nehemiah",
+    "name": "느헤미야",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "자기 이름을 딴 책에 등장",
+    "hint3": "예루살렘 성벽을 재건한 감독자"
+  },
+  {
+    "id": "reuben",
+    "name": "르우벤",
     "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "학개에 등장",
-    "hint3": "성전 재건을 권하는 소식의 책"
+    "hint1": "사람 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "야곱의 맏아들이자 지파 조상"
   },
   {
-    "id": "entry-하박국서",
-    "name": "하박국서",
+    "id": "rehoboam",
+    "name": "르호보암",
+    "difficulty": 2,
+    "hint1": "사람 이름",
+    "hint2": "열왕기상에 등장",
+    "hint3": "왕국이 둘로 나뉘던 왕"
+  },
+  {
+    "id": "theophilus",
+    "name": "데오빌로",
+    "difficulty": 3,
+    "hint1": "사람 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "누가의 기록을 받은 존귀한 사람"
+  },
+  {
+    "id": "chorazin",
+    "name": "고라신",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "예수가 책망하신 갈릴리 도시"
+  },
+  {
+    "id": "corinth",
+    "name": "고린도",
     "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "하박국에 등장",
-    "hint3": "의인은 믿음으로 살 것이라는 책"
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울이 회중을 세운 그리스 도시"
   },
   {
-    "id": "entry-호세아서",
-    "name": "호세아서",
+    "id": "damascus",
+    "name": "다마스쿠스",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "사울이 회심한 길의 도시"
+  },
+  {
+    "id": "derbe",
+    "name": "데르베",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울이 여러 번 방문한 도시"
+  },
+  {
+    "id": "mamre",
+    "name": "마므레",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "아브라함이 장막을 친 나무 지역"
+  },
+  {
+    "id": "mahanaim",
+    "name": "마하나임",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "야곱이 천사들을 만난 곳"
+  },
+  {
+    "id": "makkedah",
+    "name": "막게다",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "다섯 왕이 동굴에 숨은 도시"
+  },
+  {
+    "id": "machpelah",
+    "name": "막벨라",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "족장들이 묻힌 아브라함의 동굴"
+  },
+  {
+    "id": "bethphage",
+    "name": "벳바게",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "예수가 나귀를 가져오게 한 마을"
+  },
+  {
+    "id": "entry-벳-호론",
+    "name": "벳호론",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "위와 아래 두 성읍으로 있던 곳"
+  },
+  {
+    "id": "adullam",
+    "name": "아둘람",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "다윗이 사울을 피해 숨은 동굴"
+  },
+  {
+    "id": "ararat",
+    "name": "아라라트",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "방주가 내려앉은 산지"
+  },
+  {
+    "id": "arabia",
+    "name": "아라비아",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "갈라디아서에 등장",
+    "hint3": "바울이 개종 뒤 잠시 간 지역"
+  },
+  {
+    "id": "arimathea",
+    "name": "아리마대",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "예수의 무덤을 낸 요셉의 고향"
+  },
+  {
+    "id": "achaia",
+    "name": "아카이아",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "고린도를 수도로 둔 로마 속주"
+  },
+  {
+    "id": "antioch",
+    "name": "안디옥",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "초기 전파 활동의 중심 도시"
+  },
+  {
+    "id": "eden",
+    "name": "에덴",
     "difficulty": 1,
-    "hint1": "기타",
-    "hint2": "호세아에 등장",
-    "hint3": "고메르를 맞이하라는 지시의 책"
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "아담과 하와가 살던 동산"
   },
   {
-    "id": "ecclesiastes",
-    "name": "전도서",
+    "id": "ephesus",
+    "name": "에베소",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울이 오래 전파한 소아시아 도시"
+  },
+  {
+    "id": "engedi",
+    "name": "엔게디",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사무엘상에 등장",
+    "hint3": "다윗이 숨었던 광야 오아시스"
+  },
+  {
+    "id": "emmaus",
+    "name": "엠마오",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "누가복음에 등장",
+    "hint3": "부활하신 예수가 나타난 마을"
+  },
+  {
+    "id": "olivesmount",
+    "name": "올리브산",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "예수가 자주 기도한 예루살렘 동쪽 산"
+  },
+  {
+    "id": "jordan",
+    "name": "요르단강",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "예수가 침례받은 강"
+  },
+  {
+    "id": "egypt",
+    "name": "이집트",
+    "difficulty": 1,
+    "hint1": "장소 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "이스라엘이 노예였던 나라"
+  },
+  {
+    "id": "iconium",
+    "name": "이코니온",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울이 전파하다 반대받은 도시"
+  },
+  {
+    "id": "troas",
+    "name": "트로아스",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "마케도니아로 건너간 출발 항구"
+  },
+  {
+    "id": "patmos",
+    "name": "파트모스",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "계시록에 등장",
+    "hint3": "요한이 유배됐던 섬"
+  },
+  {
+    "id": "perga",
+    "name": "페르가",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울 일차 선교 때 방문한 도시"
+  },
+  {
+    "id": "harosheth",
+    "name": "하로셋",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "사사기에 등장",
+    "hint3": "시스라의 사령부가 있던 장소"
+  },
+  {
+    "id": "hazeroth",
+    "name": "하세롯",
+    "difficulty": 3,
+    "hint1": "장소 이름",
+    "hint2": "민수기에 등장",
+    "hint3": "미리암이 문둥병 걸린 광야 진영"
+  },
+  {
+    "id": "rephidim",
+    "name": "르비딤",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "출애굽기에 등장",
+    "hint3": "물 부족으로 다툰 광야 진영"
+  },
+  {
+    "id": "lystra",
+    "name": "리스트라",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "사도행전에 등장",
+    "hint3": "바울이 걷지 못한 자를 일으킨 도시"
+  },
+  {
+    "id": "ziklag",
+    "name": "시글락",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "여호수아에 등장",
+    "hint3": "다윗이 블레셋 왕에게 받은 도시"
+  },
+  {
+    "id": "entry-소금 바다",
+    "name": "소금바다",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "사해라고도 불리는 큰 호수"
+  },
+  {
+    "id": "gehenna",
+    "name": "게헨나",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "영원한 멸망을 상징하는 표현"
+  },
+  {
+    "id": "hades",
+    "name": "하데스",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "마태복음에 등장",
+    "hint3": "죽은 자의 영역을 뜻하는 말"
+  },
+  {
+    "id": "tartarus",
+    "name": "타르타로스",
+    "difficulty": 2,
+    "hint1": "장소 이름",
+    "hint2": "베드로후서에 등장",
+    "hint3": "불순종한 천사들이 갇힌 상태"
+  },
+  {
+    "id": "rephaim",
+    "name": "르바임",
+    "difficulty": 3,
+    "hint1": "집단 이름",
+    "hint2": "신명기에 등장",
+    "hint3": "키가 컸던 고대 민족"
+  },
+  {
+    "id": "nethinim",
+    "name": "느디님",
+    "difficulty": 3,
+    "hint1": "집단 이름",
+    "hint2": "역대기상에 등장",
+    "hint3": "성전 종으로 돌아온 집단"
+  },
+  {
+    "id": "assyria",
+    "name": "앗수르",
+    "difficulty": 2,
+    "hint1": "집단 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "이스라엘을 정복한 고대 제국"
+  },
+  {
+    "id": "elam",
+    "name": "엘람",
+    "difficulty": 2,
+    "hint1": "집단 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "메소포타미아 동쪽의 나라"
+  },
+  {
+    "id": "israel",
+    "name": "이스라엘",
+    "difficulty": 1,
+    "hint1": "집단 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "야곱에게 주신 이름의 민족"
+  },
+  {
+    "id": "zebulun",
+    "name": "스불론",
+    "difficulty": 2,
+    "hint1": "집단 이름",
+    "hint2": "창세기에 등장",
+    "hint3": "야곱의 아들 이름을 딴 지파"
+  },
+  {
+    "id": "jews",
+    "name": "유대인",
+    "difficulty": 1,
+    "hint1": "집단 이름",
+    "hint2": "열왕기하에 등장",
+    "hint3": "유다 왕국 후손에서 온 민족"
+  },
+  {
+    "id": "behemoth",
+    "name": "베헤못",
     "difficulty": 2,
     "hint1": "기타",
-    "hint2": "자기 이름을 딴 책에 등장",
-    "hint3": "하느님을 두려워하라고 강조하는 책"
+    "hint2": "욥기에 등장",
+    "hint3": "욥기에 나오는 거대한 짐승"
+  },
+  {
+    "id": "leviathan",
+    "name": "리워야단",
+    "difficulty": 3,
+    "hint1": "기타",
+    "hint2": "욥기에 등장",
+    "hint3": "큰 바다 짐승을 가리키는 표현"
+  },
+  {
+    "id": "nisroch",
+    "name": "니스록",
+    "difficulty": 3,
+    "hint1": "기타",
+    "hint2": "열왕기하에 등장",
+    "hint3": "산헤립이 숭배한 아시리아의 신"
+  },
+  {
+    "id": "entry-담무스",
+    "name": "담무스",
+    "difficulty": 2,
+    "hint1": "기타",
+    "hint2": "에스겔에 등장",
+    "hint3": "배교한 여자들이 울던 신"
   }
 ]
