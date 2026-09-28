@@ -40,8 +40,26 @@ async function main() {
   const recent = await db.collection('challengeWords').orderBy('date', 'desc').limit(RECENT_DAYS).get();
   const used = new Set(recent.docs.map((d) => d.data().wordId));
   // 인자로 wordId/name을 주면 첫 번째 대상 날짜에 그 단어를 강제 출제 (전환일에 기존 문제 유지용)
+  // 두 번째 인자로 날짜(YYYY-MM-DD)를 주면 그 날짜 문서에 강제 출제한다
   const forced = process.argv[2];
+  const forcedDate = process.argv[3];
   let forcedUsed = false;
+
+  // 특정 날짜 강제 출제 — 최초 배포일처럼 버퍼 루프가 채우지 못하는 날짜를 수동으로 채울 때 사용
+  if (forced && forcedDate) {
+    const pick = words.find((w) => w.id === forced || w.name === forced);
+    if (!pick) throw new Error(`단어를 찾을 수 없습니다: ${forced}`);
+    const docRef = db.collection('challengeWords').doc(forcedDate);
+    const existing = await docRef.get();
+    if (existing.exists) {
+      console.log(`${forcedDate}: 이미 출제됨 (${existing.data().wordId})`);
+    } else {
+      await docRef.set({ date: forcedDate, wordId: pick.id, createdAt: FieldValue.serverTimestamp() });
+      used.add(pick.id);
+      console.log(`${forcedDate}: 강제 출제 완료 (${pick.id} ${pick.name})`);
+    }
+    forcedUsed = true;
+  }
 
   // KST 밤 11시 롤오버 기준(+10시간) 익일부터 3일치 문서를 미리 만든다
   for (let i = 1; i <= 3; i += 1) {

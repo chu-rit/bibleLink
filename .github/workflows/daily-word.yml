@@ -9,6 +9,10 @@ on:
         description: '강제 출제할 단어 id 또는 이름 (비우면 랜덤)'
         required: false
         type: string
+      challenge:
+        description: '챌린지 강제 출제 — "단어" 또는 "단어 YYYY-MM-DD" (비우면 랜덤 버퍼만)'
+        required: false
+        type: string
 
 jobs:
   pick:
@@ -29,6 +33,6 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: 챌린지 단어 선정 및 Firestore 기록
-        run: node scripts/pickChallengeWord.js
+        run: node scripts/pickChallengeWord.js ${{ inputs.challenge }}
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
