@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
-import challengeWordsData from '../data/words2/challengeWords.json';
 import validWordsData from '../data/words2/validWords.json';
-import { loadGameState, saveGameState, todayKey } from '../utils/dailyWord';
+import { getChallengeWord, loadGameState, saveGameState, todayKey } from '../utils/dailyWord';
 
 const BG_IMAGE = require('../assets/BG.png');
 const MAX_ATTEMPTS = 4;
@@ -62,21 +62,12 @@ function getFeedback(guess, target) {
   return feedback;
 }
 
-// 테스트용 하드코딩 단어 — 서버 출제 연동 전까지 임시로 사용한다
-// KST 23시(하루 경계) 기준으로 번갈아 출제해 날짜 전환을 테스트할 수 있다
 const CHALLENGE_PREFIX = 'challengeWordGame_';
-const TEST_WORDS = ['게하시', '므깃도'];
-const TEST_ENTRIES = TEST_WORDS.map((name) => challengeWordsData.find((w) => w.name === name)).filter(Boolean);
-
-function getTestEntry() {
-  // 하루 경계를 KST 23시로 맞추기 위해 +10시간 시프트 후 UTC 날짜 번호를 구한다
-  const shifted = new Date(Date.now() + 10 * 60 * 60 * 1000);
-  const dayIndex = Math.floor(shifted.getTime() / (24 * 60 * 60 * 1000));
-  return TEST_ENTRIES[dayIndex % TEST_ENTRIES.length] || challengeWordsData[0];
-}
 
 export default function ChallengeWordScreen({ onBack }) {
-  const [entry] = useState(getTestEntry);
+  const [entry, setEntry] = useState(null);
+  const [loadState, setLoadState] = useState('loading');
+  const [reloading, setReloading] = useState(false);
   const [guesses, setGuesses] = useState([]);
   const [input, setInput] = useState('');
   const [over, setOver] = useState(false);
@@ -93,12 +84,20 @@ export default function ChallengeWordScreen({ onBack }) {
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
   const viewportHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight) : windowHeight;
 
-  const target = useMemo(() => decomposeInput(entry.name), [entry]);
+  const target = useMemo(() => (entry ? decomposeInput(entry.name) : []), [entry]);
 
-  // 챌린지 진행 내역은 일일 모드와 섞이지 않게 별도 접두어로 날짜별 저장한다
+  // 서버에서 오늘의 챌린지 단어를 조회한다
+  // 진행 내역은 일일 모드와 섞이지 않게 별도 접두어로 날짜별 저장한다
   useEffect(() => {
     let mounted = true;
-    loadGameState(todayKey(), entry.id, CHALLENGE_PREFIX).then((saved) => {
+    getChallengeWord().then(async ({ entry: loaded, source }) => {
+      if (!mounted) return;
+      if (!loaded) {
+        setLoadState(source === 'stale' ? 'stale' : 'unavailable');
+        return;
+      }
+      setEntry(loaded);
+      const saved = await loadGameState(todayKey(), loaded.id, CHALLENGE_PREFIX);
       if (!mounted || !saved) return;
       setGuesses(saved.guesses || []);
       setOver(Boolean(saved.over));
@@ -111,7 +110,48 @@ export default function ChallengeWordScreen({ onBack }) {
   const inputJamo = useMemo(() => decomposeInput(input.normalize('NFC')), [input]);
   const solved = guesses.length > 0 && guesses[guesses.length - 1].states.every((s) => s === 'green');
   const visibleHints = Math.min(guesses.length - (solved ? 1 : 0), 3);
-  const hints = [entry.hint1, entry.hint2, entry.hint3];
+  const hints = entry ? [entry.hint1, entry.hint2, entry.hint3] : [];
+
+  // 로딩/실패 화면의 새로고침 — OTA가 있으면 받아서 적용하고 재시작한다
+  const reloadApp = async () => {
+    if (reloading) return;
+    setReloading(true);
+    try {
+      if (Platform.OS === 'web') {
+        window.location.reload();
+        return;
+      }
+      const update = await Updates.checkForUpdateAsync();
+      if (update.isAvailable) await Updates.fetchUpdateAsync();
+      await Updates.reloadAsync();
+    } catch {
+      setReloading(false);
+    }
+  };
+
+  if (!entry) {
+    return (
+      <ImageBackground
+        source={BG_IMAGE}
+        resizeMode="cover"
+        style={[styles.container, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      >
+        <AppHeader onBack={onBack} />
+        <View style={styles.loadingWrap}>
+          <Text style={styles.status}>
+            {loadState === 'stale' ? '앱 업데이트가 필요합니다.'
+              : loadState === 'unavailable' ? '오늘의 챌린지가 아직 준비되지 않았습니다.'
+              : '불러오는 중...'}
+          </Text>
+          {loadState !== 'loading' && (
+            <Pressable style={styles.reloadBtn} onPress={reloadApp} disabled={reloading}>
+              <Text style={styles.reloadBtnText}>{reloading ? '업데이트 확인 중...' : '새로고침'}</Text>
+            </Pressable>
+          )}
+        </View>
+      </ImageBackground>
+    );
+  }
 
   // 입력 검증 실패 등은 토스트로 띄워 확실히 눈에 띄게 한다
   const showToast = (text) => {
@@ -120,8 +160,21 @@ export default function ChallengeWordScreen({ onBack }) {
     toastTimerRef.current = setTimeout(() => setToast(''), 1600);
   };
 
-  const submitGuess = () => {
+  const submitGuess = async () => {
     if (over) return;
+    // 시도할 때마다 서버 기준 오늘 문제가 맞는지 확인 — 날짜가 바뀌었으면 새 문제로 교체
+    const { entry: fresh, source } = await getChallengeWord();
+    if (source === 'stale') {
+      setEntry(null);
+      setLoadState('stale');
+      return;
+    }
+    if (fresh && fresh.id !== entry.id) {
+      showToast('오늘의 문제가 아닙니다. 다시 불러옵니다.');
+      // 토스트가 보일 시간을 주고 서버 연결 상태로 앱을 새로고침한다
+      setTimeout(() => reloadApp(), 900);
+      return;
+    }
     // 합용 자모(U+1100대)는 NFC 정규화로 완성형으로 조합하고, 공백·제로폭 문자는 제거
     const word = input.replace(/[\s​-‍﻿]/g, '').normalize('NFC');
     if (!word) return;
@@ -276,6 +329,9 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
 
   centerWrap: { flex: 1, justifyContent: 'center' },
+  loadingWrap: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  reloadBtn: { marginTop: 16, backgroundColor: '#3a2e1f', borderRadius: 10, paddingHorizontal: 24, paddingVertical: 12 },
+  reloadBtnText: { color: '#fdfbf6', fontSize: 15, fontWeight: '600' },
   modeLabel: { color: '#e08a3c', fontSize: 12, fontWeight: '900', letterSpacing: 1, marginBottom: 8 },
   scroll: { flexGrow: 0 },
   content: { paddingHorizontal: 16, paddingBottom: 20 },

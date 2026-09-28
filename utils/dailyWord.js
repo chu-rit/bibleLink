@@ -2,10 +2,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '../firebaseConfig';
 import localWords from '../data/words2/dailyWords.json';
+import challengeWords from '../data/words2/challengeWords.json';
 
 // 선정 알고리즘 변경 시 버전을 올리면 이전 캐시가 무시되어 전원 새 단어로 전환된다
 const CACHE_VERSION = 'v4';
 const CACHE_PREFIX = 'dailyWord_';
+const CHALLENGE_CACHE_PREFIX = 'challengeWord_v1_';
 const GAME_PREFIX = 'dailyWordGame_';
 const FIRESTORE_TIMEOUT_MS = 4000;
 const FIRESTORE_SUBMIT_TIMEOUT_MS = 15000;
@@ -170,18 +172,18 @@ function dayNumForKey(dateKey) {
   return Date.UTC(y, m - 1, d) / 86400000;
 }
 
-async function readCache(dateKey) {
+async function readCache(cachePrefix, dateKey, words) {
   try {
-    const wordId = await AsyncStorage.getItem(CACHE_PREFIX + CACHE_VERSION + '_' + dateKey);
-    return wordId ? localWords.find((w) => w.id === wordId) || null : null;
+    const wordId = await AsyncStorage.getItem(cachePrefix + dateKey);
+    return wordId ? words.find((w) => w.id === wordId) || null : null;
   } catch {
     return null;
   }
 }
 
-async function writeCache(dateKey, wordId) {
+async function writeCache(cachePrefix, dateKey, wordId) {
   try {
-    await AsyncStorage.setItem(CACHE_PREFIX + CACHE_VERSION + '_' + dateKey, wordId);
+    await AsyncStorage.setItem(cachePrefix + dateKey, wordId);
   } catch {
     // 저장 실패해도 계속 진행
   }
@@ -287,19 +289,26 @@ export async function fetchRankings(dateKey, userId) {
   }
 }
 
-export async function getTodayWord() {
+/**
+ * 날짜별 단어 조회 공통 로직 (일반 모드·챌린지 모드 공용)
+ * 우선순위: Firestore {collection}/{date} -> 로컬 캐시
+ * 서버 단어를 항상 먼저 확인해, 서버에서 단어를 바꾸면 캐시를 교체한다
+ * 반환: { entry, source } source: 'remote' | 'cache' | 'stale' | 'unavailable'
+ * 'stale' = 서버가 이 버전에 없는 단어를 지정(업데이트 필요), 'unavailable' = 서버·캐시 모두 없음
+ */
+async function fetchDailyEntry(collectionName, words, cachePrefix) {
   await ensureTimeSync();
   const dateKey = todayKey();
 
   if (isFirebaseConfigured && db) {
     try {
-      const snap = await withTimeout(getDoc(doc(db, 'dailyWords', dateKey)), FIRESTORE_TIMEOUT_MS);
+      const snap = await withTimeout(getDoc(doc(db, collectionName, dateKey)), FIRESTORE_TIMEOUT_MS);
       if (snap.exists()) {
-        const entry = localWords.find((w) => w.id === snap.data().wordId);
+        const entry = words.find((w) => w.id === snap.data().wordId);
         if (entry) {
-          const cached = await readCache(dateKey);
+          const cached = await readCache(cachePrefix, dateKey, words);
           // 서버 단어가 바뀌었으면 캐시를 교체해 모든 사용자가 같은 단어를 보게 한다
-          if (cached?.id !== entry.id) await writeCache(dateKey, entry.id);
+          if (cached?.id !== entry.id) await writeCache(cachePrefix, dateKey, entry.id);
           return { entry, source: 'remote' };
         }
         // 서버가 지정한 단어가 이 앱 버전의 단어집에 없음 — 구버전이 다른 문제를
@@ -311,8 +320,16 @@ export async function getTodayWord() {
     }
   }
 
-  const cached = await readCache(dateKey);
+  const cached = await readCache(cachePrefix, dateKey, words);
   if (cached) return { entry: cached, source: 'cache' };
 
   return { entry: null, source: 'unavailable' };
+}
+
+export function getTodayWord() {
+  return fetchDailyEntry('dailyWords', localWords, CACHE_PREFIX + CACHE_VERSION + '_');
+}
+
+export function getChallengeWord() {
+  return fetchDailyEntry('challengeWords', challengeWords, CHALLENGE_CACHE_PREFIX);
 }

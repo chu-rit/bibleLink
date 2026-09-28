@@ -8,6 +8,12 @@ service cloud.firestore {
       allow write: if false; // GitHub Actions 서비스 계정만
     }
 
+    // 챌린지 출제 단어: 읽기만 가능
+    match /challengeWords/{date} {
+      allow read: if true;
+      allow write: if false; // GitHub Actions 서비스 계정만
+    }
+
     // 랭킹: 읽기 허용, 신규 등록은 서버 기준 오늘(KST 23시 경계)의 day 값만 허용
     match /rankings/{docId} {
       allow read: if true;

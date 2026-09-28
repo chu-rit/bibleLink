@@ -1,4 +1,4 @@
-name: 오늘의 단어 출제
+name: 오늘의 단어·챌린지 출제
 
 on:
   schedule:
@@ -25,5 +25,10 @@ jobs:
 
       - name: 오늘의 단어 선정 및 Firestore 기록
         run: node scripts/pickDailyWord.js ${{ inputs.word }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: 챌린지 단어 선정 및 Firestore 기록
+        run: node scripts/pickChallengeWord.js
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
