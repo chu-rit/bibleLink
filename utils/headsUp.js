@@ -1,15 +1,16 @@
 import { doc, runTransaction, serverTimestamp } from 'firebase/firestore';
 import headsUpWords from '../data/words2/headsUpWords.json';
 import { db } from '../firebaseConfig';
-import { getServerDateInfo } from './dailyWord';
+import { getServerCalendarDateInfo } from './dailyWord';
 
-export async function drawHeadsUpWord(popularity, categories) {
+export async function drawHeadsUpWord(popularityLevels, categories) {
   if (!db) throw new Error('firebase-not-configured');
+  const popularitySet = new Set(Array.isArray(popularityLevels) ? popularityLevels : []);
   const categorySet = new Set(Array.isArray(categories) ? categories : []);
-  const candidates = headsUpWords.filter((entry) => entry.popularity === popularity && categorySet.has(entry.category));
+  const candidates = headsUpWords.filter((entry) => popularitySet.has(entry.popularity) && categorySet.has(entry.category));
   if (!candidates.length) return null;
 
-  const { dateKey, day } = await getServerDateInfo();
+  const { dateKey, day } = await getServerCalendarDateInfo();
   return runTransaction(db, async (transaction) => {
     const reservations = candidates.map((entry) => ({
       entry,

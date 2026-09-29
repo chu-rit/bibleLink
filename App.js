@@ -401,15 +401,13 @@ function AppContent() {
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
             <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
           </Pressable>
-          {masterMode && (
-            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('headsUpSetup')}>
-              <Text style={styles.menuButtonText}>헤드업</Text>
-            </Pressable>
-          )}
+          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('headsUpSetup')}>
+            <Text style={styles.menuButtonText}>헤드업</Text>
+          </Pressable>
         </Animated.View>
       </View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, masterMode]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;

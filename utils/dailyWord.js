@@ -199,9 +199,13 @@ function todayDayNum() {
   return Math.floor((Date.now() + serverOffsetMs + 10 * 60 * 60 * 1000) / 86400000);
 }
 
-export async function getServerDateInfo() {
+export async function getServerCalendarDateInfo() {
   await ensureTimeSync();
-  return { dateKey: todayKey(), day: todayDayNum() };
+  const serverNow = Date.now() + serverOffsetMs + 9 * 60 * 60 * 1000;
+  return {
+    dateKey: new Date(serverNow).toISOString().slice(0, 10),
+    day: Math.floor(serverNow / 86400000),
+  };
 }
 
 // dateKey의 날짜 번호 — 어제 등 과거 날짜 랭킹 조회용

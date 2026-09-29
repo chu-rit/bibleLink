@@ -34,7 +34,7 @@ service cloud.firestore {
       allow create: if request.resource.data.keys().hasOnly(['dateKey', 'day', 'wordId', 'category', 'popularity', 'calledAt'])
         && request.resource.data.keys().hasAll(['dateKey', 'day', 'wordId', 'category', 'popularity', 'calledAt'])
         && request.resource.data.dateKey == dateKey
-        && request.resource.data.day == math.floor((request.time.toMillis() + 36000000) / 86400000)
+        && request.resource.data.day == math.floor((request.time.toMillis() + 32400000) / 86400000)
         && request.resource.data.wordId == wordId
         && request.resource.data.category in ['인물', '지명']
         && request.resource.data.popularity is int

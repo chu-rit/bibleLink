@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { activateKeepAwakeAsync, deactivateKeepAwake, isAvailableAsync } from 'expo-keep-awake';
 import AppHeader from '../components/AppHeader';
+import WordHelpModal from '../components/WordHelpModal';
 import { drawHeadsUpWord } from '../utils/headsUp';
 import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
@@ -13,9 +15,10 @@ const CATEGORIES = [
 ];
 
 export default function HeadsUpSetupScreen({ onBack }) {
-  const [popularityLevel, setPopularityLevel] = useState(null);
+  const [selectedPopularityLevels, setSelectedPopularityLevels] = useState([1]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [message, setMessage] = useState('');
+  const [showHelp, setShowHelp] = useState(false);
   const [isStarting, setIsStarting] = useState(false);
   const [gameStage, setGameStage] = useState('setup');
   const [countdown, setCountdown] = useState(5);
@@ -25,7 +28,7 @@ export default function HeadsUpSetupScreen({ onBack }) {
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
   const pageHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight || effectiveWidth * PAGE_ASPECT_RATIO) : undefined;
-  const canStart = popularityLevel !== null && selectedCategories.length > 0;
+  const canStart = selectedPopularityLevels.length > 0 && selectedCategories.length > 0;
 
   useEffect(() => {
     if (gameStage !== 'countdown') return undefined;
@@ -39,6 +42,32 @@ export default function HeadsUpSetupScreen({ onBack }) {
     return () => clearTimeout(timer);
   }, [countdown, gameStage]);
 
+  useEffect(() => {
+    if (gameStage !== 'word') return undefined;
+    let cancelled = false;
+    let activated = false;
+    const activate = async () => {
+      try {
+        if (!(await isAvailableAsync()) || cancelled) return;
+        await activateKeepAwakeAsync('heads-up-word');
+        activated = true;
+        if (cancelled) await deactivateKeepAwake('heads-up-word');
+      } catch {}
+    };
+    activate();
+    return () => {
+      cancelled = true;
+      if (activated) deactivateKeepAwake('heads-up-word').catch(() => {});
+    };
+  }, [gameStage]);
+
+  const togglePopularityLevel = (level) => {
+    setMessage('');
+    setSelectedPopularityLevels((previous) => previous.includes(level)
+      ? previous.filter((selected) => selected !== level)
+      : [...previous, level]);
+  };
+
   const toggleCategory = (categoryId) => {
     setMessage('');
     setSelectedCategories((previous) => previous.includes(categoryId)
@@ -51,7 +80,7 @@ export default function HeadsUpSetupScreen({ onBack }) {
     setIsStarting(true);
     setMessage('');
     try {
-      const entry = await drawHeadsUpWord(popularityLevel, selectedCategories);
+      const entry = await drawHeadsUpWord(selectedPopularityLevels, selectedCategories);
       if (!entry) {
         setMessage('선택한 조건에 맞는 단어가 아직 없어요.');
         return;
@@ -73,32 +102,30 @@ export default function HeadsUpSetupScreen({ onBack }) {
       style={[styles.container, { paddingTop: insets.top }, isWeb && { height: pageHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
-      <AppHeader onBack={onBack} />
+      <AppHeader onBack={onBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
       {gameStage === 'setup' ? (
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
           <View style={styles.titleWrap}>
             <Text style={styles.eyebrow}>HEADS UP</Text>
             <Text style={styles.title}>헤드업 설정</Text>
-            <Text style={styles.description}>인지도 단계와 카테고리를 선택하세요.</Text>
+            <Text style={styles.description}>인지도 단계와 카테고리를 하나 이상 선택하세요.</Text>
           </View>
 
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>인지도 단계</Text>
             <View style={styles.optionRow}>
               {POPULARITY_LEVELS.map((level) => {
-                const selected = popularityLevel === level;
+                const selected = selectedPopularityLevels.includes(level);
                 return (
                   <Pressable
                     key={level}
-                    accessibilityRole="radio"
-                    accessibilityState={{ selected }}
-                    onPress={() => {
-                      setPopularityLevel(level);
-                      setMessage('');
-                    }}
-                    style={({ pressed }) => [styles.option, selected && styles.optionSelected, pressed && styles.optionPressed]}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: selected }}
+                    onPress={() => togglePopularityLevel(level)}
+                    style={({ pressed }) => [styles.option, styles.levelOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
                   >
                     <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{level}단계</Text>
+                    <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
                   </Pressable>
                 );
               })}
@@ -147,6 +174,7 @@ export default function HeadsUpSetupScreen({ onBack }) {
           </Text>
         </View>
       )}
+      <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} eyebrow="HEADS UP" variant="headsUp" />
     </ImageBackground>
   );
 }
@@ -163,6 +191,7 @@ const styles = StyleSheet.create({
   sectionTitle: { color: '#3a2e1f', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   optionRow: { flexDirection: 'row', gap: 9 },
   option: { flex: 1, minHeight: 54, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 12, backgroundColor: 'rgba(253, 251, 246, 0.9)', paddingHorizontal: 8, paddingVertical: 9 },
+  levelOption: { minHeight: 68, gap: 4 },
   categoryOption: { minHeight: 68, gap: 4 },
   optionSelected: { borderColor: '#7a5c3a', backgroundColor: '#f0ebe0' },
   optionPressed: { opacity: 0.75 },
