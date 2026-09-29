@@ -554,6 +554,6 @@ function AdBanner() {
       }
     };
   }, []);
-  return <View ref={adRef} style={[styles.adContainer, Platform.OS === 'web' && { bottom: insets.bottom }]} />;
+  return <View ref={adRef} style={[styles.adContainer, Platform.OS === 'web' && { bottom: Math.max(insets.bottom - 12, 0) }]} />;
 }
 
