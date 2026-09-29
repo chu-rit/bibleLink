@@ -44,9 +44,37 @@
   <script>
     (function() {
       var ls = document.getElementById('loading-screen');
-      function hideLoading() {
+      var icon = document.getElementById('loading-icon');
+      var iconLoaded = !icon || icon.complete;
+      var backgroundLoaded = false;
+      var hideRequested = false;
+      var removed = false;
+      function removeLoadingWhenReady() {
+        if (!hideRequested || !iconLoaded || !backgroundLoaded || removed) return;
+        removed = true;
         if (ls) { ls.classList.add('fade-out'); setTimeout(function(){ if(ls && ls.parentNode) ls.parentNode.removeChild(ls); }, 300); }
       }
+      function hideLoading() {
+        hideRequested = true;
+        removeLoadingWhenReady();
+      }
+      function markIconLoaded() {
+        iconLoaded = true;
+        removeLoadingWhenReady();
+      }
+      function markBackgroundLoaded() {
+        backgroundLoaded = true;
+        removeLoadingWhenReady();
+      }
+      if (icon && !icon.complete) {
+        icon.addEventListener('load', markIconLoaded, { once: true });
+        icon.addEventListener('error', markIconLoaded, { once: true });
+      }
+      var backgroundImage = new Image();
+      backgroundImage.onload = markBackgroundLoaded;
+      backgroundImage.onerror = markBackgroundLoaded;
+      backgroundImage.src = 'BG.png';
+      if (backgroundImage.complete) markBackgroundLoaded();
       window.__removeLoadingScreen = hideLoading;
 
       // PWA가 백그라운드에서 돌아올 때 스크롤이 어긋나 화면이 위로 밀리는 현상 방지

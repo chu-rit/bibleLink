@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Animated, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
@@ -102,6 +102,12 @@ function AppContent() {
   const [appWords, setAppWords] = useState(null);
   const [dataStatus, setDataStatus] = useState('loading');
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [loadingPageBackgroundLoaded, setLoadingPageBackgroundLoaded] = useState(false);
+  const [loadingIconLoaded, setLoadingIconLoaded] = useState(false);
+  const [loadingRootBackgroundLoaded, setLoadingRootBackgroundLoaded] = useState(false);
+  const loadingImagesReady = loadingPageBackgroundLoaded && loadingIconLoaded && loadingRootBackgroundLoaded;
+  const loadingReady = dataLoaded && fontsLoaded && loadingImagesReady;
+  const htmlLoadingReady = dataLoaded && fontsLoaded && (screen !== 'loading' || loadingImagesReady);
 
   const toggleMasterMode = () => {
     setMasterMode((prev) => {
@@ -271,27 +277,27 @@ function AppContent() {
 
   // 로딩 완료 시 HTML 오버레이만 제거하고 로딩 페이지에 머무름 (사용자 입력으로 진입)
   useEffect(() => {
-    if (!dataLoaded || !fontsLoaded) return undefined;
+    if (!htmlLoadingReady) return undefined;
     if (Platform.OS === 'web' && typeof window !== 'undefined' && window.__removeLoadingScreen) {
       window.__removeLoadingScreen();
       window.__removeLoadingScreen = null;
     }
     return undefined;
-  }, [dataLoaded, fontsLoaded]);
+  }, [htmlLoadingReady]);
 
   const iconLiftAnim = useRef(new Animated.Value(0)).current;
   const menuFadeAnim = useRef(new Animated.Value(0)).current;
   const menuRiseAnim = useRef(new Animated.Value(16)).current;
 
   useEffect(() => {
-    if (!dataLoaded || !fontsLoaded) return undefined;
+    if (!loadingReady) return undefined;
     Animated.parallel([
       Animated.timing(iconLiftAnim, { toValue: -36, duration: 450, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
       Animated.timing(menuFadeAnim, { toValue: 1, duration: 400, delay: 120, useNativeDriver: true }),
       Animated.timing(menuRiseAnim, { toValue: 0, duration: 400, delay: 120, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
     ]).start();
     return undefined;
-  }, [dataLoaded, fontsLoaded]);
+  }, [loadingReady]);
 
   const mapPage = useMemo(() => (
     <MapSelectScreen
@@ -382,14 +388,25 @@ function AppContent() {
   ), [setScreen]);
 
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
-  const loadingReady = dataLoaded && fontsLoaded;
-  const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
+  const loadingStatusText = dataLoaded
+    ? '화면을 준비하는 중...'
+    : (Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading));
   const handleDailyWord = () => setScreen('dailyWord');
   const loadingPage = useMemo(() => (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
-      <Image source={BG_ASSET} style={styles.loadingBackground} />
+      <Image
+        source={BG_ASSET}
+        style={styles.loadingBackground}
+        onLoad={() => setLoadingPageBackgroundLoaded(true)}
+        onError={() => setLoadingPageBackgroundLoaded(true)}
+      />
       <View style={styles.loadingContent}>
-        <Animated.Image source={ICON_NOBG_ASSET} style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]} />
+        <Animated.Image
+          source={ICON_NOBG_ASSET}
+          style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]}
+          onLoad={() => setLoadingIconLoaded(true)}
+          onError={() => setLoadingIconLoaded(true)}
+        />
         {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
         <Animated.View
           style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
@@ -424,7 +441,13 @@ function AppContent() {
   return (
     <GestureHandlerRootView style={styles.root}>
       <PageFlipperBoundary fallback={currentPage}>
-        <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
+        <Image
+          source={BG_ASSET}
+          style={StyleSheet.absoluteFill}
+          resizeMode="cover"
+          onLoad={() => setLoadingRootBackgroundLoaded(true)}
+          onError={() => setLoadingRootBackgroundLoaded(true)}
+        />
         <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }]}>
           <PageFlipper
           ref={flipperRef}
@@ -469,37 +492,68 @@ const styles = StyleSheet.create({
 
 function AdBanner() {
   const adRef = useRef(null);
+  const insets = useSafeAreaInsets();
   useEffect(() => {
-    if (Platform.OS !== 'web' || (typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname))) return undefined;
-    let ins;
-    let script;
-    const timer = setTimeout(() => {
-      if (!adRef.current) return;
-      if (document.querySelector('.kakao_ad_area')) return;
+    if (Platform.OS !== 'web' || typeof window === 'undefined' || ['localhost', '127.0.0.1'].includes(window.location.hostname)) return undefined;
+    const container = adRef.current;
+    if (!container) return undefined;
+    let ins = container.querySelector('.kakao_ad_area');
+    if (!ins) {
       ins = document.createElement('ins');
       ins.className = 'kakao_ad_area';
-      ins.style.display = 'block';
-      ins.style.width = '320px';
-      ins.style.height = '50px';
-      ins.style.margin = '0 auto';
+      ins.style.display = 'none';
+      ins.style.width = '100%';
       ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
       ins.setAttribute('data-ad-width', '320');
       ins.setAttribute('data-ad-height', '50');
-      adRef.current.appendChild(ins);
-      if (!document.querySelector('script[src*="ba.min.js"]')) {
-        script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
-        script.async = true;
-        document.body.appendChild(script);
-      } else {
-        if (typeof window !== 'undefined' && window.adfit) {
-          window.adfit.render();
-        }
+      container.appendChild(ins);
+    }
+
+    let script;
+    const renderAd = () => {
+      if (ins.querySelector('iframe')) return;
+      if (typeof window.adfit?.render === 'function') window.adfit.render();
+    };
+    const handleScriptError = () => {
+      if (script?.parentNode) script.parentNode.removeChild(script);
+      script = null;
+    };
+    const loadAdfit = () => {
+      if (typeof window.adfit?.render === 'function') {
+        renderAd();
+        return;
       }
-    }, 100);
-    return () => { clearTimeout(timer); };
+      script = document.querySelector('script[src*="ba.min.js"]');
+      if (script) {
+        script.addEventListener('load', renderAd, { once: true });
+        script.addEventListener('error', handleScriptError, { once: true });
+        return;
+      }
+      script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.charset = 'utf-8';
+      script.src = 'https://t1.kakaocdn.net/kas/static/ba.min.js';
+      script.async = true;
+      script.addEventListener('load', renderAd, { once: true });
+      script.addEventListener('error', handleScriptError, { once: true });
+      document.body.appendChild(script);
+    };
+    const refreshAd = () => {
+      if (!document.hidden) loadAdfit();
+    };
+
+    loadAdfit();
+    document.addEventListener('visibilitychange', refreshAd);
+    window.addEventListener('pageshow', refreshAd);
+    return () => {
+      document.removeEventListener('visibilitychange', refreshAd);
+      window.removeEventListener('pageshow', refreshAd);
+      if (script) {
+        script.removeEventListener('load', renderAd);
+        script.removeEventListener('error', handleScriptError);
+      }
+    };
   }, []);
-  return <View ref={adRef} style={styles.adContainer} />;
+  return <View ref={adRef} style={[styles.adContainer, Platform.OS === 'web' && { bottom: insets.bottom }]} />;
 }
 

@@ -164,7 +164,7 @@ export default function HeadsUpSetupScreen({ onBack }) {
           {message ? <Text style={styles.message}>{message}</Text> : null}
         </ScrollView>
       ) : (
-        <View style={styles.gameStage}>
+        <View style={[styles.gameStage, isWeb && { paddingBottom: 50 + insets.bottom }]}>
           <Text
             style={gameStage === 'countdown'
               ? styles.countdownText

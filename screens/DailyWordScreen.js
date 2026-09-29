@@ -521,7 +521,7 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
         </View>
 
         {!over && (
-          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT }]}>
+          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT + insets.bottom }]}>
             {toast ? (
               <View style={styles.toast} pointerEvents="none">
                 <Text style={styles.toastText}>{toast}</Text>
