@@ -3,7 +3,7 @@
   "short_name": "Biblink",
   "start_url": ".",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#f6f8fb",
   "theme_color": "#315d7f",
   "icons": [

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { activateKeepAwakeAsync, deactivateKeepAwake, isAvailableAsync } from 'expo-keep-awake';
+import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import AppHeader from '../components/AppHeader';
 import WordHelpModal from '../components/WordHelpModal';
 import { drawHeadsUpWord } from '../utils/headsUp';
-import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
 
 const BG_IMAGE = require('../assets/BG.png');
 const POPULARITY_LEVELS = [1, 2, 3];
@@ -23,11 +22,14 @@ export default function HeadsUpSetupScreen({ onBack }) {
   const [gameStage, setGameStage] = useState('setup');
   const [countdown, setCountdown] = useState(5);
   const [currentWord, setCurrentWord] = useState(null);
+  const keepAwakeActiveRef = useRef(false);
+  const isMountedRef = useRef(true);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const isWeb = Platform.OS === 'web';
-  const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
-  const pageHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight || effectiveWidth * PAGE_ASPECT_RATIO) : undefined;
+  const effectiveWidth = windowWidth || 375;
+  const pageHeight = isWeb ? (windowHeight || undefined) : undefined;
+  const isLandscape = windowWidth > windowHeight;
   const canStart = selectedPopularityLevels.length > 0 && selectedCategories.length > 0;
 
   useEffect(() => {
@@ -43,23 +45,15 @@ export default function HeadsUpSetupScreen({ onBack }) {
   }, [countdown, gameStage]);
 
   useEffect(() => {
-    if (gameStage !== 'word') return undefined;
-    let cancelled = false;
-    let activated = false;
-    const activate = async () => {
-      try {
-        if (!(await isAvailableAsync()) || cancelled) return;
-        await activateKeepAwakeAsync('heads-up-word');
-        activated = true;
-        if (cancelled) await deactivateKeepAwake('heads-up-word');
-      } catch {}
-    };
-    activate();
+    isMountedRef.current = true;
     return () => {
-      cancelled = true;
-      if (activated) deactivateKeepAwake('heads-up-word').catch(() => {});
+      isMountedRef.current = false;
+      if (keepAwakeActiveRef.current) {
+        keepAwakeActiveRef.current = false;
+        deactivateKeepAwake('heads-up-word').catch(() => {});
+      }
     };
-  }, [gameStage]);
+  }, []);
 
   const togglePopularityLevel = (level) => {
     setMessage('');
@@ -75,13 +69,32 @@ export default function HeadsUpSetupScreen({ onBack }) {
       : [...previous, categoryId]);
   };
 
+  const releaseKeepAwake = () => {
+    if (!keepAwakeActiveRef.current) return;
+    keepAwakeActiveRef.current = false;
+    deactivateKeepAwake('heads-up-word').catch(() => {});
+  };
+
   const handleStart = async () => {
     if (!canStart || isStarting) return;
     setIsStarting(true);
     setMessage('');
+    const keepAwakeRequest = activateKeepAwakeAsync('heads-up-word')
+      .then(async () => {
+        if (!isMountedRef.current) {
+          await deactivateKeepAwake('heads-up-word');
+          return false;
+        }
+        keepAwakeActiveRef.current = true;
+        return true;
+      })
+      .catch(() => false);
     try {
       const entry = await drawHeadsUpWord(selectedPopularityLevels, selectedCategories);
+      const keepAwakeActive = await keepAwakeRequest;
+      if (!isMountedRef.current) return;
       if (!entry) {
+        if (keepAwakeActive) releaseKeepAwake();
         setMessage('선택한 조건에 맞는 단어가 아직 없어요.');
         return;
       }
@@ -89,9 +102,11 @@ export default function HeadsUpSetupScreen({ onBack }) {
       setCountdown(5);
       setGameStage('countdown');
     } catch {
-      setMessage('서버에 연결할 수 없어요. 네트워크를 확인해 주세요.');
+      const keepAwakeActive = await keepAwakeRequest;
+      if (keepAwakeActive) releaseKeepAwake();
+      if (isMountedRef.current) setMessage('서버에 연결할 수 없어요. 네트워크를 확인해 주세요.');
     } finally {
-      setIsStarting(false);
+      if (isMountedRef.current) setIsStarting(false);
     }
   };
 
@@ -104,52 +119,54 @@ export default function HeadsUpSetupScreen({ onBack }) {
       <StatusBar barStyle="dark-content" />
       <AppHeader onBack={onBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
       {gameStage === 'setup' ? (
-        <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
-          <View style={styles.titleWrap}>
+        <ScrollView style={styles.scrollView} contentContainerStyle={[styles.content, isLandscape && styles.landscapeContent]}>
+          <View style={[styles.titleWrap, isLandscape && styles.landscapeTitleWrap]}>
             <Text style={styles.eyebrow}>HEADS UP</Text>
             <Text style={styles.title}>헤드업 설정</Text>
             <Text style={styles.description}>인지도 단계와 카테고리를 하나 이상 선택하세요.</Text>
           </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>인지도 단계</Text>
-            <View style={styles.optionRow}>
-              {POPULARITY_LEVELS.map((level) => {
-                const selected = selectedPopularityLevels.includes(level);
-                return (
-                  <Pressable
-                    key={level}
-                    accessibilityRole="checkbox"
-                    accessibilityState={{ checked: selected }}
-                    onPress={() => togglePopularityLevel(level)}
-                    style={({ pressed }) => [styles.option, styles.levelOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
-                  >
-                    <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{level}단계</Text>
-                    <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
-                  </Pressable>
-                );
-              })}
+          <View style={isLandscape ? styles.landscapeSections : undefined}>
+            <View style={[styles.section, isLandscape && styles.landscapeSection]}>
+              <Text style={styles.sectionTitle}>인지도 단계</Text>
+              <View style={styles.optionRow}>
+                {POPULARITY_LEVELS.map((level) => {
+                  const selected = selectedPopularityLevels.includes(level);
+                  return (
+                    <Pressable
+                      key={level}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: selected }}
+                      onPress={() => togglePopularityLevel(level)}
+                      style={({ pressed }) => [styles.option, styles.levelOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
+                    >
+                      <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{level}단계</Text>
+                      <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
             </View>
-          </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>카테고리</Text>
-            <View style={styles.optionRow}>
-              {CATEGORIES.map((category) => {
-                const selected = selectedCategories.includes(category.id);
-                return (
-                  <Pressable
-                    key={category.id}
-                    accessibilityRole="checkbox"
-                    accessibilityState={{ checked: selected }}
-                    onPress={() => toggleCategory(category.id)}
-                    style={({ pressed }) => [styles.option, styles.categoryOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
-                  >
-                    <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{category.label}</Text>
-                    <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
-                  </Pressable>
-                );
-              })}
+            <View style={[styles.section, isLandscape && styles.landscapeSection]}>
+              <Text style={styles.sectionTitle}>카테고리</Text>
+              <View style={styles.optionRow}>
+                {CATEGORIES.map((category) => {
+                  const selected = selectedCategories.includes(category.id);
+                  return (
+                    <Pressable
+                      key={category.id}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: selected }}
+                      onPress={() => toggleCategory(category.id)}
+                      style={({ pressed }) => [styles.option, styles.categoryOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
+                    >
+                      <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{category.label}</Text>
+                      <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
             </View>
           </View>
 
@@ -183,11 +200,15 @@ const styles = StyleSheet.create({
   container: { flex: 1, minHeight: '100%' },
   scrollView: { flex: 1 },
   content: { paddingHorizontal: 24, paddingTop: 22, paddingBottom: 90 },
+  landscapeContent: { paddingHorizontal: 24, paddingTop: 8, paddingBottom: 16 },
   titleWrap: { alignItems: 'center', marginBottom: 30 },
+  landscapeTitleWrap: { marginBottom: 12 },
   eyebrow: { color: '#e08a3c', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
   title: { color: '#3a2e1f', fontSize: 25, fontWeight: '800', marginTop: 7 },
   description: { color: '#7a6450', fontSize: 13, marginTop: 8 },
   section: { marginBottom: 24 },
+  landscapeSections: { flexDirection: 'row', gap: 16 },
+  landscapeSection: { flex: 1, marginBottom: 12 },
   sectionTitle: { color: '#3a2e1f', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   optionRow: { flexDirection: 'row', gap: 9 },
   option: { flex: 1, minHeight: 54, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 12, backgroundColor: 'rgba(253, 251, 246, 0.9)', paddingHorizontal: 8, paddingVertical: 9 },

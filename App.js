@@ -5,6 +5,7 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
+import * as ScreenOrientation from 'expo-screen-orientation';
 import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
@@ -46,7 +47,7 @@ const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
-const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord', 'headsUpSetup'];
+const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
   id: '__empty__',
   title: '',
@@ -123,6 +124,13 @@ function AppContent() {
   const [hintPointsByMap, setHintPointsByMap] = useState({});
   const [hintedSlotsByMap, setHintedSlotsByMap] = useState({});
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const orientation = screen === 'headsUpSetup'
+      ? ScreenOrientation.OrientationLock.LANDSCAPE
+      : ScreenOrientation.OrientationLock.PORTRAIT;
+    ScreenOrientation.lockAsync(orientation).catch(() => {});
+  }, [screen]);
 
   // 원격 데이터 로딩
   useEffect(() => {
@@ -260,20 +268,20 @@ function AppContent() {
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
   const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
-  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'headsUpSetup' ? 4 : (screen === 'puzzle' && selectedMap ? 2 : 1)));
+  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
   const [flipReversed, setFlipReversed] = useState(false);
 
   useEffect(() => {
-    if (!loaded || !fontsLoaded) return undefined;
+    if (!loaded || !fontsLoaded || screen === 'headsUpSetup') return undefined;
     if (flipPages.length > 1 || flipPages[0] === currentPageId) return undefined;
     const forward = pageIndex > SCREEN_BY_PAGE_INDEX.indexOf(flipPages[0]);
     setFlipReversed(!forward);
     flipperRef.current?.goToPageDeferred?.(1);
     setFlipPages([flipPages[0], currentPageId]);
     return undefined;
-  }, [loaded, fontsLoaded, currentPageId, flipPages, pageIndex]);
+  }, [loaded, fontsLoaded, screen, currentPageId, flipPages, pageIndex]);
 
   // 로딩 완료 시 HTML 오버레이만 제거하고 로딩 페이지에 머무름 (사용자 입력으로 진입)
   useEffect(() => {
@@ -383,10 +391,6 @@ function AppContent() {
     <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
   ), [masterMode, screen]);
 
-  const headsUpPage = useMemo(() => (
-    <HeadsUpSetupScreen onBack={() => setScreen('loading')} />
-  ), [setScreen]);
-
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
   const loadingStatusText = dataLoaded
     ? '화면을 준비하는 중...'
@@ -418,7 +422,13 @@ function AppContent() {
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
             <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
           </Pressable>
-          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('headsUpSetup')}>
+          <Pressable
+            style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
+            onPress={() => {
+              ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE).catch(() => {});
+              setScreen('headsUpSetup');
+            }}
+          >
             <Text style={styles.menuButtonText}>헤드업</Text>
           </Pressable>
         </Animated.View>
@@ -426,15 +436,24 @@ function AppContent() {
     </View>
   ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
 
+  if (screen === 'headsUpSetup') {
+    return (
+      <GestureHandlerRootView style={styles.root}>
+        <HeadsUpSetupScreen onBack={() => setScreen('loading')} />
+        <AdBanner />
+      </GestureHandlerRootView>
+    );
+  }
+
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
   }
 
-  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 4 ? headsUpPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage)));
+  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
 
   const renderPageContent = (pageId) => (
     <View style={{ width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }}>
-      {pageId === 'loading' ? loadingPage : (pageId === 'headsUpSetup' ? headsUpPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage)))}
+      {pageId === 'loading' ? loadingPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage))}
     </View>
   );
 
