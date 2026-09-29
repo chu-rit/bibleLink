@@ -10,6 +10,7 @@ import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
 import DailyWordScreen from './screens/DailyWordScreen';
+import HeadsUpSetupScreen from './screens/HeadsUpSetupScreen';
 import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
@@ -45,7 +46,7 @@ const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
 
-const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
+const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord', 'headsUpSetup'];
 const EMPTY_MAP = {
   id: '__empty__',
   title: '',
@@ -253,7 +254,7 @@ function AppContent() {
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
   const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
-  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
+  const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'headsUpSetup' ? 4 : (screen === 'puzzle' && selectedMap ? 2 : 1)));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
   const [flipReversed, setFlipReversed] = useState(false);
@@ -376,6 +377,10 @@ function AppContent() {
     <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
   ), [masterMode, screen]);
 
+  const headsUpPage = useMemo(() => (
+    <HeadsUpSetupScreen onBack={() => setScreen('loading')} />
+  ), [setScreen]);
+
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
   const loadingReady = dataLoaded && fontsLoaded;
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
@@ -396,20 +401,25 @@ function AppContent() {
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
             <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
           </Pressable>
+          {masterMode && (
+            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('headsUpSetup')}>
+              <Text style={styles.menuButtonText}>헤드업</Text>
+            </Pressable>
+          )}
         </Animated.View>
       </View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, masterMode]);
 
   if (screen === 'wordSearch' && dataLoaded) {
     return <WordSearchScreen maps={appMaps} words={appWords} onBack={() => setScreen('mapSelect')} />;
   }
 
-  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage));
+  const currentPage = pageIndex === 0 ? loadingPage : (pageIndex === 4 ? headsUpPage : (pageIndex === 3 ? dailyWordPage : (pageIndex === 2 ? puzzlePage : mapPage)));
 
   const renderPageContent = (pageId) => (
     <View style={{ width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }}>
-      {pageId === 'loading' ? loadingPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage))}
+      {pageId === 'loading' ? loadingPage : (pageId === 'headsUpSetup' ? headsUpPage : (pageId === 'dailyWord' ? dailyWordPage : (pageId === 'puzzle' ? puzzlePage : mapPage)))}
     </View>
   );
 
