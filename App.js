@@ -48,7 +48,8 @@ const isWordSearchPath = Platform.OS === 'web' &&
 
 const lockOrientation = (orientation) => {
   try {
-    require('expo-screen-orientation').lockAsync(orientation).catch(() => {});
+    const { OrientationLock, lockAsync } = require('expo-screen-orientation');
+    lockAsync(orientation === 'LANDSCAPE' ? OrientationLock.LANDSCAPE : OrientationLock.PORTRAIT).catch(() => {});
   } catch {}
 };
 
