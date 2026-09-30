@@ -5,7 +5,6 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import PageFlipper from './lib/pageFlipper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFonts } from 'expo-font';
-import * as ScreenOrientation from 'expo-screen-orientation';
 import bundledMaps from './data/maps/crosswordMaps';
 import MapSelectScreen from './screens/MapSelectScreen';
 import WordSearchScreen from './screens/WordSearchScreen';
@@ -46,6 +45,12 @@ const isMasterModeByUrl = Platform.OS === 'web' &&
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
+
+const lockOrientation = (orientation) => {
+  try {
+    require('expo-screen-orientation').lockAsync(orientation).catch(() => {});
+  } catch {}
+};
 
 const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
@@ -126,10 +131,7 @@ function AppContent() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const orientation = screen === 'headsUpSetup'
-      ? ScreenOrientation.OrientationLock.LANDSCAPE
-      : ScreenOrientation.OrientationLock.PORTRAIT;
-    ScreenOrientation.lockAsync(orientation).catch(() => {});
+    lockOrientation(screen === 'headsUpSetup' ? 'LANDSCAPE' : 'PORTRAIT');
   }, [screen]);
 
   // 원격 데이터 로딩
@@ -425,7 +427,7 @@ function AppContent() {
           <Pressable
             style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
             onPress={() => {
-              ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE).catch(() => {});
+              lockOrientation('LANDSCAPE');
               setScreen('headsUpSetup');
             }}
           >
