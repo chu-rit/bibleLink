@@ -30,7 +30,7 @@
     @media (min-width: 481px) { #loading-icon { width: 240px; height: 240px; } }
     #rotate-overlay { display: none; }
     @media (orientation: landscape) and (max-width: 900px) {
-      #rotate-overlay { display: flex; position: fixed; inset: 0; z-index: 99999; background: #f6f8fb; align-items: center; justify-content: center; flex-direction: column; gap: 12px; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #7a5c3a; font-size: 18px; }
+      body:not(.heads-up-landscape) #rotate-overlay { display: flex; position: fixed; inset: 0; z-index: 99999; background: #f6f8fb; align-items: center; justify-content: center; flex-direction: column; gap: 12px; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #7a5c3a; font-size: 18px; }
     }
   </style>
 </head>

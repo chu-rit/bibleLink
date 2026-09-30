@@ -132,7 +132,11 @@ function AppContent() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    lockOrientation(screen === 'headsUpSetup' ? 'LANDSCAPE' : 'PORTRAIT');
+    const isHeadsUp = screen === 'headsUpSetup';
+    if (Platform.OS === 'web' && typeof document !== 'undefined') {
+      document.body.classList.toggle('heads-up-landscape', isHeadsUp);
+    }
+    lockOrientation(isHeadsUp ? 'LANDSCAPE' : 'PORTRAIT');
   }, [screen]);
 
   // 원격 데이터 로딩
@@ -428,6 +432,9 @@ function AppContent() {
           <Pressable
             style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
             onPress={() => {
+              if (Platform.OS === 'web' && typeof document !== 'undefined') {
+                document.body.classList.add('heads-up-landscape');
+              }
               lockOrientation('LANDSCAPE');
               setScreen('headsUpSetup');
             }}
