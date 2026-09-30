@@ -120,65 +120,71 @@ export default function HeadsUpSetupScreen({ onBack }) {
       <AppHeader onBack={onBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
       {gameStage === 'setup' ? (
         <ScrollView style={styles.scrollView} contentContainerStyle={[styles.content, isLandscape && styles.landscapeContent]}>
-          <View style={[styles.titleWrap, isLandscape && styles.landscapeTitleWrap]}>
-            <Text style={styles.eyebrow}>HEADS UP</Text>
-            <Text style={styles.title}>헤드업 설정</Text>
-            <Text style={styles.description}>인지도 단계와 카테고리를 하나 이상 선택하세요.</Text>
-          </View>
-
-          <View style={isLandscape ? styles.landscapeSections : undefined}>
-            <View style={[styles.section, isLandscape && styles.landscapeSection]}>
-              <Text style={styles.sectionTitle}>인지도 단계</Text>
-              <View style={styles.optionRow}>
-                {POPULARITY_LEVELS.map((level) => {
-                  const selected = selectedPopularityLevels.includes(level);
-                  return (
-                    <Pressable
-                      key={level}
-                      accessibilityRole="checkbox"
-                      accessibilityState={{ checked: selected }}
-                      onPress={() => togglePopularityLevel(level)}
-                      style={({ pressed }) => [styles.option, styles.levelOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
-                    >
-                      <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{level}단계</Text>
-                      <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
-                    </Pressable>
-                  );
-                })}
+          <View style={isLandscape ? styles.landscapePanel : undefined}>
+            <View style={isLandscape ? styles.landscapeIntro : undefined}>
+              <View style={[styles.titleWrap, isLandscape && styles.landscapeTitleWrap]}>
+                <Text style={styles.eyebrow}>HEADS UP</Text>
+                <Text style={[styles.title, isLandscape && styles.landscapeTitle]}>헤드업 설정</Text>
+                <Text style={[styles.description, isLandscape && styles.landscapeDescription]}>인지도 단계와 카테고리를 하나 이상 선택하세요.</Text>
               </View>
             </View>
+            <View style={isLandscape ? styles.landscapeControls : undefined}>
+              <View style={isLandscape ? styles.landscapeSections : undefined}>
+                <View style={[styles.section, isLandscape && styles.landscapeSection]}>
+                  <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>인지도 단계</Text>
+                  <View style={styles.optionRow}>
+                    {POPULARITY_LEVELS.map((level) => {
+                      const selected = selectedPopularityLevels.includes(level);
+                      return (
+                        <Pressable
+                          key={level}
+                          accessibilityRole="checkbox"
+                          accessibilityState={{ checked: selected }}
+                          onPress={() => togglePopularityLevel(level)}
+                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
+                        >
+                          <Text style={[styles.optionText, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{level}단계</Text>
+                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                </View>
 
-            <View style={[styles.section, isLandscape && styles.landscapeSection]}>
-              <Text style={styles.sectionTitle}>카테고리</Text>
-              <View style={styles.optionRow}>
-                {CATEGORIES.map((category) => {
-                  const selected = selectedCategories.includes(category.id);
-                  return (
-                    <Pressable
-                      key={category.id}
-                      accessibilityRole="checkbox"
-                      accessibilityState={{ checked: selected }}
-                      onPress={() => toggleCategory(category.id)}
-                      style={({ pressed }) => [styles.option, styles.categoryOption, selected && styles.optionSelected, pressed && styles.optionPressed]}
-                    >
-                      <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{category.label}</Text>
-                      <Text style={[styles.selectionText, selected && styles.selectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
-                    </Pressable>
-                  );
-                })}
+                <View style={[styles.section, isLandscape && styles.landscapeSection]}>
+                  <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>카테고리</Text>
+                  <View style={styles.optionRow}>
+                    {CATEGORIES.map((category) => {
+                      const selected = selectedCategories.includes(category.id);
+                      return (
+                        <Pressable
+                          key={category.id}
+                          accessibilityRole="checkbox"
+                          accessibilityState={{ checked: selected }}
+                          onPress={() => toggleCategory(category.id)}
+                          style={({ pressed }) => [styles.option, styles.categoryOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
+                        >
+                          <Text style={[styles.optionText, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{category.label}</Text>
+                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                </View>
               </View>
+              <View style={isLandscape ? styles.landscapeAction : undefined}>
+                <Pressable
+                  accessibilityRole="button"
+                  disabled={!canStart || isStarting}
+                  onPress={handleStart}
+                  style={({ pressed }) => [styles.startButton, isLandscape && styles.landscapeStartButton, (!canStart || isStarting) && styles.startButtonDisabled, pressed && canStart && styles.startButtonPressed]}
+                >
+                  <Text style={styles.startButtonText}>{isStarting ? '단어를 불러오는 중...' : '게임 시작'}</Text>
+                </Pressable>
+              </View>
+              {message ? <Text style={[styles.message, isLandscape && styles.landscapeMessage]}>{message}</Text> : null}
             </View>
           </View>
-
-          <Pressable
-            accessibilityRole="button"
-            disabled={!canStart || isStarting}
-            onPress={handleStart}
-            style={({ pressed }) => [styles.startButton, (!canStart || isStarting) && styles.startButtonDisabled, pressed && canStart && styles.startButtonPressed]}
-          >
-            <Text style={styles.startButtonText}>{isStarting ? '단어를 불러오는 중...' : '게임 시작'}</Text>
-          </Pressable>
-          {message ? <Text style={styles.message}>{message}</Text> : null}
         </ScrollView>
       ) : (
         <View style={[styles.gameStage, isWeb && { paddingBottom: 50 + insets.bottom }]}>
@@ -200,31 +206,44 @@ const styles = StyleSheet.create({
   container: { flex: 1, minHeight: '100%' },
   scrollView: { flex: 1 },
   content: { paddingHorizontal: 24, paddingTop: 22, paddingBottom: 90 },
-  landscapeContent: { paddingHorizontal: 24, paddingTop: 8, paddingBottom: 16 },
+  landscapeContent: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 28, paddingTop: 8, paddingBottom: 24 },
+  landscapePanel: { flexDirection: 'row', alignSelf: 'center', width: '100%', maxWidth: 1040, gap: 24, padding: 24, backgroundColor: 'rgba(253, 251, 246, 0.96)', borderWidth: 1, borderColor: '#e1d8ca', borderRadius: 24, shadowColor: '#3a2e1f', shadowOpacity: 0.12, shadowRadius: 14, shadowOffset: { width: 0, height: 5 }, elevation: 4 },
+  landscapeIntro: { flex: 0.8, justifyContent: 'center', paddingRight: 24, borderRightWidth: 1, borderRightColor: '#e1d8ca' },
+  landscapeControls: { flex: 1.9, justifyContent: 'center' },
   titleWrap: { alignItems: 'center', marginBottom: 30 },
-  landscapeTitleWrap: { marginBottom: 12 },
+  landscapeTitleWrap: { alignItems: 'flex-start', marginBottom: 0 },
   eyebrow: { color: '#e08a3c', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
   title: { color: '#3a2e1f', fontSize: 25, fontWeight: '800', marginTop: 7 },
+  landscapeTitle: { fontSize: 30, lineHeight: 36, marginTop: 9 },
   description: { color: '#7a6450', fontSize: 13, marginTop: 8 },
+  landscapeDescription: { fontSize: 14, lineHeight: 21, marginTop: 12 },
   section: { marginBottom: 24 },
-  landscapeSections: { flexDirection: 'row', gap: 16 },
-  landscapeSection: { flex: 1, marginBottom: 12 },
+  landscapeSections: { flexDirection: 'row', gap: 18 },
+  landscapeSection: { flex: 1, marginBottom: 0 },
   sectionTitle: { color: '#3a2e1f', fontSize: 16, fontWeight: '800', marginBottom: 10 },
+  landscapeSectionTitle: { fontSize: 15, marginBottom: 9 },
   optionRow: { flexDirection: 'row', gap: 9 },
   option: { flex: 1, minHeight: 54, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 12, backgroundColor: 'rgba(253, 251, 246, 0.9)', paddingHorizontal: 8, paddingVertical: 9 },
   levelOption: { minHeight: 68, gap: 4 },
   categoryOption: { minHeight: 68, gap: 4 },
+  landscapeOption: { minHeight: 60, paddingHorizontal: 6, paddingVertical: 6, borderRadius: 14 },
   optionSelected: { borderColor: '#7a5c3a', backgroundColor: '#f0ebe0' },
+  landscapeOptionSelected: { borderColor: '#7a5c3a', backgroundColor: '#7a5c3a' },
   optionPressed: { opacity: 0.75 },
   optionText: { color: '#7a6450', fontSize: 15, fontWeight: '700' },
   optionTextSelected: { color: '#3a2e1f' },
+  landscapeOptionTextSelected: { color: '#fdfbf6' },
   selectionText: { color: '#a89880', fontSize: 11, fontWeight: '600' },
   selectionTextSelected: { color: '#7a5c3a' },
+  landscapeSelectionTextSelected: { color: '#eadfcf' },
   startButton: { borderRadius: 14, paddingVertical: 15, alignItems: 'center', backgroundColor: '#7a5c3a', marginTop: 8 },
+  landscapeAction: { flexDirection: 'row', justifyContent: 'flex-end', marginTop: 16 },
+  landscapeStartButton: { width: 200, marginTop: 0, paddingVertical: 14 },
   startButtonDisabled: { opacity: 0.45 },
   startButtonPressed: { opacity: 0.8, transform: [{ scale: 0.98 }] },
   startButtonText: { color: '#fdfbf6', fontSize: 16, fontWeight: '800' },
   message: { color: '#7a6450', fontSize: 12, textAlign: 'center', marginTop: 12, lineHeight: 18 },
+  landscapeMessage: { textAlign: 'right', marginTop: 8 },
   gameStage: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 20, paddingBottom: 50 },
   countdownText: { color: '#3a2e1f', fontSize: 160, fontWeight: '900', fontFamily: 'NotoSansKR' },
   gameWord: { color: '#3a2e1f', fontWeight: '900', fontFamily: 'NotoSansKR', textAlign: 'center' },
