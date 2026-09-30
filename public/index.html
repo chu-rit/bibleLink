@@ -87,10 +87,6 @@
         if (!document.hidden) restoreViewport();
       });
 
-      // 세로 고정 — manifest의 orientation은 iOS PWA에서 무시되므로 API로 한 번 더 시도
-      if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock('portrait').catch(function () {});
-      }
     })();
   </script>
 </body>
