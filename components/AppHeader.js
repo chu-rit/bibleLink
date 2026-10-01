@@ -4,7 +4,7 @@ import Svg, { Path } from 'react-native-svg';
 
 const LOGO_IMAGE = require('../assets/LOGO.png');
 
-export default function AppHeader({ onBack, onSettings, onHelp, onRotate }) {
+export default function AppHeader({ onBack, onSettings, onHelp, onRotate, rotateUnlocked }) {
   return (
     <View style={styles.header}>
       <View style={styles.side}>
@@ -19,8 +19,11 @@ export default function AppHeader({ onBack, onSettings, onHelp, onRotate }) {
         {onRotate && (
           <Pressable onPress={onRotate} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
             <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <Path d="M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4" />
-              <Path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+              <Path d="M3 11h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V11z" fill="none" />
+              {rotateUnlocked
+                ? <Path d="M7 11V7a5 5 0 0 1 9.9-1" />
+                : <Path d="M7 11V7a5 5 0 0 1 10 0v4" />}
+              <Path d="M12 15v3" />
             </Svg>
           </Pressable>
         )}

@@ -38,13 +38,22 @@ const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / (MAX
 
 export default function ChronologyScreen({ onBack }) {
   const insets = useSafeAreaInsets();
-  // 회전 버튼: 현재 방향과 반대로 강제 잠금 (시스템 회전 잠금 설정과 무관하게 동작)
-  const toggleOrientation = async () => {
+  // 회전 잠금 토글: 잠금 해제(기울임으로 자유 회전) ↔ 현재 방향으로 잠금
+  const [rotationUnlocked, setRotationUnlocked] = useState(false);
+  const toggleOrientationLock = async () => {
     try {
       const { Orientation, OrientationLock } = ScreenOrientation;
-      const orientation = await ScreenOrientation.getOrientationAsync();
-      const landscape = orientation === Orientation.LANDSCAPE_LEFT || orientation === Orientation.LANDSCAPE_RIGHT;
-      await ScreenOrientation.lockAsync(landscape ? OrientationLock.PORTRAIT_UP : OrientationLock.LANDSCAPE);
+      if (rotationUnlocked) {
+        const orientation = await ScreenOrientation.getOrientationAsync();
+        const lock = orientation === Orientation.LANDSCAPE_LEFT ? OrientationLock.LANDSCAPE_LEFT
+          : orientation === Orientation.LANDSCAPE_RIGHT ? OrientationLock.LANDSCAPE_RIGHT
+          : OrientationLock.PORTRAIT_UP;
+        await ScreenOrientation.lockAsync(lock);
+      } else {
+        // unlockAsync(DEFAULT) 대신 ALL을 사용: 명시적으로 전 방향 마스크를 걸어 자동회전을 재개한다
+        await ScreenOrientation.lockAsync(OrientationLock.ALL);
+      }
+      setRotationUnlocked(!rotationUnlocked);
     } catch {}
   };
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -219,7 +228,7 @@ export default function ChronologyScreen({ onBack }) {
 
   return (
     <ImageBackground source={BG_IMAGE} resizeMode="cover" style={[styles.screen, { paddingTop: insets.top }]}>
-      <AppHeader onBack={onBack} onRotate={toggleOrientation} />
+      <AppHeader onBack={onBack} onRotate={toggleOrientationLock} rotateUnlocked={rotationUnlocked} />
       <View style={styles.timelineWrap}>
       <GestureDetector gesture={composed}>
         <View
