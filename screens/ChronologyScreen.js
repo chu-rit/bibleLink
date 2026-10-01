@@ -42,7 +42,7 @@ export default function ChronologyScreen({ onBack }) {
   const toggleOrientation = async () => {
     try {
       const { Orientation, OrientationLock } = ScreenOrientation;
-      const { orientation } = await ScreenOrientation.getOrientationAsync();
+      const orientation = await ScreenOrientation.getOrientationAsync();
       const landscape = orientation === Orientation.LANDSCAPE_LEFT || orientation === Orientation.LANDSCAPE_RIGHT;
       await ScreenOrientation.lockAsync(landscape ? OrientationLock.PORTRAIT_UP : OrientationLock.LANDSCAPE);
     } catch {}
