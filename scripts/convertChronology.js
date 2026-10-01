@@ -90,6 +90,29 @@ function needsReview(event) {
 
 const translations = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
 
+// 한국어판이 확인된 비-jw.org 링크 치환표
+const SOURCE_OVERRIDES = {
+  'https://nl.wikipedia.org/wiki/Caligula': 'https://ko.wikipedia.org/wiki/칼리굴라',
+  'https://nl.wikipedia.org/wiki/Claudius_I': 'https://ko.wikipedia.org/wiki/클라우디우스',
+  'https://nl.wikipedia.org/wiki/Nero_(keizer)': 'https://ko.wikipedia.org/wiki/네로',
+  'https://nl.wikipedia.org/wiki/Tweede_Wereldoorlog': 'https://ko.wikipedia.org/wiki/제2차_세계_대전',
+  'https://en.wikipedia.org/wiki/2023_Israel–Hamas_war': 'https://ko.wikipedia.org/wiki/이스라엘-하마스_전쟁',
+  'https://en.wikipedia.org/wiki/2026_Iran_war': 'https://ko.wikipedia.org/wiki/2026년_이란_전쟁',
+};
+
+// jw.org 출처를 한국어 라이브러리 링크로 변환
+const localizeSource = (url) => {
+  if (!url) return url;
+  if (Object.prototype.hasOwnProperty.call(SOURCE_OVERRIDES, url)) return SOURCE_OVERRIDES[url];
+  const media = url.match(/mediaitems\/[^/]+\/([^\s/]+)/);
+  if (media) return `https://www.jw.org/finder?srcid=share&wtlocale=KO&lank=${media[1]}`;
+  return url
+    .replace('wtlocale=E', 'wtlocale=KO')
+    .replace('pub=nwtsty', 'pub=nwt')
+    .replace('wol.jw.org/en/wol/d/r1/lp-e/', 'wol.jw.org/ko/wol/d/r8/lp-ko/')
+    .replace('wol.jw.org/nl/wol/d/r18/lp-o/', 'wol.jw.org/ko/wol/d/r8/lp-ko/');
+};
+
 const lines = fs.readFileSync(sourcePath, 'utf8').split(/\r?\n/);
 const koreanLines = fs.readFileSync(koreanPath, 'utf8').split(/\r?\n/);
 const events = [];
@@ -126,7 +149,7 @@ for (const line of lines.slice(1)) {
   if (toNumber(endHour) !== null) entry.endHour = toNumber(endHour);
   if (toNumber(endUncertainty) !== null) entry.endUncertaintyHours = toNumber(endUncertainty);
   entry.category = category;
-  if (source) entry.source = source;
+  if (source) entry.source = localizeSource(source);
   if (!translations[String(sourceOrder)] && (!koreanEvent || needsReview(koreanEvent))) {
     entry.needsReview = true;
   }
