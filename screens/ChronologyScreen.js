@@ -210,7 +210,7 @@ export default function ChronologyScreen({ onBack }) {
             );
           })}
 
-          {periodBars.map(({ item, x, w, lane }) => (
+          {periodBars.map(({ item, x, w, lane, textShift }) => (
             <Pressable
               key={`p${item.id}`}
               onLongPress={() => openSource(item)}
@@ -261,7 +261,7 @@ export default function ChronologyScreen({ onBack }) {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: 'transparent' },
   timeline: { flex: 1, overflow: 'hidden' },
-  axis: { position: 'absolute', left: 0, right: 0, height: 1.5, backgroundColor: '#7a5c3a' },
+  axis: { position: 'absolute', left: 14, right: 14, height: 1.5, backgroundColor: '#7a5c3a' },
   tick: { position: 'absolute', alignItems: 'center' },
   tickLine: { width: 1, height: 6, backgroundColor: '#7a5c3a' },
   tickLabel: { fontSize: 9, color: '#7a5c3a', marginTop: 1, fontFamily: 'NotoSansKR' },

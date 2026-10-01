@@ -54,6 +54,13 @@ const lockOrientation = (orientation) => {
   } catch {}
 };
 
+const unlockOrientation = () => {
+  try {
+    const { unlockAsync } = require('expo-screen-orientation');
+    unlockAsync().catch(() => {});
+  } catch {}
+};
+
 const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
   id: '__empty__',
@@ -138,7 +145,11 @@ function AppContent() {
       document.body.classList.toggle('landscape-allowed', isLandscapeScreen);
       document.body.classList.toggle('heads-up-active', isLandscapeScreen);
     }
-    lockOrientation(isLandscapeScreen ? 'LANDSCAPE' : 'PORTRAIT');
+    if (screen === 'chronology') {
+      unlockOrientation();
+    } else {
+      lockOrientation(isLandscapeScreen ? 'LANDSCAPE' : 'PORTRAIT');
+    }
   }, [screen]);
 
   // 원격 데이터 로딩
@@ -449,7 +460,6 @@ function AppContent() {
                 document.body.classList.add('landscape-allowed');
                 document.body.classList.add('heads-up-active');
               }
-              lockOrientation('LANDSCAPE');
               setScreen('chronology');
             }}
           >
