@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -38,11 +38,14 @@ const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / (MAX
 
 export default function ChronologyScreen({ onBack }) {
   const insets = useSafeAreaInsets();
-  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
-  const isLandscapeMode = windowWidth > windowHeight;
-  const toggleOrientation = () => {
-    const lock = isLandscapeMode ? 'PORTRAIT' : 'LANDSCAPE';
-    try { ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock[lock]); } catch {}
+  // 현재 실제 잠금 방향을 읽어 반대로 전환한다 (Dimensions 갱신 지연에 의존하지 않음)
+  const toggleOrientation = async () => {
+    try {
+      const { Orientation, OrientationLock } = ScreenOrientation;
+      const { orientation } = await ScreenOrientation.getOrientationAsync();
+      const landscape = orientation === Orientation.LANDSCAPE_LEFT || orientation === Orientation.LANDSCAPE_RIGHT;
+      await ScreenOrientation.lockAsync(landscape ? OrientationLock.PORTRAIT_UP : OrientationLock.LANDSCAPE);
+    } catch {}
   };
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [view, setView] = useState(null);
