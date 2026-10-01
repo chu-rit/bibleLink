@@ -4,3 +4,4 @@ dist/
 web-build/
 .devin/config.local.json
 data/word_lib/
+srv/
