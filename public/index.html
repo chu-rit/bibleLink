@@ -30,7 +30,11 @@
     @media (min-width: 481px) { #loading-icon { width: 240px; height: 240px; } }
     #rotate-overlay { display: none; }
     @media (orientation: landscape) and (max-width: 900px) {
-      body:not(.heads-up-landscape) #rotate-overlay { display: flex; position: fixed; inset: 0; z-index: 99999; background: #f6f8fb; align-items: center; justify-content: center; flex-direction: column; gap: 12px; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #7a5c3a; font-size: 18px; }
+      body:not(.landscape-allowed) #rotate-overlay { display: flex; position: fixed; inset: 0; z-index: 99999; background: #f6f8fb; align-items: center; justify-content: center; flex-direction: column; gap: 12px; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #7a5c3a; font-size: 18px; }
+    }
+    @media (orientation: landscape) {
+      body.heads-up-active #root { width: 100vw; height: 100dvh; }
+      body.landscape-allowed:not(.heads-up-active) #root { width: min(100vw, 480px); height: 100dvh; }
     }
   </style>
 </head>
@@ -85,6 +89,15 @@
       window.addEventListener('pageshow', restoreViewport);
       document.addEventListener('visibilitychange', function () {
         if (!document.hidden) restoreViewport();
+      });
+      // 회전 직후 iOS가 뷰포트 크기와 스크롤을 늦게 확정해 레이아웃이 어긋나는 문제 보정
+      window.addEventListener('orientationchange', function () {
+        restoreViewport();
+        setTimeout(restoreViewport, 150);
+        setTimeout(restoreViewport, 400);
+      });
+      window.addEventListener('resize', function () {
+        window.scrollTo(0, 0);
       });
 
     })();
