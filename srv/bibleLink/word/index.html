@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#315d7f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Biblink">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Biblink">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="ICON.png">
+  <link rel="apple-touch-icon" href="ICON.png">
+  <style>
+    @font-face { font-family: 'UhBeeGmin2'; src: url('UhBeeGmin2.ttf') format('truetype'); }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; position: fixed; overflow: hidden; overscroll-behavior: none; background: #f6f8fb; }
+    #root { width: min(100vw, calc(100dvh * 9 / 20)); height: min(100dvh, calc(100vw * 20 / 9)); margin: 0 auto; overflow: hidden; background: #f6f8fb; }
+    @media (max-width: 480px) {
+      html, body { position: static; height: auto; min-height: 100%; overflow: auto; }
+      #root { width: 100%; height: min(100dvh, calc(100vw * 20 / 9)); overflow: hidden; }
+    }
+    #loading-screen { position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: min(100vw, calc(100dvh * 9 / 20)); height: min(100dvh, calc(100vw * 20 / 9)); display: flex; flex-direction: column; align-items: center; justify-content: center; background-image: url('BG.png'); background-size: cover; background-position: center; z-index: 9999; transition: opacity 0.3s ease; }
+    #loading-screen.fade-out { opacity: 0; pointer-events: none; }
+    #loading-icon { width: min(70vw, 280px); height: min(70vw, 280px); object-fit: contain; }
+    #loading-status { margin-top: 24px; font-size: 20px; color: #7a5c3a; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; }
+    @media (max-width: 480px) {
+      #loading-screen { width: 100%; height: min(100dvh, calc(100vw * 20 / 9)); }
+    }
+    @media (min-width: 481px) { #loading-icon { width: 240px; height: 240px; } }
+    #rotate-overlay { display: none; }
+    @media (orientation: landscape) and (max-width: 900px) {
+      body:not(.landscape-allowed) #rotate-overlay { display: flex; position: fixed; inset: 0; z-index: 99999; background: #f6f8fb; align-items: center; justify-content: center; flex-direction: column; gap: 12px; font-family: 'UhBeeGmin2', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; color: #7a5c3a; font-size: 18px; }
+    }
+    @media (orientation: landscape) {
+      body.heads-up-active #root { width: 100vw; height: 100dvh; }
+      body.landscape-allowed:not(.heads-up-active) #root { width: min(100vw, 480px); height: 100dvh; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="rotate-overlay">기기를 세로로 돌려 주세요</div>
+  <div id="loading-screen">
+    <img id="loading-icon" src="ICON_NOBG.png" alt="Biblink">
+    <div id="loading-status">데이터를 불러오는 중...</div>
+  </div>
+  <script>
+    (function() {
+      var ls = document.getElementById('loading-screen');
+      var icon = document.getElementById('loading-icon');
+      var iconLoaded = !icon || icon.complete;
+      var backgroundLoaded = false;
+      var hideRequested = false;
+      var removed = false;
+      function removeLoadingWhenReady() {
+        if (!hideRequested || !iconLoaded || !backgroundLoaded || removed) return;
+        removed = true;
+        if (ls) { ls.classList.add('fade-out'); setTimeout(function(){ if(ls && ls.parentNode) ls.parentNode.removeChild(ls); }, 300); }
+      }
+      function hideLoading() {
+        hideRequested = true;
+        removeLoadingWhenReady();
+      }
+      function markIconLoaded() {
+        iconLoaded = true;
+        removeLoadingWhenReady();
+      }
+      function markBackgroundLoaded() {
+        backgroundLoaded = true;
+        removeLoadingWhenReady();
+      }
+      if (icon && !icon.complete) {
+        icon.addEventListener('load', markIconLoaded, { once: true });
+        icon.addEventListener('error', markIconLoaded, { once: true });
+      }
+      var backgroundImage = new Image();
+      backgroundImage.onload = markBackgroundLoaded;
+      backgroundImage.onerror = markBackgroundLoaded;
+      backgroundImage.src = 'BG.png';
+      if (backgroundImage.complete) markBackgroundLoaded();
+      window.__removeLoadingScreen = hideLoading;
+
+      // PWA가 백그라운드에서 돌아올 때 스크롤이 어긋나 화면이 위로 밀리는 현상 방지
+      function restoreViewport() {
+        window.scrollTo(0, 0);
+        window.dispatchEvent(new Event('resize'));
+      }
+      window.addEventListener('pageshow', restoreViewport);
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) restoreViewport();
+      });
+      // 회전 직후 iOS가 뷰포트 크기와 스크롤을 늦게 확정해 레이아웃이 어긋나는 문제 보정
+      window.addEventListener('orientationchange', function () {
+        restoreViewport();
+        setTimeout(restoreViewport, 150);
+        setTimeout(restoreViewport, 400);
+      });
+      window.addEventListener('resize', function () {
+        window.scrollTo(0, 0);
+      });
+
+    })();
+  </script>
+<script src="/bibleLink/_expo/static/js/web/AppEntry-59c6f840d73827b7e07d52a54d5635a7.js" defer></script>
+</body>
+</html>

@@ -11,6 +11,7 @@ import WordSearchScreen from './screens/WordSearchScreen';
 import PuzzleScreen from './screens/PuzzleScreen';
 import DailyWordScreen from './screens/DailyWordScreen';
 import HeadsUpSetupScreen from './screens/HeadsUpSetupScreen';
+import ChronologyScreen from './screens/ChronologyScreen';
 import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 
@@ -132,12 +133,12 @@ function AppContent() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const isHeadsUp = screen === 'headsUpSetup';
+    const isLandscapeScreen = screen === 'headsUpSetup' || screen === 'chronology';
     if (Platform.OS === 'web' && typeof document !== 'undefined') {
-      document.body.classList.toggle('landscape-allowed', isHeadsUp);
-      document.body.classList.toggle('heads-up-active', isHeadsUp);
+      document.body.classList.toggle('landscape-allowed', isLandscapeScreen);
+      document.body.classList.toggle('heads-up-active', isLandscapeScreen);
     }
-    lockOrientation(isHeadsUp ? 'LANDSCAPE' : 'PORTRAIT');
+    lockOrientation(isLandscapeScreen ? 'LANDSCAPE' : 'PORTRAIT');
   }, [screen]);
 
   // 원격 데이터 로딩
@@ -282,7 +283,7 @@ function AppContent() {
   const [flipReversed, setFlipReversed] = useState(false);
 
   useEffect(() => {
-    if (!loaded || !fontsLoaded || screen === 'headsUpSetup') return undefined;
+    if (!loaded || !fontsLoaded || screen === 'headsUpSetup' || screen === 'chronology') return undefined;
     if (flipPages.length > 1 || flipPages[0] === currentPageId) return undefined;
     const forward = pageIndex > SCREEN_BY_PAGE_INDEX.indexOf(flipPages[0]);
     setFlipReversed(!forward);
@@ -426,7 +427,7 @@ function AppContent() {
             <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
           </Pressable>
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
-            <Text style={styles.menuButtonText}>오늘의 단어 (베타)</Text>
+            <Text style={styles.menuButtonText}>오늘의 단어</Text>
           </Pressable>
           <Pressable
             style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
@@ -441,6 +442,19 @@ function AppContent() {
           >
             <Text style={styles.menuButtonText}>헤드업</Text>
           </Pressable>
+          <Pressable
+            style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
+            onPress={() => {
+              if (Platform.OS === 'web' && typeof document !== 'undefined') {
+                document.body.classList.add('landscape-allowed');
+                document.body.classList.add('heads-up-active');
+              }
+              lockOrientation('LANDSCAPE');
+              setScreen('chronology');
+            }}
+          >
+            <Text style={styles.menuButtonText}>연대기(베타)</Text>
+          </Pressable>
         </Animated.View>
       </View>
     </View>
@@ -450,6 +464,15 @@ function AppContent() {
     return (
       <GestureHandlerRootView style={styles.root}>
         <HeadsUpSetupScreen onBack={() => setScreen('loading')} masterMode={masterMode} />
+        <AdBanner />
+      </GestureHandlerRootView>
+    );
+  }
+
+  if (screen === 'chronology') {
+    return (
+      <GestureHandlerRootView style={styles.root}>
+        <ChronologyScreen onBack={() => setScreen('loading')} />
         <AdBanner />
       </GestureHandlerRootView>
     );

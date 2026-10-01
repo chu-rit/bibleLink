@@ -1,0 +1,17 @@
+{
+  "name": "Biblink",
+  "short_name": "Biblink",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f8fb",
+  "theme_color": "#315d7f",
+  "icons": [
+    {
+      "src": "ICON.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
