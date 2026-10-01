@@ -559,6 +559,10 @@ function AdBanner() {
     if (Platform.OS !== 'web' || typeof window === 'undefined' || ['localhost', '127.0.0.1'].includes(window.location.hostname)) return undefined;
     const container = adRef.current;
     if (!container) return undefined;
+    try {
+      const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      if (standalone) sessionStorage.setItem('adfit.test', '1');
+    } catch (e) {}
     let ins = container.querySelector('.kakao_ad_area');
     if (!ins) {
       ins = document.createElement('ins');
