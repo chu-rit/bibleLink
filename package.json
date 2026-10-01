@@ -16,7 +16,8 @@
     "validate:maps": "node scripts/mergeLib1.js && node scripts/validateMaps.js",
     "generate:map": "node scripts/mergeLib1.js && node scripts/generateMap.js",
     "add:daily-word": "node scripts/addDailyWord.js",
-    "build:valid-words": "node scripts/buildValidWords.js"
+    "build:valid-words": "node scripts/buildValidWords.js",
+    "build:chronology": "node scripts/convertChronology.js"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
