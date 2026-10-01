@@ -317,6 +317,24 @@ function AppContent() {
   const menuFadeAnim = useRef(new Animated.Value(0)).current;
   const menuRiseAnim = useRef(new Animated.Value(16)).current;
 
+  // 회전이 필요한 화면 전환은 불투명 표지 커버 아래에서 처리해 OS 회전 애니메이션을 가린다
+  const coverAnim = useRef(new Animated.Value(0)).current;
+  const [coverVisible, setCoverVisible] = useState(false);
+  const coverTimer = useRef(null);
+  const transitionWithCover = (apply) => {
+    if (coverTimer.current) clearTimeout(coverTimer.current);
+    setCoverVisible(true);
+    coverAnim.stopAnimation();
+    coverAnim.setValue(0);
+    Animated.timing(coverAnim, { toValue: 1, duration: 140, useNativeDriver: true }).start(() => {
+      apply();
+      coverTimer.current = setTimeout(() => {
+        Animated.timing(coverAnim, { toValue: 0, duration: 240, useNativeDriver: true }).start(() => setCoverVisible(false));
+      }, 500);
+    });
+  };
+
+
   useEffect(() => {
     if (!loadingReady) return undefined;
     Animated.parallel([
@@ -442,14 +460,14 @@ function AppContent() {
           </Pressable>
           <Pressable
             style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
-            onPress={() => {
+            onPress={() => transitionWithCover(() => {
               if (Platform.OS === 'web' && typeof document !== 'undefined') {
                 document.body.classList.add('landscape-allowed');
                 document.body.classList.add('heads-up-active');
               }
               lockOrientation('LANDSCAPE');
               setScreen('headsUpSetup');
-            }}
+            })}
           >
             <Text style={styles.menuButtonText}>헤드업</Text>
           </Pressable>
@@ -470,11 +488,19 @@ function AppContent() {
     </View>
   ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
 
+  const transitionCover = coverVisible ? (
+    <Animated.View pointerEvents="auto" style={[styles.transitionCover, { opacity: coverAnim }]}>
+      <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
+      {loadingPage}
+    </Animated.View>
+  ) : null;
+
   if (screen === 'headsUpSetup') {
     return (
       <GestureHandlerRootView style={styles.root}>
-        <HeadsUpSetupScreen onBack={() => setScreen('loading')} masterMode={masterMode} />
+        <HeadsUpSetupScreen onBack={() => transitionWithCover(() => setScreen('loading'))} masterMode={masterMode} />
         <AdBanner />
+        {transitionCover}
       </GestureHandlerRootView>
     );
   }
@@ -532,6 +558,7 @@ function AppContent() {
         </View>
         </PageFlipperBoundary>
       <AdBanner />
+      {transitionCover}
     </GestureHandlerRootView>
   );
 }
@@ -541,6 +568,8 @@ const styles = StyleSheet.create({
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
   flipperFrame: { flex: 1 },
   adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
+  transitionCover: { ...StyleSheet.absoluteFillObject, zIndex: 999, elevation: 999, alignItems: 'center', justifyContent: 'center' },
+
   loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
