@@ -56,6 +56,7 @@
 - **추가하는 단어가 유효 추측 사전(`data/words2/validWords.json`)에 포함돼 있어야 한다** — 없으면 정답 자체를 입력할 수 없다. Lib1에 있는 단어면 `npm run build:valid-words`로 갱신, 없으면 `data/words2/5word.txt` 또는 `6word.txt`에 추가 후 같은 명령으로 갱신.
 - 서버 `dailyWords/{dateKey}` 문서에는 `wordId`만 저장되고, 정답 텍스트는 클라이언트가 번들된 `dailyWords.json`에서 `wordId`로 조회한다. Firestore 규칙상 `read: true`라 비밀 데이터가 아니다.
 - 랭킹 제출 검증은 클라이언트에서 수행한다: 서버 시간 동기화 → `wordId` 일치 확인 → 입력 정답과 entry.name 비교. Firestore 규칙은 `day` 값만 서버 시간과 대조하고 정답 여부는 검증하지 않는다.
+- 오늘의 단어·챌린지 출제 상태를 점검·보고할 때 정답(`word`/`name`)을 노출하지 않는다. 문서 존재 여부, `wordId`, 필드 완전성만 보고한다.
 
 ## 검증
 - JSON 변경 후 파싱 유효성 확인. 맵 변경 후 `npm run validate:maps` 실행.
