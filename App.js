@@ -563,6 +563,7 @@ function AdBanner() {
       const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       if (standalone) sessionStorage.setItem('adfit.test', '1');
     } catch (e) {}
+    window.kakaoAdOnFail = () => { window.__adfitNoAdAt = Date.now(); };
     let ins = container.querySelector('.kakao_ad_area');
     if (!ins) {
       ins = document.createElement('ins');
@@ -572,6 +573,7 @@ function AdBanner() {
       ins.setAttribute('data-ad-unit', 'DAN-kILk8DoW0wkoyavP');
       ins.setAttribute('data-ad-width', '320');
       ins.setAttribute('data-ad-height', '50');
+      ins.setAttribute('data-ad-onfail', 'kakaoAdOnFail');
       container.appendChild(ins);
     }
 
@@ -620,6 +622,31 @@ function AdBanner() {
       }
     };
   }, []);
-  return <View ref={adRef} style={[styles.adContainer, Platform.OS === 'web' && { bottom: Math.max(insets.bottom - 12, 0) }]} />;
+  const showAdDebug = async () => {
+    const ins = adRef.current?.querySelector?.('.kakao_ad_area');
+    let notif = '-'; let perm = '-';
+    try { notif = String(Notification.permission); } catch (e) { notif = 'n/a'; }
+    try { perm = String((await navigator.permissions.query({ name: 'notifications' })).state); } catch (e) { perm = 'n/a'; }
+    window.alert([
+      `standalone: ${window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true}`,
+      `adfit: ${typeof window.adfit?.render}`,
+      `ins: ${ins ? `yes iframe=${ins.querySelectorAll('iframe').length} disp=${getComputedStyle(ins).display}` : 'no'}`,
+      `notif: ${notif} / query: ${perm}`,
+      `webdriver: ${navigator.webdriver}`,
+      `langs: ${(navigator.languages || []).join(',') || 'none'}`,
+      `suspend: ${localStorage.getItem('adfit.ba.adUnitSuspendItems') || 'none'}`,
+      `testFlag: ${sessionStorage.getItem('adfit.test') || 'none'}`,
+      `noAd: ${window.__adfitNoAdAt ? 'yes' : 'no'}`,
+    ].join('\n'));
+  };
+
+  return (
+    <Pressable
+      ref={adRef}
+      onLongPress={Platform.OS === 'web' ? showAdDebug : undefined}
+      delayLongPress={1200}
+      style={[styles.adContainer, Platform.OS === 'web' && { bottom: Math.max(insets.bottom - 12, 0) }]}
+    />
+  );
 }
 
