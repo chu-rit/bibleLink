@@ -62,13 +62,6 @@ const lockOrientation = (orientation) => {
   } catch {}
 };
 
-const unlockOrientation = () => {
-  try {
-    const { unlockAsync } = require('expo-screen-orientation');
-    enqueueOrientation(() => unlockAsync());
-  } catch {}
-};
-
 const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {
   id: '__empty__',
@@ -153,11 +146,8 @@ function AppContent() {
       document.body.classList.toggle('landscape-allowed', isLandscapeScreen);
       document.body.classList.toggle('heads-up-active', isLandscapeScreen);
     }
-    if (screen === 'chronology') {
-      unlockOrientation();
-    } else {
-      lockOrientation(isLandscapeScreen ? 'LANDSCAPE' : 'PORTRAIT');
-    }
+    // 연대기는 진입 시 세로 고정으로 들어가고 화면 안 회전 버튼으로 전환한다 (unlock 시 센서 재평가 깜빡임 방지)
+    lockOrientation(screen === 'headsUpSetup' ? 'LANDSCAPE' : 'PORTRAIT');
   }, [screen]);
 
   // 원격 데이터 로딩
