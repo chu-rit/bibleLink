@@ -481,13 +481,13 @@ function AppContent() {
           </Pressable>
           <Pressable
             style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
-            onPress={() => {
+            onPress={() => transitionWithCover(() => {
               if (Platform.OS === 'web' && typeof document !== 'undefined') {
                 document.body.classList.add('landscape-allowed');
                 document.body.classList.add('heads-up-active');
               }
               setScreen('chronology');
-            }}
+            })}
           >
             <Text style={styles.menuButtonText}>연대기(베타)</Text>
           </Pressable>
@@ -516,8 +516,9 @@ function AppContent() {
   if (screen === 'chronology') {
     return (
       <GestureHandlerRootView style={styles.root}>
-        <ChronologyScreen onBack={() => setScreen('loading')} />
+        <ChronologyScreen onBack={() => transitionWithCover(() => setScreen('loading'))} />
         <AdBanner />
+        {transitionCover}
       </GestureHandlerRootView>
     );
   }
