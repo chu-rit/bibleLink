@@ -360,6 +360,27 @@ function AppContent() {
     });
   };
 
+  // OTA 업데이트가 내려받아져 있으면 로딩 페이지에 다시 시작 버튼만 표시해 즉시 적용을 유도한다
+  const [updateReady, setUpdateReady] = useState(false);
+  const restartForUpdate = () => {
+    try { require('expo-updates').reloadAsync(); } catch {}
+  };
+  useEffect(() => {
+    if (Platform.OS === 'web') return undefined;
+    let cancelled = false;
+    (async () => {
+      try {
+        const Updates = require('expo-updates');
+        if (!Updates.isEnabled) return;
+        const check = await Updates.checkForUpdateAsync();
+        if (!check.isAvailable) return;
+        await Updates.fetchUpdateAsync();
+        if (!cancelled) setUpdateReady(true);
+      } catch {}
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
 
   useEffect(() => {
     if (!loadingReady) return undefined;
@@ -478,6 +499,12 @@ function AppContent() {
           style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
           pointerEvents={loadingReady ? 'auto' : 'none'}
         >
+          {updateReady ? (
+            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={restartForUpdate}>
+              <Text style={styles.menuButtonText}>다시 시작</Text>
+            </Pressable>
+          ) : (
+          <>
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
             <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
           </Pressable>
@@ -509,10 +536,12 @@ function AppContent() {
           >
             <Text style={styles.menuButtonText}>연대기(베타)</Text>
           </Pressable>
+          </>
+          )}
         </Animated.View>
       </View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, updateReady]);
 
   const transitionCover = coverVisible ? (
     <Animated.View pointerEvents="auto" style={[styles.transitionCover, { opacity: coverAnim }]}>
