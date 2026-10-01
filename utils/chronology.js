@@ -31,12 +31,11 @@ export const formatYear = (year) => (year < 0 ? `기원전 ${-year}` : `${year}`
 
 // 표시 연수(span)에 따라 노출할 최소 level — level이 클수록 주요 사건
 export const minLevelForSpan = (spanYears) => {
-  if (spanYears >= 3000) return 6;
-  if (spanYears >= 1200) return 5;
-  if (spanYears >= 400) return 4;
-  if (spanYears >= 120) return 3;
-  if (spanYears >= 40) return 2;
-  if (spanYears >= 12) return 1;
+  if (spanYears >= 3000) return 5;
+  if (spanYears >= 1200) return 4;
+  if (spanYears >= 400) return 3;
+  if (spanYears >= 120) return 2;
+  if (spanYears >= 40) return 1;
   return 0;
 };
 
