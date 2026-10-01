@@ -1,7 +1,21 @@
-import { doc, runTransaction, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, runTransaction, serverTimestamp } from 'firebase/firestore';
 import headsUpWords from '../data/words2/headsUpWords.json';
 import { db } from '../firebaseConfig';
 import { getServerCalendarDateInfo } from './dailyWord';
+
+export async function getTodayUsedHeadsUpWords() {
+  if (!db) throw new Error('firebase-not-configured');
+  const { dateKey } = await getServerCalendarDateInfo();
+  const snapshots = await Promise.all(headsUpWords.map((entry) => getDoc(doc(db, 'headsUpWordUsage', dateKey, 'words', entry.id))));
+  return snapshots.flatMap((snapshot, index) => snapshot.exists()
+    ? [{ ...headsUpWords[index], calledAt: snapshot.data()?.calledAt }]
+    : [])
+    .sort((a, b) => (a.calledAt?.toMillis?.() || 0) - (b.calledAt?.toMillis?.() || 0));
+}
+
+export function getAvailableHeadsUpPopularityLevels() {
+  return [...new Set(headsUpWords.map((entry) => entry.popularity))];
+}
 
 export async function drawHeadsUpWord(popularityLevels, categories) {
   if (!db) throw new Error('firebase-not-configured');

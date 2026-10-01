@@ -1,19 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ImageBackground, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { ImageBackground, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import AppHeader from '../components/AppHeader';
 import WordHelpModal from '../components/WordHelpModal';
-import { drawHeadsUpWord } from '../utils/headsUp';
+import { drawHeadsUpWord, getAvailableHeadsUpPopularityLevels, getTodayUsedHeadsUpWords } from '../utils/headsUp';
 
 const BG_IMAGE = require('../assets/BG.png');
 const POPULARITY_LEVELS = [1, 2, 3];
+const AVAILABLE_POPULARITY_LEVELS = new Set(getAvailableHeadsUpPopularityLevels());
 const CATEGORIES = [
   { id: '인물', label: '인물' },
   { id: '지명', label: '지명' },
 ];
 
-export default function HeadsUpSetupScreen({ onBack }) {
+export default function HeadsUpSetupScreen({ onBack, masterMode }) {
   const [selectedPopularityLevels, setSelectedPopularityLevels] = useState([1]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [message, setMessage] = useState('');
@@ -22,6 +23,10 @@ export default function HeadsUpSetupScreen({ onBack }) {
   const [gameStage, setGameStage] = useState('setup');
   const [countdown, setCountdown] = useState(5);
   const [currentWord, setCurrentWord] = useState(null);
+  const [showUsedWords, setShowUsedWords] = useState(false);
+  const [usedWords, setUsedWords] = useState([]);
+  const [isLoadingUsedWords, setIsLoadingUsedWords] = useState(false);
+  const [usedWordsMessage, setUsedWordsMessage] = useState('');
   const keepAwakeActiveRef = useRef(false);
   const isMountedRef = useRef(true);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
@@ -56,6 +61,7 @@ export default function HeadsUpSetupScreen({ onBack }) {
   }, []);
 
   const togglePopularityLevel = (level) => {
+    if (!AVAILABLE_POPULARITY_LEVELS.has(level)) return;
     setMessage('');
     setSelectedPopularityLevels((previous) => previous.includes(level)
       ? previous.filter((selected) => selected !== level)
@@ -110,6 +116,19 @@ export default function HeadsUpSetupScreen({ onBack }) {
     }
   };
 
+  const openUsedWords = async () => {
+    setShowUsedWords(true);
+    setIsLoadingUsedWords(true);
+    setUsedWordsMessage('');
+    try {
+      setUsedWords(await getTodayUsedHeadsUpWords());
+    } catch {
+      setUsedWordsMessage('오늘 사용한 단어를 불러오지 못했어요. 네트워크를 확인해 주세요.');
+    } finally {
+      setIsLoadingUsedWords(false);
+    }
+  };
+
   return (
     <ImageBackground
       source={BG_IMAGE}
@@ -134,17 +153,19 @@ export default function HeadsUpSetupScreen({ onBack }) {
                   <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>인지도 단계</Text>
                   <View style={styles.optionRow}>
                     {POPULARITY_LEVELS.map((level) => {
+                      const disabled = !AVAILABLE_POPULARITY_LEVELS.has(level);
                       const selected = selectedPopularityLevels.includes(level);
                       return (
                         <Pressable
                           key={level}
                           accessibilityRole="checkbox"
-                          accessibilityState={{ checked: selected }}
+                          accessibilityState={{ checked: selected, disabled }}
+                          disabled={disabled}
                           onPress={() => togglePopularityLevel(level)}
-                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
+                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed, disabled && styles.optionDisabled]}
                         >
                           <Text style={[styles.optionText, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{level}단계</Text>
-                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{disabled ? '준비 중' : selected ? '선택됨' : '선택'}</Text>
                         </Pressable>
                       );
                     })}
@@ -182,6 +203,15 @@ export default function HeadsUpSetupScreen({ onBack }) {
                   <Text style={styles.startButtonText}>{isStarting ? '단어를 불러오는 중...' : '게임 시작'}</Text>
                 </Pressable>
               </View>
+              {masterMode && (
+                <Pressable
+                  accessibilityRole="button"
+                  onPress={openUsedWords}
+                  style={({ pressed }) => [styles.usedWordsButton, isLandscape && styles.landscapeUsedWordsButton, pressed && styles.optionPressed]}
+                >
+                  <Text style={styles.usedWordsButtonText}>오늘 사용한 단어 보기</Text>
+                </Pressable>
+              )}
               {message ? <Text style={[styles.message, isLandscape && styles.landscapeMessage]}>{message}</Text> : null}
             </View>
           </View>
@@ -197,6 +227,37 @@ export default function HeadsUpSetupScreen({ onBack }) {
           </Text>
         </View>
       )}
+      <Modal visible={showUsedWords} transparent animationType="fade" onRequestClose={() => setShowUsedWords(false)}>
+        <Pressable style={styles.usedWordsOverlay} onPress={() => setShowUsedWords(false)}>
+          <Pressable style={styles.usedWordsCard} onPress={(event) => event.stopPropagation()}>
+            <View style={styles.usedWordsHeader}>
+              <View>
+                <Text style={styles.usedWordsEyebrow}>HEADS UP</Text>
+                <Text style={styles.usedWordsTitle}>오늘 사용한 단어 ({usedWords.length})</Text>
+              </View>
+              <Pressable onPress={() => setShowUsedWords(false)} style={styles.usedWordsClose}>
+                <Text style={styles.usedWordsCloseText}>닫기</Text>
+              </Pressable>
+            </View>
+            {isLoadingUsedWords ? <Text style={styles.usedWordsStatus}>사용 목록을 불러오는 중...</Text> : null}
+            {!isLoadingUsedWords && usedWordsMessage ? <Text style={styles.usedWordsStatus}>{usedWordsMessage}</Text> : null}
+            {!isLoadingUsedWords && !usedWordsMessage && usedWords.length === 0 ? <Text style={styles.usedWordsStatus}>오늘 사용한 단어가 없습니다.</Text> : null}
+            {!isLoadingUsedWords && !usedWordsMessage && usedWords.length > 0 && (
+              <ScrollView style={styles.usedWordsList} contentContainerStyle={styles.usedWordsListContent}>
+                {usedWords.map((entry, index) => (
+                  <View key={entry.id} style={styles.usedWordsRow}>
+                    <Text style={styles.usedWordsIndex}>{index + 1}</Text>
+                    <View style={styles.usedWordsEntry}>
+                      <Text style={styles.usedWordsName}>{entry.name}</Text>
+                      <Text style={styles.usedWordsMeta}>{entry.category} · {entry.popularity}단계</Text>
+                    </View>
+                  </View>
+                ))}
+              </ScrollView>
+            )}
+          </Pressable>
+        </Pressable>
+      </Modal>
       <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} eyebrow="HEADS UP" variant="headsUp" />
     </ImageBackground>
   );
@@ -230,6 +291,7 @@ const styles = StyleSheet.create({
   optionSelected: { borderColor: '#7a5c3a', backgroundColor: '#f0ebe0' },
   landscapeOptionSelected: { borderColor: '#7a5c3a', backgroundColor: '#7a5c3a' },
   optionPressed: { opacity: 0.75 },
+  optionDisabled: { opacity: 0.45 },
   optionText: { color: '#7a6450', fontSize: 15, fontWeight: '700' },
   optionTextSelected: { color: '#3a2e1f' },
   landscapeOptionTextSelected: { color: '#fdfbf6' },
@@ -239,6 +301,24 @@ const styles = StyleSheet.create({
   startButton: { borderRadius: 14, paddingVertical: 15, alignItems: 'center', backgroundColor: '#7a5c3a', marginTop: 8 },
   landscapeAction: { flexDirection: 'row', justifyContent: 'flex-end', marginTop: 16 },
   landscapeStartButton: { width: 200, marginTop: 0, paddingVertical: 14 },
+  usedWordsButton: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 12, paddingVertical: 11, alignItems: 'center', marginTop: 10, backgroundColor: '#f0ebe0' },
+  landscapeUsedWordsButton: { alignSelf: 'flex-end', minWidth: 200 },
+  usedWordsButtonText: { color: '#7a5c3a', fontSize: 14, fontWeight: '700' },
+  usedWordsOverlay: { flex: 1, backgroundColor: 'rgba(58,46,31,0.4)', alignItems: 'center', justifyContent: 'center', padding: 20 },
+  usedWordsCard: { width: '100%', maxWidth: 480, maxHeight: '80%', backgroundColor: '#fdfbf6', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 20, padding: 20 },
+  usedWordsHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  usedWordsEyebrow: { color: '#e08a3c', fontSize: 10, fontWeight: '900', letterSpacing: 1.4 },
+  usedWordsTitle: { color: '#3a2e1f', fontSize: 19, fontWeight: '900', marginTop: 3 },
+  usedWordsClose: { borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 10, backgroundColor: '#f0ebe0', paddingHorizontal: 12, paddingVertical: 8 },
+  usedWordsCloseText: { color: '#7a6450', fontSize: 13, fontWeight: '700' },
+  usedWordsList: { marginTop: 16, flexShrink: 1 },
+  usedWordsListContent: { gap: 8, paddingBottom: 2 },
+  usedWordsRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f7f2e8', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 9 },
+  usedWordsIndex: { width: 28, color: '#a89880', fontSize: 12, fontWeight: '800' },
+  usedWordsEntry: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  usedWordsName: { color: '#3a2e1f', fontSize: 15, fontWeight: '800' },
+  usedWordsMeta: { color: '#7a6450', fontSize: 12 },
+  usedWordsStatus: { color: '#7a6450', fontSize: 14, textAlign: 'center', marginTop: 24, marginBottom: 12 },
   startButtonDisabled: { opacity: 0.45 },
   startButtonPressed: { opacity: 0.8, transform: [{ scale: 0.98 }] },
   startButtonText: { color: '#fdfbf6', fontSize: 16, fontWeight: '800' },

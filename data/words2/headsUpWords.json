@@ -72,12 +72,6 @@
     "name": "다니엘"
   },
   {
-    "id": "jesus",
-    "popularity": 1,
-    "category": "인물",
-    "name": "예수"
-  },
-  {
     "id": "mary",
     "popularity": 1,
     "category": "인물",
@@ -121,19 +115,19 @@
   },
   {
     "id": "aaron",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "아론"
   },
   {
     "id": "joshua",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "여호수아"
   },
   {
     "id": "samuel",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "사무엘"
   },
@@ -151,13 +145,13 @@
   },
   {
     "id": "samson",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "삼손"
   },
   {
     "id": "gideon",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "기드온"
   },
@@ -169,7 +163,7 @@
   },
   {
     "id": "caleb",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "갈렙"
   },
@@ -181,7 +175,7 @@
   },
   {
     "id": "naomi",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "나오미"
   },
@@ -193,13 +187,13 @@
   },
   {
     "id": "rachel",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "라헬"
   },
   {
     "id": "leah",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "레아"
   },
@@ -217,218 +211,458 @@
   },
   {
     "id": "jonah",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "요나"
   },
   {
     "id": "jonathan",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "요나단"
   },
   {
     "id": "james",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "야고보"
   },
   {
     "id": "andrew",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "안드레"
   },
   {
     "id": "thomas",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "도마"
   },
   {
     "id": "matthew",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "마태"
   },
   {
     "id": "mark",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "마가"
   },
   {
     "id": "philip",
-    "popularity": 2,
+    "popularity": 1,
     "category": "인물",
     "name": "빌립"
   },
   {
     "id": "isaiah",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "이사야"
   },
   {
     "id": "jeremiah",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "예레미야"
   },
   {
     "id": "ezekiel",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "에스겔"
   },
   {
     "id": "ezra",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "에스라"
   },
   {
     "id": "nehemiah",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "느헤미야"
   },
   {
     "id": "mordecai",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "모르드개"
   },
   {
     "id": "bathsheba",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "밧세바"
   },
   {
     "id": "abigail",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "아비가일"
   },
   {
     "id": "bartholomew",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "바돌로매"
   },
   {
     "id": "luke",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "누가"
   },
   {
     "id": "lazarus",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "나사로"
   },
   {
     "id": "martha",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "마르다"
   },
   {
     "id": "stephen",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "스데반"
   },
   {
     "id": "timothy",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "디모데"
   },
   {
     "id": "barnabas",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "바나바"
   },
   {
     "id": "nicodemus",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "니고데모"
   },
   {
     "id": "zacchaeus",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "삭개오"
   },
   {
     "id": "pilate",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "빌라도"
   },
   {
     "id": "herod",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "헤롯"
   },
   {
     "id": "cornelius",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "고넬료"
   },
   {
     "id": "gabriel",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "가브리엘"
   },
   {
     "id": "satan",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "사탄"
   },
   {
     "id": "enoch",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
     "name": "에녹"
   },
   {
     "id": "ahab",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "아합"
   },
   {
     "id": "manasseh",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "므낫세"
   },
   {
     "id": "josiah",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "요시야"
   },
   {
     "id": "hezekiah",
-    "popularity": 3,
+    "popularity": 2,
     "category": "인물",
     "name": "히스기야"
   },
   {
     "id": "judah",
-    "popularity": 3,
+    "popularity": 1,
     "category": "인물",
-    "name": "유다"
+    "name": "가룟 유다"
+  },
+  {
+    "id": "abel",
+    "popularity": 1,
+    "category": "인물",
+    "name": "아벨"
+  },
+  {
+    "id": "lot",
+    "popularity": 2,
+    "category": "인물",
+    "name": "롯"
+  },
+  {
+    "id": "esau",
+    "popularity": 1,
+    "category": "인물",
+    "name": "에서"
+  },
+  {
+    "id": "dinah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "디나"
+  },
+  {
+    "id": "job",
+    "popularity": 1,
+    "category": "인물",
+    "name": "욥"
+  },
+  {
+    "id": "hagar",
+    "popularity": 2,
+    "category": "인물",
+    "name": "하갈"
+  },
+  {
+    "id": "ishmael",
+    "popularity": 2,
+    "category": "인물",
+    "name": "이스마엘"
+  },
+  {
+    "id": "balaam",
+    "popularity": 2,
+    "category": "인물",
+    "name": "발람"
+  },
+  {
+    "id": "eleazar",
+    "popularity": 2,
+    "category": "인물",
+    "name": "엘르아살"
+  },
+  {
+    "id": "achan",
+    "popularity": 2,
+    "category": "인물",
+    "name": "아간"
+  },
+  {
+    "id": "barak",
+    "popularity": 2,
+    "category": "인물",
+    "name": "바락"
+  },
+  {
+    "id": "jael",
+    "popularity": 2,
+    "category": "인물",
+    "name": "야엘"
+  },
+  {
+    "id": "ruth",
+    "popularity": 1,
+    "category": "인물",
+    "name": "룻"
+  },
+  {
+    "id": "jephthah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "입다"
+  },
+  {
+    "id": "delilah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "들릴라"
+  },
+  {
+    "id": "eli",
+    "popularity": 2,
+    "category": "인물",
+    "name": "엘리"
+  },
+  {
+    "id": "nabal",
+    "popularity": 2,
+    "category": "인물",
+    "name": "나발"
+  },
+  {
+    "id": "uriah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "우리아"
+  },
+  {
+    "id": "amnon",
+    "popularity": 2,
+    "category": "인물",
+    "name": "암논"
+  },
+  {
+    "id": "tamar",
+    "popularity": 2,
+    "category": "인물",
+    "name": "다말"
+  },
+  {
+    "id": "ahijah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "아히야"
+  },
+  {
+    "id": "jezebel",
+    "popularity": 2,
+    "category": "인물",
+    "name": "이세벨"
+  },
+  {
+    "id": "jehoshaphat",
+    "popularity": 2,
+    "category": "인물",
+    "name": "여호사밧"
+  },
+  {
+    "id": "naaman",
+    "popularity": 2,
+    "category": "인물",
+    "name": "나아만"
+  },
+  {
+    "id": "nebuchadnezzar",
+    "popularity": 2,
+    "category": "인물",
+    "name": "느부갓네살"
+  },
+  {
+    "id": "shadrach",
+    "popularity": 2,
+    "category": "인물",
+    "name": "사드락"
+  },
+  {
+    "id": "meshach",
+    "popularity": 2,
+    "category": "인물",
+    "name": "메삭"
+  },
+  {
+    "id": "abednego",
+    "popularity": 2,
+    "category": "인물",
+    "name": "아벳느고"
+  },
+  {
+    "id": "belshazzar",
+    "popularity": 2,
+    "category": "인물",
+    "name": "벨사살"
+  },
+  {
+    "id": "darius",
+    "popularity": 2,
+    "category": "인물",
+    "name": "다리우스"
+  },
+  {
+    "id": "cyrus",
+    "popularity": 2,
+    "category": "인물",
+    "name": "키루스"
+  },
+  {
+    "id": "vashti",
+    "popularity": 2,
+    "category": "인물",
+    "name": "와스디"
+  },
+  {
+    "id": "ahasuerus",
+    "popularity": 2,
+    "category": "인물",
+    "name": "아하수에로"
+  },
+  {
+    "id": "haman",
+    "popularity": 2,
+    "category": "인물",
+    "name": "하만"
+  },
+  {
+    "id": "zedekiah",
+    "popularity": 2,
+    "category": "인물",
+    "name": "시드기야"
+  },
+  {
+    "id": "jairus",
+    "popularity": 2,
+    "category": "인물",
+    "name": "야이로"
+  },
+  {
+    "id": "barabbas",
+    "popularity": 2,
+    "category": "인물",
+    "name": "바라바"
+  },
+  {
+    "id": "matthias",
+    "popularity": 2,
+    "category": "인물",
+    "name": "맛디아"
+  },
+  {
+    "id": "ananias",
+    "popularity": 2,
+    "category": "인물",
+    "name": "아나니아"
+  },
+  {
+    "id": "eutychus",
+    "popularity": 2,
+    "category": "인물",
+    "name": "유두고"
   }
 ]

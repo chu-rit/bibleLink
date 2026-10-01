@@ -134,7 +134,7 @@ function AppContent() {
   useEffect(() => {
     const isHeadsUp = screen === 'headsUpSetup';
     if (Platform.OS === 'web' && typeof document !== 'undefined') {
-      document.body.classList.toggle('landscape-allowed', isHeadsUp || screen === 'loading');
+      document.body.classList.toggle('landscape-allowed', isHeadsUp);
       document.body.classList.toggle('heads-up-active', isHeadsUp);
     }
     lockOrientation(isHeadsUp ? 'LANDSCAPE' : 'PORTRAIT');
@@ -274,9 +274,8 @@ function AppContent() {
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const flipperRef = useRef(null);
   const animationActiveRef = useRef(false);
-  const isLandscapeMenu = Platform.OS === 'web' && screen === 'loading' && windowWidth > windowHeight;
-  const pageWidth = isLandscapeMenu ? Math.min(windowWidth || 480, 480) : getPageWidth(windowWidth, windowHeight);
-  const pageHeight = isLandscapeMenu ? (windowHeight || 393) : Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
+  const pageWidth = getPageWidth(windowWidth, windowHeight);
+  const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
   const pageIndex = screen === 'loading' ? 0 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
@@ -400,10 +399,8 @@ function AppContent() {
     <DailyWordScreen onBack={() => setScreen('loading')} masterMode={masterMode} isActive={screen === 'dailyWord'} />
   ), [masterMode, screen]);
 
-  const loadingIconSize = Math.min(windowWidth <= MOBILE_MAX_WIDTH ? windowWidth * 0.7 : 240, (windowHeight || 852) * 0.38);
-  const loadingStatusText = dataLoaded
-    ? '화면을 준비하는 중...'
-    : (Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading));
+  const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
+  const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
   const handleDailyWord = () => setScreen('dailyWord');
   const loadingPage = useMemo(() => (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
@@ -413,16 +410,16 @@ function AppContent() {
         onLoad={() => setLoadingPageBackgroundLoaded(true)}
         onError={() => setLoadingPageBackgroundLoaded(true)}
       />
-      <View style={[styles.loadingContent, isLandscapeMenu && styles.loadingContentLandscape]}>
+      <View style={styles.loadingContent}>
         <Animated.Image
           source={ICON_NOBG_ASSET}
-          style={[styles.loadingIcon, isLandscapeMenu && styles.loadingIconLandscape, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]}
+          style={[styles.loadingIcon, { width: loadingIconSize, height: loadingIconSize, transform: [{ translateY: Animated.add(-24, iconLiftAnim) }] }]}
           onLoad={() => setLoadingIconLoaded(true)}
           onError={() => setLoadingIconLoaded(true)}
         />
         {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
         <Animated.View
-          style={[styles.menuButtons, isLandscapeMenu && styles.menuButtonsLandscape, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
+          style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
           pointerEvents={loadingReady ? 'auto' : 'none'}
         >
           <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
@@ -447,12 +444,12 @@ function AppContent() {
         </Animated.View>
       </View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, isLandscapeMenu, loadingReady, loadingStatusText]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText]);
 
   if (screen === 'headsUpSetup') {
     return (
       <GestureHandlerRootView style={styles.root}>
-        <HeadsUpSetupScreen onBack={() => setScreen('loading')} />
+        <HeadsUpSetupScreen onBack={() => setScreen('loading')} masterMode={masterMode} />
         <AdBanner />
       </GestureHandlerRootView>
     );
@@ -514,12 +511,9 @@ const styles = StyleSheet.create({
   loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
-  loadingContentLandscape: { flexDirection: 'row', alignItems: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
-  loadingIconLandscape: { marginBottom: 0, marginRight: 24 },
   loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'NotoSansKR' },
   menuButtons: { marginTop: 32, alignItems: 'center' },
-  menuButtonsLandscape: { marginTop: 0, marginLeft: 24 },
   menuButton: { width: 240, borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12, borderWidth: 1.5, borderColor: '#7a5c3a' },
   menuButtonPressed: { backgroundColor: 'rgba(122, 92, 58, 0.12)', transform: [{ scale: 0.97 }] },
   menuButtonText: { color: '#7a5c3a', fontSize: 16, fontWeight: '800' },
