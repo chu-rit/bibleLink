@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Animated, Dimensions, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import PageFlipper from './lib/pageFlipper';
@@ -329,16 +329,34 @@ function AppContent() {
   const coverAnim = useRef(new Animated.Value(0)).current;
   const [coverVisible, setCoverVisible] = useState(false);
   const coverTimer = useRef(null);
+  const coverDimSub = useRef(null);
   const transitionWithCover = (apply) => {
     if (coverTimer.current) clearTimeout(coverTimer.current);
+    if (coverDimSub.current) { coverDimSub.current.remove?.(); coverDimSub.current = null; }
     setCoverVisible(true);
     coverAnim.stopAnimation();
     coverAnim.setValue(0);
     Animated.timing(coverAnim, { toValue: 1, duration: 140, useNativeDriver: true }).start(() => {
       apply();
-      coverTimer.current = setTimeout(() => {
+      // 회전이 일어나면 화면 크기가 바뀌므로, 마지막 변경 후 잠시 정착될 때까지 커버를 유지한다
+      const appliedAt = Date.now();
+      let lastChange = Date.now();
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        coverTimer.current = null;
+        if (coverDimSub.current) { coverDimSub.current.remove?.(); coverDimSub.current = null; }
         Animated.timing(coverAnim, { toValue: 0, duration: 240, useNativeDriver: true }).start(() => setCoverVisible(false));
-      }, 500);
+      };
+      const check = () => {
+        const now = Date.now();
+        const elapsed = now - appliedAt;
+        if (elapsed >= 1500 || (elapsed >= 450 && now - lastChange >= 220)) return finish();
+        coverTimer.current = setTimeout(check, 60);
+      };
+      coverDimSub.current = Dimensions.addEventListener('change', () => { lastChange = Date.now(); });
+      check();
     });
   };
 
