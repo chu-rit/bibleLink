@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { lockOrientation } from '../utils/orientation';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Svg, { Path } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
 import { CATEGORIES, ITEMS, MAX_T, MIN_T, categoryColor, formatYear, minLevelForSpan, serialToMonth, serialToYear } from '../utils/chronology';
@@ -9,7 +10,12 @@ import { CATEGORIES, ITEMS, MAX_T, MIN_T, categoryColor, formatYear, minLevelFor
 const BG_IMAGE = require('../assets/BG.png');
 
 const AXIS_MARGIN = 8;
-const GAUGE_WIDTH = 200;
+const GAUGE_WIDTH = 140;
+const SCROLL_GAUGE_WIDTH = 140;
+const SCROLL_TICKS = [0, 0.25, 0.5, 0.75, 1].map((f) => {
+  const year = serialToYear(MIN_T - 100 + f * (MAX_T - MIN_T + 200));
+  return { f, label: year < 0 ? `-${-year}` : `${year}` };
+});
 const GAUGE_RESERVE = 30;
 // 게이지 각 25% 지점에 해당하는 표시 연수
 const GAUGE_STOPS = [1000, 500, 50, 5, 1];
@@ -48,6 +54,9 @@ export default function ChronologyScreen({ onBack }) {
   const [view, setView] = useState(null);
   const [hiddenCats, setHiddenCats] = useState(() => new Set());
   const [selected, setSelected] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterOpen, setFilterOpen] = useState(false);
   const viewRef = useRef(null);
   const baseRef = useRef(null);
   const containerRef = useRef(null);
@@ -87,6 +96,22 @@ export default function ChronologyScreen({ onBack }) {
 
   const composed = useMemo(() => Gesture.Simultaneous(pan, pinch), [pan, pinch]);
 
+  // 좌우 스크롤 게이지: 노브가 현재 보이는 구간의 위치, 탭/드래그로 이동
+  const applyScrollFrac = (frac) => {
+    const v = viewRef.current;
+    if (!width || !v) return;
+    const min = MIN_T - 100;
+    const max = MAX_T + 100 - width / v.pxPerYear;
+    const range = Math.max(max - min, 0);
+    setView(clampView({ start: min + Math.min(Math.max(frac, 0), 1) * range, pxPerYear: v.pxPerYear }, width));
+  };
+  const scrollPan = useMemo(() => Gesture.Pan().runOnJS(true)
+    .onStart((e) => applyScrollFrac(e.x / SCROLL_GAUGE_WIDTH))
+    .onUpdate((e) => applyScrollFrac(e.x / SCROLL_GAUGE_WIDTH)), [width]);
+  const scrollTap = useMemo(() => Gesture.Tap().runOnJS(true)
+    .onEnd((e) => applyScrollFrac(e.x / SCROLL_GAUGE_WIDTH)), [width]);
+  const scrollGesture = useMemo(() => Gesture.Exclusive(scrollPan, scrollTap), [scrollPan, scrollTap]);
+
   // 웹: 휠 줌 (커서 위치 시간 고정)
   useEffect(() => {
     if (Platform.OS !== 'web') return undefined;
@@ -114,6 +139,8 @@ export default function ChronologyScreen({ onBack }) {
   const span = width / activeView.pxPerYear;
   const minLevel = minLevelForSpan(span);
   const viewEnd = activeView.start + span;
+  const scrollRange = Math.max(MAX_T + 100 - span - (MIN_T - 100), 0.001);
+  const scrollFrac = Math.min(Math.max((activeView.start - (MIN_T - 100)) / scrollRange, 0), 1);
 
   // 줌 게이지: 1000→500→50→5→1년 구간을 로그 보간으로 연결
   const spanToFrac = (s) => {
@@ -206,6 +233,30 @@ export default function ChronologyScreen({ onBack }) {
     return { eventMarks, periodBars, ticks, rangeLabels };
   }, [activeView, width, height, minLevel, viewEnd, hiddenCats, maxEventLanes, maxPeriodLanes]);
 
+  const searchResults = useMemo(() => {
+    const q = searchQuery.replace(/\s/g, '');
+    if (!q) return [];
+    return ITEMS.filter((it) => it.event.replace(/\s/g, '').includes(q))
+      .sort((a, b) => {
+        const as = a.event.replace(/\s/g, '').startsWith(q) ? 0 : 1;
+        const bs = b.event.replace(/\s/g, '').startsWith(q) ? 0 : 1;
+        return as - bs || a.t - b.t;
+      })
+      .slice(0, 30);
+  }, [searchQuery]);
+
+  // 검색 결과 선택: 해당 항목이 화면 중앙에 오도록 이동 (너무 축소된 상태면 500년 스팬까지 확대)
+  const jumpToItem = (item) => {
+    if (!width) return;
+    const targetSpan = Math.min(width / activeView.pxPerYear, 500);
+    const pxPerYear = width / targetSpan;
+    const mid = item.endT != null ? (item.t + item.endT) / 2 : item.t;
+    setView(clampView({ start: mid - targetSpan / 2, pxPerYear }, width));
+    setSelected({ item, area: item.endT != null ? 'period' : 'event' });
+    setSearchOpen(false);
+    setSearchQuery('');
+  };
+
   const toggleCategory = (cat) => {
     setHiddenCats((prev) => {
       const next = new Set(prev);
@@ -214,9 +265,20 @@ export default function ChronologyScreen({ onBack }) {
     });
   };
 
+  const wideLayout = width > height;
+  const catChips = CATEGORIES.map((cat) => {
+    const hidden = hiddenCats.has(cat);
+    return (
+      <Pressable key={cat} onPress={() => toggleCategory(cat)} style={[styles.chip, hidden && styles.chipHidden]}>
+        <View style={[styles.dot, { backgroundColor: categoryColor(cat) }]} />
+        <Text style={[styles.chipText, hidden && styles.chipTextHidden]}>{cat}</Text>
+      </Pressable>
+    );
+  });
+
   return (
     <ImageBackground source={BG_IMAGE} resizeMode="cover" style={[styles.screen, { paddingTop: insets.top }]}>
-      <AppHeader onBack={onBack} onRotate={toggleOrientation} />
+      <AppHeader onBack={onBack} onRotate={toggleOrientation} onSearch={() => setSearchOpen(true)} />
       <View style={styles.timelineWrap}>
       <GestureDetector gesture={composed}>
         <View
@@ -314,25 +376,99 @@ export default function ChronologyScreen({ onBack }) {
           );
         })}
       </View>
-      </View>
 
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.legend}
-        contentContainerStyle={styles.legendContent}
-      >
-        {CATEGORIES.map((cat) => {
-          const hidden = hiddenCats.has(cat);
-          return (
-            <Pressable key={cat} onPress={() => toggleCategory(cat)} style={[styles.chip, hidden && styles.chipHidden]}>
-              <View style={[styles.dot, { backgroundColor: categoryColor(cat) }]} />
-              <Text style={[styles.chipText, hidden && styles.chipTextHidden]}>{cat}</Text>
+      {searchOpen && (
+        <View style={styles.searchPanel}>
+          <View style={styles.searchRow}>
+            <TextInput
+              style={styles.searchInput}
+              value={searchQuery}
+              onChangeText={setSearchQuery}
+              placeholder="사건·인물·기간 검색"
+              placeholderTextColor="#a08c72"
+              autoFocus
+              returnKeyType="search"
+              onSubmitEditing={() => searchResults[0] && jumpToItem(searchResults[0])}
+            />
+            <Pressable onPress={() => { setSearchOpen(false); setSearchQuery(''); }} hitSlop={8} style={styles.searchClose}>
+              <Text style={styles.searchCloseText}>✕</Text>
             </Pressable>
+          </View>
+          {searchResults.length > 0 && (
+            <ScrollView style={styles.searchResults} keyboardShouldPersistTaps="handled">
+              {searchResults.map((item) => (
+                <Pressable key={`s${item.id}`} onPress={() => jumpToItem(item)} style={styles.searchItem}>
+                  <Text style={styles.searchItemText}>{item.event}</Text>
+                  <Text style={styles.searchItemMeta}>
+                    {item.category} · {formatYear(item.year)}{item.endYear !== undefined ? ` ~ ${formatYear(item.endYear)}` : ''}
+                  </Text>
+                </Pressable>
+              ))}
+            </ScrollView>
+          )}
+          {searchQuery.trim() !== '' && searchResults.length === 0 && (
+            <Text style={styles.searchEmpty}>검색 결과가 없어요</Text>
+          )}
+        </View>
+      )}
+
+      <View style={styles.scrollGauge}>
+        <View style={styles.gaugeTrack} />
+        {SCROLL_TICKS.map((tick) => {
+          const x = tick.f * SCROLL_GAUGE_WIDTH;
+          const labelStyle = tick.f === 0
+            ? { left: 0, textAlign: 'left' }
+            : tick.f === 1
+              ? { right: 0, textAlign: 'right' }
+              : { left: x - 20 };
+          return (
+            <View key={tick.f}>
+              <View style={[styles.gaugeTick, { left: Math.min(x - 0.5, SCROLL_GAUGE_WIDTH - 1) }]} />
+              <Text style={[styles.gaugeTickLabel, labelStyle]}>{tick.label}</Text>
+            </View>
           );
         })}
-        <Text style={styles.hint}>항목을 누르면 상세 정보가 열려요</Text>
-      </ScrollView>
+        <View style={[styles.gaugeKnob, { left: Math.min(Math.max(0, scrollFrac * SCROLL_GAUGE_WIDTH - 7), SCROLL_GAUGE_WIDTH - 14) }]} />
+        <GestureDetector gesture={scrollGesture}>
+          <View style={styles.scrollGaugeTouch} />
+        </GestureDetector>
+      </View>
+      </View>
+
+      {wideLayout ? (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.legend}
+          contentContainerStyle={styles.legendContent}
+        >
+          {catChips}
+        </ScrollView>
+      ) : (
+        <View style={styles.filterBar}>
+          {filterOpen && (
+            <View style={styles.filterPopover}>
+              <View style={styles.filterHeader}>
+                <Text style={styles.filterTitle}>카테고리 필터</Text>
+                <Pressable onPress={() => setFilterOpen(false)} hitSlop={8}>
+                  <Text style={styles.searchCloseText}>✕</Text>
+                </Pressable>
+              </View>
+              <View style={styles.filterChips}>{catChips}</View>
+            </View>
+          )}
+          <Pressable onPress={() => setFilterOpen((v) => !v)} style={({ pressed }) => [styles.filterButton, pressed && styles.chipHidden]} hitSlop={8}>
+            <Svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="#6b5a44" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <Path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4" />
+            </Svg>
+            {hiddenCats.size > 0 && (
+              <View style={styles.filterBadge}>
+                <Text style={styles.filterBadgeText}>{hiddenCats.size}</Text>
+              </View>
+            )}
+          </Pressable>
+        </View>
+      )}
       <View style={{ height: Math.max(insets.bottom, 4) + (Platform.OS === 'web' ? 52 : 0) }} />
     </ImageBackground>
   );
@@ -354,6 +490,8 @@ const styles = StyleSheet.create({
   periodText: { fontSize: 9, color: '#fff', fontFamily: 'NotoSansKR' },
   timelineWrap: { flex: 1 },
   zoomGauge: { position: 'absolute', right: 10, bottom: 8, width: GAUGE_WIDTH, height: 34 },
+  scrollGauge: { position: 'absolute', left: 10, bottom: 8, width: SCROLL_GAUGE_WIDTH, height: 34 },
+  scrollGaugeTouch: { position: 'absolute', left: 0, top: 0, right: 0, bottom: 0 },
   gaugeTrack: { position: 'absolute', left: 0, right: 0, top: 7, height: 4, borderRadius: 2, backgroundColor: '#d8cdb8' },
   gaugeFill: { position: 'absolute', left: 0, top: 7, height: 4, borderRadius: 2, backgroundColor: '#7a5c3a' },
   gaugeTick: { position: 'absolute', top: 4, width: 1, height: 10, backgroundColor: '#b3a68e' },
@@ -365,12 +503,30 @@ const styles = StyleSheet.create({
   detailMeta: { fontSize: 11, color: '#6b5a44', marginTop: 3, fontFamily: 'NotoSansKR' },
   detailClose: { position: 'absolute', top: 6, right: 8, padding: 4 },
   detailCloseText: { fontSize: 14, color: '#8a7558', fontWeight: '700' },
+  searchPanel: { position: 'absolute', top: 4, left: 10, right: 10, backgroundColor: '#f6f1e6', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 8, padding: 8, zIndex: 10 },
+  searchRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  searchInput: { flex: 1, borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 6, fontSize: 13, backgroundColor: '#fff', color: '#4a3b28', fontFamily: 'NotoSansKR' },
+  searchClose: { padding: 4 },
+  searchCloseText: { fontSize: 14, color: '#8a7558', fontWeight: '700' },
+  searchResults: { maxHeight: 220, marginTop: 6 },
+  searchItem: { paddingVertical: 6, paddingHorizontal: 4, borderTopWidth: 1, borderTopColor: '#e8e0d0' },
+  searchItemText: { fontSize: 13, fontWeight: '600', color: '#4a3b28', fontFamily: 'NotoSansKR' },
+  searchItemMeta: { fontSize: 11, color: '#8a7558', marginTop: 1, fontFamily: 'NotoSansKR' },
+  searchEmpty: { fontSize: 12, color: '#8a7558', padding: 8, fontFamily: 'NotoSansKR' },
   legend: { flexGrow: 0 },
   legendContent: { alignItems: 'center', paddingHorizontal: 10, gap: 6, paddingVertical: 6 },
+  filterBar: { alignItems: 'flex-end', paddingVertical: 6, paddingHorizontal: 10 },
+  filterButton: { padding: 6, borderRadius: 10, backgroundColor: '#f0ebe0', borderWidth: 1.5, borderColor: '#d8cdb8', minWidth: 36, minHeight: 36, alignItems: 'center', justifyContent: 'center' },
+  filterBadge: { position: 'absolute', top: -5, right: -5, minWidth: 16, height: 16, borderRadius: 8, backgroundColor: '#7a5c3a', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 3 },
+  filterBadgeText: { fontSize: 9, fontWeight: '700', color: '#fff', fontFamily: 'NotoSansKR' },
+  filterPopover: { position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: '#f6f1e6', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 8, padding: 8, zIndex: 10, shadowColor: '#3a2e1f', shadowOpacity: 0.15, shadowRadius: 8, shadowOffset: { width: 0, height: 3 }, elevation: 5 },
+  filterHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 },
+  filterTitle: { fontSize: 12, fontWeight: '700', color: '#6b5a44', fontFamily: 'NotoSansKR' },
+  filterChips: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6 },
   chip: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 10, backgroundColor: '#f0ebe0', borderWidth: 1, borderColor: '#d8cdb8' },
   chipHidden: { opacity: 0.4 },
   dot: { width: 8, height: 8, borderRadius: 4, marginRight: 5 },
   chipText: { fontSize: 11, color: '#5a4a36', fontFamily: 'NotoSansKR' },
   chipTextHidden: { textDecorationLine: 'line-through' },
-  hint: { fontSize: 10, color: '#a08c72', marginLeft: 8, fontFamily: 'NotoSansKR' },
+
 });
