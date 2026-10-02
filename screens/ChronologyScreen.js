@@ -50,8 +50,8 @@ export default function ChronologyScreen({ onBack }) {
           : OrientationLock.PORTRAIT_UP;
         await ScreenOrientation.lockAsync(lock);
       } else {
-        // unlockAsync(DEFAULT) 대신 ALL을 사용: 명시적으로 전 방향 마스크를 걸어 자동회전을 재개한다
-        await ScreenOrientation.lockAsync(OrientationLock.ALL);
+        // ALL은 거꾸로 세로 포함이라 iPhone 미지원으로 reject됨 — ALL_BUT_UPSIDE_DOWN 사용
+        await ScreenOrientation.lockAsync(OrientationLock.ALL_BUT_UPSIDE_DOWN);
       }
       setRotationUnlocked(!rotationUnlocked);
     } catch {}
