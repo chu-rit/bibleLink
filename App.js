@@ -14,6 +14,7 @@ import HeadsUpSetupScreen from './screens/HeadsUpSetupScreen';
 import ChronologyScreen from './screens/ChronologyScreen';
 import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
+import { lockOrientation } from './utils/orientation';
 
 const ICON_ASSET = require('./assets/ICON.png');
 const ICON_NOBG_ASSET = require('./assets/ICON_NOBG.png');
@@ -46,21 +47,6 @@ const isMasterModeByUrl = Platform.OS === 'web' &&
 const isWordSearchPath = Platform.OS === 'web' &&
   typeof window !== 'undefined' &&
   (webPath.endsWith('/word') || webPath.endsWith('/word/'));
-
-// 방향 잠금·해제는 비동기라 연속 호출 시 적용 순서가 뒤섞일 수 있어 큐로 직렬화하고 마지막 요청만 실행한다
-let orientationQueue = Promise.resolve();
-let orientationSeq = 0;
-const enqueueOrientation = (task) => {
-  const seq = ++orientationSeq;
-  orientationQueue = orientationQueue.then(() => (seq === orientationSeq ? task().catch(() => {}) : undefined));
-};
-
-const lockOrientation = (orientation) => {
-  try {
-    const { OrientationLock, lockAsync } = require('expo-screen-orientation');
-    enqueueOrientation(() => lockAsync(orientation === 'LANDSCAPE' ? OrientationLock.LANDSCAPE : OrientationLock.PORTRAIT_UP));
-  } catch {}
-};
 
 const SCREEN_BY_PAGE_INDEX = ['loading', 'mapSelect', 'puzzle', 'dailyWord'];
 const EMPTY_MAP = {

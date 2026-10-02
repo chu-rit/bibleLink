@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import { runOrientation } from '../utils/orientation';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
@@ -38,23 +39,23 @@ const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / (MAX
 
 export default function ChronologyScreen({ onBack }) {
   const insets = useSafeAreaInsets();
-  // 회전 잠금 토글: 잠금 해제(기울임으로 자유 회전) ↔ 현재 방향으로 잠금
+  // 회전 잠금 토글: 잠금 해제(기울임으로 자유 회전) ↔ 현재 방향으로 잠금. 공유 큐를 타서 화면 전환 잠금과 경합하지 않는다
   const [rotationUnlocked, setRotationUnlocked] = useState(false);
   const toggleOrientationLock = async () => {
-    try {
-      const { Orientation, OrientationLock } = ScreenOrientation;
-      if (rotationUnlocked) {
+    const { Orientation, OrientationLock } = ScreenOrientation;
+    if (rotationUnlocked) {
+      await runOrientation(async () => {
         const orientation = await ScreenOrientation.getOrientationAsync();
         const lock = orientation === Orientation.LANDSCAPE_LEFT ? OrientationLock.LANDSCAPE_LEFT
           : orientation === Orientation.LANDSCAPE_RIGHT ? OrientationLock.LANDSCAPE_RIGHT
           : OrientationLock.PORTRAIT_UP;
         await ScreenOrientation.lockAsync(lock);
-      } else {
-        // ALL은 거꾸로 세로 포함이라 iPhone 미지원으로 reject됨 — ALL_BUT_UPSIDE_DOWN 사용
-        await ScreenOrientation.lockAsync(OrientationLock.ALL_BUT_UPSIDE_DOWN);
-      }
-      setRotationUnlocked(!rotationUnlocked);
-    } catch {}
+      });
+      setRotationUnlocked(false);
+    } else {
+      await runOrientation(() => ScreenOrientation.unlockAsync());
+      setRotationUnlocked(true);
+    }
   };
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [view, setView] = useState(null);
