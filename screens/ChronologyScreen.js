@@ -152,13 +152,30 @@ export default function ChronologyScreen({ onBack }) {
     }
     return 1;
   };
-  const zoomFrac = spanToFrac(span);
-  // 게이지는 눈금 구역 탭으로 조절
-  const applyGauge = (i) => {
-    if (!width) return;
-    const target = width / GAUGE_STOPS[i];
-    zoomBy(target / activeView.pxPerYear, 0);
+  const fracToSpan = (f) => {
+    const pos = Math.min(Math.max(f, 0), 1) * (GAUGE_STOPS.length - 1);
+    const i = Math.min(Math.floor(pos), GAUGE_STOPS.length - 2);
+    return GAUGE_STOPS[i + 1] * Math.pow(GAUGE_STOPS[i] / GAUGE_STOPS[i + 1], i + 1 - pos);
   };
+  const zoomFrac = spanToFrac(span);
+  // 게이지 탭: 눈금 구역으로 스냅
+  const applyGauge = (i) => {
+    const v = viewRef.current;
+    if (!width || !v) return;
+    zoomBy(width / GAUGE_STOPS[i] / v.pxPerYear, 0);
+  };
+  // 게이지 드래그: 구간 사이도 연속으로, 시작 연도(좌측 끝) 기준 확대
+  const applyGaugeSpan = (s) => {
+    const v = viewRef.current;
+    if (!width || !v) return;
+    setView(clampView({ start: v.start, pxPerYear: width / s }, width));
+  };
+  const zoomGaugePan = useMemo(() => Gesture.Pan().runOnJS(true)
+    .onStart((e) => applyGaugeSpan(fracToSpan(e.x / GAUGE_WIDTH)))
+    .onUpdate((e) => applyGaugeSpan(fracToSpan(e.x / GAUGE_WIDTH))), [width]);
+  const zoomGaugeTap = useMemo(() => Gesture.Tap().runOnJS(true)
+    .onEnd((e) => applyGauge(Math.round(Math.min(Math.max(e.x / GAUGE_WIDTH, 0), 1) * (GAUGE_STOPS.length - 1)))), [width]);
+  const zoomGesture = useMemo(() => Gesture.Exclusive(zoomGaugePan, zoomGaugeTap), [zoomGaugePan, zoomGaugeTap]);
   const axisY = Math.round(height * 0.5);
   const maxEventLanes = Math.min(10, Math.max(2, Math.floor((axisY - 8) / EVENT_ROW_HEIGHT)));
   const maxPeriodLanes = Math.min(10, Math.max(1, Math.floor((height - axisY - AXIS_LABEL_HEIGHT - 8 - GAUGE_RESERVE) / PERIOD_LANE_HEIGHT)));
@@ -364,17 +381,9 @@ export default function ChronologyScreen({ onBack }) {
         })}
         <View style={[styles.gaugeFill, { width: zoomFrac * GAUGE_WIDTH }]} />
         <View style={[styles.gaugeKnob, { left: Math.min(Math.max(0, zoomFrac * GAUGE_WIDTH - 7), GAUGE_WIDTH - 14) }]} />
-        {GAUGE_STOPS.map((v, i) => {
-          const prev = i === 0 ? 0 : (i - 0.5) / (GAUGE_STOPS.length - 1);
-          const next = i === GAUGE_STOPS.length - 1 ? 1 : (i + 0.5) / (GAUGE_STOPS.length - 1);
-          return (
-            <Pressable
-              key={`z${v}`}
-              onPress={() => applyGauge(i)}
-              style={[styles.gaugeZone, { left: prev * GAUGE_WIDTH, width: (next - prev) * GAUGE_WIDTH }]}
-            />
-          );
-        })}
+        <GestureDetector gesture={zoomGesture}>
+          <View style={styles.scrollGaugeTouch} />
+        </GestureDetector>
       </View>
 
       {searchOpen && (
@@ -495,7 +504,6 @@ const styles = StyleSheet.create({
   gaugeTrack: { position: 'absolute', left: 0, right: 0, top: 7, height: 4, borderRadius: 2, backgroundColor: '#d8cdb8' },
   gaugeFill: { position: 'absolute', left: 0, top: 7, height: 4, borderRadius: 2, backgroundColor: '#7a5c3a' },
   gaugeTick: { position: 'absolute', top: 4, width: 1, height: 10, backgroundColor: '#b3a68e' },
-  gaugeZone: { position: 'absolute', top: 0, height: 34 },
   gaugeTickLabel: { position: 'absolute', top: 16, width: 40, textAlign: 'center', fontSize: 8, color: '#a08c72', fontFamily: 'NotoSansKR' },
   gaugeKnob: { position: 'absolute', top: 2, width: 14, height: 14, borderRadius: 7, backgroundColor: '#7a5c3a', borderWidth: 1.5, borderColor: '#f6f1e6' },
   detailPanel: { position: 'absolute', left: AXIS_MARGIN + 6, right: AXIS_MARGIN + 6, backgroundColor: '#f6f1e6', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 8, padding: 10, paddingRight: 34 },
