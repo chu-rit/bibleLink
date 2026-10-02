@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageBackground, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import { runOrientation } from '../utils/orientation';
+import { lockOrientation } from '../utils/orientation';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
@@ -39,23 +38,11 @@ const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / (MAX
 
 export default function ChronologyScreen({ onBack }) {
   const insets = useSafeAreaInsets();
-  // 회전 잠금 토글: 잠금 해제(기울임으로 자유 회전) ↔ 현재 방향으로 잠금. 공유 큐를 타서 화면 전환 잠금과 경합하지 않는다
-  const [rotationUnlocked, setRotationUnlocked] = useState(false);
-  const toggleOrientationLock = async () => {
-    const { Orientation, OrientationLock } = ScreenOrientation;
-    if (rotationUnlocked) {
-      await runOrientation(async () => {
-        const orientation = await ScreenOrientation.getOrientationAsync();
-        const lock = orientation === Orientation.LANDSCAPE_LEFT ? OrientationLock.LANDSCAPE_LEFT
-          : orientation === Orientation.LANDSCAPE_RIGHT ? OrientationLock.LANDSCAPE_RIGHT
-          : OrientationLock.PORTRAIT_UP;
-        await ScreenOrientation.lockAsync(lock);
-      });
-      setRotationUnlocked(false);
-    } else {
-      await runOrientation(() => ScreenOrientation.unlockAsync());
-      setRotationUnlocked(true);
-    }
+  // 회전 버튼: 누를 때마다 가로/세로 강제 잠금을 번갈아 건다 (진입은 세로 고정)
+  const [isLandscape, setIsLandscape] = useState(false);
+  const toggleOrientation = () => {
+    lockOrientation(isLandscape ? 'PORTRAIT' : 'LANDSCAPE');
+    setIsLandscape(!isLandscape);
   };
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [view, setView] = useState(null);
@@ -229,7 +216,7 @@ export default function ChronologyScreen({ onBack }) {
 
   return (
     <ImageBackground source={BG_IMAGE} resizeMode="cover" style={[styles.screen, { paddingTop: insets.top }]}>
-      <AppHeader onBack={onBack} onRotate={toggleOrientationLock} rotateUnlocked={rotationUnlocked} />
+      <AppHeader onBack={onBack} onRotate={toggleOrientation} />
       <View style={styles.timelineWrap}>
       <GestureDetector gesture={composed}>
         <View
