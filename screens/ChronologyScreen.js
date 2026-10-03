@@ -5,7 +5,7 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Svg, { Path } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AppHeader from '../components/AppHeader';
-import { CATEGORIES, ITEMS, MAX_T, MIN_T, categoryColor, formatYear, minLevelForSpan, serialToMonth, serialToYear } from '../utils/chronology';
+import { CATEGORIES, ITEMS, MAX_T, MIN_T, categoryColor, formatYear, serialToMonth, serialToYear } from '../utils/chronology';
 
 const BG_IMAGE = require('../assets/BG.png');
 
@@ -137,7 +137,6 @@ export default function ChronologyScreen({ onBack }) {
   };
 
   const span = width / activeView.pxPerYear;
-  const minLevel = minLevelForSpan(span);
   const viewEnd = activeView.start + span;
   const scrollRange = Math.max(MAX_T + 100 - span - (MIN_T - 100), 0.001);
   const scrollFrac = Math.min(Math.max((activeView.start - (MIN_T - 100)) / scrollRange, 0), 1);
@@ -190,7 +189,6 @@ export default function ChronologyScreen({ onBack }) {
       item.endT === null
       && item.t >= start - 4
       && item.t <= viewEnd
-      && (item.level ?? 3) >= minLevel
       && !hiddenCats.has(item.category)
     ).sort((a, b) => (b.level ?? 3) - (a.level ?? 3) || a.t - b.t);
     const rangeLabels = { left: formatYear(serialToYear(start)), right: formatYear(serialToYear(viewEnd)) };
@@ -223,7 +221,6 @@ export default function ChronologyScreen({ onBack }) {
       item.endT !== null
       && item.endT >= start
       && item.t <= viewEnd
-      && (item.level ?? 3) >= minLevel
       && !hiddenCats.has(item.category)
     ).sort((a, b) => (b.level ?? 3) - (a.level ?? 3) || a.t - b.t);
     for (const item of periodCandidates) {
@@ -248,7 +245,7 @@ export default function ChronologyScreen({ onBack }) {
       ticks.push({ t, x: (t - start) * pxPerYear });
     }
     return { eventMarks, periodBars, ticks, rangeLabels };
-  }, [activeView, width, height, minLevel, viewEnd, hiddenCats, maxEventLanes, maxPeriodLanes]);
+  }, [activeView, width, height, viewEnd, hiddenCats, maxEventLanes, maxPeriodLanes]);
 
   const searchResults = useMemo(() => {
     const q = searchQuery.replace(/\s/g, '');
