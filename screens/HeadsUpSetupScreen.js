@@ -4,19 +4,18 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import AppHeader from '../components/AppHeader';
 import WordHelpModal from '../components/WordHelpModal';
-import { drawHeadsUpWord, getAvailableHeadsUpPopularityLevels, getTodayUsedHeadsUpWords } from '../utils/headsUp';
+import { drawHeadsUpWord, getTodayUsedHeadsUpWords } from '../utils/headsUp';
 
 const BG_IMAGE = require('../assets/BG.png');
 const POPULARITY_LEVELS = [1, 2, 3];
-const AVAILABLE_POPULARITY_LEVELS = new Set(getAvailableHeadsUpPopularityLevels());
-const CATEGORIES = [
-  { id: '인물', label: '인물' },
-  { id: '지명', label: '지명' },
-];
+// const CATEGORIES = [
+//   { id: '인물', label: '인물' },
+//   { id: '지명', label: '지명' },
+// ];
 
 export default function HeadsUpSetupScreen({ onBack, masterMode }) {
   const [selectedPopularityLevels, setSelectedPopularityLevels] = useState([1]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(['인물']);
   const [message, setMessage] = useState('');
   const [showHelp, setShowHelp] = useState(false);
   const [isStarting, setIsStarting] = useState(false);
@@ -61,19 +60,18 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
   }, []);
 
   const togglePopularityLevel = (level) => {
-    if (!AVAILABLE_POPULARITY_LEVELS.has(level)) return;
     setMessage('');
     setSelectedPopularityLevels((previous) => previous.includes(level)
       ? previous.filter((selected) => selected !== level)
       : [...previous, level]);
   };
 
-  const toggleCategory = (categoryId) => {
-    setMessage('');
-    setSelectedCategories((previous) => previous.includes(categoryId)
-      ? previous.filter((selected) => selected !== categoryId)
-      : [...previous, categoryId]);
-  };
+  // const toggleCategory = (categoryId) => {
+  //   setMessage('');
+  //   setSelectedCategories((previous) => previous.includes(categoryId)
+  //     ? previous.filter((selected) => selected !== categoryId)
+  //     : [...previous, categoryId]);
+  // };
 
   const releaseKeepAwake = () => {
     if (!keepAwakeActiveRef.current) return;
@@ -144,7 +142,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
               <View style={[styles.titleWrap, isLandscape && styles.landscapeTitleWrap]}>
                 <Text style={styles.eyebrow}>HEADS UP</Text>
                 <Text style={[styles.title, isLandscape && styles.landscapeTitle]}>헤드업 설정</Text>
-                <Text style={[styles.description, isLandscape && styles.landscapeDescription]}>인지도 단계와 카테고리를 하나 이상 선택하세요.</Text>
+                <Text style={[styles.description, isLandscape && styles.landscapeDescription]}>인지도 단계를 하나 이상 선택하세요.</Text>
               </View>
             </View>
             <View style={isLandscape ? styles.landscapeControls : undefined}>
@@ -153,26 +151,24 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
                   <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>인지도 단계</Text>
                   <View style={styles.optionRow}>
                     {POPULARITY_LEVELS.map((level) => {
-                      const disabled = !AVAILABLE_POPULARITY_LEVELS.has(level);
                       const selected = selectedPopularityLevels.includes(level);
                       return (
                         <Pressable
                           key={level}
                           accessibilityRole="checkbox"
-                          accessibilityState={{ checked: selected, disabled }}
-                          disabled={disabled}
+                          accessibilityState={{ checked: selected }}
                           onPress={() => togglePopularityLevel(level)}
-                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed, disabled && styles.optionDisabled]}
+                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
                         >
                           <Text style={[styles.optionText, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{level}단계</Text>
-                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{disabled ? '준비 중' : selected ? '선택됨' : '선택'}</Text>
+                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
                         </Pressable>
                       );
                     })}
                   </View>
                 </View>
 
-                <View style={[styles.section, isLandscape && styles.landscapeSection]}>
+                {/* <View style={[styles.section, isLandscape && styles.landscapeSection]}>
                   <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>카테고리</Text>
                   <View style={styles.optionRow}>
                     {CATEGORIES.map((category) => {
@@ -191,7 +187,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
                       );
                     })}
                   </View>
-                </View>
+                </View> */}
               </View>
               <View style={isLandscape ? styles.landscapeAction : undefined}>
                 <Pressable
@@ -291,7 +287,6 @@ const styles = StyleSheet.create({
   optionSelected: { borderColor: '#7a5c3a', backgroundColor: '#f0ebe0' },
   landscapeOptionSelected: { borderColor: '#7a5c3a', backgroundColor: '#7a5c3a' },
   optionPressed: { opacity: 0.75 },
-  optionDisabled: { opacity: 0.45 },
   optionText: { color: '#7a6450', fontSize: 15, fontWeight: '700' },
   optionTextSelected: { color: '#3a2e1f' },
   landscapeOptionTextSelected: { color: '#fdfbf6' },

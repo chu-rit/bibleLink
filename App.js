@@ -510,7 +510,7 @@ function AppContent() {
               setScreen('chronology');
             })}
           >
-            <Text style={styles.menuButtonText}>연대기(베타)</Text>
+            <Text style={styles.menuButtonText}>연대기</Text>
           </Pressable>
           </>
           )}

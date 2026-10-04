@@ -21,7 +21,10 @@ export async function drawHeadsUpWord(popularityLevels, categories) {
   if (!db) throw new Error('firebase-not-configured');
   const popularitySet = new Set(Array.isArray(popularityLevels) ? popularityLevels : []);
   const categorySet = new Set(Array.isArray(categories) ? categories : []);
-  const candidates = headsUpWords.filter((entry) => popularitySet.has(entry.popularity) && categorySet.has(entry.category));
+  let candidates = headsUpWords.filter((entry) => popularitySet.has(entry.popularity) && categorySet.has(entry.category));
+  if (!candidates.length) {
+    candidates = headsUpWords.filter((entry) => categorySet.has(entry.category));
+  }
   if (!candidates.length) return null;
 
   const { dateKey, day } = await getServerCalendarDateInfo();
