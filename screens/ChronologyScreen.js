@@ -18,7 +18,7 @@ const SCROLL_TICKS = [0, 0.25, 0.5, 0.75, 1].map((f) => {
 });
 const GAUGE_RESERVE = 30;
 // 게이지 각 25% 지점에 해당하는 표시 연수
-const GAUGE_STOPS = [1000, 500, 50, 5, 1];
+const GAUGE_STOPS = [2000, 1000, 500, 50, 5, 1];
 const EVENT_ROW_HEIGHT = 22;
 const PERIOD_LANE_HEIGHT = 19;
 const PERIOD_BAR_HEIGHT = 15;
@@ -40,7 +40,8 @@ const clampView = (v, width) => {
   return { start, pxPerYear };
 };
 
-const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / (MAX_T - MIN_T + 60) }, width);
+// 초기 뷰: 가장 과거 기준 2000년 스팬
+const fitAll = (width) => clampView({ start: MIN_T - 30, pxPerYear: width / 2000 }, width);
 
 export default function ChronologyScreen({ onBack }) {
   const insets = useSafeAreaInsets();
@@ -202,7 +203,7 @@ export default function ChronologyScreen({ onBack }) {
       const x = (item.t - start) * pxPerYear;
       const l = x;
       const r = x + 1.5 + textWidth(item.event) + 4;
-      if (l < AXIS_MARGIN || r > width - AXIS_MARGIN) continue;
+      if (r <= AXIS_MARGIN || l >= width - AXIS_MARGIN) continue;
       for (let lane = 0; lane < maxEventLanes; lane++) {
         const spans = laneSpans[lane] || (laneSpans[lane] = []);
         if (spans.some(([a, b]) => l < b && r > a)) continue;
@@ -238,11 +239,17 @@ export default function ChronologyScreen({ onBack }) {
       periodBars.push({ item, x, w, lane });
     }
 
-    // 눈금
+    // 눈금: 라벨이 좌우 경계를 넘는 눈금은 선째로 건너뛴다
     const step = TICK_STEPS.find((s) => s * pxPerYear >= 78) || 2500;
     const ticks = [];
     for (let t = Math.ceil(start / step) * step; t <= viewEnd; t += step) {
-      ticks.push({ t, x: (t - start) * pxPerYear });
+      const x = (t - start) * pxPerYear;
+      const isMonthTick = t % 1 !== 0;
+      const year = serialToYear(t);
+      const label = isMonthTick ? `${serialToMonth(t)}월` : (year < 0 ? `BC ${-year}` : `${year}`);
+      const half = textWidth(label) / 2;
+      if (x - half < AXIS_MARGIN || x + half > width - AXIS_MARGIN) continue;
+      ticks.push({ t, x });
     }
     return { eventMarks, periodBars, ticks, rangeLabels };
   }, [activeView, width, height, viewEnd, hiddenCats, maxEventLanes, maxPeriodLanes]);
@@ -300,20 +307,23 @@ export default function ChronologyScreen({ onBack }) {
           style={styles.timeline}
           onLayout={(e) => setSize(e.nativeEvent.layout)}
         >
-          {eventMarks.map(({ item, x, lane }) => (
-            <Pressable
-              key={`e${item.id}`}
-              onPress={() => setSelected({ item, area: 'event' })}
-              style={[styles.eventMark, { left: x, top: axisY - (lane + 1) * EVENT_ROW_HEIGHT }]}
-            >
-              <View style={[styles.eventStem, { height: (lane + 1) * EVENT_ROW_HEIGHT, backgroundColor: categoryColor(item.category) }]} />
-              <View style={[styles.eventBox, { borderColor: categoryColor(item.category) }]}>
-                <Text numberOfLines={1} style={[styles.eventText, { color: categoryColor(item.category) }]}>
-                  {item.event}
-                </Text>
-              </View>
-            </Pressable>
-          ))}
+          {/* 사건 영역 전체가 클리핑 창: 내용은 자연 위치, 경계에서만 잘림 */}
+          <View style={{ position: 'absolute', left: AXIS_MARGIN, top: 0, width: Math.max(width - AXIS_MARGIN * 2, 0), height: axisY, overflow: 'hidden' }}>
+            {eventMarks.map(({ item, x, lane }) => (
+              <Pressable
+                key={`e${item.id}`}
+                onPress={() => setSelected({ item, area: 'event' })}
+                style={[styles.eventMark, { left: x - AXIS_MARGIN, top: axisY - (lane + 1) * EVENT_ROW_HEIGHT }]}
+              >
+                <View style={[styles.eventStem, { height: (lane + 1) * EVENT_ROW_HEIGHT, backgroundColor: categoryColor(item.category) }]} />
+                <View style={[styles.eventBox, { borderColor: categoryColor(item.category) }]}>
+                  <Text numberOfLines={1} style={[styles.eventText, { color: categoryColor(item.category) }]}>
+                    {item.event}
+                  </Text>
+                </View>
+              </Pressable>
+            ))}
+          </View>
 
           <View style={[styles.axis, { top: axisY }]} />
 
@@ -484,7 +494,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: 'transparent' },
   timeline: { flex: 1, overflow: 'hidden' },
   axis: { position: 'absolute', left: AXIS_MARGIN, right: AXIS_MARGIN, height: 1.5, backgroundColor: '#7a5c3a' },
-  tick: { position: 'absolute', alignItems: 'center' },
+  tick: { position: 'absolute', width: 0, alignItems: 'center' },
   tickLine: { width: 1, height: 6, backgroundColor: '#7a5c3a' },
   tickLabel: { fontSize: 9, color: '#7a5c3a', marginTop: 1, fontFamily: 'NotoSansKR' },
   rangeLabel: { position: 'absolute', fontSize: 9, fontWeight: '700', color: '#7a5c3a', fontFamily: 'NotoSansKR' },

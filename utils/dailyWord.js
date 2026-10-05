@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '../firebaseConfig';
 import localWords from '../data/words2/dailyWords.json';
 import challengeWords from '../data/words2/challengeWords.json';
@@ -272,8 +272,10 @@ export async function getOrCreateUser() {
 // 게임 결과 제출. 정답 확인 후 바로 기록 (일반 모드·챌린지 모드 공용)
 async function submitResultTo(collectionName, versionPrefix, dateKey, { userId, nickname, attempts, success, duration, streak }) {
   if (!db) return { ok: false, error: 'firebase-not-configured' };
+  // 문서 ID를 날짜+사용자로 고정 — update는 규칙상 불가라 같은 날 중복 등록이 차단된다
+  const ref = doc(db, collectionName, `${versionPrefix}${dateKey}_${userId}`);
   try {
-    await withTimeout(addDoc(collection(db, collectionName), {
+    await withTimeout(setDoc(ref, {
       date: versionPrefix + dateKey,
       day: todayDayNum(),
       userId,
@@ -286,6 +288,14 @@ async function submitResultTo(collectionName, versionPrefix, dateKey, { userId, 
     }), FIRESTORE_SUBMIT_TIMEOUT_MS);
     return { ok: true };
   } catch (error) {
+    // 실패로 보여도 쓰기가 실제로 전달됐거나(타임아웃 후 지연 반영) 이미 등록된 경우가 있다
+    // 문서가 존재하면 등록된 상태로 간주해 불필요한 실패 표시와 재시도 중복을 막는다
+    try {
+      const snap = await withTimeout(getDoc(ref), FIRESTORE_TIMEOUT_MS);
+      if (snap.exists()) return { ok: true };
+    } catch {
+      // 확인 실패 시 아래 실패 처리로 진행
+    }
     console.error('[dailyWord] ranking submit failed', error?.code, error?.message);
     return { ok: false, error: error?.code || error?.message || 'unknown-error' };
   }
@@ -330,9 +340,16 @@ async function fetchRankingsFrom(collectionName, versionPrefix, dateKey, userId)
       .map((docSnap) => docSnap.data())
       .filter((entry) => entry.success)
       .sort((a, b) => toMillis(a.submittedAt) - toMillis(b.submittedAt));
-    const rankings = sorted.slice(0, 10).map((entry) => ({ ...entry, isMine: entry.userId === userId }));
-    const myIndex = sorted.findIndex((entry) => entry.userId === userId);
-    const myRank = myIndex >= 0 ? { ...sorted[myIndex], rank: myIndex + 1, isMine: true } : null;
+    // 같은 사용자의 중복 문서(렉 중 중복 제출 등)는 가장 빠른 등록만 인정한다
+    const seenUsers = new Set();
+    const unique = sorted.filter((entry) => {
+      if (seenUsers.has(entry.userId)) return false;
+      seenUsers.add(entry.userId);
+      return true;
+    });
+    const rankings = unique.slice(0, 10).map((entry) => ({ ...entry, isMine: entry.userId === userId }));
+    const myIndex = unique.findIndex((entry) => entry.userId === userId);
+    const myRank = myIndex >= 0 ? { ...unique[myIndex], rank: myIndex + 1, isMine: true } : null;
     return { rankings, myRank };
   } catch {
     return empty;

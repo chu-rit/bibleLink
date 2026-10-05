@@ -94,6 +94,7 @@ export default function ChallengeWordScreen({ onBack, masterMode }) {
   const inputRef = useRef(null);
   const toastTimerRef = useRef(null);
   const startedAtRef = useRef(Date.now());
+  const submittingRef = useRef(false);
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -190,6 +191,17 @@ export default function ChallengeWordScreen({ onBack, masterMode }) {
   };
 
   const submitGuess = async () => {
+    // 제출 처리 중 재호출 방지 — 랙 중 연타로 랭킹이 중복 등록되지 않게 한다
+    if (over || submittingRef.current) return;
+    submittingRef.current = true;
+    try {
+      await runGuess();
+    } finally {
+      submittingRef.current = false;
+    }
+  };
+
+  const runGuess = async () => {
     if (over) return;
     // 시도할 때마다 서버 기준 오늘 문제가 맞는지 확인 — 날짜가 바뀌었으면 새 문제로 교체
     const { entry: fresh, source } = await getChallengeWord();
