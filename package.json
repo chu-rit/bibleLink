@@ -42,7 +42,9 @@
     "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
+    "@types/react": "~19.1.10",
     "firebase-admin": "^14.4.0",
-    "opentype.js": "^2.0.0"
+    "opentype.js": "^2.0.0",
+    "typescript": "~5.9.2"
   }
 }

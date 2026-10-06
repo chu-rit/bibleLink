@@ -19,6 +19,7 @@
       }
     },
     "android": {
+      "package": "com.churit.biblelink",
       "softwareKeyboardLayoutMode": "resize",
       "adaptiveIcon": {
         "foregroundImage": "./assets/ICON.png",

@@ -59,6 +59,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
+  const gridPadding = isSmallScreen ? 14 * 2 : 20 * 2;
   const [viewportHeight, setViewportHeight] = useState(windowHeight);
 
   const msInstanceIdRef = useRef(null);
@@ -105,7 +106,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     const isComplete = percent === 100;
     const tileStyle = columns === 1
       ? { width: masterTileWidth, marginRight: 8 }
-      : { width: `${Math.floor(100 / columns)}%`, maxWidth: `${Math.floor(100 / columns)}%` };
+      : { width: Math.floor((effectiveWidth - gridPadding) / columns), maxWidth: Math.floor((effectiveWidth - gridPadding) / columns) };
     return (
       <Pressable
         key={map.id}
