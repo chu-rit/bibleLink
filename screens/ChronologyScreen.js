@@ -131,10 +131,15 @@ export default function ChronologyScreen({ onBack }) {
     if (item.source) Linking.openURL(item.source).catch(() => {});
   };
 
+  // uncertaintyHours가 약 1년(8640시간) 이상이면 연도가 확정되지 않은 "추정"으로 표시
+  const UNCERTAIN_HOURS = 8640;
+  const isUncertain = (item) => (item.uncertaintyHours || 0) >= UNCERTAIN_HOURS || (item.endUncertaintyHours || 0) >= UNCERTAIN_HOURS;
+
   const formatDate = (item) => {
     const fmt = (y, m, d) => `${formatYear(y)}${m ? ` ${m}월` : ''}${d ? ` ${d}일` : ''}`;
     const from = fmt(item.year, item.month, item.day);
-    return item.endYear !== undefined ? `${from} ~ ${fmt(item.endYear, item.endMonth, item.endDay)}` : from;
+    const base = item.endYear !== undefined ? `${from} ~ ${fmt(item.endYear, item.endMonth, item.endDay)}` : from;
+    return isUncertain(item) ? `${base} (추정)` : base;
   };
 
   const span = width / activeView.pxPerYear;
@@ -183,6 +188,9 @@ export default function ChronologyScreen({ onBack }) {
   const { eventMarks, periodBars, ticks, rangeLabels } = useMemo(() => {
     if (!width || !height) return { eventMarks: [], periodBars: [], ticks: [], rangeLabels: null };
     const { start, pxPerYear } = activeView;
+    // 드래그로 도달 가능한 시작 범위 (clampView와 동일 경계)
+    const startMin = MIN_T - 100;
+    const startMax = MAX_T + 100 - width / pxPerYear;
 
     // 사건 라벨: 축 위, 세로 막대 우측에 텍스트. level 우선순위대로 빈 레인 자리를 채우고
     // 모든 레인이 찼을 때만 숨김. 박스는 불투명 배경으로 줄기 위에 표시됨
@@ -204,6 +212,10 @@ export default function ChronologyScreen({ onBack }) {
       const l = x;
       const r = x + 1.5 + textWidth(item.event) + 4;
       if (r <= AXIS_MARGIN || l >= width - AXIS_MARGIN) continue;
+      // 스크롤을 끝까지 해도 라벨 전체가 경계 안에 들어올 수 없으면 마커 통째로 숨김
+      const xReachMin = (item.t - startMax) * pxPerYear;
+      const xReachMax = (item.t - startMin) * pxPerYear;
+      if (xReachMin > width - AXIS_MARGIN - (r - l) || xReachMax < AXIS_MARGIN) continue;
       for (let lane = 0; lane < maxEventLanes; lane++) {
         const spans = laneSpans[lane] || (laneSpans[lane] = []);
         if (spans.some(([a, b]) => l < b && r > a)) continue;
@@ -309,20 +321,23 @@ export default function ChronologyScreen({ onBack }) {
         >
           {/* 사건 영역 전체가 클리핑 창: 내용은 자연 위치, 경계에서만 잘림 */}
           <View style={{ position: 'absolute', left: AXIS_MARGIN, top: 0, width: Math.max(width - AXIS_MARGIN * 2, 0), height: axisY, overflow: 'hidden' }}>
-            {eventMarks.map(({ item, x, lane }) => (
-              <Pressable
-                key={`e${item.id}`}
-                onPress={() => setSelected({ item, area: 'event' })}
-                style={[styles.eventMark, { left: x - AXIS_MARGIN, top: axisY - (lane + 1) * EVENT_ROW_HEIGHT }]}
-              >
-                <View style={[styles.eventStem, { height: (lane + 1) * EVENT_ROW_HEIGHT, backgroundColor: categoryColor(item.category) }]} />
-                <View style={[styles.eventBox, { borderColor: categoryColor(item.category) }]}>
-                  <Text numberOfLines={1} style={[styles.eventText, { color: categoryColor(item.category) }]}>
-                    {item.event}
-                  </Text>
-                </View>
-              </Pressable>
-            ))}
+            {eventMarks.map(({ item, x, lane }) => {
+              const c = categoryColor(item.category);
+              return (
+                <Pressable
+                  key={`e${item.id}`}
+                  onPress={() => setSelected({ item, area: 'event' })}
+                  style={[styles.eventMark, { left: x - AXIS_MARGIN, top: axisY - (lane + 1) * EVENT_ROW_HEIGHT }]}
+                >
+                  <View style={[styles.eventStem, { height: (lane + 1) * EVENT_ROW_HEIGHT, backgroundColor: c }]} />
+                  <View style={[styles.eventBox, { borderColor: c }]}>
+                    <Text style={[styles.eventText, { color: c, width: textWidth(item.event) }]}>
+                      {item.event}
+                    </Text>
+                  </View>
+                </Pressable>
+              );
+            })}
           </View>
 
           <View style={[styles.axis, { top: axisY }]} />
@@ -346,18 +361,27 @@ export default function ChronologyScreen({ onBack }) {
             );
           })}
 
-          {periodBars.map(({ item, x, w, lane }) => (
-            <Pressable
-              key={`p${item.id}`}
-              onPress={() => setSelected({ item, area: 'period' })}
-              style={[styles.periodBar, { left: x, top: axisY + AXIS_LABEL_HEIGHT + 4 + lane * PERIOD_LANE_HEIGHT, width: w, backgroundColor: categoryColor(item.category) }]}
-            >
-              <Text numberOfLines={1} style={styles.periodText}>{item.event}</Text>
-            </Pressable>
-          ))}
+          {periodBars.map(({ item, x, w, lane }) => {
+            const textW = textWidth(item.event) * 0.9;
+            const textOffset = textW <= w ? (w - textW) / 2 : 0;
+            return (
+              <Pressable
+                key={`p${item.id}`}
+                onPress={() => setSelected({ item, area: 'period' })}
+                style={[styles.periodBar, { left: x, top: axisY + AXIS_LABEL_HEIGHT + 4 + lane * PERIOD_LANE_HEIGHT, width: w, backgroundColor: categoryColor(item.category) }]}
+              >
+                <View style={styles.periodBarFill}>
+                  <Text style={[styles.periodText, { width: textW, marginLeft: textOffset }, Platform.OS === 'web' && { WebkitTextStroke: '1.2px rgba(0,0,0,0.9)', paintOrder: 'stroke fill' }]}>{item.event}</Text>
+                </View>
+              </Pressable>
+            );
+          })}
 
         </View>
       </GestureDetector>
+      {selected && (
+        <Pressable style={StyleSheet.absoluteFill} onPress={() => setSelected(null)} />
+      )}
       {selected && (
         <View style={[styles.detailPanel, selected.area === 'event' ? { top: axisY + AXIS_LABEL_HEIGHT + 4 } : { bottom: height - axisY + 4 }]}>
           <Pressable style={styles.detailClose} onPress={() => setSelected(null)}>
@@ -367,6 +391,7 @@ export default function ChronologyScreen({ onBack }) {
             <Text style={styles.detailTitle}>{selected.item.event}({selected.item.category})</Text>
           </Pressable>
           <Text style={styles.detailMeta}>{formatDate(selected.item)}</Text>
+          {selected.item.memo ? <Text style={styles.detailMemo}>{selected.item.memo}</Text> : null}
         </View>
       )}
 
@@ -502,8 +527,9 @@ const styles = StyleSheet.create({
   eventText: { fontSize: FONT_SIZE, fontWeight: '600', fontFamily: 'NotoSansKR', includeFontPadding: false },
   eventBox: { marginLeft: 0, borderWidth: 1, borderRadius: 4, paddingHorizontal: 4, paddingVertical: 1, backgroundColor: '#f6f1e6' },
   eventStem: { position: 'absolute', left: 0, top: 0, width: 1.5 },
-  periodBar: { position: 'absolute', height: PERIOD_BAR_HEIGHT, borderRadius: 4, justifyContent: 'center', paddingHorizontal: 4, overflow: 'hidden', opacity: 0.9 },
-  periodText: { fontSize: 9, color: '#fff', fontFamily: 'NotoSansKR', includeFontPadding: false },
+  periodBar: { position: 'absolute', height: PERIOD_BAR_HEIGHT, borderRadius: 4, overflow: 'hidden', opacity: 0.9 },
+  periodBarFill: { flex: 1, justifyContent: 'center' },
+  periodText: { fontSize: 9, color: '#fff', fontFamily: 'NotoSansKR', includeFontPadding: false, textShadowColor: 'rgba(0,0,0,1)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 3 },
   timelineWrap: { flex: 1 },
   zoomGauge: { position: 'absolute', right: 10, bottom: 8, width: GAUGE_WIDTH, height: 34 },
   scrollGauge: { position: 'absolute', left: 10, bottom: 8, width: SCROLL_GAUGE_WIDTH, height: 34 },
@@ -516,6 +542,7 @@ const styles = StyleSheet.create({
   detailPanel: { position: 'absolute', left: AXIS_MARGIN + 6, right: AXIS_MARGIN + 6, backgroundColor: '#f6f1e6', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 8, padding: 10, paddingRight: 34 },
   detailTitle: { fontSize: 14, fontWeight: '700', color: '#4a6fa5', textDecorationLine: 'underline', fontFamily: 'NotoSansKR', includeFontPadding: false },
   detailMeta: { fontSize: 11, color: '#6b5a44', marginTop: 3, fontFamily: 'NotoSansKR', includeFontPadding: false },
+  detailMemo: { fontSize: 10, color: '#8a7a60', marginTop: 4, fontFamily: 'NotoSansKR', includeFontPadding: false },
   detailClose: { position: 'absolute', top: 6, right: 8, padding: 4 },
   detailCloseText: { fontSize: 14, color: '#8a7558', fontWeight: '700' },
   searchPanel: { position: 'absolute', top: 4, left: 10, right: 10, backgroundColor: '#f6f1e6', borderWidth: 1.5, borderColor: '#d8cdb8', borderRadius: 8, padding: 8, zIndex: 10 },
