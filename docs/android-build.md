@@ -33,6 +33,9 @@
 | 294999cc-a663-4bbd-9c15-4401aeafe48b | preview | 3 | APK 설치 페이지(최초 테스트용) |
 | d63a6a3a-8f30-4347-9596-8b2ba5434bb7 | preview | 4 | APK 설치 페이지 — 맵 5열·연대기 폰트 패딩 수정 포함 |
 
+- **주의:** vc2의 AAB는 Android 전용 수정(맵 5열, 연대기 폰트 패딩) 이전 빌드라 제출용으로 쓰면 안 됨. Play 제출 전 production 프로필로 AAB 재빌드 필요
+- OTA: production 채널은 `eas update`로 JS 번들만 갱신됨 — 네이티브 변경(패키지명 등)은 새 빌드가 필요하므로 vc2 AAB는 OTA와 무관하게 구버전 바이너리
+
 - 설치 페이지: https://expo.dev/accounts/churit/projects/bible-link/builds/<빌드 ID>
 - 빌드 목록: `npx eas build:list --platform android`
 
