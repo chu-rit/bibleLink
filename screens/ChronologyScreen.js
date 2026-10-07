@@ -331,7 +331,7 @@ export default function ChronologyScreen({ onBack }) {
                 >
                   <View style={[styles.eventStem, { height: (lane + 1) * EVENT_ROW_HEIGHT, backgroundColor: c }]} />
                   <View style={[styles.eventBox, { borderColor: c }]}>
-                    <Text style={[styles.eventText, { color: c, width: textWidth(item.event) }]}>
+                    <Text numberOfLines={1} ellipsizeMode="clip" style={[styles.eventText, { color: c }]}>
                       {item.event}
                     </Text>
                   </View>
@@ -354,9 +354,9 @@ export default function ChronologyScreen({ onBack }) {
             const year = serialToYear(t);
             const label = isMonthTick ? `${serialToMonth(t)}월` : (year < 0 ? `BC ${-year}` : `${year}`);
             return (
-              <View key={`t${t.toFixed(3)}`} style={[styles.tick, { left: x, top: axisY }]}>
+              <View key={`t${t.toFixed(3)}`} style={[styles.tick, { left: x - 40, top: axisY }]}>
                 <View style={styles.tickLine} />
-                <Text style={styles.tickLabel}>{label}</Text>
+                <Text numberOfLines={1} style={styles.tickLabel}>{label}</Text>
               </View>
             );
           })}
@@ -371,7 +371,7 @@ export default function ChronologyScreen({ onBack }) {
                 style={[styles.periodBar, { left: x, top: axisY + AXIS_LABEL_HEIGHT + 4 + lane * PERIOD_LANE_HEIGHT, width: w, backgroundColor: categoryColor(item.category) }]}
               >
                 <View style={styles.periodBarFill}>
-                  <Text style={[styles.periodText, { width: textW, marginLeft: textOffset }, Platform.OS === 'web' && { WebkitTextStroke: '1.2px rgba(0,0,0,0.9)', paintOrder: 'stroke fill' }]}>{item.event}</Text>
+                  <Text numberOfLines={1} ellipsizeMode="clip" style={[styles.periodText, { width: textW, marginLeft: textOffset }, Platform.OS === 'web' && { WebkitTextStroke: '1.2px rgba(0,0,0,0.9)', paintOrder: 'stroke fill' }]}>{item.event}</Text>
                 </View>
               </Pressable>
             );
@@ -519,9 +519,9 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: 'transparent' },
   timeline: { flex: 1, overflow: 'hidden' },
   axis: { position: 'absolute', left: AXIS_MARGIN, right: AXIS_MARGIN, height: 1.5, backgroundColor: '#7a5c3a' },
-  tick: { position: 'absolute', width: 0, alignItems: 'center' },
+  tick: { position: 'absolute', width: 80, alignItems: 'center' },
   tickLine: { width: 1, height: 6, backgroundColor: '#7a5c3a' },
-  tickLabel: { fontSize: 9, color: '#7a5c3a', marginTop: 1, fontFamily: 'NotoSansKR', includeFontPadding: false },
+  tickLabel: { fontSize: 9, color: '#7a5c3a', marginTop: 1, fontFamily: 'NotoSansKR', includeFontPadding: false, textAlign: 'center' },
   rangeLabel: { position: 'absolute', fontSize: 9, fontWeight: '700', color: '#7a5c3a', fontFamily: 'NotoSansKR', includeFontPadding: false },
   eventMark: { position: 'absolute', height: EVENT_ROW_HEIGHT, flexDirection: 'row', alignItems: 'flex-start' },
   eventText: { fontSize: FONT_SIZE, fontWeight: '600', fontFamily: 'NotoSansKR', includeFontPadding: false },

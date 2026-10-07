@@ -31,8 +31,9 @@
   {
     "id": 3,
     "level": 4,
-    "year": -3976,
+    "year": -4025,
     "event": "하와",
+    "uncertaintyHours": 432000,
     "category": "인물",
     "memo": "아담 창조 이후에 지어졌으며, 하와에 관한 기록은 셋의 출생과 더불어 끝난다.",
     "source": "https://www.jw.org/finder?wtlocale=KO&docid=1102017162&srctype=wol&srcid=share&par=9"
