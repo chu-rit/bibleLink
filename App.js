@@ -296,17 +296,18 @@ function AppContent() {
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const [rootSize, setRootSize] = useState({ width: 0, height: 0 });
   const rootLayoutRef = useRef({ width: 0, height: 0, changedAt: 0 });
+  const nativeRootRef = useRef(null);
   const [mainLayoutReady, setMainLayoutReady] = useState(false);
   const [mainPageSize, setMainPageSize] = useState({ width: 0, height: 0 });
   const handleMainPageReady = useCallback(({ width, height }) => {
     setMainPageSize((previous) => previous.width === width && previous.height === height ? previous : { width, height });
     setMainLayoutReady(true);
   }, []);
-  const handleRootLayout = ({ nativeEvent: { layout } }) => {
+  const handleRootLayout = useCallback(({ nativeEvent: { layout } }) => {
     if (layout.width === rootLayoutRef.current.width && layout.height === rootLayoutRef.current.height) return;
     rootLayoutRef.current = { width: layout.width, height: layout.height, changedAt: Date.now() };
     setRootSize({ width: layout.width, height: layout.height });
-  };
+  }, []);
   const flipperRef = useRef(null);
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
@@ -400,9 +401,13 @@ function AppContent() {
     let cancelled = false;
     let pending = false;
     let timer = null;
+    let retryTimer = null;
+    let attempts = 0;
     const apply = async (invalidate = false) => {
       if (cancelled || pending) return;
+      clearTimeout(retryTimer);
       pending = true;
+      if (Platform.OS !== 'web') attempts++;
       if (invalidate) setHeadsUpOrientationLock(null);
       setHeadsUpOrientationError('');
       timer = setTimeout(() => {
@@ -418,15 +423,26 @@ function AppContent() {
       if (!cancelled) {
         clearTimeout(timer);
         const webFallback = Platform.OS === 'web' && !locked;
+        const nativeWindow = Platform.OS !== 'web' ? Dimensions.get('window') : null;
+        const nativeDirectionReady = nativeWindow && (headsUpOrientation === 'LANDSCAPE' ? nativeWindow.width > nativeWindow.height : nativeWindow.height >= nativeWindow.width);
+        const retryNative = Platform.OS !== 'web' && attempts < 3 && (!locked || !nativeDirectionReady);
         setHeadsUpWebFallback(webFallback && headsUpOrientation === 'LANDSCAPE');
         setHeadsUpOrientationLock(locked || (webFallback && headsUpOrientation === 'PORTRAIT') ? headsUpOrientation : null);
-        setHeadsUpOrientationError(locked || webFallback ? '' : '화면 방향을 변경하지 못했어요. 다시 시도해 주세요.');
+        setHeadsUpOrientationError(locked || webFallback || retryNative ? '' : '화면 방향을 변경하지 못했어요. 다시 시도해 주세요.');
+        if (retryNative) {
+          retryTimer = setTimeout(() => {
+            if (AppState.currentState === 'active') apply();
+          }, 500);
+        }
       }
       pending = false;
     };
     apply(true);
     const appStateSub = AppState.addEventListener('change', (state) => {
-      if (state === 'active') apply();
+      if (state === 'active') {
+        attempts = 0;
+        apply();
+      }
     });
     const dimensionSub = Dimensions.addEventListener('change', ({ window: { width, height } }) => {
       if (headsUpOrientation === 'LANDSCAPE' ? width <= height : width > height) apply(true);
@@ -442,6 +458,7 @@ function AppContent() {
     return () => {
       cancelled = true;
       clearTimeout(timer);
+      clearTimeout(retryTimer);
       appStateSub.remove();
       dimensionSub.remove();
       orientationSub?.remove?.();
@@ -470,14 +487,18 @@ function AppContent() {
     if (screen !== 'headsUpSetup') return undefined;
     const entering = headsUpPhase === 'blank' && headsUpFadeDone;
     const leaving = headsUpPhase === 'rotatingBack';
-    if ((!entering && !leaving) || !headsUpOrientationReady || headsUpOrientationError) return undefined;
+    if ((!entering && !leaving) || !headsUpOrientationReady || (Platform.OS === 'web' && headsUpOrientationError)) return undefined;
     const startedAt = Date.now();
+    let cancelled = false;
     let timer = null;
-    const check = () => {
+    let measureTimer = null;
+    const evaluate = (measured = true) => {
+      if (cancelled) return;
       const now = Date.now();
       const { width, height, changedAt } = rootLayoutRef.current;
       const orientationReady = entering ? width > height : (Platform.OS === 'web' || height >= width);
-      if (width > 0 && height > 0 && now - changedAt >= 220 && now - startedAt >= 350 && orientationReady) {
+      if (measured && width > 0 && height > 0 && now - changedAt >= 220 && now - startedAt >= 350 && orientationReady) {
+        setHeadsUpOrientationError('');
         if (entering) {
           setHeadsUpPageSize({ width, height });
           setHeadsUpPhase('preparing');
@@ -488,13 +509,42 @@ function AppContent() {
       }
       if (now - startedAt >= 4000) {
         setHeadsUpOrientationError(Platform.OS === 'web' ? '가로 화면을 준비하지 못했어요. 다시 시도해 주세요.' : '화면이 아직 회전하지 않았어요. 다시 시도해 주세요.');
+        if (Platform.OS === 'web') return;
+      }
+      timer = setTimeout(check, now - startedAt >= 4000 ? 250 : 60);
+    };
+    const check = () => {
+      if (Platform.OS === 'web') {
+        evaluate();
         return;
       }
-      timer = setTimeout(check, 60);
+      const root = nativeRootRef.current;
+      if (typeof root?.measure !== 'function') {
+        evaluate();
+        return;
+      }
+      const previousLayout = rootLayoutRef.current;
+      let finished = false;
+      const finish = (width, height) => {
+        if (cancelled || finished) return;
+        finished = true;
+        clearTimeout(measureTimer);
+        const measured = root === nativeRootRef.current && width > 0 && height > 0;
+        if (measured && rootLayoutRef.current === previousLayout) {
+          handleRootLayout({ nativeEvent: { layout: { width, height } } });
+        }
+        evaluate(measured || rootLayoutRef.current !== previousLayout);
+      };
+      measureTimer = setTimeout(() => finish(0, 0), 250);
+      try {
+        root.measure((_x, _y, width, height) => finish(width, height));
+      } catch {
+        finish(0, 0);
+      }
     };
     check();
-    return () => clearTimeout(timer);
-  }, [screen, headsUpFadeDone, headsUpPhase, headsUpOrientationReady, headsUpOrientationError]);
+    return () => { cancelled = true; clearTimeout(timer); clearTimeout(measureTimer); };
+  }, [screen, headsUpFadeDone, headsUpPhase, headsUpOrientationReady, headsUpOrientationError, handleRootLayout]);
 
   useEffect(() => {
     if (screen !== 'headsUpSetup' || headsUpPhase !== 'preparing' || !headsUpOrientationReady || headsUpOrientationError || !headsUpLayoutReady || !headsUpImagesReady.headsUpBlank || !headsUpImagesReady.headsUp) return undefined;
@@ -767,7 +817,7 @@ function AppContent() {
 
   if (screen === 'headsUpSetup') {
     return (
-      <GestureHandlerRootView style={styles.root} onLayout={handleRootLayout}>
+      <GestureHandlerRootView ref={Platform.OS === 'web' ? undefined : nativeRootRef} style={styles.root} onLayout={handleRootLayout}>
         {rootBackground}
         <FadeInView key="headsUp" style={StyleSheet.absoluteFill} duration={900} ready={loadingRootBackgroundLoaded && rootSize.width > 0 && rootSize.height > 0} onEnd={() => setHeadsUpFadeDone(true)}>
           <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
@@ -843,7 +893,7 @@ function AppContent() {
   );
 
   return (
-    <GestureHandlerRootView style={styles.root} onLayout={handleRootLayout}>
+    <GestureHandlerRootView ref={Platform.OS === 'web' ? undefined : nativeRootRef} style={styles.root} onLayout={handleRootLayout}>
       {rootBackground}
       <FadeInView key="main" style={StyleSheet.absoluteFill} ready={mainLayoutReady && loadingImagesReady && rootSize.width > 0 && rootSize.height > 0}>
       <PageFlipperBoundary fallback={currentPage} onError={() => setMainLayoutReady(true)}>
