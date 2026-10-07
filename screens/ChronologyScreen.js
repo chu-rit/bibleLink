@@ -371,7 +371,7 @@ export default function ChronologyScreen({ onBack }) {
                 style={[styles.periodBar, { left: x, top: axisY + AXIS_LABEL_HEIGHT + 4 + lane * PERIOD_LANE_HEIGHT, width: w, backgroundColor: categoryColor(item.category) }]}
               >
                 <View style={styles.periodBarFill}>
-                  <Text numberOfLines={1} ellipsizeMode="clip" style={[styles.periodText, { width: textW, marginLeft: textOffset }, Platform.OS === 'web' && { WebkitTextStroke: '1.2px rgba(0,0,0,0.9)', paintOrder: 'stroke fill' }]}>{item.event}</Text>
+                  <Text style={[styles.periodText, { marginLeft: textOffset }, Platform.OS === 'web' && { WebkitTextStroke: '1.2px rgba(0,0,0,0.9)', paintOrder: 'stroke fill', whiteSpace: 'nowrap' }]}>{item.event}</Text>
                 </View>
               </Pressable>
             );
@@ -529,7 +529,7 @@ const styles = StyleSheet.create({
   eventStem: { position: 'absolute', left: 0, top: 0, width: 1.5 },
   periodBar: { position: 'absolute', height: PERIOD_BAR_HEIGHT, borderRadius: 4, overflow: 'hidden', opacity: 0.9 },
   periodBarFill: { flex: 1, justifyContent: 'center' },
-  periodText: { fontSize: 9, color: '#fff', fontFamily: 'NotoSansKR', includeFontPadding: false, textShadowColor: 'rgba(0,0,0,1)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 3 },
+  periodText: { fontSize: 9, color: '#fff', fontFamily: 'NotoSansKR', includeFontPadding: false, alignSelf: 'flex-start', textShadowColor: 'rgba(0,0,0,1)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 3 },
   timelineWrap: { flex: 1 },
   zoomGauge: { position: 'absolute', right: 10, bottom: 8, width: GAUGE_WIDTH, height: 34 },
   scrollGauge: { position: 'absolute', left: 10, bottom: 8, width: SCROLL_GAUGE_WIDTH, height: 34 },
