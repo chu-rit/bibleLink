@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import appConfig from '../app.json';
 
 export default function SettingsScreen({ visible, onClose, title, description, children }) {
@@ -14,7 +14,10 @@ export default function SettingsScreen({ visible, onClose, title, description, c
           <Text style={styles.title}>{title}</Text>
           {description ? <Text style={styles.description}>{description}</Text> : null}
           <View style={styles.content}>{children}</View>
-          <Text style={styles.version}>v{appConfig.expo.version}-d</Text>
+          <View style={styles.footer}>
+            <Text style={styles.credit} onPress={() => Linking.openURL('https://chu-rit.github.io/').catch(() => {})}>Created by ChuRit</Text>
+            <Text style={styles.version}>v{appConfig.expo.version}-d</Text>
+          </View>
         </Pressable>
       </Pressable>
     </Modal>
@@ -28,6 +31,8 @@ const styles = StyleSheet.create({
   title: { color: '#3a2e1f', fontSize: 17, fontWeight: '800' },
   description: { color: '#7a6450', fontSize: 13 },
   content: { gap: 12 },
+  footer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  credit: { color: '#4a6fa5', fontSize: 12, fontWeight: '600', textDecorationLine: 'underline' },
   version: { color: '#7a6450', fontSize: 12, fontWeight: '600', textAlign: 'right' },
   closeButton: { position: 'absolute', top: 12, right: 12, width: 32, height: 32, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#d8cdb8', borderRadius: 8, backgroundColor: '#f0ebe0', zIndex: 1 },
   closeButtonText: { color: '#7a6450', fontSize: 22, lineHeight: 24, fontWeight: '500' },

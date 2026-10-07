@@ -298,6 +298,7 @@ export default function ChronologyScreen({ onBack }) {
     });
   };
 
+  const sizeReady = width > 0 && height > 0;
   const wideLayout = width > height;
   const catChips = CATEGORIES.map((cat) => {
     const hidden = hiddenCats.has(cat);
@@ -311,7 +312,7 @@ export default function ChronologyScreen({ onBack }) {
 
   return (
     <ImageBackground source={BG_IMAGE} resizeMode="cover" style={[styles.screen, { paddingTop: insets.top }]}>
-      <AppHeader onBack={onBack} onRotate={toggleOrientation} onSearch={() => setSearchOpen(true)} />
+      <AppHeader onBack={() => onBack(isLandscape)} onRotate={toggleOrientation} onSearch={() => setSearchOpen(true)} />
       <View style={styles.timelineWrap}>
       <GestureDetector gesture={composed}>
         <View
@@ -319,6 +320,7 @@ export default function ChronologyScreen({ onBack }) {
           style={styles.timeline}
           onLayout={(e) => setSize(e.nativeEvent.layout)}
         >
+          {sizeReady && (<>
           {/* 사건 영역 전체가 클리핑 창: 내용은 자연 위치, 경계에서만 잘림 */}
           <View style={{ position: 'absolute', left: AXIS_MARGIN, top: 0, width: Math.max(width - AXIS_MARGIN * 2, 0), height: axisY, overflow: 'hidden' }}>
             {eventMarks.map(({ item, x, lane }) => {
@@ -376,7 +378,7 @@ export default function ChronologyScreen({ onBack }) {
               </Pressable>
             );
           })}
-
+          </>)}
         </View>
       </GestureDetector>
       {selected && (
@@ -395,6 +397,7 @@ export default function ChronologyScreen({ onBack }) {
         </View>
       )}
 
+      {sizeReady && (
       <View style={styles.zoomGauge}>
         <View style={styles.gaugeTrack} />
         {GAUGE_STOPS.map((v, i) => {
@@ -417,6 +420,7 @@ export default function ChronologyScreen({ onBack }) {
           <View style={styles.scrollGaugeTouch} />
         </GestureDetector>
       </View>
+      )}
 
       {searchOpen && (
         <View style={styles.searchPanel}>
@@ -453,6 +457,7 @@ export default function ChronologyScreen({ onBack }) {
         </View>
       )}
 
+      {sizeReady && (
       <View style={styles.scrollGauge}>
         <View style={styles.gaugeTrack} />
         {SCROLL_TICKS.map((tick) => {
@@ -474,6 +479,7 @@ export default function ChronologyScreen({ onBack }) {
           <View style={styles.scrollGaugeTouch} />
         </GestureDetector>
       </View>
+      )}
       </View>
 
       {wideLayout ? (

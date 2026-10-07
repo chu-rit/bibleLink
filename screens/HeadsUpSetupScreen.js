@@ -79,6 +79,17 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
     deactivateKeepAwake('heads-up-word').catch(() => {});
   };
 
+  const handleBack = () => {
+    if (gameStage === 'setup') {
+      onBack?.();
+      return;
+    }
+    releaseKeepAwake();
+    setCurrentWord(null);
+    setCountdown(5);
+    setGameStage('setup');
+  };
+
   const handleStart = async () => {
     if (!canStart || isStarting) return;
     setIsStarting(true);
@@ -134,7 +145,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
       style={[styles.container, { paddingTop: insets.top }, isWeb && { height: pageHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
-      <AppHeader onBack={onBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
+      <AppHeader onBack={handleBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
       {gameStage === 'setup' ? (
         <ScrollView style={styles.scrollView} contentContainerStyle={[styles.content, isLandscape && styles.landscapeContent]}>
           <View style={isLandscape ? styles.landscapePanel : undefined}>
