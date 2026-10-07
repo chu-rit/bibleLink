@@ -32,6 +32,28 @@
       body.heads-up-active #root { width: 100vw; height: 100dvh; }
       body.landscape-allowed:not(.heads-up-active) #root { width: min(100vw, 480px); height: 100dvh; }
     }
+    body.heads-up-web-landscape { height: 100dvh; overflow: hidden; }
+    body.heads-up-web-landscape #root,
+    body.heads-up-web-landscape [aria-modal="true"] {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      margin: 0;
+      width: 100vw;
+      height: 100dvh;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+    }
+    @media (orientation: portrait) {
+      body.heads-up-web-landscape #root,
+      body.heads-up-web-landscape [aria-modal="true"] {
+        width: 100dvh;
+        height: 100vw;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
   </style>
 </head>
 <body>

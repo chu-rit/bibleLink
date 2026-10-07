@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ImageBackground, Modal, Platform, Pressable, ScrollView, StatusBar, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
@@ -13,7 +13,7 @@ const POPULARITY_LEVELS = [1, 2, 3];
 //   { id: '지명', label: '지명' },
 // ];
 
-export default function HeadsUpSetupScreen({ onBack, masterMode }) {
+export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onReady }) {
   const [selectedPopularityLevels, setSelectedPopularityLevels] = useState([1]);
   const [selectedCategories, setSelectedCategories] = useState(['인물']);
   const [message, setMessage] = useState('');
@@ -31,10 +31,27 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const isWeb = Platform.OS === 'web';
-  const effectiveWidth = windowWidth || 375;
-  const pageHeight = isWeb ? (windowHeight || undefined) : undefined;
-  const isLandscape = windowWidth > windowHeight;
+  const effectiveWidth = pageSize?.width || windowWidth || 375;
+  const pageHeight = pageSize?.height || (isWeb ? (windowHeight || undefined) : undefined);
+  const isLandscape = effectiveWidth > (pageSize?.height || windowHeight);
+  const isWebRotated = isWeb && isLandscape && windowHeight > windowWidth;
+  const pageInsets = isWebRotated ? { top: insets.right, right: insets.bottom, bottom: insets.left, left: insets.top } : insets;
   const canStart = selectedPopularityLevels.length > 0 && selectedCategories.length > 0;
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
+  const [layoutSize, setLayoutSize] = useState({ width: 0, height: 0 });
+  const onReadyRef = useRef(onReady);
+  onReadyRef.current = onReady;
+  const handleBackgroundLoaded = useCallback(() => setBackgroundLoaded(true), []);
+  const handleLayout = useCallback(({ nativeEvent: { layout } }) => {
+    setLayoutSize((previous) => previous.width === layout.width && previous.height === layout.height ? previous : { width: layout.width, height: layout.height });
+  }, []);
+
+  useEffect(() => {
+    if (!backgroundLoaded || layoutSize.width <= 0 || layoutSize.height <= 0 || !onReadyRef.current) return undefined;
+    if (pageSize && (Math.abs(layoutSize.width - pageSize.width) > 1 || Math.abs(layoutSize.height - pageSize.height) > 1)) return undefined;
+    const frame = requestAnimationFrame(() => onReadyRef.current?.());
+    return () => cancelAnimationFrame(frame);
+  }, [backgroundLoaded, layoutSize.width, layoutSize.height, pageSize?.width, pageSize?.height]);
 
   useEffect(() => {
     if (gameStage !== 'countdown') return undefined;
@@ -142,7 +159,10 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.container, { paddingTop: insets.top }, isWeb && { height: pageHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      onLoad={handleBackgroundLoaded}
+      onError={handleBackgroundLoaded}
+      onLayout={handleLayout}
+      style={[styles.container, { paddingTop: pageInsets.top }, isWeb && { paddingLeft: pageInsets.left, paddingRight: pageInsets.right }, isWeb && { height: pageHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
     >
       <StatusBar barStyle="dark-content" />
       <AppHeader onBack={handleBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
@@ -224,7 +244,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
           </View>
         </ScrollView>
       ) : (
-        <View style={[styles.gameStage, isWeb && { paddingBottom: 50 + insets.bottom }]}>
+        <View style={[styles.gameStage, isWeb && { paddingBottom: 50 + pageInsets.bottom }]}>
           <Text
             style={gameStage === 'countdown'
               ? styles.countdownText
@@ -265,7 +285,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode }) {
           </Pressable>
         </Pressable>
       </Modal>
-      <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} eyebrow="HEADS UP" variant="headsUp" />
+      <WordHelpModal visible={showHelp} onClose={() => setShowHelp(false)} eyebrow="HEADS UP" variant="headsUp" maxHeight={isWeb && pageHeight ? Math.max(0, pageHeight - 40) : undefined} />
     </ImageBackground>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function WordHelpModal({ visible, onClose, eyebrow = 'DAILY WORD', variant = 'daily' }) {
+export default function WordHelpModal({ visible, onClose, eyebrow = 'DAILY WORD', variant = 'daily', maxHeight }) {
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
       <View style={styles.helpOverlay}>
-        <View style={styles.helpCard}>
+        <View style={[styles.helpCard, maxHeight != null && { maxHeight }]}>
           <View style={styles.helpHeader}>
             <View>
               <Text style={styles.helpEyebrow}>{eyebrow}</Text>

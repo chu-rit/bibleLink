@@ -5,7 +5,8 @@ let orientationSeq = 0;
 // 화면 전환용: 아직 실행 전인 이전 요청은 건너뛰고 마지막 요청만 적용한다
 export const enqueueOrientation = (task) => {
   const seq = ++orientationSeq;
-  orientationQueue = orientationQueue.then(() => (seq === orientationSeq ? task().catch(() => {}) : undefined));
+  orientationQueue = orientationQueue.then(() => (seq === orientationSeq ? Promise.resolve().then(task).catch(() => false) : false));
+  return orientationQueue;
 };
 
 // 버튼 등 사용자 조작용: 요청 순서대로 모두 적용한다
@@ -16,7 +17,13 @@ export const runOrientation = (task) => {
 
 export const lockOrientation = (orientation) => {
   try {
-    const { OrientationLock, lockAsync } = require('expo-screen-orientation');
-    enqueueOrientation(() => lockAsync(orientation === 'LANDSCAPE' ? OrientationLock.LANDSCAPE : OrientationLock.PORTRAIT_UP));
-  } catch {}
+    const { OrientationLock, lockAsync, getOrientationLockAsync } = require('expo-screen-orientation');
+    const target = orientation === 'LANDSCAPE' ? OrientationLock.LANDSCAPE : OrientationLock.PORTRAIT_UP;
+    return enqueueOrientation(async () => {
+      await lockAsync(target);
+      return (await getOrientationLockAsync()) === target;
+    });
+  } catch {
+    return Promise.resolve(false);
+  }
 };

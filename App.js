@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, Dimensions, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Animated, AppState, Dimensions, Easing, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import PageFlipper from './lib/pageFlipper';
@@ -60,15 +60,21 @@ const EMPTY_MAP = {
 };
 
 // 헤드업 진입처럼 화면이 통째로 바뀔 때 깜빡임을 없애는 페이드인 래퍼
-function FadeInView({ children, style, duration = 240, onEnd }) {
+function FadeInView({ children, style, duration = 240, ready = true, pointerEvents = 'auto', onEnd }) {
   const opacity = useRef(new Animated.Value(0)).current;
   const onEndRef = useRef(onEnd);
   onEndRef.current = onEnd;
   useEffect(() => {
-    Animated.timing(opacity, { toValue: 1, duration, useNativeDriver: true }).start(() => onEndRef.current?.());
-    return undefined;
-  }, [duration, opacity]);
-  return <Animated.View style={[style, { opacity }]}>{children}</Animated.View>;
+    if (!ready) {
+      opacity.setValue(0);
+      return undefined;
+    }
+    Animated.timing(opacity, { toValue: 1, duration, useNativeDriver: true }).start(({ finished }) => {
+      if (finished) onEndRef.current?.();
+    });
+    return () => opacity.stopAnimation();
+  }, [duration, opacity, ready]);
+  return <Animated.View style={[style, { opacity }]} pointerEvents={pointerEvents}>{children}</Animated.View>;
 }
 
 class PageFlipperBoundary extends React.Component {
@@ -83,6 +89,7 @@ class PageFlipperBoundary extends React.Component {
     console.error('[PageFlipperBoundary] error.message', error?.message);
     console.error('[PageFlipperBoundary] error.stack', error?.stack);
     console.error('[PageFlipperBoundary] componentStack', errorInfo?.componentStack);
+    this.props.onError?.();
   }
 
   componentDidUpdate(previousProps, previousState) {
@@ -147,7 +154,7 @@ function AppContent() {
       document.body.classList.toggle('heads-up-active', isLandscapeScreen);
     }
     // 헤드업은 빈 페이지 페이드인이 끝난 뒤 가로 회전을 시작한다 (페이드와 회전이 겹치지 않게)
-    lockOrientation(screen === 'headsUpSetup' && headsUpFadeDone ? 'LANDSCAPE' : 'PORTRAIT');
+    if (screen !== 'headsUpSetup') lockOrientation('PORTRAIT');
     if (screen === 'loading') {
       menuContentFade.setValue(1);
       setMenuHiding(false);
@@ -287,6 +294,19 @@ function AppContent() {
   );
 
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const [rootSize, setRootSize] = useState({ width: 0, height: 0 });
+  const rootLayoutRef = useRef({ width: 0, height: 0, changedAt: 0 });
+  const [mainLayoutReady, setMainLayoutReady] = useState(false);
+  const [mainPageSize, setMainPageSize] = useState({ width: 0, height: 0 });
+  const handleMainPageReady = useCallback(({ width, height }) => {
+    setMainPageSize((previous) => previous.width === width && previous.height === height ? previous : { width, height });
+    setMainLayoutReady(true);
+  }, []);
+  const handleRootLayout = ({ nativeEvent: { layout } }) => {
+    if (layout.width === rootLayoutRef.current.width && layout.height === rootLayoutRef.current.height) return;
+    rootLayoutRef.current = { width: layout.width, height: layout.height, changedAt: Date.now() };
+    setRootSize({ width: layout.width, height: layout.height });
+  };
   const flipperRef = useRef(null);
   const animationActiveRef = useRef(false);
   const pageWidth = getPageWidth(windowWidth, windowHeight);
@@ -360,68 +380,182 @@ function AppContent() {
 
   // 헤드업: 빈 배경 페이지 위에서 가로 회전 → 정착 후 페이지 넘김으로 설정 화면 진입
   const headsUpFlipperRef = useRef(null);
-  const [headsUpFlipPages, setHeadsUpFlipPages] = useState(['headsUpBlank']);
+  const [headsUpFlipPages, setHeadsUpFlipPages] = useState(['headsUpBlank', 'headsUp']);
+  const [headsUpPhase, setHeadsUpPhase] = useState('blank');
+  const [headsUpPageSize, setHeadsUpPageSize] = useState({ width: 0, height: 0 });
+  const [headsUpLayoutReady, setHeadsUpLayoutReady] = useState(false);
+  const [headsUpImagesReady, setHeadsUpImagesReady] = useState({ headsUpBlank: false, headsUp: false });
   const headsUpExitStartedRef = useRef(false);
   const headsUpExitDoneRef = useRef(false);
+  const headsUpExitTimerRef = useRef(null);
+  const [headsUpOrientationLock, setHeadsUpOrientationLock] = useState(null);
+  const [headsUpOrientationError, setHeadsUpOrientationError] = useState('');
+  const [headsUpOrientationAttempt, setHeadsUpOrientationAttempt] = useState(0);
+  const [headsUpWebFallback, setHeadsUpWebFallback] = useState(false);
+  const headsUpOrientation = headsUpFadeDone && headsUpPhase !== 'rotatingBack' ? 'LANDSCAPE' : 'PORTRAIT';
+  const headsUpOrientationReady = headsUpOrientationLock === headsUpOrientation || (Platform.OS === 'web' && headsUpOrientation === 'LANDSCAPE' && headsUpWebFallback);
+
+  useEffect(() => {
+    if (screen !== 'headsUpSetup') return undefined;
+    let cancelled = false;
+    let pending = false;
+    let timer = null;
+    const apply = async (invalidate = false) => {
+      if (cancelled || pending) return;
+      pending = true;
+      if (invalidate) setHeadsUpOrientationLock(null);
+      setHeadsUpOrientationError('');
+      timer = setTimeout(() => {
+        if (cancelled) return;
+        if (Platform.OS === 'web') {
+          setHeadsUpWebFallback(headsUpOrientation === 'LANDSCAPE');
+          setHeadsUpOrientationLock(headsUpOrientation === 'PORTRAIT' ? 'PORTRAIT' : null);
+        } else {
+          setHeadsUpOrientationError('화면 방향을 변경하지 못했어요. 다시 시도해 주세요.');
+        }
+      }, Platform.OS === 'web' ? 1000 : 4000);
+      const locked = await lockOrientation(headsUpOrientation);
+      if (!cancelled) {
+        clearTimeout(timer);
+        const webFallback = Platform.OS === 'web' && !locked;
+        setHeadsUpWebFallback(webFallback && headsUpOrientation === 'LANDSCAPE');
+        setHeadsUpOrientationLock(locked || (webFallback && headsUpOrientation === 'PORTRAIT') ? headsUpOrientation : null);
+        setHeadsUpOrientationError(locked || webFallback ? '' : '화면 방향을 변경하지 못했어요. 다시 시도해 주세요.');
+      }
+      pending = false;
+    };
+    apply(true);
+    const appStateSub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') apply();
+    });
+    const dimensionSub = Dimensions.addEventListener('change', ({ window: { width, height } }) => {
+      if (headsUpOrientation === 'LANDSCAPE' ? width <= height : width > height) apply(true);
+    });
+    let orientationSub = null;
+    try {
+      const ScreenOrientation = require('expo-screen-orientation');
+      const target = headsUpOrientation === 'LANDSCAPE' ? ScreenOrientation.OrientationLock.LANDSCAPE : ScreenOrientation.OrientationLock.PORTRAIT_UP;
+      orientationSub = ScreenOrientation.addOrientationChangeListener(({ orientationLock }) => {
+        if (orientationLock !== target) apply(true);
+      });
+    } catch {}
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+      appStateSub.remove();
+      dimensionSub.remove();
+      orientationSub?.remove?.();
+    };
+  }, [screen, headsUpOrientation, headsUpOrientationAttempt]);
+
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return undefined;
+    document.body.classList.toggle('heads-up-web-landscape', screen === 'headsUpSetup' && headsUpOrientation === 'LANDSCAPE' && headsUpWebFallback);
+    return () => document.body.classList.remove('heads-up-web-landscape');
+  }, [screen, headsUpOrientation, headsUpWebFallback]);
 
   useEffect(() => {
     if (screen !== 'headsUpSetup') return undefined;
     headsUpExitStartedRef.current = false;
     headsUpExitDoneRef.current = false;
-    if (!headsUpFadeDone) {
-      setHeadsUpFlipPages(['headsUpBlank']);
-      return undefined;
-    }
+    setHeadsUpPhase('blank');
+    setHeadsUpFlipPages(['headsUpBlank', 'headsUp']);
+    setHeadsUpLayoutReady(false);
+    setHeadsUpImagesReady({ headsUpBlank: false, headsUp: false });
+    setMainLayoutReady(false);
+    return () => clearTimeout(headsUpExitTimerRef.current);
+  }, [screen]);
+
+  useEffect(() => {
+    if (screen !== 'headsUpSetup') return undefined;
+    const entering = headsUpPhase === 'blank' && headsUpFadeDone;
+    const leaving = headsUpPhase === 'rotatingBack';
+    if ((!entering && !leaving) || !headsUpOrientationReady || headsUpOrientationError) return undefined;
     const startedAt = Date.now();
-    let lastChange = Date.now();
     let timer = null;
-    const sub = Dimensions.addEventListener('change', () => { lastChange = Date.now(); });
     const check = () => {
       const now = Date.now();
-      if ((now - lastChange >= 220 && now - startedAt >= 350) || now - startedAt >= 1500) {
-        headsUpFlipperRef.current?.goToPageDeferred?.(1);
-        setHeadsUpFlipPages(['headsUpBlank', 'headsUp']);
+      const { width, height, changedAt } = rootLayoutRef.current;
+      const orientationReady = entering ? width > height : (Platform.OS === 'web' || height >= width);
+      if (width > 0 && height > 0 && now - changedAt >= 220 && now - startedAt >= 350 && orientationReady) {
+        if (entering) {
+          setHeadsUpPageSize({ width, height });
+          setHeadsUpPhase('preparing');
+        } else {
+          setScreen('loading');
+        }
+        return;
+      }
+      if (now - startedAt >= 4000) {
+        setHeadsUpOrientationError(Platform.OS === 'web' ? '가로 화면을 준비하지 못했어요. 다시 시도해 주세요.' : '화면이 아직 회전하지 않았어요. 다시 시도해 주세요.');
         return;
       }
       timer = setTimeout(check, 60);
     };
     check();
-    return () => { sub?.remove?.(); if (timer) clearTimeout(timer); };
-  }, [screen, headsUpFadeDone]);
+    return () => clearTimeout(timer);
+  }, [screen, headsUpFadeDone, headsUpPhase, headsUpOrientationReady, headsUpOrientationError]);
+
+  useEffect(() => {
+    if (screen !== 'headsUpSetup' || headsUpPhase !== 'preparing' || !headsUpOrientationReady || headsUpOrientationError || !headsUpLayoutReady || !headsUpImagesReady.headsUpBlank || !headsUpImagesReady.headsUp) return undefined;
+    if (rootSize.width <= rootSize.height) return undefined;
+    if (Math.abs(rootSize.width - headsUpPageSize.width) > 1 || Math.abs(rootSize.height - headsUpPageSize.height) > 1) return undefined;
+    let frame = null;
+    const timer = setTimeout(() => {
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => {
+          if (!headsUpFlipperRef.current) return;
+          setHeadsUpPhase('revealing');
+        });
+      });
+    }, Math.max(0, 220 - (Date.now() - rootLayoutRef.current.changedAt)));
+    return () => { clearTimeout(timer); if (frame !== null) cancelAnimationFrame(frame); };
+  }, [screen, headsUpPhase, headsUpLayoutReady, headsUpImagesReady, rootSize, headsUpPageSize, headsUpOrientationReady, headsUpOrientationError]);
+
+  useEffect(() => {
+    if (screen !== 'headsUpSetup' || !['preparing', 'revealing', 'active'].includes(headsUpPhase) || !headsUpOrientationReady || headsUpOrientationError || rootSize.width <= 0 || rootSize.height <= 0) return;
+    if (rootSize.width <= rootSize.height) return;
+    if (rootSize.width === headsUpPageSize.width && rootSize.height === headsUpPageSize.height) return;
+    if (headsUpPhase !== 'active') {
+      if (headsUpPhase === 'revealing') setHeadsUpPhase('preparing');
+      setHeadsUpLayoutReady(false);
+      setHeadsUpImagesReady((previous) => ({ ...previous, headsUp: false }));
+    }
+    setHeadsUpPageSize(rootSize);
+  }, [screen, headsUpPhase, rootSize, headsUpPageSize, headsUpOrientationReady, headsUpOrientationError]);
+
   const exitHeadsUp = () => {
     if (headsUpExitDoneRef.current) return;
     headsUpExitDoneRef.current = true;
+    clearTimeout(headsUpExitTimerRef.current);
     // 플리퍼는 현재 리프 뒷면에 다음 페이지를 미리 그려 두므로, 회전 중 재렌더될 때 헤드업이 비치지 않게 빈 페이지만 남긴다
     setHeadsUpFlipPages(['headsUpBlank']);
-    lockOrientation('PORTRAIT');
-    const startedAt = Date.now();
-    let lastChange = Date.now();
-    const sub = Dimensions.addEventListener('change', () => { lastChange = Date.now(); });
-    const check = () => {
-      const now = Date.now();
-      if ((now - lastChange >= 220 && now - startedAt >= 300) || now - startedAt >= 1500) {
-        sub?.remove?.();
-        setScreen('loading');
-        return;
-      }
-      setTimeout(check, 60);
-    };
-    check();
+    setHeadsUpPhase('rotatingBack');
   };
 
   const headsUpBack = () => {
     if (headsUpExitStartedRef.current) return;
     headsUpExitStartedRef.current = true;
-    headsUpFlipperRef.current?.goToPage(0);
+    setHeadsUpPhase('flippingOut');
+    if (!headsUpFlipperRef.current) {
+      exitHeadsUp();
+      return;
+    }
+    headsUpFlipperRef.current.goToPage(0);
     // 플립이 시작되지 못했거나 끝나지 않는 경우 대비 안전장치
-    setTimeout(exitHeadsUp, 1600);
+    headsUpExitTimerRef.current = setTimeout(exitHeadsUp, 1600);
   };
 
+  const markHeadsUpImageReady = useCallback((pageId) => {
+    setHeadsUpImagesReady((previous) => previous[pageId] ? previous : { ...previous, [pageId]: true });
+  }, []);
+  const handleHeadsUpBlankReady = useCallback(() => markHeadsUpImageReady('headsUpBlank'), [markHeadsUpImageReady]);
+  const handleHeadsUpScreenReady = useCallback(() => markHeadsUpImageReady('headsUp'), [markHeadsUpImageReady]);
   const renderHeadsUpPage = (pageId) => (
-    <View style={{ width: windowWidth, height: windowHeight }}>
+    <View style={headsUpPageSize}>
       {pageId === 'headsUp'
-        ? <HeadsUpSetupScreen onBack={headsUpBack} masterMode={masterMode} />
-        : <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+        ? <HeadsUpSetupScreen onBack={headsUpBack} masterMode={masterMode} pageSize={headsUpPageSize} onReady={handleHeadsUpScreenReady} />
+        : <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" onLoad={handleHeadsUpBlankReady} onError={handleHeadsUpBlankReady} />}
     </View>
   );
 
@@ -549,13 +683,19 @@ function AppContent() {
   const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
   const handleDailyWord = () => setScreen('dailyWord');
+  const handleLoadingPageBackgroundLoaded = useCallback(() => setLoadingPageBackgroundLoaded(true), []);
   const loadingPage = useMemo(() => (
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image
         source={BG_ASSET}
-        style={styles.loadingBackground}
-        onLoad={() => setLoadingPageBackgroundLoaded(true)}
-        onError={() => setLoadingPageBackgroundLoaded(true)}
+        style={[styles.loadingBackground, {
+          width: rootSize.width || pageWidth,
+          height: rootSize.height || pageHeight,
+          left: -(pageWidth - (mainPageSize.width || pageWidth)) / 2,
+          top: -Math.max(0, (rootSize.height - (mainPageSize.height || pageHeight)) / 2),
+        }]}
+        onLoad={handleLoadingPageBackgroundLoaded}
+        onError={handleLoadingPageBackgroundLoaded}
       />
       <Animated.View style={[styles.loadingContent, { opacity: menuContentFade }]} pointerEvents={menuHiding ? 'none' : 'auto'}>
         <Animated.Image
@@ -586,6 +726,8 @@ function AppContent() {
             onPress={() => {
               // 메뉴 요소를 페이드아웃시켜 배경만 남긴 뒤 화면 전환 → 회전·플립 진행
               setMenuHiding(true);
+              setHeadsUpOrientationError('');
+              setHeadsUpOrientationLock(null);
               Animated.timing(menuContentFade, { toValue: 0, duration: 420, easing: Easing.out(Easing.cubic), useNativeDriver: true })
                 .start(() => setScreen('headsUpSetup'));
             }}
@@ -603,7 +745,7 @@ function AppContent() {
         </Animated.View>
       </Animated.View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, updateReady, menuHiding]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, updateReady, menuHiding, rootSize, mainPageSize]);
 
   const transitionCover = coverVisible ? (
     <Animated.View pointerEvents="auto" style={[styles.transitionCover, { opacity: coverAnim }]}>
@@ -612,32 +754,77 @@ function AppContent() {
     </Animated.View>
   ) : null;
 
+  const handleRootBackgroundLoaded = useCallback(() => setLoadingRootBackgroundLoaded(true), []);
+  const rootBackground = (
+    <Image
+      source={BG_ASSET}
+      style={StyleSheet.absoluteFill}
+      resizeMode="cover"
+      onLoad={handleRootBackgroundLoaded}
+      onError={handleRootBackgroundLoaded}
+    />
+  );
+
   if (screen === 'headsUpSetup') {
     return (
-      <GestureHandlerRootView style={styles.root}>
-        <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
-        <FadeInView key="headsUp" style={StyleSheet.absoluteFill} duration={900} onEnd={() => setHeadsUpFadeDone(true)}>
-          <PageFlipperBoundary fallback={<HeadsUpSetupScreen onBack={headsUpBack} masterMode={masterMode} />}>
-            <PageFlipper
-              ref={headsUpFlipperRef}
-              data={headsUpFlipPages}
-              pageSize={{ width: windowWidth, height: windowHeight }}
-              portrait
-              singleImageMode
-              pressable={false}
-              enabled={false}
-              contentContainerStyle={styles.flipperContainer}
-              onFlippedEnd={(index) => {
-                if (!headsUpExitStartedRef.current) return;
-                if (index === 0) exitHeadsUp();
-                else headsUpFlipperRef.current?.goToPage(0);
+      <GestureHandlerRootView style={styles.root} onLayout={handleRootLayout}>
+        {rootBackground}
+        <FadeInView key="headsUp" style={StyleSheet.absoluteFill} duration={900} ready={loadingRootBackgroundLoaded && rootSize.width > 0 && rootSize.height > 0} onEnd={() => setHeadsUpFadeDone(true)}>
+          <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
+          {headsUpPhase !== 'blank' && headsUpPhase !== 'rotatingBack' && (
+            <FadeInView
+              style={[styles.headsUpLayer, headsUpPageSize]}
+              duration={900}
+              ready={headsUpPhase !== 'preparing' && headsUpOrientationReady && !headsUpOrientationError}
+              pointerEvents={headsUpPhase === 'active' && headsUpOrientationReady && !headsUpOrientationError ? 'auto' : 'none'}
+              onEnd={() => {
+                if (headsUpPhase !== 'revealing' || !headsUpOrientationReady || headsUpOrientationError || !headsUpFlipperRef.current) return;
+                const { width, height } = rootLayoutRef.current;
+                if (Math.abs(width - headsUpPageSize.width) > 1 || Math.abs(height - headsUpPageSize.height) > 1) return;
+                setHeadsUpPhase('flippingIn');
+                headsUpFlipperRef.current.goToPage(1);
               }}
-              renderPage={renderHeadsUpPage}
-              // 나가는 동안 리프 뒤에 깔리는 페이지는 빈 배경으로 — 리렌더 틈에 헤드업이 비치는 깜빡임 방지
-              renderPageBack={(page) => renderHeadsUpPage(headsUpExitStartedRef.current ? 'headsUpBlank' : page)}
-            />
-          </PageFlipperBoundary>
+            >
+              <PageFlipperBoundary fallback={<HeadsUpSetupScreen onBack={headsUpBack} masterMode={masterMode} pageSize={headsUpPageSize} onReady={() => setHeadsUpPhase('active')} />}>
+                <PageFlipper
+                  ref={headsUpFlipperRef}
+                  data={headsUpFlipPages}
+                  pageSize={headsUpPageSize}
+                  portrait
+                  singleImageMode
+                  pressable={false}
+                  enabled={false}
+                  contentContainerStyle={styles.flipperContainer}
+                  onReady={({ width, height }) => {
+                    setHeadsUpLayoutReady(Math.abs(width - headsUpPageSize.width) <= 1 && Math.abs(height - headsUpPageSize.height) <= 1);
+                  }}
+                  onFlippedEnd={(index) => {
+                    if (!headsUpExitStartedRef.current) {
+                      if (index === 1) setHeadsUpPhase('active');
+                      return;
+                    }
+                    if (index === 0) exitHeadsUp();
+                    else headsUpFlipperRef.current?.goToPage(0);
+                  }}
+                  renderPage={renderHeadsUpPage}
+                  // 나가는 동안 리프 뒤에 깔리는 페이지는 빈 배경으로 — 리렌더 틈에 헤드업이 비치는 깜빡임 방지
+                  renderPageBack={(page) => renderHeadsUpPage(headsUpExitStartedRef.current ? 'headsUpBlank' : page)}
+                />
+              </PageFlipperBoundary>
+            </FadeInView>
+          )}
         </FadeInView>
+        {headsUpOrientationError ? (
+          <View style={styles.orientationNotice}>
+            <Text style={[styles.loadingText, styles.orientationNoticeText]}>{headsUpOrientationError}</Text>
+            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setHeadsUpOrientationAttempt((previous) => previous + 1)}>
+              <Text style={styles.menuButtonText}>다시 시도</Text>
+            </Pressable>
+            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('loading')}>
+              <Text style={styles.menuButtonText}>메뉴로 돌아가기</Text>
+            </Pressable>
+          </View>
+        ) : null}
         <AdBanner />
       </GestureHandlerRootView>
     );
@@ -656,16 +843,10 @@ function AppContent() {
   );
 
   return (
-    <GestureHandlerRootView style={styles.root}>
-      <Image
-        source={BG_ASSET}
-        style={StyleSheet.absoluteFill}
-        resizeMode="cover"
-        onLoad={() => setLoadingRootBackgroundLoaded(true)}
-        onError={() => setLoadingRootBackgroundLoaded(true)}
-      />
-      <FadeInView key="main" style={StyleSheet.absoluteFill}>
-      <PageFlipperBoundary fallback={currentPage}>
+    <GestureHandlerRootView style={styles.root} onLayout={handleRootLayout}>
+      {rootBackground}
+      <FadeInView key="main" style={StyleSheet.absoluteFill} ready={mainLayoutReady && loadingImagesReady && rootSize.width > 0 && rootSize.height > 0}>
+      <PageFlipperBoundary fallback={currentPage} onError={() => setMainLayoutReady(true)}>
         <View style={[styles.flipperFrame, { width: pageWidth, height: pageHeight, transform: flipReversed ? [{ scaleX: -1 }] : [] }]}>
           <PageFlipper
           ref={flipperRef}
@@ -676,6 +857,7 @@ function AppContent() {
           pressable={false}
           enabled={false}
           contentContainerStyle={styles.flipperContainer}
+          onReady={handleMainPageReady}
           onFlipStart={(direction) => {
             animationActiveRef.current = true;
           }}
@@ -699,10 +881,13 @@ const styles = StyleSheet.create({
   root: { flex: 1, minHeight: '100%', backgroundColor: '#f6f1e6' },
   flipperContainer: { flex: 1, width: '100%', height: '100%' },
   flipperFrame: { flex: 1 },
+  headsUpLayer: { position: 'absolute', top: 0, left: 0 },
+  orientationNotice: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', padding: 24 },
+  orientationNoticeText: { textAlign: 'center' },
   adContainer: { position: 'absolute', bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', minHeight: 50 },
   transitionCover: { ...StyleSheet.absoluteFillObject, zIndex: 999, elevation: 999, alignItems: 'center', justifyContent: 'center' },
 
-  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent' },
+  loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', overflow: 'hidden' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
