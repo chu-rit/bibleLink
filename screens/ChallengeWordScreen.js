@@ -170,7 +170,7 @@ export default function ChallengeWordScreen({ onBack, masterMode }) {
         <View style={styles.loadingWrap}>
           <Text style={styles.status}>
             {loadState === 'stale' ? '앱 업데이트가 필요합니다.'
-              : loadState === 'unavailable' ? '오늘의 챌린지가 아직 준비되지 않았습니다.'
+              : loadState === 'unavailable' ? '오늘의 챌린지를 불러올 수 없습니다.'
               : '불러오는 중...'}
           </Text>
           {loadState !== 'loading' && (
@@ -398,7 +398,7 @@ export default function ChallengeWordScreen({ onBack, masterMode }) {
         <View style={styles.centerWrap}>
           <ScrollView style={styles.scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
             <View style={styles.panel}>
-            <Text style={styles.modeLabel}>오늘의 단어 챌린지 (테스트)</Text>
+            <Text style={styles.modeLabel}>오늘의 단어 챌린지</Text>
             {renderBoard()}
 
             {hints.slice(0, visibleHints).map((hint, i) => (

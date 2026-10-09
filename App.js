@@ -310,11 +310,16 @@ function AppContent() {
   }, []);
   const flipperRef = useRef(null);
   const animationActiveRef = useRef(false);
-  const pageWidth = getPageWidth(windowWidth, windowHeight);
-  const pageHeight = Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
   const pageIndex = screen === 'loading' ? 0 : (screen === 'chronology' ? 4 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1)));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
+  // 연대기는 가로모드에서 창 전체를 쓴다 — 책 페이지 비율로 클램프하면 한쪽에 몰린다
+  const landscapeFullBleed = windowWidth > windowHeight &&
+    (currentPageId === 'chronology' || flipPages.includes('chronology'));
+  const pageWidth = landscapeFullBleed ? Math.round(windowWidth) : getPageWidth(windowWidth, windowHeight);
+  const pageHeight = landscapeFullBleed
+    ? Math.round(windowHeight)
+    : Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
   const [flipReversed, setFlipReversed] = useState(false);
 
   useEffect(() => {
