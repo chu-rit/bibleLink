@@ -16,6 +16,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Svg, { Path } from 'react-native-svg';
 import {
   normalize,
   formatReferenceByChapter,
@@ -24,10 +25,10 @@ import {
   formatMapTitle,
   getFilledCellCount,
   getOpenCellCount,
-  getPageWidth,
 } from '../utils';
 import AnswerCard from './AnswerCard';
 import HandwrittenText from '../components/HandwrittenText';
+import { scaleFont, useContentMaxWidth, useUiScale } from '../utils/responsive';
 
 const BG_IMAGE = require('../assets/BG.png');
 
@@ -128,6 +129,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const hasShownClearRef = useRef(null);
   const toastAnim = useRef(new Animated.Value(0)).current;
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
   const insets = useSafeAreaInsets();
   const inputRef = useRef(null);
   const boardAreaRef = useRef(null);
@@ -137,7 +140,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
   const translateYAnim = useRef(new Animated.Value(0)).current;
   const wrongTimerRef = useRef(null);
   const fadeTimerRef = useRef(null);
-  const effectiveWidth = Platform.OS === 'web' ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 0);
+  const contentMaxWidth = useContentMaxWidth();
+  const contentSidePad = Math.max(0, ((windowWidth || 0) - contentMaxWidth) / 2);
+  const effectiveWidth = Math.min(windowWidth || 0, contentMaxWidth);
   const boardWidth = Math.max(200, effectiveWidth - 32);
   const availableHeight = isKeyboardVisible
     ? (Platform.OS === 'web' && webViewportHeight
@@ -146,7 +151,15 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     : (windowHeight || 0);
   const headerHeight = 160;
   const maxBoardHeight = (windowHeight || 0) - headerHeight;
-  const cellSizeRef = useRef(null);
+  const cellSize = useMemo(() => (
+    Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
+      ? Math.max(8, Math.min(
+        Math.floor(boardWidth / (crosswordMap.width || 1)),
+        Math.floor(maxBoardHeight / (crosswordMap.height || 1)),
+        Math.round(56 * uiScale)
+      ))
+      : 20
+  ), [boardWidth, maxBoardHeight, crosswordMap.width, crosswordMap.height, uiScale]);
 
   // Reset map-specific state when crosswordMap changes (derived state pattern)
   if (mapChanged) {
@@ -158,20 +171,9 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     setSelectedSlot(null);
     setShowClearModal(false);
     setAnimatedCells({});
-    cellSizeRef.current = null;
     hasShownClearRef.current = getFilledCellCount(crosswordMap, initialAnswers || {}) === getOpenCellCount(crosswordMap);
   }
 
-  if (cellSizeRef.current === null) {
-    cellSizeRef.current = Number.isFinite(Math.floor(boardWidth / (crosswordMap.width || 1)))
-      ? Math.max(8, Math.min(
-        Math.floor(boardWidth / (crosswordMap.width || 1)),
-        Math.floor(maxBoardHeight / (crosswordMap.height || 1)),
-        56
-      ))
-      : 20;
-  }
-  const cellSize = cellSizeRef.current;
   const exactBoardWidth = cellSize * (crosswordMap.width || 1) + 4;
   const boardHeight = cellSize * (crosswordMap.height || 1) + 4;
 
@@ -511,10 +513,11 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, { paddingTop: insets.top }, Platform.OS === 'web' && [styles.webSafeArea, { maxWidth: effectiveWidth }]]}
+      imageStyle={styles.bgFill}
+      style={[styles.safeArea, { paddingTop: insets.top }]}
     >
       <StatusBar barStyle="dark-content" />
-      <View style={styles.container}>
+      <View style={[styles.container, { paddingHorizontal: Math.round(16 + contentSidePad) }]}>
           {toast.visible && (
             <Animated.View
               pointerEvents="none"
@@ -523,20 +526,23 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
                 { opacity: toastAnim, transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [-20, 0] }) }] },
               ]}
             >
-              <Text style={styles.toastText}>{toast.message}</Text>
+              <Text style={[styles.toastText, { fontSize: sf(13) }]}>{toast.message}</Text>
             </Animated.View>
           )}
           <View style={styles.header}>
-            <Pressable onPress={onBack} style={styles.backButton}>
-              <Text style={styles.backButtonText}>맵 선택</Text>
+            <Pressable onPress={onBack} style={[styles.backButton, { paddingHorizontal: Math.round(10 * uiScale), paddingVertical: Math.round(6 * uiScale), borderRadius: Math.round(14 * uiScale) }]}>
+              <Svg width={Math.round(16 * uiScale)} height={Math.round(16 * uiScale)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                <Path d="M15 18l-6-6 6-6" />
+              </Svg>
+              <Text style={[styles.backButtonText, { fontSize: sf(12) }]}>맵 선택</Text>
             </Pressable>
-            <Text style={styles.mapTitle} numberOfLines={1}>{formatMapTitle(crosswordMap.title)}</Text>
+            <Text style={[styles.mapTitle, { fontSize: sf(16) }]} numberOfLines={1}>{formatMapTitle(crosswordMap.title)}</Text>
             <View style={styles.headerBadges}>
-              <View style={styles.hintBadge}>
-                <Text style={styles.hintBadgeText}>힌트 {hintPoints}</Text>
+              <View style={[styles.hintBadge, { paddingHorizontal: Math.round(12 * uiScale), paddingVertical: Math.round(8 * uiScale), borderRadius: Math.round(20 * uiScale) }]}>
+                <Text style={[styles.hintBadgeText, { fontSize: sf(12) }]}>힌트 {hintPoints}</Text>
               </View>
-              <View style={styles.badge}>
-                <Text style={styles.badgeText}>난이도 {averageDifficulty(crosswordMap).toFixed(1)}</Text>
+              <View style={[styles.badge, { paddingHorizontal: Math.round(12 * uiScale), paddingVertical: Math.round(8 * uiScale), borderRadius: Math.round(20 * uiScale) }]}>
+                <Text style={[styles.badgeText, { fontSize: sf(12) }]}>난이도 {averageDifficulty(crosswordMap).toFixed(1)}</Text>
               </View>
             </View>
           </View>
@@ -545,8 +551,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             <View style={styles.statusRow}>
               <View style={styles.progressColumn}>
                 <View style={styles.progressRow}>
-                  <Text style={styles.progressLabel}>퍼즐 진행도</Text>
-                  <Text style={styles.progressValue}>{filledCellCount}/{totalCellCount}</Text>
+                  <Text style={[styles.progressLabel, { fontSize: sf(13) }]}>퍼즐 진행도</Text>
+                  <Text style={[styles.progressValue, { fontSize: sf(13) }]}>{filledCellCount}/{totalCellCount}</Text>
                 </View>
                 <View style={styles.progressTrack}>
                   <View style={[styles.progressFill, { width: `${progress}%` }]} />
@@ -554,7 +560,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               </View>
               {(masterMode || isMasterMode) && (
                 <View style={styles.autoFillBox}>
-                  <Text style={styles.autoFillLabel}>정답 보기</Text>
+                  <Text style={[styles.autoFillLabel, { fontSize: sf(12) }]}>정답 보기</Text>
                   <Switch
                     value={autoFill}
                     onValueChange={toggleAutoFill}
@@ -733,8 +739,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             ) : (
               <View style={styles.emptySelectionContainer} pointerEvents="none">
                 <View style={styles.emptySelection}>
-                  <Text style={styles.emptySelectionTitle}>퍼즐판의 칸을 눌러 보세요</Text>
-                  <Text style={styles.emptySelectionText}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
+                  <Text style={[styles.emptySelectionTitle, { fontSize: sf(15) }]}>퍼즐판의 칸을 눌러 보세요</Text>
+                  <Text style={[styles.emptySelectionText, { fontSize: sf(13) }]}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
                 </View>
               </View>
             )}
@@ -758,8 +764,8 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
             >
               <Text style={styles.clearModalCloseText}>×</Text>
             </Pressable>
-            <Text style={styles.clearModalTitle}>퍼즐 클리어</Text>
-            <Text style={styles.clearModalText}>모든 글자를 채웠습니다.</Text>
+            <Text style={[styles.clearModalTitle, { fontSize: sf(22) }]}>퍼즐 클리어</Text>
+            <Text style={[styles.clearModalText, { fontSize: sf(14) }]}>모든 글자를 채웠습니다.</Text>
             <Pressable
               onPress={() => {
                 setShowClearModal(false);
@@ -767,7 +773,7 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
               }}
               style={styles.clearModalButton}
             >
-              <Text style={styles.clearModalButtonText}>맵 선택으로 돌아가기</Text>
+              <Text style={[styles.clearModalButtonText, { fontSize: sf(14) }]}>맵 선택으로 돌아가기</Text>
             </Pressable>
           </View>
         </View>
@@ -779,14 +785,16 @@ function PuzzleScreen({ crosswordMap, onBack, initialAnswers, onAnswersChange, h
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1 },
-  webSafeArea: { alignSelf: 'center', width: '100%' },
+  // 웹에서 ImageBackground가 에셋 고유 크기로만 그려지는 문제 방지 — 배경 이미지를 부모 크기로 채운다
+  bgFill: { width: '100%', height: '100%' },
+
   flex: { flex: 1 },
   container: { flex: 1, padding: 16, position: 'relative' },
   answerCardContainer: {
     marginTop: 8,
     alignSelf: 'stretch',
   },
-  backButton: { backgroundColor: '#f0ebe0', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6 },
+  backButton: { flexDirection: 'row', alignItems: 'center', gap: 2, backgroundColor: '#f0ebe0', borderRadius: 14, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1.5, borderColor: '#d8cdb8' },
   backButtonText: { color: '#7a6450', fontSize: 12, fontWeight: '800' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 },
   mapTitle: { flex: 1, color: '#2e2418', fontSize: 16, fontWeight: '800', marginHorizontal: 10 },
@@ -805,7 +813,6 @@ const styles = StyleSheet.create({
   progressTrack: { height: 8, backgroundColor: '#e8e0d0', borderRadius: 8, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: '#a8845a', borderRadius: 8 },
   boardArea: { alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
-  boardClip: { overflow: 'hidden', height: '100%' },
   board: {
     backgroundColor: '#fdfbf6',
   },

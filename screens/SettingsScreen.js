@@ -1,22 +1,25 @@
 import React from 'react';
 import { Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import appConfig from '../app.json';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 export default function SettingsScreen({ visible, onClose, title, description, children }) {
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
       <Pressable style={styles.overlay} onPress={onClose}>
         <Pressable style={styles.card} onPress={(event) => event.stopPropagation()}>
           <Pressable style={styles.closeButton} onPress={onClose} hitSlop={8}>
-            <Text style={styles.closeButtonText}>×</Text>
+            <Text style={[styles.closeButtonText, { fontSize: sf(22) }]}>×</Text>
           </Pressable>
-          <Text style={styles.eyebrow}>Biblink</Text>
-          <Text style={styles.title}>{title}</Text>
-          {description ? <Text style={styles.description}>{description}</Text> : null}
+          <Text style={[styles.eyebrow, { fontSize: sf(11) }]}>Biblink</Text>
+          <Text style={[styles.title, { fontSize: sf(17) }]}>{title}</Text>
+          {description ? <Text style={[styles.description, { fontSize: sf(13) }]}>{description}</Text> : null}
           <View style={styles.content}>{children}</View>
           <View style={styles.footer}>
-            <Text style={styles.credit} onPress={() => Linking.openURL('https://chu-rit.github.io/').catch(() => {})}>Created by ChuRit</Text>
-            <Text style={styles.version}>v{appConfig.expo.version}-d</Text>
+            <Text style={[styles.credit, { fontSize: sf(12) }]} onPress={() => Linking.openURL('https://chu-rit.github.io/').catch(() => {})}>Created by ChuRit</Text>
+            <Text style={[styles.version, { fontSize: sf(12) }]}>v{appConfig.expo.version}-d</Text>
           </View>
         </Pressable>
       </Pressable>

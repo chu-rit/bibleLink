@@ -11,10 +11,14 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 const normalize = (value) => value.replace(/\s/g, '').trim();
 
 export default function WordSearchScreen({ maps, words, onBack }) {
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
+  const sz = (n) => Math.round(n * uiScale);
   const bibleWords = words || [];
   const crosswordMaps = maps || [];
 
@@ -131,24 +135,24 @@ export default function WordSearchScreen({ maps, words, onBack }) {
     <View style={[styles.wordCard, item.usage > 0 && styles.usedWordCard]}>
       <View style={styles.wordCopy}>
         <View style={styles.wordHeader}>
-          <Text style={styles.wordText}>{item.word}</Text>
+          <Text style={[styles.wordText, { fontSize: sf(17) }]}>{item.word}</Text>
           {item.usage > 0 && (
             <View style={styles.usageBadge}>
-              <Text style={styles.usageBadgeText}>사용 {item.usage}회</Text>
+              <Text style={[styles.usageBadgeText, { fontSize: sf(11) }]}>사용 {item.usage}회</Text>
             </View>
           )}
         </View>
-        <Text style={styles.definition} numberOfLines={2}>{item.definition}</Text>
+        <Text style={[styles.definition, { fontSize: sf(13) }]} numberOfLines={2}>{item.definition}</Text>
         <View style={styles.mapUsageRow}>
-          <Text style={styles.mapUsageLabel}>등장 맵</Text>
-          <Text style={styles.mapUsageText} numberOfLines={2}>
+          <Text style={[styles.mapUsageLabel, { fontSize: sf(11) }]}>등장 맵</Text>
+          <Text style={[styles.mapUsageText, { fontSize: sf(11) }]} numberOfLines={2}>
             {item.mapTitles.length > 0 ? item.mapTitles.join(' · ') : '아직 맵에 사용되지 않음'}
           </Text>
         </View>
         <View style={styles.metaRow}>
-          <Text style={styles.metaText}>난이도 {item.difficulty}</Text>
+          <Text style={[styles.metaText, { fontSize: sf(11) }]}>난이도 {item.difficulty}</Text>
           {item.references?.length > 0 && (
-            <Text style={styles.metaText} numberOfLines={1}> · {item.references.join(', ')}</Text>
+            <Text style={[styles.metaText, { fontSize: sf(11) }]} numberOfLines={1}> · {item.references.join(', ')}</Text>
           )}
         </View>
       </View>
@@ -156,16 +160,16 @@ export default function WordSearchScreen({ maps, words, onBack }) {
   );
 
   return (
-    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea]}>
+    <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.webSafeArea, { width: '100%', maxWidth: sz(480), alignSelf: 'center' }]}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
         <View style={styles.header}>
-          <Pressable onPress={onBack} style={styles.backButton}>
-            <Text style={styles.backButtonText}>맵 선택</Text>
+          <Pressable onPress={onBack} style={[styles.backButton, { paddingHorizontal: sz(10), paddingVertical: sz(6), borderRadius: sz(14) }]}>
+            <Text style={[styles.backButtonText, { fontSize: sf(12) }]}>맵 선택</Text>
           </Pressable>
-          <Text style={styles.title} numberOfLines={1}>단어 찾기</Text>
-          <View style={styles.badge}>
-            <Text style={styles.badgeText}>사용 {totalUsed}/{bibleWords.length}</Text>
+          <Text style={[styles.title, { fontSize: sf(18) }]} numberOfLines={1}>단어 찾기</Text>
+          <View style={[styles.badge, { paddingHorizontal: sz(12), paddingVertical: sz(8), borderRadius: sz(20) }]}>
+            <Text style={[styles.badgeText, { fontSize: sf(12) }]}>사용 {totalUsed}/{bibleWords.length}</Text>
           </View>
         </View>
 
@@ -177,18 +181,18 @@ export default function WordSearchScreen({ maps, words, onBack }) {
             placeholderTextColor="#a89880"
             autoCapitalize="none"
             autoCorrect={false}
-            style={styles.searchInput}
+            style={[styles.searchInput, { height: sz(44), fontSize: sf(15) }]}
             returnKeyType="search"
             onSubmitEditing={Keyboard.dismiss}
           />
           {query.length > 0 && (
             <Pressable onPress={() => setQuery('')} style={styles.clearButton}>
-              <Text style={styles.clearButtonText}>지우기</Text>
+              <Text style={[styles.clearButtonText, { fontSize: sf(12) }]}>지우기</Text>
             </Pressable>
           )}
         </View>
 
-        <Text style={styles.resultCount}>검색 결과 {results.length}개</Text>
+        <Text style={[styles.resultCount, { fontSize: sf(12) }]}>검색 결과 {results.length}개</Text>
 
         <ScrollView
           style={styles.list}
@@ -201,7 +205,7 @@ export default function WordSearchScreen({ maps, words, onBack }) {
             <View key={item.id}>{renderItem({ item })}</View>
           ))}
           {visibleCount < results.length && (
-            <Text style={styles.loadingMore}>더 불러오는 중...</Text>
+            <Text style={[styles.loadingMore, { fontSize: sf(12) }]}>더 불러오는 중...</Text>
           )}
         </ScrollView>
 
@@ -216,9 +220,9 @@ export default function WordSearchScreen({ maps, words, onBack }) {
             return (
               <View key={d} style={styles.statRow}>
                 <View style={[styles.statDot, { backgroundColor: color }]} />
-                <Text style={styles.statLabel}>{label}</Text>
-                <Text style={styles.statValue}>{s.used}/{s.total}</Text>
-                <Text style={styles.statPercent}>{percent}%</Text>
+                <Text style={[styles.statLabel, { fontSize: sf(12) }]}>{label}</Text>
+                <Text style={[styles.statValue, { fontSize: sf(12) }]}>{s.used}/{s.total}</Text>
+                <Text style={[styles.statPercent, { fontSize: sf(12) }]}>{percent}%</Text>
               </View>
             );
           })}

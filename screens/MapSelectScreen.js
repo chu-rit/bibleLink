@@ -4,48 +4,51 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 import AppHeader from '../components/AppHeader';
 import MapSettingsScreen from './MapSettingsScreen';
-import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
+import { scaleFont, useContentMaxWidth, useUiScale } from '../utils/responsive';
 
 const COLUMNS = 4;
 const RADIUS = 28;
 const STROKE = 5;
 const SIZE = (RADIUS + STROKE) * 2;
-const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const BG_IMAGE = require('../assets/BG.png');
 
-function Gauge({ percent, number, isComplete }) {
+function Gauge({ percent, number, isComplete, scale = 1 }) {
   const color = '#7a5c3a';
-  const offset = CIRCUMFERENCE * (1 - percent / 100);
+  const radius = RADIUS * scale;
+  const stroke = STROKE * scale;
+  const size = (radius + stroke) * 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - percent / 100);
   return (
-    <View style={styles.gauge}>
-      <Svg width={SIZE} height={SIZE} style={styles.gaugeSvg}>
+    <View style={[styles.gauge, { width: size, height: size }]}>
+      <Svg width={size} height={size} style={styles.gaugeSvg}>
         <Circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={RADIUS}
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
           stroke="#e0d8c8"
-          strokeWidth={STROKE}
+          strokeWidth={stroke}
           fill="none"
         />
         <Circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={RADIUS}
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
           stroke={color}
-          strokeWidth={STROKE}
+          strokeWidth={stroke}
           fill="none"
-          strokeDasharray={CIRCUMFERENCE}
+          strokeDasharray={circumference}
           strokeDashoffset={offset}
           strokeLinecap="round"
           rotation={-90}
-          originX={SIZE / 2}
-          originY={SIZE / 2}
+          originX={size / 2}
+          originY={size / 2}
         />
       </Svg>
       <View style={styles.gaugeInner}>
-        <Text style={styles.gaugeNumber}>{number}</Text>
-        <Text style={styles.gaugePercent}>{percent}%</Text>
+        <Text style={[styles.gaugeNumber, { fontSize: scaleFont(18, scale) }]}>{number}</Text>
+        <Text style={[styles.gaugePercent, { fontSize: scaleFont(9, scale) }]}>{percent}%</Text>
       </View>
     </View>
   );
@@ -53,14 +56,13 @@ function Gauge({ percent, number, isComplete }) {
 
 export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordSearch, onResetProgress, onCompleteMap, onResetMap, masterMode, onBack }) {
   const [showSettings, setShowSettings] = useState(false);
-  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const { width: windowWidth } = useWindowDimensions();
   const insets = useSafeAreaInsets();
-  const isSmallScreen = true;
-  const isWeb = Platform.OS === 'web';
-  const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : (windowWidth || 375);
+  const uiScale = useUiScale();
+  const contentMaxWidth = useContentMaxWidth();
+  const effectiveWidth = Math.min(windowWidth || 375, contentMaxWidth);
   const masterTileWidth = Math.floor(effectiveWidth / 5) - 12;
-  const gridPadding = isSmallScreen ? 14 * 2 : 20 * 2;
-  const [viewportHeight, setViewportHeight] = useState(windowHeight);
+  const gridPadding = Math.round(28 * uiScale);
 
   const msInstanceIdRef = useRef(null);
   if (msInstanceIdRef.current === null) {
@@ -69,27 +71,6 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   useEffect(() => {
     return () => {};
   }, []);
-
-  useEffect(() => {
-    if (!isWeb) return undefined;
-    const update = () => {
-      const frameWidth = getPageWidth(window.innerWidth, window.innerHeight);
-      setViewportHeight(Math.min(Math.round(frameWidth * PAGE_ASPECT_RATIO), window.innerHeight));
-    };
-    update();
-    window.addEventListener('resize', update);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', update);
-      window.visualViewport.addEventListener('scroll', update);
-    }
-    return () => {
-      window.removeEventListener('resize', update);
-      if (window.visualViewport) {
-        window.visualViewport.removeEventListener('resize', update);
-        window.visualViewport.removeEventListener('scroll', update);
-      }
-    };
-  }, [isWeb]);
 
   const easyMaps = maps.filter((m) => m.title?.startsWith('E-'));
   const normalMaps = maps.filter((m) => m.title?.startsWith('N-'));
@@ -132,7 +113,7 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
             : undefined}
         style={[styles.tile, tileStyle, isDimmed && styles.tileDimmed]}
       >
-        <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} />
+        <Gauge percent={percent} number={mapNumber(map)} isComplete={isComplete} scale={uiScale} />
       </Pressable>
     );
   };
@@ -145,17 +126,18 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
   const renderSection = (eyebrow, title, sectionMaps, accent) => {
     const solvedCount = sectionMaps.filter((map) => getPercent(map) === 100).length;
     const dimmedIds = new Set();
+    // 넓은 화면에서는 열 수를 늘려 타일이 지나치게 커지지 않게 한다
     const columns = 5;
     return (
       <View>
         <View style={styles.sectionHeader}>
           <View style={styles.sectionCopy}>
             <View style={styles.sectionEyebrowRow}>
-              <Text style={styles.sectionEyebrow}>{eyebrow}</Text>
+              <Text style={[styles.sectionEyebrow, { fontSize: scaleFont(16, uiScale) }]}>{eyebrow}</Text>
             </View>
           </View>
           <View style={styles.sectionBadge}>
-            <Text style={styles.sectionBadgeText}>{solvedCount}/{sectionMaps.length}</Text>
+            <Text style={[styles.sectionBadgeText, { fontSize: scaleFont(11, uiScale) }]}>{solvedCount}/{sectionMaps.length}</Text>
           </View>
         </View>
         <View style={styles.tileGrid}>
@@ -169,25 +151,26 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.safeArea, { paddingTop: insets.top }, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      imageStyle={styles.bgFill}
+      style={[styles.safeArea, { paddingTop: insets.top }]}
     >
       <StatusBar barStyle="dark-content" />
       <AppHeader onBack={onBack} onSettings={() => setShowSettings(true)} />
       <View style={styles.headerSpacer} />
 
       {onWordSearch && (
-        <Pressable onPress={onWordSearch} style={[styles.searchEntry, isSmallScreen && styles.searchEntrySmall]}>
+        <Pressable onPress={onWordSearch} style={[styles.searchEntry, styles.searchEntrySmall, { alignSelf: 'center', width: Math.max(200, Math.min(windowWidth || 375, contentMaxWidth) - 28) }]}>
           <View style={styles.searchEntryCopy}>
-            <Text style={styles.searchEntryTitle}>단어 찾기</Text>
-            <Text style={styles.searchEntryMeta}>글자로 단어를 검색하고 사용 이력을 확인하세요</Text>
+            <Text style={[styles.searchEntryTitle, { fontSize: scaleFont(17, uiScale) }]}>단어 찾기</Text>
+            <Text style={[styles.searchEntryMeta, { fontSize: scaleFont(12, uiScale) }]}>글자로 단어를 검색하고 사용 이력을 확인하세요</Text>
           </View>
-          <Text style={styles.searchEntryArrow}>›</Text>
+          <Text style={[styles.searchEntryArrow, { fontSize: scaleFont(24, uiScale) }]}>›</Text>
         </Pressable>
       )}
 
       <ScrollView
         style={styles.scrollView}
-        contentContainerStyle={[styles.scrollViewContent, isSmallScreen && styles.scrollViewContentSmall]}
+        contentContainerStyle={[styles.scrollViewContent, styles.scrollViewContentSmall, { alignSelf: 'center', width: Math.min(windowWidth || 375, contentMaxWidth) }]}
       >
         {renderSection('EASY', '기초 성경 단어', easyMaps, '#3c9a72')}
         {normalMaps.length > 0 && renderSection('NORMAL', '중급 성경 단어', normalMaps, '#e08a3c')}
@@ -205,6 +188,8 @@ export default function MapSelectScreen({ maps, progressByMap, onSelect, onWordS
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, minHeight: '100%' },
+  // 웹에서 ImageBackground가 에셋 고유 크기로만 그려지는 문제 방지 — 배경 이미지를 부모 크기로 채운다
+  bgFill: { width: '100%', height: '100%' },
   headerSpacer: { height: 16 },
   searchEntry: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1.5, borderColor: '#7a5c3a', borderRadius: 18, padding: 18, marginHorizontal: 20, marginBottom: 16 },
   searchEntrySmall: { padding: 14, marginHorizontal: 14, marginBottom: 10, borderRadius: 14 },

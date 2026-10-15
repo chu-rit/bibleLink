@@ -15,6 +15,7 @@ import ChronologyScreen from './screens/ChronologyScreen';
 import { MOBILE_MAX_WIDTH, PAGE_ASPECT_RATIO, getFilledCellCount, getOpenCellCount, getPageWidth, setWordData } from './utils';
 import { loadAppData } from './utils/dataLoader';
 import { lockOrientation } from './utils/orientation';
+import { scaleFont, useUiScale } from './utils/responsive';
 
 const ICON_ASSET = require('./assets/ICON.png');
 const ICON_NOBG_ASSET = require('./assets/ICON_NOBG.png');
@@ -148,11 +149,6 @@ function AppContent() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const isLandscapeScreen = screen === 'headsUpSetup' || screen === 'chronology';
-    if (Platform.OS === 'web' && typeof document !== 'undefined') {
-      document.body.classList.toggle('landscape-allowed', isLandscapeScreen);
-      document.body.classList.toggle('heads-up-active', isLandscapeScreen);
-    }
     // 헤드업은 빈 페이지 페이드인이 끝난 뒤 가로 회전을 시작한다 (페이드와 회전이 겹치지 않게)
     if (screen !== 'headsUpSetup') lockOrientation('PORTRAIT');
     if (screen === 'loading') {
@@ -294,6 +290,7 @@ function AppContent() {
   );
 
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  const uiScale = useUiScale();
   const [rootSize, setRootSize] = useState({ width: 0, height: 0 });
   const rootLayoutRef = useRef({ width: 0, height: 0, changedAt: 0 });
   const nativeRootRef = useRef(null);
@@ -313,13 +310,9 @@ function AppContent() {
   const pageIndex = screen === 'loading' ? 0 : (screen === 'chronology' ? 4 : (screen === 'dailyWord' ? 3 : (screen === 'puzzle' && selectedMap ? 2 : 1)));
   const currentPageId = SCREEN_BY_PAGE_INDEX[pageIndex];
   const [flipPages, setFlipPages] = useState([currentPageId]);
-  // 연대기는 가로모드에서 창 전체를 쓴다 — 책 페이지 비율로 클램프하면 한쪽에 몰린다
-  const landscapeFullBleed = windowWidth > windowHeight &&
-    (currentPageId === 'chronology' || flipPages.includes('chronology'));
-  const pageWidth = landscapeFullBleed ? Math.round(windowWidth) : getPageWidth(windowWidth, windowHeight);
-  const pageHeight = landscapeFullBleed
-    ? Math.round(windowHeight)
-    : Math.min(Math.round(pageWidth * PAGE_ASPECT_RATIO), Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO));
+  // 페이지 프레임은 항상 창 전체를 쓴다 — iPad·데스크톱에서도 여백 없이 채운다
+  const pageWidth = Math.round(windowWidth || getPageWidth(windowWidth, windowHeight));
+  const pageHeight = Math.round(windowHeight || pageWidth * PAGE_ASPECT_RATIO);
   const [flipReversed, setFlipReversed] = useState(false);
 
   useEffect(() => {
@@ -610,7 +603,7 @@ function AppContent() {
     <View style={headsUpPageSize}>
       {pageId === 'headsUp'
         ? <HeadsUpSetupScreen onBack={headsUpBack} masterMode={masterMode} pageSize={headsUpPageSize} onReady={handleHeadsUpScreenReady} />
-        : <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" onLoad={handleHeadsUpBlankReady} onError={handleHeadsUpBlankReady} />}
+        : <Image source={BG_ASSET} style={[StyleSheet.absoluteFill, styles.bgFill]} resizeMode="cover" onLoad={handleHeadsUpBlankReady} onError={handleHeadsUpBlankReady} />}
     </View>
   );
 
@@ -735,7 +728,11 @@ function AppContent() {
     <ChronologyScreen onBack={(rotated) => (rotated ? transitionWithCover(() => setScreen('loading')) : setScreen('loading'))} />
   ), []);
 
-  const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : 240;
+  const loadingIconSize = windowWidth <= MOBILE_MAX_WIDTH ? Math.min(windowWidth * 0.7, 280) : Math.round(240 * uiScale);
+  const menuButtonSize = { width: Math.round(240 * uiScale), paddingVertical: Math.round(14 * uiScale), marginTop: Math.round(12 * uiScale), borderRadius: Math.round(14 * uiScale) };
+  const menuButtonTextSize = { fontSize: scaleFont(16, uiScale) };
+  const loadingTextSize = { fontSize: scaleFont(20, uiScale) };
+  const menuButtonsSize = { marginTop: Math.round(32 * uiScale) };
   const loadingStatusText = Platform.OS === 'web' ? LOADING_STATUS_TEXT.loading : (LOADING_STATUS_TEXT[dataStatus] || LOADING_STATUS_TEXT.loading);
   const handleDailyWord = () => setScreen('dailyWord');
   const handleLoadingPageBackgroundLoaded = useCallback(() => setLoadingPageBackgroundLoaded(true), []);
@@ -743,12 +740,7 @@ function AppContent() {
     <View style={[styles.loadingPage, { width: pageWidth, height: pageHeight }]}>
       <Image
         source={BG_ASSET}
-        style={[styles.loadingBackground, {
-          width: rootSize.width || pageWidth,
-          height: rootSize.height || pageHeight,
-          left: -(pageWidth - (mainPageSize.width || pageWidth)) / 2,
-          top: -Math.max(0, (rootSize.height - (mainPageSize.height || pageHeight)) / 2),
-        }]}
+        style={styles.loadingBackground}
         onLoad={handleLoadingPageBackgroundLoaded}
         onError={handleLoadingPageBackgroundLoaded}
       />
@@ -759,25 +751,25 @@ function AppContent() {
           onLoad={() => setLoadingIconLoaded(true)}
           onError={() => setLoadingIconLoaded(true)}
         />
-        {!loadingReady && <Text style={styles.loadingText}>{loadingStatusText}</Text>}
+        {!loadingReady && <Text style={[styles.loadingText, loadingTextSize]}>{loadingStatusText}</Text>}
         <Animated.View
-          style={[styles.menuButtons, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
+          style={[styles.menuButtons, menuButtonsSize, { opacity: menuFadeAnim, transform: [{ translateY: menuRiseAnim }] }]}
           pointerEvents={loadingReady ? 'auto' : 'none'}
         >
           {updateReady ? (
-            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={restartForUpdate}>
-              <Text style={styles.menuButtonText}>다시 시작</Text>
+            <Pressable style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]} onPress={restartForUpdate}>
+              <Text style={[styles.menuButtonText, menuButtonTextSize]}>다시 시작</Text>
             </Pressable>
           ) : (
           <>
-          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
-            <Text style={styles.menuButtonText}>가로세로퍼즐</Text>
+          <Pressable style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]} onPress={() => setScreen('mapSelect')}>
+            <Text style={[styles.menuButtonText, menuButtonTextSize]}>가로세로퍼즐</Text>
           </Pressable>
-          <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
-            <Text style={styles.menuButtonText}>오늘의 단어</Text>
+          <Pressable style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]} onPress={handleDailyWord}>
+            <Text style={[styles.menuButtonText, menuButtonTextSize]}>오늘의 단어</Text>
           </Pressable>
           <Pressable
-            style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
+            style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]}
             onPress={() => {
               // 메뉴 요소를 페이드아웃시켜 배경만 남긴 뒤 화면 전환 → 회전·플립 진행
               setMenuHiding(true);
@@ -787,24 +779,24 @@ function AppContent() {
                 .start(() => setScreen('headsUpSetup'));
             }}
           >
-            <Text style={styles.menuButtonText}>헤드업</Text>
+            <Text style={[styles.menuButtonText, menuButtonTextSize]}>헤드업</Text>
           </Pressable>
           <Pressable
-            style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
+            style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]}
             onPress={() => setScreen('chronology')}
           >
-            <Text style={styles.menuButtonText}>연대기</Text>
+            <Text style={[styles.menuButtonText, menuButtonTextSize]}>연대기</Text>
           </Pressable>
           </>
           )}
         </Animated.View>
       </Animated.View>
     </View>
-  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, updateReady, menuHiding, rootSize, mainPageSize]);
+  ), [pageWidth, pageHeight, loadingIconSize, loadingReady, loadingStatusText, updateReady, menuHiding, uiScale]);
 
   const transitionCover = coverVisible ? (
     <Animated.View pointerEvents="auto" style={[styles.transitionCover, { opacity: coverAnim }]}>
-      <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
+      <Image source={BG_ASSET} style={[StyleSheet.absoluteFill, styles.bgFill]} resizeMode="cover" />
       {loadingPage}
     </Animated.View>
   ) : null;
@@ -813,7 +805,7 @@ function AppContent() {
   const rootBackground = (
     <Image
       source={BG_ASSET}
-      style={StyleSheet.absoluteFill}
+      style={[StyleSheet.absoluteFill, styles.bgFill]}
       resizeMode="cover"
       onLoad={handleRootBackgroundLoaded}
       onError={handleRootBackgroundLoaded}
@@ -825,7 +817,7 @@ function AppContent() {
       <GestureHandlerRootView ref={Platform.OS === 'web' ? undefined : nativeRootRef} style={styles.root} onLayout={handleRootLayout}>
         {rootBackground}
         <FadeInView key="headsUp" style={StyleSheet.absoluteFill} duration={900} ready={loadingRootBackgroundLoaded && rootSize.width > 0 && rootSize.height > 0} onEnd={() => setHeadsUpFadeDone(true)}>
-          <Image source={BG_ASSET} style={StyleSheet.absoluteFill} resizeMode="cover" />
+          <Image source={BG_ASSET} style={[StyleSheet.absoluteFill, styles.bgFill]} resizeMode="cover" />
           {headsUpPhase !== 'blank' && headsUpPhase !== 'rotatingBack' && (
             <FadeInView
               style={[styles.headsUpLayer, headsUpPageSize]}
@@ -871,12 +863,12 @@ function AppContent() {
         </FadeInView>
         {headsUpOrientationError ? (
           <View style={styles.orientationNotice}>
-            <Text style={[styles.loadingText, styles.orientationNoticeText]}>{headsUpOrientationError}</Text>
-            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setHeadsUpOrientationAttempt((previous) => previous + 1)}>
-              <Text style={styles.menuButtonText}>다시 시도</Text>
+            <Text style={[styles.loadingText, loadingTextSize, styles.orientationNoticeText]}>{headsUpOrientationError}</Text>
+            <Pressable style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]} onPress={() => setHeadsUpOrientationAttempt((previous) => previous + 1)}>
+              <Text style={[styles.menuButtonText, menuButtonTextSize]}>다시 시도</Text>
             </Pressable>
-            <Pressable style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]} onPress={() => setScreen('loading')}>
-              <Text style={styles.menuButtonText}>메뉴로 돌아가기</Text>
+            <Pressable style={({ pressed }) => [styles.menuButton, menuButtonSize, pressed && styles.menuButtonPressed]} onPress={() => setScreen('loading')}>
+              <Text style={[styles.menuButtonText, menuButtonTextSize]}>메뉴로 돌아가기</Text>
             </Pressable>
           </View>
         ) : null}
@@ -944,6 +936,8 @@ const styles = StyleSheet.create({
 
   loadingPage: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', overflow: 'hidden' },
   loadingBackground: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', resizeMode: 'cover' },
+  // 웹에서는 에셋의 고유 크기(941x1672)가 absoluteFill보다 우선해 배경이 원본 크기로만 그려진다 — 명시적으로 100%를 덮어쓴다
+  bgFill: { width: '100%', height: '100%' },
   loadingContent: { alignItems: 'center', justifyContent: 'center' },
   loadingIcon: { resizeMode: 'contain', marginBottom: 24 },
   loadingText: { fontSize: 20, color: '#7a5c3a', fontFamily: 'NotoSansKR' },
@@ -1041,6 +1035,8 @@ function AdBanner() {
     ].join('\n'));
   };
 
+  // 광고는 웹 전용 — 네이티브에서 빈 뷰가 하단 터치를 가로채지 않게 렌더하지 않는다
+  if (Platform.OS !== 'web') return null;
   return (
     <Pressable
       ref={adRef}

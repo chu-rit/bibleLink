@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 const KEY_ROWS = [
   ['ㅂ', 'ㅈ', 'ㄷ', 'ㄱ', 'ㅅ', 'ㅛ', 'ㅕ', 'ㅑ', '←'],
@@ -11,6 +12,7 @@ const KEY_ROWS = [
 const STATE_RANK = { gray: 0, yellow: 1, green: 2 };
 
 export default function JamoKeyboard({ onKey, onBackspace, keyStates, disabled }) {
+  const uiScale = useUiScale();
   const press = (key) => {
     if (disabled) return;
     if (key === '←') return onBackspace();
@@ -18,9 +20,9 @@ export default function JamoKeyboard({ onKey, onBackspace, keyStates, disabled }
   };
 
   return (
-    <View style={styles.keyboard}>
+    <View style={[styles.keyboard, { paddingHorizontal: Math.round(10 * uiScale), paddingBottom: Math.round(12 * uiScale) }]}>
       {KEY_ROWS.map((row, rowIndex) => (
-        <View key={rowIndex} style={styles.row}>
+        <View key={rowIndex} style={[styles.row, { marginBottom: Math.round(6 * uiScale), gap: Math.round(4 * uiScale) }]}>
           {row.map((key, keyIndex) => {
             if (!key) return <View key={`spacer-${keyIndex}`} style={styles.keySpacer} />;
             const state = keyStates?.[key];
@@ -30,16 +32,16 @@ export default function JamoKeyboard({ onKey, onBackspace, keyStates, disabled }
               <Pressable
                 key={key}
                 onPress={() => press(key)}
-                style={({ pressed }) => [styles.key, stateStyle, pressed && styles.keyPressed]}
+                style={({ pressed }) => [styles.key, { height: Math.round(56 * uiScale), borderRadius: Math.round(8 * uiScale) }, stateStyle, pressed && styles.keyPressed]}
               >
                 {key === '←' ? (
-                  <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#3a2e1f" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+                  <Svg width={Math.round(22 * uiScale)} height={Math.round(22 * uiScale)} viewBox="0 0 24 24" fill="none" stroke="#3a2e1f" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                     <Path d="M20 5H9l-7 7 7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z" />
                     <Path d="M18 9l-6 6" />
                     <Path d="M12 9l6 6" />
                   </Svg>
                 ) : (
-                  <Text style={[styles.keyText, textStyle]}>{key}</Text>
+                  <Text style={[styles.keyText, { fontSize: scaleFont(20, uiScale) }, textStyle]}>{key}</Text>
                 )}
               </Pressable>
             );

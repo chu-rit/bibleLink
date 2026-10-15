@@ -12,7 +12,8 @@
       "backgroundColor": "#f6f8fb"
     },
     "ios": {
-      "supportsTablet": false,
+      "supportsTablet": true,
+      "requireFullScreen": true,
       "bundleIdentifier": "com.churit.biblelink",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false

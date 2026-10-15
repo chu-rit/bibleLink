@@ -2,11 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput } from 'react-native';
 import SettingsScreen from './SettingsScreen';
 import { getOrCreateUser, getUser, saveUser } from '../utils/dailyWord';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 export default function DailyWordSettingsScreen({ visible, prompt, onClose, title = '오늘의 단어 설정' }) {
   const [nickname, setNickname] = useState('NONAME');
   const [isFocused, setIsFocused] = useState(false);
   const focusedRef = useRef(false);
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
 
   useEffect(() => {
     if (!visible) return undefined;
@@ -45,10 +48,10 @@ export default function DailyWordSettingsScreen({ visible, prompt, onClose, titl
       onClose={onClose}
       title={prompt ? '닉네임 설정' : title}
     >
-      {prompt && <Text style={styles.promptText}>랭킹에 표시될 닉네임을 설정해주세요</Text>}
-      <Text style={styles.label}>닉네임</Text>
+      {prompt && <Text style={[styles.promptText, { fontSize: sf(14) }]}>랭킹에 표시될 닉네임을 설정해주세요</Text>}
+      <Text style={[styles.label, { fontSize: sf(13) }]}>닉네임</Text>
       <TextInput
-        style={styles.input}
+        style={[styles.input, { fontSize: sf(15) }]}
         value={nickname}
         onChangeText={setNickname}
         placeholder={isFocused ? '' : 'NONAME'}
@@ -58,8 +61,8 @@ export default function DailyWordSettingsScreen({ visible, prompt, onClose, titl
         onBlur={handleBlur}
         onSubmitEditing={saveNickname}
       />
-      <Pressable style={styles.saveButton} onPress={saveNickname}>
-        <Text style={styles.saveButtonText}>저장</Text>
+      <Pressable style={[styles.saveButton, { paddingVertical: Math.round(10 * uiScale) }]} onPress={saveNickname}>
+        <Text style={[styles.saveButtonText, { fontSize: sf(14) }]}>저장</Text>
       </Pressable>
     </SettingsScreen>
   );

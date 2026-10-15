@@ -5,6 +5,7 @@ import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import AppHeader from '../components/AppHeader';
 import WordHelpModal from '../components/WordHelpModal';
 import { drawHeadsUpWord, getTodayUsedHeadsUpWords } from '../utils/headsUp';
+import { scaleFont, useContentMaxWidth, useUiScale } from '../utils/responsive';
 
 const BG_IMAGE = require('../assets/BG.png');
 const POPULARITY_LEVELS = [1, 2, 3];
@@ -30,6 +31,11 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
   const isMountedRef = useRef(true);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
+  const sz = (n) => Math.round(n * uiScale);
+  const contentMaxWidth = useContentMaxWidth();
+  const contentSidePad = Math.max(0, ((pageSize?.width || windowWidth || 0) - contentMaxWidth) / 2);
   const isWeb = Platform.OS === 'web';
   const effectiveWidth = pageSize?.width || windowWidth || 375;
   const pageHeight = pageSize?.height || (isWeb ? (windowHeight || undefined) : undefined);
@@ -159,6 +165,7 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
+      imageStyle={styles.bgFill}
       onLoad={handleBackgroundLoaded}
       onError={handleBackgroundLoaded}
       onLayout={handleLayout}
@@ -167,19 +174,19 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
       <StatusBar barStyle="dark-content" />
       <AppHeader onBack={handleBack} onHelp={gameStage === 'setup' ? () => setShowHelp(true) : undefined} />
       {gameStage === 'setup' ? (
-        <ScrollView style={styles.scrollView} contentContainerStyle={[styles.content, isLandscape && styles.landscapeContent]}>
+        <ScrollView style={styles.scrollView} contentContainerStyle={[styles.content, isLandscape && styles.landscapeContent, { paddingHorizontal: Math.round((isLandscape ? 28 : 24) + contentSidePad) }]}>
           <View style={isLandscape ? styles.landscapePanel : undefined}>
             <View style={isLandscape ? styles.landscapeIntro : undefined}>
               <View style={[styles.titleWrap, isLandscape && styles.landscapeTitleWrap]}>
-                <Text style={styles.eyebrow}>HEADS UP</Text>
-                <Text style={[styles.title, isLandscape && styles.landscapeTitle]}>헤드업 설정</Text>
-                <Text style={[styles.description, isLandscape && styles.landscapeDescription]}>인지도 단계를 하나 이상 선택하세요.</Text>
+                <Text style={[styles.eyebrow, { fontSize: sf(12) }]}>HEADS UP</Text>
+                <Text style={[styles.title, { fontSize: sf(25) }, isLandscape && styles.landscapeTitle]}>헤드업 설정</Text>
+                <Text style={[styles.description, { fontSize: sf(13) }, isLandscape && styles.landscapeDescription]}>인지도 단계를 하나 이상 선택하세요.</Text>
               </View>
             </View>
             <View style={isLandscape ? styles.landscapeControls : undefined}>
               <View style={isLandscape ? styles.landscapeSections : undefined}>
                 <View style={[styles.section, isLandscape && styles.landscapeSection]}>
-                  <Text style={[styles.sectionTitle, isLandscape && styles.landscapeSectionTitle]}>인지도 단계</Text>
+                  <Text style={[styles.sectionTitle, { fontSize: sf(16) }, isLandscape && styles.landscapeSectionTitle]}>인지도 단계</Text>
                   <View style={styles.optionRow}>
                     {POPULARITY_LEVELS.map((level) => {
                       const selected = selectedPopularityLevels.includes(level);
@@ -189,10 +196,10 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
                           accessibilityRole="checkbox"
                           accessibilityState={{ checked: selected }}
                           onPress={() => togglePopularityLevel(level)}
-                          style={({ pressed }) => [styles.option, styles.levelOption, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
+                          style={({ pressed }) => [styles.option, styles.levelOption, { minHeight: sz(54), borderRadius: sz(12) }, isLandscape && styles.landscapeOption, selected && styles.optionSelected, isLandscape && selected && styles.landscapeOptionSelected, pressed && styles.optionPressed]}
                         >
-                          <Text style={[styles.optionText, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{level}단계</Text>
-                          <Text style={[styles.selectionText, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
+                          <Text style={[styles.optionText, { fontSize: sf(15) }, selected && styles.optionTextSelected, isLandscape && selected && styles.landscapeOptionTextSelected]}>{level}단계</Text>
+                          <Text style={[styles.selectionText, { fontSize: sf(11) }, selected && styles.selectionTextSelected, isLandscape && selected && styles.landscapeSelectionTextSelected]}>{selected ? '선택됨' : '선택'}</Text>
                         </Pressable>
                       );
                     })}
@@ -225,21 +232,21 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
                   accessibilityRole="button"
                   disabled={!canStart || isStarting}
                   onPress={handleStart}
-                  style={({ pressed }) => [styles.startButton, isLandscape && styles.landscapeStartButton, (!canStart || isStarting) && styles.startButtonDisabled, pressed && canStart && styles.startButtonPressed]}
+                  style={({ pressed }) => [styles.startButton, { paddingVertical: sz(15), borderRadius: sz(14) }, isLandscape && styles.landscapeStartButton, (!canStart || isStarting) && styles.startButtonDisabled, pressed && canStart && styles.startButtonPressed]}
                 >
-                  <Text style={styles.startButtonText}>{isStarting ? '단어를 불러오는 중...' : '게임 시작'}</Text>
+                  <Text style={[styles.startButtonText, { fontSize: sf(16) }]}>{isStarting ? '단어를 불러오는 중...' : '게임 시작'}</Text>
                 </Pressable>
               </View>
               {masterMode && (
                 <Pressable
                   accessibilityRole="button"
                   onPress={openUsedWords}
-                  style={({ pressed }) => [styles.usedWordsButton, isLandscape && styles.landscapeUsedWordsButton, pressed && styles.optionPressed]}
+                  style={({ pressed }) => [styles.usedWordsButton, { paddingVertical: sz(11) }, isLandscape && styles.landscapeUsedWordsButton, pressed && styles.optionPressed]}
                 >
-                  <Text style={styles.usedWordsButtonText}>오늘 사용한 단어 보기</Text>
+                  <Text style={[styles.usedWordsButtonText, { fontSize: sf(14) }]}>오늘 사용한 단어 보기</Text>
                 </Pressable>
               )}
-              {message ? <Text style={[styles.message, isLandscape && styles.landscapeMessage]}>{message}</Text> : null}
+              {message ? <Text style={[styles.message, { fontSize: sf(12) }, isLandscape && styles.landscapeMessage]}>{message}</Text> : null}
             </View>
           </View>
         </ScrollView>
@@ -247,8 +254,8 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
         <View style={[styles.gameStage, isWeb && { paddingBottom: 50 + pageInsets.bottom }]}>
           <Text
             style={gameStage === 'countdown'
-              ? styles.countdownText
-              : [styles.gameWord, { fontSize: Math.min(effectiveWidth * 0.2, 72) }]}
+              ? [styles.countdownText, { fontSize: sz(160) }]
+              : [styles.gameWord, { fontSize: Math.min(effectiveWidth * 0.2, sz(72)) }]}
           >
             {gameStage === 'countdown' ? countdown : currentWord?.name}
           </Text>
@@ -259,24 +266,24 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
           <Pressable style={styles.usedWordsCard} onPress={(event) => event.stopPropagation()}>
             <View style={styles.usedWordsHeader}>
               <View>
-                <Text style={styles.usedWordsEyebrow}>HEADS UP</Text>
-                <Text style={styles.usedWordsTitle}>오늘 사용한 단어 ({usedWords.length})</Text>
+                <Text style={[styles.usedWordsEyebrow, { fontSize: sf(10) }]}>HEADS UP</Text>
+                <Text style={[styles.usedWordsTitle, { fontSize: sf(19) }]}>오늘 사용한 단어 ({usedWords.length})</Text>
               </View>
               <Pressable onPress={() => setShowUsedWords(false)} style={styles.usedWordsClose}>
-                <Text style={styles.usedWordsCloseText}>닫기</Text>
+                <Text style={[styles.usedWordsCloseText, { fontSize: sf(13) }]}>닫기</Text>
               </Pressable>
             </View>
-            {isLoadingUsedWords ? <Text style={styles.usedWordsStatus}>사용 목록을 불러오는 중...</Text> : null}
-            {!isLoadingUsedWords && usedWordsMessage ? <Text style={styles.usedWordsStatus}>{usedWordsMessage}</Text> : null}
-            {!isLoadingUsedWords && !usedWordsMessage && usedWords.length === 0 ? <Text style={styles.usedWordsStatus}>오늘 사용한 단어가 없습니다.</Text> : null}
+            {isLoadingUsedWords ? <Text style={[styles.usedWordsStatus, { fontSize: sf(14) }]}>사용 목록을 불러오는 중...</Text> : null}
+            {!isLoadingUsedWords && usedWordsMessage ? <Text style={[styles.usedWordsStatus, { fontSize: sf(14) }]}>{usedWordsMessage}</Text> : null}
+            {!isLoadingUsedWords && !usedWordsMessage && usedWords.length === 0 ? <Text style={[styles.usedWordsStatus, { fontSize: sf(14) }]}>오늘 사용한 단어가 없습니다.</Text> : null}
             {!isLoadingUsedWords && !usedWordsMessage && usedWords.length > 0 && (
               <ScrollView style={styles.usedWordsList} contentContainerStyle={styles.usedWordsListContent}>
                 {usedWords.map((entry, index) => (
                   <View key={entry.id} style={styles.usedWordsRow}>
-                    <Text style={styles.usedWordsIndex}>{index + 1}</Text>
+                    <Text style={[styles.usedWordsIndex, { fontSize: sf(12) }]}>{index + 1}</Text>
                     <View style={styles.usedWordsEntry}>
-                      <Text style={styles.usedWordsName}>{entry.name}</Text>
-                      <Text style={styles.usedWordsMeta}>{entry.category} · {entry.popularity}단계</Text>
+                      <Text style={[styles.usedWordsName, { fontSize: sf(15) }]}>{entry.name}</Text>
+                      <Text style={[styles.usedWordsMeta, { fontSize: sf(12) }]}>{entry.category} · {entry.popularity}단계</Text>
                     </View>
                   </View>
                 ))}
@@ -292,6 +299,8 @@ export default function HeadsUpSetupScreen({ onBack, masterMode, pageSize, onRea
 
 const styles = StyleSheet.create({
   container: { flex: 1, minHeight: '100%' },
+  // 웹에서 ImageBackground가 에셋 고유 크기로만 그려지는 문제 방지 — 배경 이미지를 부모 크기로 채운다
+  bgFill: { width: '100%', height: '100%' },
   scrollView: { flex: 1 },
   content: { paddingHorizontal: 24, paddingTop: 22, paddingBottom: 90 },
   landscapeContent: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 28, paddingTop: 8, paddingBottom: 24 },

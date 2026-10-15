@@ -1,10 +1,14 @@
 import React from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { prevDateKey, todayKey } from '../utils/dailyWord';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 const MEDAL_COLORS = ['#d8a326', '#9a9a9a', '#b87333'];
 
 export default function RankingScreen({ visible, rankings, myRank, dateKey, onSelectDate, onClose, eyebrow = 'DAILY WORD' }) {
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
+  const sz = (n) => Math.round(n * uiScale);
   const showMyRank = myRank && myRank.rank > 10;
   const today = todayKey();
   const yesterday = prevDateKey(today);
@@ -15,16 +19,16 @@ export default function RankingScreen({ visible, rankings, myRank, dateKey, onSe
     const medalColor = MEDAL_COLORS[index];
     return (
       <View key={`${ranking.userId || ranking.nickname}-${rank}`} style={[styles.row, index < 3 && styles.topRow, ranking.isMine && styles.myRow]}>
-        <View style={[styles.rankBadge, medalColor && { backgroundColor: medalColor }]}>
-          <Text style={styles.rankNumber}>{rank}</Text>
+        <View style={[styles.rankBadge, { width: sz(34), height: sz(34), borderRadius: sz(17) }, medalColor && { backgroundColor: medalColor }]}>
+          <Text style={[styles.rankNumber, { fontSize: sf(14) }]}>{rank}</Text>
         </View>
         <View style={styles.nameWrap}>
-          <Text style={styles.name} numberOfLines={1}>{ranking.nickname}</Text>
-          {rank === 1 && <Text style={styles.leader}>FIRST</Text>}
-          {ranking.isMine && <Text style={styles.mine}>나</Text>}
+          <Text style={[styles.name, { fontSize: sf(15) }]} numberOfLines={1}>{ranking.nickname}</Text>
+          {rank === 1 && <Text style={[styles.leader, { fontSize: sf(9) }]}>FIRST</Text>}
+          {ranking.isMine && <Text style={[styles.mine, { fontSize: sf(10) }]}>나</Text>}
         </View>
-        {ranking.streak > 0 && <Text style={styles.streak}>연속 {ranking.streak}일</Text>}
-        <Text style={styles.info}>{ranking.attempts}회</Text>
+        {ranking.streak > 0 && <Text style={[styles.streak, { fontSize: sf(11) }]}>연속 {ranking.streak}일</Text>}
+        <Text style={[styles.info, { fontSize: sf(13) }]}>{ranking.attempts}회</Text>
       </View>
     );
   };
@@ -35,31 +39,31 @@ export default function RankingScreen({ visible, rankings, myRank, dateKey, onSe
         <View style={styles.card}>
           <View style={styles.header}>
             <View>
-              <Text style={styles.eyebrow}>{eyebrow}</Text>
-              <Text style={styles.title}>{isYesterday ? '어제의 랭킹' : '오늘의 랭킹'}</Text>
+              <Text style={[styles.eyebrow, { fontSize: sf(10) }]}>{eyebrow}</Text>
+              <Text style={[styles.title, { fontSize: sf(22) }]}>{isYesterday ? '어제의 랭킹' : '오늘의 랭킹'}</Text>
             </View>
-            <Pressable style={styles.closeIconButton} onPress={onClose} hitSlop={8}>
-              <Text style={styles.closeIconText}>×</Text>
+            <Pressable style={[styles.closeIconButton, { width: sz(32), height: sz(32) }]} onPress={onClose} hitSlop={8}>
+              <Text style={[styles.closeIconText, { fontSize: sf(22) }]}>×</Text>
             </Pressable>
           </View>
           <View style={styles.tabs}>
-            <Pressable onPress={() => onSelectDate?.(yesterday)} style={[styles.tab, isYesterday && styles.tabActive]}>
-              <Text style={[styles.tabText, isYesterday && styles.tabTextActive]}>어제</Text>
+            <Pressable onPress={() => onSelectDate?.(yesterday)} style={[styles.tab, { paddingVertical: sz(7) }, isYesterday && styles.tabActive]}>
+              <Text style={[styles.tabText, { fontSize: sf(13) }, isYesterday && styles.tabTextActive]}>어제</Text>
             </Pressable>
-            <Pressable onPress={() => onSelectDate?.(today)} style={[styles.tab, isToday && styles.tabActive]}>
-              <Text style={[styles.tabText, isToday && styles.tabTextActive]}>오늘</Text>
+            <Pressable onPress={() => onSelectDate?.(today)} style={[styles.tab, { paddingVertical: sz(7) }, isToday && styles.tabActive]}>
+              <Text style={[styles.tabText, { fontSize: sf(13) }, isToday && styles.tabTextActive]}>오늘</Text>
             </Pressable>
           </View>
 
           <ScrollView style={styles.list} contentContainerStyle={styles.listContent}>
             {rankings === null ? (
               <View style={styles.emptyState}>
-                <Text style={styles.emptyTitle}>불러오는 중...</Text>
+                <Text style={[styles.emptyTitle, { fontSize: sf(16) }]}>불러오는 중...</Text>
               </View>
             ) : rankings.length === 0 ? (
               <View style={styles.emptyState}>
-                <Text style={styles.emptyTitle}>아직 기록이 없습니다</Text>
-                <Text style={styles.emptyDescription}>첫 번째 정답 기록을 남겨보세요</Text>
+                <Text style={[styles.emptyTitle, { fontSize: sf(16) }]}>아직 기록이 없습니다</Text>
+                <Text style={[styles.emptyDescription, { fontSize: sf(12) }]}>첫 번째 정답 기록을 남겨보세요</Text>
               </View>
             ) : (
               rankings.map((ranking, index) => renderRow(ranking, index, index + 1))
@@ -68,13 +72,13 @@ export default function RankingScreen({ visible, rankings, myRank, dateKey, onSe
 
           {showMyRank && (
             <View style={styles.myRankSection}>
-              <Text style={styles.myRankLabel}>내 순위</Text>
+              <Text style={[styles.myRankLabel, { fontSize: sf(11) }]}>내 순위</Text>
               {renderRow(myRank, 10, myRank.rank)}
             </View>
           )}
 
-          <Pressable onPress={onClose} style={styles.closeButton}>
-            <Text style={styles.closeButtonText}>닫기</Text>
+          <Pressable onPress={onClose} style={[styles.closeButton, { paddingVertical: sz(11) }]}>
+            <Text style={[styles.closeButtonText, { fontSize: sf(14) }]}>닫기</Text>
           </Pressable>
         </View>
       </View>

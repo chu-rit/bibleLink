@@ -1,8 +1,11 @@
 import React from 'react';
 import { Alert, Platform, Pressable, StyleSheet, Text } from 'react-native';
 import SettingsScreen from './SettingsScreen';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 export default function MapSettingsScreen({ visible, onClose, onResetProgress }) {
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
   const confirmResetProgress = () => {
     const reset = () => {
       onResetProgress?.();
@@ -28,8 +31,8 @@ export default function MapSettingsScreen({ visible, onClose, onResetProgress })
       onClose={onClose}
       title="가로세로 퍼즐 설정"
     >
-      <Pressable style={styles.resetButton} onPress={confirmResetProgress}>
-        <Text style={styles.resetButtonText}>진행 데이터 초기화</Text>
+      <Pressable style={[styles.resetButton, { paddingVertical: Math.round(11 * uiScale) }]} onPress={confirmResetProgress}>
+        <Text style={[styles.resetButtonText, { fontSize: sf(14) }]}>진행 데이터 초기화</Text>
       </Pressable>
     </SettingsScreen>
   );

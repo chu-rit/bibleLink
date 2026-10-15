@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import { scaleFont, useUiScale } from '../utils/responsive';
 
 function AnswerCard({
   slot,
@@ -37,12 +38,15 @@ function AnswerCard({
   crossSlots,
   onToggleDirection,
 }) {
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
+  const sz = (n) => Math.round(n * uiScale);
   if (!slot) {
     return (
       <View style={styles.answerCard} pointerEvents="none">
         <View style={styles.emptySelection}>
-          <Text style={styles.emptySelectionTitle}>퍼즐판의 칸을 눌러 보세요</Text>
-          <Text style={styles.emptySelectionText} numberOfLines={2}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
+          <Text style={[styles.emptySelectionTitle, { fontSize: sf(14) }]}>퍼즐판의 칸을 눌러 보세요</Text>
+          <Text style={[styles.emptySelectionText, { fontSize: sf(12) }]} numberOfLines={2}>선택한 단어의 문제와 정답 입력칸이 이곳에 나타납니다.</Text>
         </View>
       </View>
     );
@@ -52,28 +56,28 @@ function AnswerCard({
     <View style={styles.answerCard}>
       <View style={styles.selectedHeader}>
         <View style={styles.selectedHeaderLeft}>
-          <Text style={styles.selectedDirection}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
+          <Text style={[styles.selectedDirection, { fontSize: sf(12) }]}>{slot.direction === 'across' ? '가로' : '세로'} {slot.number}번</Text>
           {crossSlots && crossSlots.length > 1 && (
-            <Pressable onPress={onToggleDirection} style={styles.toggleButton}>
+            <Pressable onPress={onToggleDirection} style={[styles.toggleButton, { paddingHorizontal: sz(8), paddingVertical: sz(3) }]}>
               {slot.direction === 'across' ? (
-                <Svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <Svg width={sz(14)} height={sz(14)} viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <Path d="M12 4L12 20" />
                   <Path d="M8 16L12 20L16 16" />
                 </Svg>
               ) : (
-                <Svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <Svg width={sz(14)} height={sz(14)} viewBox="0 0 24 24" fill="none" stroke="#7a5c3a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <Path d="M4 12L20 12" />
                   <Path d="M16 8L20 12L16 16" />
                 </Svg>
               )}
-              <Text style={styles.toggleButtonText}>전환</Text>
+              <Text style={[styles.toggleButtonText, { fontSize: sf(11) }]}>전환</Text>
             </Pressable>
           )}
         </View>
         <View style={styles.selectedHeaderRight}>
           {!isCorrect && (
             isHinted ? (
-              <Text style={styles.hintReference} numberOfLines={2}>{hintReferences}</Text>
+              <Text style={[styles.hintReference, { fontSize: sf(11) }]} numberOfLines={2}>{hintReferences}</Text>
             ) : (
               <Pressable
                 onPress={() => onUseHint?.(selectedSlot)}
@@ -83,16 +87,16 @@ function AnswerCard({
                   hintPoints <= 0 && styles.primaryButtonDisabled,
                 ]}
               >
-                <Text style={styles.hintButtonText}>
+                <Text style={[styles.hintButtonText, { fontSize: sf(11) }]}>
                   {hintPoints <= 0 ? '없음' : '힌트'}
                 </Text>
               </Pressable>
             )
           )}
-          {answers[selectedSlot] && <Text style={styles.check}>완료</Text>}
+          {answers[selectedSlot] && <Text style={[styles.check, { fontSize: sf(11) }]}>완료</Text>}
         </View>
       </View>
-      <Text style={styles.clue}>{clue}</Text>
+      <Text style={[styles.clue, { fontSize: sf(14), lineHeight: Math.round(18 * (1 + (uiScale - 1) * 0.5)) }]}>{clue}</Text>
       <View style={styles.actionRow}>
         <Animated.View
           style={[
@@ -114,6 +118,7 @@ function AnswerCard({
             autoCapitalize="none"
             style={[
               styles.answerInput,
+              { height: sz(42), fontSize: sf(16), borderRadius: sz(12) },
               input && styles.answerInputWithClear,
               isCorrect && styles.answerInputCorrect,
               isWrong && styles.answerInputWrong,
@@ -129,9 +134,9 @@ function AnswerCard({
             <Pressable
               onPress={onClearInput}
               accessibilityLabel="입력 내용 지우기"
-              style={styles.clearInputButton}
+              style={[styles.clearInputButton, { width: sz(40), height: sz(40) }]}
             >
-              <Text style={styles.clearInputButtonText}>×</Text>
+              <Text style={[styles.clearInputButtonText, { fontSize: sf(24) }]}>×</Text>
             </Pressable>
           )}
           {isWrong && (
@@ -148,7 +153,7 @@ function AnswerCard({
                 },
               ]}
             >
-              <Text style={styles.wrongText}>{input}</Text>
+              <Text style={[styles.wrongText, { fontSize: sf(16) }]}>{input}</Text>
             </Animated.View>
           )}
         </Animated.View>
@@ -156,11 +161,12 @@ function AnswerCard({
           onPress={onSubmit}
           style={[
             styles.primaryButton,
+            { height: sz(42), paddingHorizontal: sz(16), borderRadius: sz(12) },
             isCorrect && styles.primaryButtonCorrect,
             isWrong && styles.primaryButtonWrong,
           ]}
         >
-          <Text style={styles.primaryButtonText}>
+          <Text style={[styles.primaryButtonText, { fontSize: sf(14) }]}>
             {isCorrect ? '정답' : isWrong ? '오답' : '정답 확인'}
           </Text>
         </Pressable>

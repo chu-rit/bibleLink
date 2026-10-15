@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Animated, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Updates from 'expo-updates';
 import AppHeader from '../components/AppHeader';
@@ -9,7 +9,7 @@ import ChallengeWordScreen from './ChallengeWordScreen';
 import JamoKeyboard, { buildKeyStates } from './JamoKeyboard';
 import RankingScreen from './RankingScreen';
 import { clearGameState, fetchRankings, fetchStreakBeforeToday, getDailyStreak, getOrCreateUser, getTodayWord, getUser, loadGameState, overrideDailyStreak, recordDailyResult, saveGameState, submitResult, todayKey } from '../utils/dailyWord';
-import { PAGE_ASPECT_RATIO, getPageWidth } from '../utils';
+import { scaleFont, useContentMaxWidth, useUiScale } from '../utils/responsive';
 import validWordsData from '../data/words2/validWords.json';
 
 const BG_IMAGE = require('../assets/BG.png');
@@ -112,11 +112,12 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   const startedAtRef = useRef(Date.now());
   const submittingRef = useRef(false);
   const toastTimerRef = useRef(null);
-  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const uiScale = useUiScale();
+  const sf = (n) => scaleFont(n, uiScale);
+  const cellCap = Math.round(56 * uiScale);
+  const contentMaxWidth = Math.min(Math.round(560 * uiScale), useContentMaxWidth());
   const isWeb = Platform.OS === 'web';
-  const effectiveWidth = isWeb ? getPageWidth(windowWidth, windowHeight) : windowWidth;
-  const viewportHeight = isWeb ? Math.min(Math.round(effectiveWidth * PAGE_ASPECT_RATIO), windowHeight) : windowHeight;
 
   useEffect(() => {
     Animated.timing(fadeAnim, { toValue: 1, duration: 150, useNativeDriver: true }).start();
@@ -225,14 +226,15 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
       <ImageBackground
         source={BG_IMAGE}
         resizeMode="cover"
-        style={[styles.container, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+        imageStyle={styles.bgFill}
+        style={styles.container}
       >
         <AppHeader onBack={onBack} />
         <View style={styles.loadingWrap}>
           <Text style={styles.status}>{loadFailed ? '앱 업데이트가 필요합니다.' : '불러오는 중...'}</Text>
           {loadFailed && (
             <Pressable style={styles.reloadBtn} onPress={reloadApp} disabled={reloading}>
-              <Text style={styles.reloadBtnText}>{reloading ? '업데이트 확인 중...' : '새로고침'}</Text>
+              <Text style={[styles.reloadBtnText, { fontSize: sf(15) }]}>{reloading ? '업데이트 확인 중...' : '새로고침'}</Text>
             </Pressable>
           )}
         </View>
@@ -417,8 +419,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
   };
 
   const renderCell = (jamo, state, key, active) => (
-    <View key={key} style={[styles.cell, styles[`cell_${state}`], active && styles.cellActive]}>
-      <Text style={[styles.cellText, styles[`cellText_${state}`]]}>{jamo}</Text>
+    <View key={key} style={[styles.cell, { maxWidth: cellCap, maxHeight: cellCap, borderRadius: Math.round(12 * uiScale) }, styles[`cell_${state}`], active && styles.cellActive]}>
+      <Text style={[styles.cellText, { fontSize: scaleFont(24, uiScale) }, styles[`cellText_${state}`]]}>{jamo}</Text>
     </View>
   );
 
@@ -476,45 +478,46 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
     <ImageBackground
       source={BG_IMAGE}
       resizeMode="cover"
-      style={[styles.container, { paddingTop: insets.top }, isWeb && { height: viewportHeight, width: '100%', maxWidth: effectiveWidth, alignSelf: 'center' }]}
+      imageStyle={styles.bgFill}
+      style={[styles.container, { paddingTop: insets.top }]}
     >
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <AppHeader onBack={onBack} onHelp={() => setShowHelp(true)} onSettings={() => { setSettingsPrompt(false); setShowSettings(true); }} />
 
         <View style={styles.centerWrap}>
           <ScrollView style={styles.scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-            <View style={styles.panel}>
+            <View style={[styles.panel, { width: '100%', maxWidth: contentMaxWidth, alignSelf: 'center' }]}>
             {renderBoard()}
 
             {hints.slice(0, visibleHints).map((hint, i) => (
               <View key={i} style={styles.hintCard}>
-                <Text style={styles.hintLabel}>힌트 {i + 1}</Text>
-                <Text style={styles.hintText}>{hint}</Text>
+                <Text style={[styles.hintLabel, { fontSize: sf(11) }]}>힌트 {i + 1}</Text>
+                <Text style={[styles.hintText, { fontSize: sf(14) }]}>{hint}</Text>
               </View>
             ))}
 
             <View style={styles.actions}>
               <View style={styles.statusWrap}>
-                {message ? <Text style={styles.status}>{message}</Text> : null}
-                <Text style={styles.attempts}>
-                  <Text style={styles.attemptsCount}>{guesses.length}</Text>
+                {message ? <Text style={[styles.status, { fontSize: sf(13) }]}>{message}</Text> : null}
+                <Text style={[styles.attempts, { fontSize: sf(15) }]}>
+                  <Text style={[styles.attemptsCount, { fontSize: sf(26) }]}>{guesses.length}</Text>
                   {`/${MAX_ATTEMPTS}회 시도`}
                 </Text>
-                {streak > 0 && <Text style={styles.streak}>{streak}번째 연승중!</Text>}
+                {streak > 0 && <Text style={[styles.streak, { fontSize: sf(12) }]}>{streak}번째 연승중!</Text>}
               </View>
               <View style={styles.actionButtons}>
                 {masterMode && (
                   <Pressable onPress={resetGame} style={styles.resetButton}>
-                    <Text style={styles.resetButtonText}>초기화</Text>
+                    <Text style={[styles.resetButtonText, { fontSize: sf(14) }]}>초기화</Text>
                   </Pressable>
                 )}
                 {!over && (
                   <Pressable onPress={submitGuess} style={styles.button}>
-                    <Text style={styles.buttonText}>입력</Text>
+                    <Text style={[styles.buttonText, { fontSize: sf(14) }]}>입력</Text>
                   </Pressable>
                 )}
                 <Pressable onPress={openRankings} style={styles.button}>
-                  <Text style={styles.buttonText}>랭킹</Text>
+                  <Text style={[styles.buttonText, { fontSize: sf(14) }]}>랭킹</Text>
                 </Pressable>
               </View>
             </View>
@@ -523,20 +526,20 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
             {over && (
             <Pressable onPress={() => setChallengeMode(true)} style={({ pressed }) => [styles.challengeButton, pressed && styles.challengeButtonPressed]}>
               <View style={styles.challengeButtonInner}>
-                <Text style={styles.challengeEyebrow}>CHALLENGE</Text>
-                <Text style={styles.challengeTitle}>오늘의 단어 챌린지</Text>
+                <Text style={[styles.challengeEyebrow, { fontSize: sf(10) }]}>CHALLENGE</Text>
+                <Text style={[styles.challengeTitle, { fontSize: sf(17) }]}>오늘의 단어 챌린지</Text>
               </View>
-              <Text style={styles.challengeArrow}>›</Text>
+              <Text style={[styles.challengeArrow, { fontSize: sf(26) }]}>›</Text>
             </Pressable>
             )}
           </ScrollView>
         </View>
 
         {!over && (
-          <View style={[styles.keyboardWrap, isWeb && { marginBottom: AD_BANNER_HEIGHT + insets.bottom }]}>
+          <View style={[styles.keyboardWrap, { width: '100%', maxWidth: contentMaxWidth, alignSelf: 'center' }, isWeb && { marginBottom: AD_BANNER_HEIGHT + insets.bottom }]}>
             {toast ? (
               <View style={styles.toast} pointerEvents="none">
-                <Text style={styles.toastText}>{toast}</Text>
+                <Text style={[styles.toastText, { fontSize: sf(14) }]}>{toast}</Text>
               </View>
             ) : null}
             <JamoKeyboard
@@ -570,6 +573,8 @@ export default function DailyWordScreen({ onBack, masterMode, isActive }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  // 웹에서 ImageBackground가 에셋 고유 크기로만 그려지는 문제 방지 — 배경 이미지를 부모 크기로 채운다
+  bgFill: { width: '100%', height: '100%' },
   flex: { flex: 1 },
 
   centerWrap: { flex: 1, justifyContent: 'center' },
@@ -580,7 +585,7 @@ const styles = StyleSheet.create({
   content: { paddingHorizontal: 16, paddingBottom: 20 },
   panel: { backgroundColor: 'rgba(253, 251, 246, 0.88)', borderWidth: 1, borderColor: '#e0d8c8', borderRadius: 20, padding: 20, shadowColor: '#3a2e1f', shadowOpacity: 0.12, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
   history: { marginBottom: 8 },
-  row: { flexDirection: 'row', marginBottom: 8 },
+  row: { flexDirection: 'row', marginBottom: 8, justifyContent: 'center' },
   cell: { flex: 1, aspectRatio: 1, maxHeight: 56, marginHorizontal: 4, borderWidth: 2, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   cell_empty: { borderColor: '#d8cdb8', backgroundColor: '#fdfbf6' },
   cellActive: { borderColor: '#7a5c3a' },

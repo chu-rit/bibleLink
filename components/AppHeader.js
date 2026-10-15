@@ -1,32 +1,39 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import { useContentMaxWidth, useUiScale } from '../utils/responsive';
+import { useWindowDimensions } from 'react-native';
 
 const LOGO_IMAGE = require('../assets/LOGO.png');
 
 export default function AppHeader({ onBack, onSettings, onHelp, onRotate, onSearch }) {
+  const uiScale = useUiScale();
+  const contentMaxWidth = useContentMaxWidth();
+  const { width: windowWidth } = useWindowDimensions();
+  const iconSize = (n) => Math.round(n * uiScale);
+  const buttonSize = { minWidth: iconSize(36), minHeight: iconSize(36), padding: iconSize(6), borderRadius: iconSize(10) };
   return (
-    <View style={styles.header}>
-      <View style={styles.side}>
-        <Pressable onPress={onBack} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
-          <Svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+    <View style={[styles.header, { paddingHorizontal: iconSize(20), paddingTop: iconSize(20), alignSelf: 'center', width: windowWidth ? Math.min(windowWidth, contentMaxWidth) : '100%' }]}>
+      <View style={[styles.side, { width: iconSize(80) }]}>
+        <Pressable onPress={onBack} style={({ pressed }) => [styles.sideButton, buttonSize, pressed && styles.iconButtonPressed]} hitSlop={8}>
+          <Svg width={iconSize(20)} height={iconSize(20)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
             <Path d="M15 18l-6-6 6-6" />
           </Svg>
         </Pressable>
       </View>
-      <Image source={LOGO_IMAGE} style={styles.logo} resizeMode="contain" />
-      <View style={[styles.side, styles.sideRight]}>
+      <Image source={LOGO_IMAGE} style={[styles.logo, { width: iconSize(140), height: iconSize(32) }]} resizeMode="contain" />
+      <View style={[styles.side, { width: iconSize(80) }, styles.sideRight]}>
         {onRotate && (
-          <Pressable onPress={onRotate} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
-            <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <Pressable onPress={onRotate} style={({ pressed }) => [styles.sideButton, buttonSize, pressed && styles.iconButtonPressed]} hitSlop={8}>
+            <Svg width={iconSize(22)} height={iconSize(22)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <Path d="M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4" />
               <Path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
             </Svg>
           </Pressable>
         )}
         {onHelp && (
-          <Pressable onPress={onHelp} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
-            <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <Pressable onPress={onHelp} style={({ pressed }) => [styles.sideButton, buttonSize, pressed && styles.iconButtonPressed]} hitSlop={8}>
+            <Svg width={iconSize(22)} height={iconSize(22)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <Path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" />
               <Path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
               <Path d="M12 17h.01" />
@@ -34,15 +41,15 @@ export default function AppHeader({ onBack, onSettings, onHelp, onRotate, onSear
           </Pressable>
         )}
         {onSearch ? (
-          <Pressable onPress={onSearch} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
-            <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <Pressable onPress={onSearch} style={({ pressed }) => [styles.sideButton, buttonSize, pressed && styles.iconButtonPressed]} hitSlop={8}>
+            <Svg width={iconSize(22)} height={iconSize(22)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <Path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
               <Path d="M21 21l-4.35-4.35" />
             </Svg>
           </Pressable>
         ) : (
-          <Pressable onPress={onSettings} disabled={!onSettings} style={({ pressed }) => [styles.sideButton, pressed && styles.iconButtonPressed]} hitSlop={8}>
-            <Svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <Pressable onPress={onSettings} disabled={!onSettings} style={({ pressed }) => [styles.sideButton, buttonSize, pressed && styles.iconButtonPressed]} hitSlop={8}>
+            <Svg width={iconSize(22)} height={iconSize(22)} viewBox="0 0 24 24" fill="none" stroke="#7a6450" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <Path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
               <Path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
             </Svg>
